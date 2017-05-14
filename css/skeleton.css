@@ -421,7 +421,7 @@ there.
 /* APP ICONS
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 html, body {
-  background: #3F4260;
+  background: #C4E0B3;
   height: 100%;
 }
 
@@ -439,7 +439,7 @@ html, body {
 .footer {
   height: 25%;
   min-height: 60px;
-  background: #282B44;
+  background: #8bab78;
   color: white;
   font-size: 1.2em;
 }
@@ -461,7 +461,7 @@ html, body {
   text-decoration: none;
   display: inline-block;
   padding: 0.4em;
-  text-shadow: 1px 1px 1px #000;
+  text-shadow: 1px 1px 1px #345024;
 }
 
 .footer .logo-text {
@@ -471,7 +471,7 @@ html, body {
 }
 
 .footer a:hover {
-  background: #373a58;
+  background: rgba(0,0,0,0.4);
   border-radius: 6px;
 }
 
@@ -496,7 +496,7 @@ html, body {
     font-size: 1.1em;
     padding-bottom: 1em;
     display: block;
-    border-bottom: 1px solid #535779;
+    border-bottom: 1px solid rgba(0,0,0,0.4);
   }
 
   .footer .saperator {
