@@ -16,30 +16,284 @@
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/styles.css">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/script.js"></script>
 
 </head>
 <body>
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row">
-      <div class="one-half column" style="margin-top: 25%">
-        <h4>Basic Page</h4>
-        <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
+  <div id="hc-nav-wrapper">
+    <button class="menu-toggle">
+      <div style="background:black; height:1px; margin:9px 20px"></div>
+      <div style="background:black; height:1px; margin:9px 20px"></div>
+      <div style="background:black; height:1px; margin:9px 20px"></div>
+    </button>
+    <div class="container">
+      <div class="row">
+        <div class="hc-branding">
+          <div class="hc-title">
+            <a href="#" rel="home" class="">Stellar</a>
+          </div>
+          <span class="hc-number-dist">4,981,497,076 <a href="https://dashboard.stellar.org/" class="">lumens distributed<span class="away"></span></a></span>
+        </div>
+        <nav class="hc-navigation">
+          <div class="hc-menu-container">
+            <ul class="hc-menu">
+              <li class="menu-item">
+                <a href="#" class="">How it works</a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="">Developers</a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="">About</a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="">Lumens</a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="">Community</a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="">Contact</a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="">Wallets</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
     </div>
   </div>
+  <div id="hc-content">
+    <div class="hc-feature over-rel padding" id="hc-intro">
+      <div class="hc-chunk hc-intro-text-wrapper">
+        <h2 class="hc-intro-large-lead">Stellar is a platform that connects banks, payments systems, and people.</h2>
+        <p class="hc-intro-small-lead">Integrate to move money quickly, reliably, and at almost no cost.</p>
+        <p><a href="#" class="button button-primary large-button">See who uses Stellar</a></p>
+      </div>
+      <div class="hc-feature-triangle white"></div>
+    </div>
 
+    <div class="hc-feature over-rel padding" id="hc-future">
+      <div class="hc-chunk hc-future-text-wrapper">
+        <h3 class="hc-feature-title">The future of banking is here</h3>
+        <div class="hc-future-tabs">
+          <div class="tab-group">
+            <div class="tab-item">
+              <a class="button is-active" data-tabid="1">Remittances</a>
+            </div>
+            <div class="tab-item">
+              <a class="button tab-item" data-tabid="2">Micropayments</a>
+            </div>
+            <div class="tab-item">
+              <a class="button tab-item" data-tabid="3">Mobile Branches</a>
+            </div>
+            <div class="tab-item">
+              <a class="button tab-item" data-tabid="4">Mobile Money</a>
+            </div>
+            <div class="tab-item">
+              <a class="button tab-item" data-tabid="5">Services for the Underbanked</a>
+            </div>
+          </div>
+
+          <div class="tab-content-group">
+            <div class="tab-content is-active" data-tabid="1">
+              <span class="graphic-into-cash"></span>
+              <p class="content-title">Remittances</p>
+              <p class="content-body">Send money across borders quickly, for a fraction of a cent. Facilitate low-cost payments between different currencies.</p>
+            </div>
+
+            <div class="tab-content" data-tabid="2">
+              <span class="graphic-hand-catching-orbs"></span>
+              <p class="content-title">Micropayments</p>
+              <p class="content-body">Increase efficiency and decrease the cost of smaller transfers. Offer incremental payment options to your customers.</p>
+            </div>
+
+            <div class="tab-content" data-tabid="3">
+              <span class="graphic-truck"></span>
+              <p class="content-title">Mobile Branches</p>
+              <p class="content-body">Get an agency banking advantage with mobile branches. Expand your retail operation, without the overhead costs.</p>
+            </div>
+
+            <div class="tab-content" data-tabid="4">
+              <span class="graphic-credit-card-with-phone"></span>
+              <p class="content-title">Mobile Money</p>
+              <p class="content-body">Make mobile money platforms interoperable. Let your customers send MM to recipients with different providers.</p>
+            </div>
+
+            <div class="tab-content" data-tabid="5">
+              <span class="graphic-gear-and-window"></span>
+              <p class="content-title">Services for the underbanked</p>
+              <p class="content-body">Stellar cuts costs so you can bank new customers. Reach the base of the pyramid with low-cost accounts, loans, and microsavings.</p>
+            </div>
+          </div>
+        </div>
+        <p class="hc-button-container">
+          <a href="#" class="button button-primary large-button">Find your use case</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="hc-feature over-rel padding" id="hc-customize">
+      <div class="hc-feature-triangle top white"></div>
+      <div class="triangle-space"></div>
+      <div class="hc-chunk hc-customize-text-wrapper">
+        <h3 class="hc-feature-title inverted" style="margin-bottom:2em;">Customizable payments infrastructure</h3>
+        <div class="row">
+          <div class="six columns">
+            <span class="graphic-cash-to-matrix-cash"></span>
+            <p>Transactions on the decentralized <br> Stellar network resolve in 2-5 seconds.</p>
+          </div>
+          <div class="six columns">
+            <span class="graphic-circuit-key-files"></span>
+            <p>Get started on the network quickly with <br> developer-friendly software and tools.</p>
+          </div>
+        </div>
+        <p class="hc-button-container">
+          <a href="#" class="button button-primary large-button">Build with Stellar</a>
+        </p>
+      </div>
+
+      <div class="triangle-space"></div>
+      <div class="hc-feature-triangle white"></div>
+    </div>
+
+    <div class="hc-feature over-rel padding" id="hc-mission">
+      <div class="hc-chunk hc-mission-tex-wrapper">
+          <h3 class="hc-feature-title" style="margin-bottom:1.5em;">Finance with a mission</h3>
+
+          <p class="hc-mission-lead">With a team of top technology and finance professionals, Stellar.org is a nonprofit that connects people to low-cost financial services to fight poverty and develop individual potential.</p>
+
+          <div class="hc-mission-world">
+            <span class="graphic-wireframe-dotted-world home0516-mission__world__graphic"></span>
+          </div>
+
+          <p class="hc-button-container">
+            <a href="#" class="button button-primary large-button">Learn about our mission</a>
+          </p>
+        </div>
+    </div>
+
+    <div class="hc-feature over-rel padding" id="hc-press">
+      <div class="hc-chunk hc-press-tex-wrapper">
+        <h3 class="hc-feature-title">Read what others are saying</h3>
+
+        <div class="row" style="margin-top:3em;">
+          <a href="#" class="four columns article">
+            <span class="graphic-press-logo-wsj press-logo"></span>
+            <p>“Stellar.org is one of a new breed of tech non-profits whose ambition is for technology to help solve some of the world’s most intractable problems such as global poverty and climate change.”</p>
+            <span class="article-link">Read article</span>
+          </a>
+          <a href="#" class="four columns article">
+            <span class="graphic-press-logo-wired press-logo"></span>
+            <p>“Because the local MFI network plugs into the wider network of Stellar machines, it will let Nigerians swap money with potentially anyone in the world.”</p>
+            <span class="article-link">Read article</span>
+          </a>
+          <a href="#" class="four columns article">
+            <span class="graphic-press-logo-quartz press-logo"></span>
+            <p>“A ‘giant translation layer’ for money, allowing easy and cheap transfers between any pair of currencies, whether fiat (such as the dollar), digital (such as bitcoin) or notional (such as cellphone talk time)”</p>
+            <span class="article-link">Read article</span>
+          </a>
+        </div>
+
+        <p style="text-align:center; margin-top:3em; font-size:1.5em;">
+          <a class="hc-big-link" href="#">See all Stellar press<span class="hc-link-triangle"></span></a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <footer id="hc-footer">
+    <div class="hc-footer-chunk hc-colored-border" style="padding-bottom: 1em;">
+        <section class="footer-light row">
+          <div class="three columns">
+            <h3>Latest blog post</h3>
+            <p>
+              <a href="https://www.stellar.org/blog/lightyear-announcement/" class="">Introducing Lightyear.io</a><br>
+            </p>
+          </div>
+          <div class="three columns">
+            <h3>Software</h3>
+            <ul>
+              <li><a href="#">Stellar Core</a></li>
+              <li><a href="#">Horizon API</a></li>
+              <li><a href="#">Tools</a></li>
+              <li><a href="#">Libraries</a></li>
+              <li><a href="#">Documentation</a></li>
+            </ul>
+          </div>
+          <div class="three columns">
+            <h3>Community and Help</h3>
+            <ul>
+              <li><a href="#" class="">Blog</a></li>
+              <li><a href="#" class="">FAQ</a></li>
+              <li><a href="#" class="">Community chat</a></li>
+              <li><a href="#" class="">Bug Bounty Program</a></li>
+              <li><a href="#" class="">Help articles</a></li>
+              <li><a href="#" class="">Contact</a></li>
+            </ul>
+          </div>
+          <div class="three columns">
+            <h3>About Stellar.org</h3>
+            <ul>
+              <li><a href="#">Mandate</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Partners Directory</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Press</a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <div class="hc-footer-chunk footer-bridgeBack">
+        <section class="footer-bridge">
+          <div class="footer-bridge-contentStart">
+            <a href="#" class="footer-social-icon"><span class="graphic-socialHover-facebook"></span></a>
+            <a href="#" class="footer-social-icon"><span class="graphic-socialHover-twitter"></span></a>
+            <a href="#" class="footer-social-icon"><span class="graphic-socialHover-linkedin"></span></a>
+            <a href="#" class="footer-social-icon"><span class="graphic-socialHover-github"></span></a>
+            <a href="#" class="footer-social-icon"><span class="graphic-socialHover-reddit"></span></a>
+            <a href="#" class="footer-social-icon"><span class="graphic-socialHover-slack"></span></a>
+          </div>
+          <div class="footer-bridge-contentEnd">
+            <p><span class="graphic-inline-heart footer-heart-alignment"></span>&nbsp;
+            <a href="https://www.stellar.org" class="">Stellar.org</a> is a nonprofit organization.</p>
+          </div>
+        </section>
+      </div>
+      <div class="hc-footer-chunk">
+        <section class="footer-white">
+          <nav id="footer-navigation" class="clear" role="navigation">
+            <div class="menu-footer-menu-container">
+              <ul id="menu-footer-menu" class="menu">
+                <li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a href="https://www.stellar.org/privacy-policy/" class="">Privacy Policy</a></li>
+                <li id="menu-item-150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-150"><a href="https://www.stellar.org/terms-of-service/" class="">Terms of Service</a></li>
+              </ul>
+            </div>
+          </nav><!-- #footer-navigation -->
+          <div class="site-info">
+            <p>© 2014-2017 Stellar Development Foundation</p>
+          </div><!-- .site-info -->
+        </section>
+      </div>
+  </footer>
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
