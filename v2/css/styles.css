@@ -207,8 +207,8 @@ h1, h2, h2, h3, h4, h5, h6 {
 }
 
 #hc-nav-wrapper .hc-navigation .hc-menu-container .hc-menu .menu-item img {
-  width:60px;
-  vertical-align: middle;
+  width: 40px;
+  vertical-align: sub;
 }
 
 #hc-nav-wrapper .hc-navigation .hc-menu-container .hc-menu .menu-item a {
