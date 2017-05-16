@@ -183,31 +183,30 @@ h1, h2, h2, h3, h4, h5, h6 {
 /* #hc-intro  */
 #hc-intro {
   background: linear-gradient(0deg, rgb(197, 224, 181), rgba(197, 224, 181, 0.68) 75%);
-  height: 612px;
 }
 
 #hc-intro .hc-intro-text-wrapper {
   position: relative;
   z-index: 2;
   overflow: hidden;
-  max-width: 62em;
   padding-top: 10em;
-  padding-bottom: 10em;
+  padding-bottom: 1em;
   text-align: center;
   color: #08b5e5;
 }
 
 #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-  margin-bottom: 0em;
-  font-size: 28px;
+  margin-bottom: 1em;
+  font-size: 1.8em;
   color: inherit;
   font-weight: 300;
   color: #4c842b;
 }
 
 #hc-intro .hc-intro-text-wrapper .hc-intro-small-lead {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   color: #4c842b;
+  font-size: 0.9em;
 }
 
 /* #hc-intro  */
