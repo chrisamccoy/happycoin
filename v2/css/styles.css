@@ -196,7 +196,7 @@ h1, h2, h2, h3, h4, h5, h6 {
 }
 
 #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-  margin-bottom: 1em;
+  margin-bottom: 0.8em;
   font-size: 1.8em;
   color: inherit;
   font-weight: 300;
@@ -206,7 +206,7 @@ h1, h2, h2, h3, h4, h5, h6 {
 #hc-intro .hc-intro-text-wrapper .hc-intro-small-lead {
   margin-bottom: 1em;
   color: #4c842b;
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 /* #hc-intro  */
