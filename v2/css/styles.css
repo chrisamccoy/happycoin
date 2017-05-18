@@ -45,6 +45,7 @@ h1, h2, h2, h3, h4, h5, h6 {
   font-weight: 300;
   text-align: center;
   font-size: 23px;
+  margin: 0 1em;
 }
 
 .hc-feature .hc-feature-title.inverted {
@@ -68,8 +69,7 @@ h1, h2, h2, h3, h4, h5, h6 {
 }
 
 .hc-feature.padding {
-  padding-left: 32px;
-  padding-right: 32px;
+  padding: 10px;
 }
 /* #hc-nav-wrapper  */
 
@@ -101,8 +101,8 @@ h1, h2, h2, h3, h4, h5, h6 {
   background-position: 0px -1px;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 78px;
-  height: 60px;
+  width: 64px;
+  height: 68px;
   margin-right: 0.5em;
   text-transform: lowercase;
   font-size: 26px;
@@ -128,7 +128,7 @@ h1, h2, h2, h3, h4, h5, h6 {
   display: inline-block;
   clear: none;
   width: auto;
-  margin-top: 0.8em;
+  margin-top: 1em;
 }
 
 #hc-nav-wrapper > .menu-toggle{
@@ -213,131 +213,258 @@ h1, h2, h2, h3, h4, h5, h6 {
 
 /*--------------------------*/
 
-/* #hc-future  */
-#hc-future .hc-future-text-wrapper {
-  padding-top: 2.5em;
-  padding-bottom: 2.5em;
+/* #hc-timer  */
+#hc-promo .wrapper {
+  padding: 1em 0;
 }
 
-#hc-future .hc-future-tabs .tab-content {
-  font-weight: 700;
+#hc-promo .container > .columns {
   text-align: center;
 }
 
-#hc-future .hc-future-tabs .content-title {
-  font-weight: 700;
-  margin-bottom: 0.5em;
+#hc-promo .countdown {
+  font-weight: bold;
 }
 
-#hc-future .hc-future-tabs .content-body {
-  max-width: 28em;
+#hc-promo .promo-1,
+#hc-promo .promo-2 {
+  text-align: center;
+}
+
+#hc-promo .desc {
+  margin: 0.4em 0;
+}
+
+#hc-promo .features {
+  max-width: 800px;
+  display: flex;
   margin: 0 auto;
-  font-weight: 300;
 }
 
-#hc-future .hc-future-tabs .graphic {
-  width: 80px;
-  height: 76px;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  display: inline-block;
+#hc-promo .features > div {
+  flex-grow: 1;
+  width: 33.33333333%;
 }
 
-#hc-future .hc-future-tabs  .graphic-into-cash {
-  background-image: url(../images/into-cash.svg);
+#hc-promo .features .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1.5px solid #d8eacd;
+    background-color: #d8eacd;
+    height: 150px;
+    width: 150px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-#hc-future .hc-future-tabs  .graphic-hand-catching-orbs {
-  background-image: url(../images/hand-catching-orbs.svg);
+#hc-promo .features .item h4 {
+  font-size: 1.2em;
+  color: #527141;
 }
 
-#hc-future .hc-future-tabs .graphic-truck {
-  background-image: url(../images/truck.svg);
+#hc-promo .sales-terms ul {
+  font-size: 1.1em;
 }
 
-#hc-future .hc-future-tabs .graphic-credit-card-with-phone {
-  background-image: url(../images/credit-card-with-phone.svg);
-}
+@media only screen and (max-width: 700px) {
+  #hc-promo .features {
+    flex-direction: column;
+  }
 
-#hc-future .hc-future-tabs .graphic-gear-and-window {
-  background-image: url(../images/gear-and-window.svg);
+  #hc-promo .features > div {
+    width: 100%;
+    padding-bottom: 1em;
+  }
+
+  #hc-promo button {
+    width: 100%;
+    font-size: 1.3em;
+    padding: 0.3em 0;
+  }
+
+  #hc-promo .promo-2 .title {
+    margin-top: 1.4em;
+  }
+
+  #hc-promo .desc {
+    font-size: 1.2em;
+    margin: 0.8em 0;
+  }
 }
-/* #hc-future  */
 
 /*--------------------------*/
-
-/* #hc-customize  */
-#hc-customize {
+/* #hc-accom  */
+#hc-accom {
   background: #C5E0B5;
-  background-size: 80px 80px;
   padding-top: 4.5em;
   padding-bottom: 4em;
 }
 
-#hc-customize .row {
-  padding:2em 0px;
-}
-
-#hc-customize .columns {
+#hc-accom .columns {
   text-align: center;
 }
 
-#hc-customize .columns p {
-  color:#4c842b;
+#hc-accom .columns img {
+  width: 60%;
+  height: auto;
+  display: block;
+  margin:0 auto;
 }
 
-#hc-customize .graphic-cash-to-matrix-cash {
-  background-image: url(../images/cash-to-matrix-cash.png);
-  width: 278px;
-  height: 170px;
-  background-size: 278px 170px;
-  background-repeat: no-repeat;
-  display: inline-block;
+#hc-accom .columns h6 {
+  color: #415834;
+  margin: 0.6em 0;
 }
 
-#hc-customize .graphic-circuit-key-files {
-    background-image: url(../images/circuit-key-files.png);
-    width: 177px;
-    height: 158px;
-    background-size: 177px 158px;
-    background-repeat: no-repeat;
-    display: inline-block;
-    margin-bottom: 12px;
+@media only screen and (max-width: 700px) {
+  #hc-accom .columns img {
+    width: 150px;
+  }
+
+  #hc-accom .columns p {
+    margin: 1em 0;
+  }
 }
-/* #hc-customize  */
 
 /*--------------------------*/
+/* #hc-token-sale  */
+#hc-token-sale {
+  padding-top: 4.5em;
+  padding-bottom: 4em;
+}
 
-/* #hc-mission  */
-#hc-mission {
+#hc-token-sale .desc {
+  font-size: 1.2em;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 1em;
+}
+
+#hc-token-sale .bold-desc {
+  padding: 1em 0;
+  border-top: 2px solid #d8eacd;
+  border-bottom: 2px solid #d8eacd;
+  font-size: 1.5em;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2em;
+}
+
+/*--------------------------*/
+/* #hc-why-token  */
+#hc-why-token {
+  background: #C5E0B5;
+  padding-top: 4.5em;
+  padding-bottom: 4em;
+}
+
+#hc-why-token .desc {
+  font-size: 1.2em;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 1em;
+}
+
+#hc-why-token .points {
+  margin-top: 1em;
+  text-align: center;
+}
+
+#hc-why-token .points .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 10px solid rgba(255, 255, 255, 0.2);
+  width: 125px;
+  height: 125px;
+  margin: 0 auto;
+}
+
+#hc-why-token .points .icon img {
+  height: 85px;
+  width: 85px;
+}
+
+#hc-why-token .points h6 {
+  color: #415834;
+  margin: 0.6em 0;
+}
+
+#hc-why-token .points p {
+  margin-bottom: 1em;
+}
+
+
+/*--------------------------*/
+/* #hc-token-advisor  */
+#hc-token-advisor {
+  background: #C5E0B5;
+  padding-top: 4.5em;
+  padding-bottom: 4em;
+}
+
+#hc-token-advisor .item {
+    padding: 1.5em;
+    background: #fff;
+    max-width: 145px;
+    box-shadow: 0 0 15px rgba(0,0,0,.25);
+    margin: 1em auto;
+}
+
+#hc-token-advisor .item img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*--------------------------*/
+/* #hc-team  */
+#hc-team {
   padding-top: 3em;
   padding-bottom: 6em;
 }
 
-#hc-mission .hc-mission-lead {
+#hc-team .hc-team-lead {
   font-size: 24px;
   max-width: 30em;
   text-align: center;
   margin: 0 auto;
 }
 
-#hc-mission .hc-mission-world {
-  max-width: 1003px;
-  text-align: center;
-  margin: 0 auto;
-  padding: 2em 0 0.5em 0;
+#hc-team .members {
+    margin-top: 1em;
+    text-align: center;
 }
 
-#hc-mission .hc-mission-world .graphic-wireframe-dotted-world {
-    background-image: url(../images/map.png);
-    width: 1003px;
-    height: 521px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: inline-block;
-    background-position: center;
+#hc-team .team-member-name {
+  margin-bottom: 5px;
 }
-/* #hc-mission  */
+
+#hc-team .team-member-image {
+  border-radius: 50%;
+    margin-bottom: 10px;
+    width: 60%;
+    height: 60%;
+    max-width: 180px;
+}
+
+#hc-team .team-member-title {
+    height: 40px;
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+#hc-team .founder-member-profile {
+  margin-top: 20px;
+  margin-right: 0;
+  height: 25px;
+  width: 25px;
+}
+
 
 /*--------------------------*/
 
@@ -348,7 +475,7 @@ h1, h2, h2, h3, h4, h5, h6 {
 }
 
 #hc-press .article {
-  min-height: 288px;
+  min-height: 235px;
   position: relative;
   padding: 2em;
   border: 1px solid #8da280;
@@ -356,24 +483,15 @@ h1, h2, h2, h3, h4, h5, h6 {
   color: #717577;
   text-decoration: none;
   border-radius: 10px;
-}
-
-#hc-press .article:before {
-    content: "\f347";
-    position: absolute;
-    top: 24px;
-    left: 18px;
-    font-size: 32px;
-    font-family: "Ionicons";
+  text-align: center;
+  border-radius: 10px;
 }
 
 #hc-press .article:hover {
-  border:1px solid #000;
+  border: 1px solid #000;
 }
 
 #hc-press .article p {
-  margin-bottom: 3em;
-  margin-left: 2em;
   line-height: 1.8;
   font-size: 0.95em;
 }
@@ -630,19 +748,7 @@ h1, h2, h2, h3, h4, h5, h6 {
     color: #4c842b0;
   }
 
-  #hc-future .tab-content {
-    margin-top: 1em;
-  }
-
-  #hc-customize .columns {
-    margin-bottom: 4em;
-  }
-
-  #hc-customize .hc-button-container{
-    margin:0px;
-  }
-
-  #hc-mission .hc-button-container a {
+  #hc-team .hc-button-container a {
     font-size: 0.7em;
   }
 
@@ -671,7 +777,7 @@ h1, h2, h2, h3, h4, h5, h6 {
     margin: 0px;
   }
 
-  #hc-mission .hc-mission-world .graphic-wireframe-dotted-world {
+  #hc-team .hc-team-world .graphic-wireframe-dotted-world {
     width: 100%;
     height: 200px;
   }
