@@ -1,5 +1,5 @@
 body {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Asap', sans-serif;
   font-weight: 300;
 }
 a {
@@ -72,8 +72,8 @@ h1, h2, h2, h3, h4, h5, h6 {
 /* #hc-nav-wrapper  */
 
 #hc-nav-wrapper {
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
   position: fixed;
   top: 0;
   width: 100%;
@@ -86,7 +86,7 @@ h1, h2, h2, h3, h4, h5, h6 {
 }
 
 #hc-nav-wrapper .container {
-  max-width:1140px;
+  max-width:1240px;
   padding : 0.7em 0;
 }
 
@@ -112,7 +112,9 @@ h1, h2, h2, h3, h4, h5, h6 {
 
 #hc-nav-wrapper .hc-number-dist {
   color: #5b6a72;
-  font-size: 0.9em;
+  font-size: 0.8em;
+  display: block;
+  margin-top: 1.2em;
 }
 
 #hc-nav-wrapper .hc-number-dist a {
@@ -131,12 +133,12 @@ h1, h2, h2, h3, h4, h5, h6 {
 }
 
 #hc-nav-wrapper > .menu-toggle{
+  display: none;
   position: absolute;
   right: 0;
   top: 0;
   box-shadow: none;
   border: none;
-  display: inline-block;
   height: 70px;
   width: 70px;
   border-radius: 0;
@@ -208,11 +210,12 @@ h1, h2, h2, h3, h4, h5, h6 {
 }
 
 #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-  margin: 2em;
-  font-size: 2.3em;
-  font-weight: 300;
-  color: #4c842b;
-  line-height: 1.6;
+  max-width: 600px;
+    font-size: 2em;
+    font-weight: 300;
+    color: #4c842b;
+    line-height: 1.6;
+    margin: 0 auto 1em;
 }
 
 #hc-intro .learn-more {
@@ -287,6 +290,22 @@ h1, h2, h2, h3, h4, h5, h6 {
 
 #hc-promo .sales-terms ul {
   font-size: 1.1em;
+  margin-left: 1.2em;
+  list-style: disc;
+}
+
+#hc-promo .sales-terms .points {
+  background: rgba(216, 234, 205, 0.45);
+  border-radius: 10px;
+  min-height: 340px;
+}
+
+#hc-promo .sales-terms .points > div {
+  padding: 0.5em;
+}
+
+#hc-promo .sales-terms .points h5 {
+  text-align: center;
 }
 
 @media only screen and (max-width: 700px) {
@@ -318,7 +337,6 @@ h1, h2, h2, h3, h4, h5, h6 {
 /*--------------------------*/
 /* #hc-accom  */
 #hc-accom {
-  background: #C5E0B5;
   padding-top: 3em;
   padding-bottom: 6em;
 }
@@ -450,6 +468,7 @@ h1, h2, h2, h3, h4, h5, h6 {
 /*--------------------------*/
 /* #hc-team  */
 #hc-team {
+  background: #C5E0B5;
   padding-top: 3em;
   padding-bottom: 6em;
 }
@@ -468,6 +487,7 @@ h1, h2, h2, h3, h4, h5, h6 {
 
 #hc-team .team-member-name {
   margin-bottom: 5px;
+  color: #527141;
 }
 
 #hc-team .team-member-image {
@@ -496,8 +516,7 @@ h1, h2, h2, h3, h4, h5, h6 {
 
 /* #hc-press  */
 #hc-press {
-  margin-top: 2em;
-  background: linear-gradient(0deg, rgba(197, 224, 181, 0.68), #fff 75%);
+  margin-top: 4em;
   padding-bottom: 36px;
 }
 
@@ -724,7 +743,7 @@ h1, h2, h2, h3, h4, h5, h6 {
 
 @media only screen and (max-width: 1025px) {
   #hc-nav-wrapper {
-    width:calc(100% - 4em);
+    width:calc(100% - 2em);
   }
 
   #hc-nav-wrapper .menu-item {
@@ -735,6 +754,10 @@ h1, h2, h2, h3, h4, h5, h6 {
     padding:0px;
   }
 
+  #hc-nav-wrapper > .menu-toggle{
+    display:block;
+  }
+
   #hc-nav-wrapper .hc-navigation .hc-menu-container{
     display: none;
     position: absolute;
@@ -742,7 +765,7 @@ h1, h2, h2, h3, h4, h5, h6 {
     left: 0;
     background: #d8eacd;
     padding: 1em;
-    margin-left: -2em;
+    margin-left: -1em;
     top: 60px;
     padding-top: 3em;
   }
@@ -769,12 +792,25 @@ h1, h2, h2, h3, h4, h5, h6 {
     font-size: 2em;
   }
 
+  #hc-promo .sales-terms .points {
+    margin-bottom: 1em;
+    min-height: auto;
+  }
+
+  #hc-promo .sales-terms .points h5 {
+    font-size: 1.7em;
+  }
+
   #hc-team .hc-button-container a {
     font-size: 0.7em;
   }
 
   #hc-press .article {
     margin-bottom: 1em;
+  }
+
+  #hc-press .form {
+    width: 100%;
   }
 
   #hc-footer .footer-light .columns {
