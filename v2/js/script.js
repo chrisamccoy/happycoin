@@ -26,8 +26,8 @@ function scrollCheck(){
       $navWrapper = $('#hc-nav-wrapper');
 
   if (scrollVal > 1) {
-    $navWrapper.addClass('add-background');
+    //$navWrapper.addClass('add-background');
   } else {
-    $navWrapper.removeClass('add-background');
+    //$navWrapper.removeClass('add-background');
   }
 }
