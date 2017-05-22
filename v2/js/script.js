@@ -12,11 +12,18 @@ $(document).ready(function(){
   });
 
   $(document).on('click', '.learn-more', function(event){
-    event.preventDefault();
+    var $icon = $(this).find('i');
 
-    $('html, body').animate({
-        scrollTop: $('#hc-why-token').offset().top - 20
-    }, 500);
+    if ($icon.hasClass('ion-chevron-down')) {
+       $('.hc-intro-text').addClass('show')
+       $icon.removeClass('ion-chevron-down');
+       $icon.addClass('ion-chevron-up');
+    } else {
+       $('.hc-intro-text').removeClass('show')
+       $icon.removeClass('ion-chevron-up');
+       $icon.addClass('ion-chevron-down');
+    }
+
   });
 });
 
