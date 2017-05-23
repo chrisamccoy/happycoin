@@ -82,7 +82,7 @@ h1, h2, h2, h3, h4, h5, h6 {
 }
 
 #hc-nav-wrapper.add-background {
-  background-color: #8fb27a;
+  background-color: #5d794c;
 }
 
 #hc-nav-wrapper .container {
@@ -160,6 +160,10 @@ h1, h2, h2, h3, h4, h5, h6 {
   list-style: none;
   margin: 0;
   padding-left: 0;
+}
+
+#hc-nav-wrapper .hc-navigation .hc-menu-container .team {
+  display: none;
 }
 
 #hc-nav-wrapper .hc-navigation .hc-menu-container .hc-menu .menu-item {
@@ -446,7 +450,7 @@ h1, h2, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   background-color: #fff;
-  border-radius: 50%;
+  border-radius: 20%;
   border: 10px solid rgba(255, 255, 255, 0.2);
   width: 125px;
   height: 125px;
@@ -808,13 +812,14 @@ h1, h2, h2, h3, h4, h5, h6 {
 
   #hc-nav-wrapper .hc-navigation .hc-menu-container{
     display: none;
+    top: 60px;
+    padding-top: 3em;
     position: absolute;
     width: 110%;
     left: 0;
-    background: #8fb27a;
+    background: #5d794c;
     padding: 1em;
-    margin-left: -1em;
-    top: 60px;
+    top: 68px;
     padding-top: 3em;
   }
 
@@ -823,8 +828,16 @@ h1, h2, h2, h3, h4, h5, h6 {
     z-index: 1;
   }
 
+  #hc-nav-wrapper > .container {
+    width: 100%;
+  }
+
   #hc-nav-wrapper .hc-number-dist{
     color: #e1f5d4;
+  }
+
+  #hc-nav-wrapper .hc-navigation .hc-menu-container .team {
+    display: block;
   }
 
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
