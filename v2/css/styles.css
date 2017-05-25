@@ -198,10 +198,10 @@ h1, h2, h2, h3, h4, h5, h6 {
 
 /* #hc-intro  */
 #hc-intro {
-  /*
-  background: linear-gradient(0deg, rgb(197, 224, 181), rgba(197, 224, 181, 0.68) 75%);
-  */
-  background: white;
+  background: #2a2a2a;
+  background-image: url(../images/map-2.png);
+  background-position: 0 121px;
+  background-repeat: no-repeat;
 }
 
 #hc-intro .hc-intro-text-wrapper {
@@ -211,15 +211,17 @@ h1, h2, h2, h3, h4, h5, h6 {
   padding-top: 8em;
   padding-bottom: 1em;
   text-align: center;
+  color: #fff;
 }
 
 #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-  max-width: 600px;
-    font-size: 2em;
-    font-weight: 300;
-    color: #4c842b;
-    line-height: 1.6;
-    margin: 0 auto 1em;
+  max-width: 784px;
+  font-size: 1.9em;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.6;
+  margin: 1em auto 1em;
+  text-shadow: 1px 1px 2px #000;
 }
 
 #hc-intro .hc-intro-text p {
@@ -231,8 +233,9 @@ h1, h2, h2, h3, h4, h5, h6 {
 #hc-intro .learn-more {
   font-size: 1.4em;
   font-weight: bold;
-  color: #08b5e5;
+  color: #eefde4;
   line-height: 1;
+  text-shadow: 0 0 3px #333;
 }
 
 #hc-intro .hc-intro-text {
@@ -369,6 +372,44 @@ h1, h2, h2, h3, h4, h5, h6 {
   #hc-promo .desc {
     font-size: 1.2em;
     margin: 0.8em 0;
+  }
+}
+
+/*--------------------------*/
+/* #hc-what  */
+#hc-what {
+  padding-top: 3em;
+  padding-bottom: 6em;
+}
+
+#hc-what .columns {
+  text-align: center;
+}
+
+#hc-what .columns img {
+  width: 60%;
+  height: auto;
+  display: block;
+  margin:0 auto;
+}
+
+#hc-what .columns h6 {
+  color: #415834;
+  margin: 0.6em 0;
+}
+
+#hc-what .columns p {
+  margin: 1em auto;
+  font-size: 1.2em;
+}
+
+@media only screen and (max-width: 700px) {
+  #hc-accom .columns img {
+    width: 150px;
+  }
+
+  #hc-accom .columns p {
+    margin: 1em 0;
   }
 }
 
@@ -543,7 +584,7 @@ h1, h2, h2, h3, h4, h5, h6 {
 }
 
 #hc-team .team-member-image {
-  border-radius: 50%;
+    border-radius: 20%;
     margin-bottom: 10px;
     width: 60%;
     height: 60%;
