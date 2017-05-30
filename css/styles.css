@@ -35,6 +35,20 @@ h1, h2, h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 
+.hc-feature.inverted {
+  color: white;
+  background: #5d794c;
+}
+
+.hc-feature.inverted h1, .hc-feature.inverted h2, .hc-feature.inverted h3,
+.hc-feature.inverted h4, .hc-feature.inverted h5, .hc-feature.inverted h6 {
+  color: #fff;
+}
+
+.hc-feature .hc-feature-title {
+  font-size: 2em;
+}
+
 .hc-feature .hc-button-container {
   text-align:center; margin-top:3em;
 }
@@ -46,8 +60,12 @@ h1, h2, h2, h3, h4, h5, h6 {
   margin: 0 1em;
 }
 
-.hc-feature .hc-feature-title.inverted {
-  color: #496539;
+.hc-feature.inverted .hc-feature-title {
+  color: #fff;
+}
+
+.hc-feature .hc-feature-title {
+  color: #333;
 }
 
 .hc-feature .triangle-space{
@@ -208,7 +226,7 @@ h1, h2, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 2;
   overflow: hidden;
-  padding-top: 8em;
+  padding-top: 6em;
   padding-bottom: 1em;
   text-align: center;
   color: #fff;
@@ -222,6 +240,21 @@ h1, h2, h2, h3, h4, h5, h6 {
   line-height: 1.6;
   margin: 1em auto 1em;
   text-shadow: 1px 1px 2px #000;
+}
+
+#hc-intro .hc-intro-text-wrapper .hc-intro-small-lead {
+  font-weight: 300;
+  color: #fff;
+  margin: 0 auto 1em;
+  font-size: 1.4em;
+  max-width: 845px;
+  text-shadow: 1px 1px 2px #000;
+}
+
+#hc-intro .hc-intro-button a {
+  font-size: 1.3em;
+  height: 54px;
+  line-height: 54px;
 }
 
 #hc-intro .hc-intro-text p {
@@ -253,11 +286,6 @@ h1, h2, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
-#hc-intro .hc-intro-text-wrapper .hc-intro-small-lead {
-  margin-bottom: 1em;
-  color: #4c842b;
-  font-size: 1.4em;
-}
 
 #hc-map {
   position: relative;
@@ -285,6 +313,9 @@ h1, h2, h2, h3, h4, h5, h6 {
 /*--------------------------*/
 
 /* #hc-timer  */
+#hc-promo {
+  padding: 1em 0 3em;
+}
 #hc-promo .wrapper {
   padding: 1em 0;
 }
@@ -347,6 +378,54 @@ h1, h2, h2, h3, h4, h5, h6 {
 
 #hc-promo .sales-terms .points h5 {
   text-align: center;
+}
+
+#hc-promo .sales-summary h5 {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #333;
+  text-align: center;
+}
+
+#hc-promo .sales-summary .stats {
+  display: flex;
+  text-align:center;
+  margin: 1em auto;
+}
+
+#hc-promo .sales-summary .stats .stat {
+  width: 33.33333333%;
+}
+
+#hc-promo .sales-summary .stats .stat .text {
+  font-size: 2.4em;
+  font-weight: bold;
+  color: #5d794c;
+}
+
+#hc-promo .sales-summary .note {
+  color: #666;
+  font-size: 1em;
+  margin: 1em 0.5em;
+}
+
+#hc-promo .sales-summary .stats .stat .subtext {
+  font-size: 0.8em;
+  color: #666;
+}
+
+#hc-promo .sales-summary .highlight {
+  text-align: center;
+  margin: 1.2em auto;
+}
+
+#hc-promo .sales-summary .highlight .text {
+  font-size: 1.8em;
+}
+
+#hc-promo .sales-summary .highlight .subtext {
+  font-size: 0.9em;
+  color: #666;
 }
 
 @media only screen and (max-width: 700px) {
@@ -414,6 +493,57 @@ h1, h2, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------------*/
+/* #hc-apps  */
+#hc-apps {
+  padding-top: 3em;
+  padding-bottom: 6em;
+}
+
+#hc-apps .container {
+  max-width: 700px;
+}
+
+#hc-apps .lead {
+  font-size: 1.4em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+#hc-apps ul {
+    font-size: 1.2em;
+    margin-left: 1.2em;
+    list-style: disc;
+}
+
+/*--------------------------*/
+/* #hc-tech  */
+#hc-tech {
+  padding-top: 0;
+  padding-bottom: 6em;
+}
+
+#hc-tech .columns {
+  text-align: center;
+}
+
+#hc-tech .columns img {
+  width: 60%;
+  height: auto;
+  display: block;
+  margin:0 auto;
+}
+
+#hc-tech .columns h6 {
+  color: #415834;
+  margin: 0.6em 0;
+}
+
+#hc-tech .columns p {
+  margin: 1em auto;
+  font-size: 1.2em;
+}
+
+/*--------------------------*/
 /* #hc-accom  */
 #hc-accom {
   padding-top: 3em;
@@ -453,23 +583,8 @@ h1, h2, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------------*/
-/* #hc-vision  */
-#hc-vision {
-  padding-top: 3em;
-  padding-bottom: 6em;
-}
-
-#hc-vision .hc-accom-lead {
-  font-size: 20px;
-  text-align: center;
-  margin: 0 auto 2em;
-  max-width: 674px;
-}
-
-/*--------------------------*/
 /* #hc-why-token  */
 #hc-why-token {
-  background: #C5E0B5;
   padding-top: 4.5em;
   padding-bottom: 4em;
 }
@@ -504,7 +619,6 @@ h1, h2, h2, h3, h4, h5, h6 {
 }
 
 #hc-why-token .points h6 {
-  color: #415834;
   margin: 0.6em 0;
 }
 
@@ -561,7 +675,6 @@ h1, h2, h2, h3, h4, h5, h6 {
 /*--------------------------*/
 /* #hc-team  */
 #hc-team {
-  background: #C5E0B5;
   padding-top: 3em;
   padding-bottom: 6em;
 }
@@ -580,7 +693,6 @@ h1, h2, h2, h3, h4, h5, h6 {
 
 #hc-team .team-member-name {
   margin-bottom: 5px;
-  color: #527141;
 }
 
 #hc-team .team-member-image {
@@ -604,13 +716,16 @@ h1, h2, h2, h3, h4, h5, h6 {
   width: 25px;
 }
 
+#hc-team .ion-social-linkedin-outline {
+  color: white;
+}
+
 
 /*--------------------------*/
 
 /* #hc-press  */
 #hc-press {
   padding-bottom: 36px;
-  background: #c5e0b5;
 }
 
 #hc-press .form {
@@ -890,13 +1005,15 @@ h1, h2, h2, h3, h4, h5, h6 {
     font-size: 1.2em;
   }
 
-  .hc-feature .hc-feature-title {
-    font-size: 2em;
-  }
-
   #hc-promo .sales-terms .points {
     margin-bottom: 1em;
     min-height: auto;
+  }
+
+  #hc-promo .sales-summary h5 {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 1em 0 0;
   }
 
   #hc-promo .sales-terms .points h5 {
@@ -934,10 +1051,5 @@ h1, h2, h2, h3, h4, h5, h6 {
   #hc-nav-wrapper .hc-number-dist a {
     display:block;
     margin: 0px;
-  }
-
-  #hc-team .hc-team-world .graphic-wireframe-dotted-world {
-    width: 100%;
-    height: 200px;
   }
 }
