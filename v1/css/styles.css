@@ -217,8 +217,8 @@ h1, h2, h2, h3, h4, h5, h6 {
 /* #hc-intro  */
 #hc-intro {
   background: #2a2a2a;
-  background-image: url(../images/map-2.png);
-  background-position: 0 121px;
+  background-image: url(../images/map-bg.png);
+  background-position: top center;
   background-repeat: no-repeat;
 }
 
@@ -233,7 +233,7 @@ h1, h2, h2, h3, h4, h5, h6 {
 }
 
 #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-  max-width: 784px;
+  max-width: 810px;
   font-size: 1.9em;
   font-weight: 300;
   color: #fff;
@@ -394,13 +394,18 @@ h1, h2, h2, h3, h4, h5, h6 {
 }
 
 #hc-promo .sales-summary .stats .stat {
-  width: 33.33333333%;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0.1em;
 }
 
 #hc-promo .sales-summary .stats .stat .text {
   font-size: 2.4em;
   font-weight: bold;
   color: #5d794c;
+  background: #edf6e8;
+  border-radius: 10px;
+  margin-bottom: 0.1em;
 }
 
 #hc-promo .sales-summary .note {
@@ -428,9 +433,70 @@ h1, h2, h2, h3, h4, h5, h6 {
   color: #666;
 }
 
+#hc-promo .hc-project-schedule {
+  display: flex;
+  margin-top: 2em;
+}
+
+#hc-promo .hc-project-schedule .step {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+#hc-promo .hc-project-schedule .step-lead {
+  text-align: center;
+  font-weight: 100;
+  font-size: 1.1em;
+}
+
+#hc-promo .hc-project-schedule .step-desc h1, h2, h3, h4, h5, h6, p {
+  text-align: center;
+}
+
+#hc-promo .hc-project-schedule .step-desc p {
+  font-size: 0.8em;
+}
+
+#hc-promo .hc-project-schedule .step-desc {
+  background:#f1f1f1;
+  box-shadow: 4px 6px 6px rgba(136, 136, 136, 0.45);
+}
+
+#hc-promo .hc-project-schedule .step.active .step-desc {
+  background:#fcba1a;
+}
+
+#hc-promo .hc-project-schedule .step.one .step-desc {
+  padding: 2em 1em;
+}
+
+#hc-promo .hc-project-schedule .step.two .step-desc {
+  padding: 2.5em 1em;
+}
+
+#hc-promo .hc-project-schedule .step.three .step-desc {
+  padding: 3.6em 1em;
+}
+
+#hc-promo .hc-project-schedule .step.four .step-desc {
+  padding: 4.6em 1em;
+}
+
+#hc-promo .hc-project-schedule .step.five .step-desc {
+  padding: 6.3em 1em;
+}
+
 @media only screen and (max-width: 700px) {
   #hc-promo .features {
     flex-direction: column;
+  }
+
+  #hc-promo .sales-summary .stats .stat {
+    padding: 0.3em;
+  }
+
+  #hc-promo .sales-summary .stats .stat .text {
+    font-size: 2em;
   }
 
   #hc-promo .features > div {
@@ -451,6 +517,18 @@ h1, h2, h2, h3, h4, h5, h6 {
   #hc-promo .desc {
     font-size: 1.2em;
     margin: 0.8em 0;
+  }
+
+  #hc-promo .hc-project-schedule .step-desc {
+    padding: 2em 1em !important;
+  }
+
+  #hc-promo .hc-project-schedule {
+    display: block;
+  }
+
+  #hc-promo .hc-project-schedule .step {
+    margin-top:2em;
   }
 }
 
@@ -496,7 +574,7 @@ h1, h2, h2, h3, h4, h5, h6 {
 /* #hc-apps  */
 #hc-apps {
   padding-top: 3em;
-  padding-bottom: 6em;
+  padding-bottom: 3em;
 }
 
 #hc-apps .container {
@@ -518,8 +596,8 @@ h1, h2, h2, h3, h4, h5, h6 {
 /*--------------------------*/
 /* #hc-tech  */
 #hc-tech {
-  padding-top: 0;
-  padding-bottom: 6em;
+  padding-top: 3em;
+  padding-bottom: 3em;
 }
 
 #hc-tech .columns {
@@ -547,7 +625,7 @@ h1, h2, h2, h3, h4, h5, h6 {
 /* #hc-accom  */
 #hc-accom {
   padding-top: 3em;
-  padding-bottom: 6em;
+  padding-bottom: 3em;
 }
 
 #hc-accom .columns {
@@ -676,7 +754,7 @@ h1, h2, h2, h3, h4, h5, h6 {
 /* #hc-team  */
 #hc-team {
   padding-top: 3em;
-  padding-bottom: 6em;
+  padding-bottom: 3em;
 }
 
 #hc-team .hc-team-lead {

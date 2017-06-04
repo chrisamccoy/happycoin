@@ -22,6 +22,7 @@ $(document).ready(function(){
        $('.hc-intro-text').removeClass('show')
        $icon.removeClass('ion-chevron-up');
        $icon.addClass('ion-chevron-down');
+       $(window).scrollTop(0);
     }
 
   });
