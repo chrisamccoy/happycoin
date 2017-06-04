@@ -218,8 +218,9 @@ h1, h2, h2, h3, h4, h5, h6 {
 #hc-intro {
   background: #2a2a2a;
   background-image: url(../images/map-bg.png);
-  background-position: top center;
+  background-position: center 80px;
   background-repeat: no-repeat;
+  background-size: 90%;
 }
 
 #hc-intro .hc-intro-text-wrapper {
@@ -251,10 +252,15 @@ h1, h2, h2, h3, h4, h5, h6 {
   text-shadow: 1px 1px 2px #000;
 }
 
+#hc-intro .hc-intro-button {
+  padding: 1em 0;
+}
+
 #hc-intro .hc-intro-button a {
   font-size: 1.3em;
   height: 54px;
   line-height: 54px;
+  margin-bottom: 0;
 }
 
 #hc-intro .hc-intro-text p {
@@ -663,8 +669,8 @@ h1, h2, h2, h3, h4, h5, h6 {
 /*--------------------------*/
 /* #hc-why-token  */
 #hc-why-token {
-  padding-top: 4.5em;
-  padding-bottom: 4em;
+  padding-top: 3em;
+  padding-bottom: 3em;
 }
 
 #hc-why-token .desc {
