@@ -49,6 +49,10 @@ h1, h2, h2, h3, h4, h5, h6 {
   font-size: 2em;
 }
 
+.hc-feature .hc-feature-title.break {
+  margin: 2em 0 1em;
+}
+
 .hc-feature .hc-button-container {
   text-align:center; margin-top:3em;
 }
@@ -526,7 +530,7 @@ h1, h2, h2, h3, h4, h5, h6 {
 
   #hc-promo .desc {
     font-size: 1.2em;
-    margin: 0.8em 0;
+    margin: 0.8em 0.5em;
   }
 
   #hc-promo .hc-project-schedule .step-desc {
@@ -589,8 +593,8 @@ h1, h2, h2, h3, h4, h5, h6 {
     width: 150px;
   }
 
-  #hc-accom .columns p {
-    margin: 1em 0;
+  #hc-accom .columns h6 {
+    font-size: 1.6em;
   }
 }
 
@@ -623,14 +627,14 @@ h1, h2, h2, h3, h4, h5, h6 {
   }
 
   #hc-apps .container {
-    width: 95%;
+    width: 100%;
   }
 }
 
 /*--------------------------*/
 /* #hc-tech  */
 #hc-tech {
-  padding-top: 3em;
+  padding-top: 0;
   padding-bottom: 3em;
 }
 
@@ -697,7 +701,7 @@ h1, h2, h2, h3, h4, h5, h6 {
   }
 
   #hc-accom .columns p {
-    margin: 1em 0;
+    margin: 1em 0 3em;
   }
 }
 
@@ -1150,6 +1154,18 @@ h1, h2, h2, h3, h4, h5, h6 {
     font-size: 0.7em;
   }
 
+  #hc-team .team-member-title {
+    height: auto;
+  }
+
+  #hc-team .team-member-image.first {
+    margin-top: 0;
+  }
+
+  #hc-team .team-member-image {
+    margin-top: 3em;
+  }
+
   #hc-press .article {
     margin-bottom: 1em;
   }
@@ -1207,11 +1223,25 @@ h1, h2, h2, h3, h4, h5, h6 {
     margin: 0.5em 0 1em !important;
   }
 
+  .hc-feature .hc-feature-title.break {
+    padding: 1em 0 0;
+    border-top: 1px solid #666;
+  }
+
   #hc-footer .columns h3 {
     text-align: left;
     padding-bottom: 0.5em;
     border-bottom: 1px solid #467b28;
     margin-bottom: 0.5em;
     font-weight: bold;
+  }
+
+  #hc-why-token .points p {
+    margin-bottom: 3em;
+  }
+
+  #hc-why-token .points h6 {
+    margin: 0.5em 0;
+    font-size: 1.6em;
   }
 }
