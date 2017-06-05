@@ -234,8 +234,8 @@ h1, h2, h2, h3, h4, h5, h6 {
 }
 
 #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-  max-width: 810px;
-  font-size: 1.9em;
+  max-width: 860px;
+  font-size: 1.82em;
   font-weight: 300;
   color: #fff;
   line-height: 1.6;
@@ -617,6 +617,16 @@ h1, h2, h2, h3, h4, h5, h6 {
     list-style: disc;
 }
 
+@media only screen and (max-width: 700px) {
+  #hc-apps ul {
+    margin-bottom: 1rem;
+  }
+
+  #hc-apps .container {
+    width: 95%;
+  }
+}
+
 /*--------------------------*/
 /* #hc-tech  */
 #hc-tech {
@@ -644,6 +654,13 @@ h1, h2, h2, h3, h4, h5, h6 {
   margin: 1em auto;
   font-size: 1.2em;
 }
+
+@media only screen and (max-width: 700px) {
+  #hc-tech .columns img {
+    width: 40%;
+  }
+}
+
 
 /*--------------------------*/
 /* #hc-accom  */
