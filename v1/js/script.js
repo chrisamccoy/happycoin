@@ -26,6 +26,19 @@ $(document).ready(function(){
     }
 
   });
+
+  $('#hc-tech .columns .tech-lead').click(function(){
+    if (!$(this).hasClass('active')) {
+      $('#hc-tech .columns .tech-desc').slideUp();
+      $('#hc-tech .columns .tech-lead').removeClass('active');
+      $(this).addClass('active');
+      $(this).next('.tech-desc').slideToggle();
+    } else {
+      $('#hc-tech .columns .tech-lead').removeClass('active');
+      $(this).next('.tech-desc').slideToggle();
+    }
+    // console.log($(this).next('.tech-desc'));
+  });
 });
 
 
