@@ -465,7 +465,187 @@ h1, h2, h2, h3, h4, h5, h6 {
   color: #666;
 }
 
-#hc-promo .hc-project-schedule {
+#hc-promo .hc-project-schedule .timeline {
+  position: relative;
+}
+
+#hc-promo .hc-project-schedule .timeline .center-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 10;
+  height: 100%;
+  width: 2px;
+  background:#c0c0c0;
+  transform: translate(-1px);
+}
+
+#hc-promo .hc-project-schedule .timeline .year {
+  position: relative;
+  z-index: 20;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .name {
+  font-size: 2em;
+  text-align: center;
+  background-color: white;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items:before {
+  content: "";
+  display: table;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item.right {
+  margin-left: auto;
+  padding: 0 0 0 7rem;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item.left {
+  margin-right: auto;
+  padding: 0 7rem 0 0;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item.right:before {
+  left: -6px;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item.left:before {
+  right: -6px;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item:last-child {
+  margin-bottom: 2rem;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item:first-child {
+  margin-top: 3.4rem;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item {
+  position: relative;
+  -webkit-flex-basis: calc(480px - 70px);
+  -ms-flex-preferred-size: calc(480px - 70px);
+  flex-basis: calc(480px - 70px);
+  margin: 5rem 0 0;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item:before {
+  content: '';
+  position: absolute;
+  z-index: 20;
+  top: -webkit-calc(1.8rem + 7px);
+  top: calc(1.8rem + 7px);
+  width: 8px;
+  height: 8px;
+  border: 2px solid #182a36;
+  border-radius: 9999px;
+  background-color: #182a36;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item.right .date {
+    left: 6px;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item.left .date {
+    right: 6px;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item .date {
+    position: absolute;
+    z-index: 10;
+    top: calc(1.8rem + 4px);
+    font-size: 14px;
+    line-height: 18px;
+    color: #000;
+    width: calc(7rem - 6px);
+    text-align: center;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item.right .date:before {
+    left: -2px;
+    right: -1px;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item.left .date:before {
+    right: -2px;
+    left: -1px;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item .date:before {
+    z-index: 10;
+    top: 50%;
+    height: 2px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item .date:after, #hc-promo .hc-project-schedule .timeline .year .items .item .date:before {
+    background-color: #9b9b9b;
+    content: '';
+    position: absolute;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item .date span {
+    position: relative;
+    z-index: 20;
+    display: inline-block;
+    background-color: #fff;
+    padding: 0 4px;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item.right .date:after {
+    right: -2px;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item.left .date:after {
+    left: -2px;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item .date:after {
+    top: -6px;
+    bottom: -6px;
+    width: 2px;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item .date:after, #hc-promo .hc-project-schedule .timeline .year .items .item .date:before {
+    background-color: #969696;
+    content: '';
+    position: absolute;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item .box {
+    border: 1px solid #c0c0c0;
+    background-color: white;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item .box .title {
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 1.8rem 1.8rem 1.2rem;
+    margin: 0;
+    letter-spacing: .02em;
+    text-align: left;
+}
+
+#hc-promo .hc-project-schedule .timeline .year .items .item .box .content {
+    font-size: 16px;
+    line-height: 20px;
+    color: #a6a6a6;
+    padding: 0 1.8rem 1.8rem;
+    letter-spacing: .02em;
+}
+
+/*#hc-promo .hc-project-schedule {
   display: flex;
   margin-top: 2em;
 }
@@ -521,7 +701,7 @@ h1, h2, h2, h3, h4, h5, h6 {
 
 #hc-promo .hc-project-schedule .step.five .step-desc {
   padding: 6.3em 1em;
-}
+}*/
 
 @media only screen and (max-width: 700px) {
   #hc-promo .features {
@@ -556,7 +736,61 @@ h1, h2, h2, h3, h4, h5, h6 {
     margin: 0.8em 0.5em;
   }
 
-  #hc-promo .hc-project-schedule .step-desc {
+  #hc-promo .hc-project-schedule .timeline .year {
+    margin-top: 2rem;
+  }
+
+  #hc-promo .hc-project-schedule .timeline .year .items .item.left,
+  #hc-promo .hc-project-schedule .timeline .year .items .item.right {
+    padding: 0px;
+    margin-bottom : 0px !important;
+  }
+
+  #hc-promo .hc-project-schedule .timeline .year .items .item {
+    position: relative;
+    -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    margin: 3.6rem 0!important;
+  }
+
+  #hc-promo .hc-project-schedule .timeline .year .items .item .date {
+    position: relative;
+    z-index: 10;
+    top: auto!important;
+    left: auto!important;
+    bottom: auto!important;
+    right: auto!important;
+    width: 100%;
+    padding: 0 0 10px;
+    text-align: center;
+  }
+
+  #hc-promo .hc-project-schedule .timeline .year .items .item .date span {
+    position: relative;
+    z-index: 20;
+    display: block;
+    padding: 0 4px;
+    line-height: 22px;
+  }
+
+  #hc-promo .hc-project-schedule .timeline .year .items .item .box .title {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  #hc-promo .hc-project-schedule .timeline .year .items .item .box .content {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  #hc-promo .hc-project-schedule .timeline .year .items .item .date:after,
+  #hc-promo .hc-project-schedule .timeline .year .items .item .date:before,
+  #hc-promo .hc-project-schedule .timeline .year .items .item:before {
+    display: none;
+  }
+
+  /*#hc-promo .hc-project-schedule .step-desc {
     padding: 2em 1em !important;
     font-size: 1.3em;
   }
@@ -580,7 +814,7 @@ h1, h2, h2, h3, h4, h5, h6 {
 
   #hc-promo .hc-project-schedule .bullet {
     display: inline;
-  }
+  }*/
 }
 
 /*--------------------------*/
