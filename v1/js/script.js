@@ -1,5 +1,6 @@
 $(document).ready(function(){
   scrollCheck();
+  whyTextToggle();
 
   // on scroll
   $(window).scroll(function(){
@@ -90,7 +91,17 @@ function generateCircle (element, value) {
 }
 
 function renderCircles() {
-  generateCircle('circle1', 0.75);
-  generateCircle('circle2', 0.15);
+  generateCircle('circle1', 0.60);
+  generateCircle('circle2', 0.25);
   generateCircle('circle3', 0.15);
+}
+
+function whyTextToggle () {
+  var $whyFeature = $('#hc-why-token'),
+      $columns = $whyFeature.find('.points .three.columns');
+
+  $columns.click(function(){
+    $columns.find('p').addClass('ellipsis');
+    $(this).find('p').toggleClass('ellipsis');
+  });
 }
