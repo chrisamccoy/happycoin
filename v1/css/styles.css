@@ -23,7 +23,7 @@
 }
 
 body {
-  font-family: 'Aleo', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 }
 a {
@@ -37,6 +37,7 @@ p {
 }
 
 h1, h2, h2, h3, h4, h5, h6 {
+    font-family: 'Francois One', sans-serif;
     text-rendering: optimizeLegibility;
     line-height: 1.25;
     font-weight: 700;
@@ -716,6 +717,7 @@ h1, h2, h2, h3, h4, h5, h6 {
   }
 
   .hc-intro-button a {
+    font-size: 1em;
     width:100% !important;
     margin-top : 1em;
   }
@@ -1383,7 +1385,7 @@ h1, h2, h2, h3, h4, h5, h6 {
 
   #hc-nav-wrapper .hc-number-dist{
     color: #5d794c;
-    font-size: 0.9em;
+    font-size: 0.8em;
     margin-top: 0.4em;
   }
 
