@@ -28,19 +28,6 @@ $(document).ready(function(){
 
   });
 
-  $('#hc-tech .columns .tech-lead').click(function(){
-    if (!$(this).hasClass('active')) {
-      $('#hc-tech .columns .tech-desc').slideUp();
-      $('#hc-tech .columns .tech-lead').removeClass('active');
-      $(this).addClass('active');
-      $(this).next('.tech-desc').slideToggle();
-    } else {
-      $('#hc-tech .columns .tech-lead').removeClass('active');
-      $(this).next('.tech-desc').slideToggle();
-    }
-    // console.log($(this).next('.tech-desc'));
-  });
-
   renderCircles();
 });
 
@@ -97,11 +84,10 @@ function renderCircles() {
 }
 
 function whyTextToggle () {
-  var $whyFeature = $('#hc-why-token'),
-      $columns = $whyFeature.find('.points .three.columns');
+  var $columns = $('.points .columns');
 
   $columns.click(function(){
-    $columns.find('p').addClass('ellipsis');
-    $(this).find('p').toggleClass('ellipsis');
+    $columns.find('.desc').addClass('ellipsis');
+    $(this).find('.desc').toggleClass('ellipsis');
   });
 }
