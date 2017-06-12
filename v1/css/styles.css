@@ -1352,6 +1352,15 @@ h1, h2, h2, h3, h4, h5, h6 {
 /* #hc-footer  */
 
 @media only screen and (max-width: 1025px) {
+  .points p {
+    margin-bottom: 3em;
+  }
+
+  .points h6 {
+    margin: 0.5em 0;
+    font-size: 1.6em;
+  }
+
   #hc-nav-wrapper {
     width:calc(100% - 2em);
   }
@@ -1488,15 +1497,6 @@ h1, h2, h2, h3, h4, h5, h6 {
     padding-bottom: 0.5em;
     border-bottom: 1px solid #ffc4a9;
     margin-bottom: 0.5em;
-  }
-
-  #hc-why-token .points p {
-    margin-bottom: 3em;
-  }
-
-  #hc-why-token .points h6 {
-    margin: 0.5em 0;
-    font-size: 1.6em;
   }
 
   .hc-project-schedule {
