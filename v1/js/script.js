@@ -87,7 +87,7 @@ function whyTextToggle () {
   var $columns = $('.points .columns');
 
   $columns.click(function(){
-    $columns.find('.desc').addClass('ellipsis');
-    $(this).find('.desc').toggleClass('ellipsis');
+    $columns.find('.points-desc').addClass('ellipsis');
+    $(this).find('.points-desc').toggleClass('ellipsis');
   });
 }
