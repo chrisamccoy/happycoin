@@ -1,31 +1,8 @@
-@font-face {
-  font-family: 'Aleo';
-  font-style: normal;
-  font-weight: normal;
-  src: url('../fonts/aleo-regular-webfont.eot'); /* IE9 Compat Modes */
-  src: url('aleo-regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('aleo-regular-webfont.woff2') format('woff2'), /* Super Modern Browsers */
-       url('aleo-regular-webfont.woff') format('woff'), /* Pretty Modern Browsers */
-       url('aleo-regular-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('aleo-regular-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
-}
-
-@font-face {
-  font-family: 'Aleo';
-  font-style: normal;
-  font-weight: bold;
-  src: url('../fonts/aleo-bold-webfont.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/aleo-bold-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/aleo-bold-webfont.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/aleo-bold-webfont.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../fonts/aleo-bold-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/aleo-bold-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
-}
-
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 }
+
 a {
   cursor:pointer;
   text-decoration: none;
@@ -48,25 +25,8 @@ h1, h2, h2, h3, h4, h5, h6 {
   padding: 1em;
 }
 
-.email-widget {
-  text-align: center;
-  background : #c7dfb8;
-  padding:2em;
-  margin-bottom: 2em;
-}
-
 .email-widget h4 {
   color:#456332;
-}
-
-.email-widget .button-primary {
-  width: 100%;
-}
-
-.button-primary.large-button {
-  font-size: 1em;
-  background: #73ba4a;
-  border-color: #73ba4a;
 }
 
 .button-primary.large-button:hover {
@@ -335,7 +295,7 @@ h1, h2, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 2;
   overflow: hidden;
-  padding-top: 6em;
+  padding-top: 4em;
   padding-bottom: 1em;
   text-align: center;
   color: #fff;
@@ -1124,27 +1084,42 @@ h1, h2, h2, h3, h4, h5, h6 {
 
 /*--------------------------*/
 
-/* #hc-press  */
-#hc-press {
-  padding-bottom: 36px;
+/* .hc-email  */
+.hc-email {
+  background : #c7dfb8;
 }
 
-#hc-press .form {
-  width: 60%;
-  margin-top: 1em;
+.email-widget {
+  text-align: center;
 }
 
-#hc-press .form input[type="text"] {
+.hc-email .form {
+  width: 70%;
+  margin: 2em auto 0;
+}
+
+.hc-email .form input[type="text"] {
   font-size: 1.6em;
   height: 2em;
+  margin-bottom: 0;
 }
 
-#hc-press .form button {
+.hc-email .form input[type="submit"] {
   font-size: 1.6em;
   height: 2em;
   background: #87bb68;
   border: none;
   width: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+  .hc-email .form {
+    width: 100%;
+  }
+
+  .hc-email .form input[type="submit"] {
+    margin-top: 1em;
+  }
 }
 
 /* #hc-press  */
