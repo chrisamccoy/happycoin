@@ -245,14 +245,14 @@ function toggleCardTasks() {
       $bars = $cards.find('.bars');
 
   $barsHead.click(function(){
-    if ($(this).find('h6 i').hasClass('ion-chevron-down')) {
-      $(this).find('h6 i').removeClass('ion-chevron-down');
-      $(this).find('h6 i').addClass('ion-chevron-up');
+    if ($(this).find('h6 i').hasClass('ion-chevron-up')) {
+      $(this).find('h6 i').removeClass('ion-chevron-up');
+      $(this).find('h6 i').addClass('ion-chevron-down');
       $(this).next('.bars').addClass('hidden');
     } else {
       $bars.addClass('hidden');
-      $barsHead.find('h6 i').removeClass('ion-chevron-down');
-      $barsHead.find('h6 i').addClass('ion-chevron-up');
+      $barsHead.find('h6 i').removeClass('ion-chevron-up');
+      $barsHead.find('h6 i').addClass('ion-chevron-down');
       $(this).find('h6 i').toggleClass('ion-chevron-up ion-chevron-down');
       $(this).next('.bars').toggleClass('hidden');
     }

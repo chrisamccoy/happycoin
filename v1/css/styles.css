@@ -1132,6 +1132,10 @@ h1, h2, h2, h3, h4, h5, h6 {
   margin:1rem 0px;
 }
 
+#hc-roadmap .hc-roadmap-phases h1, #hc-roadmap .hc-roadmap-phases p {
+  color:white;
+}
+
 #hc-roadmap .row {
   margin-bottom:2em;
 }
