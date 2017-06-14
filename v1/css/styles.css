@@ -129,6 +129,9 @@ p {
 
 .points .columns img {
   width:125px;
+  height: auto;
+  display: block;
+  margin:0 auto;
 }
 
 .hc-intro-button {
@@ -920,13 +923,6 @@ p {
   text-align: center;
 }
 
-#hc-tech .columns img {
-  width: 60%;
-  height: auto;
-  display: block;
-  margin:0 auto;
-}
-
 #hc-tech .columns h6 {
   color: #415834;
   margin: 0.6em 0;
@@ -962,12 +958,6 @@ p {
   text-align: center;
 }
 
-#hc-accom .columns img {
-  width: 60%;
-  height: auto;
-  display: block;
-  margin:0 auto;
-}
 
 #hc-accom .columns h6 {
   color: #415834;
@@ -1011,8 +1001,8 @@ p {
 }
 
 #hc-why-token .points .icon img {
-  height: 85px;
-  width: 85px;
+  height: 110px;
+  width: 110px;
 }
 
 #hc-why-token .points h6 {
