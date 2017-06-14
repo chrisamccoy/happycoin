@@ -104,9 +104,10 @@ function generateBar (element, value) {
 }
 
 function renderCircles() {
-  generateCircle('circle1', 0.60, '#5d794c', '2rem');
-  generateCircle('circle2', 0.25, '#5d794c', '2rem');
-  generateCircle('circle3', 0.15, '#5d794c', '2rem');
+  generateCircle('circle1', 0.33, '#5d794c', '2rem');
+  generateCircle('circle2', 0.33, '#5d794c', '2rem');
+  generateCircle('circle3', 0.33, '#5d794c', '2rem');
+  generateCircle('circle4', 0.01, '#5d794c', '2rem');
 }
 
 function whyTextToggle () {
