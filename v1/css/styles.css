@@ -113,6 +113,10 @@ p {
   transform: scale(1);
 }
 
+.points .columns h6 {
+  font-weight: bold;
+}
+
 .points {
   margin-top: 1em;
   text-align: center;
@@ -916,7 +920,8 @@ p {
 
 /*--------------------------*/
 /* #hc-tech  */
-#hc-tech {
+#hc-tech.hc-feature.lite {
+  background: rgb(222, 243, 209);
 }
 
 #hc-tech .columns {
