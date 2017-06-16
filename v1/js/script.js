@@ -31,6 +31,7 @@ $(document).ready(function(){
   renderCircles();
   renderCards();
   toggleCardTasks();
+  toggleAppsDesc();
 });
 
 
@@ -330,4 +331,16 @@ function toggleCardTasks() {
       $(this).next('.bars').toggleClass('hidden');
     }
   });
+}
+
+function toggleAppsDesc() {
+  var $apps = $('#hc-apps'),
+      $li   = $apps.find('li'),
+      $subtext = $apps.find('.subtext');
+
+  $li.click(function (){
+    $subtext.removeClass('show');
+    $(this).next('.subtext').toggleClass('show');
+  });
+
 }
