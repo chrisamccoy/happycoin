@@ -335,12 +335,19 @@ function toggleCardTasks() {
 
 function toggleAppsDesc() {
   var $apps = $('#hc-apps'),
-      $li   = $apps.find('li'),
-      $subtext = $apps.find('.subtext');
+      $row  = $apps.find('.hc-apps-row'),
+      $title = $row.find('.title'),
+      $reveal = $row.find('.title-reveal');
 
-  $li.click(function (){
-    $subtext.removeClass('show');
-    $(this).next('.subtext').toggleClass('show');
+  $title.click(function(){
+    var data = $(this).data(),
+        tabName = data.tab;
+
+    $title.find('i').removeClass('ion-chevron-up');
+    $title.find('i').addClass('ion-chevron-down');
+
+    $reveal.addClass('hide');
+    $(this).find('i').toggleClass('ion-chevron-up ion-chevron-down');
+    $(this).parent('.hc-apps-row').find('.title-reveal[data-tab="'+tabName+'"]').toggleClass('hide');
   });
-
 }
