@@ -973,6 +973,8 @@ p {
   padding: 2em 0px;
   color: #45634f;
   margin-bottom: 1em;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(38, 49, 31, 0.23);
 }
 
 #hc-apps .hc-apps-row .title-reveal.hide {
