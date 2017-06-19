@@ -106,9 +106,12 @@ p {
 .points .columns:hover {
   transition: all .2s ease-in;
   transform: scale(1.1);
+  background: rgba(199, 223, 184, 0.21);
+  border-radius: 25px;
 }
 
 .points .columns {
+  padding-top: 1em;
   transition: all .2s ease-in;
   transform: scale(1);
 }
@@ -257,7 +260,6 @@ p {
   font-size: 0.9em;
   display: block;
   margin-top: 1.1em;
-  font-weight: bold;
 }
 
 #hc-nav-wrapper .hc-number-dist a {
@@ -265,6 +267,10 @@ p {
   color:inherit;
   display: inline-block;
   margin: 1em 0em;
+}
+
+#hc-nav-wrapper .hc-number-dist .away {
+  text-decoration: underline;
 }
 
 #hc-nav-wrapper .hc-navigation {
@@ -328,7 +334,6 @@ p {
 #hc-nav-wrapper .hc-navigation .hc-menu-container .hc-menu .menu-item a {
   color: #456332;
   font-size: 18px;
-  font-weight: bold;
   text-decoration: none;
 }
 /* #hc-nav-wrapper  */
@@ -356,7 +361,7 @@ p {
 
 #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
   max-width: 1050px;
-  font-size: 1.82em;
+  font-size: 1.6em;
   font-weight: 300;
   color: #fff;
   line-height: 1.6;
@@ -1132,6 +1137,28 @@ p {
   }
 }
 
+/*--------------------------*/
+/* #hc-specs  */
+#hc-specs ul {
+  max-width: 600px;
+  margin: auto;
+  padding: 1em;
+}
+
+#hc-specs ul li h5 span {
+  margin-left : 1em;
+}
+
+/*--------------------------*/
+/* #hc-first-token  */
+#hc-first-token {
+  max-width: 800px;
+  margin: auto;
+}
+
+#hc-first-token ul {
+  padding: 1em;
+}
 
 /*--------------------------*/
 /* #hc-accom  */
