@@ -1,25 +1,25 @@
 @font-face {
- font-family: ‘Aleo’;
+ font-family: 'Aleo';
  font-style: normal;
  font-weight: normal;
- src: url(‘../fonts/aleo-regular-webfont.eot’); /* IE9 Compat Modes */
- src: url(‘aleo-regular-webfont.eot?#iefix’) format(‘embedded-opentype’), /* IE6-IE8 */
-      url(‘aleo-regular-webfont.woff2’) format(‘woff2’), /* Super Modern Browsers */
-      url(‘aleo-regular-webfont.woff’) format(‘woff’), /* Pretty Modern Browsers */
-      url(‘aleo-regular-webfont.ttf’)  format(‘truetype’), /* Safari, Android, iOS */
-      url(‘aleo-regular-webfont.svg#svgFontName’) format(‘svg’); /* Legacy iOS */
+ src: url('../fonts/aleo-regular-webfont.eot'); /* IE9 Compat Modes */
+ src: url('../fonts/aleo-regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+      url('../fonts/aleo-regular-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+      url('../fonts/aleo-regular-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+      url('../fonts/aleo-regular-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+      url('../fonts/aleo-regular-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
 @font-face {
- font-family: ‘Aleo’;
+ font-family: 'Aleo';
  font-style: normal;
  font-weight: bold;
- src: url(‘../fonts/aleo-bold-webfont.eot’); /* IE9 Compat Modes */
- src: url(‘../fonts/aleo-bold-webfont.eot?#iefix’) format(‘embedded-opentype’), /* IE6-IE8 */
-      url(‘../fonts/aleo-bold-webfont.woff2’) format(‘woff2’), /* Super Modern Browsers */
-      url(‘../fonts/aleo-bold-webfont.woff’) format(‘woff’), /* Pretty Modern Browsers */
-      url(‘../fonts/aleo-bold-webfont.ttf’)  format(‘truetype’), /* Safari, Android, iOS */
-      url(‘../fonts/aleo-bold-webfont.svg#svgFontName’) format(‘svg’); /* Legacy iOS */
+ src: url('../fonts/aleo-bold-webfont.eot'); /* IE9 Compat Modes */
+ src: url('../fonts/aleo-bold-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+      url('../fonts/aleo-bold-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+      url('../fonts/aleo-bold-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+      url('../fonts/aleo-bold-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+      url('../fonts/aleo-bold-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
 body {
