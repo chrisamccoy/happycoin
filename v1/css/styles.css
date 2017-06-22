@@ -1274,6 +1274,54 @@ p {
 }
 
 /*--------------------------*/
+/* #hc-terms  */
+#hc-terms h3 {
+  margin : 0px;
+  margin-top: 1em;
+}
+
+#hc-terms p {
+  font-size: 1.3em;
+  margin-bottom: 0.8em;
+}
+
+#hc-terms .lite-header {
+  font-weight: lighter;
+  font-size: 2em;
+  color: rgb(155, 183, 138);
+  margin-top: 1em;
+}
+
+#hc-terms .transaction-form {
+  max-width: 550px;
+  margin: 2em auto;
+  border: 1px solid #8eb17a;
+  padding: 1em;
+  border-radius: 25px;
+}
+
+#hc-terms .transaction-form .lite-header {
+  margin-top : 0px;
+  font-size: 1.5em;
+}
+
+#hc-terms .transaction-form p,
+#hc-terms .transaction-form input,
+#hc-terms .transaction-form form {
+  margin : 0px;
+}
+
+#hc-terms .transaction-form p {
+  font-size: 0.7em;
+  margin-bottom: 1em;
+}
+
+#hc-terms .transaction-form button {
+  margin-top: 1em;
+  width: 100%;
+}
+
+/*--------------------------*/
 /* #hc-first-token  */
 #hc-first-token {
   max-width: 800px;
