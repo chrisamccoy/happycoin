@@ -115,7 +115,9 @@ function whyTextToggle () {
   var $columns = $('.points .columns');
 
   $columns.click(function(){
+    $columns.removeClass('active');
     $columns.find('.points-desc').addClass('ellipsis');
+    $(this).toggleClass('active');
     $(this).find('.points-desc').toggleClass('ellipsis');
   });
 }

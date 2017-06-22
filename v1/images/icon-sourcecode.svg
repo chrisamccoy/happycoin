@@ -6,11 +6,11 @@
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g transform="translate(1.000000, 1.000000)">
-            <path d="M25.4585,17.334 C25.4585,18.529 24.4685,19.5 23.2445,19.5 L2.2135,19.5 C0.9915,19.5 0.0005,18.529 0.0005,17.334 L0.0005,2.167 C0.0005,0.971 0.9915,0 2.2135,0 L23.2445,0 C24.4685,0 25.4585,0.971 25.4585,2.167 L25.4585,17.334 L25.4585,17.334 Z" id="Stroke-1" stroke="#384e2c"></path>
-            <path d="M0,5 L24.917,5" id="Stroke-3" stroke="#384e2c"></path>
-            <polyline id="Stroke-5" stroke="#384e2c" points="17.1479 9.75 19.8559 12.459 17.1479 15.166"></polyline>
-            <path d="M11.375,13.8975 L14.439,10.8345" id="Stroke-7" stroke="#384e2c"></path>
-            <polyline id="Stroke-9" stroke="#384e2c" points="8.667 15.166 5.959 12.459 8.667 9.75"></polyline>
+            <path d="M25.4585,17.334 C25.4585,18.529 24.4685,19.5 23.2445,19.5 L2.2135,19.5 C0.9915,19.5 0.0005,18.529 0.0005,17.334 L0.0005,2.167 C0.0005,0.971 0.9915,0 2.2135,0 L23.2445,0 C24.4685,0 25.4585,0.971 25.4585,2.167 L25.4585,17.334 L25.4585,17.334 Z" id="Stroke-1" stroke="#fff"></path>
+            <path d="M0,5 L24.917,5" id="Stroke-3" stroke="#fff"></path>
+            <polyline id="Stroke-5" stroke="#fff" points="17.1479 9.75 19.8559 12.459 17.1479 15.166"></polyline>
+            <path d="M11.375,13.8975 L14.439,10.8345" id="Stroke-7" stroke="#fff"></path>
+            <polyline id="Stroke-9" stroke="#fff" points="8.667 15.166 5.959 12.459 8.667 9.75"></polyline>
         </g>
     </g>
 </svg>
