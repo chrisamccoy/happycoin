@@ -32,6 +32,7 @@ $(document).ready(function(){
   renderCards();
   toggleCardTasks();
   toggleAppsDesc();
+  toggleIncentive();
 });
 
 
@@ -351,5 +352,15 @@ function toggleAppsDesc() {
     $reveal.addClass('hide');
     $(this).find('i').toggleClass('ion-chevron-up ion-chevron-down');
     $(this).parent('.hc-apps-row').find('.title-reveal[data-tab="'+tabName+'"]').toggleClass('hide');
+  });
+}
+
+function toggleIncentive () {
+  var $network = $('#hc-network-effects'),
+      $incentive = $network.find('.incentive');
+
+  $incentive.click(function () {
+    $incentive.removeClass('reveal');
+    $(this).toggleClass('reveal');
   });
 }
