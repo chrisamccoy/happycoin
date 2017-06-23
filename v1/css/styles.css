@@ -1654,7 +1654,20 @@ p {
 
 @media only screen and (max-width: 700px) {
   #hc-network-effects .incentives .rails-wrapper {
-    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: calc(100% - 1em);
+    padding: 0px;
+    z-index: -1;
+  }
+
+  #hc-network-effects .incentives .rails-wrapper .rails {
+    border: none;
+    width: 3px;
+    margin: auto;
+    background: #fff;
   }
 
   #hc-network-effects .incentives .columns {
@@ -1681,6 +1694,11 @@ p {
 
   #hc-network-effects .incentives .columns .incentive.reveal {
     transform: scale(1);
+  }
+
+  #hc-network-effects .incentives .columns .incentive .desc {
+    position: inherit;
+    box-shadow: none;
   }
 }
 /*--------------------------*/
