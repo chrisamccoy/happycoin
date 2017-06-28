@@ -113,7 +113,7 @@ function renderCircles() {
 }
 
 function whyTextToggle () {
-  var $columns = $('.points .columns');
+  var $columns = $('.points:not(.ext) .columns');
 
   $columns.click(function(){
     $columns.removeClass('active');

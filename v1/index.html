@@ -20,6 +20,7 @@
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/featherlight.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/styles.css">
 
@@ -30,7 +31,8 @@
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/progressbar.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/featherlight.js"></script>
   <script src="js/script.js"></script>
 
 </head>
@@ -46,7 +48,7 @@
           </a>
         </div>
         <div class="hc-branding">
-          <span class="hc-number-dist">100,000,000 <span class="away">storecoins authorized</span></span>
+          <span class="hc-number-dist">1,000,000,000 <span class="away">storecoins authorized</span></span>
         </div>
         <nav class="hc-navigation">
           <div class="hc-menu-container">
@@ -80,15 +82,21 @@
   <div id="hc-content">
     <div class="hc-feature over-rel padding" id="hc-intro">
       <div class="hc-chunk hc-intro-text-wrapper">
-        <h2 class="hc-intro-large-lead">
+        <!-- <h2 class="hc-intro-large-lead">
           <b>Storecoin	is	a	public	blockchain	for	systems	governed	by	hierarchy	and	by revenue	sharing.</b>
         </h2>
         <h2 class="hc-intro-large-lead">
           These	include	franchises,	chain	stores,	sports	leagues,	affiliate-based	organizations,	and	more.
-        </h2>
+        </h2> -->
         <h2 class="hc-intro-large-lead">
-          Storecoin	is	an	Ethereum-family	technology	and	is	fully	compatible	with	the	public	Ethereum	network.	If	you	can	run	a
-          Dapp on	Ethereum,	you	can	run	it	on	Storecoin	too.
+          Storecoin	is	an	Ethereum-family	technology	and	is
+          fully	compatible	with	the	Ethereum	public	network.
+          If	you	can	run	a	Dapp on	Ethereum,	you	can	run	it	on
+          Storecoin,	too.
+        </h2>
+
+        <h2 class="hc-intro-large-lead">
+          Storecoin	will	be	compatible	with	EOS,	too.
         </h2>
 
         <!-- <div class="hc-intro-text">
@@ -112,7 +120,7 @@
 
     <div class="hc-feature over-rel padding hc-email">
         <div class="container email-widget">
-          <h4>Participate in the upcoming Storecoin Token Sale</h4>
+          <h4>Participate	in	the	Storecoin	Pre-ICO</h4>
           <div class="row form">
             <div class="eight columns">
               <input class="u-full-width" type="text" placeholder="Enter your email address">
@@ -130,7 +138,10 @@
         <div class="container">
           <div class="row">
             <div class="twelve columns">
-              <p class="desc">Complex, hierarchical  business logic governs hub and spoke-based systems</p>
+              <p class="desc">Hub	and	spoke-based	business	systems	are	governed	by	complex,	multi-network	private	revenue	sharing.</p>
+              <p class="desc">For	every	$1	created	in	a	spoke,	the	hub	gets	a	guaranteed	percentage.	Sometimes,	if	$1	flows	through	a	hub,	all	spokes	earn	a	guaranteed
+              percentage	-- and	sometimes	spokes	earn	competitive	percentages.	Often	times,	this	revenue	sharing	needs	to	be	private.</p>
+              <p class="desc">Public	blockchains do	not	solve	for	this	-- especially	for	micropayments.	</p>
             </div>
           </div>
           <div class="row points">
@@ -223,34 +234,60 @@
         <p class="hc-accom-lead">
           Storecoin solves by enabling private, automatic revenue sharing in smart contracts.
         </p>
-        <div class="container">
+        <img class="solution-image horizontal" src="images/solution-horizontal.png">
+        <img class="solution-image vertical" src="images/solution-vertical.png">
+        <!-- <div class="container">
           <div class="row points ext">
 
-            <div class="three columns">
+            <div class="three columns" data-featherlight="#box-partnership">
               <img src="images/click.png" />
               <h6>Channel Partnerships</h6>
               <div class="points-desc ellipsis"><img src="images/use_case1.png">We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</div>
+              <div id="box-partnership" style="display:none;">
+                <div class="points-lightbox">
+                  <img src="images/use_case1.png">
+                  <p>We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</p>
+                </div>
+              </div>
             </div>
 
-            <div class="three columns">
+            <div class="three columns" data-featherlight="#box-enterprise">
               <img src="images/server.png" />
               <h6>Enterprise Ready</h6>
               <div class="points-desc ellipsis"><img src="images/use_case2.png">We signed our first service agreement with a Fortune 500 company in 2017 and doubled our developer team.</div>
+              <div id="box-enterprise" style="display:none;">
+                <div class="points-lightbox">
+                  <img src="images/use_case2.png">
+                  <p>We signed our first service agreement with a Fortune 500 company in 2017 and doubled our developer team.</p>
+                </div>
+              </div>
             </div>
 
-            <div class="three columns">
+            <div class="three columns" data-featherlight="#box-software">
               <img src="images/open-source.png" />
               <h6>Free Software</h6>
               <div class="points-desc ellipsis"><img src="images/use_case1.png">Storj believes in maintaining a free and open source software model. Check out our Github.</div>
+              <div id="box-software" style="display:none;">
+                <div class="points-lightbox">
+                  <img src="images/use_case1.png">
+                  <p>Storj believes in maintaining a free and open source software model. Check out our Github.</p>
+                </div>
+              </div>
             </div>
 
-            <div class="three columns">
+            <div class="three columns" data-featherlight="#box-growth">
               <img src="images/cloud.png" />
               <h6>Rapidly Growing</h6>
+              <div id="box-growth" style="display:none;">
+                <div class="points-lightbox">
+                  <img src="images/use_case2.png">
+                  <p>We have over 20,000 users and almost 19,000 farmers on the Storj network, with steady growth each month in the last year.</p>
+                </div>
+              </div>
               <div class="points-desc ellipsis"><img src="images/use_case2.png">We have over 20,000 users and almost 19,000 farmers on the Storj network, with steady growth each month in the last year.</div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -434,55 +471,91 @@
         <div class="container">
           <div class="row points ext">
 
-            <div class="four columns">
+            <div class="four columns" data-featherlight="#box-blockchains">
               <div class="tech-lead">
                 <img src="images/lock.png" />
-                <h6>Public and Private hybrid blockchains </h6>
+                <h6>Public and Private hybrid blockchains</h6>
               </div>
-              <div class="points-desc ellipsis"><img src="images/use_case1.png">We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</div>
+              <div id="box-blockchains" style="display:none;">
+                <div class="points-lightbox">
+                  <img src="images/use_case1.png">
+                  <p>We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</p>
+                </div>
+              </div>
+              <!-- <div class="points-desc ellipsis"><img src="images/use_case1.png">We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</div> -->
             </div>
 
-            <div class="four columns">
+            <div class="four columns" data-featherlight="#box-transactions">
               <div class="tech-lead">
                 <img src="images/parent-child.png" />
                 <h6>Hierarchical, Parent-Child transactions</h6>
               </div>
-              <div class="points-desc ellipsis"><img src="images/use_case2.png">We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</div>
+              <div id="box-transactions" style="display:none;">
+                <div class="points-lightbox">
+                  <img src="images/use_case2.png">
+                  <p>We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</p>
+                </div>
+              </div>
+              <!-- <div class="points-desc ellipsis"><img src="images/use_case2.png">We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</div> -->
             </div>
 
-            <div class="four columns">
+            <div class="four columns" data-featherlight="#box-contracts">
               <div class="tech-lead">
                 <img src="images/contract.png" />
                 <h6>Smart Contracts</h6>
               </div>
-              <div class="points-desc ellipsis"><img src="images/use_case1.png">We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</div>
+              <div id="box-contracts" style="display:none;">
+                <div class="points-lightbox">
+                  <img src="images/use_case1.png">
+                  <p>We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</p>
+                </div>
+              </div>
+              <!-- <div class="points-desc ellipsis"><img src="images/use_case1.png">We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</div> -->
             </div>
 
           </div>
           <div class="row points ext">
 
-            <div class="four columns">
+            <div class="four columns" data-featherlight="#box-proof">
               <div class="tech-lead">
                 <img src="images/globe.png">
                 <h6>Proof of Authority</h6>
               </div>
-              <div class="points-desc ellipsis"><img src="images/use_case2.png">We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</div>
+              <div id="box-proof" style="display:none;">
+                <div class="points-lightbox">
+                  <img src="images/use_case2.png">
+                  <p>We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</p>
+                </div>
+              </div>
+              <!-- <div class="points-desc ellipsis"><img src="images/use_case2.png">We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</div> -->
             </div>
 
-            <div class="four columns">
+            <div class="four columns" data-featherlight="#box-channels">
               <div class="tech-lead">
                 <img src="images/shield.png">
                 <h6>State Channels</h6>
               </div>
-              <div class="points-desc ellipsis"><img src="images/use_case1.png">We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</div>
+              <div id="box-channels" style="display:none;">
+                <div class="points-lightbox">
+                  <img src="images/use_case1.png">
+                  <p>We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</p>
+                </div>
+              </div>
+              <!-- <div class="points-desc ellipsis"><img src="images/use_case1.png">We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</div> -->
             </div>
 
-            <div class="four columns">
+            <div class="four columns" data-featherlight="#box-ethereum">
               <div class="tech-lead">
                 <img src="images/ethereum.png">
                 <h6>Ethereum Daap compatible </h6>
               </div>
-              <div class="points-desc ellipsis"><img src="images/use_case2.png">We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</div>
+              <div id="box-ethereum" style="display:none;">
+                <div class="points-lightbox">
+                  <img src="images/use_case2.png">
+                  <p>We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</p>
+                </div>
+              </div>
+              <!-- <div class="points-desc ellipsis"><img src="images/use_case2.png">We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</div> -->
             </div>
 
           </div>
