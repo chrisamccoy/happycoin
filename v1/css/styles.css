@@ -51,6 +51,7 @@ p {
 
 .email-widget h4 {
   color:#456332;
+  font-size: 1.7rem;
 }
 
 .button-primary.large-button:hover {
@@ -548,7 +549,7 @@ p {
 }
 
 #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead:first-child {
-  font-size : 2.7em;
+  font-size : 3.2em;
 }
 
 #hc-intro .hc-intro-text-wrapper .hc-intro-small-lead {
