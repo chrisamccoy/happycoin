@@ -73,7 +73,7 @@ p {
 }
 
 .hc-feature.lite {
-  background: rgb(155, 183, 138);
+  background: rgb(199, 223, 184);
 }
 
 .featherlight .featherlight-inner {
@@ -610,9 +610,47 @@ p {
   width: 90%;
 }
 
-/* #hc-intro  */
+/* #hc-first-dapp  */
+#hc-first-dapp .desc {
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto 3em;
+}
 
-/*--------------------------*/
+#hc-first-dapp .columns img {
+  width : 100%;
+}
+
+#hc-first-dapp .columns {
+  position: relative;
+  cursor: pointer;
+}
+
+#hc-first-dapp .columns .text {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: white;
+  border: 1px solid #c7dfb8;
+  height: calc(100% - 1.5em);
+  width: calc(100% - 1em);
+  opacity: 0;
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  transition: opacity .2s ease-in;
+}
+
+#hc-first-dapp .columns:hover .text {
+  opacity: 0.95;
+  transition: opacity .2s ease-in;
+}
+
+@media only screen and (max-width: 700px) {
+  #hc-first-dapp .columns {
+    margin-bottom: 1em;
+  }
+}
 
 /* #hc-timer  */
 #hc-promo {
