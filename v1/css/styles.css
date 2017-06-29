@@ -51,7 +51,6 @@ p {
 
 .email-widget h4 {
   color:#456332;
-  font-size: 1.7rem;
 }
 
 .button-primary.large-button:hover {
@@ -321,6 +320,10 @@ p {
 }
 
 @media only screen and (max-width: 700px) {
+  .email-widget h4 {
+    font-size: 1.7rem;
+  }
+
   .featherlight .featherlight-inner .points-lightbox {
     display: block;
   }
@@ -648,6 +651,9 @@ p {
 }
 
 @media only screen and (max-width: 700px) {
+  #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead:first-child {
+    font-size: 1.8em !important;
+  }
   #hc-first-dapp .columns {
     margin-bottom: 1em;
   }
@@ -2198,7 +2204,7 @@ p {
 
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
     margin: 0.5em 0.2em 1em;
-    font-size: 1.5em !important;
+    font-size: 1.3em !important;
   }
 
   #hc-intro .learn-more {
