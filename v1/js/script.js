@@ -381,7 +381,7 @@ function emailSubscribe() {
           $.ajax({
             type : 'GET',
             url : 'https://market.capitalstake.com',
-            data : $emailForm.serialize()
+            data : $(this).closest('.form').serialize()
           }).done(function(result){
             console.log(result);
             $emailSection.find('.email-widget').hide();
