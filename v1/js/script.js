@@ -380,8 +380,8 @@ function emailSubscribe() {
         if($emailInput.val()){
           $.ajax({
             type : 'GET',
-            url : 'https://market.capitalstake.com',
-            data : $(this).closest('.form').serialize()
+            url : 'https://hooks.zapier.com/hooks/catch/2306819/5bmzth/',
+            data : $(this).parents('.form').serialize()
           }).done(function(result){
             console.log(result);
             $emailSection.find('.email-widget').hide();
