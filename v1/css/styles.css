@@ -67,6 +67,12 @@ p {
   padding-bottom: 3.5em;
 }
 
+.hc-feature .hc-feature-lead {
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto 1em;
+}
+
 .hc-feature.inverted {
   color: white;
   background: #5d794c;
@@ -85,6 +91,14 @@ p {
   align-items: center;
   max-width: 900px;
   text-align: center;
+}
+
+.featherlight .featherlight-inner.app-box img {
+  width : 100%;
+}
+
+.featherlight .featherlight-inner.app-box {
+  padding: 1em;
 }
 
 .featherlight .featherlight-inner .points-lightbox img {
@@ -1159,6 +1173,27 @@ p {
 }
 
 /*--------------------------*/
+/* #hc-customers  */
+#hc-customers {
+  max-width: 900px;
+  font-size: 1.2em;
+  margin : auto;
+}
+
+@media only screen and (max-width: 700px) {
+  #hc-customers ul {
+    padding: 0em 1em;
+  }
+
+  #hc-customers table tr td:last-child,
+  #hc-customers table tr th:last-child {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+
+/*--------------------------*/
 /* #hc-apps  */
 #hc-apps {
   padding-top: 3em;
@@ -1219,6 +1254,12 @@ p {
   display: none !important;
 }
 
+#hc-apps .hc-apps-row .title-reveal .image {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 #hc-apps .hc-apps-row .title-reveal img {
   width: 60%;
   margin: auto;
@@ -1231,10 +1272,12 @@ p {
   height:100%;
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 
 #hc-apps .hc-apps-row .title-reveal .text p {
   margin : auto;
+  margin-bottom : 1em;
 }
 
 #hc-apps .hc-apps-row .title {
@@ -1249,6 +1292,10 @@ p {
 
 #hc-apps .hc-apps-row .title i {
   margin-right: 1em;
+}
+
+#hc-apps .container.mobile {
+  display: none;
 }
 
 /*#hc-apps ul {
@@ -1282,6 +1329,14 @@ p {
 }*/
 
 @media only screen and (max-width: 700px) {
+  #hc-apps .container.mobile {
+    display: block;
+  }
+
+  #hc-apps .container.desktop {
+    display: none;
+  }
+
   /*#hc-apps ul .subtext p {
     text-align: left;
     font-size: 0.7em;
@@ -1334,6 +1389,11 @@ p {
 
   #hc-apps .hc-apps-row .column-4 {
     order: 4;
+  }
+
+  #hc-apps .hc-apps-row .title-reveal .image {
+    display: block;
+    height: auto;
   }
 }
 
@@ -1673,8 +1733,8 @@ p {
   top: 0px;
   left: 0px;
   width: calc(100% - 18em);
-  height: calc(100% - 13em);
-  padding: 6.5em 9em;
+  height: calc(100% - 14em);
+  padding: 7em 9em;
   z-index: -1;
 }
 
@@ -1690,6 +1750,10 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#hc-network-effects .incentives .row.middle .columns {
+  min-height: 300px;
 }
 
 #hc-network-effects .incentives .columns.vertical {
@@ -1774,7 +1838,7 @@ p {
   }
 
   #hc-network-effects .incentives .columns {
-    min-height: inherit;
+    min-height: inherit !important;
   }
 
   #hc-network-effects .incentives .columns.horizontal,
@@ -1820,11 +1884,17 @@ p {
   margin: 2em auto 0;
 }
 
-.hc-email .form input[type="text"] {
+.hc-email .success-message {
+  display: none;
+  text-align: center;
+}
+
+.hc-email .form input[type="email"] {
   font-size: 1.6em;
   height: 2em;
   margin-bottom: 0;
 }
+
 
 .hc-email .form input[type="submit"] {
   font-size: 1.6em;
@@ -2204,7 +2274,7 @@ p {
 
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
     margin: 0.5em 0.2em 1em;
-    font-size: 1.3em !important;
+    font-size: 1em !important;
   }
 
   #hc-intro .learn-more {

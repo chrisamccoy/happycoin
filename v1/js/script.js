@@ -33,6 +33,7 @@ $(document).ready(function(){
   toggleCardTasks();
   toggleAppsDesc();
   toggleIncentive();
+  emailSubscribe();
 });
 
 
@@ -337,7 +338,7 @@ function toggleCardTasks() {
 }
 
 function toggleAppsDesc() {
-  var $apps = $('#hc-apps'),
+  var $apps = $('#hc-apps .container.desktop'),
       $row  = $apps.find('.hc-apps-row'),
       $title = $row.find('.title'),
       $reveal = $row.find('.title-reveal');
@@ -363,4 +364,29 @@ function toggleIncentive () {
     $incentive.removeClass('reveal');
     $(this).toggleClass('reveal');
   });
+}
+
+function emailSubscribe() {
+  var $emailSection = $('.hc-email'),
+      $emailForm = $emailSection.find('.form'),
+      $subscribeBtn = $emailSection.find('.button-primary'),
+      $emailInput = $emailSection.find('input[type=email]');
+
+      $emailForm.submit(function(e){
+        e.preventDefault();
+      });
+
+      $subscribeBtn.click(function(){
+        if($emailInput.val()){
+          $.ajax({
+            type : 'GET',
+            url : 'https://market.capitalstake.com',
+            data : $emailForm.serialize()
+          }).done(function(result){
+            console.log(result);
+            $emailSection.find('.email-widget').hide();
+            $emailSection.find('.success-message').show();
+          });
+        }
+      });
 }
