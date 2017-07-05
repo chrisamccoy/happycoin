@@ -439,8 +439,8 @@ function emailSubscribe() {
       $thisEmailSect.find('.email-steps.step-5 input[type="email"]').val(emailVal);
       $.ajax({
         type : 'GET',
-        // url : 'https://hooks.zapier.com/hooks/catch/2306819/5bmzth/',
-        url : 'https://market.capitalstake.com',
+        url : 'https://hooks.zapier.com/hooks/catch/2306819/5bmzth/',
+        //url : 'https://market.capitalstake.com',
         data : $thisForm.serialize()
       }).done(function(result){
         console.log(result);
