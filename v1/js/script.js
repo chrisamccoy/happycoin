@@ -369,24 +369,98 @@ function toggleIncentive () {
 function emailSubscribe() {
   var $emailSection = $('.hc-email'),
       $emailForm = $emailSection.find('.form'),
-      $subscribeBtn = $emailSection.find('.button-primary'),
-      $emailInput = $emailSection.find('input[type=email]');
+      $emailWidget = $emailSection.find('.email-widget'),
+      $subscribeBtn = $emailWidget.find('.button-primary[type="submit"]'),
+      $emailInput = $emailSection.find('input[type=email]'),
+      $emailSteps = $emailSection.find('.email-steps'),
+      $stepsform = $emailSection.find('.steps-form');
 
-      $emailForm.submit(function(e){
-        e.preventDefault();
-      });
+  // $emailInput.keyup(function(){
+  //   var emailVal = $(this).val();
+  //   var $thisSubBtn = $(this).closest('.form').find('.button-primary');
+  //   if(validateEmail(emailVal)){
+  //     $thisSubBtn.removeAttr('disabled');
+  //     // console.log('validated');
+  //     // console.log($(this).closest('.form'));
+  //   } else {
+  //     $thisSubBtn.attr('disabled','disabled');
+  //   }
+  // });
+  $emailSteps.find('input[type="radio"]').change(function(){
+    // console.log('changed');
+    var $thisEmailStep = $(this).parents('.email-steps');
+    $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
+  });
 
-      $subscribeBtn.click(function(){
-        if($emailInput.val()){
-          $.ajax({
-            type : 'GET',
-            url : 'https://hooks.zapier.com/hooks/catch/2306819/5bmzth/',
-            data : $(this).parents('.form').serialize()
-          }).done(function(result){
-            console.log(result);
-            $emailSection.find('.email-widget').hide();
-            $emailSection.find('.success-message').show();
-          });
-        }
+  // $emailSteps.find('input[type="email"]').change(function(){
+  //   // console.log('changed');
+  //   var emailVal = $(this).val();
+  //   if(validateEmail(emailVal)) {
+  //     var $thisEmailStep = $(this).parents('.email-steps');
+  //     $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
+  //   }
+  // });
+
+  $emailSteps.find('input[type="text"]').keyup(function(){
+    // console.log('changed');
+    var textVal = $(this).val();
+    if(textVal.length > 0 ) {
+      var $thisEmailStep = $(this).parents('.email-steps');
+      $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
+    }
+  });
+
+  $stepsform.submit(function(e){
+    e.preventDefault();
+  });
+
+  $stepsform.find('.button-submit[type="submit"]').click(function(){
+    var $thisEmailSect = $(this).parents('.hc-email');
+    var $thisForm = $(this).parents('.steps-form');
+    // console.log($thisForm.serialize());
+    $.ajax({
+      type : 'POST',
+      url : 'https://hooks.zapier.com/hooks/catch/2306819/5ua8pj/',
+      // url : 'https://market.capitalstake.com',
+      data : $thisForm.serialize()
+    }).done(function(result){
+      console.log($thisForm.serialize());
+      console.log(result);
+      $thisEmailSect.find('.email-steps').hide();
+      $thisEmailSect.find('.success-message').show();
+    });
+  });
+
+  $subscribeBtn.click(function(){
+    var $thisEmailSect = $(this).parents('.hc-email');
+    var $thisForm = $(this).parents('.form');
+    var emailVal = $thisForm.find('input[type="email"]').val();
+    if(emailVal){
+      $thisEmailSect.find('.email-steps.step-5 input[type="email"]').val(emailVal);
+      $.ajax({
+        type : 'GET',
+        // url : 'https://hooks.zapier.com/hooks/catch/2306819/5bmzth/',
+        url : 'https://market.capitalstake.com',
+        data : $thisForm.serialize()
+      }).done(function(result){
+        console.log(result);
+        $thisEmailSect.find('.email-widget').hide();
+        $thisEmailSect.find('.email-steps.step-1').show();
       });
+    }
+  });
+
+  $emailSteps.find('.button-group .button-primary:not(.button-submit)').click(function(){
+    var $thisEmailSect = $(this).parents('.hc-email');
+    // console.log('step clicked');
+    var stepVal = $(this).data().step;
+    $(this).parents('.email-steps').hide();
+    // console.log($emailSection.find('div.email-steps[data-step="'+ stepVal +'"]'),stepVal);
+    $thisEmailSect.find('.email-steps.'+ stepVal).show();
+  });
+}
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
 }

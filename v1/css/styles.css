@@ -351,6 +351,10 @@ p {
     font-size: 1em;
     margin : 1em ;
   }
+
+  /*.featherlight .email-steps {
+    width : auto;
+  }*/
   /*.points.ext .columns.active {
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
@@ -1133,6 +1137,35 @@ p {
     display: none;
   }
 }
+/*--------------------------*/
+/* #hc-believe  */
+#hc-believe .three.columns {
+  text-align: center;
+}
+
+#hc-believe .three.columns .num {
+  font-size: 1.5em;
+  border: 5px solid #c7dfb8;
+  border-radius: 50%;
+  height: 130px;
+  width: 130px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+#hc-believe .three.columns .num p {
+  margin-top: 0px;
+}
+
+@media only screen and (max-width: 700px) {
+  #hc-believe .three.columns {
+    text-align: center;
+    margin-bottom: 2em;
+  }
+}
 
 /*--------------------------*/
 /* #hc-what  */
@@ -1561,9 +1594,47 @@ p {
 
 /*--------------------------*/
 /* #hc-why-token  */
-#hc-why-token .points .columns h6 {
-  color : #415837;
+
+#hc-why-token .phase {
+  margin-bottom: 3em;
 }
+
+#hc-why-token .text {
+  margin-bottom: 1em;
+}
+
+#hc-why-token .phase .columns  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hc-why-token .phase .six.columns {
+  height: 300px;
+  background: white;
+  border-radius: 10px;
+}
+
+#hc-why-token .phase .twelve.columns {
+  width: 50%;
+  height: 300px;
+  background: white;
+  border-radius: 10px;
+  margin : auto;
+}
+
+#hc-why-token .phase.full-row {
+  display: flex;
+}
+
+#hc-why-token .phase .columns img {
+  max-width: 300px;
+  height: auto;
+}
+
+/*#hc-why-token .points .columns h6 {
+  color : #415837;
+}*/
 
 #hc-why-token .desc {
   font-size: 1.2em;
@@ -1572,7 +1643,21 @@ p {
   margin: 0 auto 1em;
 }
 
-#hc-why-token .points .icon {
+@media only screen and (max-width: 700px) {
+  #hc-why-token .phase .twelve.columns {
+    width: 100%;
+  }
+
+  #hc-why-token .phase .columns img {
+    width: 100%;
+  }
+
+  #hc-why-token .phase .six.columns:first-child {
+    margin-bottom: 3em;
+  }
+}
+
+/*#hc-why-token .points .icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1583,7 +1668,7 @@ p {
 #hc-why-token .points .icon img {
   height: 110px;
   width: 110px;
-}
+}*/
 
 /*--------------------------*/
 /* #hc-how-token  */
@@ -1732,17 +1817,18 @@ p {
   position: absolute;
   top: 0px;
   left: 0px;
-  width: calc(100% - 18em);
-  height: calc(100% - 14em);
-  padding: 7em 9em;
+  width: 100%;
+  height: 100%;
   z-index: -1;
 }
 
 #hc-network-effects .incentives .rails-wrapper .rails {
-  width: 100%;
-  height: 100%;
-  border: 3px solid #c7dfb8;
-  border-radius: 175px;
+  margin: 6em 7em 6em 8em;
+  width: calc(100% - 15em);
+  height: calc(100% - 12em);
+  background: url(../images/network-effects-bg.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #hc-network-effects .incentives .columns {
@@ -1833,6 +1919,7 @@ p {
   #hc-network-effects .incentives .rails-wrapper .rails {
     border: none;
     width: 4px;
+    height: 90%;
     margin: auto;
     background: #fff;
   }
@@ -1884,6 +1971,72 @@ p {
   margin: 2em auto 0;
 }
 
+.hc-email .email-steps {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1em;
+  display: none;
+  font-size: 1.3em;
+}
+
+.hc-email .email-steps p {
+  color: black;
+  font-size: 1.3em;
+  margin-bottom: 1em;
+}
+
+.hc-email .email-steps .fields {
+  display: flex;
+}
+
+.hc-email .email-steps .fields .field {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.hc-email .email-steps .field {
+  display: flex;
+  align-items: center;
+}
+
+.hc-email .email-steps .field label {
+  margin: auto 0 auto 1em;
+  font-weight: 300;
+}
+
+.hc-email .email-steps .button-group {
+  height: 50px;
+  margin-top: 1em;
+}
+
+.hc-email .email-steps hr {
+  border-top: 1px solid #456332;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.hc-email .email-steps .button-group .button-primary[disabled] {
+  opacity: 0.5;
+}
+
+/*.hc-email .email-steps .button-group .button-primary.button-next,
+.hc-email .email-steps .button-group .button-primary.button-submit {
+  float: right;
+}*/
+
+.hc-email .email-steps .button-group .button-primary.button-next i {
+  margin-left: 5px;
+}
+
+.hc-email .email-steps .button-group .button-primary.button-back i {
+  margin-right: 5px;
+}
+
+.hc-email .email-steps .field input[type="radio"] {
+  margin: auto 0;
+  font-weight: 300;
+}
+
 .hc-email .success-message {
   display: none;
   text-align: center;
@@ -1904,7 +2057,19 @@ p {
   width: 100%;
 }
 
+.hc-email .form input[type="submit"][disabled="disabled"] {
+  opacity: 0.5;
+}
+
 @media only screen and (max-width: 700px) {
+  .hc-email .email-steps {
+    padding: 0px;
+  }
+
+  .hc-email .email-steps .fields {
+    display: block;
+  }
+
   .hc-email .form {
     width: 100%;
   }

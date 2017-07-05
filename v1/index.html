@@ -79,6 +79,23 @@
       <div style="background:#5d794c; height:2px; margin:9px 20px"></div>
     </button>
   </div>
+
+  <!-- <div id="email-subscribe-widget" style="display:none;">
+    <div class="email-steps" style="max-width:600px;">
+      <h5>Email Widget</h5>
+      <p>Have you participated in Token Sales or ICOs before?</p>
+      <div class="field">
+        <input type="radio" name="participate" id="yes" value="1">
+        <label for="yes">Yes</label>
+      </div>
+
+      <div class="field">
+        <input type="radio" name="participate" id="no" value="0">
+        <label for="yes">No</label>
+      </div>
+    </div>
+  </div> -->
+
   <div id="hc-content">
     <div class="hc-feature over-rel padding" id="hc-intro">
       <div class="hc-chunk hc-intro-text-wrapper">
@@ -89,14 +106,16 @@
           These	include	franchises,	chain	stores,	sports	leagues,	affiliate-based	organizations,	and	more.
         </h2>
         <h2 class="hc-intro-large-lead">
-          Storecoin	is	an	Ethereum-family	technology	and	is
-          fully	compatible	with	the	Ethereum	public	network.
-          If	you	can	run	a	Dapp on	Ethereum,	you	can	run	it	on
-          Storecoin,	too.
+          Storecoin	is	an	Ethereum-family
+          technology	and	will	be	fully	compatible	with	the
+          Ethereum	public	network.	If	you	can	run	a	Dapp or
+          smart	contract	on	Ethereum,	you	can	run	it	on
+          Storecoin.
         </h2>
 
         <h2 class="hc-intro-large-lead">
-          Storecoin	will	be	compatible	with	EOS,	too.
+          Storecoin	will	be	interoperable	with
+          with	Bitcoin	and	EOS,	too.
         </h2>
 
         <!-- <div class="hc-intro-text">
@@ -119,37 +138,215 @@
     </div>
 
     <div class="hc-feature over-rel padding hc-email">
-        <div class="container email-widget">
-          <h4>Participate	in	the	Storecoin	Pre-ICO</h4>
-          <form class="row form">
-            <div class="eight columns">
-              <input class="u-full-width" type="email" name="email" placeholder="Enter your email address">
-            </div>
-            <div class="four columns">
-              <input class="button-primary" type="submit" value="Subscribe">
-            </div>
-          </form>
-          <!-- <p class="alert red">No email entered.</p> -->
+      <div class="container email-widget">
+        <h4>Participate	in	the	Storecoin	Pre-ICO</h4>
+        <div class="row form">
+          <div class="eight columns">
+            <input class="u-full-width" type="email" name="email" placeholder="Enter your email address">
+          </div>
+          <div class="four columns">
+            <input class="button-primary" type="submit" value="Subscribe">
+          </div>
         </div>
+        <!-- <p class="alert red">No email entered.</p> -->
+      </div>
+      <form class="steps-form">
+        <div class="email-steps step-1">
+          <p>Have you participated in Token Sales or ICOs before?</p>
+          <div class="field">
+            <input type="radio" name="participate" value="Yes">
+            <label for="participate-yes">Yes</label>
+          </div>
+
+          <div class="field">
+            <input type="radio" name="participate" value="No">
+            <label for="participate-no">No</label>
+          </div>
+          <hr>
+          <div class="button-group">
+            <button disabled class="button-next button-primary" data-step="step-2">Next<i class="ion-chevron-right"></i></button>
+          </div>
+        </div>
+
+        <div class="email-steps step-2">
+          <p>How much do you typically invest in a Token Sale or ICO?</p>
+          <div class="fields">
+            <div class="field">
+              <input type="radio" name="invest" value="<$1,000">
+              <label for="invest-1"><$1,000</label>
+            </div>
+            <div class="field">
+              <input type="radio" name="invest" value="$1,000 - $5,000">
+              <label for="invest-2">$1,000 - $5,000</label>
+            </div>
+          </div>
+
+          <div class="fields">
+            <div class="field">
+              <input type="radio" name="invest" value="$5,000 - $25,000">
+              <label for="invest-3">$5,000 - $25,000</label>
+            </div>
+            <div class="field">
+              <input type="radio" name="invest" value="$25,000 - $50,000">
+              <label for="invest-4">$25,000 - $50,000</label>
+            </div>
+          </div>
+
+          <div class="fields">
+            <div class="field">
+              <input type="radio" name="invest" value="$50,000 - $75,000">
+              <label for="invest-5">$50,000 - $75,000</label>
+            </div>
+            <div class="field">
+              <input type="radio" name="invest" value="$75,000 - $100,000">
+              <label for="invest-6">$75,000 - $100,000</label>
+            </div>
+          </div>
+
+          <div class="fields">
+            <div class="field">
+              <input type="radio" name="invest" value="$100,000 - $150,000">
+              <label for="invest-7">$100,000 - $150,000</label>
+            </div>
+            <div class="field">
+              <input type="radio" name="invest" value="$150,000 - $200,000">
+              <label for=invest-8>$150,000 - $200,000</label>
+            </div>
+          </div>
+
+          <div class="fields">
+            <div class="field">
+              <input type="radio" name="invest" value="$200,000 - $250,000">
+              <label for="invest-9">$200,000 - $250,000</label>
+            </div>
+            <div class="field">
+              <input type="radio" name="invest" value="$250,000 - $500,000">
+              <label for="invest-10">$250,000 - $500,000</label>
+            </div>
+          </div>
+
+          <div class="fields">
+            <div class="field">
+              <input type="radio" name="invest" value="$500,000 - $1,000,000">
+              <label for="invest-11">$500,000 - $1,000,000</label>
+            </div>
+            <div class="field">
+              <input type="radio" name="invest" value="$1,000 - $3,000,000">
+              <label for="invest-12">$1,000 - $3,000,000</label>
+            </div>
+          </div>
+
+          <div class="fields">
+            <div class="field">
+              <input type="radio" name="invest" value="$3,000,000 or more">
+              <label for="invest-13">$3,000,000 or more</label>
+            </div>
+          </div>
+
+          <hr>
+          <div class="button-group">
+            <button class="button-back button-primary" data-step="step-1"><i class="ion-chevron-left"></i>Back</button>
+            <button disabled class="button-next button-primary" data-step="step-4">Next<i class="ion-chevron-right"></i></button>
+          </div>
+        </div>
+
+        <!-- <div class="email-steps step-3">
+          <p>If you are interested in learning about Token Sales and ICOs promoted by Storecoin, share an email address to receive Storecoin introductions and announcements. We'll add you to our investor network.</p>
+          <div class="field">
+            <input type="email" class="u-full-width" name="shared-email">
+          </div>
+
+          <hr>
+          <div class="button-group">
+            <button class="button-back button-primary" data-step="step-2"><i class="ion-chevron-left"></i>Back</button>
+            <button disabled class="button-next button-primary" data-step="step-4">Next<i class="ion-chevron-right"></i></button>
+          </div>
+        </div> -->
+
+        <div class="email-steps step-4">
+          <p>Would you be interested in paying 1 Bitcoin or 9 ETH per year to get advance, pre-seed access to Storecoin-approved ICOs? You'll see them before anyone else on Storecoin and beyond.</p>
+          <div class="field">
+            <input type="radio" name="payment" value="Yes">
+            <label for="payment-yes">Yes</label>
+          </div>
+
+          <div class="field">
+            <input type="radio" name="payment" value="No">
+            <label for="payment-no">No</label>
+          </div>
+
+          <hr>
+          <div class="button-group">
+            <button class="button-back button-primary" data-step="step-2"><i class="ion-chevron-left"></i>Back</button>
+            <button disabled class="button-next button-primary" data-step="step-5">Next<i class="ion-chevron-right"></i></button>
+          </div>
+        </div>
+
+        <div class="email-steps step-5">
+          <p>Do you have any questions, comments, or feedback for Storecoin?</p>
+          <div class="field">
+            <input type="text" class="u-full-width" name="comment">
+            <input type="email" class="u-full-width" name="email" hidden>
+          </div>
+
+          <hr>
+          <div class="button-group">
+            <button class="button-back button-primary" data-step="step-4"><i class="ion-chevron-left"></i>Back</button>
+            <button disabled class="button-primary button-submit button-next" type="submit">Submit</button>
+          </div>
+        </div>
+
         <div class="success-message">
           <h2>
             Thank You!
           </h2>
           <p>We’ll respond to your  request shortly.</p>
         </div>
+      </form>
     </div>
 
-    <div class="hc-feature over-rel padding">
+    <div class="hc-feature over-rel padding" id="hc-believe">
       <div class="hc-chunk hc-customize-text-wrapper">
         <h3 class="hc-feature-title inverted">What We Believe</h3>
         <p class="hc-feature-lead">
-          The	$4	Trillion	global	franchise	industry,	the	$18	Trillion	chain
-          business	industry,	and	the	$xx	billion	sports	industry	will
-          eventually	be	decentralized	and	tokenized.
+          The	global	franchise	industry,	chain	business	industry,	sports	industry,	and	affiliate	business	industries	--
+          industries	governed	by	hierarchy,	multi-party	revenue	sharing,	and	privacy	-- will	eventually	be	tokenized
+          and	powered	by	a	public	blockchain.
         </p>
         <p class="hc-feature-lead">
-          The	Storecoin	blockchain	will	power	it.
+          Storecoin	will	be	the	first	public	blockchain	to	solve	for	hierarchy	and	data	privacy	inside	Smart	Contracts.
         </p>
+
+        <div class="row">
+          <div class="three columns">
+            <div class="num">
+              <p>$4</p>
+              <p>Trillion</p>
+            </div>
+            <div class="text">Global	Franchise	Industry</div>
+          </div>
+          <div class="three columns">
+            <div class="num">
+              <p>$18</p>
+              <p>Trillion</p>
+            </div>
+            <div class="text">Global	Chain	Business	Industry</div>
+          </div>
+          <div class="three columns">
+            <div class="num">
+              <p>$1.3</p>
+              <p>Trillion</p>
+            </div>
+            <div class="text">Global	Sports	Industry</div>
+          </div>
+          <div class="three columns">
+            <div class="num">
+              <p>?</p>
+              <p>Trillion</p>
+            </div>
+            <div class="text">Global	Affiliate	Business	Industry</div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -157,11 +354,54 @@
       <div class="hc-chunk hc-customize-text-wrapper">
         <h3 class="hc-feature-title inverted">The Problem</h3>
         <div class="container">
-          <div class="row">
+          <div class="row text">
             <div class="twelve columns">
               <p class="desc">Hub	&	Spoke-based	systems	are	governed	by	complex	revenue	sharing	agreements.</p>
+            </div>
+          </div>
+          <div class="row phase">
+            <div class="six columns">
+              <img src="images/parallel.png">
+            </div>
+            <div class="six columns">
+              <img src="images/chained.png">
+            </div>
+          </div>
+          <div class="row phase">
+            <div class="six columns">
+              <img src="images/hierarchical.png">
+            </div>
+            <div class="six columns">
+              <img src="images/multiple-heirarchies.png">
+            </div>
+          </div>
+
+          <div class="row text">
+            <div class="twelve columns">
               <p class="desc">Oftentimes,	the	commission	or	royalty	needs	to	be	private.</p>
-              <p class="desc">Public	blockchains and	simple	Smart	Contracts	do	not	solve	for	this	-- especially	for	micropayments.</p>
+            </div>
+          </div>
+          <div class="row phase full-row">
+            <div class="twelve columns">
+              <img src="images/private.png" style="max-width:300px;">
+            </div>
+          </div>
+
+          <div class="row text">
+            <div class="twelve columns">
+              <p class="desc">Ethereum	is	designed	for	simple	smart	contracts	and	all	payments	are	public.</p>
+            </div>
+          </div>
+          <div class="row phase full-row">
+            <div class="twelve columns">
+              <img src="images/ethereum-smart-contract.png">
+            </div>
+          </div>
+
+          <div class="row text">
+            <div class="twelve columns">
+              <p class="desc">Finally,	complex	Smart	Contracts	need	to	be	very	simple	for	the	Hub	to	spin	up.	Especially	in	a
+              business	system	where	there	are	thousands	of	stores	or	thousands	of	players.	</p>
             </div>
           </div>
           <!-- <div class="row points">
@@ -244,14 +484,19 @@
       <div class="hc-chunk hc-customize-text-wrapper">
         <h3 class="hc-feature-title inverted">Our Solution</h3>
         <p class="hc-feature-lead">
-          Storecoin	solves	this	problem	by	enabling	private,	automated	revenue	sharing	inside	smart	contracts.
+          Storecoin	solves	this	by	enabling	smart	contracts	on	a	decentralized	blockchain	to
+          be	either	private	or	public.
         </p>
         <p class="hc-feature-lead">
-          Also,	by	enabling	private	revenue	sharing	across	multiple	addresses	and	unlimited	levels	of	hierarchy.
+          Also,	by	enabling	unlimited	levels	of	revenue	sharing	in	unlimited	directions.
         </p>
         <p class="hc-feature-lead">
-          With	zero	transaction	fees	to	the	sender.
+          All	using	fully	customizable,	UI	friendly	smart	contracts.
         </p>
+        <p class="hc-feature-lead">
+          Storecoin	does	this	with	zero	transaction	fees	to	the	sender.
+        </p>
+
         <img class="solution-image horizontal" src="images/solution-horizontal.png">
         <img class="solution-image vertical" src="images/solution-vertical.png">
         <!-- <div class="container">
@@ -904,6 +1149,67 @@
       </div>
     </div>
 
+    <div class="hc-feature over-rel padding" id="hc-accom">
+      <div class="hc-chunk hc-customize-text-wrapper">
+        <h3 class="hc-feature-title inverted">How	Storecoin	Works</h3>
+
+        <img class="solution-image horizontal" src="images/solution-horizontal.png">
+        <img class="solution-image vertical" src="images/solution-vertical.png">
+        <!-- <div class="container">
+          <div class="row points ext">
+
+            <div class="three columns" data-featherlight="#box-partnership">
+              <img src="images/click.png" />
+              <h6>Channel Partnerships</h6>
+              <div class="points-desc ellipsis"><img src="images/use_case1.png">We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</div>
+              <div id="box-partnership" style="display:none;">
+                <div class="points-lightbox">
+                  <img src="images/use_case1.png">
+                  <p>We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="three columns" data-featherlight="#box-enterprise">
+              <img src="images/server.png" />
+              <h6>Enterprise Ready</h6>
+              <div class="points-desc ellipsis"><img src="images/use_case2.png">We signed our first service agreement with a Fortune 500 company in 2017 and doubled our developer team.</div>
+              <div id="box-enterprise" style="display:none;">
+                <div class="points-lightbox">
+                  <img src="images/use_case2.png">
+                  <p>We signed our first service agreement with a Fortune 500 company in 2017 and doubled our developer team.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="three columns" data-featherlight="#box-software">
+              <img src="images/open-source.png" />
+              <h6>Free Software</h6>
+              <div class="points-desc ellipsis"><img src="images/use_case1.png">Storj believes in maintaining a free and open source software model. Check out our Github.</div>
+              <div id="box-software" style="display:none;">
+                <div class="points-lightbox">
+                  <img src="images/use_case1.png">
+                  <p>Storj believes in maintaining a free and open source software model. Check out our Github.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="three columns" data-featherlight="#box-growth">
+              <img src="images/cloud.png" />
+              <h6>Rapidly Growing</h6>
+              <div id="box-growth" style="display:none;">
+                <div class="points-lightbox">
+                  <img src="images/use_case2.png">
+                  <p>We have over 20,000 users and almost 19,000 farmers on the Storj network, with steady growth each month in the last year.</p>
+                </div>
+              </div>
+              <div class="points-desc ellipsis"><img src="images/use_case2.png">We have over 20,000 users and almost 19,000 farmers on the Storj network, with steady growth each month in the last year.</div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
     <div class="hc-feature over-rel lite padding" id="hc-first-dapp">
       <div class="container email-widget">
         <h3 class="hc-feature-title inverted">The	first	Dapp</h3>
@@ -1368,26 +1674,172 @@
     </div>
 
     <div class="hc-feature over-rel padding hc-email">
-        <div class="container email-widget">
-          <h4>Participate	in	the	Storecoin	Pre-ICO</h4>
-          <form class="row form">
-            <div class="eight columns">
-              <input class="u-full-width" type="email" name="email" placeholder="Enter your email address">
-            </div>
-            <div class="four columns">
-              <input class="button-primary" type="submit" value="Subscribe">
-            </div>
-          </form>
-          <!-- <p class="alert red">No email entered.</p> -->
+      <div class="container email-widget">
+        <h4>Participate	in	the	Storecoin	Pre-ICO</h4>
+        <div class="row form">
+          <div class="eight columns">
+            <input class="u-full-width" type="email" name="email" placeholder="Enter your email address">
+          </div>
+          <div class="four columns">
+            <input class="button-primary" type="submit" value="Subscribe">
+          </div>
         </div>
+        <!-- <p class="alert red">No email entered.</p> -->
+      </div>
+      <form class="steps-form">
+        <div class="email-steps step-1">
+          <p>Have you participated in Token Sales or ICOs before?</p>
+          <div class="field">
+            <input type="radio" name="participate" value="Yes">
+            <label for="participate-yes">Yes</label>
+          </div>
+
+          <div class="field">
+            <input type="radio" name="participate" value="No">
+            <label for="participate-no">No</label>
+          </div>
+          <hr>
+          <div class="button-group">
+            <button disabled class="button-next button-primary" data-step="step-2">Next<i class="ion-chevron-right"></i></button>
+          </div>
+        </div>
+
+        <div class="email-steps step-2">
+          <p>How much do you typically invest in a Token Sale or ICO?</p>
+          <div class="fields">
+            <div class="field">
+              <input type="radio" name="invest" value="<$1,000">
+              <label for="invest-1"><$1,000</label>
+            </div>
+            <div class="field">
+              <input type="radio" name="invest" value="$1,000 - $5,000">
+              <label for="invest-2">$1,000 - $5,000</label>
+            </div>
+          </div>
+
+          <div class="fields">
+            <div class="field">
+              <input type="radio" name="invest" value="$5,000 - $25,000">
+              <label for="invest-3">$5,000 - $25,000</label>
+            </div>
+            <div class="field">
+              <input type="radio" name="invest" value="$25,000 - $50,000">
+              <label for="invest-4">$25,000 - $50,000</label>
+            </div>
+          </div>
+
+          <div class="fields">
+            <div class="field">
+              <input type="radio" name="invest" value="$50,000 - $75,000">
+              <label for="invest-5">$50,000 - $75,000</label>
+            </div>
+            <div class="field">
+              <input type="radio" name="invest" value="$75,000 - $100,000">
+              <label for="invest-6">$75,000 - $100,000</label>
+            </div>
+          </div>
+
+          <div class="fields">
+            <div class="field">
+              <input type="radio" name="invest" value="$100,000 - $150,000">
+              <label for="invest-7">$100,000 - $150,000</label>
+            </div>
+            <div class="field">
+              <input type="radio" name="invest" value="$150,000 - $200,000">
+              <label for=invest-8>$150,000 - $200,000</label>
+            </div>
+          </div>
+
+          <div class="fields">
+            <div class="field">
+              <input type="radio" name="invest" value="$200,000 - $250,000">
+              <label for="invest-9">$200,000 - $250,000</label>
+            </div>
+            <div class="field">
+              <input type="radio" name="invest" value="$250,000 - $500,000">
+              <label for="invest-10">$250,000 - $500,000</label>
+            </div>
+          </div>
+
+          <div class="fields">
+            <div class="field">
+              <input type="radio" name="invest" value="$500,000 - $1,000,000">
+              <label for="invest-11">$500,000 - $1,000,000</label>
+            </div>
+            <div class="field">
+              <input type="radio" name="invest" value="$1,000 - $3,000,000">
+              <label for="invest-12">$1,000 - $3,000,000</label>
+            </div>
+          </div>
+
+          <div class="fields">
+            <div class="field">
+              <input type="radio" name="invest" value="$3,000,000 or more">
+              <label for="invest-13">$3,000,000 or more</label>
+            </div>
+          </div>
+
+          <hr>
+          <div class="button-group">
+            <button class="button-back button-primary" data-step="step-1"><i class="ion-chevron-left"></i>Back</button>
+            <button disabled class="button-next button-primary" data-step="step-4">Next<i class="ion-chevron-right"></i></button>
+          </div>
+        </div>
+
+        <!-- <div class="email-steps step-3">
+          <p>If you are interested in learning about Token Sales and ICOs promoted by Storecoin, share an email address to receive Storecoin introductions and announcements. We'll add you to our investor network.</p>
+          <div class="field">
+            <input type="email" class="u-full-width" name="shared-email">
+          </div>
+
+          <hr>
+          <div class="button-group">
+            <button class="button-back button-primary" data-step="step-2"><i class="ion-chevron-left"></i>Back</button>
+            <button disabled class="button-next button-primary" data-step="step-4">Next<i class="ion-chevron-right"></i></button>
+          </div>
+        </div> -->
+
+        <div class="email-steps step-4">
+          <p>Would you be interested in paying 1 Bitcoin or 9 ETH per year to get advance, pre-seed access to Storecoin-approved ICOs? You'll see them before anyone else on Storecoin and beyond.</p>
+          <div class="field">
+            <input type="radio" name="payment" value="Yes">
+            <label for="payment-yes">Yes</label>
+          </div>
+
+          <div class="field">
+            <input type="radio" name="payment" value="No">
+            <label for="payment-no">No</label>
+          </div>
+
+          <hr>
+          <div class="button-group">
+            <button class="button-back button-primary" data-step="step-2"><i class="ion-chevron-left"></i>Back</button>
+            <button disabled class="button-next button-primary" data-step="step-5">Next<i class="ion-chevron-right"></i></button>
+          </div>
+        </div>
+
+        <div class="email-steps step-5">
+          <p>Do you have any questions, comments, or feedback for Storecoin?</p>
+          <div class="field">
+            <input type="text" class="u-full-width" name="comment">
+            <input type="email" class="u-full-width" name="email" hidden>
+          </div>
+
+          <hr>
+          <div class="button-group">
+            <button class="button-back button-primary" data-step="step-4"><i class="ion-chevron-left"></i>Back</button>
+            <button disabled class="button-primary button-submit button-next" type="submit">Submit</button>
+          </div>
+        </div>
+
         <div class="success-message">
           <h2>
             Thank You!
           </h2>
           <p>We’ll respond to your  request shortly.</p>
         </div>
+      </form>
     </div>
-  </div>
 
   <footer id="hc-footer">
     <div class="hc-footer-chunk" style="padding-bottom: 1em;">
