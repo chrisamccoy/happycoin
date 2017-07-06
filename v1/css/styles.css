@@ -68,7 +68,7 @@ p {
 }
 
 .hc-feature .hc-feature-lead {
-  font-size: 20px;
+  font-size: 19px;
   text-align: center;
   margin: 0 auto 1em;
 }
@@ -1158,6 +1158,11 @@ p {
 
 #hc-believe .three.columns .num p {
   margin-top: 0px;
+}
+
+#hc-believe .three.columns .num h3 {
+  margin : 0px;
+  font-weight: 700;
 }
 
 @media only screen and (max-width: 700px) {

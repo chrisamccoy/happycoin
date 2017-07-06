@@ -375,31 +375,24 @@ function emailSubscribe() {
       $emailSteps = $emailSection.find('.email-steps'),
       $stepsform = $emailSection.find('.steps-form');
 
-  // $emailInput.keyup(function(){
-  //   var emailVal = $(this).val();
-  //   var $thisSubBtn = $(this).closest('.form').find('.button-primary');
-  //   if(validateEmail(emailVal)){
-  //     $thisSubBtn.removeAttr('disabled');
-  //     // console.log('validated');
-  //     // console.log($(this).closest('.form'));
-  //   } else {
-  //     $thisSubBtn.attr('disabled','disabled');
-  //   }
-  // });
   $emailSteps.find('input[type="radio"]').change(function(){
     // console.log('changed');
     var $thisEmailStep = $(this).parents('.email-steps');
     $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
   });
 
-  // $emailSteps.find('input[type="email"]').change(function(){
-  //   // console.log('changed');
-  //   var emailVal = $(this).val();
-  //   if(validateEmail(emailVal)) {
-  //     var $thisEmailStep = $(this).parents('.email-steps');
-  //     $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
-  //   }
-  // });
+  $emailSection.find('.step-1 input[type="radio"]').change(function() {
+    var inputVal = $(this).val(),
+        $thisStep = $(this).parents('.email-steps');
+
+    if(inputVal == 'No') {
+      $thisStep.find('.button-next').attr('data-step', 'step-3');
+    }
+
+    if(inputVal == 'Yes') {
+      $thisStep.find('.button-next').attr('data-step', 'step-2');
+    }
+  });
 
   $emailSteps.find('input[type="text"]').keyup(function(){
     // console.log('changed');
@@ -436,7 +429,7 @@ function emailSubscribe() {
     var $thisForm = $(this).parents('.form');
     var emailVal = $thisForm.find('input[type="email"]').val();
     if(emailVal){
-      $thisEmailSect.find('.email-steps.step-5 input[type="email"]').val(emailVal);
+      $thisEmailSect.find('.email-steps.step-4 input[type="email"]').val(emailVal);
       $.ajax({
         type : 'GET',
         url : 'https://hooks.zapier.com/hooks/catch/2306819/5bmzth/',
@@ -450,10 +443,11 @@ function emailSubscribe() {
     }
   });
 
-  $emailSteps.find('.button-group .button-primary:not(.button-submit)').click(function(){
+  $emailSteps.find('.button-group .button-primary:not(.button-submit)').on('click', function(){
     var $thisEmailSect = $(this).parents('.hc-email');
     // console.log('step clicked');
     var stepVal = $(this).data().step;
+    // console.log(stepVal);git p
     $(this).parents('.email-steps').hide();
     // console.log($emailSection.find('div.email-steps[data-step="'+ stepVal +'"]'),stepVal);
     $thisEmailSect.find('.email-steps.'+ stepVal).show();
