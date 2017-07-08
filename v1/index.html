@@ -4,7 +4,7 @@
 
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <title>Storecoin</title>
   <meta name="description" content="">
   <meta name="author" content="">
@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/featherlight.css">
   <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/slick-theme.css">
   <link rel="stylesheet" href="css/styles.css">
 
   <!-- Favicon
@@ -32,6 +34,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/progressbar.js"></script>
+  <script src="js/slick.js"></script>
   <script src="js/featherlight.js"></script>
   <script src="js/script.js"></script>
 
@@ -85,8 +88,8 @@
       <div class="hc-chunk hc-intro-text-wrapper">
         <h2 class="hc-intro-large-lead">
           <b>Storecoin	is	a	public	blockchain
-          for	systems	governed	by	hierarchy,	privacy,
-          and	commissions.</b>
+          for	systems	governed	by	complex	and
+          private	revenue	sharing	smart	contracts</b>
         </h2>
         <h2 class="hc-intro-large-lead">
           These	include	franchises,	chain	stores,	sports	leagues,	affiliate-based	organizations,	and	more.
@@ -133,7 +136,8 @@
           </div>
           <hr>
           <div class="button-group">
-            <button disabled class="button-next button-primary">Next<i class="ion-chevron-right"></i></button>
+            <button disabled class="button-next button-primary" data-step="step-2">Next<i class="ion-chevron-right"></i></button>
+            <button disabled class="button-next button-primary" style="display:none;" data-step="step-3">Next<i class="ion-chevron-right"></i></button>
           </div>
         </div>
 
@@ -234,6 +238,7 @@
           <hr>
           <div class="button-group">
             <button class="button-back button-primary" data-step="step-2"><i class="ion-chevron-left"></i>Back</button>
+            <button class="button-back button-primary" data-step="step-1" style="display:none;"><i class="ion-chevron-left"></i>Back</button>
             <button disabled class="button-next button-primary" data-step="step-4">Next<i class="ion-chevron-right"></i></button>
           </div>
         </div>
@@ -248,7 +253,7 @@
           <hr>
           <div class="button-group">
             <button class="button-back button-primary" data-step="step-3"><i class="ion-chevron-left"></i>Back</button>
-            <button disabled class="button-primary button-submit button-next" type="submit">Submit</button>
+            <button class="button-primary button-submit button-next" type="submit">Submit</button>
           </div>
         </div>
 
@@ -257,7 +262,15 @@
             Thanks	for	registering	for	the	Storecoin	First	ICO.	We’ll	email	you	once	it	launches	late
             summer	or	early	Fall	2017.	.
           </h5>
-          <p>In	the	meantime,	share	the	ICO	registration	with	a	friend.</p>
+          <p>In	the	meantime,	share	the	ICO	registration	with	a friend.</p>
+          <a style="margin-top:1em;" class="button button-primary" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=someone@example.com&su=SUBJECT&body=BODY&bcc=someone.else@example.com&tf=1" target="_blank"> Share with a Friend</a>
+        </div>
+
+        <div class="success-message-2">
+          <h5>
+            Thanks	for	checking	out	the	Storecoin	First	ICO.	You	can	give	us	a	hand	bu
+            <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=someone@example.com&su=SUBJECT&body=BODY&bcc=someone.else@example.com&tf=1" target="_blank">sharing	with	a	friend.</a>
+          </h5>
         </div>
       </form>
     </div>
@@ -297,8 +310,8 @@
           </div>
           <div class="three columns">
             <div class="num">
-              <h3>?</h3>
-              <p>Trillion</p>
+              <h3>$200</h3>
+              <p>Billion</p>
             </div>
             <div class="text">Global	Affiliate	Business	Industry</div>
           </div>
@@ -440,8 +453,8 @@
       <div class="hc-chunk hc-customize-text-wrapper">
         <h3 class="hc-feature-title inverted">Our Solution</h3>
         <p class="hc-feature-lead">
-          Storecoin	solves	this	by	enabling	smart	contracts	on	a	decentralized	blockchain	to
-          be	either	private	or	public.
+          Storecoin	solves	this	by	enabling	transactions	in	a	smart
+          contract	to	be	private,	public	or	both.
         </p>
         <p class="hc-feature-lead">
           Also,	by	enabling	unlimited	levels	of	revenue	sharing	in	unlimited	directions.
@@ -450,7 +463,7 @@
           All	using	fully	customizable,	UI	friendly	smart	contracts.
         </p>
         <p class="hc-feature-lead">
-          Storecoin	does	this	with	zero	transaction	fees	to	the	sender.
+          Storecoin	does	this	with	zero	transaction	fees	to	the	sender	and	to	the	receiver.
         </p>
       </div>
     </div>
@@ -1066,21 +1079,121 @@
           Footprint,	enterprise	messaging	for	franchise	and	chain	stores,	is	a	major	developer	partner	for	the	Storecoin	blockchain.	Storecoin	will	be
           natively	integrated	as	the	micropayment	currency	that	captures	the	revenue	sharing	needs	of	Headquarters	and	its	Store	network.
         </p>
-        <div class="row">
-          <div class="three columns">
-            <img src="images/dapp-1.png">
+        <div id="hc-slider">
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-1.png');"></div>
             <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
           </div>
-          <div class="three columns">
-            <img src="images/dapp-2.png">
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-2.png');"></div>
             <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
           </div>
-          <div class="three columns">
-            <img src="images/dapp-3.png">
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-3.png');"></div>
             <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
           </div>
-          <div class="three columns">
-            <img src="images/dapp-4.png">
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-4.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-5.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-6.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-7.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-8.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-9.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-10.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-11.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-12.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-13.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-14.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-15.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-16.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-17.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-18.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-19.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-20.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-21.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-22.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-23.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-24.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-25.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-26.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-27.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-28.png');"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+          <div class="slide">
+            <div class="image" style="background-image:url('images/slide-29.png');"></div>
             <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
           </div>
         </div>
@@ -1261,78 +1374,19 @@
     <div class="hc-feature over-rel padding" id="hc-partners">
       <h2 class="hc-feature-title">Our Partners</h2>
       <div class="row">
-        <div class="twelve columns">
+        <div class="four columns">
           <img src="images/AWS-Activate.png">
+          <p>$100,000	in	Amazon	AWS	credits</p>
+        </div>
+        <div class="four columns">
+          <img src="images/logo-footprint-inverted.png">
+          <p>First	major	Dapp developers</p>
+        </div>
+        <div class="four columns">
+          <img src="images/logo-coinfabrik.png" style="margin-top:1em;">
+          <p>Blockchain	Development	Partners</p>
         </div>
       </div>
-    </div>
-
-    <div class="hc-feature over-rel inverted padding" id="hc-promo">
-      <h2 class="hc-feature-title">About our First Token Sale</h2>
-      <div class="container sales-terms">
-        <div class="row">
-          <div class="four columns points">
-            <div>
-            <h5>The Offer</h5>
-            <ul>
-              <li>$4 Million in Tokens will be sold</li>
-                <li>This represents 20% of the Storecoin blockchain</li>
-              <li>$0.20 per Token</li>
-              <li>Storecoin Network Value is $20 Million in this Token Sale</li>
-            </ul>
-            </div>
-          </div>
-          <div class="four columns points">
-            <div>
-            <h5>How It Works</h5>
-            <ul>
-              <li>We will accept Bitcoin and Ethereum</li>
-              <li>Tokens will be transferred within 30 days</li>
-              <li>Our Ether and BTC address will be posted 7 days before sale begins</li>
-              <li>Funds will go to Development of Storecoin blockchain</li>
-            </ul>
-            </div>
-          </div>
-          <div class="four columns points">
-            <div>
-            <h5>Future Token Sales</h5>
-            <ul>
-              <li>Storecoin already sold 5% of its blockchain in R1</li>
-              <li>Storecoin will make additional tokens available as Development and Business Milestones are hit</li>
-              <li>Future Token Sales will be through a Dutch auction</li>
-              <li>Outside investors will eventually own +51% of Storecoin</li>
-            </ul>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="twelve columns">
-            <p class="desc" style="margin:2em 0;">By taking part in the Store Coin Token Sale, you receive cryptocurrency tokens based from the Storecoin blockchain</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="hc-feature over-rel padding" id="hc-first-token">
-      <h2 class="hc-feature-title">Use	of	First	Token	Sale	Proceeds</h2>
-      <ul>
-        <li>Finish	our	white	paper.</li>
-        <li>Keep	building	our	engineering	and	product	design	team.</li>
-        <li>Achieve	fully	distributed	continuous	integration	and	continuous	deployment	across	all	builds.</li>
-        <li>Finalize	our	legal	structure	and	stay	compliant	with	security	laws.</li>
-        <li>Define	our	product	roadmap</li>
-        <li>Design	and	define	Storecoin	incentives	and	dynamics	for	the	franchise
-          and	chain	store	use	case.</li>
-        <li>Develop	a	working	prototype.</li>
-        <li>Achieve	perpetual	Ethereum	and	Dapp compatability.</li>
-        <li>Define	risks	and	asset	their	potential	impact.</li>
-        <li>Security	audit,	security	audit,	security	audit	.</li>
-        <li>Automate	our	Second	Token	Sale.</li>
-        <li>Build	a	community	on	Slack.</li>
-        <li> Communicate	transparently	to	our	community	through	Twitter	and	blog	posts.</li>
-      </ul>
     </div>
 
     <div class="hc-feature inverted over-rel padding" id="hc-project-schedule">
@@ -1522,6 +1576,74 @@
       </div>
     </div>
 
+    <div class="hc-feature over-rel inverted padding" id="hc-promo">
+      <h2 class="hc-feature-title">About our First Token Sale</h2>
+      <div class="container sales-terms">
+        <div class="row">
+          <div class="four columns points">
+            <div>
+            <h5>The Offer</h5>
+            <ul>
+              <li>$4 Million in Tokens will be sold</li>
+                <li>This represents 20% of the Storecoin blockchain</li>
+              <li>$0.20 per Token</li>
+              <li>Storecoin Network Value is $20 Million in this Token Sale</li>
+            </ul>
+            </div>
+          </div>
+          <div class="four columns points">
+            <div>
+            <h5>How It Works</h5>
+            <ul>
+              <li>We will accept Bitcoin and Ethereum</li>
+              <li>Tokens will be transferred within 30 days</li>
+              <li>Our Ether and BTC address will be posted 7 days before sale begins</li>
+              <li>Funds will go to Development of Storecoin blockchain</li>
+            </ul>
+            </div>
+          </div>
+          <div class="four columns points">
+            <div>
+            <h5>Future Token Sales</h5>
+            <ul>
+              <li>Storecoin already sold 5% of its blockchain in R1</li>
+              <li>Storecoin will make additional tokens available as Development and Business Milestones are hit</li>
+              <li>Future Token Sales will be through a Dutch auction</li>
+              <li>Outside investors will eventually own +51% of Storecoin</li>
+            </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="twelve columns">
+            <p class="desc" style="margin:2em 0;">By taking part in the Store Coin Token Sale, you receive cryptocurrency tokens based from the Storecoin blockchain</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="hc-feature over-rel padding" id="hc-first-token">
+      <h2 class="hc-feature-title">Use	of	First	Token	Sale	Proceeds</h2>
+      <ul>
+        <li>Finish	our	white	paper.</li>
+        <li>Keep	building	our	engineering	and	product	design	team.</li>
+        <li>Achieve	fully	distributed	continuous	integration	and	continuous	deployment	across	all	builds.</li>
+        <li>Finalize	our	legal	structure	and	stay	compliant	with	security	laws.</li>
+        <li>Define	our	product	roadmap</li>
+        <li>Design	and	define	Storecoin	incentives	and	dynamics	for	the	franchise
+          and	chain	store	use	case.</li>
+        <li>Develop	a	working	prototype.</li>
+        <li>Achieve	perpetual	Ethereum	and	Dapp compatability.</li>
+        <li>Define	risks	and	asset	their	potential	impact.</li>
+        <li>Security	audit,	security	audit,	security	audit	.</li>
+        <li>Automate	our	Second	Token	Sale.</li>
+        <li>Build	a	community	on	Slack.</li>
+        <li> Communicate	transparently	to	our	community	through	Twitter	and	blog	posts.</li>
+      </ul>
+    </div>
+
     <div class="hc-feature over-rel padding hc-email">
       <div class="container email-widget">
         <h4>Participate	in	the	Storecoin	Pre-ICO</h4>
@@ -1549,7 +1671,8 @@
           </div>
           <hr>
           <div class="button-group">
-            <button disabled class="button-next button-primary">Next<i class="ion-chevron-right"></i></button>
+            <button disabled class="button-next button-primary" data-step="step-2">Next<i class="ion-chevron-right"></i></button>
+            <button disabled class="button-next button-primary" style="display:none;" data-step="step-3">Next<i class="ion-chevron-right"></i></button>
           </div>
         </div>
 
@@ -1650,6 +1773,7 @@
           <hr>
           <div class="button-group">
             <button class="button-back button-primary" data-step="step-2"><i class="ion-chevron-left"></i>Back</button>
+            <button class="button-back button-primary" data-step="step-1" style="display:none;"><i class="ion-chevron-left"></i>Back</button>
             <button disabled class="button-next button-primary" data-step="step-4">Next<i class="ion-chevron-right"></i></button>
           </div>
         </div>
@@ -1664,7 +1788,7 @@
           <hr>
           <div class="button-group">
             <button class="button-back button-primary" data-step="step-3"><i class="ion-chevron-left"></i>Back</button>
-            <button disabled class="button-primary button-submit button-next" type="submit">Submit</button>
+            <button class="button-primary button-submit button-next" type="submit">Submit</button>
           </div>
         </div>
 
@@ -1673,7 +1797,15 @@
             Thanks	for	registering	for	the	Storecoin	First	ICO.	We’ll	email	you	once	it	launches	late
             summer	or	early	Fall	2017.	.
           </h5>
-          <p>In	the	meantime,	share	the	ICO	registration	with	a	friend.</p>
+          <p>In	the	meantime,	share	the	ICO	registration	with	a friend.</p>
+          <a style="margin-top:1em;" class="button button-primary" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=someone@example.com&su=SUBJECT&body=BODY&bcc=someone.else@example.com&tf=1" target="_blank"> Share with a Friend</a>
+        </div>
+
+        <div class="success-message-2">
+          <h5>
+            Thanks	for	checking	out	the	Storecoin	First	ICO.	You	can	give	us	a	hand	bu
+            <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=someone@example.com&su=SUBJECT&body=BODY&bcc=someone.else@example.com&tf=1" target="_blank">sharing	with	a	friend.</a>
+          </h5>
         </div>
       </form>
     </div>
@@ -1718,7 +1850,7 @@
           <div class="three columns">
             <img src="images/logo.png" style="width:100px; height: auto;" />
             <div></div>
-            <p style="font-size: 0.7em; padding: 0.5em 0;"><a href="" class=""><strong>Storecoin</strong></a> is	a	public	blockchain	for	systems	governed	by	hierarchy	and	by	revenue	sharing.	</p>
+            <p style="font-size: 0.7em; padding: 0.5em 0;"><a href="" class=""><strong>Storecoin</strong></a> is	a	public	blockchain for	systems	governed	by	complex	and	private	revenue	sharing	smart	contracts.</p>
 
           </div>
         </section>
