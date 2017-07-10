@@ -1185,6 +1185,10 @@ p {
   text-align: center;
 }
 
+#hc-believe .hc-chunk {
+  max-width: 850px;
+}
+
 #hc-believe .three.columns .num {
   font-size: 1.5em;
   border: 5px solid #c7dfb8;
@@ -2594,5 +2598,19 @@ p {
 
   .hc-project-schedule {
     margin-bottom: 3em;
+  }
+}
+
+/* #hc-solution */
+
+#hc-solution .hc-feature-lead {
+  font-size: 1.8em;
+  text-align: center;
+  margin: 0 auto 0.5em;
+}
+
+@media only screen and (max-width: 1025px) {
+  #hc-solution .hc-feature-lead {
+    font-size: 1.3em;
   }
 }
