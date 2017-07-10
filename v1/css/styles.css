@@ -1828,8 +1828,9 @@ p {
 }
 
 #hc-partners p {
-  font-size: 1.5em;
-  margin : 1em 0px;
+  font-size: 1em;
+  color: grey;
+  margin: 0.5em 0px 0px;
 }
 
 /*--------------------------*/

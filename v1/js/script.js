@@ -362,7 +362,7 @@ function toggleIncentive () {
       $incentive = $network.find('.incentive');
 
   $incentive.click(function () {
-    $incentive.removeClass('reveal');
+    $incentive.not(this).removeClass('reveal');
     $(this).toggleClass('reveal');
   });
 }
