@@ -324,17 +324,15 @@ function toggleCardTasks() {
       $bars = $cards.find('.bars');
 
   $barsHead.click(function(){
-    if ($(this).find('h6 i').hasClass('ion-chevron-up')) {
-      $(this).find('h6 i').removeClass('ion-chevron-up');
-      $(this).find('h6 i').addClass('ion-chevron-down');
-      $(this).next('.bars').addClass('hidden');
-    } else {
-      $bars.addClass('hidden');
-      $barsHead.find('h6 i').removeClass('ion-chevron-up');
-      $barsHead.find('h6 i').addClass('ion-chevron-down');
-      $(this).find('h6 i').toggleClass('ion-chevron-up ion-chevron-down');
-      $(this).next('.bars').toggleClass('hidden');
-    }
+    var $thisCard = $(this).parents('.task-card');
+    var $thisBar = $thisCard.find('.bars');
+    $cards.not($thisCard).addClass('truncate');
+    $thisCard.toggleClass('truncate');
+    $barsHead.not(this).find('h6 i').removeClass('ion-chevron-up');
+    $barsHead.not(this).find('h6 i').addClass('ion-chevron-down');
+    $bars.not($thisBar).addClass('hidden');
+    $(this).find('h6 i').toggleClass('ion-chevron-up ion-chevron-down');
+    $(this).next('.bars').toggleClass('hidden');
   });
 }
 
@@ -470,7 +468,30 @@ function emailSubscribe() {
     $(this).parents('.email-steps').hide();
     // console.log($emailSection.find('div.email-steps[data-step="'+ stepVal +'"]'),stepVal);
     $thisEmailSect.find('.email-steps.'+ stepVal).show();
+    if (stepVal == 'step-2') {
+      initSticky();
+    }
   });
+
+  var copyButton = document.getElementsByClassName("copy-button");
+  for (var i = 0; i < copyButton.length; i++) {
+    copyButton[i].addEventListener("click", function() {
+      // console.log(document.getElementsByClassName("copy-target")[0]);
+      // console.log(document.getElementById("copy-target"));
+      var target = document.getElementsByClassName("copy-target")[0];
+      copyToClipboard(target);
+      // $('#copyButton').text('Copied');
+    });
+  }
+  // copyButton.addEventListener("click", function() {
+  //   copyToClipboard(document.getElementsByClassName("copy-target"));
+  //   // $('#copyButton').text('Copied');
+  // });
+  // var $copyLinkWrap = $('#email-copy-link');
+  //
+  // $copyLinkWrap.find('.button').click(function(){
+  //   copyToClipboard($copyLinkWrap.find('input'));
+  // });
 }
 
 function validateEmail(email) {
@@ -481,31 +502,91 @@ function validateEmail(email) {
 function initSlider() {
   var $sliderEl = $('#hc-slider');
 
-  $sliderEl.find('.slide .text').click(function(){
-    $sliderEl.find('.slide .text').not(this).removeClass('show');
-    $(this).toggleClass('show');
-  });
+  if ($sliderEl.length > 0 ) {
+    // console.log('slider');
+    $sliderEl.find('.slide .text').click(function(){
+      $sliderEl.find('.slide .text').not(this).removeClass('show');
+      $(this).toggleClass('show');
+    });
 
-  $sliderEl.slick({
-    lazyLoad: 'ondemand',
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    arrows : true,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
+    $sliderEl.slick({
+      lazyLoad: 'ondemand',
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      arrows : true,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
         }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
+      ]
+    });
+  }
+}
+
+function copyToClipboard(elem) {
+	  // create hidden text element, if it doesn't already exist
+    var targetId = "_hiddenCopyText_";
+    var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+    var origSelectionStart, origSelectionEnd;
+    if (isInput) {
+        // can just use the original source element for the selection and copy
+        target = elem;
+        origSelectionStart = elem.selectionStart;
+        origSelectionEnd = elem.selectionEnd;
+    } else {
+        // must use a temporary form element for the selection and copy
+        target = document.getElementById(targetId);
+        if (!target) {
+            var target = document.createElement("textarea");
+            target.style.position = "absolute";
+            target.style.left = "-9999px";
+            target.style.top = "0";
+            target.id = targetId;
+            document.body.appendChild(target);
         }
-      }
-    ]
-  });
+        target.textContent = elem.textContent;
+    }
+    // select the content
+    var currentFocus = document.activeElement;
+    target.focus();
+    target.setSelectionRange(0, target.value.length);
+
+    // copy the selection
+    var succeed;
+    try {
+    	  succeed = document.execCommand("copy");
+    } catch(e) {
+        succeed = false;
+    }
+    // restore original focus
+    if (currentFocus && typeof currentFocus.focus === "function") {
+        currentFocus.focus();
+    }
+
+    if (isInput) {
+        // restore prior selection
+        elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+    } else {
+        // clear temporary content
+        target.textContent = "";
+    }
+    return succeed;
+}
+
+function initSticky() {
+  var sticky = new Sticky('.sticky');
+
+  // and when parent change height..
+  sticky.update();
 }
