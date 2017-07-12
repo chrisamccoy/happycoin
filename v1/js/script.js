@@ -33,7 +33,7 @@ $(document).ready(function(){
   toggleCardTasks();
   toggleAppsDesc();
   toggleIncentive();
-  emailSubscribe();
+  initEmail();
   initSlider();
   initPartnerSlider();
 });
@@ -432,7 +432,7 @@ function emailSubscribe() {
     $.ajax({
       type : 'POST',
       url : 'https://hooks.zapier.com/hooks/catch/2306819/5ua8pj/',
-      // url : 'https://market.capitalstake.com',
+      url : 'https://market.capitalstake.com',
       data : $thisForm.serialize()
     }).done(function(result){
       console.log($thisForm.serialize());
@@ -451,7 +451,7 @@ function emailSubscribe() {
       $.ajax({
         type : 'GET',
         url : 'https://hooks.zapier.com/hooks/catch/2306819/5bmzth/',
-        // url : 'https://market.capitalstake.com',
+        url : 'https://market.capitalstake.com',
         data : $thisForm.serialize()
       }).done(function(result){
         console.log(result);
@@ -619,5 +619,193 @@ function initPartnerSlider() {
         }
       ]
     });
+  }
+}
+
+function initEmail () {
+  var template =
+    '<div class="container email-widget">' +
+      '<h4>Participate	in	the	Storecoin	Pre-ICO</h4>' +
+      '<div class="row form">' +
+        '<div class="eight columns">'+
+          '<input class="u-full-width" type="email" name="email" placeholder="Enter your email address">'+
+        '</div>'+
+        '<div class="four columns">'+
+          '<input class="button-primary" type="submit" value="Subscribe">'+
+        '</div>'+
+      '</div>'+
+    '</div>'+
+    '<form class="steps-form">'+
+      '<div class="email-steps step-1">'+
+        '<p>Have you participated in Token Sales or ICOs before?</p>'+
+        '<div class="field">'+
+          '<input type="radio" name="participate" value="Yes">'+
+          '<label for="participate-yes">Yes</label>'+
+        '</div>'+
+        '<div class="field">'+
+          '<input type="radio" name="participate" value="No">'+
+          '<label for="participate-no">No</label>'+
+        '</div>'+
+        '<hr>'+
+        '<div class="button-group">'+
+          '<button disabled class="button-next button-primary" data-step="step-2">Next<i class="ion-chevron-right"></i></button>'+
+          '<button disabled class="button-next button-primary" style="display:none;" data-step="step-3">Next<i class="ion-chevron-right"></i></button>'+
+        '</div>'+
+      '</div>'+
+      '<div class="email-steps step-2">'+
+        '<div data-sticky-container>'+
+          '<p class="sticky" data-margin-top="65">How much do you typically invest in a Token Sale or ICO?</p>'+
+          '<div class="fields">'+
+            '<div class="field">'+
+              '<input type="radio" name="invest" value="<$1,000">'+
+              '<label for="invest-1"><$1,000</label>'+
+            '</div>'+
+            '<div class="field">'+
+              '<input type="radio" name="invest" value="$1,000 - $5,000">'+
+              '<label for="invest-2">$1,000 - $5,000</label>'+
+            '</div>'+
+          '</div>'+
+          '<div class="fields">'+
+            '<div class="field">'+
+              '<input type="radio" name="invest" value="$5,000 - $25,000">'+
+              '<label for="invest-3">$5,000 - $25,000</label>'+
+            '</div>'+
+            '<div class="field">'+
+              '<input type="radio" name="invest" value="$25,000 - $50,000">'+
+              '<label for="invest-4">$25,000 - $50,000</label>'+
+            '</div>'+
+          '</div>'+
+          '<div class="fields">'+
+            '<div class="field">'+
+              '<input type="radio" name="invest" value="$50,000 - $75,000">'+
+              '<label for="invest-5">$50,000 - $75,000</label>'+
+            '</div>'+
+            '<div class="field">'+
+              '<input type="radio" name="invest" value="$75,000 - $100,000">'+
+              '<label for="invest-6">$75,000 - $100,000</label>'+
+            '</div>'+
+          '</div>'+
+          '<div class="fields">'+
+            '<div class="field">'+
+              '<input type="radio" name="invest" value="$100,000 - $150,000">'+
+              '<label for="invest-7">$100,000 - $150,000</label>'+
+            '</div>'+
+            '<div class="field">'+
+              '<input type="radio" name="invest" value="$150,000 - $200,000">'+
+              '<label for=invest-8>$150,000 - $200,000</label>'+
+            '</div>'+
+          '</div>'+
+          '<div class="fields">'+
+            '<div class="field">'+
+              '<input type="radio" name="invest" value="$200,000 - $250,000">'+
+              '<label for="invest-9">$200,000 - $250,000</label>'+
+            '</div>'+
+            '<div class="field">'+
+              '<input type="radio" name="invest" value="$250,000 - $500,000">'+
+              '<label for="invest-10">$250,000 - $500,000</label>'+
+            '</div>'+
+          '</div>'+
+          '<div class="fields">'+
+            '<div class="field">'+
+              '<input type="radio" name="invest" value="$500,000 - $1,000,000">'+
+              '<label for="invest-11">$500,000 - $1,000,000</label>'+
+            '</div>'+
+            '<div class="field">'+
+              '<input type="radio" name="invest" value="$1,000 - $3,000,000">'+
+              '<label for="invest-12">$1,000 - $3,000,000</label>'+
+            '</div>'+
+          '</div>'+
+          '<div class="fields">'+
+            '<div class="field">'+
+              '<input type="radio" name="invest" value="$3,000,000 or more">'+
+              '<label for="invest-13">$3,000,000 or more</label>'+
+            '</div>'+
+          '</div>'+
+        '</div>'+
+        '<hr>'+
+        '<div class="button-group">'+
+          '<button class="button-back button-primary" data-step="step-1"><i class="ion-chevron-left"></i>Back</button>'+
+          '<button disabled class="button-next button-primary" data-step="step-3">Next<i class="ion-chevron-right"></i></button>'+
+        '</div>'+
+      '</div>'+
+      '<div class="email-steps step-3">'+
+        '<p>Are	you	interesting	in	participating	in	the	Storecoin	First	ICO?</p>'+
+        '<div class="field">'+
+          '<input type="radio" name="payment" value="Yes">'+
+          '<label for="payment-yes">Yes</label>'+
+        '</div>'+
+        '<div class="field">'+
+          '<input type="radio" name="payment" value="No">'+
+          '<label for="payment-no">No</label>'+
+        '</div>'+
+        '<hr>'+
+        '<div class="button-group">'+
+          '<button class="button-back button-primary" data-step="step-2"><i class="ion-chevron-left"></i>Back</button>'+
+          '<button class="button-back button-primary" data-step="step-1" style="display:none;"><i class="ion-chevron-left"></i>Back</button>'+
+          '<button disabled class="button-next button-primary" data-step="step-4">Next<i class="ion-chevron-right"></i></button>'+
+        '</div>'+
+      '</div>'+
+      '<div class="email-steps step-4">'+
+        '<p>Do	you	have	questions	or	ideas	for	the	Storecoin	Team?	</p>'+
+        '<div class="field">'+
+          '<input type="text" class="u-full-width" name="comment">'+
+          '<input type="email" class="u-full-width" name="email" hidden>'+
+        '</div>'+
+        '<hr>'+
+        '<div class="button-group">'+
+          '<button class="button-back button-primary" data-step="step-3"><i class="ion-chevron-left"></i>Back</button>'+
+          '<button class="button-primary button-submit button-next" type="submit">Submit</button>'+
+        '</div>'+
+      '</div>'+
+      '<div class="success-message message">'+
+        '<h5>'+
+          'Thanks	for	registering	for	the	Storecoin	First	ICO.	We’ll	email'+
+          'you	once	it	launches.	ETA	2017.'+
+        '</h5>'+
+        '<h5>'+
+          'By	registering	directly	on	Storecoin,	you\'ll	have	priority'+
+          'access	to	our	First	ICO	before	the	public.'+
+        '</h5>'+
+        '<h5>'+
+          'If	you	buy	storecoins in	our	First	ICO,	you\'ll	have	first	rights'+
+          'to	bid	on	future	ICOs,	too.'+
+        '</h5>'+
+        '<h5>'+
+          'Here\'s	a	link	to	share	the	Storecoin	First	ICO	with	a	friend.'+
+        '</h5>'+
+        '<div class="form row desktop-link" style="max-width:700px;">'+
+          '<div class="eight columns">'+
+            '<input class="u-full-width copy-target" readonly type="text" value="http://storeco.in/firstico">'+
+          '</div>'+
+          '<div class="four columns">'+
+            '<button class="button button-primary copy-button"><i class="ion-link"></i> Copy Link</button>'+
+          '</div>'+
+        '</div>'+
+        '<div class="mobile-link">'+
+          '<a class="button button-primary" target="_blank" href="mailto:someone@example.com">Click Here</a>'+
+        '</div>'+
+      '</div>'+
+      '<div class="success-message-2 message">'+
+        '<h5>'+
+          'Thanks	for	checking	out	the	Storecoin	First	ICO.'+
+        '</h5>'+
+        '<h5>You	can	give	us	a	hand	by sharing	the storecoin first ICO with a friend.</h5>'+
+        '<div class="form row desktop-link" style="max-width:700px;">'+
+          '<div class="eight columns">'+
+            '<input class="u-full-width copy-target" readonly type="text" value="http://storeco.in/firstico">'+
+          '</div>'+
+          '<div class="four columns">'+
+            '<button class="button button-primary copy-button"><i class="ion-link"></i> Copy Link</button>'+
+          '</div>'+
+        '</div>'+
+        '<div class="mobile-link">'+
+          '<a class="button button-primary" target="_blank" href="mailto:someone@example.com">Click Here</a>' +
+        '</div>'+
+      '</div>'+
+    '</form>';
+  // console.log(template);
+  if ($('.hc-email').length > 0) {
+    $('.hc-email').append(template);
+    emailSubscribe();
   }
 }
