@@ -35,6 +35,7 @@ $(document).ready(function(){
   toggleIncentive();
   emailSubscribe();
   initSlider();
+  initPartnerSlider();
 });
 
 
@@ -589,4 +590,34 @@ function initSticky() {
 
   // and when parent change height..
   sticky.update();
+}
+
+function initPartnerSlider() {
+  var $sliderEl = $('#hc-partners-slider');
+
+  if ($sliderEl.length > 0 ) {
+
+    $sliderEl.slick({
+      lazyLoad: 'ondemand',
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      arrows : true,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  }
 }

@@ -68,9 +68,9 @@ p {
 }
 
 .hc-feature .hc-feature-lead {
-  font-size: 19px;
+  font-size: 1.8em;
   text-align: center;
-  margin: 0 auto 1em;
+  margin: 0 auto 0.5em;
 }
 
 .hc-feature.inverted {
@@ -334,6 +334,10 @@ p {
 }
 
 @media only screen and (max-width: 700px) {
+  .hc-feature .hc-feature-lead {
+    font-size: 1em;
+  }
+
   .email-widget h4 {
     font-size: 1.7rem;
     margin-bottom : 0.5em;
@@ -564,7 +568,7 @@ p {
   background-position: center 80px;
   background-repeat: no-repeat;
   background-size: 90%;
-  padding : 3em 0px 2em ;
+  padding : 3em 0px 0em ;
 }
 
 #hc-intro .hc-intro-text-wrapper {
@@ -659,8 +663,12 @@ p {
   margin: 0 auto 3em;
 }
 
-#hc-first-dapp .swipe-message {
+/*#hc-first-dapp .swipe-message {
   display: none;
+}*/
+
+#hc-slider {
+  margin-top : 3em ;
 }
 
 #hc-slider .slide img {
@@ -711,17 +719,20 @@ p {
   /*transition: opacity .2s ease-in;*/
 }
 
-#hc-slider .slick-arrow:before {
+.slick-arrow:before {
   color: black;
   font-size: 50px;
+  position: absolute;
+  top: -10px;
+  left : 0px;
 }
 
-#hc-slider .slick-prev:before {
+.slick-prev:before {
   content : '\f3cf';
   font-family: "Ionicons";
 }
 
-#hc-slider .slick-next:before {
+.slick-next:before {
   content : "\f3d1";
   font-family: "Ionicons";
 }
@@ -732,9 +743,9 @@ p {
 }*/
 
 @media only screen and (max-width: 700px) {
-  #hc-first-dapp .swipe-message {
+  /*#hc-first-dapp .swipe-message {
     display: block;
-  }
+  }*/
 
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead:first-child {
     font-size: 1.3em !important;
@@ -839,11 +850,15 @@ p {
   text-align: center;
 }
 
-#hc-sales-summary .lead {
+/*#hc-sales-summary .lead {
   font-size: 1.4em;
   margin-bottom: 2em;
   text-align: center;
   max-width: 700px;
+}*/
+
+#hc-sales-summary .network-stats {
+  margin-top: 3em;
 }
 
 #hc-sales-summary .token-dist .circle {
@@ -1220,6 +1235,10 @@ p {
 
 #hc-believe .hc-chunk {
   max-width: 850px;
+}
+
+#hc-believe .global-stats {
+  margin-top: 3em;
 }
 
 #hc-believe .three.columns .num {
@@ -1808,7 +1827,7 @@ p {
 }
 
 #hc-team .members {
-    margin-top: 1em;
+    margin-top: 3em;
 }
 
 #hc-team .members > .row {
@@ -1856,7 +1875,7 @@ p {
 
 #hc-partners {
   text-align: center;
-  max-width: 1200px;
+  /*max-width: 1200px;*/
   margin: auto;
 }
 
@@ -1866,13 +1885,25 @@ p {
 }
 
 #hc-partners img {
-  width : 100%;
+  width : 80%;
+  margin-bottom: 1em;
 }
 
 #hc-partners p {
   font-size: 1em;
   color: grey;
-  margin: 0px 0px 3em;
+  margin: 0px 0px 0em;
+}
+
+#hc-partners-slider .slide {
+  /*height: 100%;*/
+  height: 150px;
+  min-height: 1px;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0em;
 }
 
 @media only screen and (max-width: 700px) {
@@ -2170,23 +2201,22 @@ p {
   font-weight: 300;
 }
 
-.hc-email .success-message {
+.hc-email .message {
   display: none;
   text-align: center;
 }
 
-.hc-email .success-message-2 {
+/*.hc-email .success-message-2 {
   display: none;
   text-align: center;
-}
+}*/
 
-.hc-email .success-message a:not(.button),
-.hc-email .success-message-2 a:not(.button) {
+.hc-email .message a:not(.button) {
   text-decoration: underline;
 }
 
-.hc-email .success-message-2 h5 {
-  margin : 0px;
+.hc-email .message input {
+  text-decoration: underline;
 }
 
 .hc-email .form input[type="email"] {
@@ -2741,6 +2771,11 @@ p {
   font-size: 1.8em;
   text-align: center;
   margin: 0 auto 0.5em;
+}
+
+#hc-solution img {
+  width: 100%;
+  margin-bottom: 2em;
 }
 
 @media only screen and (max-width: 1025px) {
