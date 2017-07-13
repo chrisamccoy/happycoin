@@ -338,7 +338,7 @@ function toggleCardTasks() {
 }
 
 function toggleAppsDesc() {
-  var $apps = $('#hc-apps .container.desktop'),
+  var $apps = $('#hc-apps .desktop'),
       $row  = $apps.find('.hc-apps-row'),
       $title = $row.find('.title'),
       $reveal = $row.find('.title-reveal');
@@ -431,7 +431,7 @@ function emailSubscribe() {
     // console.log($thisForm.serialize());
     $.ajax({
       type : 'POST',
-      url : 'https://hooks.zapier.com/hooks/catch/2306819/5ua8pj/',
+      // url : 'https://hooks.zapier.com/hooks/catch/2306819/5ua8pj/',
       url : 'https://market.capitalstake.com',
       data : $thisForm.serialize()
     }).done(function(result){
@@ -450,7 +450,7 @@ function emailSubscribe() {
       $thisEmailSect.find('.email-steps.step-4 input[type="email"]').val(emailVal);
       $.ajax({
         type : 'GET',
-        url : 'https://hooks.zapier.com/hooks/catch/2306819/5bmzth/',
+        // url : 'https://hooks.zapier.com/hooks/catch/2306819/5bmzth/',
         url : 'https://market.capitalstake.com',
         data : $thisForm.serialize()
       }).done(function(result){
@@ -484,15 +484,6 @@ function emailSubscribe() {
       // $('#copyButton').text('Copied');
     });
   }
-  // copyButton.addEventListener("click", function() {
-  //   copyToClipboard(document.getElementsByClassName("copy-target"));
-  //   // $('#copyButton').text('Copied');
-  // });
-  // var $copyLinkWrap = $('#email-copy-link');
-  //
-  // $copyLinkWrap.find('.button').click(function(){
-  //   copyToClipboard($copyLinkWrap.find('input'));
-  // });
 }
 
 function validateEmail(email) {
@@ -508,6 +499,12 @@ function initSlider() {
     $sliderEl.find('.slide .text').click(function(){
       $sliderEl.find('.slide .text').not(this).removeClass('show');
       $(this).toggleClass('show');
+    });
+
+    $sliderEl.find('.slide .link').click(function(){
+      $thisText = $(this).parents('.slide').find('.text');
+      $sliderEl.find('.slide .text').not($thisText).removeClass('show');
+      $thisText.toggleClass('show');
     });
 
     $sliderEl.slick({
@@ -625,7 +622,7 @@ function initPartnerSlider() {
 function initEmail () {
   var template =
     '<div class="container email-widget">' +
-      '<h4>Participate	in	the	Storecoin	Pre-ICO</h4>' +
+      '<h4>Participate	in	the	Storecoin First-ICO</h4>' +
       '<div class="row form">' +
         '<div class="eight columns">'+
           '<input class="u-full-width" type="email" name="email" placeholder="Enter your email address">'+
@@ -759,20 +756,20 @@ function initEmail () {
       '</div>'+
       '<div class="success-message message">'+
         '<h5>'+
-          'Thanks	for	registering	for	the	Storecoin	First	ICO.	We’ll	email'+
+          'Thanks	for	registering	for	the	Storecoin	First	ICO.	<br>We’ll	email'+
           'you	once	it	launches.	ETA	2017.'+
         '</h5>'+
-        '<h5>'+
+        '<p>'+
           'By	registering	directly	on	Storecoin,	you\'ll	have	priority'+
           'access	to	our	First	ICO	before	the	public.'+
-        '</h5>'+
-        '<h5>'+
+        '</p>'+
+        '<p>'+
           'If	you	buy	storecoins in	our	First	ICO,	you\'ll	have	first	rights'+
           'to	bid	on	future	ICOs,	too.'+
-        '</h5>'+
-        '<h5>'+
+        '</p>'+
+        '<p>'+
           'Here\'s	a	link	to	share	the	Storecoin	First	ICO	with	a	friend.'+
-        '</h5>'+
+        '</p>'+
         '<div class="form row desktop-link" style="max-width:700px;">'+
           '<div class="eight columns">'+
             '<input class="u-full-width copy-target" readonly type="text" value="http://storeco.in/firstico">'+
@@ -789,7 +786,7 @@ function initEmail () {
         '<h5>'+
           'Thanks	for	checking	out	the	Storecoin	First	ICO.'+
         '</h5>'+
-        '<h5>You	can	give	us	a	hand	by sharing	the storecoin first ICO with a friend.</h5>'+
+        '<p>You	can	give	us	a	hand	by sharing	the storecoin first ICO with a friend.</p>'+
         '<div class="form row desktop-link" style="max-width:700px;">'+
           '<div class="eight columns">'+
             '<input class="u-full-width copy-target" readonly type="text" value="http://storeco.in/firstico">'+
