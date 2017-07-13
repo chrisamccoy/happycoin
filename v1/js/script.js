@@ -431,8 +431,8 @@ function emailSubscribe() {
     // console.log($thisForm.serialize());
     $.ajax({
       type : 'POST',
-      // url : 'https://hooks.zapier.com/hooks/catch/2306819/5ua8pj/',
-      url : 'https://market.capitalstake.com',
+      url : 'https://hooks.zapier.com/hooks/catch/2306819/5ua8pj/',
+      // url : 'https://market.capitalstake.com',
       data : $thisForm.serialize()
     }).done(function(result){
       console.log($thisForm.serialize());
@@ -450,8 +450,8 @@ function emailSubscribe() {
       $thisEmailSect.find('.email-steps.step-4 input[type="email"]').val(emailVal);
       $.ajax({
         type : 'GET',
-        // url : 'https://hooks.zapier.com/hooks/catch/2306819/5bmzth/',
-        url : 'https://market.capitalstake.com',
+        url : 'https://hooks.zapier.com/hooks/catch/2306819/5bmzth/',
+        // url : 'https://market.capitalstake.com',
         data : $thisForm.serialize()
       }).done(function(result){
         console.log(result);
