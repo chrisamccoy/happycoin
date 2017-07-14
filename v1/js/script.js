@@ -757,20 +757,18 @@ function initEmail () {
       '<div class="success-message message">'+
         '<h5>'+
           'Thanks	for	registering	for	the	Storecoin	First	ICO.	<br>We’ll	email'+
-          'you	once	it	launches.	ETA	2017.'+
+          ' you	once	it	launches.	ETA	2017.'+
         '</h5>'+
         '<p>'+
-          'By	registering	directly	on	Storecoin,	you\'ll	have	priority'+
-          'access	to	our	First	ICO	before	the	public.'+
+          'By registering directly on Storecoin, you\'ll have priority access to our First ICO before the public.'+
         '</p>'+
         '<p>'+
-          'If	you	buy	storecoins in	our	First	ICO,	you\'ll	have	first	rights'+
-          'to	bid	on	future	ICOs,	too.'+
+          'If you buy storecoins in our First ICO, you\'ll have first rightsto bid on future ICOs, too.'+
         '</p>'+
         '<p>'+
-          'Here\'s	a	link	to	share	the	Storecoin	First	ICO	with	a	friend.'+
+          'Here\'s a link to share the Storecoin First ICO with a friend.'+
         '</p>'+
-        '<div class="form row desktop-link" style="max-width:700px;">'+
+        '<div class="form row desktop-link">'+
           '<div class="eight columns">'+
             '<input class="u-full-width copy-target" readonly type="text" value="http://storeco.in/firstico">'+
           '</div>'+
@@ -787,7 +785,7 @@ function initEmail () {
           'Thanks	for	checking	out	the	Storecoin	First	ICO.'+
         '</h5>'+
         '<p>You	can	give	us	a	hand	by sharing	the storecoin first ICO with a friend.</p>'+
-        '<div class="form row desktop-link" style="max-width:700px;">'+
+        '<div class="form row desktop-link">'+
           '<div class="eight columns">'+
             '<input class="u-full-width copy-target" readonly type="text" value="http://storeco.in/firstico">'+
           '</div>'+
