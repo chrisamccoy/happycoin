@@ -74,7 +74,7 @@ p {
 .hc-feature .hc-feature-lead {
   font-size: 1.8em;
   text-align: center;
-  margin: 0 auto 0.5em;
+  margin: 0 auto 1em;
 }
 
 .hc-feature.inverted {
@@ -271,8 +271,13 @@ p {
 }
 
 @media only screen and (max-width: 700px) {
+  .hc-feature {
+    padding-top: 3em;
+    padding-bottom: 3.5em;
+  }
+
   .hc-feature .hc-feature-lead {
-    font-size: 1em;
+    font-size: 1.3em;
   }
 
   .email-widget h4 {
@@ -648,7 +653,7 @@ p {
   }*/
 
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead:first-child {
-    font-size: 1.4em !important;
+    font-size: 1.55em !important;
   }
 
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead:last-child {
@@ -659,6 +664,10 @@ p {
     padding: 0px;
     margin-top: 4.5em;
     height: calc(100vh - 205px);
+  }
+
+  #hc-slider .slide {
+    height : 390px;
   }
   /*#hc-first-dapp .columns {
     margin-bottom: 1em;
@@ -1765,8 +1774,12 @@ p {
     flex-direction: column;
   }
 
-  #hc-partners img {
-    width : 100% !important;
+  #hc-partners .slick-next {
+    right : -5px;
+  }
+
+  #hc-partners .slick-prev {
+    left : -5px;
   }
 
   #hc-partners .row .four.columns:last-child p {
@@ -1971,6 +1984,8 @@ p {
 /* .hc-email  */
 .hc-email {
   background : #c7dfb8;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .email-widget {
@@ -2063,6 +2078,10 @@ p {
   font-weight: 300;
 }
 
+.hc-email .email-steps .field input::placeholder {
+  opacity: 0.5
+}
+
 .hc-email .message {
   display: none;
   text-align: center;
@@ -2072,7 +2091,7 @@ p {
 
 .hc-email .message h5 {
   font-size: 3em;
-  margin:0px;
+  margin:0px 0px 1em;
 }
 
 .hc-email .message p {
@@ -2120,6 +2139,11 @@ p {
 }
 
 @media only screen and (max-width: 700px) {
+
+  .hc-email .message h5 {
+    font-size: 1.8em;
+  }
+
   .hc-email .email-steps {
     padding: 0px;
   }
@@ -2490,6 +2514,9 @@ p {
 /* #hc-footer  */
 
 @media only screen and (max-width: 1025px) {
+  #hc-intro {
+    height : calc(100vh - 250px); 
+  }
   .points p {
     margin-bottom: 3em;
   }
@@ -2555,9 +2582,9 @@ p {
   }
 
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    margin: 0.5em 0.2em;
+    margin: 1em 0.2em;
     /* line-height: 1.4; */
-    font-size: 1.1em !important;
+    font-size: 1.2em !important;
   }
 
   #hc-intro .learn-more {
@@ -2629,9 +2656,9 @@ p {
   }
 
   .hc-feature .hc-feature-title {
-    font-size: 1.4em;
-    padding: 0 1em;
-    margin: 0.5em 0 1em !important;
+    font-size: 2.2em;
+    /* padding: 0 1em; */
+    margin: 0em 0 1em !important;
   }
 
   #hc-footer .columns h3 {

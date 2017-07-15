@@ -622,7 +622,7 @@ function initPartnerSlider() {
 function initEmail () {
   var template =
     '<div class="container email-widget">' +
-      '<h4>Participate	in	the	Storecoin First-ICO</h4>' +
+      '<h4>Participate	in	the	Storecoin First ICO</h4>' +
       '<div class="row form">' +
         '<div class="eight columns">'+
           '<input class="u-full-width" type="email" name="email" placeholder="Enter your email address">'+
@@ -745,7 +745,7 @@ function initEmail () {
       '<div class="email-steps step-4">'+
         '<p>Do	you	have	questions	or	ideas	for	the	Storecoin	Team?	</p>'+
         '<div class="field">'+
-          '<input type="text" class="u-full-width" name="comment">'+
+          '<input type="text" class="u-full-width" name="comment" placeholder="Ask a question, share your	ideas here.">'+
           '<input type="email" class="u-full-width" name="email" hidden>'+
         '</div>'+
         '<hr>'+
@@ -759,13 +759,13 @@ function initEmail () {
           'Thanks	for	registering	for	the	Storecoin	First	ICO.	<br>We’ll	email'+
           ' you	once	it	launches.	ETA	2017.'+
         '</h5>'+
-        '<p>'+
+        '<p class="hc-feature-lead">'+
           'By registering directly on Storecoin, you\'ll have priority access to our First ICO before the public.'+
         '</p>'+
-        '<p>'+
-          'If you buy storecoins in our First ICO, you\'ll have first rightsto bid on future ICOs, too.'+
+        '<p class="hc-feature-lead">'+
+          'If you buy storecoins in our First ICO, you\'ll have first rights to bid on future ICOs, too.'+
         '</p>'+
-        '<p>'+
+        '<p class="hc-feature-lead">'+
           'Here\'s a link to share the Storecoin First ICO with a friend.'+
         '</p>'+
         '<div class="form row desktop-link">'+
@@ -784,7 +784,7 @@ function initEmail () {
         '<h5>'+
           'Thanks	for	checking	out	the	Storecoin	First	ICO.'+
         '</h5>'+
-        '<p>You	can	give	us	a	hand	by sharing	the storecoin first ICO with a friend.</p>'+
+        '<p class="hc-feature-lead">You	can	give	us	a	hand	by sharing	the storecoin first ICO with a friend.</p>'+
         '<div class="form row desktop-link">'+
           '<div class="eight columns">'+
             '<input class="u-full-width copy-target" readonly type="text" value="http://storeco.in/firstico">'+
