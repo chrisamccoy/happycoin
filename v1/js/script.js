@@ -428,6 +428,8 @@ function emailSubscribe() {
   $stepsform.find('.button-submit[type="submit"]').click(function(){
     var $thisEmailSect = $(this).parents('.hc-email');
     var $thisForm = $(this).parents('.steps-form');
+
+    $(window).scrollTop($thisEmailSect.offset().top - 66);
     // console.log($thisForm.serialize());
     $.ajax({
       type : 'POST',
@@ -446,6 +448,9 @@ function emailSubscribe() {
     var $thisEmailSect = $(this).parents('.hc-email');
     var $thisForm = $(this).parents('.form');
     var emailVal = $thisForm.find('input[type="email"]').val();
+
+    $(window).scrollTop($thisEmailSect.offset().top - 66);
+
     if(emailVal){
       $thisEmailSect.find('.email-steps.step-4 input[type="email"]').val(emailVal);
       $.ajax({
@@ -465,6 +470,9 @@ function emailSubscribe() {
     var $thisEmailSect = $(this).parents('.hc-email');
     // console.log('step clicked');
     var stepVal = $(this).data().step;
+
+    $(window).scrollTop($thisEmailSect.offset().top - 66);
+
     // console.log(stepVal);git p
     $(this).parents('.email-steps').hide();
     // console.log($emailSection.find('div.email-steps[data-step="'+ stepVal +'"]'),stepVal);

@@ -74,7 +74,7 @@ p {
 .hc-feature .hc-feature-lead {
   font-size: 1.8em;
   text-align: center;
-  margin: 0 auto 1em;
+  margin: 2em auto;
 }
 
 .hc-feature.inverted {
@@ -290,7 +290,7 @@ p {
   }
 
   .hc-email .form input[type="email"] {
-    height: auto !important;
+    height: 38px !important;
     font-size: 1em !important;
   }
 
@@ -483,7 +483,7 @@ p {
   font-weight: 300;
   color: #fff;
   /* line-height: 1.6; */
-  margin: 0.7em auto;
+  margin: 2em auto;
   text-shadow: 1px 1px 2px #000;
 }
 
@@ -667,7 +667,7 @@ p {
   }
 
   #hc-slider .slide {
-    height : 390px;
+    height : 490px;
   }
   /*#hc-first-dapp .columns {
     margin-bottom: 1em;
@@ -1172,6 +1172,7 @@ p {
 #hc-believe .three.columns .num h3 {
   margin : 0px;
   font-weight: 700;
+  color : #e97844;
 }
 
 @media only screen and (max-width: 700px) {
@@ -1696,13 +1697,20 @@ p {
     align-items: center;
 }
 
+#hc-team .members .three.columns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 #hc-team .team-member-name {
   margin-bottom: 5px;
 }
 
 #hc-team .team-member-image {
     border-radius:50%;
-    width: 100%;
+    width: 66%;
 }
 
 #hc-team .team-member-title {
@@ -1765,6 +1773,7 @@ p {
   align-items: center;
   justify-content: center;
   padding: 0em;
+  outline: 0px;
 }
 
 @media only screen and (max-width: 700px) {
@@ -2164,13 +2173,13 @@ p {
     margin-top: 1em;
   }
 
-  .hc-email .mobile-link {
+  /*.hc-email .mobile-link {
     display: block;
-  }
+  }*/
 
-  .hc-email .desktop-link {
+  /*.hc-email .desktop-link {
     display: none;
-  }
+  }*/
 }
 
 /* #hc-press  */
@@ -2515,7 +2524,7 @@ p {
 
 @media only screen and (max-width: 1025px) {
   #hc-intro {
-    height : calc(100vh - 250px); 
+    height : calc(100vh - 250px);
   }
   .points p {
     margin-bottom: 3em;
@@ -2620,6 +2629,7 @@ p {
 
   #hc-team .team-member-image {
     margin-top: 3em;
+    margin-bottom : 2em;
   }
 
   #hc-press .article {
@@ -2674,11 +2684,11 @@ p {
 
 /* #hc-solution */
 
-#hc-solution .hc-feature-lead {
+/*#hc-solution .hc-feature-lead {
   font-size: 1.8em;
   text-align: center;
   margin: 0 auto 0.5em;
-}
+}*/
 
 #hc-solution img {
   width: 100%;
