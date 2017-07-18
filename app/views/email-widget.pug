@@ -1,0 +1,147 @@
+  
+.hc-feature.over-rel.padding.hc-email
+  .container.email-widget
+    h4 Participate	in	the	Storecoin First ICO
+    .row.form
+      .eight.columns
+        input.u-full-width(type='email', name='email', placeholder='Enter your email address')
+      .four.columns
+        input.button-primary(type='submit', value='Subscribe')
+          
+  form.steps-form
+    .email-steps.step-1
+      p Have you participated in Token Sales or ICOs before?
+      .field
+        input(type='radio', name='participate', value='Yes')
+        label(for='participate-yes') Yes
+      .field
+        input(type='radio', name='participate', value='No')
+        label(for='participate-no') No
+      hr
+      .button-group
+        button.button-next.button-primary(disabled='', data-step='step-2')
+          | Next
+          i.ion-chevron-right
+        button.button-next.button-primary(disabled='', style='display:none;', data-step='step-3')
+          | Next
+          i.ion-chevron-right
+    .email-steps.step-2
+      div(data-sticky-container='')
+        p.sticky(data-margin-top='65') How much do you typically invest in a Token Sale or ICO?
+        .fields
+          .field
+            input(type='radio', name='invest', value='<$1,000')
+            label(for='invest-1') <$1,000
+          .field
+            input(type='radio', name='invest', value='$1,000 - $5,000')
+            label(for='invest-2') $1,000 - $5,000
+        .fields
+          .field
+            input(type='radio', name='invest', value='$5,000 - $25,000')
+            label(for='invest-3') $5,000 - $25,000
+          .field
+            input(type='radio', name='invest', value='$25,000 - $50,000')
+            label(for='invest-4') $25,000 - $50,000
+        .fields
+          .field
+            input(type='radio', name='invest', value='$50,000 - $75,000')
+            label(for='invest-5') $50,000 - $75,000
+          .field
+            input(type='radio', name='invest', value='$75,000 - $100,000')
+            label(for='invest-6') $75,000 - $100,000
+        .fields
+          .field
+            input(type='radio', name='invest', value='$100,000 - $150,000')
+            label(for='invest-7') $100,000 - $150,000
+          .field
+            input(type='radio', name='invest', value='$150,000 - $200,000')
+            label(for='invest-8') $150,000 - $200,000
+        .fields
+          .field
+            input(type='radio', name='invest', value='$200,000 - $250,000')
+            label(for='invest-9') $200,000 - $250,000
+          .field
+            input(type='radio', name='invest', value='$250,000 - $500,000')
+            label(for='invest-10') $250,000 - $500,000
+        .fields
+          .field
+            input(type='radio', name='invest', value='$500,000 - $1,000,000')
+            label(for='invest-11') $500,000 - $1,000,000
+          .field
+            input(type='radio', name='invest', value='$1,000 - $3,000,000')
+            label(for='invest-12') $1,000 - $3,000,000
+        .fields
+          .field
+            input(type='radio', name='invest', value='$3,000,000 or more')
+            label(for='invest-13') $3,000,000 or more
+      hr
+      .button-group
+        button.button-back.button-primary(data-step='step-1')
+          i.ion-chevron-left
+          | Back
+        button.button-next.button-primary(disabled='', data-step='step-3')
+          | Next
+          i.ion-chevron-right
+    .email-steps.step-3
+      p Are	you	interesting	in	participating	in	the	Storecoin	First	ICO?
+      .field
+        input(type='radio', name='payment', value='Yes')
+        label(for='payment-yes') Yes
+      .field
+        input(type='radio', name='payment', value='No')
+        label(for='payment-no') No
+      hr
+      .button-group
+        button.button-back.button-primary(data-step='step-2')
+          i.ion-chevron-left
+          | Back
+        button.button-back.button-primary(data-step='step-1', style='display:none;')
+          i.ion-chevron-left
+          | Back
+        button.button-next.button-primary(disabled='', data-step='step-4')
+          | Next
+          i.ion-chevron-right
+    .email-steps.step-4
+      p Do	you	have	questions	or	ideas	for	the	Storecoin	Team?	
+      .field
+        input.u-full-width(type='text', name='comment', placeholder='Ask a question, share your	ideas here.')
+        input.u-full-width(type='email', name='email', hidden='')
+      hr
+      .button-group
+        button.button-back.button-primary(data-step='step-3')
+          i.ion-chevron-left
+          | Back
+        button.button-primary.button-submit.button-next(type='submit') Submit
+    .success-message.message
+      h5
+        | Thanks	for	registering	for	the	Storecoin	First	ICO.	
+        br
+        | We’ll	email you	once	it	launches.	ETA	2017.
+      p.hc-feature-lead
+        | By registering directly on Storecoin, you'll have priority access to our First ICO before the public.
+      p.hc-feature-lead
+        | If you buy storecoins in our First ICO, you'll have first rights to bid on future ICOs, too.
+      p.hc-feature-lead
+        | Here's a link to share the Storecoin First ICO with a friend.
+      .form.row.desktop-link
+        .eight.columns
+          input.u-full-width.copy-target(readonly='', type='text', value='http://storeco.in/firstico')
+        .four.columns
+          button.button.button-primary.copy-button
+            i.ion-link
+            |  Copy Link
+      .mobile-link
+        a.button.button-primary(target='_blank', href='mailto:someone@example.com') Click Here
+    .success-message-2.message
+      h5
+        | Thanks	for	checking	out	the	Storecoin	First	ICO.
+      p.hc-feature-lead You	can	give	us	a	hand	by sharing	the storecoin first ICO with a friend.
+      .form.row.desktop-link
+        .eight.columns
+          input.u-full-width.copy-target(readonly='', type='text', value='http://storeco.in/firstico')
+        .four.columns
+          button.button.button-primary.copy-button
+            i.ion-link
+            |  Copy Link
+      .mobile-link
+        a.button.button-primary(target='_blank', href='mailto:someone@example.com') Click Here  

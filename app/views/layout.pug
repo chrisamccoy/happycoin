@@ -1,7 +1,120 @@
 doctype html
 html
   head
+    meta(charset='UTF-8')
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(name='description', content='')
+    meta(name='author', content='')
+
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', rel='stylesheet')
+
+    link(rel='stylesheet', href='css/normalize.css')
+    link(rel='stylesheet', href='css/featherlight.css')
+    link(rel='stylesheet', href='css/skeleton.css')
+    link(rel='stylesheet', href='css/slick.css')
+    link(rel='stylesheet', href='css/slick-theme.css')
+    link(rel='stylesheet', href='css/styles.css')
+
+    link(rel='icon', type='image/png', href='images/favicon.png')
+
+    script(src='js/sticky.js')
+    script(src='js/jquery-3.2.1.min.js')
+    script(src='js/progressbar.js')
+    script(src='js/slick.js')
+    script(src='js/featherlight.js')
+    script(src='js/script.js')
+    
   body
+    #hc-nav-wrapper.add-background
+      .container
+        .row
+          .hc-branding
+            a.hc-title(href='/')
+          .hc-branding
+            span.hc-number-dist
+              span 1,000,000,000
+              span.away storecoins authorized
+          nav.hc-navigation
+            .hc-menu-container
+              ul.hc-menu
+                li.menu-item
+                  a(href='/') About
+                li.menu-item.team
+                  a(href='/team') Our Team
+                li.menu-item
+                  a(href='/examples') Use Cases
+                li.menu-item
+                  a(href='/firstico') Our Token Sale
+                li.menu-item
+                  a(href='/whitepaper') Our Whitepaper
+      button.menu-toggle
+        div(style='background:#5d794c; height:2px; margin:9px 20px')
+        div(style='background:#5d794c; height:2px; margin:9px 20px')
+        div(style='background:#5d794c; height:2px; margin:9px 20px')
+          
     block content
+      
+    footer#hc-footer
+      .hc-footer-chunk(style='padding-bottom: 1em;')
+        section.footer-light.row
+          .three.columns
+            h3 Software
+            ul
+              li
+                a(href='/examples') Use Cases
+              li
+                a(href='/firstico') Our Token Sale
+              li
+                a(href='/developer-api') Developer API
+              li
+                a(href='/storecoin-blockchain') Storecoin Blockchain
+              li
+                a(href='/whitepaper') Our White Paper
+              li
+                a(href='/roadmap') Our Roadmap
+          .three.columns
+            h3 News
+            ul
+              li
+                a(href='/subscribe') Subscribe to Updates
+              li
+                a(href='/faq') FAQ
+              li
+                a(href='/press') Press
+              li
+                .footer-bridge-contentStart
+                  a.footer-social-icon(href='/coming-soon')
+                    span.graphic-socialHover-facebook
+                  a.footer-social-icon(href='/coming-soon')
+                    span.graphic-socialHover-twitter
+                  a.footer-social-icon(href='/coming-soon')
+                    span.graphic-socialHover-linkedin
+                  a.footer-social-icon(href='/coming-soon')
+                    span.graphic-socialHover-github
+          .three.columns
+            h3 Info
+            ul
+              li
+                a(href='/') About
+              li
+                a(href='/team') Our Team
+              li
+                a(href='/jobs') Jobs
+              li
+                a(href='/contact') Contact Us
+          .three.columns
+            img(src='images/logo.png', style='width:100px; height: auto;')
+            div
+            p(style='font-size: 0.7em; padding: 0.5em 0;')
+              a(href='')
+                strong Storecoin
+              |  is	a	public	blockchain for	systems	governed	by	hierarchy,	privacy, and	complex	revenue	sharing.
+        section.row
+          b(style='color: white;') © 2017 Storecoin, Inc
+          ul#menu-footer-menu.menu
+            li#menu-item-37.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-37
+              a(href='https://www.stellar.org/privacy-policy/') Privacy Policy
+            li#menu-item-150.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-150
+              a(href='https://www.stellar.org/terms-of-service/') Terms of Service    
