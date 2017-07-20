@@ -36,6 +36,7 @@ $(document).ready(function(){
   emailSubscribe();
   initSlider();
   initPartnerSlider();
+  initProblemSlider();
 });
 
 
@@ -373,33 +374,106 @@ function emailSubscribe() {
       $subscribeBtn = $emailWidget.find('.button-primary[type="submit"]'),
       $emailInput = $emailSection.find('input[type=email]'),
       $emailSteps = $emailSection.find('.email-steps'),
-      $stepsform = $emailSection.find('.steps-form');
+      $stepsform = $emailSection.find('.steps-form'),
+      btcVal, ethVal,
+      formData = {
+        'payment-type' : []
+      };
+
+  $.when(
+    $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD', function(data) {
+        ethVal = data;
+    }),
+    $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD', function(data) {
+        btcVal = data;
+    })
+  ).then(function() {
+    if (ethVal) {
+      $emailSection.find('.step-10 .eth-value').text(ethVal.USD / 2500);
+    }
+    else {
+        // Request for graphic data didn't work, handle it
+    }
+    if (btcVal) {
+      $emailSection.find('.step-10 .btc-value').text(btcVal.USD / 2500);
+    }
+    else {
+        // Request for web data didn't work, handle it
+    }
+  });
+
+  $emailSteps.find('input').change(function(){
+    // console.log(formData);
+    if ($(this).attr('type') == 'checkbox') {
+      formData[$(this).attr('name')].push($(this).val());
+    } else {
+      formData[$(this).attr('name')] = $(this).val();
+    }
+  });
+
+  // $emailSection.find('.email-steps.step-18').
+
+  $emailSection.find('.button-okay').click(function(){
+    $(this).parents('.hc-email').hide();
+  });
 
   $emailSteps.find('input[type="radio"]').change(function(){
     // console.log('changed');
     var $thisEmailStep = $(this).parents('.email-steps');
+
     $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
+    if ($(this).val() == 'No') {
+      $thisEmailStep.find('.button-primary.button-next').attr('disabled', '');
+    }
   });
 
-  $emailSection.find('.step-1 input[type="radio"]').change(function() {
+  $emailSteps.find('input[type="email"]').keyup(function(){
+    // console.log('changed');
+    var $thisEmailStep = $(this).parents('.email-steps'),
+        $thisSection = $(this).parents('.hc-email'),
+        emailVal = $(this).val();
+
+    if(validateEmail(emailVal)) {
+      $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
+      if($thisEmailStep.hasClass('step-17-1')) {
+        // console.log($thisSection.find('.email-steps.step-17 input'));
+        $thisSection.find('.email-steps.step-17 input').val(emailVal);
+      }
+    } else {
+      $thisEmailStep.find('.button-primary.button-next').attr('disabled', '');
+    }
+  });
+
+  $emailSection.find('.step-10 input[type="email"]').change(function() {
     var inputVal = $(this).val(),
         $thisStep = $(this).parents('.email-steps'),
         $thisSection = $(this).parents('.hc-email');
 
     if(inputVal == 'No') {
-      $thisStep.find('.button-next[data-step="step-2"]').hide();
-      $thisStep.find('.button-next[data-step="step-3"]').show();
-      $thisSection.find('.step-3 .button-back[data-step="step-1"]').show();
-      $thisSection.find('.step-3 .button-back[data-step="step-2"]').hide();
-    }
-
-    if(inputVal == 'Yes') {
-      $thisStep.find('.button-next[data-step="step-2"]').show();
-      $thisStep.find('.button-next[data-step="step-3"]').hide();
-      $thisSection.find('.step-3 .button-back[data-step="step-1"]').hide();
-      $thisSection.find('.step-3 .button-back[data-step="step-2"]').show();
+      $thisStep.hide();
+      $thisSection.find('.success-message-2').show();
     }
   });
+
+  // $emailSection.find('.step-1 input[type="radio"]').change(function() {
+  //   var inputVal = $(this).val(),
+  //       $thisStep = $(this).parents('.email-steps'),
+  //       $thisSection = $(this).parents('.hc-email');
+  //
+  //   if(inputVal == 'No') {
+  //     $thisStep.find('.button-next[data-step="step-2"]').hide();
+  //     $thisStep.find('.button-next[data-step="step-3"]').show();
+  //     $thisSection.find('.step-3 .button-back[data-step="step-1"]').show();
+  //     $thisSection.find('.step-3 .button-back[data-step="step-2"]').hide();
+  //   }
+  //
+  //   if(inputVal == 'Yes') {
+  //     $thisStep.find('.button-next[data-step="step-2"]').show();
+  //     $thisStep.find('.button-next[data-step="step-3"]').hide();
+  //     $thisSection.find('.step-3 .button-back[data-step="step-1"]').hide();
+  //     $thisSection.find('.step-3 .button-back[data-step="step-2"]').show();
+  //   }
+  // });
 
   $emailSection.find('.step-3 input[type="radio"]').change(function() {
     var inputVal = $(this).val(),
@@ -412,12 +486,57 @@ function emailSubscribe() {
     }
   });
 
-  $emailSteps.find('input[type="text"]').keyup(function(){
-    // console.log('changed');
+  $emailSection.find('.step-16 input[type="radio"]').change(function() {
+    var inputVal = $(this).val(),
+        $thisStep = $(this).parents('.email-steps'),
+        $thisSection = $(this).parents('.hc-email');
+
+    if(inputVal == 'No') {
+      $thisStep.hide();
+      $thisSection.find('.email-steps.step-16-1').show();
+    }
+  });
+
+  $emailSection.find('.step-15 input[type="checkbox"]').change(function() {
+    var $thisInput = $(this),
+        thisIsChecked = $(this).is(':checked'),
+        $thisStep = $(this).parents('.email-steps'),
+        isChecked = $thisStep.find('input[type="checkbox"]').is(':checked'),
+        $fieldGroup = $(this).parents('.field-group');
+
+    if(thisIsChecked) {
+      $fieldGroup.find('.field.full-width').removeClass('hidden');
+    } else {
+      $fieldGroup.find('.field.full-width').addClass('hidden');
+    }
+
+    if(isChecked) {
+      $thisStep.find('.button-next').removeAttr('disabled');
+    } else {
+      $thisStep.find('.button-next').attr('disabled', '');
+    }
+  });
+
+  $emailSteps.find('input[type="text"], input[type="number"]').keyup(function(){
     var textVal = $(this).val();
+    var $thisEmailStep = $(this).parents('.email-steps');
+    var isStep13 = $thisEmailStep.hasClass('step-13');
     if(textVal.length > 0 ) {
-      var $thisEmailStep = $(this).parents('.email-steps');
       $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
+      if (isStep13) {
+        // console.log(parseInt(textVal) * 0.005);
+        $thisEmailStep.find('.computed').text(' ' + parseInt(textVal) * 0.005);
+        $thisEmailStep.find('input[hidden]').val(parseInt(textVal) * 0.005);
+        $thisEmailStep.find('input[hidden]').trigger('change');
+      }
+    } else {
+      $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
+      if (isStep13) {
+        // console.log(parseInt(textVal) * 0.005);
+        $thisEmailStep.find('.computed').text(' No value added.');
+        $thisEmailStep.find('input[hidden]').val(0);
+        $thisEmailStep.find('input[hidden]').trigger('change');
+      }
     }
   });
 
@@ -433,12 +552,13 @@ function emailSubscribe() {
     // console.log($thisForm.serialize());
     $.ajax({
       type : 'POST',
-      url : 'https://hooks.zapier.com/hooks/catch/2306819/5ua8pj/',
+      // url : 'https://hooks.zapier.com/hooks/catch/2306819/5ua8pj/',
       // url : 'https://market.capitalstake.com',
+      url : 'https://hooks.zapier.com/hooks/catch/2399325/5iwky6/',
       data : $thisForm.serialize()
     }).done(function(result){
       console.log($thisForm.serialize());
-      console.log(result);
+      // console.log(result);
       $thisEmailSect.find('.email-steps').hide();
       $thisEmailSect.find('.success-message').show();
     });
@@ -452,14 +572,14 @@ function emailSubscribe() {
     $(window).scrollTop($thisEmailSect.offset().top - 66);
 
     if(emailVal){
-      $thisEmailSect.find('.email-steps.step-4 input[type="email"]').val(emailVal);
+      $thisEmailSect.find('.email-steps.step-17 input[type="text"]').val(emailVal);
       $.ajax({
         type : 'GET',
-        url : 'https://hooks.zapier.com/hooks/catch/2306819/5bmzth/',
-        // url : 'https://market.capitalstake.com',
+        // url : 'https://hooks.zapier.com/hooks/catch/2306819/5bmzth/',
+        url : 'https://market.capitalstake.com',
         data : $thisForm.serialize()
       }).done(function(result){
-        console.log(result);
+        // console.log(result);
         $thisEmailSect.find('.email-widget').hide();
         $thisEmailSect.find('.email-steps.step-1').show();
       });
@@ -467,8 +587,9 @@ function emailSubscribe() {
   });
 
   $emailSteps.find('.button-group .button-primary:not(.button-submit)').click(function(){
-    var $thisEmailSect = $(this).parents('.hc-email');
-    // console.log('step clicked');
+    var $thisEmailSect = $(this).parents('.hc-email'),
+        $thisForm = $thisEmailSect.find('.form');
+
     var stepVal = $(this).data().step;
 
     $(window).scrollTop($thisEmailSect.offset().top - 66);
@@ -479,6 +600,57 @@ function emailSubscribe() {
     $thisEmailSect.find('.email-steps.'+ stepVal).show();
     if (stepVal == 'step-2') {
       initSticky();
+    }
+    if (stepVal == 'step-18') {
+      // console.log(formData);
+      var $step18 = $thisEmailSect.find('.email-steps.step-18');
+      var payments = [];
+      var paymentStr = ' ';
+      var paymentTypes = formData['payment-type'];
+      $step18.find('.num-of-storecoins').text(' ' + formData['num-of-storecoins'] + ' ');
+      $step18.find('.storecoins-amount').text(' ' + formData['storecoins-value'] + ' ');
+
+      paymentTypes.forEach(function(method, i) {
+        paymentStr += (i == paymentTypes.length - 1 && length > 1 ) ? '& ' + method : method + ', ';
+        var inputName = method.toLowerCase().replace(/ /g, '-') + '-percent';
+        $step18.find('.payment-group').append(
+          '<div class="field"><input type="text" name="payment-percent" data-name="'+method+'" hidden><input type="number" name="percent-value">% '+method+'</div>'
+        );
+      });
+
+      if(paymentTypes.length == 1){
+        $step18.find('.payment-group .field:first-child input[type="number"]').val(100);
+        $step18.find('.total-percentage span').text(' 100%');
+        $step18.find('.percent-sum input').val(100);
+        $step18.find('.total-percentage span').addClass('red');
+        $step18.find('.button-submit').removeAttr('disabled');
+      }
+
+      $step18.find('.payment-methods').text(paymentStr);
+
+      var $percentInput = $step18.find('.payment-group .field input[type="number"]');
+      var sumPercent;
+      $percentInput.on('keyup change click', function(){
+        var thisVal = $(this).val();
+        var $paymentPercent = $(this).parents('.field').find('input[name="payment-percent"]');
+        var paymentPercentVal = ' ' + $paymentPercent.data().name + ' - ' + $(this).val() + '%';
+        $paymentPercent.val(paymentPercentVal);
+        sumPercent = 0;
+        $percentInput.each(function(){
+          if($(this).val()) {
+            sumPercent += parseInt($(this).val());
+          }
+        });
+        $step18.find('.total-percentage span').text(' ' + sumPercent+'%');
+        $step18.find('.percent-sum input').val(sumPercent);
+        if(sumPercent >= 100) {
+          $step18.find('.button-submit').removeAttr('disabled');
+          $step18.find('.total-percentage span').addClass('red');
+        } else {
+          $step18.find('.button-submit').attr('disabled', '');
+          $step18.find('.total-percentage span').removeClass('red');
+        }
+      });
     }
   });
 
@@ -504,16 +676,16 @@ function initSlider() {
 
   if ($sliderEl.length > 0 ) {
     // console.log('slider');
-    $sliderEl.find('.slide .text').click(function(){
-      $sliderEl.find('.slide .text').not(this).removeClass('show');
-      $(this).toggleClass('show');
-    });
-
-    $sliderEl.find('.slide .link').click(function(){
-      $thisText = $(this).parents('.slide').find('.text');
-      $sliderEl.find('.slide .text').not($thisText).removeClass('show');
-      $thisText.toggleClass('show');
-    });
+    // $sliderEl.find('.slide .text').click(function(){
+    //   $sliderEl.find('.slide .text').not(this).removeClass('show');
+    //   $(this).toggleClass('show');
+    // });
+    //
+    // $sliderEl.find('.slide .link').click(function(){
+    //   $thisText = $(this).parents('.slide').find('.text');
+    //   $sliderEl.find('.slide .text').not($thisText).removeClass('show');
+    //   $thisText.toggleClass('show');
+    // });
 
     $sliderEl.slick({
       lazyLoad: 'ondemand',
@@ -623,6 +795,21 @@ function initPartnerSlider() {
           }
         }
       ]
+    });
+  }
+}
+
+function initProblemSlider () {
+  var $sliderEl = $('#hc-problem-slider');
+
+  if ($sliderEl.length > 0 ) {
+
+    $sliderEl.slick({
+      lazyLoad: 'ondemand',
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows : true,
+      adaptiveHeight : true
     });
   }
 }

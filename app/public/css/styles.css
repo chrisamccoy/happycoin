@@ -74,7 +74,7 @@ p {
 .hc-feature .hc-feature-lead {
   font-size: 1.8em;
   text-align: center;
-  margin: 2em auto;
+  margin: 1.8em auto;
 }
 
 .hc-feature.inverted {
@@ -483,13 +483,14 @@ p {
   font-weight: 300;
   color: #fff;
   /* line-height: 1.6; */
-  margin: 2em auto;
+  margin: 1.8em auto;
   text-shadow: 1px 1px 2px #000;
 }
 
 #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead:first-child {
   font-size: 3.2em;
-  margin: auto;
+  margin-bottom: 0px;
+  margin-top: 2em;
   text-align: center;
 }
 
@@ -569,13 +570,14 @@ p {
 
 #hc-slider .slide img {
   width : 100%;
+  margin-top :1em;
 }
 
 #hc-slider .slide {
   padding: 1em;
   position: relative;
   cursor: pointer;
-  height: 450px;
+  /*height: 450px;*/
   outline: none;
 }
 
@@ -589,13 +591,13 @@ p {
 }
 
 #hc-slider .slide .text {
-  margin: 1em;
+  margin: 2em 1em;
   position: absolute;
-  top: 1em;
+  top: 0px;
   left: 0px;
   background: white;
   border: 1px solid #c7dfb8;
-  height: calc(100% - 3em);
+  height: calc(100% - 4em);
   width: calc(100% - 3em);
   opacity: 0;
   padding: 0.5em;
@@ -653,7 +655,8 @@ p {
   }*/
 
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead:first-child {
-    font-size: 1.55em !important;
+    font-size: 2.1em !important;
+    margin-top: 0px;
   }
 
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead:last-child {
@@ -665,10 +668,10 @@ p {
     margin-top: 4.5em;
     height: calc(100vh - 205px);
   }
-
+/*
   #hc-slider .slide {
     height : 490px;
-  }
+  }*/
   /*#hc-first-dapp .columns {
     margin-bottom: 1em;
   }*/
@@ -731,7 +734,7 @@ p {
 #hc-promo .sales-terms .points {
   background: rgb(93, 121, 76);
   border-radius: 10px;
-  min-height: 355px;
+  min-height: 450px;
   text-align: left;
   color: white;
 }
@@ -1140,19 +1143,19 @@ p {
 }
 /*--------------------------*/
 /* #hc-believe  */
-#hc-believe .three.columns {
+#hc-vision .three.columns {
   text-align: center;
 }
 /*
-#hc-believe .hc-chunk {
+#hc-vision .hc-chunk {
   max-width: 850px;
 }*/
 
-#hc-believe .global-stats {
+#hc-vision .global-stats {
   margin-top: 3em;
 }
 
-#hc-believe .three.columns .num {
+#hc-vision .three.columns .num {
   font-size: 1.5em;
   border: 5px solid #c7dfb8;
   border-radius: 50%;
@@ -1165,18 +1168,18 @@ p {
   margin-bottom: 1em;
 }
 
-#hc-believe .three.columns .num p {
+#hc-vision .three.columns .num p {
   margin-top: 0px;
 }
 
-#hc-believe .three.columns .num h3 {
+#hc-vision .three.columns .num h3 {
   margin : 0px;
   font-weight: 700;
   color : #e97844;
 }
 
 @media only screen and (max-width: 700px) {
-  #hc-believe .three.columns {
+  #hc-vision .three.columns {
     text-align: center;
     margin-bottom: 2em;
   }
@@ -1608,6 +1611,42 @@ p {
   margin: 0 auto 1em;
 }
 
+#hc-problem-slider {
+  background: white;
+  border-radius: 10px;
+}
+
+#hc-problem-slider .slick-list {
+  border-radius: 10px;
+}
+
+#hc-problem-slider .slide img {
+  width: 100%;
+}
+
+#hc-problem-slider .slide {
+  /*height: 500px;*/
+  /*width : 100%;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 10px;
+}
+
+#hc-problem-slider .slick-next {
+  right : -35px;
+}
+
+#hc-problem-slider .slick-prev {
+  left : -35px;
+}
+
+#hc-problem-slider .slick-next:before,
+#hc-problem-slider .slick-prev:before {
+  color : white;
+}
+
 @media only screen and (max-width: 700px) {
   #hc-why-token .phase .twelve.columns {
     width: 100%;
@@ -1619,6 +1658,24 @@ p {
 
   #hc-why-token .phase .six.columns:first-child {
     margin-bottom: 3em;
+  }
+  #hc-problem-slider .slide {
+    height: 183px;
+  }
+  /*#hc-problem-slider .slide img {
+    width: 100%;
+  }*/
+
+  #hc-problem-slider .slick-next {
+    right : -25px;
+  }
+
+  #hc-problem-slider .slick-prev {
+    left : -25px;
+  }
+  #hc-problem-slider {
+    width: 80vw;
+    margin: auto;
   }
 }
 
@@ -2012,6 +2069,27 @@ p {
   margin: 0px;
 }
 
+.hc-email .email-steps.step-10 p span.eth-value,
+.hc-email .email-steps.step-10 p span.btc-value {
+  color : rgb(233, 120, 68);
+}
+
+.hc-email .email-steps.step-18 span {
+  color : rgb(233, 120, 68);
+}
+
+.hc-email .email-steps.step-18 span.red {
+  color : red;
+}
+
+.hc-email .email-steps.step-18 .payment-group .field {
+  font-size: 1.5em;
+}
+
+.hc-email .email-steps.step-18 .payment-group .field input {
+  width : 100px;
+}
+
 .hc-email .email-steps {
   max-width: 700px;
   margin: 0 auto;
@@ -2041,6 +2119,29 @@ p {
   align-items: center;
 }
 
+.hc-email .email-steps .field.full-width {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hc-email .email-steps.step-15 .field.full-width input {
+  margin: 0px;
+}
+
+.hc-email .email-steps.step-15 .field.full-width.hidden {
+  display: none;
+}
+
+.hc-email .email-steps.step-15 .field.full-width p {
+  font-size: 0.7em;
+  margin-bottom: 2em;
+}
+
+.hc-email .email-steps .field input[type="checkbox"]{
+  margin: auto 0;
+}
+
 .hc-email .email-steps .field label {
   margin: auto 0 auto 1em;
   font-weight: 300;
@@ -2065,6 +2166,11 @@ p {
 .hc-email .email-steps .button-group .button-primary.button-submit {
   float: right;
 }*/
+.hc-email .email-steps .button-group .button-primary.button-submit {
+  background: rgb(233, 120, 68);
+  margin-left: 5px;
+  border: rgb(233, 120, 68);
+}
 
 .hc-email .email-steps .button-group .button-primary.button-next i {
   margin-left: 5px;
@@ -2080,6 +2186,11 @@ p {
 
 .hc-email .email-steps .button-group .button-primary.button-back i {
   margin-right: 5px;
+}
+
+.hc-email .email-steps .button-group .button-primary.button-back {
+  background-color: #5b6a72;
+  border-color: #5b6a72;
 }
 
 .hc-email .email-steps .field input[type="radio"] {
@@ -2591,9 +2702,9 @@ p {
   }
 
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    margin: 1em 0.2em;
+    margin: 1.2em 0.2em;
     /* line-height: 1.4; */
-    font-size: 1.2em !important;
+    font-size: 1.1em !important;
   }
 
   #hc-intro .learn-more {
@@ -2698,5 +2809,43 @@ p {
 @media only screen and (max-width: 1025px) {
   #hc-solution .hc-feature-lead {
     font-size: 1.3em;
+  }
+}
+
+.hc-share-links .button-group {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  /* margin: auto; */
+  justify-content: center;
+}
+
+.hc-share-links .button-group .button {
+  width: 200px;
+  margin-left: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hc-share-links .button-group .button i {
+  margin-right : 0.5em;
+  font-size: 2em;
+}
+
+.hc-share-links .button-group .button.button-primary.twitter {
+  background: #1da1f2;
+}
+
+.hc-share-links .button-group .button.button-primary.email-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 1025px) {
+  .hc-share-links .button-group .button.button-primary.email-mobile {
+    display: block;
+  }
+  .hc-share-links .button-group .button.button-primary.email {
+    display: none;
   }
 }

@@ -19,7 +19,8 @@ block content
           | Storecoin.
           
     include email-widget
-    #hc-believe.hc-feature.over-rel.padding
+    
+    #hc-vision.hc-feature.inverted.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted What We Believe
         p.hc-feature-lead
@@ -28,6 +29,11 @@ block content
         p.hc-feature-lead
           | Storecoin	will	be	the	leading	public	blockchain	powering	cryptocurrency-based	payments,	decentralized	applications,	loyalty
           | points,	and	market	networks	for	industries	representing	over	25%	of	global	GDP.
+    
+    #hc-vision.hc-feature.over-rel.padding
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title.inverted Our Vision
+        p.hc-feature-lead Storecoin	will	be	the	leading	public	blockchain	powering	cryptocurrency-based	payments,	decentralized	apps,	supply	chains,	and	loyalty	points	for	industries	representing	over	25%	of	global	GDP.	
         .row.global-stats
           .three.columns
             .num
@@ -55,73 +61,60 @@ block content
         h3.hc-feature-title.inverted The Problem
         .row.text
           .twelve.columns
-            p.hc-feature-lead
-              | Hierarchy-based	systems	are	governed	by	complex
-              | revenue	sharing	arrangements	where	commissions	and
-              | royalties	are	paid	from	hub-to-spoke,	from	spoke-to-hub,
-              | and	sometimes	both	-- in	the	same	contract!
-        .row.phase
-          .twelve.columns
+            p.hc-feature-lead Hierarchy-based	systems	like	franchises,	chains,	sports	leagues,	and	affiliatebased systems	are	governed	by	complex	revenue	sharing	arrangements.
+              
+        #hc-problem-slider
+          .slide
             img(src='images/problem-1.png')
-        .row.phase
-          .twelve.columns
+          .slide
             img(src='images/problem-2.png')
-        .row.phase
-          .twelve.columns
+          .slide
             img(src='images/problem-3.png')
-        .row.phase
-          .twelve.columns
+          .slide
             img(src='images/problem-4.png')
-        .row.phase
-          .twelve.columns
+          .slide
             img(src='images/problem-5.png')
+              
         .row.text
           .twelve.columns
             p.hc-feature-lead
-              | Oftentimes,	both	the	amount	of	the	revenue	share	and	the identity	of	the	receiver	need	to	be	private.
+              | Oftentimes,	both	the	amount	of	the	revenue	share	and	the	identity	of	the	receiver	needs	to	be	private.
         .row.phase
           .twelve.columns
             img(src='images/problem-6.png')
         .row.text
           .twelve.columns
-            p.hc-feature-lead In	larger	hierarchies,	it’s	sometimes	a	hybrid	of	both.
+            p.hc-feature-lead In	some	hierarchies,	revenue	sharing	arrangements	require	a	mix	of	both	public	and	private	information	for	sender,	receiver,	and	payment	amounts.	
         .row.phase
           .twelve.columns
             img(src='images/problem-7.png')
         .row.text
           .twelve.columns
-            p.hc-feature-lead Smart	Contracts	today	are	public.
-            p.hc-feature-lead
-              | They	don’t	solve	for	the	privacy	requirements	of	hierarchy-based
-              | systems	like	franchises,	chain	stores,	sports	leagues,	and	affiliatebased
-              | organizations.
+            p.hc-feature-lead Existing	smart	contract-based	blockchain	systems	like	Ethereum	are	public.
         .row.phase
           .twelve.columns
             img(src='images/problem-8.png')
         .row.text
           .twelve.columns
             p.hc-feature-lead
-              | Smart	Contracts	today	are	written	in	code	but	most	of	the	world	doesn’t understand	code.
-            p.hc-feature-lead
-              | For	non-technical	teams	in	hierarchy-based	organizations,	writing	and	managing
-              | Smart	Contracts	needs	to	be	straightforward	and	UX-friendly.
-            p.hc-feature-lead Lawyers	have	to	be	able	to	write	and	deploy	them.
+              | Blockchain-based	smart	contracts	today	are	written	in	code	but	most	of	the	world	doesn’t	understand	code	-- especially	legal	departments	of	franchise	companies	with	36,000+	stores	around	the	world.	
+            p.hc-feature-lead Writing,	editing,	and	sharing	smart	contracts	needs	to	be	very	UX	and	UI friendly	if	they	are	to	gain	adoption	by	hierarchy-based	systems.
         .row.phase
           .twelve.columns
             img(src='images/problem-11.png')
-        .row.text
-          .twelve.columns
-            p.hc-feature-lead
-              | Finally,	for	hub	and	spoke-based	systems	that	want	to	adopt	new
-              | technology	powered	by	micro-transactions,	they	have	to	pay	3%	of
-              | the	total	transaction	value	and	an	additional	$0.30	fee	to	process
-              | each	payment.
-            p.hc-feature-lead
-              | Economically,	any	micro-transaction	less	than	$0.30	costs	more	to
-              | process	for	the	organization	than	the	micro-transaction	itself.
-        .row.phase
-          .twelve.columns
-            img(src='images/problem-12.png')
+        //- .row.text
+        //-   .twelve.columns
+        //-     p.hc-feature-lead
+        //-       | Finally,	for	hub	and	spoke-based	systems	that	want	to	adopt	new
+        //-       | technology	powered	by	micro-transactions,	they	have	to	pay	3%	of
+        //-       | the	total	transaction	value	and	an	additional	$0.30	fee	to	process
+        //-       | each	payment.
+        //-     p.hc-feature-lead
+        //-       | Economically,	any	micro-transaction	less	than	$0.30	costs	more	to
+        //-       | process	for	the	organization	than	the	micro-transaction	itself.
+        //- .row.phase
+        //-   .twelve.columns
+        //-     img(src='images/problem-12.png')
         .row.text
           .twelve.columns
             p.hc-feature-lead
@@ -151,8 +144,16 @@ block content
         p.hc-feature-lead
           | All	using	fully	customizable,	UI	friendly	smart	contracts.
         img(src='images/solution-3.png')
+        //- p.hc-feature-lead
+        //-   | Storecoin	does	this	with	zero	transaction	fees	to	the	sender	and	to	the	receiver.
         p.hc-feature-lead
-          | Storecoin	does	this	with	zero	transaction	fees	to	the	sender	and	to	the	receiver.
+          | They	promised	us	free	payments	and	transactions	using	blockchains but,	as	of	
+          | July	2017,	we	ended	up	with	$0.14	lower	bound	transactions	with	Ethereum	
+          | and	$2.46	transactions	with	Bitcoin.
+        p.hc-feature-lead
+          | To	handle	micropayments	of	less	than	$0.30	and	nanopayments of	less	than	
+          | $0.01	-- to	power	new	business	models	and	behaviors	for	hierarchy-based	
+          | systems	-- blockchain	payments	need	to	be	free.
         img(src='images/solution-4.png')
 
     
@@ -246,273 +247,273 @@ block content
                   | We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.
             // <div class="points-desc ellipsis"><img src="images/use_case2.png">We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.</div>
             
-    #hc-accom.hc-feature.over-rel.padding
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title.inverted How	Storecoin	Works
-        img.solution-image.horizontal(src='images/solution-horizontal.png')
-        img.solution-image.vertical(src='images/solution-vertical.png')
+    //- #hc-accom.hc-feature.over-rel.padding
+    //-   .hc-chunk.hc-customize-text-wrapper
+    //-     h3.hc-feature-title.inverted How	Storecoin	Works
+    //-     img.solution-image.horizontal(src='images/solution-horizontal.png')
+    //-     img.solution-image.vertical(src='images/solution-vertical.png')
 
-    #hc-apps.hc-feature.inverted.over-rel.padding
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title.inverted What apps can be built with Storecoin?
-        p.lead
-          | Storecoin developers will give franchise and chain stores new blockchain-powered super powers:
-        .desktop
-          .hc-apps-row
-            .column-1.title.half-column(data-tab='tab-1')
-              i.ion-chevron-down
-              a(href='javascript:;') Point of sale systems
-            .column-2.title.half-column(data-tab='tab-2')
-              i.ion-chevron-down
-              a(href='javascript:;') Micropayments to staff and to stores
-            .column-3.title-reveal.hide.full-column.row(data-tab='tab-1')
-              .six.columns.image
-                img(src='images/use_case1.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-            .column-4.title-reveal.hide.full-column.row(data-tab='tab-2')
-              .six.columns.image
-                img(src='images/use_case2.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-          .hc-apps-row
-            .column-1.title.half-column(data-tab='tab-1')
-              i.ion-chevron-down
-              a(href='javascript:;') E-commerce systems
-            .column-2.title.half-column(data-tab='tab-2')
-              i.ion-chevron-down
-              a(href='javascript:;') Smart scheduling apps
-            .column-3.title-reveal.hide.full-column.row(data-tab='tab-1')
-              .six.columns.image
-                img(src='images/use_case1.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-            .column-4.title-reveal.hide.full-column.row(data-tab='tab-2')
-              .six.columns.image
-                img(src='images/use_case2.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-          .hc-apps-row
-            .column-1.title.half-column(data-tab='tab-1')
-              i.ion-chevron-down
-              a(href='javascript:;') Invoicing workflows
-            .column-2.title.half-column(data-tab='tab-2')
-              i.ion-chevron-down
-              a(href='javascript:;') Payroll
-            .column-3.title-reveal.hide.full-column.row(data-tab='tab-1')
-              .six.columns.image
-                img(src='images/use_case1.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-            .column-4.title-reveal.hide.full-column.row(data-tab='tab-2')
-              .six.columns.image
-                img(src='images/use_case2.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-          .hc-apps-row
-            .column-1.title.half-column(data-tab='tab-1')
-              i.ion-chevron-down
-              a(href='javascript:;') Revenue sharing arrangements
-            .column-2.title.half-column(data-tab='tab-2')
-              i.ion-chevron-down
-              a(href='javascript:;') Supply chain contracts
-            .column-3.title-reveal.hide.full-column.row(data-tab='tab-1')
-              .six.columns.image
-                img(src='images/use_case1.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-            .column-4.title-reveal.hide.full-column.row(data-tab='tab-2')
-              .six.columns.image
-                img(src='images/use_case2.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-          .hc-apps-row
-            .column-1.title.half-column(data-tab='tab-1')
-              i.ion-chevron-down
-              a(href='javascript:;') Last mile delivery network APIs
-            .column-2.title.half-column(data-tab='tab-2')
-              i.ion-chevron-down
-              a(href='javascript:;') Loyalty systems
-            .column-3.title-reveal.hide.full-column.row(data-tab='tab-1')
-              .six.columns.image
-                img(src='images/use_case1.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-            .column-4.title-reveal.hide.full-column.row(data-tab='tab-2')
-              .six.columns.image
-                img(src='images/use_case2.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-          .hc-apps-row
-            .column-1.title.half-column(data-tab='tab-1')
-              i.ion-chevron-down
-              a(href='javascript:;') Drone delivery systems
-            .column-3.title-reveal.hide.full-column.row(data-tab='tab-1')
-              .six.columns.image
-                img(src='images/use_case1.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-        .mobile
-          .hc-apps-row
-            .column-1.title.half-column(data-featherlight='#box-1')
-              i.ion-chevron-down
-              a(href='javascript:;') Point of sale systems
-            .column-2.title.half-column(data-featherlight='#box-2')
-              i.ion-chevron-down
-              a(href='javascript:;') Micropayments to staff and to stores
-            #box-1.column-3.title-reveal.hide.full-column.row.app-box
-              .six.columns.image
-                img(src='images/use_case1.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-            #box-2.column-4.title-reveal.hide.full-column.row.app-box
-              .six.columns.image
-                img(src='images/use_case2.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-          .hc-apps-row
-            .column-1.title.half-column(data-featherlight='#box-3')
-              i.ion-chevron-down
-              a(href='javascript:;') E-commerce systems
-            .column-2.title.half-column(data-featherlight='#box-4')
-              i.ion-chevron-down
-              a(href='javascript:;') Smart scheduling apps
-            #box-3.column-3.title-reveal.hide.full-column.row.app-box
-              .six.columns.image
-                img(src='images/use_case1.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-            #box-4.column-4.title-reveal.hide.full-column.row.app-box
-              .six.columns.image
-                img(src='images/use_case2.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-          .hc-apps-row
-            .column-1.title.half-column(data-featherlight='#box-5')
-              i.ion-chevron-down
-              a(href='javascript:;') Invoicing workflows
-            .column-2.title.half-column(data-featherlight='#box-6')
-              i.ion-chevron-down
-              a(href='javascript:;') Payroll
-            #box-5.column-3.title-reveal.hide.full-column.row.app-box
-              .six.columns.image
-                img(src='images/use_case1.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-            #box-6.column-4.title-reveal.hide.full-column.row.app-box
-              .six.columns.image
-                img(src='images/use_case2.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-          .hc-apps-row
-            .column-1.title.half-column(data-featherlight='#box-7')
-              i.ion-chevron-down
-              a(href='javascript:;') Revenue sharing arrangements
-            .column-2.title.half-column(data-featherlight='#box-8')
-              i.ion-chevron-down
-              a(href='javascript:;') Supply chain contracts
-            #box-7.column-3.title-reveal.hide.full-column.row.app-box
-              .six.columns.image
-                img(src='images/use_case1.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-            #box-8.column-4.title-reveal.hide.full-column.row.app-box
-              .six.columns.image
-                img(src='images/use_case2.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-          .hc-apps-row
-            .column-1.title.half-column(data-featherlight='#box-9')
-              i.ion-chevron-down
-              a(href='javascript:;') Last mile delivery network APIs
-            .column-2.title.half-column(data-featherlight='#box-10')
-              i.ion-chevron-down
-              a(href='javascript:;') Loyalty systems
-            #box-9.column-3.title-reveal.hide.full-column.row.app-box
-              .six.columns.image
-                img(src='images/use_case1.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-            #box-10.column-4.title-reveal.hide.full-column.row.app-box
-              .six.columns.image
-                img(src='images/use_case2.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-          .hc-apps-row
-            .column-1.title.half-column(data-featherlight='#box-11')
-              i.ion-chevron-down
-              a(href='javascript:;') Drone delivery systems
-            #box-12.column-3.title-reveal.hide.full-column.row.app-box
-              .six.columns.image
-                img(src='images/use_case1.png')
-              .six.columns.text
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
-                p
-                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //- #hc-apps.hc-feature.inverted.over-rel.padding
+    //-   .hc-chunk.hc-customize-text-wrapper
+    //-     h3.hc-feature-title.inverted What apps can be built with Storecoin?
+    //-     p.lead
+    //-       | Storecoin developers will give franchise and chain stores new blockchain-powered super powers:
+    //-     .desktop
+    //-       .hc-apps-row
+    //-         .column-1.title.half-column(data-tab='tab-1')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Point of sale systems
+    //-         .column-2.title.half-column(data-tab='tab-2')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Micropayments to staff and to stores
+    //-         .column-3.title-reveal.hide.full-column.row(data-tab='tab-1')
+    //-           .six.columns.image
+    //-             img(src='images/use_case1.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-         .column-4.title-reveal.hide.full-column.row(data-tab='tab-2')
+    //-           .six.columns.image
+    //-             img(src='images/use_case2.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-       .hc-apps-row
+    //-         .column-1.title.half-column(data-tab='tab-1')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') E-commerce systems
+    //-         .column-2.title.half-column(data-tab='tab-2')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Smart scheduling apps
+    //-         .column-3.title-reveal.hide.full-column.row(data-tab='tab-1')
+    //-           .six.columns.image
+    //-             img(src='images/use_case1.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-         .column-4.title-reveal.hide.full-column.row(data-tab='tab-2')
+    //-           .six.columns.image
+    //-             img(src='images/use_case2.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-       .hc-apps-row
+    //-         .column-1.title.half-column(data-tab='tab-1')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Invoicing workflows
+    //-         .column-2.title.half-column(data-tab='tab-2')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Payroll
+    //-         .column-3.title-reveal.hide.full-column.row(data-tab='tab-1')
+    //-           .six.columns.image
+    //-             img(src='images/use_case1.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-         .column-4.title-reveal.hide.full-column.row(data-tab='tab-2')
+    //-           .six.columns.image
+    //-             img(src='images/use_case2.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-       .hc-apps-row
+    //-         .column-1.title.half-column(data-tab='tab-1')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Revenue sharing arrangements
+    //-         .column-2.title.half-column(data-tab='tab-2')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Supply chain contracts
+    //-         .column-3.title-reveal.hide.full-column.row(data-tab='tab-1')
+    //-           .six.columns.image
+    //-             img(src='images/use_case1.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-         .column-4.title-reveal.hide.full-column.row(data-tab='tab-2')
+    //-           .six.columns.image
+    //-             img(src='images/use_case2.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-       .hc-apps-row
+    //-         .column-1.title.half-column(data-tab='tab-1')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Last mile delivery network APIs
+    //-         .column-2.title.half-column(data-tab='tab-2')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Loyalty systems
+    //-         .column-3.title-reveal.hide.full-column.row(data-tab='tab-1')
+    //-           .six.columns.image
+    //-             img(src='images/use_case1.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-         .column-4.title-reveal.hide.full-column.row(data-tab='tab-2')
+    //-           .six.columns.image
+    //-             img(src='images/use_case2.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-       .hc-apps-row
+    //-         .column-1.title.half-column(data-tab='tab-1')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Drone delivery systems
+    //-         .column-3.title-reveal.hide.full-column.row(data-tab='tab-1')
+    //-           .six.columns.image
+    //-             img(src='images/use_case1.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-     .mobile
+    //-       .hc-apps-row
+    //-         .column-1.title.half-column(data-featherlight='#box-1')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Point of sale systems
+    //-         .column-2.title.half-column(data-featherlight='#box-2')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Micropayments to staff and to stores
+    //-         #box-1.column-3.title-reveal.hide.full-column.row.app-box
+    //-           .six.columns.image
+    //-             img(src='images/use_case1.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-         #box-2.column-4.title-reveal.hide.full-column.row.app-box
+    //-           .six.columns.image
+    //-             img(src='images/use_case2.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-       .hc-apps-row
+    //-         .column-1.title.half-column(data-featherlight='#box-3')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') E-commerce systems
+    //-         .column-2.title.half-column(data-featherlight='#box-4')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Smart scheduling apps
+    //-         #box-3.column-3.title-reveal.hide.full-column.row.app-box
+    //-           .six.columns.image
+    //-             img(src='images/use_case1.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-         #box-4.column-4.title-reveal.hide.full-column.row.app-box
+    //-           .six.columns.image
+    //-             img(src='images/use_case2.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-       .hc-apps-row
+    //-         .column-1.title.half-column(data-featherlight='#box-5')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Invoicing workflows
+    //-         .column-2.title.half-column(data-featherlight='#box-6')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Payroll
+    //-         #box-5.column-3.title-reveal.hide.full-column.row.app-box
+    //-           .six.columns.image
+    //-             img(src='images/use_case1.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-         #box-6.column-4.title-reveal.hide.full-column.row.app-box
+    //-           .six.columns.image
+    //-             img(src='images/use_case2.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-       .hc-apps-row
+    //-         .column-1.title.half-column(data-featherlight='#box-7')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Revenue sharing arrangements
+    //-         .column-2.title.half-column(data-featherlight='#box-8')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Supply chain contracts
+    //-         #box-7.column-3.title-reveal.hide.full-column.row.app-box
+    //-           .six.columns.image
+    //-             img(src='images/use_case1.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-         #box-8.column-4.title-reveal.hide.full-column.row.app-box
+    //-           .six.columns.image
+    //-             img(src='images/use_case2.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-       .hc-apps-row
+    //-         .column-1.title.half-column(data-featherlight='#box-9')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Last mile delivery network APIs
+    //-         .column-2.title.half-column(data-featherlight='#box-10')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Loyalty systems
+    //-         #box-9.column-3.title-reveal.hide.full-column.row.app-box
+    //-           .six.columns.image
+    //-             img(src='images/use_case1.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-         #box-10.column-4.title-reveal.hide.full-column.row.app-box
+    //-           .six.columns.image
+    //-             img(src='images/use_case2.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-       .hc-apps-row
+    //-         .column-1.title.half-column(data-featherlight='#box-11')
+    //-           i.ion-chevron-down
+    //-           a(href='javascript:;') Drone delivery systems
+    //-         #box-12.column-3.title-reveal.hide.full-column.row.app-box
+    //-           .six.columns.image
+    //-             img(src='images/use_case1.png')
+    //-           .six.columns.text
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+    //-             p
+    //-               | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
 
     #hc-specs.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
@@ -540,11 +541,11 @@ block content
                 tr
                   td
                     b Yearly	Token	Inflation
-                  td Never greater	than	5%,	Inflation	pays	for	transaction	fees
+                  td Never	greater	than	5%. Token	inflation	pays	for	transaction	fees.
                 tr
                   td
                     b Transactions Fees	for	Sender
-                  td Zero fees	until	transaction	costs	become	greater	than	5%
+                  td Zero	fees	until	blockchain transaction	costs	are	greater	than	5%
                 tr
                   td
                     b Transactions Fees	for	Receiver
@@ -555,164 +556,208 @@ block content
                   td Yes
                 tr
                   td
+                    b Privacy in Smart	Contracts
+                  td Yes
+                tr
+                  td
+                    b Hierarchy in Smart	Contracts
+                  td Yes
+                tr
+                  td
                     b Dapps
                   td Yes
                 tr
                   td
                     b State	Channels
                   td Yes
+                tr
+                  td
+                    b Supports	Oracles
+                  td Yes
+                tr
+                  td
+                    b Provenance	in	Loyalty	Points
+                  td Yes
 
 
     #hc-first-dapp.hc-feature.over-rel.lite.padding
       .container.email-widget
         h3.hc-feature-title.inverted The	first	Dapp
-        p.hc-feature-lead
-          | Footprint,	enterprise	messaging	for	franchise	and	chain	stores,	is	a	major	developer	partner	for	the	Storecoin	blockchain.	Storecoin	will	be
-          | natively	integrated	as	the	micropayment	currency	that	captures	the	revenue	sharing	needs	of	Headquarters	and	its	Store	network.
+        p.hc-feature-lead Footprint, enterprise chat for franchises, is the first major Developer partner for the Storecoin.
+        p.hc-feature-lead By 2019, Storecoin will be natively integrated as the micropayment currency that captures the revenue sharing needs of Franchise Headquarters and its Stores. Storecoin will also incentivize the creation of various network effects inside Footprint, including for future Storecoin developers.
         #hc-slider
           .slide
             a.link 1
-            .image(style="background-image:url('images/slide-1.png');")
+            img(src="images/slide-1.png")
+            //- .image(style="background-image:url('images/slide-1.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 2
-            .image(style="background-image:url('images/slide-2.png');")
+            img(src="images/slide-2.png")
+            //- .image(style="background-image:url('images/slide-2.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 3
-            .image(style="background-image:url('images/slide-3.png');")
+            img(src="images/slide-3.png")
+            //- .image(style="background-image:url('images/slide-3.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 4
-            .image(style="background-image:url('images/slide-4.png');")
+            img(src="images/slide-4.png")
+            //- .image(style="background-image:url('images/slide-4.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 5
-            .image(style="background-image:url('images/slide-5.png');")
+            img(src="images/slide-5.png")
+            //- .image(style="background-image:url('images/slide-5.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 6
-            .image(style="background-image:url('images/slide-6.png');")
+            img(src="images/slide-6.png")
+            //- .image(style="background-image:url('images/slide-6.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 7
-            .image(style="background-image:url('images/slide-7.png');")
+            img(src="images/slide-7.png")
+            //- .image(style="background-image:url('images/slide-7.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 8
-            .image(style="background-image:url('images/slide-8.png');")
+            img(src="images/slide-8.png")
+            //- .image(style="background-image:url('images/slide-8.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 9
-            .image(style="background-image:url('images/slide-9.png');")
+            img(src="images/slide-9.png")
+            //- .image(style="background-image:url('images/slide-9.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 10
-            .image(style="background-image:url('images/slide-10.png');")
+            img(src="images/slide-10.png")
+            //- .image(style="background-image:url('images/slide-10.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 11
-            .image(style="background-image:url('images/slide-11.png');")
+            img(src="images/slide-11.png")
+            //- .image(style="background-image:url('images/slide-11.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 12
-            .image(style="background-image:url('images/slide-12.png');")
+            img(src="images/slide-12.png")
+            //- .image(style="background-image:url('images/slide-12.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 13
-            .image(style="background-image:url('images/slide-13.png');")
+            img(src="images/slide-13.png")
+            //- .image(style="background-image:url('images/slide-13.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 14
-            .image(style="background-image:url('images/slide-14.png');")
+            img(src="images/slide-14.png")
+            //- .image(style="background-image:url('images/slide-14.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 15
-            .image(style="background-image:url('images/slide-15.png');")
+            img(src="images/slide-15.png")
+            //- .image(style="background-image:url('images/slide-15.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 16
-            .image(style="background-image:url('images/slide-16.png');")
+            img(src="images/slide-16.png")
+            //- .image(style="background-image:url('images/slide-16.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 17
-            .image(style="background-image:url('images/slide-17.png');")
+            img(src="images/slide-17.png")
+            //- .image(style="background-image:url('images/slide-17.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 18
-            .image(style="background-image:url('images/slide-18.png');")
+            img(src="images/slide-18.png")
+            //- .image(style="background-image:url('images/slide-18.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 19
-            .image(style="background-image:url('images/slide-19.png');")
+            img(src="images/slide-19.png")
+            //- .image(style="background-image:url('images/slide-19.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 20
-            .image(style="background-image:url('images/slide-20.png');")
+            img(src="images/slide-20.png")
+            //- .image(style="background-image:url('images/slide-20.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 21
-            .image(style="background-image:url('images/slide-21.png');")
+            img(src="images/slide-21.png")
+            //- .image(style="background-image:url('images/slide-21.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 22
-            .image(style="background-image:url('images/slide-22.png');")
+            img(src="images/slide-22.png")
+            //- .image(style="background-image:url('images/slide-22.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 23
-            .image(style="background-image:url('images/slide-23.png');")
+            img(src="images/slide-23.png")
+            //- .image(style="background-image:url('images/slide-23.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 24
-            .image(style="background-image:url('images/slide-24.png');")
+            img(src="images/slide-24.png")
+            //- .image(style="background-image:url('images/slide-24.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 25
-            .image(style="background-image:url('images/slide-25.png');")
+            img(src="images/slide-25.png")
+            //- .image(style="background-image:url('images/slide-25.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 26
-            .image(style="background-image:url('images/slide-26.png');")
+            img(src="images/slide-26.png")
+            //- .image(style="background-image:url('images/slide-26.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 27
-            .image(style="background-image:url('images/slide-27.png');")
+            img(src="images/slide-27.png")
+            //- .image(style="background-image:url('images/slide-27.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 28
-            .image(style="background-image:url('images/slide-28.png');")
+            img(src="images/slide-28.png")
+            //- .image(style="background-image:url('images/slide-28.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           .slide
             a.link 29
-            .image(style="background-image:url('images/slide-29.png');")
+            img(src="images/slide-29.png")
+            //- .image(style="background-image:url('images/slide-29.png');")
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         h4.swipe-message Swipe right to see the Dapp
@@ -722,7 +767,10 @@ block content
       .hc-chunk.hc-team-tex-wrapper
         h3.hc-feature-title Our Team
         p.hc-feature-lead
-          | Thinking very long term about blockchain technologies and their potential to speed up both local and global commerce
+          | We	have	been	thinking	very	long	term	about	the	potential	for	blockchainbased
+          | payments	to	introduce	new	business	models	and	behaviors	inside	
+          | hierarchy-based	organizations.	Also,	about	more	scalable	consensus	
+          | protocols	for	blockchains -- and	how	to	secure	them.
         .members
           .row
             .three.columns
@@ -745,11 +793,11 @@ block content
                 img.team-member-image(src='images/pablo-yabo.png', alt='Pablo Yabo')
               .nine.columns
                 h3.team-member-name Pablo Yabo
-                h4.team-member-title Chief	Security	Engineer
+                h4.team-member-title Chief	Blockchain	Architect
                 p.team-member-desc
                   | 20 years experience in the computer security field in 1997. 4
                   | years developing private and public blockchain technologies.
-                  | Helped build Jaxx.
+                  | Helped build Jaxx and Rootstock	(RSK).
                 a(href='https://www.linkedin.com/in/pabloyabo/', target='_blank')
                   i.ion-social-linkedin-outline(style='font-size: 30px;')
           hr
@@ -759,15 +807,21 @@ block content
                 img.team-member-image(src='images/rag-kidiyoor.png', alt='Rag Kidiyoor')
               .nine.columns
                 h3.team-member-name Rag Kidiyoor
-                h4.team-member-title Chief Architect
+                h4.team-member-title Lead	API	and	Database	Architect
                 p.team-member-desc
                   | 30-years	building	distributed	messaging,	social
                   | networking,	and	database	technologies.	Has
                   | been	working	with	Chris	McCoy	since	2011.
-                //
-                  <a href="https://www.linkedin.com/in/pabloyabo/" target="_blank">
-                  <i class="ion-social-linkedin-outline" style="font-size: 30px;"></i>
-                  </a>
+          
+          hr
+          .row
+            .twelve.columns
+              .three.columns
+                img.team-member-image(src='images/jason-varner.png', alt='Jason Varner')
+              .nine.columns
+                h3.team-member-name Jason Varner
+                h4.team-member-title Analyst
+                p.team-member-desc 10	years	modeling	economics	for	hedge	funds,	internet	startups,	and	blockchains.
           hr
           .row
             .three.columns
@@ -781,6 +835,12 @@ block content
                 | using	continuous	integration	and	continuous	deployments.
               a(href='https://www.linkedin.com/in/laitkor', target='_blank')
                 i.ion-social-linkedin-outline(style='font-size: 30px;')
+                  
+    #hc-alliance.hc-feature.over-rel.lite.padding
+      .hc-chunk
+        h2.hc-feature-title The Storecoin Alliance
+        p.hc-feature-lead A	coalition	of	franchises,	chain	stores,	sports	leagues,	and	affiliate-based	organizations	paying	yearly	membership	fees	to	become	early	adopters	of	the	Storecoin	blockchain.
+        p.hc-feature-lead ANNOUNCEMENTS COMING SOON
                   
     #hc-network-effects.hc-feature.over-rel.inverted.padding
       h2.hc-feature-title Storecoin	Network	Effects
@@ -860,6 +920,9 @@ block content
           .slide
             img(src='images/zeppelin-solutions.png', style='width:80%;')
             p ICO Auditing
+          .slide
+            img(src='images/bottom-line-logo.png', style='width:80%;')
+            p Bottom Line Law Group
             
     #hc-project-schedule.hc-feature.inverted.over-rel.padding
       h3.hc-feature-title.break Storecoin Project Schedule
@@ -998,27 +1061,28 @@ block content
               div
                 h5 The Offer
                 ul
-                  li $4 Million in Tokens will be sold
-                  li This represents 20% of the Storecoin blockchain
-                  li $0.20 per Token
-                  li Storecoin Network Value is $20 Million in this Token Sale
+                  li 30 Million storecoins will be sold
+                  li This represents 3% of the Storecoin blockchain
+                  li $0.005 per Token
+                  li Storecoin Network Value is $5 Million in this Token Sale
             .four.columns.points
               div
                 h5 How It Works
                 ul
-                  li We will accept Bitcoin and Ethereum
-                  li Tokens will be transferred within 30 days
-                  li Our Ether and BTC address will be posted 7 days before sale begins
-                  li Funds will go to Development of Storecoin blockchain
+                  li We will accept Bitcoin, Ethereum, and USD
+                  li Tokens will be transferred six weeks after our Second Token Sale
+                  li Storecoin will issue ERC20 tokens to start. These tokens may transfer to become native Storecoin tokens on the Storecoin blockchain, priced at the same amount as Storecoin ERC20 tokens
+                  li Funds will go to to finishing the Storecoin Whitepaper and to the creation of the Storecoin Test Network
             .four.columns.points
               div
                 h5 Future Token Sales
                 ul
-                  li Storecoin already sold 5% of its blockchain in R1
+                  li Over time, Storecoin will sell only 33% of its tokens to the public
                   li
-                    | Storecoin will make additional tokens available as Development and Business Milestones are hit
-                  li Future Token Sales will be through a Dutch auction
-                  li Outside investors will eventually own +51% of Storecoin
+                    | Storecoin will make additional tokens available only as Technology and Adoption milestones are hit
+                  li Future ICOs will be through a Vickrey auction
+                  li Storecoin may offer up to 10 individual mini ICOs over the course of 10 years
+                  li The Second Token Sale will take place in Q417 or Q118
           .row
             .twelve.columns
               p.hc-feature-lead(style='margin:2em 0;')
@@ -1028,21 +1092,15 @@ block content
       .hc-chunk
         h2.hc-feature-title Use	of	First	Token	Sale	Proceeds
         ul
-          li Finish	our	white	paper.
-          li Keep	building	our	engineering	and	product	design	team.
-          li
-            | Achieve	fully	distributed	continuous	integration	and	continuous	deployment	across	all	builds.
-          li Finalize	our	legal	structure	and	stay	compliant	with	security	laws.
-          li Define	our	product	roadmap
-          li
-            | Design	and	define	Storecoin	incentives	and	dynamics	for	the	franchise
-            | and	chain	store	use	case.
-          li Develop	a	working	prototype.
-          li Achieve	perpetual	Ethereum	and	Dapp compatability.
-          li Define	risks	and	asset	their	potential	impact.
-          li Security	audit,	security	audit,	security	audit	.
-          li Automate	our	Second	Token	Sale.
-          li Build	a	community	on	Slack.
-          li  Communicate	transparently	to	our	community	through	Twitter	and	blog	posts.
+          li Finish our Whitepaper.
+          li Launch our Test Network.
+          li Extensive security testing.
+          li Extensive load testing.
+          li Finalize our blockchain economics.
+          li Finalize our legal structure including the introduction of a non-profit to distribute future tokens.
+          li Continue to build our engineering team.
+          li Define risks and asset their potential impact.
+          li Introduce a Vickrey Auction for our Second Token Sale.
+          li Write the smart contracts to vest our founders, core developers and team.
 
     include email-widget
