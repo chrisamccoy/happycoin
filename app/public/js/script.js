@@ -549,15 +549,20 @@ function emailSubscribe() {
     var $thisForm = $(this).parents('.steps-form');
 
     $(window).scrollTop($thisEmailSect.offset().top - 66);
-    // console.log($thisForm.serialize());
+    var formArray = $thisForm.serializeArray();
+    formArray.forEach(function(item){
+      if (item.value == '' || !item.value) {
+        item.value = 'None';
+      }
+    });
     $.ajax({
       type : 'POST',
       // url : 'https://hooks.zapier.com/hooks/catch/2306819/5ua8pj/',
       // url : 'https://market.capitalstake.com',
       url : 'https://hooks.zapier.com/hooks/catch/2399325/5iwky6/',
-      data : $thisForm.serialize()
+      data : formArray
     }).done(function(result){
-      console.log($thisForm.serialize());
+      console.log(formArray);
       // console.log(result);
       $thisEmailSect.find('.email-steps').hide();
       $thisEmailSect.find('.success-message').show();
