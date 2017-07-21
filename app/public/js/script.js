@@ -405,7 +405,14 @@ function emailSubscribe() {
   $emailSteps.find('input').change(function(){
     // console.log(formData);
     if ($(this).attr('type') == 'checkbox') {
-      formData[$(this).attr('name')].push($(this).val());
+      var array = formData[$(this).attr('name')];
+      var arrayIndex = array.indexOf($(this).val());
+      if (arrayIndex < 0 ) {
+        array.push($(this).val());
+      } else {
+        array.splice(arrayIndex, 1);
+      }
+      // console.log(formData[$(this).attr('name')]);
     } else {
       formData[$(this).attr('name')] = $(this).val();
     }
@@ -504,11 +511,11 @@ function emailSubscribe() {
         isChecked = $thisStep.find('input[type="checkbox"]').is(':checked'),
         $fieldGroup = $(this).parents('.field-group');
 
-    if(thisIsChecked) {
-      $fieldGroup.find('.field.full-width').removeClass('hidden');
-    } else {
-      $fieldGroup.find('.field.full-width').addClass('hidden');
-    }
+    // if(thisIsChecked) {
+    //   $fieldGroup.find('.field.full-width').removeClass('hidden');
+    // } else {
+    //   $fieldGroup.find('.field.full-width').addClass('hidden');
+    // }
 
     if(isChecked) {
       $thisStep.find('.button-next').removeAttr('disabled');
@@ -521,20 +528,21 @@ function emailSubscribe() {
     var textVal = $(this).val();
     var $thisEmailStep = $(this).parents('.email-steps');
     var isStep13 = $thisEmailStep.hasClass('step-13');
+    // console.log(textVal);
     if(textVal.length > 0 ) {
       $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
       if (isStep13) {
-        // console.log(parseInt(textVal) * 0.005);
-        $thisEmailStep.find('.computed').text(' ' + parseInt(textVal) * 0.005);
-        $thisEmailStep.find('input[hidden]').val(parseInt(textVal) * 0.005);
+        textVal = numeral(textVal).multiply(0.005).format('($0,0.00)');
+        $thisEmailStep.find('.computed').text(' ' + textVal);
+        $thisEmailStep.find('input[hidden]').val(textVal);
         $thisEmailStep.find('input[hidden]').trigger('change');
       }
     } else {
       $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
       if (isStep13) {
         // console.log(parseInt(textVal) * 0.005);
-        $thisEmailStep.find('.computed').text(' No value added.');
-        $thisEmailStep.find('input[hidden]').val(0);
+        $thisEmailStep.find('.computed').text(' $0');
+        $thisEmailStep.find('input[hidden]').val('$0');
         $thisEmailStep.find('input[hidden]').trigger('change');
       }
     }
@@ -603,7 +611,7 @@ function emailSubscribe() {
     $(this).parents('.email-steps').hide();
     // console.log($emailSection.find('div.email-steps[data-step="'+ stepVal +'"]'),stepVal);
     $thisEmailSect.find('.email-steps.'+ stepVal).show();
-    if (stepVal == 'step-2') {
+    if (stepVal == 'step-12') {
       initSticky();
     }
     if (stepVal == 'step-18') {
@@ -624,7 +632,10 @@ function emailSubscribe() {
       });
 
       if(paymentTypes.length == 1){
+        var $firstPaymentPercent = $step18.find('.payment-group .field:first-child input[name="payment-percent"]');
+        var firstPaymentPercentVal = ' ' + $firstPaymentPercent.data().name + ' - 100%';
         $step18.find('.payment-group .field:first-child input[type="number"]').val(100);
+        $firstPaymentPercent.val(firstPaymentPercentVal);
         $step18.find('.total-percentage span').text(' 100%');
         $step18.find('.percent-sum input').val(100);
         $step18.find('.total-percentage span').addClass('red');

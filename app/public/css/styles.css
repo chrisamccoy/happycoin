@@ -74,7 +74,7 @@ p {
 .hc-feature .hc-feature-lead {
   font-size: 1.8em;
   text-align: center;
-  margin: 1.8em auto;
+  margin: 1em auto;
 }
 
 .hc-feature.inverted {
@@ -185,6 +185,27 @@ p {
 
 .hc-feature.inverted a {
   color:white;
+}
+
+.hc-coming-soon {
+  /*font-family: 'BenchNine', sans-serif;*/
+  padding:1em 0px;
+  border-top:1px solid white;
+  border-bottom:1px solid white;
+  max-width: 250px;
+  margin:2em auto 0px;
+}
+
+.hc-coming-soon .icon {
+  font-size: 7em;
+  height: 120px;
+  color: #e97844;
+}
+
+.hc-coming-soon p {
+  text-align:center;
+  margin:0px;
+  line-height: 1;
 }
 
 .points {
@@ -477,20 +498,18 @@ p {
   color: #fff;
 }
 
-#hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-  /* max-width: 1050px; */
+/*#hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
   font-size: 1.8em;
   font-weight: 300;
   color: #fff;
-  /* line-height: 1.6; */
   margin: 1.8em auto;
   text-shadow: 1px 1px 2px #000;
-}
+}*/
 
-#hc-intro .hc-intro-text-wrapper .hc-intro-large-lead:first-child {
+#hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
   font-size: 3.2em;
   margin-bottom: 0px;
-  margin-top: 2em;
+  margin: 1em 0px;
   text-align: center;
 }
 
@@ -654,14 +673,10 @@ p {
     display: block;
   }*/
 
-  #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead:first-child {
-    font-size: 2.1em !important;
-    margin-top: 0px;
+  #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
+    font-size: 1.5em !important;
   }
 
-  #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead:last-child {
-    margin-bottom: 0px !important;
-  }
 
   #hc-intro {
     padding: 0px;
@@ -734,7 +749,7 @@ p {
 #hc-promo .sales-terms .points {
   background: rgb(93, 121, 76);
   border-radius: 10px;
-  min-height: 450px;
+  min-height: 475px;
   text-align: left;
   color: white;
 }
@@ -1562,9 +1577,9 @@ p {
 /*--------------------------*/
 /* #hc-why-token  */
 
-#hc-why-token .phase {
+/*#hc-why-token .phase {
   margin-bottom: 3em;
-}
+}*/
 
 #hc-why-token .text {
   margin-bottom: 1em;
@@ -2100,7 +2115,7 @@ p {
 
 .hc-email .email-steps p {
   color: black;
-  font-size: 1.2em;
+  font-size: 1em;
   margin-bottom: 1em;
   background: #c7dfb8;
 }
@@ -2259,6 +2274,9 @@ p {
 }
 
 @media only screen and (max-width: 700px) {
+  .hc-email ul {
+    margin-left: 1em;
+  }
 
   .hc-email .message h5 {
     font-size: 1.8em;
@@ -2269,7 +2287,7 @@ p {
   }
 
   .hc-email .email-steps p {
-    padding-top: 1.2em;
+    font-size: 0.8em;
   }
 
   .hc-email .email-steps .fields {
@@ -2701,11 +2719,10 @@ p {
     display: block;
   }
 
-  #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
+  /*#hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
     margin: 1.2em 0.2em;
-    /* line-height: 1.4; */
     font-size: 1.1em !important;
-  }
+  }*/
 
   #hc-intro .learn-more {
     font-size: 1.2em;
