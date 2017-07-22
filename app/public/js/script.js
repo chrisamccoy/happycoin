@@ -557,6 +557,7 @@ function emailSubscribe() {
     var $thisForm = $(this).parents('.steps-form');
 
     $(window).scrollTop($thisEmailSect.offset().top - 66);
+
     var formArray = $thisForm.serializeArray();
     formArray.forEach(function(item){
       if (item.value == '' || !item.value) {
@@ -582,8 +583,6 @@ function emailSubscribe() {
     var $thisForm = $(this).parents('.form');
     var emailVal = $thisForm.find('input[type="email"]').val();
 
-    $(window).scrollTop($thisEmailSect.offset().top - 66);
-
     if(emailVal){
       $thisEmailSect.find('.email-steps.step-17 input[type="text"]').val(emailVal);
       $.ajax({
@@ -595,6 +594,7 @@ function emailSubscribe() {
         // console.log(result);
         $thisEmailSect.find('.email-widget').hide();
         $thisEmailSect.find('.email-steps.step-1').show();
+        $(window).scrollTop($thisEmailSect.offset().top - 66);
       });
     }
   });

@@ -77,6 +77,10 @@ p {
   margin: 1em auto;
 }
 
+.hc-feature .hc-feature-lead.last-child {
+  margin-bottom: 0px;
+}
+
 .hc-feature.inverted {
   color: white;
   background: #5d794c;
@@ -189,11 +193,12 @@ p {
 
 .hc-coming-soon {
   /*font-family: 'BenchNine', sans-serif;*/
-  padding:1em 0px;
-  border-top:1px solid white;
-  border-bottom:1px solid white;
-  max-width: 250px;
+  /*padding:1em 0px;*/
+  /*border-top:1px solid white;
+  border-bottom:1px solid white;*/
+  /*max-width: 250px;*/
   margin:2em auto 0px;
+  color:#e97844;
 }
 
 .hc-coming-soon .icon {
@@ -298,11 +303,11 @@ p {
   }
 
   .hc-feature .hc-feature-lead {
-    font-size: 1.3em;
+    font-size: 1em;
   }
 
   .email-widget h4 {
-    font-size: 1.7rem;
+    font-size: 0.87em;
     margin-bottom : 0.5em;
   }
 
@@ -653,6 +658,10 @@ p {
   left : 0px;
 }
 
+.slick-arrow {
+  z-index: 20;
+}
+
 .slick-prev:before {
   content : '\f3cf';
   font-family: "Ionicons";
@@ -681,7 +690,6 @@ p {
   #hc-intro {
     padding: 0px;
     margin-top: 4.5em;
-    height: calc(100vh - 205px);
   }
 /*
   #hc-slider .slide {
@@ -843,6 +851,10 @@ p {
   position: relative;
 }
 
+#hc-project-schedule {
+  background: #7c9b68;
+}
+
 #hc-project-schedule .desc {
   margin: 0 auto 30px;
   font-size: 17px;
@@ -868,7 +880,7 @@ p {
 #hc-project-schedule .timeline .year .name {
   font-size: 2em;
   text-align: center;
-  background-color: rgb(93, 121, 76);
+  background-color: rgb(124, 155, 104);
   color: #fff;
   font-weight: bold;
 }
@@ -980,7 +992,7 @@ p {
     position: relative;
     z-index: 20;
     display: inline-block;
-    background-color: #5d794c;
+    background-color: #7c9b68;
     padding: 0 4px;
     font-weight: bold;
     color: #ffffff;
@@ -1519,8 +1531,12 @@ p {
 }*/
 
 #hc-first-token ul {
-  padding: 1em;
   font-size: 1.5em;
+  margin: 0px;
+}
+
+#hc-first-token ul li:last-child {
+  margin-bottom: 0px;
 }
 
 /*--------------------------*/
@@ -1557,6 +1573,14 @@ p {
 }
 
 @media only screen and (max-width: 700px) {
+  #hc-first-token ul {
+    font-size: 1em;
+  }
+
+  #hc-first-token ul li {
+    margin-left: 1em;
+  }
+
   #hc-accom .solution-image.vertical {
     display: block;
   }
@@ -1581,9 +1605,9 @@ p {
   margin-bottom: 3em;
 }*/
 
-#hc-why-token .text {
+/*#hc-why-token .text {
   margin-bottom: 1em;
-}
+}*/
 
 #hc-why-token .phase .columns  {
   display: flex;
@@ -1613,6 +1637,11 @@ p {
   width: 100%;
   height: auto;
   border-radius: 10px;
+}
+
+#hc-why-token .swipe-text {
+  font-size: 1.5em;
+  margin:0px;
 }
 
 /*#hc-why-token .points .columns h6 {
@@ -1662,10 +1691,24 @@ p {
   color : white;
 }
 
+#hc-why-token .hc-each-problem:not(.last-child) {
+  margin-bottom: 4em;
+}
+
+
 @media only screen and (max-width: 700px) {
   #hc-why-token .phase .twelve.columns {
     width: 100%;
   }
+
+  #hc-why-token .hc-each-problem:not(.last-child) {
+    margin-bottom: 2em;
+  }
+
+  #hc-why-token .swipe-text {
+    font-size: 1em;
+  }
+
 
   #hc-why-token .phase .columns img {
     width: 100%;
@@ -2163,7 +2206,7 @@ p {
 }
 
 .hc-email .email-steps .button-group {
-  height: 50px;
+  min-height: 50px;
   margin-top: 1em;
 }
 
@@ -2274,6 +2317,29 @@ p {
 }
 
 @media only screen and (max-width: 700px) {
+  .hc-email .email-steps .field label {
+    font-size: 0.8em;
+  }
+
+  .hc-email .email-steps .field input[type="radio"] {
+    width : 30px;
+  }
+
+  .hc-email .email-steps.step-18 .payment-group .field {
+    font-size: 1em;
+    margin : 0.5em 0px;
+  }
+
+  .hc-email .email-steps.step-18 .payment-group .field input {
+    width: 70px;
+    height: 30px;
+    margin-bottom: 0.4em;
+  }
+
+  .hc-email .email-steps li {
+    font-size: 0.8em;
+  }
+
   .hc-email ul {
     margin-left: 1em;
   }
@@ -2288,6 +2354,7 @@ p {
 
   .hc-email .email-steps p {
     font-size: 0.8em;
+    margin-bottom: 0.3em;
   }
 
   .hc-email .email-steps .fields {
@@ -2821,6 +2888,10 @@ p {
 #hc-solution img {
   width: 100%;
   margin-bottom: 2em;
+}
+
+#hc-solution img:last-child {
+  margin-bottom: 0px;
 }
 
 @media only screen and (max-width: 1025px) {

@@ -4,14 +4,15 @@ block content
   div#hc-content
     #hc-intro.hc-feature.over-rel.padding
       .hc-chunk.hc-intro-text-wrapper
-        h2.hc-intro-large-lead
+        h2.hc-intro-large-lead(style="margin-bottom:0px;")
           b
             | Storecoin	is	a	public	blockchain
             | for	systems	governed	by	hierarchy,	privacy,
             | and	complex	revenue	sharing.
-        h2.hc-intro-large-lead
-          b
-            | These	include	franchises,	chain	stores,	sports	leagues,	affiliate-based	organizations,	and	more.
+        h2.hc-feature-lead
+          | These	include	franchises,	chain	stores,	sports	leagues,	affiliate-based	organizations,	and	more.
+        h2.hc-feature-lead
+          | No	transaction	fees.	Tendermint consensus	algorithm.	Ethereum	compatible.	
         //- h2.hc-intro-large-lead
         //-   | Storecoin	is	an	Ethereum-family
         //-   | technology	and	will	be	fully	compatible	with	the
@@ -21,10 +22,9 @@ block content
           
     include email-widget
 
-    .hc-feature.over-rel.padding
+    .hc-feature.over-rel.padding(style="padding:0px;")
       .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title.inverted Here is our greenpaper.
-        p.hc-feature-lead(style="margin-bottom:0px;") We'll release our Whitepaper by Q417/Q118
+        h3.hc-feature-title.inverted(style="font-size:2em; margin:0px !important;") Here is our greenpaper.
     
     #hc-vision.hc-feature.inverted.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
@@ -62,88 +62,81 @@ block content
             
     #hc-why-token.hc-feature.inverted.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title.inverted(style="margin:0px;") The Problem
-        .row.text
-          .twelve.columns
-            p.hc-feature-lead Hierarchy-based	systems	like	franchises, chains,	sports	leagues,	and	affiliate-based systems	are	governed	by	complex, multi-directional	revenue sharing	contracts.
-            p.hc-feature-lead(style="margin-bottom: 0px;font-size: 1.5em;") Swipe right to see examples
-              
-        #hc-problem-slider
-          .slide
-            img(src='images/problem-1.png')
-          .slide
-            img(src='images/problem-2.png')
-          .slide
-            img(src='images/problem-3.png')
-          .slide
-            img(src='images/problem-4.png')
-          .slide
-            img(src='images/problem-5.png')
-              
-        .row.text
-          .twelve.columns
-            p.hc-feature-lead
-              | Oftentimes,	both	the	amount	of	the	revenue	share	and	the	identity	of	the	receiver	needs	to	be	private.
-        .row.phase
-          .twelve.columns
-            img(src='images/problem-6.png')
-        .row.text
-          .twelve.columns
-            p.hc-feature-lead In	some	hierarchies,	revenue	sharing	arrangements	require	a	mix	of	both	public	and	private	information	for	sender,	receiver,	and	payment	amounts.	
-        .row.phase
-          .twelve.columns
-            img(src='images/problem-7.png')
-        .row.text
-          .twelve.columns
-            p.hc-feature-lead Existing	smart	contract-based	blockchain	systems	like	Ethereum	are	public.
-            p.hc-feature-lead They don't support privacy inside smart contracts for receiver, sender, and payment amounts.
-        .row.phase
-          .twelve.columns
-            img(src='images/problem-8.png')
-        .row.text
-          .twelve.columns
-            p.hc-feature-lead
-              | Today, smart	contracts are written	in	code	but	most	of	the	world doesn’t	understand	code	-- especially	legal departments.	
-            p.hc-feature-lead Writing, revising,	and deploying smart contracts	needs	to	be	very user-friendly	if	they	are	to	gain mainstream adoption	by hierarchy-based	systems with multiple layers of management and legal approvals.
-        .row.phase
-          .twelve.columns
-            img(src='images/problem-11.png')
-        //- .row.text
-        //-   .twelve.columns
-        //-     p.hc-feature-lead
-        //-       | Finally,	for	hub	and	spoke-based	systems	that	want	to	adopt	new
-        //-       | technology	powered	by	micro-transactions,	they	have	to	pay	3%	of
-        //-       | the	total	transaction	value	and	an	additional	$0.30	fee	to	process
-        //-       | each	payment.
-        //-     p.hc-feature-lead
-        //-       | Economically,	any	micro-transaction	less	than	$0.30	costs	more	to
-        //-       | process	for	the	organization	than	the	micro-transaction	itself.
-        //- .row.phase
-        //-   .twelve.columns
-        //-     img(src='images/problem-12.png')
-        .row.text
-          .twelve.columns
-            p.hc-feature-lead
-              | They	promised	us	free	payments	and	transactions	using	blockchains but,	as	of	
-              | July	2017,	we	ended	up	with	$0.14	lower	bound	transactions	with	Ethereum	
-              | and	$2.46	transactions	with	Bitcoin.
-            p.hc-feature-lead
-              | To	handle	micropayments	of	less	than	$0.30	and	nanopayments of	less	than	
-              | $0.01	-- to	power	new	business	models	and	behaviors	for	hierarchy-based	
-              | systems	-- blockchain	payments	need	to	be	free.
-            //- p.hc-feature-lead
-            //-   | The	initial	promise	of	blockchain	technology	was	free	transactions	for	sender	and	receiver.
-            //- p.hc-feature-lead As	of	July	2017,	the	lowest	per	transaction	fee	using	Bitcoin	is	$2.
-            //- p.hc-feature-lead It’s	$0.14	using	Ethereum.
-            //- p.hc-feature-lead Over	time,	based	upon	their	technology	and	economics,	these	fees	will	only	grow.
-        .row.phase(style="margin-bottom:2em;")
-          .twelve.columns
-            h4 Bitcoin	Average	Transaction	Fees
-            img(src='images/problem-9.png')
-        .row.phase
-          .twelve.columns
-            h4 Ethereum	Average	Transaction	Fees
-            img(src='images/problem-10.png')
+        h3.hc-feature-title.inverted(style="margin:0px !important;") The Problem
+        
+        .hc-each-problem
+          .row.text
+            .twelve.columns
+              p.hc-feature-lead Hierarchy-based	systems	like	franchises, chains,	sports	leagues,	and	affiliate-based systems	are	governed	by	complex, multi-directional	revenue sharing	contracts.
+                
+          #hc-problem-slider
+            .slide
+              img(src='images/problem-1.png')
+            .slide
+              img(src='images/problem-2.png')
+            .slide
+              img(src='images/problem-3.png')
+            .slide
+              img(src='images/problem-4.png')
+            .slide
+              img(src='images/problem-5.png')
+          p.hc-feature-lead.swipe-text Swipe right to see examples
+          
+        .hc-each-problem  
+          .row.text
+            .twelve.columns
+              p.hc-feature-lead
+                | Oftentimes,	both	the	amount	of	the	revenue	share	and	the	identity	of	the	receiver	needs	to	be	private.
+          .row.phase
+            .twelve.columns
+              img(src='images/problem-6.png')
+                
+        .hc-each-problem
+          .row.text
+            .twelve.columns
+              p.hc-feature-lead In	some	hierarchies,	revenue	sharing	arrangements	require	a	mix	of	both	public	and	private	information	for	sender,	receiver,	and	payment	amounts.	
+          .row.phase
+            .twelve.columns
+              img(src='images/problem-7.png')
+                
+        .hc-each-problem
+          .row.text
+            .twelve.columns
+              p.hc-feature-lead Existing	smart	contract-based	blockchain	systems	like	Ethereum	are	public.
+              p.hc-feature-lead They don't support privacy inside smart contracts for receiver, sender, and payment amounts.
+          .row.phase
+            .twelve.columns
+              img(src='images/problem-8.png')
+                
+        .hc-each-problem
+          .row.text
+            .twelve.columns
+              p.hc-feature-lead
+                | Today, smart	contracts are written	in	code	but	most	of	the	world doesn’t	understand	code	-- especially	legal departments.	
+              p.hc-feature-lead Writing, revising,	and deploying smart contracts	needs	to	be	very user-friendly	if	they	are	to	gain mainstream adoption	by hierarchy-based	systems with multiple layers of management and legal approvals.
+          .row.phase
+            .twelve.columns
+              img(src='images/problem-11.png')
+
+        .hc-each-problem.last-child
+          .row.text
+            .twelve.columns
+              p.hc-feature-lead
+                | They promised us free payments and transactions using the
+                | blockchain but, as of July 2017, we have $0.14 transactions
+                | with Ethereum and $2.46 transactions with Bitcoin.
+              p.hc-feature-lead
+                | To handle micropayments of less than $0.30 and
+                | nanopayments of less than $0.01, blockchain payments need
+                | to be free.          
+          .row.phase(style="margin-bottom:2em;")
+            .twelve.columns
+              h4 Bitcoin	Average	Transaction	Fees
+              img(src='images/problem-9.png')
+          .row.phase
+            .twelve.columns
+              h4 Ethereum	Average	Transaction	Fees
+              img(src='images/problem-10.png')
 
     #hc-solution.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
@@ -534,7 +527,7 @@ block content
         h3.hc-feature-title Blockchain Specs
         .row
           .twelve.columns
-            table.u-full-width
+            table.u-full-width(style="margin:0px;")
               tbody
                 tr
                   td
@@ -564,6 +557,10 @@ block content
                   td
                     b Transactions Fees	for	Receiver
                   td Never
+                tr
+                  td
+                    b Security Protocol
+                  td R&D	in	progress
                 tr
                   td
                     b Smart	Contracts
@@ -784,7 +781,7 @@ block content
               
         h4.swipe-message Swipe right to see the Dapp
         
-        p.hc-feature-lead By 2019, Storecoin will be natively integrated as the micropayment currency that captures the revenue sharing needs of Franchise Headquarters and its Stores. Storecoin will also incentivize the creation of various network effects inside Footprint, including for future Storecoin developers.
+        p.hc-feature-lead.last-child By 2019, Storecoin will be natively integrated as the micropayment currency that captures the revenue sharing needs of Franchise Headquarters and its Stores. Storecoin will also incentivize the creation of various network effects inside Footprint, including for future Storecoin developers.
 
     
     #hc-team.hc-feature.over-rel.padding
@@ -866,11 +863,11 @@ block content
         p.hc-feature-lead A	coalition	of	franchises,	chain	stores,	sports	leagues,	and	affiliate-based	organizations	paying	yearly	membership	fees	to	become	early	adopters	of	the	Storecoin	blockchain.
 
         div.hc-coming-soon
-          p.icon
-            i.ion-speakerphone
-          p(style='font-size: 1.7em;height: 30px;') ANNOUNCEMENTS
-          p(style='font-size: 4em;height: 51px;') COMING 
-          p(style='font-size: 6em;height: 85px;') SOON
+          //- p.icon
+          //-   i.ion-speakerphone
+          p(style='font-size: 1.7em;height: 30px;') COMING SOON
+          //- p(style='font-size: 4em;height: 51px;') COMING 
+          //- p(style='font-size: 6em;height: 85px;') SOON
         
     #hc-partners.hc-feature.over-rel.padding
       .hc-chunk
@@ -885,9 +882,9 @@ block content
           .slide
             img(src='images/logo-coinfabrik.png', style='width:80%;')
             p Blockchain	Development	Partners
-          .slide
-            img(src='images/zeppelin-solutions.png', style='width:80%;')
-            p ICO Auditing
+          //- .slide
+          //-   img(src='images/zeppelin-solutions.png', style='width:80%;')
+          //-   p ICO Auditing
           .slide
             img(src='images/bottom-line-logo.png', style='width:80%;')
             p Bottom Line Law Group
@@ -1077,7 +1074,7 @@ block content
                   | Founders have 
                   b 4 year vesting
                   |  with 3 month cliffs
-                p.note
+                p.note(style="margin-bottom:0px;")
                   | Early contributors have 
                   b 2 year vesting
                   |  with 6 month cliffs
@@ -1091,10 +1088,10 @@ block content
               div
                 h5 In The First ICO
                 ul
-                  li 30 Million storecoins will be sold.
+                  li 30 Million storecoins will be sold
                   li This represents 3% of the Storecoin blockchain.
-                  li $0.005 cost per storecoin Token.
-                  li Storecoin Network Value is at $5 Million.
+                  li $0.005 cost per storecoin Token
+                  li Storecoin Network Value is at $5 Million
             .four.columns.points
               div
                 h5 How It Works
@@ -1102,7 +1099,7 @@ block content
                   li We will accept Bitcoin, Ethereum, and/or USD in exchange for storecoins.
                   li Buyers will e-sign our Token Sale Terms and Agreement before receiving payment information from StoreCoin, Inc.
                   li Tokens will be transferred six weeks after our Second Token Sale which is scheduled for Q417-Q118.
-                  li At first, Storecoin will issue ERC20 tokens. 
+                  li At first, Storecoin will issue ERC20 tokens
                   li In the future, these tokens may be be transferred into storecoin tokens issued from the Storecoin blockchain -- at no extra cost to the token buyer.
             .four.columns.points
               div
@@ -1119,15 +1116,13 @@ block content
       .hc-chunk
         h2.hc-feature-title Use	of	First	Token	Sale	Proceeds
         ul
-          li Finish our Whitepaper.
-          li Launch our Test Network.
-          li Extensive security testing.
-          li Extensive load testing.
-          li Finalize our blockchain economics.
-          li Finalize our legal structure including the introduction of a non-profit to distribute future tokens.
-          li Continue to build our engineering team.
-          li Define risks and asset their potential impact.
-          li Introduce a Vickrey Auction for our Second Token Sale.
-          li Write the smart contracts to vest our founders, core developers and team.
+          li Publish v0.1 of the Storecoin Whitepaper
+          li Determine our final security protocol 
+          li Publish v1 of Storecoin network economics
+          li Continue building our engineering and economics teams
+          li Introduce a Vickrey Auction for our Second Token Sale
+          li Write smart contracts to token vest Storecoin founders, core
+             | developers, key partners, and team.
+          li Launch the Second Storecoin ICO 
 
     include email-widget
