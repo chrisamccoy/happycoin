@@ -128,17 +128,23 @@
           i.ion-chevron-right
             
     .email-steps.step-10
-      p The	minimum	purchase	amount	in	the	Storecoin	First	ICO	is	$2,500.		
-      p As	of	today,	this	is	
-        span.eth-value 
-        |  Ethereum	or	
-        span.btc-value 	
-        |  Bitcoin.	
+      p As	of	today,	our	$2,500	minimum	token	buy	equals:			
+      ul 
+        li
+          span.eth-value 
+          |  number	of	Ethereum.
+          
+        li
+          span.btc-value 	
+          |  number	of	of	Bitcoins.
+          	
       p Do	you	want	to	participate	in	the	Storecoin	First	ICO?
-      .field
+      .field.radio-field
+        .hc-radio-btn
         input(type='radio', name="participate", value='Yes')
         label(for='participate-yes') Yes
-      .field
+      .field.radio-field
+        .hc-radio-btn
         input(type='radio', name="participate", value='No')
         label(for='participate-no') No
       hr
@@ -152,10 +158,12 @@
             
     .email-steps.step-11
       p Have	you	participated	in	an	ICO	before?	
-      .field
+      .field.radio-field
+        .hc-radio-btn
         input(type='radio', name="before-participate", value='Yes')
         label(for='participate-yes') Yes
-      .field
+      .field.radio-field
+        .hc-radio-btn
         input(type='radio', name="before-participate", value='No')
         label(for='participate-no') No
       hr
@@ -171,49 +179,62 @@
       div(data-sticky-container='')
         p.sticky(data-margin-top='65') How much do you typically invest in a Token Sale or ICO?
         .fields
-          .field
+          .field.radio-field
+            .hc-radio-btn
             input(type='radio', name='invest', value='<$1,000')
             label(for='invest-1') <$1,000
-          .field
+          .field.radio-field
+            .hc-radio-btn
             input(type='radio', name='invest', value='$1,000 - $5,000')
             label(for='invest-2') $1,000 - $5,000
         .fields
-          .field
+          .field.radio-field
+            .hc-radio-btn
             input(type='radio', name='invest', value='$5,000 - $25,000')
             label(for='invest-3') $5,000 - $25,000
-          .field
+          .field.radio-field
+            .hc-radio-btn
             input(type='radio', name='invest', value='$25,000 - $50,000')
             label(for='invest-4') $25,000 - $50,000
         .fields
-          .field
+          .field.radio-field
+            .hc-radio-btn
             input(type='radio', name='invest', value='$50,000 - $75,000')
             label(for='invest-5') $50,000 - $75,000
-          .field
+          .field.radio-field
+            .hc-radio-btn
             input(type='radio', name='invest', value='$75,000 - $100,000')
             label(for='invest-6') $75,000 - $100,000
         .fields
-          .field
+          .field.radio-field
+            .hc-radio-btn
             input(type='radio', name='invest', value='$100,000 - $150,000')
             label(for='invest-7') $100,000 - $150,000
-          .field
+          .field.radio-field
+            .hc-radio-btn
             input(type='radio', name='invest', value='$150,000 - $200,000')
             label(for='invest-8') $150,000 - $200,000
         .fields
-          .field
+          .field.radio-field
+            .hc-radio-btn
             input(type='radio', name='invest', value='$200,000 - $250,000')
             label(for='invest-9') $200,000 - $250,000
-          .field
+          .field.radio-field
+            .hc-radio-btn
             input(type='radio', name='invest', value='$250,000 - $500,000')
             label(for='invest-10') $250,000 - $500,000
         .fields
-          .field
+          .field.radio-field
+            .hc-radio-btn
             input(type='radio', name='invest', value='$500,000 - $1,000,000')
             label(for='invest-11') $500,000 - $1,000,000
-          .field
+          .field.radio-field
+            .hc-radio-btn
             input(type='radio', name='invest', value='$1,000 - $3,000,000')
             label(for='invest-12') $1,000 - $3,000,000
         .fields
-          .field
+          .field.radio-field
+            .hc-radio-btn
             input(type='radio', name='invest', value='$3,000,000 or more')
             label(for='invest-13') $3,000,000 or more
       hr
@@ -228,7 +249,7 @@
     .email-steps.step-13
       p At	$0.005	per	storecoin,	how	may	storecoins do	you	want	to	purchase?
       .field
-        input.u-full-width(type='number', name='num-of-storecoins', placeholder='Type a value.')
+        input.u-full-width(type='text', name='num-of-storecoins', data-type="number", placeholder='Type a value.')
         input.u-full-width(type='text', name='storecoins-value', hidden, value="0")
       p USD Value:
         span.computed  $0
@@ -262,7 +283,8 @@
         | funds	to	purchase	storecoins?
       p Check all that apply:
       .field-group
-        .field
+        .field.radio-field
+          .hc-radio-btn
           input(type='checkbox', name='payment-type', value=' Bitcoin')
           label(for='payment-type') Bitcoin
         //- .field.full-width.hidden
@@ -270,7 +292,8 @@
         //-   p In	the	case the	First	ICO	is	oversubscribed	or	there	are issues	with	your	transaction,	we	may	issue you	a	refund	to	this	address.
         
       .field-group  
-        .field
+        .field.radio-field
+          .hc-radio-btn
           input(type='checkbox', name='payment-type', value=' Ethereum')
           label(for='payment-type') Ethereum
         //- .field.full-width.hidden
@@ -278,7 +301,8 @@
         //-   p In	the	case the	First	ICO	is	oversubscribed	or	there	are issues	with	your	transaction,	we	may	issue you	a	refund	to	this	address.
         
       .field-group  
-        .field
+        .field.radio-field
+          .hc-radio-btn
           input(type='checkbox', name='payment-type', value=' USD Coinbase')
           label(for='payment-type') USD Coinbase
         //- .field.full-width.hidden
@@ -287,7 +311,8 @@
         //-     | issue	you	a	refund	to	this	address.
         
       .field-group  
-        .field
+        .field.radio-field
+          .hc-radio-btn
           input(type='checkbox', name='payment-type', value=' USD Paypal')
           label(for='payment-type') USD Paypal
         //- .field.full-width.hidden
@@ -296,7 +321,8 @@
         //-     | issue	you	a	refund	to	this	address.
       
       .field-group  
-        .field
+        .field.radio-field
+          .hc-radio-btn
           input(type='checkbox', name='payment-type', value=' USD Wire Transfer')
           label(for='payment-type') USD Wire Transfer
         //- .field.full-width.hidden
@@ -314,7 +340,8 @@
     .email-steps.step-16
       p Before	you	purchase	storecoins,	we	recommend	that	you	read	the	
         a(href="/terms", target="_blank") Storecoin	Token	Sale	Terms	of	Service.
-      .field
+      .field.radio-field
+        .hc-radio-btn
         input(type='radio', name="terms-agree", value='Yes')
         label(for='participate-yes') I	Agree	to	the	Storecoin	Token	Sale	Terms	of	Service
       //- .field
@@ -397,120 +424,16 @@
           | Back
         button.button-submit.button-primary(disabled, type="submit")
           | Finish
-            
-    //- .email-steps.step-1
-    //-   p Have you participated in Token Sales or ICOs before?
-    //-   .field
-    //-     input(type='radio', name='participate', value='Yes')
-    //-     label(for='participate-yes') Yes
-    //-   .field
-    //-     input(type='radio', name='participate', value='No')
-    //-     label(for='participate-no') No
-    //-   hr
-    //-   .button-group
-    //-     button.button-next.button-primary(disabled='', data-step='step-2')
-    //-       | Next
-    //-       i.ion-chevron-right
-    //-     button.button-next.button-primary(disabled='', style='display:none;', data-step='step-3')
-    //-       | Next
-    //-       i.ion-chevron-right
-    //- .email-steps.step-2
-    //-   div(data-sticky-container='')
-    //-     p.sticky(data-margin-top='65') How much do you typically invest in a Token Sale or ICO?
-    //-     .fields
-    //-       .field
-    //-         input(type='radio', name='invest', value='<$1,000')
-    //-         label(for='invest-1') <$1,000
-    //-       .field
-    //-         input(type='radio', name='invest', value='$1,000 - $5,000')
-    //-         label(for='invest-2') $1,000 - $5,000
-    //-     .fields
-    //-       .field
-    //-         input(type='radio', name='invest', value='$5,000 - $25,000')
-    //-         label(for='invest-3') $5,000 - $25,000
-    //-       .field
-    //-         input(type='radio', name='invest', value='$25,000 - $50,000')
-    //-         label(for='invest-4') $25,000 - $50,000
-    //-     .fields
-    //-       .field
-    //-         input(type='radio', name='invest', value='$50,000 - $75,000')
-    //-         label(for='invest-5') $50,000 - $75,000
-    //-       .field
-    //-         input(type='radio', name='invest', value='$75,000 - $100,000')
-    //-         label(for='invest-6') $75,000 - $100,000
-    //-     .fields
-    //-       .field
-    //-         input(type='radio', name='invest', value='$100,000 - $150,000')
-    //-         label(for='invest-7') $100,000 - $150,000
-    //-       .field
-    //-         input(type='radio', name='invest', value='$150,000 - $200,000')
-    //-         label(for='invest-8') $150,000 - $200,000
-    //-     .fields
-    //-       .field
-    //-         input(type='radio', name='invest', value='$200,000 - $250,000')
-    //-         label(for='invest-9') $200,000 - $250,000
-    //-       .field
-    //-         input(type='radio', name='invest', value='$250,000 - $500,000')
-    //-         label(for='invest-10') $250,000 - $500,000
-    //-     .fields
-    //-       .field
-    //-         input(type='radio', name='invest', value='$500,000 - $1,000,000')
-    //-         label(for='invest-11') $500,000 - $1,000,000
-    //-       .field
-    //-         input(type='radio', name='invest', value='$1,000 - $3,000,000')
-    //-         label(for='invest-12') $1,000 - $3,000,000
-    //-     .fields
-    //-       .field
-    //-         input(type='radio', name='invest', value='$3,000,000 or more')
-    //-         label(for='invest-13') $3,000,000 or more
-    //-   hr
-    //-   .button-group
-    //-     button.button-back.button-primary(data-step='step-1')
-    //-       i.ion-chevron-left
-    //-       | Back
-    //-     button.button-next.button-primary(disabled='', data-step='step-3')
-    //-       | Next
-    //-       i.ion-chevron-right
-    //- .email-steps.step-3
-    //-   p Are	you	interesting	in	participating	in	the	Storecoin	First	ICO?
-    //-   .field
-    //-     input(type='radio', name='payment', value='Yes')
-    //-     label(for='payment-yes') Yes
-    //-   .field
-    //-     input(type='radio', name='payment', value='No')
-    //-     label(for='payment-no') No
-    //-   hr
-    //-   .button-group
-    //-     button.button-back.button-primary(data-step='step-2')
-    //-       i.ion-chevron-left
-    //-       | Back
-    //-     button.button-back.button-primary(data-step='step-1', style='display:none;')
-    //-       i.ion-chevron-left
-    //-       | Back
-    //-     button.button-next.button-primary(disabled='', data-step='step-4')
-    //-       | Next
-    //-       i.ion-chevron-right
-    //- .email-steps.step-4
-    //-   p Do	you	have	questions	or	ideas	for	the	Storecoin	Team?	
-    //-   .field
-    //-     input.u-full-width(type='text', name='comment', placeholder='Ask a question, share your	ideas here.')
-    //-     input.u-full-width(type='email', name='email', hidden='')
-    //-   hr
-    //-   .button-group
-    //-     button.button-back.button-primary(data-step='step-3')
-    //-       i.ion-chevron-left
-    //-       | Back
-    //-     button.button-primary.button-submit.button-next(type='submit') Submit
-    
+              
     
     .success-message.message
-      h5
+      h4
         | Thanks for registering for the Storecoin First ICO.
-      p.hc-feature-lead
+      p
         | Check your email inbox for information on how to purchase your storecoin tokens.
-      p.hc-feature-lead
+      p
         | You can expect to hear from us inside 24 hours.
-      p.hc-feature-lead
+      p
         | In the meantime, here's a link to share the Storecoin First ICO with a friend.
       .form.row.desktop-link
         .eight.columns

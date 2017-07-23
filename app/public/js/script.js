@@ -1,31 +1,28 @@
 $(document).ready(function(){
   scrollCheck();
   whyTextToggle();
+  renderRadio();
 
   // on scroll
   $(window).scroll(function(){
     scrollCheck();
   });
 
-
   $('#hc-nav-wrapper .menu-toggle').click(function (){
     $('#hc-nav-wrapper .hc-navigation .hc-menu-container').toggle('slow');
   });
 
-  $(document).on('click', '.learn-more', function(event){
-    var $icon = $(this).find('i');
-
-    if ($icon.hasClass('ion-chevron-down')) {
-       $('.hc-intro-text').addClass('show')
-       $icon.removeClass('ion-chevron-down');
-       $icon.addClass('ion-chevron-up');
-    } else {
-       $('.hc-intro-text').removeClass('show')
-       $icon.removeClass('ion-chevron-up');
-       $icon.addClass('ion-chevron-down');
-       $(window).scrollTop(0);
+  $("input[data-type='number']").keyup(function(event){
+    // skip for arrow keys
+    if(event.which >= 37 && event.which <= 40){
+        event.preventDefault();
     }
-
+    var $this = $(this);
+    var num = $this.val().replace(/,/gi, "");
+    var num2 = num.split(/(?=(?:\d{3})+$)/).join(",");
+    console.log(num2);
+    // the following line has been simplified. Revision history contains original.
+    $this.val(num2);
   });
 
   renderCircles();
@@ -620,14 +617,14 @@ function emailSubscribe() {
       var payments = [];
       var paymentStr = ' ';
       var paymentTypes = formData['payment-type'];
-      $step18.find('.num-of-storecoins').text(' ' + formData['num-of-storecoins'] + ' ');
+      $step18.find('.num-of-storecoins').text(' ' + numeral(formData['num-of-storecoins']).format('(0,0)') + ' ');
       $step18.find('.storecoins-amount').text(' ' + formData['storecoins-value'] + ' ');
 
       paymentTypes.forEach(function(method, i) {
         paymentStr += (i == paymentTypes.length - 1 && length > 1 ) ? '& ' + method : method + ', ';
         var inputName = method.toLowerCase().replace(/ /g, '-') + '-percent';
         $step18.find('.payment-group').append(
-          '<div class="field"><input type="text" name="payment-percent" data-name="'+method+'" hidden><input type="number" name="percent-value">% '+method+'</div>'
+          '<div class="field">%<input type="text" name="payment-percent" data-name="'+method+'" hidden><input type="number" name="percent-value" max="999"> '+' '+method+'</div>'
         );
       });
 
@@ -828,4 +825,23 @@ function initProblemSlider () {
       adaptiveHeight : true
     });
   }
+}
+
+function renderRadio () {
+  var $radio = $('.field input');
+  $radio.change(function(){
+    // console.log($(this).is(':checked'));
+    // if ($(this).is(':checked')) {
+    //   $(this).parents('.field').find('.hc-radio-btn').addClass('checked');
+    // } else {
+    //   $radio.parents('.field').find('.hc-radio-btn').removeClass('checked');
+    // }
+    $radio.each(function(){
+      if ($(this).is(':checked')) {
+        $(this).parents('.field').find('.hc-radio-btn').addClass('checked');
+      } else {
+        $(this).parents('.field').find('.hc-radio-btn').removeClass('checked');
+      }
+    });
+  });
 }

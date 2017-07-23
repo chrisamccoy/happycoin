@@ -37,17 +37,56 @@ p {
   line-height: 1.65;
 }
 
-/*h1, h2, h2, h3, h4, h5, h6 {
-    font-family: 'Francois One', sans-serif;
-    text-rendering: optimizeLegibility;
-    line-height: 1.25;
-    font-weight: 700;
-    color: #5b6a72;
-}*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.field.radio-field {
+  position: relative;
+  min-height: 33px;
+}
+
+.field.radio-field input {
+  z-index: 2;
+  height: 100%;
+  position: absolute;
+  width: 28px;
+  left: -2px;
+  opacity: 0;
+}
+
+.field.radio-field .hc-radio-btn {
+  position: absolute;
+  left: -2px;
+  top: 2px;
+  height: 13px;
+  width: 13px;
+  background: #e97844;
+  border-radius: 7px;
+  padding: 7px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.field.radio-field .hc-radio-btn.checked::before {
+  content: '';
+  background: white;
+  width: calc(100% - 14px);
+  height: calc(100% - 14px);
+  position: absolute;
+  border-radius: 4px;
+}
+
+.radio-field label {
+  margin-left: 40px !important;
+}
 
 .padding {
   padding: 1em;
 }
+
 
 /*.container {
   max-width: 1140px;
@@ -69,6 +108,13 @@ p {
 .hc-feature {
   padding-top: 5em;
   padding-bottom: 5.5em;
+}
+
+
+.hc-feature .hc-feature-lead.swipe-text {
+  font-size: 1.5em;
+  margin:0px;
+  color: white;
 }
 
 .hc-feature .hc-feature-lead {
@@ -191,28 +237,6 @@ p {
   color:white;
 }
 
-.hc-coming-soon {
-  /*font-family: 'BenchNine', sans-serif;*/
-  /*padding:1em 0px;*/
-  /*border-top:1px solid white;
-  border-bottom:1px solid white;*/
-  /*max-width: 250px;*/
-  margin:2em auto 0px;
-  color:#e97844;
-}
-
-.hc-coming-soon .icon {
-  font-size: 7em;
-  height: 120px;
-  color: #e97844;
-}
-
-.hc-coming-soon p {
-  text-align:center;
-  margin:0px;
-  line-height: 1;
-}
-
 .points {
   position: relative;
   margin-top: 3em;
@@ -222,7 +246,7 @@ p {
 .points .columns h6 {
   font-weight: bold;
   margin-top:2rem;
-  margin-bottom:2rem;
+  margin-bottom:0px;
 }
 
 .points p {
@@ -307,7 +331,7 @@ p {
   }
 
   .email-widget h4 {
-    font-size: 0.87em;
+    font-size: 3.8vw;
     margin-bottom : 0.5em;
   }
 
@@ -491,6 +515,10 @@ p {
   align-items: center;
 }
 
+#hc-intro .hc-feature-lead {
+  margin : 1.5em 0px;
+}
+
 #hc-intro .hc-intro-text-wrapper {
   position: relative;
   z-index: 2;
@@ -513,8 +541,8 @@ p {
 
 #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
   font-size: 3.2em;
-  margin-bottom: 0px;
-  margin: 1em 0px;
+  /*margin-bottom: 0px;
+  margin: 1em 0px;*/
   text-align: center;
 }
 
@@ -672,32 +700,20 @@ p {
   font-family: "Ionicons";
 }
 
-/*#hc-slider .slide:hover .text {
-  opacity: 0.95;
-  transition: opacity .2s ease-in;
-}*/
-
 @media only screen and (max-width: 700px) {
-  /*#hc-first-dapp .swipe-message {
-    display: block;
-  }*/
-
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
     font-size: 1.5em !important;
   }
 
+  #hc-intro .hc-feature-lead {
+    margin : 1em 0px;
+    font-size: 1.2em;
+  }
 
   #hc-intro {
     padding: 0px;
     margin-top: 4.5em;
   }
-/*
-  #hc-slider .slide {
-    height : 490px;
-  }*/
-  /*#hc-first-dapp .columns {
-    margin-bottom: 1em;
-  }*/
 }
 
 /* #hc-timer  */
@@ -1184,7 +1200,7 @@ p {
 
 #hc-vision .three.columns .num {
   font-size: 1.5em;
-  border: 5px solid #c7dfb8;
+  border: 5px solid #e97844;
   border-radius: 50%;
   height: 130px;
   width: 130px;
@@ -1639,11 +1655,6 @@ p {
   border-radius: 10px;
 }
 
-#hc-why-token .swipe-text {
-  font-size: 1.5em;
-  margin:0px;
-}
-
 /*#hc-why-token .points .columns h6 {
   color : #415837;
 }*/
@@ -1693,6 +1704,12 @@ p {
 
 #hc-why-token .hc-each-problem:not(.last-child) {
   margin-bottom: 4em;
+}
+
+#hc-why-token .hc-each-problem .hc-feature-lead {
+  font-size: 1.8em;
+  text-align: center;
+  margin: 0px auto 0.5em;
 }
 
 
@@ -2127,8 +2144,8 @@ p {
   margin: 0px;
 }
 
-.hc-email .email-steps.step-10 p span.eth-value,
-.hc-email .email-steps.step-10 p span.btc-value {
+.hc-email .email-steps.step-10 ul li span.eth-value,
+.hc-email .email-steps.step-10 ul li span.btc-value {
   color : rgb(233, 120, 68);
 }
 
@@ -2145,7 +2162,9 @@ p {
 }
 
 .hc-email .email-steps.step-18 .payment-group .field input {
-  width : 100px;
+  width : 70px;
+  margin : 0px;
+  margin-right: 0.2em;
 }
 
 .hc-email .email-steps {
@@ -2273,7 +2292,8 @@ p {
 }
 
 .hc-email .message p {
-  font-size: 1.5em;
+  font-size: 1.2em;
+  margin-bottom: 1em;
 }
 
 /*.hc-email .success-message-2 {
@@ -2317,6 +2337,21 @@ p {
 }
 
 @media only screen and (max-width: 700px) {
+  .hc-email .message p {
+    font-size: 1em;
+  }
+
+  .hc-email .email-steps .button-group {
+    min-height: 50px;
+    margin-top: 0.7em;
+  }
+
+  .hc-email .email-steps hr {
+    border-top: 1px solid #456332;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
   .hc-email .email-steps .field label {
     font-size: 0.8em;
   }
@@ -2354,7 +2389,7 @@ p {
 
   .hc-email .email-steps p {
     font-size: 0.8em;
-    margin-bottom: 0.3em;
+    margin-bottom: 1em;
   }
 
   .hc-email .email-steps .fields {

@@ -11,7 +11,7 @@ block content
             | and	complex	revenue	sharing.
         h2.hc-feature-lead
           | These	include	franchises,	chain	stores,	sports	leagues,	affiliate-based	organizations,	and	more.
-        h2.hc-feature-lead
+        h2.hc-feature-lead(style="color:rgb(233, 120, 68); margin:0px;")
           | No	transaction	fees.	Tendermint consensus	algorithm.	Ethereum	compatible.	
         //- h2.hc-intro-large-lead
         //-   | Storecoin	is	an	Ethereum-family
@@ -22,11 +22,11 @@ block content
           
     include email-widget
 
-    .hc-feature.over-rel.padding(style="padding:0px;")
+    .hc-feature.over-rel.padding.inverted(style="padding-left: 0px; padding-right:0px;")
       .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title.inverted(style="font-size:2em; margin:0px !important;") Here is our greenpaper.
+        h3.hc-feature-title.inverted(style="font-size:2em; margin:0px !important; font-weight:300;") Here is our Green Paper
     
-    #hc-vision.hc-feature.inverted.over-rel.padding
+    #hc-vision.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted What We Believe
         p.hc-feature-lead(style="margin-bottom:0px;") Franchises,	chain	stores,	sports	leagues,	and affiliate-based	organizations	— industries governed	by	hierarchy,	by	privacy,	by complex	revenue	sharing,	and	by commissions	— will	all eventually	be tokenized	and blockchain-powered.
@@ -34,7 +34,7 @@ block content
         //-   | Storecoin	will	be	the	leading	public	blockchain	powering	cryptocurrency-based	payments,	decentralized	applications,	loyalty
         //-   | points,	and	market	networks	for	industries	representing	over	25%	of	global	GDP.
     
-    #hc-vision.hc-feature.over-rel.padding
+    #hc-vision.lite.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted Our Vision
         p.hc-feature-lead Storecoin	will	be	the	leading	public	blockchain	powering	cryptocurrency-based	payments,	decentralized	apps,	supply	chains,	and	loyalty	points	for	industries	representing	over	25%	of	global	GDP.	
@@ -62,7 +62,7 @@ block content
             
     #hc-why-token.hc-feature.inverted.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title.inverted(style="margin:0px !important;") The Problem
+        h3.hc-feature-title.inverted The Problem
         
         .hc-each-problem
           .row.text
@@ -122,13 +122,11 @@ block content
           .row.text
             .twelve.columns
               p.hc-feature-lead
-                | They promised us free payments and transactions using the
-                | blockchain but, as of July 2017, we have $0.14 transactions
-                | with Ethereum and $2.46 transactions with Bitcoin.
-              p.hc-feature-lead
-                | To handle micropayments of less than $0.30 and
-                | nanopayments of less than $0.01, blockchain payments need
-                | to be free.          
+                | They promised us free transactions using the blockchain but,
+                | as of early July 2017, we have $0.14 transactions with
+                | Ethereum and $2.46 transactions with Bitcoin.
+              p.hc-feature-lead To handle micropayments of less than $0.01, 
+                b blockchain payments need to be free.        
           .row.phase(style="margin-bottom:2em;")
             .twelve.columns
               h4 Bitcoin	Average	Transaction	Fees
@@ -563,6 +561,14 @@ block content
                   td R&D	in	progress
                 tr
                   td
+                    b On Chain Scalability	
+                  td R&D	in	progress
+                tr
+                  td
+                    b Off Chain Scalability	
+                  td R&D	in	progress
+                tr
+                  td
                     b Smart	Contracts
                   td Yes
                 tr
@@ -779,9 +785,9 @@ block content
             .text
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
               
-        h4.swipe-message Swipe right to see the Dapp
+        p.hc-feature-lead.swipe-text Swipe right to see the dapp
         
-        p.hc-feature-lead.last-child By 2019, Storecoin will be natively integrated as the micropayment currency that captures the revenue sharing needs of Franchise Headquarters and its Stores. Storecoin will also incentivize the creation of various network effects inside Footprint, including for future Storecoin developers.
+        //- p.hc-feature-lead.last-child By 2019, Storecoin will be natively integrated as the micropayment currency that captures the revenue sharing needs of Franchise Headquarters and its Stores. Storecoin will also incentivize the creation of various network effects inside Footprint, including for future Storecoin developers.
 
     
     #hc-team.hc-feature.over-rel.padding
@@ -860,14 +866,12 @@ block content
     #hc-alliance.hc-feature.over-rel.padding.inverted
       .hc-chunk
         h2.hc-feature-title The Storecoin Alliance
-        p.hc-feature-lead A	coalition	of	franchises,	chain	stores,	sports	leagues,	and	affiliate-based	organizations	paying	yearly	membership	fees	to	become	early	adopters	of	the	Storecoin	blockchain.
+        p.hc-feature-lead A	collation	of	franchises,	chain	stores,	sports	
+          | leagues,	and	affiliate-based	organizations	
+          | paying	membership	fees	to	run	their	own	
+          | R&D	experiments	with	Storecoin.	
 
-        div.hc-coming-soon
-          //- p.icon
-          //-   i.ion-speakerphone
-          p(style='font-size: 1.7em;height: 30px;') COMING SOON
-          //- p(style='font-size: 4em;height: 51px;') COMING 
-          //- p(style='font-size: 6em;height: 85px;') SOON
+        h2.hc-feature-title(style="margin:0px; color:rgb(233, 120, 68);") COMING SOON
         
     #hc-partners.hc-feature.over-rel.padding
       .hc-chunk
@@ -1116,13 +1120,15 @@ block content
       .hc-chunk
         h2.hc-feature-title Use	of	First	Token	Sale	Proceeds
         ul
-          li Publish v0.1 of the Storecoin Whitepaper
-          li Determine our final security protocol 
-          li Publish v1 of Storecoin network economics
-          li Continue building our engineering and economics teams
-          li Introduce a Vickrey Auction for our Second Token Sale
-          li Write smart contracts to token vest Storecoin founders, core
-             | developers, key partners, and team.
-          li Launch the Second Storecoin ICO 
+          li Publish	v0.1	of	the	Storecoin	Whitepaper
+          li Publish	v1	of	Storecoin	network	economics
+          li Conduct	extensive	load	tests	to	finalize	blockchain	scalability
+          li Conduct	extensive	security	tests	to	finalize	the	consensus	protocol	
+             | and	network	economics
+          li Continue	building	our	engineering,	product,	and	sales	teams
+          li Introduce	a	Vickrey	Auction	for	our	Second	Token	Sale
+          li Write	smart	contracts	to	token	vest	Storecoin	founders,	core	
+             | developers,	key	partners,	and	team
+          li Launch	the	Second	Storecoin	ICO	in	Q417-Q118
 
     include email-widget
