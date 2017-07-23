@@ -327,7 +327,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .hc-feature .hc-feature-lead {
-    font-size: 1em;
+    font-size: 1em !important;
   }
 
   .email-widget h4 {
@@ -770,6 +770,10 @@ input[type=number]::-webkit-outer-spin-button {
   list-style: disc;
 }
 
+#hc-promo .sales-terms ul li {
+  margin-bottom: 0.7em;
+}
+
 #hc-promo .sales-terms .points {
   background: rgb(93, 121, 76);
   border-radius: 10px;
@@ -1088,6 +1092,10 @@ input[type=number]::-webkit-outer-spin-button {
     margin : 2em 0px 1em;
   }
 
+  #hc-promo .sales-terms ul {
+    font-size: 1em;
+  }
+
   #hc-sales-summary .token-dist .row {
     display: block;
     margin-bottom: 3em;
@@ -1104,6 +1112,7 @@ input[type=number]::-webkit-outer-spin-button {
 
   #hc-sales-summary .token-dist .subtext {
     text-align: center;
+    font-size: 1em;
   }
 
   #hc-promo .features {
@@ -1936,10 +1945,10 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
 }
 
-#hc-network-effects p {
+/*#hc-network-effects p {
   font-size: 1.4em;
   max-width: 900px;
-}
+}*/
 
 /*#hc-network-effects img {
   margin-top: 2em;
@@ -2133,6 +2142,7 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
   max-width: 1140px;
   margin: auto;
+  width: 100%;
 }
 
 .hc-email .form {
@@ -2831,8 +2841,12 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   #hc-promo .sales-terms .points {
-    margin-bottom: 1em;
+    margin: 1em 0px;
     min-height: auto;
+  }
+
+  #hc-promo .sales-terms .points:last-child {
+    margin-bottom: 0px;
   }
 
   #hc-sales-summary h5 {
