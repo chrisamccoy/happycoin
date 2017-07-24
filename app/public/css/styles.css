@@ -327,7 +327,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .hc-feature .hc-feature-lead {
-    font-size: 1.2em !important;
+    font-size: 1.3em !important;
   }
 
   .email-widget h4 {
@@ -703,12 +703,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 @media only screen and (max-width: 700px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 2.1em !important;
+    font-size: 2.2em !important;
   }
 
   #hc-intro .hc-feature-lead {
     margin : 1em 0px;
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
 
   #hc-intro {
