@@ -327,7 +327,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .hc-feature .hc-feature-lead {
-    font-size: 1em !important;
+    font-size: 1.2em !important;
   }
 
   .email-widget h4 {
@@ -631,6 +631,7 @@ input[type=number]::-webkit-outer-spin-button {
   cursor: pointer;
   /*height: 450px;*/
   outline: none;
+  text-align: center;
 }
 
 #hc-slider .slide .link {
@@ -702,7 +703,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 @media only screen and (max-width: 700px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 1.5em !important;
+    font-size: 1.8em !important;
   }
 
   #hc-intro .hc-feature-lead {
@@ -713,6 +714,19 @@ input[type=number]::-webkit-outer-spin-button {
   #hc-intro {
     padding: 0px;
     margin-top: 4.5em;
+  }
+
+  #hc-slider {
+    width:90%;
+    margin:auto;
+  }
+
+  #hc-slider .slick-next {
+    right: -20px ;
+  }
+
+  #hc-slider .slick-prev {
+    left: -20px ;
   }
 }
 
@@ -767,6 +781,7 @@ input[type=number]::-webkit-outer-spin-button {
 #hc-promo .sales-terms ul {
   font-size: 1.1em;
   margin-left: 1.2em;
+  margin-bottom: 0px;
   list-style: disc;
 }
 
@@ -777,7 +792,7 @@ input[type=number]::-webkit-outer-spin-button {
 #hc-promo .sales-terms .points {
   background: rgb(93, 121, 76);
   border-radius: 10px;
-  min-height: 475px;
+  min-height: 515px;
   text-align: left;
   color: white;
 }
@@ -871,9 +886,9 @@ input[type=number]::-webkit-outer-spin-button {
   position: relative;
 }
 
-#hc-project-schedule {
+/*#hc-project-schedule {
   background: #7c9b68;
-}
+}*/
 
 #hc-project-schedule .desc {
   margin: 0 auto 30px;
@@ -900,8 +915,8 @@ input[type=number]::-webkit-outer-spin-button {
 #hc-project-schedule .timeline .year .name {
   font-size: 2em;
   text-align: center;
-  background-color: rgb(124, 155, 104);
-  color: #fff;
+  background-color: rgb(199, 223, 184);
+  color: #000;
   font-weight: bold;
 }
 
@@ -1008,14 +1023,18 @@ input[type=number]::-webkit-outer-spin-button {
     position: absolute;
 }
 
+#hc-project-schedule .timeline .year .items .inverted.item .date:after {
+  background: #e97844;
+}
+
 #hc-project-schedule .timeline .year .items .item .date span {
     position: relative;
     z-index: 20;
     display: inline-block;
-    background-color: #7c9b68;
+    background-color: #c7dfb8;
     padding: 0 4px;
     font-weight: bold;
-    color: #ffffff;
+    color: #000;
 }
 
 #hc-project-schedule .timeline .year .items .item.right .date:after {
@@ -1044,6 +1063,19 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 4px;
 }
 
+#hc-project-schedule .timeline .year .items .inverted.item .box {
+  background: #e97844;
+  border: 2px solid #e97844;
+}
+
+#hc-project-schedule .timeline .year .items .inverted.item .box .title {
+  color:white;
+}
+
+#hc-project-schedule .timeline .year .items .inverted.item .box .title .bullet {
+  border-color : white;
+}
+
 #hc-project-schedule .timeline .year .items .item .box .title {
     text-transform: uppercase;
     font-size: 18px;
@@ -1069,6 +1101,10 @@ input[type=number]::-webkit-outer-spin-button {
     color: #333;
     padding: 0 1.8rem 1.8rem;
     letter-spacing: .02em;
+}
+
+#hc-project-schedule .timeline .year .items .inverted.item .box .content {
+  color : white;
 }
 
 #hc-project-schedule .timeline .year .items .item .box .content li {
@@ -1218,6 +1254,7 @@ input[type=number]::-webkit-outer-spin-button {
   flex-direction: column;
   justify-content: center;
   margin-bottom: 1em;
+  background: white;
 }
 
 #hc-vision .three.columns .num p {
@@ -1712,13 +1749,13 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #hc-why-token .hc-each-problem:not(.last-child) {
-  margin-bottom: 4em;
+  margin-bottom: 7em;
 }
 
 #hc-why-token .hc-each-problem .hc-feature-lead {
   font-size: 1.8em;
   text-align: center;
-  margin: 0px auto 0.5em;
+  margin: 0px auto 1em;
 }
 
 
@@ -1728,7 +1765,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   #hc-why-token .hc-each-problem:not(.last-child) {
-    margin-bottom: 2em;
+    margin-bottom: 4em;
   }
 
   #hc-why-token .swipe-text {
@@ -2592,7 +2629,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #hc-footer .footer-light {
-  padding-top: 1.5em;
   display: block;
 }
 
