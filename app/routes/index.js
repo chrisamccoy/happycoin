@@ -12,7 +12,7 @@ router.get('/whitepaper', function(req, res, next) {
 });
 
 /* GET home page. */
-router.get('/firstico', function(req, res, next) {
+router.get('/firsttokensale', function(req, res, next) {
   res.render('firstico', { title: 'Storecoin' });
 });
 

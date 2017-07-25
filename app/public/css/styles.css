@@ -63,7 +63,7 @@ input[type=number]::-webkit-outer-spin-button {
   top: 2px;
   height: 13px;
   width: 13px;
-  background: #e97844;
+  background: white;
   border-radius: 7px;
   padding: 7px;
   cursor: pointer;
@@ -72,7 +72,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .field.radio-field .hc-radio-btn.checked::before {
   content: '';
-  background: white;
+  background: #e97844;
   width: calc(100% - 14px);
   height: calc(100% - 14px);
   position: absolute;
@@ -160,9 +160,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .featherlight .featherlight-inner .points-lightbox p {
-  margin: auto;
+  margin: 1em auto;
   font-size: 1.2em;
-  padding: 2em;
 }
 
 .featherlight .featherlight-close-icon {
@@ -327,12 +326,17 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .hc-feature .hc-feature-lead {
-    font-size: 1.3em !important;
+    font-size: 1em !important;
   }
 
   .email-widget h4 {
-    font-size: 3.8vw;
+    font-size: 1.1em;
     margin-bottom : 0.5em;
+  }
+
+  .email-widget p.hc-email-invite {
+    font-size: 0.8em;
+    margin-bottom:0.5em;
   }
 
   .email-widget .form {
@@ -635,6 +639,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #hc-slider .slide .link {
+  display: none;
   position: absolute;
   top: -5px;
   left: 0px;
@@ -792,7 +797,7 @@ input[type=number]::-webkit-outer-spin-button {
 #hc-promo .sales-terms .points {
   background: rgb(93, 121, 76);
   border-radius: 10px;
-  min-height: 515px;
+  min-height: 585px;
   text-align: left;
   color: white;
 }
@@ -936,6 +941,13 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 0 0 0 7rem;
 }
 
+#hc-project-schedule .timeline .year .full-date {
+  margin-top :-50px;
+  font-size: 1.5em;
+  text-align: center;
+  background: #c7dfb8;
+}
+
 #hc-project-schedule .timeline .year .items .item.left {
   margin-right: auto;
   padding: 0 7rem 0 0;
@@ -1035,6 +1047,7 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 0 4px;
     font-weight: bold;
     color: #000;
+    opacity: 0;
 }
 
 #hc-project-schedule .timeline .year .items .item.right .date:after {
@@ -1113,6 +1126,16 @@ input[type=number]::-webkit-outer-spin-button {
   list-style: disc;
 }
 
+#hc-project-schedule .timeline .year .items .item .box .content li.success {
+  list-style: none;
+  margin-left: 0.5em;
+}
+
+#hc-project-schedule .timeline .year .items .item .box .content li.success:before {
+  content: '✓ ';
+  color : green;
+}
+
 @media only screen and (max-width: 700px) {
   .hc-intro-button {
     display: block !important;
@@ -1179,6 +1202,10 @@ input[type=number]::-webkit-outer-spin-button {
     margin-top: 2rem;
   }
 
+  #hc-project-schedule .timeline .year .full-date {
+    font-size: 1em;
+  }
+
   #hc-project-schedule .timeline .year .items .item.left,
   #hc-project-schedule .timeline .year .items .item.right {
     padding: 0px;
@@ -1216,11 +1243,13 @@ input[type=number]::-webkit-outer-spin-button {
   #hc-project-schedule .timeline .year .items .item .box .title {
     font-size: 14px;
     line-height: 22px;
+    padding: 1rem 1rem 1rem;
   }
 
   #hc-project-schedule .timeline .year .items .item .box .content {
     font-size: 12px;
     line-height: 18px;
+    padding: 0 1rem;
   }
 
   #hc-project-schedule .timeline .year .items .item .date:after,
@@ -2184,15 +2213,16 @@ input[type=number]::-webkit-outer-spin-button {
 
 .hc-email .form {
   width: 100%;
-  margin: 2em auto 0;
+  margin: 1em auto 0;
 }
 
 .hc-email .steps-form {
   margin: 0px;
 }
 
-.hc-email .email-steps.step-10 ul li span.eth-value,
-.hc-email .email-steps.step-10 ul li span.btc-value {
+.hc-email .email-steps ul li span.eth-value,
+.hc-email .email-steps ul li span.btc-value,
+.hc-email .email-steps p span.usd-value {
   color : rgb(233, 120, 68);
 }
 
@@ -2383,6 +2413,21 @@ input[type=number]::-webkit-outer-spin-button {
   opacity: 0.5;
 }
 
+.hc-email .mobile-link a,
+.hc-email .desktop-link a {
+  display: flex;
+  justify-content: center;
+  width: 240px;
+  margin: auto;
+}
+
+.hc-email .mobile-link a i,
+.hc-email .desktop-link a i{
+  font-size: 2em;
+  margin-right: 0.5em
+}
+
+
 @media only screen and (max-width: 700px) {
   .hc-email .message p {
     font-size: 1em;
@@ -2451,13 +2496,18 @@ input[type=number]::-webkit-outer-spin-button {
     margin-top: 1em;
   }
 
-  /*.hc-email .mobile-link {
+  .hc-email .mobile-link {
     display: block;
-  }*/
+  }
 
-  /*.hc-email .desktop-link {
+  .hc-email .desktop-link {
     display: none;
-  }*/
+  }
+
+  .hc-email .mobile-link a,
+  .hc-email .desktop-link a {
+    width: 100%;
+  }
 }
 
 /* #hc-press  */

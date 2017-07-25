@@ -386,13 +386,13 @@ function emailSubscribe() {
     })
   ).then(function() {
     if (ethVal) {
-      $emailSection.find('.step-10 .eth-value').text(ethVal.USD / 2500);
+      $emailSection.find('.step-10 .eth-value , .step-8-1 .eth-value').text(ethVal.USD / 2500);
     }
     else {
         // Request for graphic data didn't work, handle it
     }
     if (btcVal) {
-      $emailSection.find('.step-10 .btc-value').text(btcVal.USD / 2500);
+      $emailSection.find('.step-10 .btc-value , .step-8-1 .btc-value').text(btcVal.USD / 2500);
     }
     else {
         // Request for web data didn't work, handle it
@@ -525,6 +525,7 @@ function emailSubscribe() {
     var textVal = $(this).val();
     var $thisEmailStep = $(this).parents('.email-steps');
     var isStep13 = $thisEmailStep.hasClass('step-13');
+    var $thisSect = $(this).parents('.hc-email');
     // console.log(textVal);
     if(textVal.length > 0 ) {
       $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
@@ -533,6 +534,7 @@ function emailSubscribe() {
         $thisEmailStep.find('.computed').text(' ' + textVal);
         $thisEmailStep.find('input[hidden]').val(textVal);
         $thisEmailStep.find('input[hidden]').trigger('change');
+        $thisSect.find('.email-steps.step-15 .usd-value').text(' ' + textVal + ' ');
       }
     } else {
       $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
@@ -541,6 +543,7 @@ function emailSubscribe() {
         $thisEmailStep.find('.computed').text(' $0');
         $thisEmailStep.find('input[hidden]').val('$0');
         $thisEmailStep.find('input[hidden]').trigger('change');
+        $thisSect.find('.email-steps.step-15 .usd-value').text(' $0 ');
       }
     }
   });
@@ -621,7 +624,13 @@ function emailSubscribe() {
       $step18.find('.storecoins-amount').text(' ' + formData['storecoins-value'] + ' ');
 
       paymentTypes.forEach(function(method, i) {
-        paymentStr += (i == paymentTypes.length - 1 && length > 1 ) ? '& ' + method : method + ', ';
+        if (i == paymentTypes.length - 1 && paymentTypes.length > 1) {
+          paymentStr += '& ' + method + '.';
+        } else if (i == paymentTypes.length - 2) {
+          paymentStr += method + ' ';
+        } else {
+          paymentStr += method + ', ';
+        }
         var inputName = method.toLowerCase().replace(/ /g, '-') + '-percent';
         $step18.find('.payment-group').append(
           '<div class="field">%<input type="text" name="payment-percent" data-name="'+method+'" hidden><input type="number" name="percent-value" max="999"> '+' '+method+'</div>'
