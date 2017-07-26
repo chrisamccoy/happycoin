@@ -716,8 +716,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 @media only screen and (max-width: 700px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 1.8em !important;
-    margin-top:0.3em;
+    font-size: 1.6em !important;
+    margin-top: 1em;
   }
 
   #hc-intro .hc-feature-lead {
@@ -726,7 +726,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   #hc-intro .hc-feature-lead:last-child {
-    margin-bottom: 1em !important;
+    margin-bottom: 2em !important;
   }
 
   #hc-intro {
