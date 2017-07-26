@@ -556,7 +556,9 @@ function emailSubscribe() {
     var $thisEmailSect = $(this).parents('.hc-email');
     var $thisForm = $(this).parents('.steps-form');
 
-    $(window).scrollTop($thisEmailSect.offset().top - 66);
+    setTimeout(function(){
+      $(window).scrollTop($thisEmailSect.offset().top - 66);
+    }, 300);
 
     var formArray = $thisForm.serializeArray();
     formArray.forEach(function(item){
@@ -594,7 +596,9 @@ function emailSubscribe() {
         // console.log(result);
         $thisEmailSect.find('.email-widget').hide();
         $thisEmailSect.find('.email-steps.step-1').show();
-        $(window).scrollTop($thisEmailSect.offset().top - 66);
+        setTimeout(function(){
+          $(window).scrollTop($thisEmailSect.offset().top - 66);
+        }, 300);
       });
     }
   });
@@ -605,7 +609,9 @@ function emailSubscribe() {
 
     var stepVal = $(this).data().step;
 
-    $(window).scrollTop($thisEmailSect.offset().top - 66);
+    setTimeout(function(){
+      $(window).scrollTop($thisEmailSect.offset().top - 66);
+    }, 300);
 
     // console.log(stepVal);git p
     $(this).parents('.email-steps').hide();
