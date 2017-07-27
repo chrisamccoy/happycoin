@@ -132,6 +132,11 @@ input[type=number]::-webkit-outer-spin-button {
   background: #5d794c;
 }
 
+.hc-feature.inverted.orange {
+  color: white;
+  background: #e97844;
+}
+
 .hc-feature.lite {
   background: rgb(199, 223, 184);
 }
@@ -212,7 +217,8 @@ input[type=number]::-webkit-outer-spin-button {
 .points .columns:hover {
   /*transition: all .2s ease-in;
   transform: scale(1.02);*/
-  background: rgba(199, 223, 184, 0.21);
+  background: rgb(199, 223, 184);
+  /*box-shadow: inset 0 0 10px #000000;*/
   border-radius: 25px;
 }
 
@@ -543,18 +549,8 @@ input[type=number]::-webkit-outer-spin-button {
   color: #fff;
 }
 
-/*#hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-  font-size: 1.8em;
-  font-weight: 300;
-  color: #fff;
-  margin: 1.8em auto;
-  text-shadow: 1px 1px 2px #000;
-}*/
-
 #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-  font-size: 3.2em;
-  /*margin-bottom: 0px;
-  margin: 1em 0px;*/
+  font-size: 2.8em;
   text-align: center;
 }
 
@@ -716,7 +712,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 @media only screen and (max-width: 700px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 1.6em !important;
+    font-size: 1.5em !important;
     margin-top: 1em;
   }
 
@@ -974,6 +970,7 @@ input[type=number]::-webkit-outer-spin-button {
   right: -6px;
 }
 
+
 #hc-project-schedule .timeline .year .items .item:last-child {
   margin-bottom: 2rem;
 }
@@ -995,12 +992,19 @@ input[type=number]::-webkit-outer-spin-button {
   position: absolute;
   z-index: 20;
   top: -webkit-calc(1.8rem + 7px);
-  top: calc(1.8rem + 7px);
+  top: calc(1.8rem + 16px);
   width: 8px;
   height: 8px;
   border-radius: 9999px;
   border: 2px solid #ffffff;
   background-color: #ffffff;
+}
+
+#hc-project-schedule .timeline .year .items .item.left:first-child:before,
+#hc-project-schedule .timeline .year .items .item.right:first-child:before,
+#hc-project-schedule .timeline .year .items .item.left:nth-child(2):before,
+#hc-project-schedule .timeline .year .items .item.right:nth-child(2):before {
+  top: calc(1.8rem + 7px);
 }
 
 #hc-project-schedule .timeline .year .items .item.right .date {
@@ -2257,6 +2261,12 @@ input[type=number]::-webkit-outer-spin-button {
   margin-right: 0.2em;
 }
 
+.hc-email .email-steps.step-18 .total-percentage {
+  font-size: 1.5em;
+  margin-bottom: 0em;
+  margin-top: 0.5em;
+}
+
 .hc-email .email-steps {
   max-width: 700px;
   margin: 0 auto;
@@ -2864,7 +2874,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 @media only screen and (max-width: 1025px) {
   #hc-intro {
-    height : auto;
+    height : calc(100vh - 280px);
   }
   .points p {
     margin-bottom: 3em;

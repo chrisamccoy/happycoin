@@ -20,7 +20,7 @@ $(document).ready(function(){
     var $this = $(this);
     var num = $this.val().replace(/,/gi, "");
     var num2 = num.split(/(?=(?:\d{3})+$)/).join(",");
-    console.log(num2);
+    // console.log(num2);
     // the following line has been simplified. Revision history contains original.
     $this.val(num2);
   });
@@ -28,7 +28,7 @@ $(document).ready(function(){
   renderCircles();
   renderCards();
   toggleCardTasks();
-  toggleAppsDesc();
+  // toggleAppsDesc();
   toggleIncentive();
   emailSubscribe();
   initSlider();
@@ -424,11 +424,19 @@ function emailSubscribe() {
   $emailSteps.find('input[type="radio"]').change(function(){
     // console.log('changed');
     var $thisEmailStep = $(this).parents('.email-steps');
+    var step101 = $thisEmailStep.hasClass('step-10-1');
+    var step102 = $thisEmailStep.hasClass('step-10-2');
+    console.log(step101, step102);
 
     $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
-    if ($(this).val() == 'No') {
-      $thisEmailStep.find('.button-primary.button-next').attr('disabled', '');
+
+    if (step101 || step102) {
+    } else {
+      if ($(this).val() == 'No') {
+        $thisEmailStep.find('.button-primary.button-next').attr('disabled', '');
+      }
     }
+
   });
 
   $emailSteps.find('input[type="email"]').keyup(function(){
@@ -528,9 +536,14 @@ function emailSubscribe() {
     var $thisSect = $(this).parents('.hc-email');
     // console.log(textVal);
     if(textVal.length > 0 ) {
-      $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
       if (isStep13) {
-        textVal = numeral(textVal).multiply(0.005).format('($0,0.00)');
+        textVal = numeral(textVal).multiply(0.005);
+        if(textVal._value > 2500) {
+          $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
+        } else {
+          $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
+        }
+        textVal = textVal.format('($0,0.00)');
         $thisEmailStep.find('.computed').text(' ' + textVal);
         $thisEmailStep.find('input[hidden]').val(textVal);
         $thisEmailStep.find('input[hidden]').trigger('change');
@@ -573,7 +586,7 @@ function emailSubscribe() {
       url : 'https://hooks.zapier.com/hooks/catch/2399325/5iwky6/',
       data : formArray
     }).done(function(result){
-      console.log(formArray);
+      // console.log(formArray);
       // console.log(result);
       $thisEmailSect.find('.email-steps').hide();
       $thisEmailSect.find('.success-message').show();
@@ -672,10 +685,10 @@ function emailSubscribe() {
         $step18.find('.total-percentage span').text(' ' + sumPercent+'%');
         $step18.find('.percent-sum input').val(sumPercent);
         if(sumPercent >= 100) {
-          $step18.find('.button-submit').removeAttr('disabled');
+          $step18.find('.button-next').removeAttr('disabled');
           $step18.find('.total-percentage span').addClass('red');
         } else {
-          $step18.find('.button-submit').attr('disabled', '');
+          $step18.find('.button-next').attr('disabled', '');
           $step18.find('.total-percentage span').removeClass('red');
         }
       });

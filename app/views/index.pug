@@ -5,10 +5,7 @@ block content
     #hc-intro.hc-feature.over-rel.padding
       .hc-chunk.hc-intro-text-wrapper
         h2.hc-intro-large-lead(style="margin-bottom:0px;")
-          b
-            | Storecoin	is	a	public	blockchain
-            | for	systems	governed	by	hierarchy,	privacy,
-            | and	complex	revenue	sharing.
+          b Storecoin	aims	to	be	a	public	blockchain	for	systems	governed	by	hierarchy,	privacy,	and	complex	revenue	sharing.	
         h2.hc-feature-lead
           | These	include	franchises,	chain	stores,	sports	leagues,	affiliate-based	organizations,	and	more.
         h2.hc-feature-lead(style="margin:0px;")
@@ -53,6 +50,15 @@ block content
               h3 $200
               p Billion
             .text Global	Affiliate	Industry
+            
+    #hc-current-status.inverted.orange.hc-feature.over-rel.padding
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title.inverted Current Status
+        p.hc-feature-lead Storecoin	is	a	deep	R&D	initiative	in	the	earliest	stages	of	development.
+        p.hc-feature-lead Our	aim	is	to	one	day	release	a	main	network	for	a	public	Storecoin	blockchain	but	first	we	need	to	verify	that	our	technology	goals	and	consensus	protocol	are	secure	and	scalable.	
+        p.hc-feature-lead To	fund	the	second	phase	of	this	deep	R&D	work,	we	are	selling	6%	of	the	Storecoin	token	supply	for	$300,000	USD.
+        p.hc-feature-lead Once	through	all	phases	of	R&D,	we’ll	release	the	Storecoin	Whitepaper	that	explains	our	technical	design	for	Storecoin	either	as	a	new	public	blockchain	or	as	an	ERC20-compatible	token.
+        p.hc-feature-lead(style="margin-bottom:0px;") Our	aim	is	to	release	Storecoin	as	a	new	public	blockchain.	
             
     #hc-why-token.hc-feature.inverted.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
@@ -159,8 +165,8 @@ block content
     #hc-tech.hc-feature.lite.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted Our Technology
-        p.hc-feature-lead To	scale	Storecoin,	our	team	is	committed	to	minimizing	on-chain data	while	maximizing	off	chain	transactions.
-        p.hc-feature-lead(style="font-size:1.2em;") Click	on	the	icons	below	to	learn	more	about	our	technology.
+        p.hc-feature-lead To	scale	Storecoin,	our	team	is	committed	to	minimizing	on-chain	data	while	maximizing	off	chain	transactions.
+        p.hc-feature-lead We’re	also	experimenting	with	new	forms	of	cryptography	for	privacy	inside	of	smart	contracts	-- and	eventually	inside	state	channels.
 
         .row.points.ext
           .four.columns(data-featherlight='#box-proof')
@@ -194,6 +200,15 @@ block content
                 p To achieve unlimited nodes of hierarchy in smart contracts, we’re using a new database design for smart contracts and a new UX for their creation and deployment.
 
         .row.points.ext
+          .four.columns(data-featherlight='#box-transactions')
+            .tech-lead
+              img(src='images/transaction-money-bag.png')
+              h6 Free Transactions
+            #box-transactions(style='display:none;')
+              .points-lightbox
+                img(src='images/transaction-money-bag.png')
+                p To achieve free transactions for senders and receivers, each transaction will generate some inflation which will be distributed to the participants of the consensus. The total new token inflation will be lower than 5% each year and it will be directly linked to blockchain transactions.  
+                
           .four.columns(data-featherlight='#box-channels')
             .tech-lead
               img(src='images/shield.png')
@@ -202,24 +217,16 @@ block content
               .points-lightbox
                 img(src='images/shield.png')
                 p State	channels are	payment channels,	where	two	or	more	users	can	exchange	payments	without	needing	to	use	the	blockchain	except	when	setting	up	or	closing	out	the	channel
+                
+          .four.columns(data-featherlight='#box-privacy-channels')
+            .tech-lead
+              img(src='images/shield.png')
+              h6 Privacy	inside	State	Channels
+            #box-privacy-channels(style='display:none;')
+              .points-lightbox
+                img(src='images/shield.png')
+                p State	channels are	payment channels,	where	two	or	more	users	can	exchange	payments	without	needing	to	use	the	blockchain	except	when	setting	up	or	closing	out	the	channel
 
-          .four.columns(data-featherlight='#box-transactions')
-            .tech-lead
-              img(src='images/transaction-money-bag.png')
-              h6 Free Transactions
-            #box-transactions(style='display:none;')
-              .points-lightbox
-                img(src='images/transaction-money-bag.png')
-                p To achieve free transactions for senders and receivers, each transaction will generate some inflation which will be distributed to the participants of the consensus. The total new token inflation will be lower than 5% each year and it will be directly linked to blockchain transactions.
-                  
-          .four.columns(data-featherlight='#box-loyalty')
-            .tech-lead
-              img(src='images/loyalty-tokens.png')
-              h6 Loyalty Points as App Tokens
-            #box-loyalty(style='display:none;')
-              .points-lightbox
-                img(src='images/loyalty-tokens.png')
-                p For loyalty points, we’re designing an ERC20-like platform for the provenance and unique ownership of consumer packaged goods to be tied to the blockchain. If the token changes wallets, only the active token can be used to access apps and content. Think McDonald’s Points, CrossFit Points, and more.  
 
         .row.points.ext
           .four.columns(data-featherlight='#box-ethereum')
@@ -238,8 +245,280 @@ block content
             #box-bitcoin(style='display:none;')
               .points-lightbox
                 img(src='images/bitcoin-green.png')
-                p Using Rootstock, Storecoin will achieve interoperability with the Bitcoin blockchain .
+                p Using Rootstock, Storecoin will achieve interoperability with the Bitcoin blockchain.
+                
+          .four.columns(data-featherlight='#box-loyalty')
+            .tech-lead
+              img(src='images/loyalty-tokens.png')
+              h6 Loyalty Points as App Tokens
+            #box-loyalty(style='display:none;')
+              .points-lightbox
+                img(src='images/loyalty-tokens.png')
+                p For loyalty points, we’re designing an ERC20-like platform for the provenance and unique ownership of consumer packaged goods to be tied to the blockchain. If the token changes wallets, only the active token can be used to access apps and content. Think McDonald’s Points, CrossFit Points, and more.
 
+    #hc-apps.hc-feature.inverted.over-rel.padding
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title.inverted What apps can be built with Storecoin?
+        p.lead
+          | Storecoin developers will give franchise and chain stores new blockchain-powered super powers:
+        .desktop
+          .hc-apps-row
+            .column-1.title.half-column(data-tab='tab-1')
+              i.ion-record
+              a(href='javascript:;') Point of sale systems
+            .column-2.title.half-column(data-tab='tab-2')
+              i.ion-record
+              a(href='javascript:;') Micropayments to staff and to stores
+            .column-3.title-reveal.hide.full-column.row(data-tab='tab-1')
+              .six.columns.image
+                img(src='images/use_case1.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+            .column-4.title-reveal.hide.full-column.row(data-tab='tab-2')
+              .six.columns.image
+                img(src='images/use_case2.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+          .hc-apps-row
+            .column-1.title.half-column(data-tab='tab-1')
+              i.ion-record
+              a(href='javascript:;') E-commerce systems
+            .column-2.title.half-column(data-tab='tab-2')
+              i.ion-record
+              a(href='javascript:;') Smart scheduling apps
+            .column-3.title-reveal.hide.full-column.row(data-tab='tab-1')
+              .six.columns.image
+                img(src='images/use_case1.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+            .column-4.title-reveal.hide.full-column.row(data-tab='tab-2')
+              .six.columns.image
+                img(src='images/use_case2.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+          .hc-apps-row
+            .column-1.title.half-column(data-tab='tab-1')
+              i.ion-record
+              a(href='javascript:;') Invoicing workflows
+            .column-2.title.half-column(data-tab='tab-2')
+              i.ion-record
+              a(href='javascript:;') Payroll
+            .column-3.title-reveal.hide.full-column.row(data-tab='tab-1')
+              .six.columns.image
+                img(src='images/use_case1.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+            .column-4.title-reveal.hide.full-column.row(data-tab='tab-2')
+              .six.columns.image
+                img(src='images/use_case2.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+          .hc-apps-row
+            .column-1.title.half-column(data-tab='tab-1')
+              i.ion-record
+              a(href='javascript:;') Revenue sharing arrangements
+            .column-2.title.half-column(data-tab='tab-2')
+              i.ion-record
+              a(href='javascript:;') Supply chain contracts
+            .column-3.title-reveal.hide.full-column.row(data-tab='tab-1')
+              .six.columns.image
+                img(src='images/use_case1.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+            .column-4.title-reveal.hide.full-column.row(data-tab='tab-2')
+              .six.columns.image
+                img(src='images/use_case2.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+          .hc-apps-row
+            .column-1.title.half-column(data-tab='tab-1')
+              i.ion-record
+              a(href='javascript:;') Last mile delivery network APIs
+            .column-2.title.half-column(data-tab='tab-2')
+              i.ion-record
+              a(href='javascript:;') Loyalty systems
+            .column-3.title-reveal.hide.full-column.row(data-tab='tab-1')
+              .six.columns.image
+                img(src='images/use_case1.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+            .column-4.title-reveal.hide.full-column.row(data-tab='tab-2')
+              .six.columns.image
+                img(src='images/use_case2.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+          .hc-apps-row
+            .column-1.title.half-column(data-tab='tab-1')
+              i.ion-record
+              a(href='javascript:;') Drone delivery systems
+            .column-3.title-reveal.hide.full-column.row(data-tab='tab-1')
+              .six.columns.image
+                img(src='images/use_case1.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+        .mobile
+          .hc-apps-row
+            .column-1.title.half-column(data-featherlight='#box-1')
+              i.ion-record
+              a(href='javascript:;') Point of sale systems
+            .column-2.title.half-column(data-featherlight='#box-2')
+              i.ion-record
+              a(href='javascript:;') Micropayments to staff and to stores
+            #box-1.column-3.title-reveal.hide.full-column.row.app-box
+              .six.columns.image
+                img(src='images/use_case1.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+            #box-2.column-4.title-reveal.hide.full-column.row.app-box
+              .six.columns.image
+                img(src='images/use_case2.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+          .hc-apps-row
+            .column-1.title.half-column(data-featherlight='#box-3')
+              i.ion-record
+              a(href='javascript:;') E-commerce systems
+            .column-2.title.half-column(data-featherlight='#box-4')
+              i.ion-record
+              a(href='javascript:;') Smart scheduling apps
+            #box-3.column-3.title-reveal.hide.full-column.row.app-box
+              .six.columns.image
+                img(src='images/use_case1.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+            #box-4.column-4.title-reveal.hide.full-column.row.app-box
+              .six.columns.image
+                img(src='images/use_case2.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+          .hc-apps-row
+            .column-1.title.half-column(data-featherlight='#box-5')
+              i.ion-record
+              a(href='javascript:;') Invoicing workflows
+            .column-2.title.half-column(data-featherlight='#box-6')
+              i.ion-record
+              a(href='javascript:;') Payroll
+            #box-5.column-3.title-reveal.hide.full-column.row.app-box
+              .six.columns.image
+                img(src='images/use_case1.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+            #box-6.column-4.title-reveal.hide.full-column.row.app-box
+              .six.columns.image
+                img(src='images/use_case2.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+          .hc-apps-row
+            .column-1.title.half-column(data-featherlight='#box-7')
+              i.ion-record
+              a(href='javascript:;') Revenue sharing arrangements
+            .column-2.title.half-column(data-featherlight='#box-8')
+              i.ion-record
+              a(href='javascript:;') Supply chain contracts
+            #box-7.column-3.title-reveal.hide.full-column.row.app-box
+              .six.columns.image
+                img(src='images/use_case1.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+            #box-8.column-4.title-reveal.hide.full-column.row.app-box
+              .six.columns.image
+                img(src='images/use_case2.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+          .hc-apps-row
+            .column-1.title.half-column(data-featherlight='#box-9')
+              i.ion-record
+              a(href='javascript:;') Last mile delivery network APIs
+            .column-2.title.half-column(data-featherlight='#box-10')
+              i.ion-record
+              a(href='javascript:;') Loyalty systems
+            #box-9.column-3.title-reveal.hide.full-column.row.app-box
+              .six.columns.image
+                img(src='images/use_case1.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+            #box-10.column-4.title-reveal.hide.full-column.row.app-box
+              .six.columns.image
+                img(src='images/use_case2.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+          .hc-apps-row
+            .column-1.title.half-column(data-featherlight='#box-11')
+              i.ion-record
+              a(href='javascript:;') Drone delivery systems
+            #box-12.column-3.title-reveal.hide.full-column.row.app-box
+              .six.columns.image
+                img(src='images/use_case1.png')
+              .six.columns.text
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+                p
+                  | Token changers are smart tokens that can be used to exchange between other standard ERC20 tokens that are held in their reserve.
+
+    
     #hc-specs.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Blockchain Specs
@@ -340,15 +619,15 @@ block content
 
     include our-team-widget
                   
-    //- #hc-alliance.hc-feature.over-rel.padding.inverted
-    //-   .hc-chunk
-    //-     h2.hc-feature-title The Storecoin Alliance
-    //-     p.hc-feature-lead A	collation	of	franchises,	chain	stores,	sports	
-    //-       | leagues,	and	affiliate-based	organizations	
-    //-       | paying	membership	fees	to	run	their	own	
-    //-       | R&D	experiments	with	Storecoin.	
-    //- 
-    //-     h2.hc-feature-title(style="margin:0px !important; color:rgb(233, 120, 68);") COMING SOON
+    #hc-alliance.hc-feature.over-rel.padding.inverted
+      .hc-chunk
+        h2.hc-feature-title The Storecoin Alliance
+        p.hc-feature-lead A	collation	of	franchises,	chain	stores,	sports	
+          | leagues,	and	affiliate-based	organizations	
+          | paying	membership	fees	to	run	their	own	
+          | R&D	experiments	with	Storecoin.	
+    
+        h2.hc-feature-title(style="margin:0px !important; color:rgb(233, 120, 68);") COMING SOON
         
     #hc-partners.hc-feature.over-rel.padding
       .hc-chunk
@@ -385,7 +664,7 @@ block content
                 img(src='images/chart-2.png')
                 p Token	Value
               p.desc
-                | We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.
+                | The	Storecoin	token	value	increases	with	more	Storecoin	Wallets	deployed	and	more	and	app-level	transactions	on	the	Storecoin	blockchain.	
             img.arrow-flow(src='images/arrow-mobile.png')
           .four.columns
         .row.middle
@@ -393,16 +672,16 @@ block content
             .incentive
               .title
                 img(src='images/money.png')
-                p More Investors
+                p More Buyers
               p.desc
-                | We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.
+                | The	more	valuable	staking	becomes,	the	more	demand	there	will	be	to	buy	storecoins
             img.arrow-flow(src='images/arrow-mobile.png')
             .incentive
               .title
                 img(src='images/hammer.png')
-                p More Miners
+                p More Stakers
               p.desc
-                | We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.
+                | The	more	users,	the	more transactions	on	the	Storecoin	blockchain,	thus	the	more	the	Storecoin	blockchain	will	need	to	be	staked
             img.arrow-flow(src='images/arrow-mobile.png')
           .four.columns.logo-wrapper
             img.logo(src='images/logo.png')
@@ -412,14 +691,14 @@ block content
                 img(src='images/keyboard.png')
                 p More Developers
               p.desc
-                | We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.
+                | As	token	value	increases,	more	3rd party	developers	want	to	build	using	storecoins.
             img.arrow-flow(src='images/arrow-mobile.png')
             .incentive
               .title
                 img(src='images/building.png')
                 p More Organizations
               p.desc
-                | We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.
+                | As	more	developers	build	with Storecoin,	more	hierarchy-based	organizations	will	use	(and	pay	for	the	usage	of)	Storecoin-powered	apps.
             img.arrow-flow(src='images/arrow-mobile.png')
         .row
           .four.columns
@@ -429,19 +708,21 @@ block content
                 img(src='images/smile.png')
                 p More Users
               p.desc
-                | We've partnered with Microsoft Azure and Heroku to offer Storj integrations with PaaS providers you already use.
+                | The	more	apps	powered	by Storecoin,	the	more	users	that will	have	Storecoin	wallets
           .four.columns
             
     #hc-project-schedule.hc-feature.lite.over-rel.padding
       h3.hc-feature-title.break Storecoin Project Schedule
       p.hc-feature-lead(style='max-width: 1140px;')
-        | Storecoin	is	an	ambitious	and	long-range	technology	endeavor.	
+        | Storecoin is an ambitious and long-range technology initiative in the early phases of research and development.
         
       p.hc-feature-lead(style='max-width: 1140px;')
-        | We'll	issue	mini	Token	Sales	as	key	Technology	and	Adoption	milestones	are	achieved.
+        | We'll issue mini Token Sales as key Technology and Adoption milestones are achieved.
       
       p.hc-feature-lead(style='max-width: 1140px;')
-        | We’re	committed	to	Doing	The	Right	Thing	as	we	invent,	introduce,	and	govern	the	Storecoin.
+        | We’re committed to 
+        b Doing The Right Thing 
+        | as we invent, introduce, and govern Storecoin.
         
       .container
         .timeline
@@ -456,16 +737,18 @@ block content
                 .box
                   h2.title
                     span.bullet 1
-                    | Storecoin, Inc. is launched
+                    | Storecoin	R&D	begins
                   .content
                     ul
+                      li.success Blockchain	Architect	added
                       li.success Early engineering team added
                       li.success R&D begins
-                      li.success Green Paper is started.
+                      li.success Green Paper is started
+                      li.success Amazon	funds	Storecoin	R&D	with	AWS	credits
 
               .inverted.item.right
                 .date
-                  span July
+                  span August
                 .full-date August
                 .box
                   h2.title
@@ -478,14 +761,12 @@ block content
                       li.success Whitepaper writing begins
                       li Extensive scalability testing
                       li Extensive security testing
-                      li SEC Compliance achieved
-          .year
-            .name 2018
-            .items
+                      li Storecoin	governance	and	Token	Sales	are	aligned	with	the	SEC’s	July	guidance
+                      
               .item.left
                 .date
-                  span Q1
-                .full-date Q417 or Q118
+                  span Late 2017
+                .full-date Late 2017
                 .box
                   h2.title
                     span.bullet 3
@@ -498,7 +779,8 @@ block content
                       li Core Blockchain Developers added
                       li Vickrey Auction for Token Sales launches
                       li Storecoin Alliance Network launched
-
+          .year
+            .name 2018
             .items
               .item.right
                 .date
@@ -590,8 +872,8 @@ block content
           li Conduct	extensive	security	tests	to	finalize	the	consensus	protocol
           li Continue	building	our	Engineering,	Product,	and	Analyst	teams
           li Introduce	a	Vickrey	Auction	for	our	Second	Token	Sale	and	beyond
-          li Write	smart	contracts	to	vest	the	tokens	of	Storecoin	founders,	core	
-             | developers,	early	team,	and	key	distribution	partners
-          li Launch	the	Second	Storecoin	ICO	in	Q417-Q118
+          li Write	smart	contracts	to	vest	the	tokens	of	Storecoin	founders,	core developers,	early	team,	and	key	distribution	partners
+          li Launch the Second Storecoin Token Sale in Late 2017
+          li Fully	align	Storecoin	governance	and	future	Token	Sales	with	the	guidance issued	by	the	SEC	in	late	July	2017
 
     include email-widget
