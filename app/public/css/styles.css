@@ -755,7 +755,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 320px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
     font-size: 1.5em !important;
   }
