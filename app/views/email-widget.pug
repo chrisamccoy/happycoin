@@ -37,7 +37,7 @@
 
     .email-steps.step-2
       p We	also	want	you	to	be	certain	that	you	understand	and	agree	to	the	following:	
-      p As	a	Storecoin	Token	Buyer,	I	understand	that	the	purpose	of	the	Tokens	is	to	facilitate	the	provision, utility,	and	receipt	of	certain	apps	and	services	within	a	future	Storecoin	Blockchain.
+      p As	a	Storecoin	Token	Buyer,	I	understand	that	the	purpose	of	the	storecoins	is	to	facilitate	the	provision, utility,	and	receipt	of	certain	apps	and	services	within	a	future	Storecoin	Blockchain.
       hr
       .button-group(style="margin-bottom:1em;")
         button.button-back.button-primary(data-step='step-1-1')
@@ -76,6 +76,17 @@
         button.button-back.button-primary(data-step='step-2-2')
           i.ion-chevron-left
           | Back
+        button.button-next.button-primary(data-step='step-2-4')
+          | I Agree
+          i.ion-chevron-right
+            
+    .email-steps.step-2-4      
+      p Alright,	now	onto	information	about	Storecoin	and	our	First	Token	Sale!	
+      hr
+      .button-group
+        button.button-back.button-primary(data-step='step-2-3')
+          i.ion-chevron-left
+          | Back
         button.button-next.button-primary(data-step='step-3')
           | I Agree
           i.ion-chevron-right
@@ -93,14 +104,15 @@
           i.ion-chevron-right
             
     .email-steps.step-4
-      p Storecoin Inc., a U.S.-based Delaware C-Corporation, has authorized 1 Billion tokens on the Storecoin blockchain.
+      p We’ve	thought	deeply	about	how	Storecoin	will	incentivize	all	sides	of	its	network,	across	the	next	1,000	years.	
       p(style="margin:0px;") 
-        b Over time:
+        b Here’s	how	Storecoin	will	be	allocated:
       ul
-        li 33% of the tokens will be sold to the public
-        li 33% will be allocated to founders, core developers, and team
-        li 33% will be allocated for distribution to incentivize participation in the Storecoin ecosystem
-        li 1% will cover token sale costs
+        li 33%	will	be	sold	in	up	to	six	mini	token	sales	to	fund	protocol development
+        li 33%	will	be	allocated	to	founders,	core	developers,	and	team
+        li Founders	have 4	year	vesting
+        li Contributors	have 2	year	vesting
+        li 33%	will	allocated	for	distribution	to	incentivize	participation	in	the	Storecoin	ecosystem.	This	includes	developers	and	hierarchy-based	organizations	who	adopt	the	cryptocurrency.
       hr
       .button-group
         button.button-back.button-primary(data-step='step-3')
@@ -177,11 +189,11 @@
       ul 
         li
           span.eth-value 
-          |  number	of	Ethereum.
+          |  Ethereum
           
         li
           span.btc-value 	
-          |  number	of	of	Bitcoins.
+          |  Bitcoins
       hr
       .button-group
         button.button-back.button-primary(data-step='step-8')
@@ -456,19 +468,16 @@
     .email-steps.step-16
       p Before	proceeding,	we	recommend	that	you	read	the	Storecoin	Token	Sale	Terms	of	Service.
       a.button.button-primary(href="/terms", target="_blank", style="margin-bottom:2em;") Review
-      .field.radio-field
-        .hc-radio-btn
-        input(type='radio', name="terms-agree", value='Yes')
-        label(for='participate-yes') I	Agree	to	the	Storecoin	Token	Sale	Terms	of	Service
-      //- .field
-      //-   input(type='radio', name="terms-agree", value='No')
-      //-   label(for='participate-no') No 	I	don’t
+      //- .field.radio-field
+      //-   .hc-radio-btn
+      //-   input(type='radio', name="terms-agree", value='Yes')
+      //-   label(for='participate-yes') I	Agree	to	the	Storecoin	Token	Sale	Terms	of	Service
       hr
       .button-group
         button.button-back.button-primary(data-step='step-15')
           i.ion-chevron-left
           | Back
-        button.button-next.button-primary(data-step='step-17', disabled)
+        button.button-next.button-primary(data-step='step-17')
           | Next
           i.ion-chevron-right
             
@@ -533,8 +542,8 @@
           | Next
           
     .email-steps.step-19        
-      p Once your Total equals 100% and you click the Apply button, we’ll review your Token Purchase application.	
-      p Once accepted, we’ll email you the Storecoin Token Sale Terms and Agreement for e-signature.
+      p Thanks	for	expressing	interest	in	the	Storecoin	First	Token	Sale.	Our	team	will	review	your	application	in	the	next	24	hours.	
+      p Once	signed,	if	we	have	enough	room	available,	we’ll	email	you	private	Address	and	Payment	info	to	fund.
       p Once you sign, if we have enough room in the First Token Sale available, we’ll e-mail you private Address and Payment information for you to fund your storecoin token purchase.
       p You’ll then have 24 hours to pay for your tokens.
       p Once the transaction is confirmed by our end, we’ll send you an executed copy of the Agreement.
@@ -554,16 +563,16 @@
       p
         | In the meantime, share the Storecoin First Token with a trusted friend.
       .mobile-link
-        a.button.button-primary(target='_blank', href='mailto:team@storeco.in')
+        a.button.button-primary(target='_blank', href='mailto:?Subject=FWD: Storecoin First Token Sale - By Invite Only?Body=http://storeco.in/firsttokensale')
           i.ion-email
           | Share with your friend
       .desktop-link
-        a.button.button-primary(target='_blank', href='https://mail.google.com/mail/?view=cm&fs=1&to=team@storeco.in&su=SUBJECT&body=BODY')
+        a.button.button-primary(target='_blank', href='https://mail.google.com/mail/?view=cm&fs=1&to=&su=FWD: Storecoin First Token Sale - By Invite Only&body=http://storeco.in/firsttokensale')
           i.ion-email
           | Share with your friend
-      .form.row
+      .form.row.copy-link
         .eight.columns
-          input.u-full-width.copy-target(readonly='', type='text', value='http://storeco.in/firstico')
+          input.u-full-width.copy-target(readonly='', type='text', value='http://storeco.in/firsttokensale')
         .four.columns
           button.button.button-primary.copy-button
             i.ion-link

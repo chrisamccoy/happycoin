@@ -34,6 +34,7 @@ $(document).ready(function(){
   initSlider();
   initPartnerSlider();
   initProblemSlider();
+  toggleStatusText();
 });
 
 
@@ -645,6 +646,8 @@ function emailSubscribe() {
       paymentTypes.forEach(function(method, i) {
         if (i == paymentTypes.length - 1 && paymentTypes.length > 1) {
           paymentStr += '& ' + method + '.';
+        } else if ( paymentTypes.length == 1 ) {
+          paymentStr += '' + method + '.';
         } else if (i == paymentTypes.length - 2) {
           paymentStr += method + ' ';
         } else {
@@ -664,7 +667,7 @@ function emailSubscribe() {
         $step18.find('.total-percentage span').text(' 100%');
         $step18.find('.percent-sum input').val(100);
         $step18.find('.total-percentage span').addClass('red');
-        $step18.find('.button-submit').removeAttr('disabled');
+        $step18.find('.button-next').removeAttr('disabled');
       }
 
       $step18.find('.payment-methods').text(paymentStr);
@@ -871,5 +874,16 @@ function renderRadio () {
         $(this).parents('.field').find('.hc-radio-btn').removeClass('checked');
       }
     });
+  });
+}
+
+function toggleStatusText(){
+  $status = $('#hc-current-status');
+  $button = $status.find('.button');
+  $textGroup = $status.find('.text-group');
+
+  $button.click(function(){
+    $(this).find('i').toggleClass('ion-chevron-up ion-chevron-down');
+    $textGroup.toggle();
   });
 }
