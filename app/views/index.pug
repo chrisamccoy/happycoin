@@ -271,38 +271,29 @@ block content
                 div
                   p For loyalty points, we’re designing an ERC20-like platform for the provenance and unique ownership of consumer packaged goods to be tied to the blockchain. If the token changes wallets, only the active token can be used to access apps and content. Think McDonald’s Points, CrossFit Points, and more.
 
-    .hc-feature.over-rel.padding
+    .hc-feature.over-rel.padding.inverted
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Our Tech Ethos
+        p.hc-feature-lead This guides our decision making at Storecoin
         ol 
-          li Can we secure it?
-          li If	we	can	secure	it,	can	we	scale	it?
-          li If	we	can	secure	it	and	scale	it,	can	we	make	it	free?
-          li Can	we	do	this	with	a	world-class	user-experience?	
-          
-        p.hc-feature-lead(style="margin-bottom:0px;") Everything	else	will	be	built	on	top	of	this	Ethos
-    
-    #hc-apps.hc-feature.inverted.over-rel.padding
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title.inverted What apps can be built with Storecoin?
-        p.hc-feature-lead
-          | With	the	storecoin cryptocurrency	and	Developer	API,	new	behaviors,	new	business	models,	and	lower	transaction	costs	can	be	introduced	into	hierarchy-based	systems.
-        ul
-          li Point	of	sale	systems
-          li E-commerce	systems
-          li Smart	scheduling	apps
-          li Invoicing	workflows
-          li Payroll
-          li Revenue	sharing	arrangements
-          li Supply	chain	contracts
-          li Last	mile	delivery	network	APIs
-          li Loyalty	systems
-          li Drone	delivery	systems
-          li New	advertising	models
-          li New	commerce	models
-          li Monetized	communication	from	HQ	to	Locations 
-        
-
+          li Can we 
+            b secure it
+            | ?
+          li If	we	can	secure	it,	can	we	
+            b scale	it
+            | ?
+          li If	we	can	secure	it	and	scale	it,	can	we	
+            b make	it	free
+            | ?
+          li Can	we	do	this	with	
+            b a	world-class	user-experience
+            | ?	
+          li If we can do 1-4, can the Storecoin organization 
+            b support it
+            | ?
+            
+        p.hc-feature-lead(style="text-align:left; margin-bottom:0px;") If we can, let’s 
+          b ship it.
     
     #hc-specs.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
@@ -399,21 +390,39 @@ block content
                   td
                     b Bitcoin	compatible
                   td Yes,	through	RSK
+    
+    #hc-apps.hc-feature.inverted.over-rel.padding
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title.inverted What apps can be built with Storecoin?
+        p.hc-feature-lead
+          | With	the	storecoin cryptocurrency	and	Developer	API,	new	behaviors,	new	business	models,	zero	transaction	costs	can	be	introduced	into	hierarchy-based	systems.
+        ul
+          li Point	of	sale	systems
+          li E-commerce	systems
+          li Smart	scheduling	apps
+          li Invoicing	workflows
+          li Payroll
+          li Revenue	sharing	arrangements
+          li Supply	chain	contracts
+          li Last	mile	delivery	network	APIs
+          li Loyalty	systems
+          li Drone	delivery	systems
+          li New	advertising	models
+          li New	commerce	models
+          li Monetized	communication	from	HQ	to	Locations 
 
     include first-dapp
 
     #hc-matters.hc-feature.over-rel.padding.inverted
       .hc-chunk
         h2.hc-feature-title Why Footprint Matters
-        p.hc-feature-lead Only	10-20	million	people	own	digital	currency	today.	This	is	less	than	0.003%	of	the	world’s	population.		
-        p.hc-feature-lead Footprint	can	potentially	help	mainstream	cryptocurrency	by	getting	Storecoin	Wallets	into	small	business	and	their	millions	of	hourly	and	part-time	workers.	
-        p.hc-feature-lead Footprint	can	help	bring	cryptocurrency	to	over	25%	of	the	world’s	GDP.
-        p.hc-feature-lead.desktop To	learn	more	about	Footprint,	email	the	team.	
-          a(href="https://mail.google.com/mail/?view=cm&fs=1&to=chris@footprintlabs.co", target="_blank") chris@footprintlabs.co
-          | ,	subject	should	be	”Referred	from	Storecoin”
-        p.hc-feature-lead.mobile To	learn	more	about	Footprint,	email	the	team.	
-          a(href="mailto:chris@footprintlabs.co", target="_blank") chris@footprintlabs.co
-          | ,	subject	should	be	”Referred	from	Storecoin”
+        p.hc-feature-lead Only 10-20 million people own digital currency today. 		
+        p.hc-feature-lead This is less than 0.003% of the world’s population.	
+        p.hc-feature-lead Footprint can help mainstream cryptocurrency by getting Storecoin Wallets into the hands of millions of hourly and part-time workers around the globe.
+        p.hc-feature-lead.desktop(style="margin-bottom:0px;") To learn more about Footprint,
+          a(href="https://mail.google.com/mail/?view=cm&fs=1&to=chris@footprintlabs.co&su=Referred from Storecoin", target="_blank")  email the team.
+        p.hc-feature-lead.mobile(style="margin-bottom:0px;") To learn more about Footprint,	
+          a(href="mailto:chris@footprintlabs.co?Subject=Referred from Storecoin", target="_blank")  email the team.
 
     include our-team-widget
                   
@@ -451,7 +460,7 @@ block content
       h2.hc-feature-title Storecoin	Network	Effects
       p.hc-feature-lead
         | The	magic	of	the	Storecoin	is	that	it	aligns	incentives across	all	stakeholders	to hold the	token.
-      .incentives
+      .incentives.desktop
         .rails-wrapper
           .rails
         .row
@@ -507,6 +516,64 @@ block content
                 p More Users
               p.desc
                 | The	more	apps	powered	by Storecoin,	the	more	users	that will	have	Storecoin	wallets
+          .four.columns
+            
+      .incentives.mobile
+        .rails-wrapper
+          .rails
+        .row
+          .four.columns
+          .four.columns.horizontal
+            .incentive
+              .title
+                img(src='images/chart-2.png')
+                p Token	Value
+              p.desc
+                | The	Storecoin	token	value	increases	with	more	Storecoin	Wallets	deployed	and	more	and	app-level	transactions	on	the	Storecoin	blockchain.	
+            img.arrow-flow(src='images/arrow-mobile.png')
+          .four.columns
+        .row.middle
+          .four.columns.vertical
+            .incentive
+              .title
+                img(src='images/keyboard.png')
+                p More Developers
+              p.desc
+                | As	token	value	increases,	more	3rd party	developers	want	to	build	using	storecoins.
+            img.arrow-flow(src='images/arrow-mobile.png')
+            .incentive
+              .title
+                img(src='images/building.png')
+                p More Organizations
+              p.desc
+                | As	more	developers	build	with Storecoin,	more	hierarchy-based	organizations	will	use	(and	pay	for	the	usage	of)	Storecoin-powered	apps.
+            img.arrow-flow(src='images/arrow-mobile.png')
+          .four.columns.logo-wrapper
+            img.logo(src='images/logo.png')
+          .four.columns.vertical
+            .incentive
+              .title
+                img(src='images/smile.png')
+                p More Users
+              p.desc
+                | The	more	apps	powered	by Storecoin,	the	more	users	that will	have	Storecoin	wallets
+            img.arrow-flow(src='images/arrow-mobile.png')
+            .incentive
+              .title
+                img(src='images/hammer.png')
+                p More Stakers
+              p.desc
+                | The	more	users,	the	more transactions	on	the	Storecoin	blockchain,	thus	the	more	the	Storecoin	blockchain	will	need	to	be	staked
+            img.arrow-flow(src='images/arrow-mobile.png')
+        .row
+          .four.columns
+          .four.columns.horizontal
+            .incentive
+              .title
+                img(src='images/money.png')
+                p More Buyers
+              p.desc
+                | The	more	valuable	staking	becomes,	the	more	demand	there	will	be	to	buy	storecoins
           .four.columns
             
     #hc-project-schedule.hc-feature.lite.over-rel.padding
@@ -669,7 +736,7 @@ block content
           li Conduct	extensive	load	tests	to	finalize	blockchain	scalability
           li Conduct	extensive	security	tests	to	finalize	the	consensus	protocol
           li Continue	building	our	Engineering,	Product,	and	Analyst	teams
-          li Introduce	a	Vickrey	Auction	for	our	Second	Token	Sale	and	beyond
+          li Introduce a market-based auction format for our Second Token Sale
           li Write	smart	contracts	to	vest	the	tokens	of	Storecoin	founders,	core developers,	early	team,	and	key	distribution	partners
           li Launch the Second Storecoin Token Sale in Late 2017
           li Fully	align	Storecoin	governance	and	future	Token	Sales	with	the	guidance issued	by	the	SEC	in	July	2017

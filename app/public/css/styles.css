@@ -125,7 +125,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .hc-feature ol,
 .hc-feature ul {
-  font-size: 1.8em;
+  font-size: 1.5em;
   margin-bottom: 0px;
 }
 
@@ -327,6 +327,12 @@ input[type=number]::-webkit-outer-spin-button {
   overflow: hidden;
 }
 
+.hc-email p,
+.hc-email ul,
+.hc-email label {
+  font-size: 1em;
+}
+
 @media only screen and (max-width: 700px) {
   .hc-feature ol,
   .hc-feature ul {
@@ -366,6 +372,12 @@ input[type=number]::-webkit-outer-spin-button {
 
   .email-widget .form {
     margin-top: 0px !important;
+  }
+
+  .hc-email p,
+  .hc-email ul,
+  .hc-email label {
+    font-size: 0.8em;
   }
 
   .hc-email .form input[type="email"] {
@@ -1345,7 +1357,7 @@ and (max-width : 700px) {
 }
 
 @media only screen and (max-width: 700px) {
-  #hc-vision .three.columns {
+  #hc-vision .three.columns:not(:last-child) {
     text-align: center;
     margin-bottom: 2em;
   }
@@ -2059,23 +2071,16 @@ and (max-width : 700px) {
   text-align: center;
 }
 
-/*#hc-network-effects p {
-  font-size: 1.4em;
-  max-width: 900px;
-}*/
-
-/*#hc-network-effects img {
-  margin-top: 2em;
-  width : 100%;
-  max-width: 900px;
-}*/
-
 #hc-network-effects .incentives {
   max-width: 900px;
   margin: auto;
   margin-top: 2em;
   position: relative;
   z-index: 1;
+}
+
+#hc-network-effects .incentives.mobile {
+  display: none;
 }
 
 #hc-network-effects .incentives .logo {
@@ -2180,6 +2185,14 @@ and (max-width : 700px) {
 }
 
 @media only screen and (max-width: 700px) {
+  #hc-network-effects .incentives.mobile {
+    display: block;
+  }
+
+  #hc-network-effects .incentives.desktop {
+    display: none;
+  }
+
   #hc-network-effects .incentives .rails-wrapper {
     position: absolute;
     top: 0px;
@@ -2304,6 +2317,15 @@ and (max-width : 700px) {
   padding: 1em;
   display: none;
   font-size: 1.3em;
+}
+
+.hc-email .step-13 .computed {
+  color : #E97847;
+}
+
+.hc-email .step-13 .alert {
+  color : red;
+  display: none;
 }
 
 .hc-email .email-steps p {
@@ -2530,9 +2552,9 @@ and (max-width : 700px) {
     margin-bottom: 0.4em;
   }
 
-  .hc-email .email-steps li {
+  /*.hc-email .email-steps li {
     font-size: 0.8em;
-  }
+  }*/
 
   .hc-email ul {
     margin-left: 1em;
@@ -2916,7 +2938,7 @@ and (max-width : 700px) {
 }
 /* #hc-footer  */
 
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 700px) {
   #hc-intro {
     height : calc(100vh - 280px);
   }
@@ -3104,7 +3126,7 @@ and (max-width : 700px) {
   margin-bottom: 0px;
 }
 
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 700px) {
   #hc-solution .hc-feature-lead {
     font-size: 1.3em;
   }
@@ -3139,7 +3161,7 @@ and (max-width : 700px) {
   display: none;
 }
 
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 700px) {
   .hc-share-links .button-group .button.button-primary.email-mobile {
     display: block;
   }
@@ -3171,7 +3193,7 @@ and (max-width : 700px) {
   display: none;
 }
 
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 700px) {
   #hc-matters .mobile {
     display: block;
   }

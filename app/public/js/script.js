@@ -375,7 +375,8 @@ function emailSubscribe() {
       $stepsform = $emailSection.find('.steps-form'),
       btcVal, ethVal,
       formData = {
-        'payment-type' : []
+        'payment-type' : [],
+        'accredited-investor' : 'No'
       };
 
   $.when(
@@ -402,15 +403,17 @@ function emailSubscribe() {
 
   $emailSteps.find('input').change(function(){
     // console.log(formData);
-    if ($(this).attr('type') == 'checkbox') {
-      var array = formData[$(this).attr('name')];
-      var arrayIndex = array.indexOf($(this).val());
-      if (arrayIndex < 0 ) {
-        array.push($(this).val());
-      } else {
-        array.splice(arrayIndex, 1);
+    var isStep15 = $(this).parents('.email-steps').hasClass('step-15');
+    if (isStep15) {
+      if ($(this).attr('type') == 'checkbox') {
+        var array = formData[$(this).attr('name')];
+        var arrayIndex = array.indexOf($(this).val());
+        if (arrayIndex < 0 ) {
+          array.push($(this).val());
+        } else {
+          array.splice(arrayIndex, 1);
+        }
       }
-      // console.log(formData[$(this).attr('name')]);
     } else {
       formData[$(this).attr('name')] = $(this).val();
     }
@@ -427,11 +430,38 @@ function emailSubscribe() {
     var $thisEmailStep = $(this).parents('.email-steps');
     var step101 = $thisEmailStep.hasClass('step-10-1');
     var step102 = $thisEmailStep.hasClass('step-10-2');
-    console.log(step101, step102);
+    var step17 = $thisEmailStep.hasClass('step-17');
+    // console.log(step101, step102);
 
     $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
 
     if (step101 || step102) {
+      if(step101) {
+        var $step11 = $(this).parents('.hc-email').find('.step-11');
+        if ($(this).val() == 'Yes') {
+          // console.log($(this).val());
+          $thisEmailStep.find('.button-primary.button-next[data-step="step-11"]').hide();
+          $thisEmailStep.find('.button-primary.button-next[data-step="step-10-2"]').show();
+          $step11.find('.button-primary.button-back[data-step="step-10-2"]').show();
+          $step11.find('.button-primary.button-back[data-step="step-10-1"]').hide();
+        } else if ($(this).val() == 'No') {
+          // console.log($(this).val());
+          $thisEmailStep.find('.button-primary.button-next[data-step="step-11"]').show();
+          $thisEmailStep.find('.button-primary.button-next[data-step="step-10-2"]').hide();
+          $step11.find('.button-primary.button-back[data-step="step-10-1"]').show();
+          $step11.find('.button-primary.button-back[data-step="step-10-2"]').hide();
+        }
+      }
+    } else if (step17) {
+      var $next171 = $thisEmailStep.find('.button-primary.button-next[data-step="step-17-1"]');
+      var $next18 = $thisEmailStep.find('.button-primary.button-next[data-step="step-18"]');
+      if ($(this).val() == 'Yes') {
+        $next171.hide();
+        $next18.show();
+      } else if ($(this).val() == 'No') {
+        $next171.show();
+        $next18.hide();
+      }
     } else {
       if ($(this).val() == 'No') {
         $thisEmailStep.find('.button-primary.button-next').attr('disabled', '');
@@ -468,26 +498,6 @@ function emailSubscribe() {
     }
   });
 
-  // $emailSection.find('.step-1 input[type="radio"]').change(function() {
-  //   var inputVal = $(this).val(),
-  //       $thisStep = $(this).parents('.email-steps'),
-  //       $thisSection = $(this).parents('.hc-email');
-  //
-  //   if(inputVal == 'No') {
-  //     $thisStep.find('.button-next[data-step="step-2"]').hide();
-  //     $thisStep.find('.button-next[data-step="step-3"]').show();
-  //     $thisSection.find('.step-3 .button-back[data-step="step-1"]').show();
-  //     $thisSection.find('.step-3 .button-back[data-step="step-2"]').hide();
-  //   }
-  //
-  //   if(inputVal == 'Yes') {
-  //     $thisStep.find('.button-next[data-step="step-2"]').show();
-  //     $thisStep.find('.button-next[data-step="step-3"]').hide();
-  //     $thisSection.find('.step-3 .button-back[data-step="step-1"]').hide();
-  //     $thisSection.find('.step-3 .button-back[data-step="step-2"]').show();
-  //   }
-  // });
-
   $emailSection.find('.step-3 input[type="radio"]').change(function() {
     var inputVal = $(this).val(),
         $thisStep = $(this).parents('.email-steps'),
@@ -510,23 +520,37 @@ function emailSubscribe() {
     }
   });
 
-  $emailSection.find('.step-15 input[type="checkbox"]').change(function() {
+  $emailSection.find('input[type="checkbox"]').change(function() {
     var $thisInput = $(this),
         thisIsChecked = $(this).is(':checked'),
         $thisStep = $(this).parents('.email-steps'),
         isChecked = $thisStep.find('input[type="checkbox"]').is(':checked'),
-        $fieldGroup = $(this).parents('.field-group');
+        $fieldGroup = $(this).parents('.field-group'),
+        isStep13 = $thisStep.hasClass('step-13'),
+        isStep15 = $thisStep.hasClass('step-15');
 
-    // if(thisIsChecked) {
-    //   $fieldGroup.find('.field.full-width').removeClass('hidden');
-    // } else {
-    //   $fieldGroup.find('.field.full-width').addClass('hidden');
-    // }
+    if(isStep15) {
+      if(isChecked) {
+        console.log($(this).val());
+        $thisStep.find('.button-next').removeAttr('disabled');
+      } else {
+        $thisStep.find('.button-next').attr('disabled', '');
+      }
+    }
 
-    if(isChecked) {
-      $thisStep.find('.button-next').removeAttr('disabled');
-    } else {
-      $thisStep.find('.button-next').attr('disabled', '');
+    if(isStep13) {
+      var input = $thisStep.find('input[name="num-of-storecoins"]');
+      if(isChecked) {
+        console.log('is checked');
+        input.val(500000);
+        input.trigger('keyup');
+        input.trigger('change');
+      } else {
+        console.log('is not checked');
+        input.val('');
+        input.trigger('keyup');
+        input.trigger('change');
+      }
     }
   });
 
@@ -539,10 +563,15 @@ function emailSubscribe() {
     if(textVal.length > 0 ) {
       if (isStep13) {
         textVal = numeral(textVal).multiply(0.005);
-        if(textVal._value > 2500) {
+        if(textVal._value >= 2500 && textVal._value <= 300000 ) {
           $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
+          $thisEmailStep.find('.alert').hide();
+        } else if (textVal._value >= 300000) {
+          $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
+          $thisEmailStep.find('.alert').show();
         } else {
           $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
+          $thisEmailStep.find('.alert').hide();
         }
         textVal = textVal.format('($0,0.00)');
         $thisEmailStep.find('.computed').text(' ' + textVal);
@@ -582,15 +611,14 @@ function emailSubscribe() {
     });
     $.ajax({
       type : 'POST',
-      // url : 'https://hooks.zapier.com/hooks/catch/2306819/5ua8pj/',
-      // url : 'https://market.capitalstake.com',
-      url : 'https://hooks.zapier.com/hooks/catch/2399325/5iwky6/',
+      // url : 'https://hooks.zapier.com/hooks/catch/2399325/5iwky6/',
+      url : 'https://hooks.zapier.com/hooks/catch/2306819/5ua8pj/',
       data : formArray
     }).done(function(result){
       // console.log(formArray);
       // console.log(result);
       $thisEmailSect.find('.email-steps').hide();
-      $thisEmailSect.find('.success-message').show();
+      $thisEmailSect.find('.email-steps.step-19').show();
     });
   });
 
@@ -617,6 +645,10 @@ function emailSubscribe() {
     }
   });
 
+  $('.hc-email .email-steps.step-19 .button-group .button-submit').click(function(){
+    $(this).parents('.hc-email').hide();
+  });
+
   $emailSteps.find('.button-group .button-primary:not(.button-submit)').click(function(){
     var $thisEmailSect = $(this).parents('.hc-email'),
         $thisForm = $thisEmailSect.find('.form');
@@ -640,6 +672,7 @@ function emailSubscribe() {
       var payments = [];
       var paymentStr = ' ';
       var paymentTypes = formData['payment-type'];
+      // console.log(paymentTypes);
       $step18.find('.num-of-storecoins').text(' ' + numeral(formData['num-of-storecoins']).format('(0,0)') + ' ');
       $step18.find('.storecoins-amount').text(' ' + formData['storecoins-value'] + ' ');
 
@@ -655,7 +688,7 @@ function emailSubscribe() {
         }
         var inputName = method.toLowerCase().replace(/ /g, '-') + '-percent';
         $step18.find('.payment-group').append(
-          '<div class="field">%<input type="text" name="payment-percent" data-name="'+method+'" hidden><input type="number" name="percent-value" max="999"> '+' '+method+'</div>'
+          '<div class="field">%<input type="text" name="payment-percent" data-name="'+method+'" hidden><input type="number" name="percent-value" onkeydown="limit(this);" onkeyup="limit(this);"> '+' '+method+'</div>'
         );
       });
 
@@ -685,8 +718,10 @@ function emailSubscribe() {
             sumPercent += parseInt($(this).val());
           }
         });
-        $step18.find('.total-percentage span').text(' ' + sumPercent+'%');
-        $step18.find('.percent-sum input').val(sumPercent);
+
+        var sumText = numeral(sumPercent).format('0,0');
+        $step18.find('.total-percentage span').text(' ' + sumText+'%');
+        $step18.find('.percent-sum input').val(sumText);
         if(sumPercent >= 100) {
           $step18.find('.button-next').removeAttr('disabled');
           $step18.find('.total-percentage span').addClass('red');
@@ -719,17 +754,6 @@ function initSlider() {
   var $sliderEl = $('#hc-slider');
 
   if ($sliderEl.length > 0 ) {
-    // console.log('slider');
-    // $sliderEl.find('.slide .text').click(function(){
-    //   $sliderEl.find('.slide .text').not(this).removeClass('show');
-    //   $(this).toggleClass('show');
-    // });
-    //
-    // $sliderEl.find('.slide .link').click(function(){
-    //   $thisText = $(this).parents('.slide').find('.text');
-    //   $sliderEl.find('.slide .text').not($thisText).removeClass('show');
-    //   $thisText.toggleClass('show');
-    // });
 
     $sliderEl.slick({
       lazyLoad: 'ondemand',
@@ -861,12 +885,6 @@ function initProblemSlider () {
 function renderRadio () {
   var $radio = $('.field input');
   $radio.change(function(){
-    // console.log($(this).is(':checked'));
-    // if ($(this).is(':checked')) {
-    //   $(this).parents('.field').find('.hc-radio-btn').addClass('checked');
-    // } else {
-    //   $radio.parents('.field').find('.hc-radio-btn').removeClass('checked');
-    // }
     $radio.each(function(){
       if ($(this).is(':checked')) {
         $(this).parents('.field').find('.hc-radio-btn').addClass('checked');
@@ -886,4 +904,13 @@ function toggleStatusText(){
     $(this).find('i').toggleClass('ion-chevron-up ion-chevron-down');
     $textGroup.toggle();
   });
+}
+
+function limit(element)
+{
+    var max_chars = 3;
+
+    if(element.value.length > max_chars) {
+        element.value = element.value.substr(0, max_chars);
+    }
 }
