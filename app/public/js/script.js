@@ -388,13 +388,13 @@ function emailSubscribe() {
     })
   ).then(function() {
     if (ethVal) {
-      $emailSection.find('.step-10 .eth-value , .step-8-1 .eth-value').text(ethVal.USD / 2500);
+      $emailSection.find('.step-10 .eth-value , .step-8-1 .eth-value').text(numeral(2500 / ethVal.USD).format('0.000'));
     }
     else {
         // Request for graphic data didn't work, handle it
     }
     if (btcVal) {
-      $emailSection.find('.step-10 .btc-value , .step-8-1 .btc-value').text(btcVal.USD / 2500);
+      $emailSection.find('.step-10 .btc-value , .step-8-1 .btc-value').text(numeral(2500 / btcVal.USD).format('0.000'));
     }
     else {
         // Request for web data didn't work, handle it

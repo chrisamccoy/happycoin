@@ -86,6 +86,12 @@ block content
               img(src='images/problem-4.png')
             .slide
               img(src='images/problem-5.png')
+            .slide
+              img(src='images/problem-6.png')
+            .slide
+              img(src='images/problem-7.png')
+            .slide
+              img(src='images/problem-8.png')
           p.hc-feature-lead.swipe-text(style="font-size:1.2em") Swipe right to see examples
           
         .hc-each-problem  
@@ -95,7 +101,7 @@ block content
                 | Oftentimes,	both	the	amount	of	the	revenue	share	and	the	identity	of	the	receiver	needs	to	be	private.
           .row.phase
             .twelve.columns
-              img(src='images/problem-6.png')
+              img(src='images/problem-public-privates.png')
                 
         .hc-each-problem
           .row.text
@@ -103,7 +109,7 @@ block content
               p.hc-feature-lead In	some	hierarchies,	revenue	sharing	arrangements	require	a	mix	of	both	public	and	private	information	for	sender,	receiver,	and	payment	amounts.	
           .row.phase
             .twelve.columns
-              img(src='images/problem-7.png')
+              img(src='images/problem-public-privates-2.png')
                 
         .hc-each-problem
           .row.text
@@ -112,7 +118,7 @@ block content
               p.hc-feature-lead They don't support privacy inside smart contracts for receiver, sender, and payment amounts.
           .row.phase
             .twelve.columns
-              img(src='images/problem-8.png')
+              img(src='images/ethereum-public.png')
                 
         .hc-each-problem
           .row.text
@@ -129,8 +135,8 @@ block content
             .twelve.columns
               p.hc-feature-lead
                 | They promised us free transactions using the blockchain but,
-                | as of early July 2017, we have $0.14 transactions with
-                | Ethereum and $2.46 transactions with Bitcoin.
+                | as of early July 2017 to late July 2017, we have $0.12 transactions with
+                | Ethereum and $2.57 transactions with Bitcoin.
               p.hc-feature-lead To handle micropayments of less than $0.01, 
                 b blockchain payments need to be free.        
           .row.phase(style="margin-bottom:2em;")
@@ -148,13 +154,13 @@ block content
         p.hc-feature-lead
           | Storecoin	solves	this	by	enabling	transactions	in	a	smart
           | contract	to	be	private,	public	or	both.
-        img(src='images/solution-1.png')
+        img(src='images/smart-contracts.png')
         p.hc-feature-lead
           | Also,	by	enabling	unlimited	levels	of	revenue	sharing	in	unlimited	directions.
         img(src='images/solution-2.png')
         p.hc-feature-lead
           | All	using	fully	customizable,	UI	friendly	smart	contracts.
-        img(src='images/solution-3.png')
+        img(src='images/storecoin-smart-contract.png')
         p.hc-feature-lead
           | Storecoin	does	this	with	zero	transaction	fees	to	the	sender	and	to	the	receiver.
         //- p.hc-feature-lead
@@ -165,7 +171,7 @@ block content
         //-   | To	handle	micropayments	of	less	than	$0.30	and	nanopayments of	less	than	
         //-   | $0.01	-- to	power	new	business	models	and	behaviors	for	hierarchy-based	
         //-   | systems	-- blockchain	payments	need	to	be	free.
-        img(src='images/solution-4.png')
+        img(src='images/no-transaction-fees.png')
 
     
     #hc-tech.hc-feature.lite.over-rel.padding
@@ -271,28 +277,48 @@ block content
                 div
                   p For loyalty points, we’re designing an ERC20-like platform for the provenance and unique ownership of consumer packaged goods to be tied to the blockchain. If the token changes wallets, only the active token can be used to access apps and content. Think McDonald’s Points, CrossFit Points, and more.
 
-    .hc-feature.over-rel.padding.inverted
+    #hc-tech-ethos.hc-feature.over-rel.padding.inverted.orange
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Our Tech Ethos
-        p.hc-feature-lead This guides our decision making at Storecoin
-        ol 
-          li Can we 
-            b secure it
-            | ?
-          li If	we	can	secure	it,	can	we	
-            b scale	it
-            | ?
-          li If	we	can	secure	it	and	scale	it,	can	we	
-            b make	it	free
-            | ?
-          li Can	we	do	this	with	
-            b a	world-class	user-experience
-            | ?	
-          li If we can do 1-4, can the Storecoin organization 
-            b support it
-            | ?
-            
-        p.hc-feature-lead(style="text-align:left; margin-bottom:0px;") If we can, let’s 
+        p.hc-feature-lead This	is	how	we	make	technology	decisions	at	Storecoin
+        p 
+          span 
+            b #1  
+          | Can we 
+          b secure it
+          | ?
+        p 
+          span 
+            b #2  
+          | If	we	can	secure	it,	can	we	 
+          b scale	it
+          | ?
+        p 
+          span 
+            b #3  
+          | If	we	can	secure	it	and	scale	it,	can	we 
+          b make	it	free
+          | ?
+        p 
+          span 
+            b #4  
+          | Can	we	do	this	with	 
+          b a	world-class	user-experience
+          | ?  
+        p 
+          span 
+            b #5  
+          | Can	Storecoin	as	an	organization 	 
+          b support it
+          | ?
+        p 
+          span 
+            b #6  
+          | Will	hierarchy-based	organizations 	 
+          b need it
+          | ?          
+                  
+        p.hc-feature-lead(style="text-align:left; margin-bottom:0px;") If so, let’s 
           b ship it.
     
     #hc-specs.hc-feature.over-rel.padding
@@ -391,38 +417,22 @@ block content
                     b Bitcoin	compatible
                   td Yes,	through	RSK
     
-    #hc-apps.hc-feature.inverted.over-rel.padding
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title.inverted What apps can be built with Storecoin?
-        p.hc-feature-lead
-          | With	the	storecoin cryptocurrency	and	Developer	API,	new	behaviors,	new	business	models,	zero	transaction	costs	can	be	introduced	into	hierarchy-based	systems.
-        ul
-          li Point	of	sale	systems
-          li E-commerce	systems
-          li Smart	scheduling	apps
-          li Invoicing	workflows
-          li Payroll
-          li Revenue	sharing	arrangements
-          li Supply	chain	contracts
-          li Last	mile	delivery	network	APIs
-          li Loyalty	systems
-          li Drone	delivery	systems
-          li New	advertising	models
-          li New	commerce	models
-          li Monetized	communication	from	HQ	to	Locations 
+    include app-types
 
     include first-dapp
 
     #hc-matters.hc-feature.over-rel.padding.inverted
       .hc-chunk
         h2.hc-feature-title Why Footprint Matters
-        p.hc-feature-lead Only 10-20 million people own digital currency today. 		
-        p.hc-feature-lead This is less than 0.003% of the world’s population.	
-        p.hc-feature-lead Footprint can help mainstream cryptocurrency by getting Storecoin Wallets into the hands of millions of hourly and part-time workers around the globe.
-        p.hc-feature-lead.desktop(style="margin-bottom:0px;") To learn more about Footprint,
-          a(href="https://mail.google.com/mail/?view=cm&fs=1&to=chris@footprintlabs.co&su=Referred from Storecoin", target="_blank")  email the team.
-        p.hc-feature-lead.mobile(style="margin-bottom:0px;") To learn more about Footprint,	
-          a(href="mailto:chris@footprintlabs.co?Subject=Referred from Storecoin", target="_blank")  email the team.
+        p.hc-feature-lead Only	10-20	million	people	own	digital	currency	today. 		
+        p.hc-feature-lead This	is	less	than	0.3%	of	the	world’s	population.	
+        p.hc-feature-lead Footprint	can	help	mainstream	cryptocurrency	by	getting	Storecoin	Wallets	into	the	hands	of	millions	of	hourly	and	part-time	workers	around	the	globe.
+        p.hc-feature-lead.desktop(style="margin-bottom:0px;") Footprint	and	Storecoin	are	separate	organizations.	To	learn	more	about	Footprint, 
+          a(href="https://mail.google.com/mail/?view=cm&fs=1&to=chris@footprintlabs.co&su=Referred from Storecoin", target="_blank", style="color:#e97844;") 
+            b  email the team.
+        p.hc-feature-lead.mobile(style="margin-bottom:0px;") Footprint	and	Storecoin	are	separate	organizations.	To	learn	more	about	Footprint, 
+          a(href="mailto:chris@footprintlabs.co?Subject=Referred from Storecoin", target="_blank", style="color:#e97844;")
+            b  email the team.
 
     include our-team-widget
                   
@@ -445,7 +455,7 @@ block content
             p $100,000	in	Amazon	AWS	credits
           .slide
             img(src='images/footprint-white-logo.png')
-            p First	major	Dapp developers
+            p First	major	App developers
           .slide
             img(src='images/logo-coinfabrik.png', style='width:80%;')
             p Blockchain	Development	Partners
@@ -471,7 +481,7 @@ block content
                 img(src='images/chart-2.png')
                 p Token	Value
               p.desc
-                | The	Storecoin	token	value	increases	with	more	Storecoin	Wallets	deployed	and	more	and	app-level	transactions	on	the	Storecoin	blockchain.	
+                | The Storecoin token value could increase with more Storecoin Wallets deployed into the hands of users. Also, with more applevel transactions on its Storecoin blockchain.	
             img.arrow-flow(src='images/arrow-mobile.png')
           .four.columns
         .row.middle
@@ -486,9 +496,9 @@ block content
             .incentive
               .title
                 img(src='images/hammer.png')
-                p More Stakers
+                p More Validators
               p.desc
-                | The	more	users,	the	more transactions	on	the	Storecoin	blockchain,	thus	the	more	the	Storecoin	blockchain	will	need	to	be	staked
+                | The more users, the more transactions on the Storecoin blockchain, thus the more the Storecoin consensus will need to be validated. 
             img.arrow-flow(src='images/arrow-mobile.png')
           .four.columns.logo-wrapper
             img.logo(src='images/logo.png')
@@ -529,7 +539,7 @@ block content
                 img(src='images/chart-2.png')
                 p Token	Value
               p.desc
-                | The	Storecoin	token	value	increases	with	more	Storecoin	Wallets	deployed	and	more	and	app-level	transactions	on	the	Storecoin	blockchain.	
+                | The Storecoin token value could increase with more Storecoin Wallets deployed into the hands of users. Also, with more applevel transactions on its Storecoin blockchain.	
             img.arrow-flow(src='images/arrow-mobile.png')
           .four.columns
         .row.middle
@@ -561,9 +571,9 @@ block content
             .incentive
               .title
                 img(src='images/hammer.png')
-                p More Stakers
+                p More Validators
               p.desc
-                | The	more	users,	the	more transactions	on	the	Storecoin	blockchain,	thus	the	more	the	Storecoin	blockchain	will	need	to	be	staked
+                | The more users, the more transactions on the Storecoin blockchain, thus the more the Storecoin consensus will need to be validated. 
             img.arrow-flow(src='images/arrow-mobile.png')
         .row
           .four.columns
@@ -642,7 +652,7 @@ block content
                       li v1 Cryptoeconomics released
                       li Storecoin Test Network launched
                       li Core Blockchain Developers added
-                      li Vickrey Auction for Token Sales launches
+                      li Auction-based	Second	Token	Sale	launches
                       li Storecoin Alliance Network launched
           .year
             .name 2018
@@ -662,6 +672,7 @@ block content
                       li Storecoin v0.1 Developer API released
                       li Storecoin Roadmap Announced
                       li Open Source Development begins
+                      li Storecoin	Token	gets	issued	to	the	wallet	of	all	Token	Buyers
           .year
             .name 2019
             .items
@@ -681,64 +692,10 @@ block content
                       li Storecoin Alliance grows to 10+ partners
                       li Storecoin Foundation launched
     
-    #hc-sales-summary.hc-feature.over-rel.padding
-      .hc-chunk
-        h2.hc-feature-title.break Network Distribution
-        p.hc-feature-lead How	Storecoin	will	incentivize	all	sides	of	its	network,	over	time.
-        .network-stats
-          .row
-            .six.columns
-              h4 Intented use of revenue
-              img(src='images/chart.png', style='width: 100%;margin: 0 auto;display: block;')
-            .six.columns
-              .token-dist
-                h4 Token distrubution
-                p(style='margin-bottom:1em;') Long-term token distribution plan:
-                .row
-                  .three.columns
-                    #circle1.circle
-                  .nine.columns
-                    .subtext Sold	in tokensales
-                .row
-                  .three.columns
-                    #circle2.circle
-                  .nine.columns
-                    .subtext Allocated	to	founders,	core	developers,	and	team
-                .row
-                  .three.columns
-                    #circle3.circle
-                  .nine.columns
-                    .subtext
-                      | Allocated	for	distribution	to	incentivize	participation	in	the	Storecoin	ecosystem
-                .row
-                  .three.columns
-                    #circle4.circle
-                  .nine.columns
-                    .subtext
-                      | To	covers	tokensale costs
-                p.note
-                  | Founders have 
-                  b 4 year vesting
-                  |  with 3 month cliffs
-                p.note(style="margin-bottom:0px;")
-                  | Early contributors have 
-                  b 2 year vesting
-                  |  with 6 month cliffs
+    include network-distribution
     
     include about-first-ico
     
-    #hc-first-token.hc-feature.over-rel.padding
-      .hc-chunk
-        h2.hc-feature-title Use	of	First	Token	Sale	Proceeds
-        ul
-          li Publish	v0.1	of	the	Storecoin	Whitepaper
-          li Publish	v1	of	Storecoin	network	economics
-          li Conduct	extensive	load	tests	to	finalize	blockchain	scalability
-          li Conduct	extensive	security	tests	to	finalize	the	consensus	protocol
-          li Continue	building	our	Engineering,	Product,	and	Analyst	teams
-          li Introduce a market-based auction format for our Second Token Sale
-          li Write	smart	contracts	to	vest	the	tokens	of	Storecoin	founders,	core developers,	early	team,	and	key	distribution	partners
-          li Launch the Second Storecoin Token Sale in Late 2017
-          li Fully	align	Storecoin	governance	and	future	Token	Sales	with	the	guidance issued	by	the	SEC	in	July	2017
+    include first-token-proceeds
 
     include email-widget

@@ -17,6 +17,11 @@ router.get('/firsttokensale', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/cryptoeconomics', function(req, res, next) {
+  res.render('crypto-economics', { title: 'Storecoin' });
+});
+
+/* GET home page. */
 router.get('/about', function(req, res, next) {
   res.render('about', { title: 'Storecoin' });
 });
@@ -58,6 +63,11 @@ router.get('/press', function(req, res, next) {
 
 /* GET home page. */
 router.get('/roadmap', function(req, res, next) {
+  res.render('roadmap-temp', { title: 'Storecoin' });
+});
+
+/* GET home page. */
+router.get('/roadmap2', function(req, res, next) {
   res.render('roadmap', { title: 'Storecoin' });
 });
 

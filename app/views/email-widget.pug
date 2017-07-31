@@ -26,7 +26,7 @@
       p Before you begin, we recommend that you read 
         span  the latest SEC investor bulletin 
         |  about buying Blockchain Tokens or App Coins.
-      a.button.button-primary(href="/https://www.investor.gov/additional-resources/news-alerts/alerts-bulletins/investor-bulletin-initial-coin-offerings", target="_blank") Read
+      a.button.button-primary(href="https://www.investor.gov/additional-resources/news-alerts/alerts-bulletins/investor-bulletin-initial-coin-offerings", target="_blank") Read
       hr
       .button-group
         button.button-back.button-primary(data-step='step-1')
@@ -37,10 +37,10 @@
           i.ion-chevron-right
 
     .email-steps.step-2
-      p It’s important that you understand storecoin Tokens are not securities. They	are	an	access	token	to	future	services,	products,	and	decentralized	applications	powered	by	the	Storecoin	blockchain.
+      //- p It’s important that you understand storecoin Tokens are not securities. They	are	an	access	token	to	future	services,	products,	and	decentralized	applications	powered	by	the	Storecoin	blockchain.
       p Please read the following before learning about our First Token Sale: 	
       p 
-        b(style="color: #e97844;") #1 - 
+        b(style="color: #e97844; font-size:1.5em;") #1 
         |  As a potential Storecoin Token Buyer, I understand that the purpose of the storecoins is to facilitate the provision, utility, and receipt of certain apps and services within a future Storecoin Blockchain.
       hr
       .button-group(style="margin-bottom:1em;")
@@ -53,7 +53,7 @@
       
     .email-steps.step-2-1      
       p 
-        b(style="color: #e97844;") #2 - 
+        b(style="color: #e97844; font-size:1.5em;") #2 
         |  I	understand	that	my	purchase,	ownership,	receipt,	or	possession	of	Storecoin	Tokens	carry	no	rights,	express	or	implied,	other	than	the	right	to	use	Tokens	as	a	means	to	enable	usage	of	and	interaction	with Apps	and	Services	enabled	by	the	Storecoin	blockchain,	if	successfully	completed	and	deployed.	
       hr
       .button-group(style="margin-bottom:1em;")
@@ -66,7 +66,7 @@
             
     .email-steps.step-2-2
       p 
-        b(style="color: #e97844;") #3 - 
+        b(style="color: #e97844; font-size:1.5em;") #3 
         |  I	understand	and	accept	that	Tokens	do	not	represent	or	confer	any	ownership	right	or	stake,	share,	security,	or	equivalent	rights,	or	any	right	to	receive	future	revenue	shares,	intellectual	property	rights	or	any	other	form	of	participation	in	or	relating	to	a	Storecoin	blockchain,	Storecoin,	Inc,	and	its	corporate	affiliates,	other	than	any	rights	relating	to	the	provision	and	receipt	of	Services	in	the	Storecoin	blockchain	or	Storecoin app token.		
       hr
       .button-group(style="margin-bottom:1em;")
@@ -79,8 +79,8 @@
       
     .email-steps.step-2-3 
       p 
-        b(style="color: #e97844;") #4 -  
-        |  I	also	understand	the	Tokens	are	not	intended	to	be	a	digital	currency,	security,	commodity,	or	any	kind	of	financial	instrument.	
+        b(style="color: #e97844; font-size:1.5em;") #4  
+        |  I	also	understand	the	Tokens	are	not	intended	to	be	a	security,	commodity,	or	any	kind	of	financial	instrument.	
       hr
       .button-group
         button.button-back.button-primary(data-step='step-2-2')
@@ -124,8 +124,6 @@
             li Founders have 4 year vesting
             li Contributors have 2 year vesting         
         li 33% will be allocated for distribution to incentivize participation in the Storecoin ecosystem.
-      
-      p(style="margin-top:1em;") This includes developers who integrate Storecoin Wallets into their apps. Developers who build new Dapps with Storecoin. Also, hierarchy-based organizations who adopt storecoin as the prominent cryptocurrency for the future of its business processes. 
       hr
       .button-group
         button.button-back.button-primary(data-step='step-3')
@@ -138,7 +136,7 @@
     .email-steps.step-5
       p In our First Token Sale, 60 Million storecoins, or 6% of all storecoins total, will be sold to invited and approved buyers.
       p The price per token is $0.005. The Network Value is $5,000,000.
-      p This First Token Sale will give Storecoin, Inc. $300,000 to use for deep R&D.	
+      p The	First	Token	Sale	will	give	Storecoin	$300,000	to utilize	for	R&D	around	security,	scalability,	and	cryptoeconomics	for	its	blockchain.	
       hr
       .button-group
         button.button-back.button-primary(data-step='step-4')
@@ -352,11 +350,12 @@
       p At $0.005 per storecoin, how may storecoins do you want to purchase?
       .field
         input.u-full-width(type='text', name='num-of-storecoins', data-type="number", style="max-width: 120px;")
+        label(style="margin:4px;") storecoins
         input.u-full-width(type='text', name='storecoins-value', hidden, value="0")
       .field.radio-field(style="margin-bottom:1em;")
         .hc-radio-btn
         input(type='checkbox')
-        label Buy Minimum
+        label Buy the minimum
       p 
         b USD Value:
           span.computed  $0
@@ -484,7 +483,7 @@
         |  email	address.
       p Do	you	expect	to	have	this	email	for	the	next	3	years?
       .field
-        input.u-full-width(type='text', name='email', readonly, style="background: #c7dfb8; box-shadow: none; border: none; padding: 0px; color: #e97844;")
+        input.u-full-width(type='text', name='email', readonly, style="background: #c7dfb8; box-shadow: none; border: none; padding: 0px; color: #e97844; font-weight:bold;")
       .field.radio-field
         .hc-radio-btn
         input(type='radio', name="email-dec", value='Yes')
@@ -545,11 +544,12 @@
           | Next
           
     .email-steps.step-19        
-      p Thanks	for	expressing	interest	in	the	Storecoin	First	Token	Sale.	Our	team	will	review	your	application	in	the	next	24	hours.	
-      p Once	signed,	if	we	have	enough	room	available,	we’ll	email	you	private	Address	and	Payment	info	to	fund.
-      p Once you sign, if we have enough room in the First Token Sale available, we’ll e-mail you private Address and Payment information for you to fund your storecoin token purchase.
-      p You’ll then have 24 hours to pay for your tokens.
-      p Once the transaction is confirmed by our end, we’ll send you an executed copy of the Agreement.
+      p Thanks	for	expressing	interest	in	the	Storecoin	First	Token	Sale.	Our	team	will	review	your	application	over	the	next	24	hours.
+      p Once	approved,	if	we	have	enough	room	available, we’ll	email	you	the	First	Token	Sale	Terms	and	Agreement	for	e-signature.
+      p Once	you	e-sign,	we’ll	e-mail	you	our	private	Address	and	Payment	information	so	you	can	fund	your	token	purchase.
+      p You’ll	then	have	24	hours	to	pay	for	your	storecoins.
+      p Once	we	receive	your	payment,	we’ll	send	you	an	executed	copy	of	the	Token	Sale	Terms	and	Agreement	-- which	includes	a	receipt.
+      p Then,	we’ll	add	you	to	our	Token	Owner	mailing	list where	you’ll	be	the	first	to	learn	about	Storecoin	milestones	and	updates.
       hr
       .button-group
         button.button-submit.button-primary

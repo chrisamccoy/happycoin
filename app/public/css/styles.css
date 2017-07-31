@@ -849,7 +849,7 @@ and (max-width : 700px) {
 #hc-promo .sales-terms .points {
   background: rgb(93, 121, 76);
   border-radius: 10px;
-  min-height: 585px;
+  min-height: 513px;
   text-align: left;
   color: white;
 }
@@ -2319,6 +2319,10 @@ and (max-width : 700px) {
   font-size: 1.3em;
 }
 
+.hc-email .email-steps a.button {
+  background:#e97844; border-color:#e97844;
+}
+
 .hc-email .step-13 .computed {
   color : #E97847;
 }
@@ -3199,5 +3203,20 @@ and (max-width : 700px) {
   }
   #hc-matters .desktop {
     display: none;
+  }
+}
+
+#hc-tech-ethos p {
+  font-size: 1.5em;
+  /*margin-bottom: 1rem;*/
+}
+
+#hc-tech-ethos p span {
+  font-size: 1.4em;
+}
+
+@media only screen and (max-width: 700px) {
+  #hc-tech-ethos p {
+    font-size: 1em;
   }
 }
