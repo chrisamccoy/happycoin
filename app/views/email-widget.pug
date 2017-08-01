@@ -20,7 +20,7 @@
       .button-group
         button.button-next.button-primary(data-step='step-1-1')
           | Next
-          i.ion-chevron-right
+          i.ion-chevron-right(style="margin-left:5px;")
             
     .email-steps.step-1-1
       p Before you begin, we recommend that you read 
@@ -91,7 +91,7 @@
           i.ion-chevron-right
             
     .email-steps.step-2-4      
-      h4 Alright,	now	onto	information	about	Storecoin	and	our	First	Token	Sale!	
+      h1 Alright,	now	onto	information	about	Storecoin	and	our	First	Token	Sale!	
       hr
       .button-group
         button.button-back.button-primary(data-step='step-2-3')
@@ -203,6 +203,9 @@
           i.ion-chevron-left
           | Back
         button.button-next.button-primary(disabled='', data-step='step-10-1')
+          | Next
+          i.ion-chevron-right
+        button.button-end.button-primary(disabled='', style='display:none;')
           | Next
           i.ion-chevron-right
             
@@ -546,13 +549,12 @@
     .email-steps.step-19        
       p Thanks	for	expressing	interest	in	the	Storecoin	First	Token	Sale.	Our	team	will	review	your	application	over	the	next	24	hours.
       p Once	approved,	if	we	have	enough	room	available, we’ll	email	you	the	First	Token	Sale	Terms	and	Agreement	for	e-signature.
-      p Once	you	e-sign,	we’ll	e-mail	you	our	private	Address	and	Payment	information	so	you	can	fund	your	token	purchase.
+      p Once	you	e-sign,	we’ll	e-mail	private	Address	and	Payment	information	so	you	can	fund	your	token	purchase.
       p You’ll	then	have	24	hours	to	pay	for	your	storecoins.
       p Once	we	receive	your	payment,	we’ll	send	you	an	executed	copy	of	the	Token	Sale	Terms	and	Agreement	-- which	includes	a	receipt.
-      p Then,	we’ll	add	you	to	our	Token	Owner	mailing	list where	you’ll	be	the	first	to	learn	about	Storecoin	milestones	and	updates.
       hr
       .button-group
-        button.button-submit.button-primary
+        button.button-end.button-primary.orange
           | Done
               
     

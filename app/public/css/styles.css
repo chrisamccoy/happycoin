@@ -107,7 +107,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .hc-feature {
   padding-top: 5em;
-  padding-bottom: 5.5em;
+  padding-bottom: 5em;
 }
 
 
@@ -1870,7 +1870,8 @@ and (max-width : 700px) {
     margin-bottom: 3em;
   }
   #hc-problem-slider .slide {
-    height: 183px;
+    /*height: 183px;*/
+    padding: 0.5em 0px;
   }
   /*#hc-problem-slider .slide img {
     width: 100%;
@@ -2406,11 +2407,21 @@ and (max-width : 700px) {
   border: rgb(233, 120, 68);
 }
 
-.hc-email .email-steps .button-group .button-primary.button-next i {
+.hc-email .email-steps .button-group .button-primary.button-submit:hover {
+  background: rgba(178, 83, 36, 1);
+  border: rgba(178, 83, 36, 1);
+}
+
+.hc-email .email-steps .button-group .button-primary.orange {
+  background: rgb(233, 120, 68);
+  border: rgb(233, 120, 68);
+}
+
+.hc-email .email-steps .button-group .button-primary:not(:first-child) i {
   margin-left: 5px;
 }
 
-.hc-email .email-steps .button-group .button-primary.button-next {
+.hc-email .email-steps .button-group .button-primary:not(:first-child) {
   margin-left: 5px;
 }
 

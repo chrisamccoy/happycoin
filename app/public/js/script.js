@@ -431,9 +431,10 @@ function emailSubscribe() {
     var step101 = $thisEmailStep.hasClass('step-10-1');
     var step102 = $thisEmailStep.hasClass('step-10-2');
     var step17 = $thisEmailStep.hasClass('step-17');
+    var step10 = $thisEmailStep.hasClass('step-10');
     // console.log(step101, step102);
 
-    $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
+    $thisEmailStep.find('.button-primary').removeAttr('disabled');
 
     if (step101 || step102) {
       if(step101) {
@@ -462,12 +463,15 @@ function emailSubscribe() {
         $next171.show();
         $next18.hide();
       }
-    } else {
-      if ($(this).val() == 'No') {
-        $thisEmailStep.find('.button-primary.button-next').attr('disabled', '');
+    } else if (step10) {
+      if ($(this).val() == 'Yes') {
+        $thisEmailStep.find('.button-primary.button-next').show();
+        $thisEmailStep.find('.button-primary.button-end').hide();
+      } else if ($(this).val() == 'No') {
+        $thisEmailStep.find('.button-primary.button-next').hide();
+        $thisEmailStep.find('.button-primary.button-end').show();
       }
     }
-
   });
 
   $emailSteps.find('input[type="email"]').keyup(function(){
@@ -531,7 +535,7 @@ function emailSubscribe() {
 
     if(isStep15) {
       if(isChecked) {
-        console.log($(this).val());
+        // console.log($(this).val());
         $thisStep.find('.button-next').removeAttr('disabled');
       } else {
         $thisStep.find('.button-next').attr('disabled', '');
@@ -541,12 +545,12 @@ function emailSubscribe() {
     if(isStep13) {
       var input = $thisStep.find('input[name="num-of-storecoins"]');
       if(isChecked) {
-        console.log('is checked');
+        // console.log('is checked');
         input.val(500000);
         input.trigger('keyup');
         input.trigger('change');
       } else {
-        console.log('is not checked');
+        // console.log('is not checked');
         input.val('');
         input.trigger('keyup');
         input.trigger('change');
@@ -645,11 +649,17 @@ function emailSubscribe() {
     }
   });
 
-  $('.hc-email .email-steps.step-19 .button-group .button-submit').click(function(){
-    $(this).parents('.hc-email').hide();
+  $('.hc-email .email-steps .button-group .button-end').click(function(){
+    var $thisEmailSect = $(this).parents('.hc-email');
+    var $next = $thisEmailSect.next();
+    $thisEmailSect.hide();
+
+    setTimeout(function(){
+      $(window).scrollTop($next.offset().top - 66);
+    }, 300);
   });
 
-  $emailSteps.find('.button-group .button-primary:not(.button-submit)').click(function(){
+  $emailSteps.find('.button-group .button-primary:not(.button-end)').click(function(){
     var $thisEmailSect = $(this).parents('.hc-email'),
         $thisForm = $thisEmailSect.find('.form');
 
