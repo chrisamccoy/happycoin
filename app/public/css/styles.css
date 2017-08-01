@@ -1811,7 +1811,8 @@ and (max-width : 700px) {
 }
 
 #hc-problem-slider .slide img {
-  width: 100%;
+  width: auto;
+  max-height: 500px;
 }
 
 #hc-problem-slider .slide {
@@ -1859,6 +1860,11 @@ and (max-width : 700px) {
 
   #hc-why-token .swipe-text {
     font-size: 1em;
+  }
+
+  #hc-problem-slider .slide img {
+    width: 100%;
+    /*max-height: 500px;*/
   }
 
 
