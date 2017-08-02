@@ -17,6 +17,11 @@ router.get('/firsttokensale', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/blog', function(req, res, next) {
+  res.render('blog', { title: 'Storecoin' });
+});
+
+/* GET home page. */
 router.get('/cryptoeconomics', function(req, res, next) {
   res.render('crypto-economics', { title: 'Storecoin' });
 });
