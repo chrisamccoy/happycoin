@@ -1786,9 +1786,14 @@ and (max-width : 700px) {
 }
 
 #hc-why-token .phase .columns img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+#hc-why-token .phase .columns img.adjusted {
   width: auto;
   max-height: 400px;
-  border-radius: 10px;
 }
 
 /*#hc-why-token .points .columns h6 {
@@ -1851,6 +1856,10 @@ and (max-width : 700px) {
 
 
 @media only screen and (max-width: 700px) {
+  #hc-why-token .phase .columns img.adjusted {
+    width: 100%;
+  }
+
   #hc-why-token .phase .twelve.columns {
     width: 100%;
   }
