@@ -3290,11 +3290,17 @@ and (max-width : 700px) {
 }
 
 #hc-medium-blog .card .post p {
-  font-size: 1.3em;
+  font-size: 1.1em;
   margin-bottom: 0.5em;
   color: #5b6a72;
 }
 
-#hc-medium-blog .card .post h2 {
+#hc-medium-blog .card .post h3 {
   margin-bottom: 0.2em;
+}
+
+@media only screen and (max-width: 700px) {
+  #hc-medium-blog .card .post img {
+    width: 100%;
+  }
 }
