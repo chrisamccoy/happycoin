@@ -8,19 +8,22 @@ block content
 
     #hc-medium-blog.hc-feature.over-rel.padding
       .hc-chunk
-        h2.hc-feature-title Latest
+        h2.hc-feature-title The Storecoin Blog
         div.card
-          a(href="https://medium.com/@team_27494", target="_blank")
-            div.writer
-              img(src="images/storecoin-team.png")
-              div.info
-                p.name Storecoin team
-                p.date Aug 1
+          a(href="https://medium.com/@team_27494/introducing-storecoin-8e15c21b4335", target="_blank")
+            //- div.writer
+            //-   img(src="images/storecoin-team.png")
+            //-   div.info
+            //-     p.name Storecoin team
+            //-     p.date Aug 1
             div.post
               h3 Introducing Storecoin
               p Hello world, it’s August 1st and we’re ready to innovate.
               p Learn more at 
-                a http://storeco.in.
+                span(style="text-decoration:underline;") http://storeco.in.
               img(src="images/storecoin-screen.png")
+            hr(style="margin-top: 1rem; margin-bottom: 1.5rem;")
+            p(style="text-align:right;") Date: 
+              span(style="color: #9b9b9b;") Aug 2
 
     include email-widget

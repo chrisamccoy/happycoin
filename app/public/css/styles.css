@@ -3261,9 +3261,10 @@ and (max-width : 700px) {
 
 #hc-medium-blog .card a {
   text-decoration: none;
+  display: block;
 }
 
-#hc-medium-blog .card .writer {
+/*#hc-medium-blog .card .writer {
   display: flex;
   flex-direction: row;
   margin-bottom: 1em;
@@ -3287,7 +3288,7 @@ and (max-width : 700px) {
 #hc-medium-blog .card .writer .info .date {
   font-size: 0.9em;
   color: #9b9b9b;
-}
+}*/
 
 #hc-medium-blog .card .post p {
   font-size: 1.1em;
