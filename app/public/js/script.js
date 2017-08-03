@@ -613,6 +613,7 @@ function emailSubscribe() {
         item.value = 'None';
       }
     });
+    // email request
     $.ajax({
       type : 'POST',
       // url : 'https://hooks.zapier.com/hooks/catch/2399325/5iwky6/',
@@ -623,6 +624,16 @@ function emailSubscribe() {
       // console.log(result);
       $thisEmailSect.find('.email-steps').hide();
       $thisEmailSect.find('.email-steps.step-19').show();
+    });
+
+    // mail chimp
+    $.ajax({
+      type : 'POST',
+      // url : 'https://hooks.zapier.com/hooks/catch/2399325/5iwky6/',
+      url : 'https://hooks.zapier.com/hooks/catch/2306819/5cywvl/',
+      data : formArray
+    }).done(function(result){
+      console.log('success');
     });
   });
 
