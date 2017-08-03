@@ -613,16 +613,28 @@ function emailSubscribe() {
         item.value = 'None';
       }
     });
+
+    $thisEmailSect.find('.email-steps').hide();
+    $thisEmailSect.find('.email-steps.step-19').show();
+
+    // email request
     $.ajax({
       type : 'POST',
       // url : 'https://hooks.zapier.com/hooks/catch/2399325/5iwky6/',
       url : 'https://hooks.zapier.com/hooks/catch/2306819/5ua8pj/',
       data : formArray
     }).done(function(result){
-      // console.log(formArray);
-      // console.log(result);
-      $thisEmailSect.find('.email-steps').hide();
-      $thisEmailSect.find('.email-steps.step-19').show();
+      console.log('success')
+    });
+
+    // mail chimp
+    $.ajax({
+      type : 'POST',
+      // url : 'https://hooks.zapier.com/hooks/catch/2399325/5iwky6/',
+      url : 'https://hooks.zapier.com/hooks/catch/2306819/5cywvl/',
+      data : formArray
+    }).done(function(result){
+      console.log('success');
     });
   });
 
@@ -635,8 +647,8 @@ function emailSubscribe() {
       $thisEmailSect.find('.email-steps.step-17 input[type="text"]').val(emailVal);
       $.ajax({
         type : 'GET',
-        // url : 'https://hooks.zapier.com/hooks/catch/2306819/5bmzth/',
-        url : 'https://market.capitalstake.com',
+        url : 'https://hooks.zapier.com/hooks/catch/2306819/5bmzth/',
+        // url : 'https://market.capitalstake.com',
         data : $thisForm.serialize()
       }).done(function(result){
         // console.log(result);
