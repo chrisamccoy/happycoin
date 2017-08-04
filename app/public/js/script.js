@@ -356,7 +356,7 @@ function toggleAppsDesc() {
 }
 
 function toggleIncentive () {
-  var $network = $('#hc-network-effects'),
+  var $network = $('#network-effects'),
       $incentive = $network.find('.incentive');
 
   $incentive.click(function () {

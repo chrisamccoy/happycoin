@@ -1181,20 +1181,17 @@ and (max-width : 700px) {
 }
 
 #project-schedule .timeline .year .items .item .box .content li {
+  display: flex;
   font-size: 1.1em;
-  margin-left: 1.6em;
-  list-style: disc;
+  /*margin-left: 1.6em;*/
+  list-style: none;
   margin-bottom: 1.5em;
 }
 
-#project-schedule .timeline .year .items .item .box .content li.success {
-  list-style: none;
-  margin-left: 0.5em;
-}
-
-#project-schedule .timeline .year .items .item .box .content li.success:before {
-  content: '✓ ';
-  color : green;
+#project-schedule .timeline .year .items .item .box .content li i {
+  font-size: 1.5em;
+  color:green;
+  margin-right: 0.5em;
 }
 
 @media only screen and (max-width: 700px) {
@@ -2282,9 +2279,11 @@ and (max-width : 700px) {
   padding-bottom: 1em;
 }
 
-.hc-email-text {
-  background: #e97844;color: white; text-align: center;
-}
+/*.hc-email-text {
+  font-size: 1.8em;
+  background: #5d794c;color: white; text-align: center;
+  border-bottom: 1px solid #c7dfb8;
+}*/
 
 .email-widget {
   text-align: center;
@@ -2544,9 +2543,9 @@ and (max-width : 700px) {
     font-size: 1em;
   }
 
-  .hc-email-text {
+  /*.hc-email-text {
     font-size: 0.5em;
-  }
+  }*/
 
   .hc-email .success-message .copy-link .eight.columns {
     width: 50%;
