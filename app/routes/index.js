@@ -62,6 +62,11 @@ router.get('/faq', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/jointeam', function(req, res, next) {
+  res.render('join-team', { title: 'Storecoin' });
+});
+
+/* GET home page. */
 router.get('/jobs', function(req, res, next) {
   res.render('jobs', { title: 'Storecoin' });
 });
