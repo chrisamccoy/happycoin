@@ -1200,7 +1200,7 @@ and (max-width : 700px) {
   margin-right: 1.9em;
 }
 
-#project-schedule .timeline .year .items .inverted.item .box .content li i.ion-record {
+#project-schedule .timeline .year .items .inverted.item .box .content li i {
   color:green;
 }
 
