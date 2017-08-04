@@ -1196,8 +1196,8 @@ and (max-width : 700px) {
 
 #project-schedule .timeline .year .items .item .box .content li i.ion-record {
   color:black;
-  font-size: 1em;
-  /*margin-right: 1.1em;*/
+  font-size: 0.5em;
+  margin-right: 1.9em;
 }
 
 #project-schedule .timeline .year .items .inverted.item .box .content li i.ion-record {
