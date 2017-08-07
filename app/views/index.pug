@@ -192,6 +192,17 @@ block content
                   p Version 1 of Storecoin will use Tendermint, a new consensus protocol for ordering events in a distributed network under adversarial conditions.
                   p Tendermint is high performance, achieving thousands of transactions per second on dozens of nodes distributed around the globe, with latencies of about one second, and performance degrading moderately in the face of adversarial attacks.
                   p Storecoin may shift to a Proof of Stake consensus in future versions.
+                  
+          .four.columns(data-featherlight='#box-transactions')
+            .tech-lead
+              img(src='/images/transaction-money-bag.png')
+              h6 Free Transactions
+            #box-transactions(style='display:none;')
+              .points-lightbox
+                img(src='/images/transaction-money-bag.png')
+                div
+                  p To achieve free transactions for senders and receivers, each transaction will generate some inflation which will be distributed to the participants of the consensus. The total new token inflation will be lower than 5% each year and it will be directly linked to blockchain transaction and operation costs. 
+                  p We are testing securing the consensus to prevent network flooding now. 
 
           .four.columns(data-featherlight='#box-privacy')
             .tech-lead
@@ -203,6 +214,7 @@ block content
                 div
                   p For privacy, we’re experimenting with new cryptography inside smart contracts. Transactions on the public network, outside of smart contracts, will always be public.
 
+        .row.points.ext
           .four.columns(data-featherlight='#box-hiearchy')
             .tech-lead
               img(src='/images/parent-child.png')
@@ -212,19 +224,7 @@ block content
                 img(src='/images/parent-child.png')
                 div
                   p To achieve unlimited nodes of hierarchy in smart contracts, we’re using a new database design for smart contracts and a new UX for their creation and deployment.
-
-        .row.points.ext
-          .four.columns(data-featherlight='#box-transactions')
-            .tech-lead
-              img(src='/images/transaction-money-bag.png')
-              h6 Free Transactions
-            #box-transactions(style='display:none;')
-              .points-lightbox
-                img(src='/images/transaction-money-bag.png')
-                div
-                  p To achieve free transactions for senders and receivers, each transaction will generate some inflation which will be distributed to the participants of the consensus. The total new token inflation will be lower than 5% each year and it will be directly linked to blockchain transaction and operation costs. 
-                  p We are testing securing the consensus to prevent network flooding now. 
-                
+                  
           .four.columns(data-featherlight='#box-channels')
             .tech-lead
               img(src='/images/shield.png')
@@ -572,6 +572,11 @@ block content
                 | The	more	valuable	staking	becomes,	the	more	demand	there	will	be	to	buy	storecoins
           .four.columns
             
+    .hc-feature.over-rel.padding(style="padding-left: 0px; padding-right:0px;")
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title.inverted(style=" margin:0px !important; color:#5d794c;") 
+          a(href="/applytoforge") Apply to be a Founding Validator for Storecoin
+            
     #project-schedule.hc-feature.lite.over-rel.padding
       h3.hc-feature-title.break Storecoin Project Schedule
       p.hc-feature-lead(style='max-width: 1140px;')
@@ -629,7 +634,7 @@ block content
                     ul
                       li
                         i.ion-checkmark
-                        |  Storecoin Test Network is launched
+                        |  Viable testing network set-up
                       li
                         i.ion-checkmark
                         |  Storecoin Green Paper is released
@@ -659,6 +664,9 @@ block content
                     | Second Token Sale (4% sale)
                   .content
                     ul
+                      li
+                        i.ion-checkmark
+                        |  Storecoin Test Network is launched
                       li 
                         i.ion-record
                         |  v0.1 Storecoin Whitepaper released
