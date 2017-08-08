@@ -111,4 +111,9 @@ router.get('/terms', function(req, res, next) {
   res.render('terms', { title: 'Storecoin' });
 });
 
+/* GET home page. */
+router.get('/tokengrant', function(req, res, next) {
+  res.render('token-grant', { title: 'Storecoin' });
+});
+
 module.exports = router;
