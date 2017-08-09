@@ -14,42 +14,13 @@ block content
     - var top = true  
     include email-widget
     
-    #countdown.hc-feature.over-rel.padding.inverted
-      .hc-chunk
-        h3.hc-feature-title First	Token	Sale	ends	in
-        
-        div.row.cp-countdown            
-          div.three.columns
-            div.time-circles#circle-days
-            div.time-heads
-              h3 DAYS
-              
-          div.three.columns
-            div.time-circles#circle-hours
-            div.time-heads
-              h3 HOURS
-              
-          div.three.columns
-            div.time-circles#circle-minutes
-            div.time-heads
-              h3 MINUTES 
-              
-          div.three.columns
-            div.time-circles#circle-seconds    
-            div.time-heads    
-              h3 SECONDS
-        p.hc-feature-lead 
-          b Price	per	token:
-          | 	$0.005
-        p.hc-feature-lead(style="margin-bottom:0px;") 
-          b To	be	sold:
-          | 	6%	of	all	storecoins	or	$300,000	
+    include countdown
 
     .hc-feature.over-rel.padding(style="padding-left: 0px; padding-right:0px;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted(style=" margin:0px !important; color:#5d794c;") Here is our Green Paper
     
-    .hc-feature.over-rel.padding.inverted
+    .hc-feature.over-rel.padding.inverted.orange
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted What We Believe
         p.hc-feature-lead(style="margin-bottom:0px;") Franchises,	chain	stores,	sports	leagues,	and affiliate-based	organizations	— industries governed	by	hierarchy,	by	privacy,	by complex	revenue	sharing,	and	by commissions	— will	all eventually	be tokenized	and blockchain-powered.

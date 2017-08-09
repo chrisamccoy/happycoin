@@ -952,8 +952,8 @@ function generateCountdownCircle (element, cap) {
       text: {
         autoStyleContainer: false
       },
-      from: { color: '#fff', width: 2 },
-      to: { color: '#fff', width: 4 },
+      from: { color: '#e97844', width: 2 },
+      to: { color: '#e97844', width: 4 },
       // Set default step function for all animate calls
       step: function(state, circle) {
         circle.path.setAttribute('stroke', state.color);
@@ -990,7 +990,7 @@ function renderCountCircles () {
 
 function initTimer () {
   // Set the date we're counting down to
-  var countDownDate = new Date("Sep 23, 2017 00:00:00").getTime();
+  var countDownDate = new Date("Sep 9, 2017 00:00:00").getTime();
 
   // getting all circle ProgressBar
   var circles = renderCountCircles();
