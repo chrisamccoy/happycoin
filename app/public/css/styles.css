@@ -2095,6 +2095,11 @@ and (max-width : 700px) {
   text-align: center;
 }
 
+#network-effects .hc-feature-lead:last-child {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
 #network-effects .incentives {
   max-width: 900px;
   margin: auto;
@@ -2209,6 +2214,11 @@ and (max-width : 700px) {
 }
 
 @media only screen and (max-width: 700px) {
+  #network-effects .hc-feature-lead:last-child {
+    margin-bottom: 0px;
+    margin-top: 2em;
+  }
+
   #network-effects .incentives.mobile {
     display: block;
   }
@@ -3320,5 +3330,32 @@ and (max-width : 700px) {
 @media only screen and (max-width: 700px) {
   #hc-medium-blog .card .post img {
     width: 100%;
+  }
+}
+
+#countdown .time-circles {
+  position: relative;
+}
+
+#countdown .time-heads {
+  text-align: center;
+}
+
+#countdown .time-heads h3 {
+  margin-top: 1em;
+  margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 700px) {
+  #countdown .three.columns {
+    width: 50%;
+    margin-bottom: 0.2em;
+    padding: 0.5em;
+  }
+
+  #countdown .time-heads h3 {
+    margin-top: 0.5em;
+    /* margin-bottom: 0px; */
+    font-size: 1.5em;
   }
 }
