@@ -943,7 +943,7 @@ function generateCountdownCircle (element, cap) {
 
   if (element) {
     var bar = new ProgressBar.Circle(element, {
-      color: '#fff',
+      color: '#5D795D',
       // This has to be the same size as the maximum width to
       // prevent clipping
       strokeWidth: 4,
@@ -952,6 +952,7 @@ function generateCountdownCircle (element, cap) {
       text: {
         autoStyleContainer: false
       },
+      fill: '#fff',
       from: { color: '#e97844', width: 2 },
       to: { color: '#e97844', width: 4 },
       // Set default step function for all animate calls
