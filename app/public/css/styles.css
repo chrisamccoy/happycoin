@@ -110,6 +110,23 @@ input[type=number]::-webkit-outer-spin-button {
   padding-bottom: 5em;
 }
 
+.hc-feature .button-container {
+  margin:1em 0px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.hc-feature .button-container .button, .hc-feature .button-container a {
+  margin: auto;
+  display: flex;
+  font-size: 1.5em;
+  color:#e97844 !important;
+}
+
+.hc-feature .button-container .button i,
+.hc-feature .button-container a i {
+  margin-left: 0.5em;
+}
 
 .hc-feature .hc-feature-lead.swipe-text {
   font-size: 1.5em;
@@ -788,35 +805,35 @@ and (max-width : 700px) {
 }
 
 /* #hc-timer  */
-#first-token-sale {
+#about-token-sale {
 }
 
-#first-token-sale .wrapper {
+#about-token-sale .wrapper {
   padding: 1em 0;
 }
 
-#first-token-sale .container > .columns {
+#about-token-sale .container > .columns {
   text-align: center;
 }
 
-#first-token-sale .desc {
+#about-token-sale .desc {
   margin: 0 auto 30px;
   font-size: 17px;
   text-align: center;
 }
 
-#first-token-sale .features {
+#about-token-sale .features {
   max-width: 800px;
   display: flex;
   margin: 0 auto;
 }
 
-#first-token-sale .features > div {
+#about-token-sale .features > div {
   flex-grow: 1;
   width: 33.33333333%;
 }
 
-#first-token-sale .features .item {
+#about-token-sale .features .item {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -829,24 +846,24 @@ and (max-width : 700px) {
     text-align: center;
 }
 
-#first-token-sale .features .item h4 {
+#about-token-sale .features .item h4 {
   font-size: 1.2em;
   color: #527141;
   margin: 0.5em;
 }
 
-#first-token-sale .sales-terms ul {
+#about-token-sale .sales-terms ul {
   font-size: 1.1em;
   margin-left: 1.2em;
   margin-bottom: 0px;
   list-style: disc;
 }
 
-#first-token-sale .sales-terms ul li {
+#about-token-sale .sales-terms ul li {
   margin-bottom: 0.7em;
 }
 
-#first-token-sale .sales-terms .points {
+#about-token-sale .sales-terms .points {
   background: rgb(93, 121, 76);
   border-radius: 10px;
   min-height: 513px;
@@ -854,22 +871,22 @@ and (max-width : 700px) {
   color: white;
 }
 
-#first-token-sale.inverted .sales-terms .points {
+#about-token-sale.inverted .sales-terms .points {
   background: white;
   color:rgb(93, 121, 76);
 }
 
 
-#first-token-sale .sales-terms .points > div {
+#about-token-sale .sales-terms .points > div {
   padding: 0.5em;
 }
 
-#first-token-sale .sales-terms .points h5 {
+#about-token-sale .sales-terms .points h5 {
   text-align: center;
   font-weight : bold;
 }
 
-#first-token-sale.inverted .sales-terms .points h5 {
+#about-token-sale.inverted .sales-terms .points h5 {
   color:rgb(93, 121, 76);
 }
 
@@ -1219,7 +1236,7 @@ and (max-width : 700px) {
     margin : 2em 0px 1em;
   }
 
-  #first-token-sale .sales-terms ul {
+  #about-token-sale .sales-terms ul {
     font-size: 1em;
   }
 
@@ -1242,26 +1259,26 @@ and (max-width : 700px) {
     font-size: 1em;
   }
 
-  #first-token-sale .features {
+  #about-token-sale .features {
     flex-direction: column;
   }
 
-  #first-token-sale .features > div {
+  #about-token-sale .features > div {
     width: 100%;
     padding-bottom: 1em;
   }
 
-  #first-token-sale button {
+  #about-token-sale button {
     width: 100%;
     font-size: 1.3em;
     padding: 0.3em 0;
   }
 
-  #first-token-sale .promo-2 .title {
+  #about-token-sale .promo-2 .title {
     margin-top: 1.4em;
   }
 
-  #first-token-sale .desc {
+  #about-token-sale .desc {
     font-size: 1.2em;
     margin: 0.8em 0.5em;
   }
@@ -3081,12 +3098,12 @@ and (max-width : 700px) {
     font-size: 1.2em;
   }
 
-  #first-token-sale .sales-terms .points {
+  #about-token-sale .sales-terms .points {
     margin: 1em 0px;
     min-height: auto;
   }
 
-  #first-token-sale .sales-terms .points:last-child {
+  #about-token-sale .sales-terms .points:last-child {
     margin-bottom: 0px;
   }
 
@@ -3096,7 +3113,7 @@ and (max-width : 700px) {
     margin: 1em 0 0;
   }
 
-  #first-token-sale .sales-terms .points h5 {
+  #about-token-sale .sales-terms .points h5 {
     font-size: 1.7em;
   }
 
@@ -3228,21 +3245,6 @@ and (max-width : 700px) {
   }
 }
 
-#hc-current-status .button-container {
-  display: flex;
-  align-items: center;
-}
-
-#hc-current-status .button-container .button {
-  margin: auto;
-  display: flex;
-}
-
-#hc-current-status .button-container .button i {
-  margin-left: 0.5em;
-  font-size: 1.5em;
-}
-
 #hc-current-status .text-group {
   display: none;
 }
@@ -3333,29 +3335,96 @@ and (max-width : 700px) {
   }
 }
 
-#countdown .time-circles {
+#countdown .cp-countdown {
+  display: flex;
+}
+
+#countdown .cp-countdown .circle {
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#countdown .cp-countdown .days.circle {
+  flex-basis: 0;
+  flex-grow: 3;
+}
+
+#countdown .cp-countdown .hours.circle {
+  flex-basis: 0;
+  flex-grow: 2.6;
+}
+
+#countdown .cp-countdown .minutes.circle {
+  flex-basis: 0;
+  flex-grow: 2.3;
+}
+
+#countdown .cp-countdown .seconds.circle {
+  flex-basis: 0;
+  flex-grow: 2;
+}
+
+#countdown .cp-countdown .time-circles {
   position: relative;
 }
 
-#countdown .time-heads {
+#countdown .cp-countdown .time-heads {
   text-align: center;
 }
 
-#countdown .time-heads h3 {
+#countdown .cp-countdown .time-heads h3 {
   margin-top: 1em;
   margin-bottom: 0px;
 }
 
+#countdown .cp-countdown .reveal-text a {
+  text-decoration: underline;
+  color: #e97844 !important;
+}
+
+#countdown .reveal-text {
+  display: none;
+}
+
 @media only screen and (max-width: 700px) {
-  #countdown .three.columns {
-    width: 50%;
-    margin-bottom: 0.2em;
-    padding: 0.5em;
+  #countdown .cp-countdown {
+    display: block;
   }
 
-  #countdown .time-heads h3 {
+  #countdown .cp-countdown .circle {
+    padding: 0.2em;
+  }
+
+  #countdown .cp-countdown .days.circle {
+    padding: 0px 2em;
+    width: calc(100% - 4em);
+    margin-bottom: 1em;
+  }
+
+  #countdown .cp-countdown .hours.circle,
+  #countdown .cp-countdown .minutes.circle,
+  #countdown .cp-countdown .seconds.circle {
+    display: inline-block;
+    width: calc(33.33% - 0.4em);
+  }
+
+  #countdown .cp-countdown .time-heads h3 {
     margin-top: 0.5em;
     /* margin-bottom: 0px; */
     font-size: 1.5em;
+  }
+
+  #countdown .cp-countdown .hours.circle .time-heads h3,
+  #countdown .cp-countdown .minutes.circle .time-heads h3,
+  #countdown .cp-countdown .seconds.circle .time-heads h3 {
+    font-size: 1em;
+  }
+
+  #countdown .cp-countdown .hours.circle .progressbar-text,
+  #countdown .cp-countdown .minutes.circle .progressbar-text,
+  #countdown .cp-countdown .seconds.circle .progressbar-text {
+    font-size: 3rem !important;
   }
 }

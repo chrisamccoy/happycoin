@@ -36,6 +36,7 @@ $(document).ready(function(){
   initProblemSlider();
   toggleStatusText();
   initTimer();
+  hasUrl();
 });
 
 
@@ -919,13 +920,14 @@ function renderRadio () {
 }
 
 function toggleStatusText(){
-  $status = $('#hc-current-status');
-  $button = $status.find('.button');
-  $textGroup = $status.find('.text-group');
+  $buttonContainer = $('.hc-feature .button-container');
+  $revealButton = $buttonContainer.find('.reveal-button');
 
-  $button.click(function(){
+  $revealButton.click(function(){
+    // $(window).scrollTop($(this).offset().top - 80);
     $(this).find('i').toggleClass('ion-chevron-up ion-chevron-down');
-    $textGroup.toggle();
+    var $textReveal = $(this).parents('.hc-feature').find('.reveal-text');
+    $textReveal.toggle();
   });
 }
 
@@ -1041,5 +1043,13 @@ function initTimer () {
         circles.seconds.animate(secondsDist);
       }
     }, 1000);
+  }
+}
+
+function hasUrl () {
+  // console.log(window.location.hash);
+  var hash = window.location.hash;
+  if (hash == '#first-token-sale') {
+    $(window).scrollTop($('#first-token-sale').offset().top - 66);
   }
 }
