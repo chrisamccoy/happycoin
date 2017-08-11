@@ -111,7 +111,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .hc-feature .button-container {
-  margin:1em 0px 0px;
+  margin:2em 0px 0px;
   display: flex;
   align-items: center;
 }
@@ -3339,6 +3339,10 @@ and (max-width : 700px) {
   }
 }
 
+.countdown {
+  padding-bottom: 3em;
+}
+
 .countdown .cp-countdown {
   display: flex;
 }
@@ -3396,6 +3400,10 @@ and (max-width : 700px) {
   /*.countdown .cp-countdown {
     display: block;
   }*/
+
+  .countdown {
+    padding-bottom: 2em;
+  }
 
   .countdown .cp-countdown .circle {
     padding: 0.2em;

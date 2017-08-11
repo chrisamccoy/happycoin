@@ -998,7 +998,7 @@ function renderCountCircles () {
 
 function initTimer () {
   // Set the date we're counting down to
-  var countDownDate = new Date("Sep 11, 2017 00:00:00").getTime();
+  var countDownDate = new Date("Sep 14, 2017 00:00:00").getTime();
 
   // getting all circle ProgressBar
   var circles = renderCountCircles();
