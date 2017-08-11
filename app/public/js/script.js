@@ -941,40 +941,45 @@ function limit(element)
 }
 
 function generateCountdownCircle (element, cap) {
-  element = document.getElementById(element);
+  elements = document.getElementsByClassName(element);
+  var bars = [];
 
-  if (element) {
-    var bar = new ProgressBar.Circle(element, {
-      color: '#5D795D',
-      // This has to be the same size as the maximum width to
-      // prevent clipping
-      strokeWidth: 4,
-      trailWidth: 1,
-      easing: 'easeInOut',
-      text: {
-        autoStyleContainer: false
-      },
-      fill: '#fff',
-      from: { color: '#e97844', width: 2 },
-      to: { color: '#e97844', width: 4 },
-      // Set default step function for all animate calls
-      step: function(state, circle) {
-        circle.path.setAttribute('stroke', state.color);
-        circle.path.setAttribute('stroke-width', state.width);
+  if (elements) {
+    for(var i = 0; i < elements.length; i++) {
+      // console.log(elements[i]);
+      var bar = new ProgressBar.Circle(elements[i], {
+        color: '#5D795D',
+        // This has to be the same size as the maximum width to
+        // prevent clipping
+        strokeWidth: 4,
+        trailWidth: 1,
+        easing: 'easeInOut',
+        text: {
+          autoStyleContainer: false
+        },
+        fill: '#fff',
+        from: { color: '#e97844', width: 2 },
+        to: { color: '#e97844', width: 4 },
+        // Set default step function for all animate calls
+        step: function(state, circle) {
+          circle.path.setAttribute('stroke', state.color);
+          circle.path.setAttribute('stroke-width', state.width);
 
-        var value = Math.round(circle.value() * cap);
-        if (value === 0) {
-          circle.setText('0');
-        } else {
-          circle.setText(value);
+          var value = Math.round(circle.value() * cap);
+          if (value === 0) {
+            circle.setText('0');
+          } else {
+            circle.setText(value);
+          }
+
         }
+      });
 
-      }
-    });
+      bar.text.style.fontSize = '5rem';
+      bars.push(bar);
+    }
 
-    bar.text.style.fontSize = '5rem';
-
-    return bar;
+    return bars;
   } else {
     return null;
   }
@@ -1028,19 +1033,27 @@ function initTimer () {
 
       // console.log(daysDist, hoursDist, minutesDist, secondsDist);
       if (circles.days) {
-        circles.days.animate(daysDist);
+        circles.days.forEach(function(circle){
+          circle.animate(daysDist);
+        });
       }
 
       if (circles.hours) {
-        circles.hours.animate(hoursDist);
+        circles.hours.forEach(function(circle){
+          circle.animate(hoursDist);
+        });
       }
 
       if (circles.minutes) {
-        circles.minutes.animate(minutesDist);
+        circles.minutes.forEach(function(circle){
+          circle.animate(minutesDist);
+        });
       }
 
       if (circles.seconds) {
-        circles.seconds.animate(secondsDist);
+        circles.seconds.forEach(function(circle){
+          circle.animate(secondsDist);
+        });
       }
     }, 1000);
   }
