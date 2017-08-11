@@ -3350,9 +3350,9 @@ and (max-width : 700px) {
   justify-content: flex-end;
 }
 
-#countdown .cp-countdown .days.circle {
+/*#countdown .cp-countdown .days.circle {
   flex-basis: 0;
-  flex-grow: 3;
+  flex-grow: 1;
 }
 
 #countdown .cp-countdown .hours.circle {
@@ -3368,7 +3368,7 @@ and (max-width : 700px) {
 #countdown .cp-countdown .seconds.circle {
   flex-basis: 0;
   flex-grow: 2;
-}
+}*/
 
 #countdown .cp-countdown .time-circles {
   position: relative;
@@ -3393,15 +3393,15 @@ and (max-width : 700px) {
 }
 
 @media only screen and (max-width: 700px) {
-  #countdown .cp-countdown {
+  /*#countdown .cp-countdown {
     display: block;
-  }
+  }*/
 
   #countdown .cp-countdown .circle {
     padding: 0.2em;
   }
 
-  #countdown .cp-countdown .days.circle {
+  /*#countdown .cp-countdown .days.circle {
     padding: 0px 2em;
     width: calc(100% - 4em);
     margin-bottom: 1em;
@@ -3412,15 +3412,18 @@ and (max-width : 700px) {
   #countdown .cp-countdown .seconds.circle {
     display: inline-block;
     width: calc(33.33% - 0.4em);
-  }
+  }*/
 
   #countdown .cp-countdown .time-heads h3 {
     margin-top: 0.5em;
-    /* margin-bottom: 0px; */
-    font-size: 1.5em;
+    font-size: 1em;
   }
 
-  #countdown .cp-countdown .hours.circle .time-heads h3,
+  #countdown .cp-countdown .circle .progressbar-text {
+    font-size: 3rem !important;
+  }
+
+  /*#countdown .cp-countdown .hours.circle .time-heads h3,
   #countdown .cp-countdown .minutes.circle .time-heads h3,
   #countdown .cp-countdown .seconds.circle .time-heads h3 {
     font-size: 1em;
@@ -3430,5 +3433,5 @@ and (max-width : 700px) {
   #countdown .cp-countdown .minutes.circle .progressbar-text,
   #countdown .cp-countdown .seconds.circle .progressbar-text {
     font-size: 3rem !important;
-  }
+  }*/
 }
