@@ -430,13 +430,14 @@ input[type=number]::-webkit-outer-spin-button {
 /* #hc-nav-wrapper  */
 
 #hc-nav-wrapper {
-  padding-left: 1em;
-  padding-right: 1em;
+  /*padding-left: 1em;
+  padding-right: 1em;*/
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 10000000;
-  height: 68px;
+  height: 95px;
+  /*height:68px;*/
 }
 
 #hc-nav-wrapper.add-background {
@@ -445,7 +446,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #hc-nav-wrapper .container {
   max-width:1240px;
-  padding : 0.7em 0;
+  padding : 0.7em 1em;
 }
 
 #hc-nav-wrapper .hc-branding{
@@ -508,7 +509,7 @@ input[type=number]::-webkit-outer-spin-button {
   display: none;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 24px;
   box-shadow: none;
   border: none;
   height: 70px;
@@ -565,7 +566,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* #hc-intro  */
 #hc-intro {
-  height: calc(100vh - 231px);
+  height: calc(100vh - 239px);
   background: #2a2a2a;
   background-image: url(../images/map-bg.png);
   background-position: center;
@@ -791,7 +792,7 @@ and (max-width : 700px) {
 
   #hc-intro {
     padding: 0px;
-    margin-top: 4.5em;
+    margin-top: 5.5em;
   }
 
   #hc-slider {
@@ -3019,7 +3020,7 @@ and (max-width : 700px) {
 
 @media only screen and (max-width: 700px) {
   #hc-intro {
-    height : calc(100vh - 280px);
+    height : calc(100vh - 295px);
   }
   .points p {
     margin-bottom: 3em;
@@ -3039,7 +3040,7 @@ and (max-width : 700px) {
   }
 
   #hc-nav-wrapper {
-    width:calc(100% - 2em);
+    width:calc(100%);
   }
 
   #hc-nav-wrapper .menu-item {
@@ -3185,6 +3186,15 @@ and (max-width : 700px) {
 
   .hc-project-schedule {
     margin-bottom: 3em;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  #hc-nav-wrapper .hc-number-dist span {
+    display: block;
+  }
+  #hc-nav-wrapper .hc-number-dist .away {
+    margin:0px;
   }
 }
 
