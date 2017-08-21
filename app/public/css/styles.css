@@ -3300,11 +3300,16 @@ and (max-width : 700px) {
   padding: 1em;
   display: block;
   text-decoration: none;
+  margin-bottom : 2em;
 }
 
 #hc-medium-blog .card a {
   text-decoration: none;
   display: block;
+}
+
+#hc-medium-blog .card .post img {
+  width: 80%;
 }
 
 /*#hc-medium-blog .card .writer {
