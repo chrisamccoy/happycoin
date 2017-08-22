@@ -3348,6 +3348,23 @@ and (max-width : 700px) {
   margin-bottom: 0.2em;
 }
 
+#hc-medium-blog .card .card-footer {
+  display: flex;
+}
+
+#hc-medium-blog .card .card-footer img {
+  height: 25px;
+}
+
+#hc-medium-blog .card .card-footer p {
+  text-align: right;
+  flex:  auto;
+}
+
+#hc-medium-blog .card .card-footer p span {
+  color: #9b9b9b;
+}
+
 @media only screen and (max-width: 700px) {
   #hc-medium-blog .card .post img {
     width: 100%;
