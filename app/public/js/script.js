@@ -381,6 +381,8 @@ function emailSubscribe() {
         'accredited-investor' : 'No'
       };
 
+  autosize($('textarea'));
+
   $.when(
     $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD', function(data) {
         ethVal = data;
@@ -434,6 +436,7 @@ function emailSubscribe() {
     var step102 = $thisEmailStep.hasClass('step-10-2');
     var step17 = $thisEmailStep.hasClass('step-17');
     var step10 = $thisEmailStep.hasClass('step-10');
+    var step11 = $thisEmailStep.hasClass('step-11');
     // console.log(step101, step102);
 
     $thisEmailStep.find('.button-primary').removeAttr('disabled');
@@ -472,6 +475,14 @@ function emailSubscribe() {
       } else if ($(this).val() == 'No') {
         $thisEmailStep.find('.button-primary.button-next').hide();
         $thisEmailStep.find('.button-primary.button-end').show();
+      }
+    } else if (step11) {
+      if ($(this).val() == 'Yes') {
+        $thisEmailStep.find('.button-primary.button-next[data-step="step-12"]').show();
+        $thisEmailStep.find('.button-primary.button-next[data-step="step-13"]').hide();
+      } else if ($(this).val() == 'No') {
+        $thisEmailStep.find('.button-primary.button-next[data-step="step-12"]').hide();
+        $thisEmailStep.find('.button-primary.button-next[data-step="step-13"]').show();
       }
     }
   });
@@ -1065,4 +1076,10 @@ function hasUrl () {
   if (hash == '#first-token-sale') {
     $(window).scrollTop($('#first-token-sale').offset().top - 66);
   }
+}
+
+function maxcount(t) {
+  var count = $(t).val().length;
+  var remain = 100 - count;
+  $(t).siblings('.text-area-count').text('('+remain+')');
 }

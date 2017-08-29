@@ -272,10 +272,13 @@
         button.button-back.button-primary(data-step='step-10-1')
           i.ion-chevron-left
           | Back
-        button(style="display:none;").button-back.button-primary(data-step='step-10-2')
+        button.button-back.button-primary(data-step='step-10-2', style="display:none;")
           i.ion-chevron-left
           | Back
         button.button-next.button-primary(disabled='', data-step='step-12')
+          | Next
+          i.ion-chevron-right
+        button.button-next.button-primary(disabled='', data-step='step-13', style="display:none;")
           | Next
           i.ion-chevron-right
     
@@ -458,9 +461,10 @@
           | Next
           i.ion-chevron-right
             
-    .email-steps.step-15-1
+    .email-steps.step-15-1(style="display:block;")
       p How did you learn about Storecoin?
-      textarea(rows="4", cols="50", name="how-learn", style="width:100%;")
+      textarea(maxlength="100", name="how-learn", style="width:100%;overflow:hidden; margin:0px;" onkeyup="maxcount(this)")
+      p.text-area-count(style="margin:0px; font-size:0.7em; text-align:right;") (100)
       hr
       .button-group
         button.button-back.button-primary(data-step='step-15')
