@@ -3309,7 +3309,9 @@ and (max-width : 700px) {
 }
 
 #hc-medium-blog .card .post img {
-  width: 80%;
+  width: calc(100% + 2em);
+  margin-left: -1em;
+  margin-right: -1em;
 }
 
 /*#hc-medium-blog .card .writer {
@@ -3359,6 +3361,7 @@ and (max-width : 700px) {
 #hc-medium-blog .card .card-footer p {
   text-align: right;
   flex:  auto;
+  color: rgba(128, 128, 0, 0.57);
 }
 
 #hc-medium-blog .card .card-footer p span {
