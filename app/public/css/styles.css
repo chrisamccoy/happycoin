@@ -440,6 +440,10 @@ input[type=number]::-webkit-outer-spin-button {
   /*height:68px;*/
 }
 
+#hc-nav-wrapper .hc-intro-post {
+  background: #e97844;text-align: center; color:white;
+}
+
 #hc-nav-wrapper.add-background {
   background-color: #c7dfb8;
 }
@@ -559,6 +563,12 @@ input[type=number]::-webkit-outer-spin-button {
   color: #456332;
   font-size: 18px;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 700px) {
+  #hc-nav-wrapper .hc-intro-post {
+    font-size: 0.7em;
+  }
 }
 /* #hc-nav-wrapper  */
 
