@@ -437,6 +437,7 @@ function emailSubscribe() {
     var step17 = $thisEmailStep.hasClass('step-17');
     var step10 = $thisEmailStep.hasClass('step-10');
     var step11 = $thisEmailStep.hasClass('step-11');
+    var step1_0 = $thisEmailStep.hasClass('step-1-0');
     // console.log(step101, step102);
 
     $thisEmailStep.find('.button-primary').removeAttr('disabled');
@@ -483,6 +484,14 @@ function emailSubscribe() {
       } else if ($(this).val() == 'No') {
         $thisEmailStep.find('.button-primary.button-next[data-step="step-12"]').hide();
         $thisEmailStep.find('.button-primary.button-next[data-step="step-13"]').show();
+      }
+    } else if (step1_0) {
+      if ($(this).val() == 'Yes') {
+        $thisEmailStep.find('.button-primary.button-next[data-step="step-1-2"]').show();
+        $thisEmailStep.find('.button-primary.button-next[data-step="step-1-1"]').hide();
+      } else if ($(this).val() == 'No') {
+        $thisEmailStep.find('.button-primary.button-next[data-step="step-1-2"]').hide();
+        $thisEmailStep.find('.button-primary.button-next[data-step="step-1-1"]').show();
       }
     }
   });
@@ -606,6 +615,16 @@ function emailSubscribe() {
         $thisSect.find('.email-steps.step-15 .usd-value').text(' $0 ');
       }
     }
+  });
+
+  $emailSteps.find('.reset-button').click(function(){
+    var $thisEmailStep = $(this).parents('.email-steps');
+    var $form = $thisEmailStep.parents('.steps-form');
+    var $thisWidget = $form.parents('.hc-email');
+    $thisEmailStep.hide();
+    $form.hide();
+    $thisWidget.find('.email-widget').show();
+    // $thisWidget.find('.email-widget input[type="email"]').empty();
   });
 
   $stepsform.submit(function(e){

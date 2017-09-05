@@ -18,9 +18,31 @@
       p We believe in aligning expectations of token owners with our team’s ability to deliver. 
       hr
       .button-group
-        button.button-next.button-primary(data-step='step-1-1')
+        button.button-next.button-primary(data-step='step-1-0')
           | Next
           i.ion-chevron-right(style="margin-left:5px;")
+            
+    .email-steps.step-1-0
+      p Are you a resident of the People's Republic of China?
+      .field.radio-field
+        .hc-radio-btn
+        input(type='radio', name="china-resident", value='Yes')
+        label Yes
+      .field.radio-field
+        .hc-radio-btn
+        input(type='radio', name="china-resident", value='No')
+        label No
+      hr
+      .button-group
+        button.button-back.button-primary(data-step='step-1')
+          i.ion-chevron-left
+          | Back
+        button.button-next.button-primary(disabled='', data-step='step-1-1')
+          | Next
+          i.ion-chevron-right
+        button.button-next.button-primary(disabled='', data-step='step-1-2', style="display:none;")
+          | Next
+          i.ion-chevron-right
             
     .email-steps.step-1-1
       p Before you begin, we recommend that you read 
@@ -35,6 +57,20 @@
         button.button-next.button-primary(data-step='step-2')
           | Next
           i.ion-chevron-right
+            
+    .email-steps.step-1-2
+      p As of September 4, 2017, we have concluded that:
+      p 
+        span(style="color: #e97844; font-size:1.5em;") a)
+        |  Storecoin Tokens do not fall within the definition of “security” as stipulated by the Securities Law of the People's Republic of China (as amended).
+      p 
+        span(style="color: #e97844; font-size:1.5em;") b) 
+        |  The distribution of the Storecoin Tokens are not considered “illegal fundraising” as defined under the Criminal Law of the People's Republic of China (as amended).
+      p However, due to the changing regulatory environment in the People's Republic of China with respect to the distribution of cryptographic tokens generally, Storecoin will not sell tokens to residents of the People's Republic of China.
+      p Chinese persons are strictly prohibited and restricted from applying to purchase Storecoin tokens. If a Chinese person does apply to purchase Storecoin Tokens, such person will not be approved by Storecoin, Inc.
+      p If you are not a resident of the PRC, we encourage you to re-start the Token Sale invite process.
+      button.button.button-primary.reset-button Restart
+      
 
     .email-steps.step-2
       //- p It’s important that you understand storecoin Tokens are not securities. They	are	an	access	token	to	future	services,	products,	and	decentralized	applications	powered	by	the	Storecoin	blockchain.
