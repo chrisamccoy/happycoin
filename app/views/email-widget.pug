@@ -59,15 +59,17 @@
           i.ion-chevron-right
             
     .email-steps.step-1-2
-      p As of September 4, 2017, we have concluded that:
-      p 
+      p As of September 4, 2017, we have concluded that, due to the changing regulatory environment in the People's Republic of China with respect to the distribution of cryptographic tokens generally, Storecoin will not sell tokens to residents of the People's Republic of China.
+      p(style="margin-bottom:0px;") Although:
+      p(style="margin-bottom:0px;") 
         span(style="color: #e97844; font-size:1.5em;") a)
         |  Storecoin Tokens do not fall within the definition of “security” as stipulated by the Securities Law of the People's Republic of China (as amended).
-      p 
+      p(style="margin-bottom:0px;") 
         span(style="color: #e97844; font-size:1.5em;") b) 
         |  The distribution of the Storecoin Tokens are not considered “illegal fundraising” as defined under the Criminal Law of the People's Republic of China (as amended).
-      p However, due to the changing regulatory environment in the People's Republic of China with respect to the distribution of cryptographic tokens generally, Storecoin will not sell tokens to residents of the People's Republic of China.
-      p Chinese persons are strictly prohibited and restricted from applying to purchase Storecoin tokens. If a Chinese person does apply to purchase Storecoin Tokens, such person will not be approved by Storecoin, Inc.
+      p
+        span(style="color: #e97844; font-size:1.5em;") c) 
+        |  Storecoin will comply with the amended Securities Law of China and prohibit residents of the PRC from purchasing Storecoin tokens. If a Chinese person does apply to purchase Storecoin Tokens, such person will not be approved by Storecoin, Inc.
       p If you are not a resident of the PRC, we encourage you to re-start the Token Sale invite process.
       button.button.button-primary.reset-button Restart
       
@@ -497,11 +499,11 @@
           | Next
           i.ion-chevron-right
             
-    .email-steps.step-15-1
+    .email-steps.step-15-1(style="display:block;")
       p How did you learn about Storecoin?
-      textarea(maxlength="100", name="how-learn", style="width:100%;overflow:hidden; margin:0px;" onkeyup="maxcount(this)")
-      p.text-area-count(style="margin:0px; font-size:0.7em; text-align:right;") (100)
-      hr
+      div.text-box
+        textarea(maxlength="100", name="how-learn", onkeyup="maxcount(this)" placeholder="Type in the name of the person who referred you, copy and paste the URL of where you learned about Storecoin, etc.")
+        p.text-area-count (100)
       .button-group
         button.button-back.button-primary(data-step='step-15')
           i.ion-chevron-left

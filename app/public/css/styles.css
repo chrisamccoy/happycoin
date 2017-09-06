@@ -2589,6 +2589,24 @@ and (max-width : 700px) {
   margin-right: 0.5em
 }
 
+.hc-email .text-box {
+  position:relative;
+}
+
+.hc-email textarea {
+  width:100%;overflow:hidden; margin:0px;
+  font-size: 1em;
+}
+
+.hc-email textarea::placeholder {
+  opacity: 0.5;
+  font-size: 1em;
+}
+
+.hc-email .text-box .text-area-count {
+  position:absolute; margin:0px; font-size:0.7em; text-align:right; bottom:15px; right:10px; background:white;
+}
+
 
 @media only screen and (max-width: 700px) {
   .hc-email .message p {
@@ -3319,9 +3337,7 @@ and (max-width : 700px) {
 }
 
 #hc-medium-blog .card .post img {
-  width: calc(100% + 2em);
-  margin-left: -1em;
-  margin-right: -1em;
+  width: 100%;
 }
 
 /*#hc-medium-blog .card .writer {
