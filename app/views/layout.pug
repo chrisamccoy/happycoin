@@ -20,7 +20,7 @@ html
     link(rel='stylesheet', href='/css/skeleton.css')
     link(rel='stylesheet', href='/css/slick.css')
     link(rel='stylesheet', href='/css/slick-theme.css')
-    link(rel='stylesheet', href='/css/styles.css?v=1.3.5')
+    link(rel='stylesheet', href='/css/styles.css?v=1.3.6')
 
     link(rel='icon', type='image/png', href='/images/favicon.png')
 
@@ -31,7 +31,7 @@ html
     script(src='/js/slick.js')
     script(src='/js/featherlight.js')
     script(src='/js/numeral.js')
-    script(src='/js/script.js?v=1.3.5')
+    script(src='/js/script.js?v=1.3.6')
 
   body
     #hc-nav-wrapper.add-background
@@ -43,10 +43,16 @@ html
         .row
           .hc-branding
             a.hc-title(href='/')
-          .hc-branding(style="height: 50px; display: flex; align-items: center;")
+          a.hc-branding(style="height: 50px; display: flex; align-items: center;", data-featherlight='#box-branding')
             span.hc-number-dist
               span 1,000,000,000
               span.away storecoins authorized
+            div#box-branding(style="display:none; max-width:700px;")
+              p(style="margin-bottom: 1em;") 1,000,000 storecoins are pre-mined. To enable free transactions for users, transactions on Storecoin will be paid for with new inflation capped at 5% per year. This token inflation will reward validators for staking transactions and validating the decentralized consensus.
+              p(style="margin-bottom: 1em;") Storecoin will use its Dynamic Proof of Stake algorithm (DyPoS) to spread out this 5% per year token inflation across 365 days, to an unlimited number of blocks, and to an unlimited number of transactions. To determine dynamic block times and rewards, DyPoS uses a similar algorithm as Uber does for surge pricing.
+              p(style="margin-bottom: 1em;") DyPoS works because of the economic network effect on blockchains: the more transactions, the more valuable the token becomes (there is a 95% historical correlation for Ethereum, 72% for Bitcoin).
+              p(style="margin-bottom: 1em;") Therefore, the incentives are for token holders to stake the Storecoin blockchain regardless of the validator rewards. With more transactions, there will be a higher price for their token.
+              p As a result, the next block of transactions will always have enough validators for the transactions to be validated and therefore processed.
           nav.hc-navigation
             .hc-menu-container
               ul.hc-menu
@@ -57,7 +63,7 @@ html
                 li.menu-item
                   a(href='/examples') Use Cases
                 li.menu-item
-                  a(href='/firsttokensale') First Token Sale
+                  a(href='/secondtokensale') Second Token Sale
                 li.menu-item
                   a(href='/whitepaper') Our Whitepaper
       button.menu-toggle
@@ -114,7 +120,7 @@ html
               li
                 a(href='/applytoforge') Apply to Validate/Forge
               li
-                a(href='/firsttokensale') Our Token Sale
+                a(href='/secondtokensale') Our Token Sale
               li
                 a(href='/team') Our Team
               li

@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  div#hc-content
+    #hc-intro.hc-feature.over-rel.padding
+      .hc-chunk.hc-intro-text-wrapper
+        h2.hc-intro-large-lead(style='font-weight: bold; font-size: 2.7em; margin: 2em auto;') Our	Second	Token	Sale
+        p.hc-feature-lead We'll have up to six mini token sales over the next several years as technology and adoption milestones are achieved.
+
+    - var top = true
+    include email-widget
+    
+    //- include countdown
+    
+    div.hc-feature.hc-share-links
+      .hc-chunk
+        div.hc-feature-title Share this:
+        div.button-group
+          a.button.button-primary.twitter(target="_blank", href="https://twitter.com/intent/tweet?text=Participate%20in%20the%20Invite-only%20Storecoin%20Second%20Token%20Sale&url=http://storeco.in&via=storecoinproject")
+            i.ion-social-twitter
+            | Twitter
+          a.button.button-primary.email(target="_blank", href="https://mail.google.com/mail/?view=cm&fs=1&to=someone@example.com&su=Participate%20in%20the%20Storecoin%20Second%20ICO&body=They%20are%20raising%20$150,000%20in%20their%20First%20of%20many%20small%20ICOs.%20You%20can%20participate%20here:%20http://storeco.in/firstico")
+            i.ion-email
+            | Email
+          a.button.button-primary.email-mobile(target="_blank", href="mailto:info@example.com?subject=Participate%20in%20the%20Storecoin%20Second%20ICO&body=They%20are%20raising%20$150,000%20in%20their%20First%20of%20many%20small%20ICOs.%20You%20can%20participate%20here:%20http://storeco.in/firstico")
+            i.ion-email
+            | Email
+            
+    include about-second-token-sale
+    
+    //- - var inverted = true 
+    //- include first-token-proceeds
+    
+    include network-distribution
+      
+    - top = false
+    include email-widget

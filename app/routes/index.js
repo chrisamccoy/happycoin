@@ -17,6 +17,11 @@ router.get('/firsttokensale', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/secondtokensale', function(req, res, next) {
+  res.render('second-token-sale', { title: 'Storecoin' });
+});
+
+/* GET home page. */
 router.get('/applytoforge', function(req, res, next) {
   res.render('apply-forge', { title: 'Storecoin' });
 });

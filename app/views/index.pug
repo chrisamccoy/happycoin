@@ -16,10 +16,23 @@ block content
     include email-widget
     
     //- include countdown
-
-    .hc-feature.over-rel.padding(style="padding-left: 0px; padding-right:0px;")
+    
+    .hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title.inverted(style=" margin:0px !important; color:#5d794c;")  This website is our Green Paper.
+        h3.hc-feature-title  Our First Token Sale buyers.
+        #hc-buyers-slider.logo-slider
+          .slide
+            img(src='/images/blacktower-logo.png')
+          .slide
+            img(src='/images/blockfolio-logo.png')
+          .slide
+            img(src='/images/palm-drive-logo.jpg')
+          .slide
+            img(src='/images/clinton-polley.png', style="width:40%;")
+
+    .hc-feature.over-rel.padding.inverted(style="padding-left: 0px; padding-right:0px;")
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title.inverted(style=" margin:0px !important;")  This website is our Green Paper.
     
     .hc-feature.over-rel.padding.inverted.orange
       .hc-chunk.hc-customize-text-wrapper
@@ -442,7 +455,7 @@ block content
     #partners.hc-feature.over-rel.padding
       .hc-chunk
         h2.hc-feature-title Our Partners
-        #hc-partners-slider
+        #hc-partners-slider.logo-slider
           .slide
             img(src='/images/AWS-Activate.png')
             p $100,000	in	Amazon	AWS	credits
@@ -666,8 +679,8 @@ block content
                       
               .item.left
                 .date
-                  span Late 2017
-                .full-date Late 2017
+                  span December 2017
+                .full-date December 2017
                 .box
                   h2.title
                     span.bullet 3
@@ -754,9 +767,9 @@ block content
     
     include network-distribution
     
-    include about-first-ico
+    include about-second-token-sale
     
-    include first-token-proceeds
+    //- include first-token-proceeds
 
     - top = false
     include email-widget

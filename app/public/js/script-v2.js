@@ -32,8 +32,7 @@ $(document).ready(function(){
   toggleIncentive();
   emailSubscribe();
   initSlider();
-  initLogoSlider('#hc-partners-slider');
-  initLogoSlider('#hc-buyers-slider');
+  initPartnerSlider();
   initProblemSlider();
   toggleStatusText();
   initTimer();
@@ -376,7 +375,7 @@ function emailSubscribe() {
       $emailInput = $emailSection.find('input[type=email]'),
       $emailSteps = $emailSection.find('.email-steps'),
       $stepsform = $emailSection.find('.steps-form'),
-      btcVal, ethVal, bchVal,
+      btcVal, ethVal,
       formData = {
         'payment-type' : [],
         'accredited-investor' : 'No'
@@ -390,25 +389,16 @@ function emailSubscribe() {
     }),
     $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD', function(data) {
         btcVal = data;
-    }),
-    $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=BCH&tsyms=USD', function(data) {
-        bchVal = data;
     })
   ).then(function() {
     if (ethVal) {
-      $emailSection.find('.step-10 .eth-value , .step-8-1 .eth-value').text(numeral(5000 / ethVal.USD).format('0.000'));
+      $emailSection.find('.step-10 .eth-value , .step-8-1 .eth-value').text(numeral(2500 / ethVal.USD).format('0.000'));
     }
     else {
         // Request for graphic data didn't work, handle it
     }
     if (btcVal) {
-      $emailSection.find('.step-10 .btc-value , .step-8-1 .btc-value').text(numeral(5000 / btcVal.USD).format('0.000'));
-    }
-    else {
-        // Request for web data didn't work, handle it
-    }
-    if (bchVal) {
-      $emailSection.find('.step-10 .btc-value , .step-8-1 .bch-value').text(numeral(5000 / bchVal.USD).format('0.000'));
+      $emailSection.find('.step-10 .btc-value , .step-8-1 .btc-value').text(numeral(2500 / btcVal.USD).format('0.000'));
     }
     else {
         // Request for web data didn't work, handle it
@@ -448,7 +438,6 @@ function emailSubscribe() {
     var step10 = $thisEmailStep.hasClass('step-10');
     var step11 = $thisEmailStep.hasClass('step-11');
     var step1_0 = $thisEmailStep.hasClass('step-1-0');
-    var step10_0 = $thisEmailStep.hasClass('step-10-0');
     // console.log(step101, step102);
 
     $thisEmailStep.find('.button-primary').removeAttr('disabled');
@@ -503,15 +492,6 @@ function emailSubscribe() {
       } else if ($(this).val() == 'No') {
         $thisEmailStep.find('.button-primary.button-next[data-step="step-1-2"]').hide();
         $thisEmailStep.find('.button-primary.button-next[data-step="step-1-1"]').show();
-      }
-    } else if (step10_0) {
-      var $thisTextBox = $thisEmailStep.find('.text-box');
-      if ($(this).val() == 'Myself') {
-        $thisTextBox.hide();
-        $thisTextBox.find('textarea').val('');
-      } else if ($(this).val() == 'Another organization or entity') {
-        $thisTextBox.show();
-        $thisTextBox.find('.text-area-count').text('(40)');
       }
     }
   });
@@ -642,6 +622,7 @@ function emailSubscribe() {
     var $form = $thisEmailStep.parents('.steps-form');
     var $thisWidget = $form.parents('.hc-email');
     $thisEmailStep.hide();
+    $form.hide();
     $thisWidget.find('.email-widget').show();
     // $thisWidget.find('.email-widget input[type="email"]').empty();
   });
@@ -665,8 +646,6 @@ function emailSubscribe() {
       }
     });
 
-    // console.log(formArray);
-
     $thisEmailSect.find('.email-steps').hide();
     $thisEmailSect.find('.email-steps.step-19').show();
 
@@ -674,21 +653,21 @@ function emailSubscribe() {
     $.ajax({
       type : 'POST',
       // url : 'https://hooks.zapier.com/hooks/catch/2399325/5iwky6/',
-      url : 'https://hooks.zapier.com/hooks/catch/2306819/rak7mz/',
+      url : 'https://hooks.zapier.com/hooks/catch/2306819/5ua8pj/',
       data : formArray
     }).done(function(result){
       console.log('success')
     });
 
-    // // mail chimp
-    // $.ajax({
-    //   type : 'POST',
-    //   // url : 'https://hooks.zapier.com/hooks/catch/2399325/5iwky6/',
-    //   url : 'https://hooks.zapier.com/hooks/catch/2306819/5cywvl/',
-    //   data : formArray
-    // }).done(function(result){
-    //   console.log('success');
-    // });
+    // mail chimp
+    $.ajax({
+      type : 'POST',
+      // url : 'https://hooks.zapier.com/hooks/catch/2399325/5iwky6/',
+      url : 'https://hooks.zapier.com/hooks/catch/2306819/5cywvl/',
+      data : formArray
+    }).done(function(result){
+      console.log('success');
+    });
   });
 
   $subscribeBtn.click(function(){
@@ -706,7 +685,7 @@ function emailSubscribe() {
       }).done(function(result){
         // console.log(result);
         $thisEmailSect.find('.email-widget').hide();
-        $thisEmailSect.find('.email-steps.step-1-0').show();
+        $thisEmailSect.find('.email-steps.step-1').show();
         setTimeout(function(){
           $(window).scrollTop($thisEmailSect.offset().top - 66);
         }, 300);
@@ -722,73 +701,6 @@ function emailSubscribe() {
     setTimeout(function(){
       $(window).scrollTop($next.offset().top - 66);
     }, 300);
-  });
-
-  var $step18_1 = $('.hc-email .email-steps.step-18-1');
-
-  $step18_1.find('.button-step-group .add-another-invite').click(function(){
-    var $thisEmailStep = $(this).parents('.email-steps'),
-        $friendEmailGroup = $thisEmailStep.find('.friend-email-group');
-
-    $friendEmailGroup.append('<div class="input-close-group"><a><i class="ion-android-close"></i></a><input class="u-full-width" type="email" placeholder="Email Address" name="friend-email"></div>');
-    $friendEmailGroup.find('.input-close-group a').css({ visibility : 'visible' });
-  });
-
-  $step18_1.find('.friend-email-group').on('click', '.input-close-group a', function(){
-    var $friendEmailGroup = $(this).parents('.friend-email-group');
-    $(this).parents('.input-close-group').remove();
-    var numberOfInput = $friendEmailGroup.find('.input-close-group');
-    if (numberOfInput.length == 1) {
-      $friendEmailGroup.find('.input-close-group:first-child a').css({ visibility : 'hidden' });
-    }
-  });
-
-  $step18_1.find('.button-step-group .invite-many-button').click(function(){
-    var $inviteManyBox = $(this).parents('.email-steps').find('.invite-many-box'),
-        $addInviteBox = $(this).parents('.email-steps').find('.add-invite-box');
-
-    $addInviteBox.hide();
-    $inviteManyBox.show();
-  });
-
-  $step18_1.find('.add-many-invites').click(function(){
-    var $thisTextarea = $(this).parents('.invite-many-box').find('textarea'),
-        $textareaVal = $thisTextarea.val().split(','),
-        emails = [];
-
-    $textareaVal.forEach(function(item){
-      item = $.trim(item);
-      // console.log(item);
-      if (validateEmail(item)) {
-        emails.push(item);
-      }
-    });
-
-    // console.log(emails);
-
-    if (emails.length > 0) {
-      var $thisEmailStep = $(this).parents('.email-steps'),
-          $friendEmailGroup = $thisEmailStep.find('.friend-email-group');
-
-      $friendEmailGroup.html('');
-
-      emails.forEach(function(email){
-        if(emails.length == 1) {
-          $friendEmailGroup.append('<div class="input-close-group"><a style="visibility:hidden;"><i class="ion-android-close"></i></a><input class="u-full-width" type="email" placeholder="Email Address" name="friend-email" value="'+email+'"></div>');
-        } else {
-          $friendEmailGroup.append('<div class="input-close-group"><a><i class="ion-android-close"></i></a><input class="u-full-width" type="email" placeholder="Email Address" name="friend-email" value="'+email+'"></div>');
-        }
-      });
-
-      // $thisEmailStep.find('.button-next').removeAttr('disabled');
-    }
-
-    var $inviteManyBox = $(this).parents('.email-steps').find('.invite-many-box'),
-        $addInviteBox = $(this).parents('.email-steps').find('.add-invite-box');
-
-    $addInviteBox.show();
-    $inviteManyBox.hide();
-    $thisTextarea.val('');
   });
 
   $emailSteps.find('.button-group .button-primary:not(.button-end)').click(function(){
@@ -979,8 +891,8 @@ function initSticky() {
   sticky.update();
 }
 
-function initLogoSlider(id) {
-  var $sliderEl = $(id);
+function initPartnerSlider() {
+  var $sliderEl = $('#hc-partners-slider');
 
   if ($sliderEl.length > 0 ) {
 
@@ -1186,18 +1098,7 @@ function hasUrl () {
 }
 
 function maxcount(t) {
-  var count = $(t).val().length,
-      max = $(t).data().maxlength,
-      remain = max - count,
-      color = (remain < 0) ? 'red' : 'green',
-      $thisEmailStep = $(t).parents('.email-steps'),
-      $thisNextBtn = $thisEmailStep.find('.button-next');
-
-  $(t).siblings('.text-area-count').text('('+remain+')').css({ color : color });
-
-  if (remain < 0 ) {
-    $thisNextBtn.attr('disabled', '');
-  } else {
-    $thisNextBtn.removeAttr('disabled');
-  }
+  var count = $(t).val().length;
+  var remain = 100 - count;
+  $(t).siblings('.text-area-count').text('('+remain+')');
 }

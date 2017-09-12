@@ -375,7 +375,7 @@ input[type=number]::-webkit-outer-spin-button {
 
   .email-widget h4 {
     font-size: 1.1em;
-    margin-bottom : 0.5em !important;
+    margin-bottom : 0.5em;
   }
 
   .points {
@@ -2087,7 +2087,7 @@ and (max-width : 700px) {
   margin: 0px 0px 0em;
 }
 
-.logo-slider .slide {
+#hc-partners-slider .slide {
   /*height: 100%;*/
   height: 150px;
   min-height: 1px;
@@ -2099,10 +2099,6 @@ and (max-width : 700px) {
   outline: 0px;
 }
 
-.logo-slider .slide img {
-  width: 80%;
-}
-
 @media only screen and (max-width: 700px) {
   #partners .row {
     display: flex;
@@ -2110,11 +2106,11 @@ and (max-width : 700px) {
     flex-direction: column;
   }
 
-  .logo-slider .slick-next {
+  #partners .slick-next {
     right : -5px;
   }
 
-  .logo-slider .slick-prev {
+  #partners .slick-prev {
     left : -5px;
   }
 
@@ -2331,8 +2327,8 @@ and (max-width : 700px) {
 /* .hc-email  */
 .hc-email {
   background : #c7dfb8;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 /*.hc-email-text {
@@ -2350,7 +2346,7 @@ and (max-width : 700px) {
 
 .hc-email .form {
   width: 100%;
-  margin: 0.5em auto 0;
+  margin: 1em auto 0;
 }
 
 .hc-email .steps-form {
@@ -2359,7 +2355,6 @@ and (max-width : 700px) {
 
 .hc-email .email-steps ul li span.eth-value,
 .hc-email .email-steps ul li span.btc-value,
-.hc-email .email-steps ul li span.bch-value,
 .hc-email .email-steps p span.usd-value {
   color : rgb(233, 120, 68);
 }
@@ -2398,12 +2393,6 @@ and (max-width : 700px) {
 
 .hc-email .email-steps a.button {
   background:#e97844; border-color:#e97844;
-  display: inline-flex;
-}
-
-.hc-email .email-steps a.button i {
-  margin-right: 0.5em;
-  font-size: 1.5em;
 }
 
 .hc-email .step-13 .computed {
@@ -2464,11 +2453,9 @@ and (max-width : 700px) {
   font-weight: 300;
 }
 
-.hc-email .email-steps .button-group,
-.hc-email .email-steps .button-step-group {
+.hc-email .email-steps .button-group {
   min-height: 50px;
   margin-top: 1em;
-  display: flex;
 }
 
 .hc-email .email-steps hr {
@@ -2501,10 +2488,11 @@ and (max-width : 700px) {
   border: rgb(233, 120, 68);
 }
 
-.hc-email .email-steps .button-group .button-primary:not(:first-child),
-.hc-email .email-steps .button-group .button-primary:not(:first-child) i,
-.hc-email .email-steps .button-step-group .button-primary:not(:first-child),
-.hc-email .email-steps .button-step-group .button-primary:not(:first-child) i {
+.hc-email .email-steps .button-group .button-primary:not(:first-child) i {
+  margin-left: 5px;
+}
+
+.hc-email .email-steps .button-group .button-primary:not(:first-child) {
   margin-left: 5px;
 }
 
@@ -2527,7 +2515,7 @@ and (max-width : 700px) {
 }
 
 .hc-email .email-steps .field input::placeholder {
-  opacity: 0.5;
+  opacity: 0.5
 }
 
 .hc-email .message {
@@ -2545,28 +2533,6 @@ and (max-width : 700px) {
 .hc-email .message p {
   font-size: 1.2em;
   margin-bottom: 1em;
-}
-
-.hc-email .input-close-group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row-reverse;
-  margin-bottom: 1em;
-}
-
-.hc-email .input-close-group:hover a {
-  opacity: 1; 
-}
-
-.hc-email .input-close-group input {
-  margin : 0px;
-}
-
-.hc-email .input-close-group a {
-  width:30px;
-  text-align: center;
-  opacity: 0;
 }
 
 /*.hc-email .success-message-2 {
@@ -2634,7 +2600,7 @@ and (max-width : 700px) {
 
 .hc-email textarea::placeholder {
   opacity: 0.5;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 .hc-email .text-box .text-area-count {
@@ -2721,7 +2687,6 @@ and (max-width : 700px) {
 
   .hc-email .form {
     width: 100%;
-    margin-bottom: 0.5em;
   }
 
   .hc-email .form input[type="submit"] {
@@ -3083,7 +3048,7 @@ and (max-width : 700px) {
 
 @media only screen and (max-width: 700px) {
   #hc-intro {
-    height : calc(100vh - 285px);
+    height : calc(100vh - 295px);
   }
   .points p {
     margin-bottom: 3em;
