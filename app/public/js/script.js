@@ -494,10 +494,10 @@ function emailSubscribe() {
     } else if (step11) {
       if ($(this).val() == 'Yes') {
         $thisEmailStep.find('.button-primary.button-next[data-step="step-12"]').show();
-        $thisEmailStep.find('.button-primary.button-next[data-step="step-13"]').hide();
+        $thisEmailStep.find('.button-primary.button-next[data-step="step-12-1"]').hide();
       } else if ($(this).val() == 'No') {
         $thisEmailStep.find('.button-primary.button-next[data-step="step-12"]').hide();
-        $thisEmailStep.find('.button-primary.button-next[data-step="step-13"]').show();
+        $thisEmailStep.find('.button-primary.button-next[data-step="step-12-1"]').show();
       }
     } else if (step1_0) {
       if ($(this).val() == 'Yes') {
