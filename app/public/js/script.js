@@ -377,6 +377,9 @@ function emailSubscribe() {
       $emailSteps = $emailSection.find('.email-steps'),
       $stepsform = $emailSection.find('.steps-form'),
       btcVal, ethVal, bchVal,
+      preTokenSaleMailchimp = 'https://hooks.zapier.com/hooks/catch/2306819/rageg0/',
+      postTokenSaleEmail = 'https://hooks.zapier.com/hooks/catch/2306819/rak7mz/',
+      postTokenSaleMailchimp = 'https://hooks.zapier.com/hooks/catch/2306819/raqkzh/',
       formData = {
         'payment-type' : [],
         'accredited-investor' : 'No'
@@ -673,22 +676,20 @@ function emailSubscribe() {
     // email request
     $.ajax({
       type : 'POST',
-      // url : 'https://hooks.zapier.com/hooks/catch/2399325/5iwky6/',
-      url : 'https://hooks.zapier.com/hooks/catch/2306819/rak7mz/',
+      url : postTokenSaleEmail,
       data : formArray
     }).done(function(result){
       console.log('success')
     });
 
-    // // mail chimp
-    // $.ajax({
-    //   type : 'POST',
-    //   // url : 'https://hooks.zapier.com/hooks/catch/2399325/5iwky6/',
-    //   url : 'https://hooks.zapier.com/hooks/catch/2306819/5cywvl/',
-    //   data : formArray
-    // }).done(function(result){
-    //   console.log('success');
-    // });
+    // mail chimp
+    $.ajax({
+      type : 'POST',
+      url : postTokenSaleMailchimp,
+      data : formArray
+    }).done(function(result){
+      console.log('success');
+    });
   });
 
   $subscribeBtn.click(function(){
@@ -696,23 +697,32 @@ function emailSubscribe() {
     var $thisForm = $(this).parents('.form');
     var emailVal = $thisForm.find('input[type="email"]').val();
 
+    $thisForm.submit(function(e){
+      e.preventDefault();
+    });
+
     if(emailVal){
       $thisEmailSect.find('.email-steps.step-17 input[type="text"]').val(emailVal);
+      $thisEmailSect.find('.email-widget').hide();
+      $thisEmailSect.find('.email-steps.step-1-0').show();
+      $(window).scrollTop($thisEmailSect.offset().top - 66);
       $.ajax({
         type : 'GET',
-        url : 'https://hooks.zapier.com/hooks/catch/2306819/5bmzth/',
+        url : preTokenSaleMailchimp,
         // url : 'https://market.capitalstake.com',
         data : $thisForm.serialize()
       }).done(function(result){
         // console.log(result);
-        $thisEmailSect.find('.email-widget').hide();
-        $thisEmailSect.find('.email-steps.step-1-0').show();
-        setTimeout(function(){
-          $(window).scrollTop($thisEmailSect.offset().top - 66);
-        }, 300);
       });
     }
   });
+
+  if (getParameterByName('e')) {
+    var $firstEmailWidgetSection = $('.hc-email').first(),
+        $firsrEmailWidget = $($firstEmailWidgetSection).find('.email-widget');
+    $firsrEmailWidget.find('input[type="email"]').val(getParameterByName('e'));
+    $firsrEmailWidget.find('input[type="submit"]').trigger('click');
+  }
 
   $('.hc-email .email-steps .button-group .button-end').click(function(){
     var $thisEmailSect = $(this).parents('.hc-email');
@@ -1200,4 +1210,14 @@ function maxcount(t) {
   } else {
     $thisNextBtn.removeAttr('disabled');
   }
+}
+
+function getParameterByName(name, url) {
+   if (!url) url = window.location.href;
+   name = name.replace(/[\[\]]/g, '\\$&');
+   var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+       results = regex.exec(url);
+   if (!results) return null;
+   if (!results[2]) return '';
+   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
