@@ -350,6 +350,15 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 1em;
 }
 
+.email-widget p.hc-email-invite {
+  margin: 0.5em 0 0.7em;
+}
+
+.hc-email .sticky {
+  left: 13px !important;
+  z-index: 2 !important;
+}
+
 @media only screen and (max-width: 700px) {
   .hc-feature .button-container a {
     font-size: 1em;
@@ -2331,8 +2340,8 @@ and (max-width : 700px) {
 /* .hc-email  */
 .hc-email {
   background : #c7dfb8;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 /*.hc-email-text {
@@ -2556,7 +2565,7 @@ and (max-width : 700px) {
 }
 
 .hc-email .input-close-group:hover a {
-  opacity: 1; 
+  opacity: 1;
 }
 
 .hc-email .input-close-group input {
@@ -2643,9 +2652,23 @@ and (max-width : 700px) {
 
 
 @media only screen and (max-width: 700px) {
+  .hc-email .email-steps .button-step-group {
+    display: block;
+  }
+
+  .hc-email .email-steps .button-step-group .invite-many-button {
+    margin-left: 0px !important;
+  }
+
   .hc-email .message p {
     font-size: 1em;
   }
+
+  .hc-email textarea::placeholder {
+    opacity: 0.5;
+    font-size: 0.5em;
+  }
+
 
   /*.hc-email-text {
     font-size: 0.5em;
@@ -2721,7 +2744,7 @@ and (max-width : 700px) {
 
   .hc-email .form {
     width: 100%;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
   }
 
   .hc-email .form input[type="submit"] {

@@ -1,4 +1,4 @@
-  
+      
 .hc-feature.over-rel.padding.hc-email
   .email-widget
     p.hc-email-invite
@@ -71,7 +71,7 @@
       p
         span(style="color: #e97844; font-size:1.5em;") c) 
         |  Storecoin will comply with the amended Securities Law of China and prohibit residents of the PRC from purchasing Storecoin tokens. If a Chinese person does apply to purchase Storecoin Tokens, such person will not be approved by Storecoin, Inc.
-      p If you are not a resident of the PRC, we encourage you to re-start the Token Sale invite process.
+      p If you are not a resident of the People's Republic of China, we encourage you to re-start the Second Token Sale invite process.
       button.button.button-primary.reset-button Restart
       
 
@@ -141,6 +141,10 @@
     //-       i.ion-chevron-right
             
     .email-steps.step-3
+      p(style="font-size: 1.2em; margin-bottom: 0.5em;") 
+        b About Storecoin
+      p Storecoin is a new public blockchain, that using its Dyname Proof of Stake consensus algorithm, will have zero transaction fees for users and developers.
+      p It's being designed and secured to work for the franchise, chain store, and affiliate-based industries.
       p Our team has the key insights and experiences in hierarchy based systems, distributed databases, enterprise software, payments, network effects, token economics, blockchain technology, and blockchain security to succeed.
       p We have offices in Silicon Valley and in Argentina with team members working around the globe.
       hr
@@ -153,16 +157,21 @@
           i.ion-chevron-right
             
     .email-steps.step-4
-      p We’ve thought deeply about how Storecoin will incentivize all sides of its network as a permanent decentralized protocol that someday powers trillions of daily transactions. 	
+      p We’ve thought deeply about how Storecoin will incentivize all sides of its network as a permanent decentralized blockchain protocol that someday powers trillions of daily, free transactions. 	
       p(style="margin:0px;") 
         b Here’s how Storecoins will be allocated:
       ul
-        li 33%	will be sold in up to six mini token sales to fund protocol development
-        li 33%	will be allocated to founders, core developers, and team
+        li 33% will be sold in up to six mini token sales to fund protocol development
+          ul(style="margin-top:0.5em;")
+            li 7% was sold in our First Token Sale for $350,000
+        li 33% will be allocated to founders, core developers, and team
           ul(style="margin-top:0.5em;")
             li Founders have 4 year vesting
-            li Contributors have 2 year vesting         
+            li Contributors have 2 year vesting        
         li 33% will be allocated for distribution to incentivize participation in the Storecoin ecosystem.
+          ul(style="margin-top:0.5em;")
+            li This includes application developers, adopting Headquarter-based organizations, and early blockchain validators/forgers.
+            li All incentive-based partners have 4 year vesting 
       hr
       .button-group
         button.button-back.button-primary(data-step='step-3')
@@ -173,10 +182,10 @@
           i.ion-chevron-right
             
     .email-steps.step-5
-      p In our Second Token Sale, 40 Million storecoins or 4% of all storecoin tokens total, will be sold to invited and approved buyers.
-      p The Network Value (market cap) in our First Token Sale was $5,000,000. We sold 6% of all tokens for $300,000.
-      p For our Second Token Sale, the price per token will be determined through an auction process.
-      p The Second Token Sale will give Storecoin R&D capital to make key hires across engineering, marketing, sales and blockchain security.
+      p The Storecoin Network Value (market capitalization) in our First Token Sale was $5,000,000. The Price Per Token was $0.005.
+      p In our Second Token Sale, 40 Million storecoins or 4% of all tokens total, will be sold to invited and approved buyers.
+      p For our Second Token Sale, the price per token will be determined through a Dutch auction or a Vickrey auction process.
+      p The Second Token Sale will give Storecoin R&D capital to make key hires across engineering, marketing, sales and blockchain security. Also, to grow the Storecoin Alliance.
       hr
       .button-group
         button.button-back.button-primary(data-step='step-4')
@@ -266,7 +275,7 @@
         label(for='participate-no') Another organization or entity
       
       div.text-box(style="margin-top:1em; display:none;")
-        textarea(data-maxlength="40", name="about-org", onkeyup="maxcount(this)")
+        input(style="width: 100%; margin-bottom: 0.4em;", type="text", data-maxlength="40", name="about-org", onkeyup="maxcount(this)")
         p.text-area-count(style="color:green;") (40)
         
       hr
@@ -353,7 +362,7 @@
     
     .email-steps.step-12
       div(data-sticky-container='')
-        p.sticky(data-margin-top='65') How	much	do	you	typically	buy	in	a	Token	Sale?
+        p.sticky(data-margin-top='90') How	much	do	you	typically	buy	in	a	Token	Sale?
         .fields
           .field.radio-field
             .hc-radio-btn
@@ -424,12 +433,12 @@
             
     .email-steps.step-12-1
       div(data-sticky-container='')
-        p.sticky(data-margin-top='65') How much do you expect to buy in the Storecoin Second Token Sale?
+        p.sticky(data-margin-top='90') How much do you expect to buy in the Storecoin Second Token Sale?
         .fields
           .field.radio-field
             .hc-radio-btn
-            input(type='radio', name='expect-buy', value='$1,000 - $5,000')
-            label(for='invest-2') $1,000 - $5,000
+            input(type='radio', name='expect-buy', value='$5,000')
+            label(for='invest-2') $5,000
           .field.radio-field
             .hc-radio-btn
             input(type='radio', name='expect-buy', value='$5,000 - $25,000')
@@ -599,7 +608,7 @@
     .email-steps.step-15-1
       p How did you learn about Storecoin?
       div.text-box
-        textarea(data-maxlength="100", name="how-learn", onkeyup="maxcount(this)" placeholder="Type in the name of the person who referred you or copy and paste the URL of where you learned about Storecoin, etc.")
+        textarea(data-maxlength="100", name="how-learn", onkeyup="maxcount(this)" placeholder="Type in the name of who referred you, copy and paste the URL of where you learned of Storecoin, or just share how you found us.")
         p.text-area-count(style="color:green;") (100)
       .button-group
         button.button-back.button-primary(data-step='step-12-1')
@@ -639,7 +648,6 @@
     .email-steps.step-17
       p In order to register for the Storecoin Second Token Sale, we need a 	
         b  confirmed	and	stable email address.	
-        |  email	address.
       p Is this the best email to communicate with you about Storecoin?
       .field
         input.u-full-width(type='text', name='email', readonly, style="background: #c7dfb8; box-shadow: none; border: none; padding: 0px; color: #e97844; font-weight:bold;")
@@ -704,8 +712,8 @@
     
     .email-steps.step-18-1
       div.invite-many-box(style="display:none;")
-        textarea
-        a.button.button-primary.add-many-invites(style="width:100%; text-align:center; display:block;") Add Invites
+        textarea(placeholder="Separate each email address with a comma.", name="friend-email")
+        //- a.button.button-primary.add-many-invites(style="width:100%; text-align:center; display:block;") Add Invites
         
       div.add-invite-box  
         p Are there any friends or partners that you want us to invite into Storecoin?
@@ -713,16 +721,16 @@
           div.input-close-group
             a
               i.ion-android-close
-            input.u-full-width(type="email", placeholder="Email Address", name="friend-email")
+            input.u-full-width(type="email", placeholder="Email Address")
           div.input-close-group
             a
               i.ion-android-close
-            input.u-full-width(type="email", placeholder="Email Address", name="friend-email")
+            input.u-full-width(type="email", placeholder="Email Address")
           div.input-close-group
             a
               i.ion-android-close
-            input.u-full-width(type="email", placeholder="Email Address", name="friend-email")
-            
+            input.u-full-width(type="email", placeholder="Email Address")
+         
         .button-step-group(style="margin:0px;")
           a.button.button-primary.add-another-invite 
             i.ion-plus-circled
@@ -738,10 +746,15 @@
           | Next
       
           
-    .email-steps.step-19        
-      p Thanks for expressing interest in the Storecoin Second Token Sale.
-      p Our team will review your application and then send an invite to bid once the Sale opens up.
+    .email-steps.step-19       
+      p Thanks for applying to participate in the Storecoin Second Token Sale.
+      p Our team will review your application. If approved, we'll email you an invite to participate once our Second Token Sale opens up in December.
       p In the meantime, to stay up-to-date on Storecoin, follow-us on Twitter and read our blog on Medium.
+      ul 
+        li
+          a.button.button-primary(target="_blank", href="http://twitter.com/storecointeam") follow-us on Twitter
+        li
+          a.button.button-primary(target="_blank", href="https://medium.com/@storecoin") read our blog
       hr
       .button-group
         button.button-end.button-primary.orange
