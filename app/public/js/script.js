@@ -705,7 +705,7 @@ function emailSubscribe() {
     if(emailVal){
       $thisEmailSect.find('.email-steps.step-17 input[type="text"]').val(emailVal);
       $thisEmailSect.find('.email-widget').hide();
-      $thisEmailSect.find('.email-steps.step-1-0').show();
+      $thisEmailSect.find('.email-steps.step-1').show();
       $(window).scrollTop($thisEmailSect.offset().top - 90);
       $.ajax({
         type : 'GET',
@@ -741,7 +741,7 @@ function emailSubscribe() {
     var $thisEmailStep = $(this).parents('.email-steps'),
         $friendEmailGroup = $thisEmailStep.find('.friend-email-group');
 
-    $friendEmailGroup.append('<div class="input-close-group"><a><i class="ion-android-close"></i></a><input class="u-full-width" type="email" placeholder="Email Address" name="friend-email"></div>');
+    $friendEmailGroup.append('<div class="input-close-group"><a><i class="ion-android-close"></i></a><input class="u-full-width" type="email" placeholder="Email Address"></div>');
     $friendEmailGroup.find('.input-close-group a').css({ visibility : 'visible' });
   });
 
@@ -754,7 +754,7 @@ function emailSubscribe() {
     }
   });
 
-  $step18_1.find('.friend-email-group input[type="email"]').on('input', function(){
+  $step18_1.find('.friend-email-group').on('input', 'input[type="email"]', function(){
     var $friendEmailGroupInput = $(this).parents('.email-steps').find('.friend-email-group input'),
         emails = '',
         $inviteManyBox = $(this).parents('.email-steps').find('.invite-many-box');
