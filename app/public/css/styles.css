@@ -458,8 +458,26 @@ input[type=number]::-webkit-outer-spin-button {
   background: #e97844;text-align: center; color:white;
 }
 
+#hc-nav-wrapper.v2 .hc-intro-post {
+  background: #c7dfb8;
+  color:#5d794c;
+}
+
+#hc-nav-wrapper .hc-intro-post a {
+  color: white;
+  text-decoration: underline;
+}
+
+#hc-nav-wrapper.v2 .hc-intro-post a {
+  color:#5d794c;
+}
+
 #hc-nav-wrapper.add-background {
   background-color: #c7dfb8;
+}
+
+#hc-nav-wrapper.add-background.v2 {
+  background-color: #e97844;
 }
 
 #hc-nav-wrapper .container {
@@ -501,6 +519,10 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 0.9em;
   display: block;
   /*margin-top: 1.1em;*/
+}
+
+#hc-nav-wrapper.v2 .hc-number-dist {
+  color:white;
 }
 
 #hc-nav-wrapper .hc-number-dist a {
@@ -577,6 +599,10 @@ input[type=number]::-webkit-outer-spin-button {
   color: #456332;
   font-size: 18px;
   text-decoration: none;
+}
+
+#hc-nav-wrapper.v2 .hc-navigation .hc-menu-container .hc-menu .menu-item a {
+  color:white;
 }
 
 @media only screen and (max-width: 700px) {
@@ -2915,6 +2941,10 @@ and (max-width : 700px) {
   padding-right: 2em;
   display: block;
   background: rgb(233, 120, 68);
+}
+
+#hc-footer.v2 {
+  background: rgb(93, 121, 76);
 }
 
 #hc-footer .hc-footer-chunk {

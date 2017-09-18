@@ -20,7 +20,7 @@ html
     link(rel='stylesheet', href='/css/skeleton.css')
     link(rel='stylesheet', href='/css/slick.css')
     link(rel='stylesheet', href='/css/slick-theme.css')
-    link(rel='stylesheet', href='/css/styles.css?v=1.4.3')
+    link(rel='stylesheet', href='/css/styles.css?v=1.4.4')
 
     link(rel='icon', type='image/png', href='/images/favicon.png')
 
@@ -31,113 +31,119 @@ html
     script(src='/js/slick.js')
     script(src='/js/featherlight.js')
     script(src='/js/numeral.js')
-    script(src='/js/script.js?v=1.4.3')
+    script(src='/js/script.js?v=1.4.4')
 
   body
-    #hc-nav-wrapper.add-background
-      p.hc-intro-post
-        a(href="https://medium.com/@team_27494/introducing-storecoin-8e15c21b4335", target="_blank", style="color:white; text-decoration:underline;") Read our introductory post
-        span(style="padding:0 0.5em;") ·
-        a(href="https://techcrunch.com/2017/08/20/yesterdays-plastics-are-todays-crypto-tokens/", target="_blank", style="color:white; text-decoration:underline;")  See our latest in TechCrunch
-      .container
-        .row
-          .hc-branding
-            a.hc-title(href='/')
-          a.hc-branding(style="height: 50px; display: flex; align-items: center;", data-featherlight='#box-branding')
-            span.hc-number-dist
-              span 1,000,000,000
-              span.away storecoins authorized
-            div#box-branding(style="display:none; max-width:700px;")
-              p(style="margin-bottom: 1em;") 1,000,000 storecoins are pre-mined. To enable free transactions for users, transactions on Storecoin will be paid for with new inflation capped at 5% per year. This token inflation will reward validators for staking transactions and validating the decentralized consensus.
-              p(style="margin-bottom: 1em;") Storecoin will use its Dynamic Proof of Stake algorithm (DyPoS) to spread out this 5% per year token inflation across 365 days, to an unlimited number of blocks, and to an unlimited number of transactions. To determine dynamic block times and rewards, DyPoS uses a similar algorithm as Uber does for surge pricing.
-              p(style="margin-bottom: 1em;") DyPoS works because of the economic network effect on blockchains: the more transactions, the more valuable the token becomes (there is a 95% historical correlation for Ethereum, 72% for Bitcoin).
-              p(style="margin-bottom: 1em;") Therefore, the incentives are for token holders to stake the Storecoin blockchain regardless of the validator rewards. With more transactions, there will be a higher price for their token.
-              p As a result, the next block of transactions will always have enough validators for the transactions to be validated and therefore processed.
-          nav.hc-navigation
-            .hc-menu-container
-              ul.hc-menu
-                li.menu-item
-                  a(href='/') About
-                li.menu-item.team
-                  a(href='/team') Our Team
-                li.menu-item
-                  a(href='/examples') Use Cases
-                li.menu-item
-                  a(href='/secondtokensale') Second Token Sale
-                li.menu-item
-                  a(href='/whitepaper') Our Whitepaper
-      button.menu-toggle
-        div(style='background:#5d794c; height:2px; margin:9px 20px')
-        div(style='background:#5d794c; height:2px; margin:9px 20px')
-        div(style='background:#5d794c; height:2px; margin:9px 20px')
+    if v2
+      #hc-nav-wrapper.add-background.v2
+    else
+      #hc-nav-wrapper.add-background
+        p.hc-intro-post
+          a(href="https://medium.com/@team_27494/introducing-storecoin-8e15c21b4335", target="_blank") Read our introductory post
+          span(style="padding:0 0.5em;") ·
+          a(href="https://techcrunch.com/2017/08/20/yesterdays-plastics-are-todays-crypto-tokens/", target="_blank")  See our latest in TechCrunch
+        .container
+          .row
+            .hc-branding
+              a.hc-title(href='/')
+            a.hc-branding(style="height: 50px; display: flex; align-items: center;", data-featherlight='#box-branding')
+              span.hc-number-dist
+                span 1,000,000,000
+                span.away storecoins authorized
+              div#box-branding(style="display:none; max-width:700px;")
+                p(style="margin-bottom: 1em;") 1,000,000 storecoins are pre-mined. To enable free transactions for users, transactions on Storecoin will be paid for with new inflation capped at 5% per year. This token inflation will reward validators for staking transactions and validating the decentralized consensus.
+                p(style="margin-bottom: 1em;") Storecoin will use its Dynamic Proof of Stake algorithm (DyPoS) to spread out this 5% per year token inflation across 365 days, to an unlimited number of blocks, and to an unlimited number of transactions. To determine dynamic block times and rewards, DyPoS uses a similar algorithm as Uber does for surge pricing.
+                p(style="margin-bottom: 1em;") DyPoS works because of the economic network effect on blockchains: the more transactions, the more valuable the token becomes (there is a 95% historical correlation for Ethereum, 72% for Bitcoin).
+                p(style="margin-bottom: 1em;") Therefore, the incentives are for token holders to stake the Storecoin blockchain regardless of the validator rewards. With more transactions, there will be a higher price for their token.
+                p As a result, the next block of transactions will always have enough validators for the transactions to be validated and therefore processed.
+            nav.hc-navigation
+              .hc-menu-container
+                ul.hc-menu
+                  li.menu-item
+                    a(href='/') About
+                  li.menu-item.team
+                    a(href='/team') Our Team
+                  li.menu-item
+                    a(href='/examples') Use Cases
+                  li.menu-item
+                    a(href='/secondtokensale') Second Token Sale
+                  li.menu-item
+                    a(href='/whitepaper') Our Whitepaper
+        button.menu-toggle
+          div(style='background:#5d794c; height:2px; margin:9px 20px')
+          div(style='background:#5d794c; height:2px; margin:9px 20px')
+          div(style='background:#5d794c; height:2px; margin:9px 20px')
 
     block content
 
-    footer#hc-footer
-      .hc-footer-chunk(style='padding: 3em 1em;')
-        section.footer-light.row
-          .three.columns
-            h3 Software
-            ul
-              li
-                a(href='/whitepaper') Our Whitepaper
-              li
-                a(href='/cryptoeconomics') Our Cryptoeconomics
-              li
-                a(href='/roadmap') Our Roadmap
-              li
-                a(href='/developer-api') Developer API
-          .three.columns
-            h3 News
-            ul
-              li
-                a(href='/blog') Our Blog
-              li
-                a(href='/firsttokensalefaq') Token Sale FAQ
-              li
-                a(href='http://twitter.com/storecointeam', target="_blank") Twitter
-              li
-                a(href='https://github.com/StorecoinProject', target="_blank") Github
-              //- li
-              //-   a(href='/subscribe') Subscribe to Updates
-              //- li
-              //-   a(href='/faq') FAQ
-              //- li
-              //-   a(href='/press') Press
-              //- li
-              //-   .footer-bridge-contentStart
-              //-     //- a.footer-social-icon(href='/coming-soon')
-              //-     //-   span.graphic-socialHover-facebook
-              //-     a.footer-social-icon(href='http://twitter.com/storecointeam', target="_blank")
-              //-       span.graphic-socialHover-twitter
-              //-     //- a.footer-social-icon(href='/coming-soon')
-              //-     //-   span.graphic-socialHover-linkedin
-              //-     a.footer-social-icon(href='https://github.com/StorecoinProject', target="_blank")
-              //-       span.graphic-socialHover-github
-          .three.columns
-            h3 Info
-            ul
-              li
-                a(href='/applytoforge') Apply to Validate/Forge
-              li
-                a(href='/secondtokensale') Our Token Sale
-              li
-                a(href='/team') Our Team
-              li
-                a(href='/jobs') Jobs
-              li
-                a(href='/contact') Contact Us
-          .three.columns
-            img(src='/images/logo.png', style='width:100px; height: auto;')
-            div
-            p(style='font-size: 0.7em; padding: 0.5em 0;')
-              a(href='')
-                strong Storecoin
-              |  aims to be a public blockchain for systems governed by hierarchy, privacy, and complex revenue sharing.
-        section.row
-          b(style='color: white;') © 2017 Storecoin, Inc
-          ul#menu-footer-menu.menu
-            //- li#menu-item-37.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-37
-            //-   a(href='https://www.stellar.org/privacy-policy/') Privacy Policy
-            li#menu-item-150.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-150
-              a(href='/terms') Terms of Service
+    if v2
+      footer#hc-footer.v2
+    else
+      footer#hc-footer
+        .hc-footer-chunk(style='padding: 3em 1em;')
+          section.footer-light.row
+            .three.columns
+              h3 Software
+              ul
+                li
+                  a(href='/whitepaper') Our Whitepaper
+                li
+                  a(href='/cryptoeconomics') Our Cryptoeconomics
+                li
+                  a(href='/roadmap') Our Roadmap
+                li
+                  a(href='/developer-api') Developer API
+            .three.columns
+              h3 News
+              ul
+                li
+                  a(href='/blog') Our Blog
+                li
+                  a(href='/firsttokensalefaq') Token Sale FAQ
+                li
+                  a(href='http://twitter.com/storecointeam', target="_blank") Twitter
+                li
+                  a(href='https://github.com/StorecoinProject', target="_blank") Github
+                //- li
+                //-   a(href='/subscribe') Subscribe to Updates
+                //- li
+                //-   a(href='/faq') FAQ
+                //- li
+                //-   a(href='/press') Press
+                //- li
+                //-   .footer-bridge-contentStart
+                //-     //- a.footer-social-icon(href='/coming-soon')
+                //-     //-   span.graphic-socialHover-facebook
+                //-     a.footer-social-icon(href='http://twitter.com/storecointeam', target="_blank")
+                //-       span.graphic-socialHover-twitter
+                //-     //- a.footer-social-icon(href='/coming-soon')
+                //-     //-   span.graphic-socialHover-linkedin
+                //-     a.footer-social-icon(href='https://github.com/StorecoinProject', target="_blank")
+                //-       span.graphic-socialHover-github
+            .three.columns
+              h3 Info
+              ul
+                li
+                  a(href='/applytoforge') Apply to Validate/Forge
+                li
+                  a(href='/secondtokensale') Our Token Sale
+                li
+                  a(href='/team') Our Team
+                li
+                  a(href='/jobs') Jobs
+                li
+                  a(href='/contact') Contact Us
+            .three.columns
+              img(src='/images/logo.png', style='width:100px; height: auto;')
+              div
+              p(style='font-size: 0.7em; padding: 0.5em 0;')
+                a(href='')
+                  strong Storecoin
+                |  aims to be a public blockchain for systems governed by hierarchy, privacy, and complex revenue sharing.
+          section.row
+            b(style='color: white;') © 2017 Storecoin, Inc
+            ul#menu-footer-menu.menu
+              //- li#menu-item-37.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-37
+              //-   a(href='https://www.stellar.org/privacy-policy/') Privacy Policy
+              li#menu-item-150.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-150
+                a(href='/terms') Terms of Service

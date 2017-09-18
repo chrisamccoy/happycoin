@@ -3,7 +3,13 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Storecoin' });
+  var host = req.headers.host;
+
+  if (host.search('2.storeco.in') >= 0) {
+     res.render('index', { v2: true, title: 'Storecoin' });
+  } else {
+     res.render('index', { v2: false, title: 'Storecoin' });
+  }
 });
 
 /* GET home page. */
