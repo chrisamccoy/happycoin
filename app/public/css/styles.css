@@ -2540,8 +2540,9 @@ and (max-width : 700px) {
   font-weight: 300;
 }
 
-.hc-email .email-steps .field input::placeholder {
-  opacity: 0.5;
+.hc-email .email-steps input::placeholder,
+.hc-email .email-steps textarea::placeholder {
+  color: lightgrey;
 }
 
 .hc-email .message {

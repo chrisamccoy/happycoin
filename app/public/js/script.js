@@ -410,12 +410,12 @@ function emailSubscribe() {
     else {
         // Request for web data didn't work, handle it
     }
-    if (bchVal) {
-      $emailSection.find('.step-10 .btc-value , .step-8-1 .bch-value').text(numeral(5000 / bchVal.USD).format('0.000'));
-    }
-    else {
-        // Request for web data didn't work, handle it
-    }
+    // if (bchVal) {
+    //   $emailSection.find('.step-10 .btc-value , .step-8-1 .bch-value').text(numeral(5000 / bchVal.USD).format('0.000'));
+    // }
+    // else {
+    //     // Request for web data didn't work, handle it
+    // }
   });
 
   $emailSteps.find('input').change(function(){
