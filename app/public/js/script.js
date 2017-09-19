@@ -706,7 +706,9 @@ function emailSubscribe() {
       $thisEmailSect.find('.email-steps.step-17 input[type="text"]').val(emailVal);
       $thisEmailSect.find('.email-widget').hide();
       $thisEmailSect.find('.email-steps.step-1').show();
-      $(window).scrollTop($thisEmailSect.offset().top - 90);
+      setTimeout(function(){
+        $(window).scrollTop($thisEmailSect.offset().top - 90);
+      }, 300);
       $.ajax({
         type : 'GET',
         url : preTokenSaleMailchimp,

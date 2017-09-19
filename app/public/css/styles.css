@@ -2568,7 +2568,8 @@ and (max-width : 700px) {
 
 .hc-email .email-steps input::placeholder,
 .hc-email .email-steps textarea::placeholder {
-  color: lightgrey;
+  color: #969696;
+  font-size: 1em;
 }
 
 .hc-email .message {
@@ -2684,7 +2685,17 @@ and (max-width : 700px) {
 
 
 @media only screen and (max-width: 700px) {
+  .hc-email .email-steps input::placeholder,
+  .hc-email .email-steps textarea::placeholder {
+    font-size: 0.7em;
+  }
+
   .hc-email .email-steps .button-step-group {
+    display: block;
+    width:100%;
+  }
+
+  .hc-email .email-steps a.button {
     display: block;
   }
 
@@ -3142,7 +3153,7 @@ and (max-width : 700px) {
 
 @media only screen and (max-width: 700px) {
   #hc-intro {
-    height : calc(100vh - 285px);
+    height : calc(100vh - 332px);
   }
   .points p {
     margin-bottom: 3em;
@@ -3597,4 +3608,8 @@ and (max-width : 700px) {
   .countdown .cp-countdown .seconds.circle .progressbar-text {
     font-size: 3rem !important;
   }*/
+
+  #green-paper .hc-feature-title {
+    font-size: 1.8em;
+  }
 }
