@@ -3613,3 +3613,102 @@ and (max-width : 700px) {
     font-size: 1.8em;
   }
 }
+
+#developer-roadmap .roadmap {
+  color: grey;
+  position: relative;
+  overflow: hidden;
+}
+
+#developer-roadmap .roadmap .timeline {
+  width: 5px;
+  background: rgba(128, 128, 128, 0.42);
+  position: absolute;
+  height: calc(100% - 100px);
+  top: 65px;
+  left: 121px;
+}
+
+#developer-roadmap .roadmap .year h2 {
+  margin: 0px;
+}
+
+#developer-roadmap .roadmap .quarters {
+  margin-left: 54px;
+}
+
+#developer-roadmap .roadmap .quarters .each-quarter {
+  display: flex;
+  margin-bottom: 1em;
+}
+
+#developer-roadmap .roadmap .quarters .each-quarter.present-line {
+  text-align: right;
+  margin-left: -44px;
+  border-bottom: 5px dashed #cacaca;
+}
+
+#developer-roadmap .roadmap .quarters .each-quarter.present-line .quarter {
+  font-size: 1.2em;
+}
+
+#developer-roadmap .roadmap .quarters .each-quarter .quarter {
+  /*font-size: 1.5em;*/
+  font-size: 1.5em;
+  min-width: 35px;
+  text-align: center;
+}
+
+#developer-roadmap .roadmap .quarters .each-quarter .points {
+  margin-top: 5px;
+}
+
+#developer-roadmap .roadmap .quarters .each-quarter .points .point {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+  font-weight: 300;
+  text-align: left;
+  display: flex;
+}
+
+#developer-roadmap .roadmap .quarters .each-quarter .points .point span {
+  margin: 0 1.5em;
+  width: auto;
+  display: inline-flex;
+  transform: scale(1);
+  transition: 50ms all ease-in;
+  color: black;
+}
+
+#developer-roadmap .roadmap .quarters .each-quarter .points .point span i.white {
+  color: #cacaca;
+}
+
+#developer-roadmap .roadmap .quarters .each-quarter .points .point span:hover {
+  transform: scale(1.2);
+  transition: 50ms all ease-in;
+}
+
+@media only screen and (max-width: 700px) {
+  #developer-roadmap .roadmap .year h2 {
+    font-size: 1.8em;
+  }
+
+  #developer-roadmap .roadmap .quarters {
+    margin-left: 23px;
+  }
+
+  #developer-roadmap .roadmap .timeline {
+    top: 48px;
+    left: 72px;
+    height: calc(100% - 88px);
+  }
+
+  #developer-roadmap .roadmap .quarters .each-quarter .points .point span {
+    margin : 0px 0.5em;
+  }
+
+  #developer-roadmap .roadmap .quarters .each-quarter.present-line {
+    margin-left: -23px;
+  }
+}
