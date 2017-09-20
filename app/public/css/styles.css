@@ -352,7 +352,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .hc-email li {
   list-style: disc;
-  margin-bottom : 0.2em;
+  margin-bottom : 0.7em;
 }
 
 .email-widget p.hc-email-invite {
@@ -2569,7 +2569,7 @@ and (max-width : 700px) {
 .hc-email .email-steps input::placeholder,
 .hc-email .email-steps textarea::placeholder {
   color: #969696;
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 .hc-email .message {
@@ -2674,15 +2674,19 @@ and (max-width : 700px) {
   font-size: 1em;
 }
 
-.hc-email textarea::placeholder {
-  opacity: 0.5;
-  font-size: 0.8em;
-}
-
 .hc-email .text-box .text-area-count {
   position:absolute; margin:0px; font-size:0.7em; text-align:right; bottom:15px; right:10px; background:white;
 }
 
+.hc-email .add-another-invite {
+  background: #5b6a72 !important;
+  border-color: #5b6a72 !important;
+}
+
+.hc-email .invite-many-button {
+  background-color: #72a553 !important;
+  border-color: #5d794c !important;
+}
 
 @media only screen and (max-width: 700px) {
   .hc-email .email-steps input::placeholder,
