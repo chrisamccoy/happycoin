@@ -2691,7 +2691,7 @@ and (max-width : 700px) {
 @media only screen and (max-width: 700px) {
   .hc-email .email-steps input::placeholder,
   .hc-email .email-steps textarea::placeholder {
-    font-size: 0.7em;
+    font-size: 0.6em;
   }
 
   .hc-email .email-steps .button-step-group {
@@ -3157,7 +3157,7 @@ and (max-width : 700px) {
 
 @media only screen and (max-width: 700px) {
   #hc-intro {
-    height : calc(100vh - 332px);
+    height : calc(100vh - 315px);
   }
   .points p {
     margin-bottom: 3em;
@@ -3681,11 +3681,11 @@ and (max-width : 700px) {
   display: inline-flex;
   transform: scale(1);
   transition: 50ms all ease-in;
-  color: black;
+  color: #e97844;
 }
 
-#developer-roadmap .roadmap .quarters .each-quarter .points .point span i.white {
-  color: #cacaca;
+#developer-roadmap .roadmap .quarters .each-quarter .points .point span i.future {
+  color: green;
 }
 
 #developer-roadmap .roadmap .quarters .each-quarter .points .point span:hover {

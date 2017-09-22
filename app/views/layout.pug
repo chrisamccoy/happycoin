@@ -20,7 +20,7 @@ html
     link(rel='stylesheet', href='/css/skeleton.css')
     link(rel='stylesheet', href='/css/slick.css')
     link(rel='stylesheet', href='/css/slick-theme.css')
-    link(rel='stylesheet', href='/css/styles.css?v=1.4.8')
+    link(rel='stylesheet', href='/css/styles.css?v=1.4.9')
 
     link(rel='icon', type='image/png', href='/images/favicon.png')
 
@@ -31,7 +31,7 @@ html
     script(src='/js/slick.js')
     script(src='/js/featherlight.js')
     script(src='/js/numeral.js')
-    script(src='/js/script.js?v=1.4.8')
+    script(src='/js/script.js?v=1.4.9')
 
   body
     - var className = ''
@@ -52,11 +52,12 @@ html
               span 1,000,000,000
               span.away storecoins authorized
             div#box-branding(style="display:none; max-width:700px;")
-              p(style="margin-bottom: 1em;") 1,000,000 storecoins are pre-mined. To enable free transactions for users, transactions on Storecoin will be paid for with new inflation capped at 5% per year. This token inflation will reward validators for staking transactions and validating the decentralized consensus.
-              p(style="margin-bottom: 1em;") Storecoin will use its Dynamic Proof of Stake algorithm (DyPoS) to spread out this 5% per year token inflation across 365 days, to an unlimited number of blocks, and to an unlimited number of transactions. To determine dynamic block times and rewards, DyPoS uses a similar algorithm as Uber does for surge pricing.
-              p(style="margin-bottom: 1em;") DyPoS works because of the economic network effect on blockchains: the more transactions, the more valuable the token becomes (there is a 95% historical correlation for Ethereum, 72% for Bitcoin).
+              p(style="margin-bottom: 1em;") Storecoin’s 1 million tokens are pre-mined.
+              p(style="margin-bottom: 1em;") To enable free transactions for users, transactions on Storecoin will be paid for with new inflation capped at 5 percent per year. This token inflation will reward validators for staking transactions and validating the decentralized consensus. One percent of total inflation rewards will go to the Storecoin network itself, so the project can more easily change and adapt as needed.
+              p(style="margin-bottom: 1em;") Storecoin will use its Dynamic Proof of Stake algorithm (DyPoS) to spread out this 5 percent per year token inflation across 365 days, to an unlimited number of blocks, and to an unlimited number of transactions. To determine dynamic block times and rewards, DyPoS uses a similar algorithm as Uber does for surge pricing that matches transaction load needs with validator data center power. In laymen’s terms, DyPoS increases the rewards for quick validation when the number of transactions increases.
+              p(style="margin-bottom: 1em;") DyPoS works in two ways. First, you have an economic network effect on blockchains: the more transactions, the more valuable the token becomes (there is a 95 percent historical correlation for Ethereum, 72 percent for Bitcoin). Second, you give validators a reward in the form of inflation to do the work, so no matter what happens to price over time, the validators still accumulate coins for performing the validation work.
               p(style="margin-bottom: 1em;") Therefore, the incentives are for token holders to stake the Storecoin blockchain regardless of the validator rewards. With more transactions, there will be a higher price for their token.
-              p As a result, the next block of transactions will always have enough validators for the transactions to be validated and therefore processed.
+              p This algorithm keeps validators producing blocks and fairly rewards all participants in the environment with scale.
           nav.hc-navigation
             .hc-menu-container
               ul.hc-menu
