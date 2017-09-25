@@ -2678,12 +2678,12 @@ and (max-width : 700px) {
   position:absolute; margin:0px; font-size:0.7em; text-align:right; bottom:15px; right:10px; background:white;
 }
 
-.hc-email .add-another-invite {
+.hc-email .invite-many-button {
   background: #5b6a72 !important;
   border-color: #5b6a72 !important;
 }
 
-.hc-email .invite-many-button {
+.hc-email .add-another-invite {
   background-color: #72a553 !important;
   border-color: #5d794c !important;
 }
@@ -2736,13 +2736,13 @@ and (max-width : 700px) {
 
   .hc-email .email-steps .button-group {
     min-height: 50px;
-    margin-top: 0.7em;
+    margin-top: 0.5em;
   }
 
   .hc-email .email-steps hr {
     border-top: 1px solid #456332;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .hc-email .email-steps .field label {
@@ -2782,7 +2782,7 @@ and (max-width : 700px) {
 
   .hc-email .email-steps p {
     font-size: 0.8em;
-    margin-bottom: 1em;
+    margin-bottom : 0.2em;
   }
 
   .hc-email .email-steps .fields {
