@@ -564,7 +564,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #hc-nav-wrapper .hc-navigation a {
   line-height: 34px;
-  padding: 0 21px;
+  padding: 0 0.7em;
   border: 1px solid transparent;
 }
 
@@ -2782,6 +2782,9 @@ and (max-width : 700px) {
 
   .hc-email .email-steps p {
     font-size: 0.8em;
+  }
+
+  .hc-email .email-steps p.sticky {
     margin-bottom : 0.2em;
   }
 
@@ -3714,5 +3717,121 @@ and (max-width : 700px) {
 
   #developer-roadmap .roadmap .quarters .each-quarter.present-line {
     margin-left: -23px;
+  }
+
+  #developer-roadmap .roadmap .quarters .each-quarter.present-line .quarter {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+#hc-milestones .year {
+  color: #456332;
+  text-align: center;
+  margin: 1em;
+}
+
+#hc-milestones .month {
+  position: relative;
+  display: flex;
+  margin: 1em;
+}
+
+#hc-milestones .month::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  display: block;
+  height: 1px;
+  background: #b4b0b0;
+  top: 20px;
+  z-index: -1;
+}
+
+#hc-milestones .month h3 {
+  color: grey;
+  text-align: center;
+  font-size: 2em;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0 0.5em;
+  background: white;
+}
+
+#hc-milestones .milestones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#hc-milestones .milestones .each-milestone {
+  max-width: calc(50% - 2em);
+  width: 100%;
+  margin: 1em;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0 rgba(46,61,73,.15);
+}
+
+#hc-milestones .milestones .icon-number {
+  display: flex;
+  padding: 0.5em 1em;
+}
+
+#hc-milestones .milestones .icon-number p {
+  width: 100%;
+  margin: 0px;
+  color:grey;
+  font-size: 2em;
+}
+
+#hc-milestones .milestones .icon-number .number {
+  text-align: left;
+  max-width: 45px;
+  color: #e97845;
+}
+
+#hc-milestones .milestones .icon-number .icon {
+  text-align: right;
+  flex: auto;
+  color: grey;
+}
+
+#hc-milestones .milestones .icon-number .icon.green {
+  color: green;
+}
+
+#hc-milestones .milestones .achievements {
+  padding: 0.5em 1em;
+  text-align: left;
+}
+
+#hc-milestones .milestones .achievements .title {
+  font-size: 1.5em;
+  color: #b4b0b0;
+  margin-bottom: 0.5em;
+}
+
+@media only screen and (max-width: 700px) {
+  #hc-milestones .milestones .each-milestone {
+    max-width: 100%;
+    margin: 0.5em 0;
+  }
+
+  #hc-milestones .milestones .icon-number p {
+    font-size: 1.5em;
+  }
+
+  #hc-milestones .milestones .achievements .title {
+    font-size: 1.2em;
+  }
+
+  #hc-milestones .milestones .icon-number {
+    padding: 0.5em;
+  }
+
+  #hc-milestones .milestones .achievements {
+    padding: 0.5em 0.7em;
   }
 }

@@ -38,6 +38,7 @@ $(document).ready(function(){
   toggleStatusText();
   initTimer();
   hasUrl();
+  fadeInContent();
 });
 
 
@@ -1236,4 +1237,22 @@ function getParameterByName(name, url) {
    if (!results) return null;
    if (!results[2]) return '';
    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+function fadeInContent () {
+  if ($('.each-milestone').length) {
+    window.sr = ScrollReveal();
+    sr.reveal('.each-milestone', {
+      duration: 800, origin: 'bottom', distance : '40px', scale : 1
+    });
+    $(window).scroll(function(){
+      var scrollVal = $(window).scrollTop(),
+          introHeight = $('#intro-section').height();
+      // console.log(scrollVal < introHeight);
+      // console.log(window.sr);
+      sr.reveal('.each-milestone', {
+        reset : false
+      });
+    });
+  }
 }

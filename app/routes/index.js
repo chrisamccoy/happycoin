@@ -23,6 +23,16 @@ router.get('/development', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/community', function(req, res, next) {
+  res.render('subscribe', { title: 'Storecoin' });
+});
+
+/* GET home page. */
+router.get('/milestones', function(req, res, next) {
+  res.render('milestones', { title: 'Storecoin' });
+});
+
+/* GET home page. */
 router.get('/firsttokensale', function(req, res, next) {
   res.render('firstico', { title: 'Storecoin' });
 });
