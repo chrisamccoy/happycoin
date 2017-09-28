@@ -3726,9 +3726,10 @@ and (max-width : 700px) {
 }
 
 #hc-milestones .year {
-  color: #456332;
+  color: white;
   text-align: center;
   margin: 1em;
+  margin-top: 0px;
 }
 
 #hc-milestones .month {
@@ -3743,19 +3744,20 @@ and (max-width : 700px) {
   width: 100%;
   display: block;
   height: 1px;
-  background: #b4b0b0;
+  background: white;
   top: 20px;
-  z-index: -1;
+  z-index: 1;
 }
 
 #hc-milestones .month h3 {
-  color: grey;
+  color: white;
   text-align: center;
   font-size: 2em;
   display: inline-block;
   margin: 0 auto;
   padding: 0 0.5em;
   background: white;
+  z-index: 2;
 }
 
 #hc-milestones .milestones {
@@ -3765,13 +3767,15 @@ and (max-width : 700px) {
 }
 
 #hc-milestones .milestones .each-milestone {
-  max-width: calc(50% - 2em);
+  background: white;
+  max-width: calc(50% - 2em - 4px);
   width: 100%;
   margin: 1em;
   overflow: hidden;
   text-align: center;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px 0 rgba(46,61,73,.15);
+  border: 1px solid #f2f3f4;
+  box-shadow: 2px 2px 5px 0 rgba(46,61,73,.15);
 }
 
 #hc-milestones .milestones .icon-number {
@@ -3811,6 +3815,35 @@ and (max-width : 700px) {
   font-size: 1.5em;
   color: #b4b0b0;
   margin-bottom: 0.5em;
+}
+
+#hc-milestones .each-month {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+#hc-milestones .each-year.green,
+#hc-milestones .each-year.green .month h3 {
+  background-color: #c6dfb7;
+}
+
+#hc-milestones .each-year.orange,
+#hc-milestones .each-year.orange .month h3 {
+  background-color: #e97844;
+}
+
+#hc-milestones .each-year.dark-green,
+#hc-milestones .each-year.dark-green .month h3 {
+  background-color: #8db378;
+}
+
+#hc-milestones .each-year.yellow,
+#hc-milestones .each-year.yellow .month h3 {
+  background-color: #fcc220;
+}
+
+#hc-milestones .each-year {
+  padding: 1em;
 }
 
 @media only screen and (max-width: 700px) {

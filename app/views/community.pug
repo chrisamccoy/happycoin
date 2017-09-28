@@ -2,7 +2,7 @@ extends layout
 
 block content
   div#hc-content
-    .hc-feature.over-rel.padding(style="margin-top:5em;")
+    .hc-feature.over-rel.padding(style="margin-top:5em; padding: 10em 0;")
       .hc-chunk
         // Begin MailChimp Signup Form
         link(href='//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css', rel='stylesheet', type='text/css')
@@ -13,13 +13,15 @@ block content
         #mc_embed_signup
           form#mc-embedded-subscribe-form.validate(action='//storeco.us16.list-manage.com/subscribe/post?u=49990f91819fec5293c84bbe8&id=06e1bd0107', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
             #mc_embed_signup_scroll
-              label(for='mce-EMAIL', style="color: #5d794d; font-size: 2.5em; line-height: 1.2;") Join Our Community
-              input#mce-EMAIL.email(type='email', value='', name='EMAIL', placeholder='email address', required='', style="padding: 1em 0.5em; font-size: 1.5em;")
+              label(for='mce-EMAIL', style="color: #5d794d; font-size: 2.2em; line-height: 1.2; margin-bottom:0.5em;") Join Our Community
+              input#mce-EMAIL.email(type='email', value='', name='EMAIL', placeholder='Email Address', required='', style="padding: 1em 0.5em; font-size: 1.5em;")
               // real people should not fill this in and expect good things - do not remove this or risk form bot signups
               div(style='position: absolute; left: -5000px;', aria-hidden='true')
                 input(type='text', name='b_49990f91819fec5293c84bbe8_06e1bd0107', tabindex='-1', value='')
               .clear
                 input#mc-embedded-subscribe.button(type='submit', value='Subscribe', name='subscribe', style="font-size: 1.5em; height: 47px; background-color: #5d794d;")
+                  
+              p(style="margin-top:1em; font-size:1.2em;") The Storecoin Community is an email mailing list where we share the latest advancements of the blockchain, its APIs, our team, customer adoption, and more. We'll also open it up for Q&A at scheduled times. You can unsubscribe from the list at any time.
         // End mc_embed_signup
         
 
