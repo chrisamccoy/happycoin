@@ -13,7 +13,7 @@
           
   form.steps-form
     .email-steps.step-1
-      h4 Welcome the private, invite-only Second Token Sale for Storecoin!
+      h4 Welcome to the private, invite-only Second Token Sale for Storecoin #💰
       p Please take three minutes to complete our application.
       p All information will remain confidential with Storecoin, Inc.
       p Invites to our Second Token Sale will be sent out in December 2017.
@@ -30,18 +30,18 @@
         input(type='radio', name="china-resident", value='Yes')
         label Yes
       .field.radio-field
-        .hc-radio-btn
-        input(type='radio', name="china-resident", value='No')
+        .hc-radio-btn.checked
+        input(type='radio', name="china-resident", value='No', checked)
         label No
       hr
       .button-group
         button.button-back.button-primary(data-step='step-1')
           i.ion-chevron-left
           | Back
-        button.button-next.button-primary(disabled='', data-step='step-1-1')
+        button.button-next.button-primary(data-step='step-1-1')
           | Next
           i.ion-chevron-right
-        button.button-next.button-primary(disabled='', data-step='step-1-2', style="display:none;")
+        button.button-next.button-primary(data-step='step-1-2', style="display:none;")
           | Next
           i.ion-chevron-right
             
