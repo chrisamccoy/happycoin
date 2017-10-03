@@ -3384,6 +3384,17 @@ and (max-width : 700px) {
 
 .hc-share-links .button-group .button.button-primary.twitter {
   background: #1da1f2;
+  border-color: #1da1f2;
+}
+
+.hc-share-links .button-group .button.button-primary.email {
+  background: #8eb378;
+  border-color: #8eb378;
+}
+
+.hc-share-links .button-group .button.button-primary.facebook {
+  background: #4267b2;
+  border-color: #4267b2;
 }
 
 .hc-share-links .button-group .button.button-primary.email-mobile {
