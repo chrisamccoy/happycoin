@@ -3371,10 +3371,10 @@ and (max-width : 700px) {
 
 .hc-share-links .button-group .button {
   width: 200px;
-  margin-left: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin:0px 0px 1em !important;
 }
 
 .hc-share-links .button-group .button i {
@@ -3388,8 +3388,8 @@ and (max-width : 700px) {
 }
 
 .hc-share-links .button-group .button.button-primary.email {
-  background: #8eb378;
-  border-color: #8eb378;
+  background: #8eb378 !important;
+  border-color: #8eb378 !important;
 }
 
 .hc-share-links .button-group .button.button-primary.facebook {
@@ -3399,6 +3399,8 @@ and (max-width : 700px) {
 
 .hc-share-links .button-group .button.button-primary.email-mobile {
   display: none;
+  background: #8eb378 !important;
+  border-color: #8eb378 !important;
 }
 
 @media only screen and (max-width: 700px) {
@@ -3407,6 +3409,10 @@ and (max-width : 700px) {
   }
   .hc-share-links .button-group .button.button-primary.email {
     display: none;
+  }
+
+  .hc-share-links .button-group {
+    flex-direction: column;
   }
 }
 
