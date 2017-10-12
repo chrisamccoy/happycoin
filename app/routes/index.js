@@ -18,6 +18,11 @@ router.get('/whitepaper', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/wallet', function(req, res, next) {
+  res.render('wallet/index', { title: 'Storecoin' });
+});
+
+/* GET home page. */
 router.get('/development', function(req, res, next) {
   res.render('development', { title: 'Storecoin' });
 });

@@ -1,0 +1,50 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    title= title
+    meta(name='description', content='')
+    meta(name='author', content='')
+    meta(property='og:url', content='http://storeco.in')
+    meta(property='og:type', content='website')
+    meta(property='og:title', content='Storecoin')
+    meta(property='og:description', content='Storecoin	aims	to	be	a	public	blockchain	for	systems	governed	by	hierarchy,	privacy,	and	complex	revenue	sharing. These	include	franchises,	chain	stores,	sports	leagues, affiliate-based	organizations,	and	more. No	transaction	fees.	Ethereum	and	Bitcoin	compatible.	A	new	Proof	of	Stake	consensus	algorithm.', much='', does='', culture='', influence='', creative='', thinking?”='')
+    meta(property='og:image', content='http://storeco.in/images/logo-fb.png')
+
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', rel='stylesheet')
+    link(href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet")
+    //- link(href='//cdn-images.mailchimp.com/embedcode/classic-10_7.css', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='/css/normalize.css')
+    link(rel='stylesheet', href='/css/featherlight.css')
+    link(rel='stylesheet', href='/css/milligram.min.css')
+    link(rel='stylesheet', href='/css/slick.css')
+    link(rel='stylesheet', href='/css/slick-theme.css')
+    link(rel='stylesheet', href='/css/wallet/styles.css')
+
+    link(rel='icon', type='image/png', href='/images/favicon.png')
+
+    script(src='/js/sticky.js')
+    script(src='/js/jquery-3.2.1.min.js')
+    script(src='/js/progressbar.js')
+    script(src='/js/autosize.js')
+    script(src='/js/slick.js')
+    script(src='/js/scrollreveal.js')
+    script(src='/js/featherlight.js')
+    script(src='/js/numeral.js')
+    script(src='/js/wallet/script.js')
+    
+    body 
+      nav#wallet-nav
+        div.title-logo
+          img.logo(src="/images/wallet/crossfit-logo.png")
+          div.title
+            p CROSSFIT, INC.
+            p MY WALLET
+          div.back
+            a(href="#")
+              i.ion-chevron-left
+          div.notifications 2
+
+      block content

@@ -102,7 +102,7 @@ function generateBar (element, value) {
       svgStyle: {width: '100%', height: '100%'},
       from: {color: '#FFEA82'},
       to: {color: '#ED6A5A'},
-      step: (state, bar) => {
+      step: function (state, bar) {
         bar.path.setAttribute('stroke', state.color);
       }
     });

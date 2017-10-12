@@ -1074,7 +1074,7 @@ and (max-width : 700px) {
 
 #project-schedule .timeline .year .items .item.left {
   margin-right: auto;
-  padding: 0 7rem 0 0;
+  padding: 0 6.9rem 0 0;
 }
 
 #project-schedule .timeline .year .items .item.right:before {
@@ -1082,7 +1082,7 @@ and (max-width : 700px) {
 }
 
 #project-schedule .timeline .year .items .item.left:before {
-  right: -6px;
+  right: -6.5px;
 }
 
 

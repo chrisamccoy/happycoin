@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  section#wallet-value
+    div.links
+      a(href="#") Buy
+      a(href="#") Sell
+      a(href="#") Gift
+    div.value
+      div.storecoin-val 
+        p.number 5
+          span .13434
+        p.unit
+          img(src="/images/wallet/white-storecoin.png")
+          | storecoin
+      div.est-val Estimated value 
+        span.green $179.25
+  
+  section#wallet-price-span
+    p Storecoin Price
+    select
+      option(value='1 month') 1 month
+      option(value='6 months') 6 months
+      option(value='1 year') 1 year
+      option(value='3 years') 3 years
+
+  section#wallet-graph
+    div.price-change
+      div.price.green 
+        span $
+        | 35
+        span .58
+      div.change
+        i.ion-android-arrow-up.green
+        | $15.25 (74.03%)
