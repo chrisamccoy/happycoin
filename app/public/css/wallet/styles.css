@@ -1,28 +1,170 @@
-body {
-  font-family: 'Montserrat', sans-serif;
+@font-face {
+ font-family: 'ProximaNova';
+ font-style: normal;
+ font-weight: bold;
+ src: url('../../fonts/ProximaNova-Bold.otf');
+ src: url('../../fonts/ProximaNova-RegularItalic.otf');
+ src: url('../../fonts/ProximaNova-Regular.otf') format('woff2');
 }
 
-p {
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'ProximaNova', sans-serif;
+  position: relative;
+  height: 100%;
+}
+
+body.overflow {
+  overflow: hidden;
+}
+
+.header {
+  font-weight: bold;
+  margin-bottom: 0.7em;
+}
+
+i {
+  margin: 0px;
+}
+
+div, p , a {
   color:#767676;
 }
 
+a {
+  cursor : pointer;
+}
+
 section {
-  padding: 1em 1.5em;
+  padding: 1em 0.7em;
   border-bottom : 1px solid #eaeaea;
 }
 
 select {
   border-color: #eaeaea;
+  margin: 0px;
+  border-radius: 0px;
 }
 
-select:focus {
+/*select:focus {
   border-color: #56b26b;
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 0 29 14" width="29"><path fill="#d1d1d1" d="M9.37727 3.625l5.08154 6.93523L19.54036 3.625"/></svg>') center right no-repeat;
-}
+}*/
 
 .green {
   color: #66bb6b;
 }
+
+.red {
+  color: #ef5350;
+}
+
+.orange {
+  color: #ed844e;
+}
+
+.black {
+  color: black;
+}
+
+.blue {
+  color: #3d92e4;
+}
+
+.bold {
+  font-weight: bold;
+  color: black;
+}
+
+.line-height-1 {
+  line-height: 1;
+}
+
+.price {
+  font-size: 40px;
+  flex: auto;
+  line-height: 0.65;
+  display: flex;
+  align-items: flex-start;
+}
+
+.price span {
+  font-size: 25px;
+}
+
+.slider {
+  border-radius: 8px;
+  background: #e1e1e1;
+  border-color: #e1e1e1 !important;
+  height: 8px;
+}
+
+.slider .ui-slider-handle {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin-left: -0.4em;
+  background: white;
+  border: none;
+  outline: none;
+  box-shadow: 1px 1px 7px 0 rgba(46, 61, 73, 0.35);
+}
+
+.slider .ui-slider-range {
+  background: #ed844d;
+  border-color: #ed844d !important;
+}
+
+.wallet-button {
+  padding: 1em;
+  background-color: #e0e0e0;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+
+.wallet-button button {
+  width: 100%;
+  margin : 0px;
+  background-color: #66bb6b;
+  border-color: #66bb6b;
+  text-transform: none;
+  font-size: 0.8em;
+}
+
+.ui.dropdown .item {
+  font-size: 1em !important;
+  color: #c7c7c7 !important;
+}
+
+.ui.dropdown i.dropdown.icon {
+  display: flex;
+  align-items: center;
+  height: 100% !important;
+}
+
+.textarea-count {
+  position: relative;
+}
+
+.textarea-count textarea {
+  border : 1px solid #e1e1e2;
+  border-radius: 0px;
+  margin: 0px;
+}
+
+.textarea-count .count {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #999;
+}
+
+/*---------------------------------------*/
 
 #wallet-nav {
   background-color: #2a2a2a;
@@ -45,11 +187,23 @@ select:focus {
   word-spacing: 2px;
 }
 
-#wallet-nav .title-logo .title p:first-child {
-  font-size: 1.2em;
+#wallet-nav .title-logo .title .notification,
+#wallet-nav .title-logo .title .main {
+  display: none;
 }
 
-#wallet-nav .title-logo .title p:last-child {
+#wallet-nav .title-logo .title .main.show,
+#wallet-nav .title-logo .title .notification.show {
+  display: block;
+}
+
+#wallet-nav .title-logo .title .notification p,
+#wallet-nav .title-logo .title .main p:first-child {
+  font-size: 1.2em;
+  color: white;
+}
+
+#wallet-nav .title-logo .title .main p:last-child {
   font-size: 0.9em;
   color: #c8c8c8;
 }
@@ -70,16 +224,23 @@ select:focus {
 }
 
 #wallet-nav .title-logo .notifications {
+  background-color: none;
+  color:white;
   width: 30px;
   height: 30px;
   display: flex;
   align-items: center;
   font-size: 1em;
   justify-content: center;
-  background-color: #ffdc00;
-  color: #2a2a2a;
   border-radius: 50%;
   margin-right: 0.7em;
+  line-height: 1;
+  border : 1px solid #ffdc00;
+}
+
+#wallet-nav .title-logo .notifications.new {
+  background-color: #ffdc00;
+  color: #2a2a2a;
 }
 
 /*---------------------------------------*/
@@ -151,27 +312,10 @@ select:focus {
   min-width: 140px;
 }
 
-#wallet-price-span select {
-  margin: 0px;
-  border-radius: 0px;
-}
-
 /*---------------------------------------*/
 
 #wallet-graph .price-change {
   display: flex;
-}
-
-#wallet-graph .price-change .price {
-  font-size: 40px;
-  flex: auto;
-  line-height: 0.65;
-  display: flex;
-  align-items: flex-start;
-}
-
-#wallet-graph .price-change .price span {
-  font-size: 25px;
 }
 
 #wallet-graph .price-change .change {
@@ -183,3 +327,522 @@ select:focus {
   font-size: 1.2em;
   margin-right: 5px;
 }
+
+#wallet-graph .graph .line {
+  fill: none;
+  stroke : #66bb6b;
+  stroke-width: 2px;
+}
+
+#wallet-graph .graph .area {
+  fill: url(#area-gradient);
+}
+
+#wallet-graph .graph .domain {
+  stroke : none;
+}
+
+#wallet-graph .graph .tick line {
+  stroke : none;
+}
+
+/*---------------------------------------*/
+
+.wallet-feed {
+  display: flex;
+  align-items: flex-start;
+}
+
+.wallet-feed .transaction {
+  margin-top: 10px;
+  margin-bottom : 10px;
+}
+
+.wallet-feed .transaction,
+.wallet-feed .message {
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.wallet-feed .message {
+  border-left: 5px solid #ffdc00;
+  padding-left: 1em;
+  margin-bottom: 10px;
+}
+
+.wallet-feed .image img {
+  width: 100%;
+}
+
+.wallet-feed .image {
+  width: 50px;
+  padding: 0.5em 0.5em 0.5em 0;
+}
+
+.wallet-feed .description {
+  flex: auto;
+}
+
+.wallet-feed .description .name-val {
+  display: flex;
+  align-items: center;
+}
+
+.wallet-feed .description p {
+  margin: 0px;
+}
+
+.wallet-feed .description .name-val .name {
+  color: black;
+  font-weight: 900;
+}
+
+.wallet-feed .description .name-val .value {
+  flex: auto;
+  text-align: right;
+  font-size: 1.1em;
+}
+
+.wallet-feed .description .name-val .status {
+  font-size: 0.7em;
+  padding: 0.1em 0.3em;
+  margin-left: 5px;
+  background: #e0e0e0;
+}
+
+.wallet-feed .description .download-time {
+  display: flex;
+  align-items: center;
+}
+
+.wallet-feed .description .download-time .icon {
+  width: 20px;
+}
+
+.wallet-feed .description .download-time .dot {
+  display: flex;
+  align-items: center;
+  width: 15px;
+  justify-content: center;
+  font-size: 3px;
+}
+
+.wallet-feed .description .download-time .time {
+  color:#bbbbbb;
+  font-size: 0.7em;
+}
+
+/*---------------------------------------*/
+
+#wallet-sub-nav {
+  border-bottom: 1px solid #eaeaea;
+  align-items: center;
+  position: absolute;
+  top: 55px;
+  width: 100%;
+  background: white;
+  display: none;
+}
+
+#wallet-sub-nav.show {
+  display: flex;
+}
+
+#wallet-sub-nav .price-logo {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 1em 0px 1em 0.7em;
+}
+
+#wallet-sub-nav .price-logo .logo {
+  width: 40px;
+}
+
+#wallet-sub-nav .price-logo .price {
+  font-size: 25px;
+  padding-left: 0.5em;
+}
+
+#wallet-sub-nav .price-logo .price span {
+  font-size: 15px;
+}
+
+#wallet-sub-nav .links {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+#wallet-sub-nav .links .link {
+  padding: 15px;
+}
+
+#wallet-sub-nav .links .link.active {
+  border-bottom: 3px solid #ffdc00;
+}
+
+/*---------------------------------------*/
+
+#wallet-amount {
+  border: none;
+}
+
+#wallet-amount .amount-slider .amounts {
+  display: flex;
+}
+
+#wallet-amount .amount-slider .amounts p {
+  margin : 0px;
+  flex: auto;
+  font-size: 0.6em;
+  margin-bottom : 5px;
+}
+
+#wallet-amount .amount-slider .amounts p:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#wallet-amount .amount-slider .amounts p:last-child img {
+  width : 20px;
+  margin-right: 3px;
+}
+
+#wallet-amount .amount-slider .conversion {
+  display: inline-block;
+  margin-top: 10px;
+  text-align: right;
+}
+
+#wallet-amount .amount-slider .conversion p {
+  margin: 0px;
+  font-size: 0.9em;
+  line-height: 1;
+}
+
+#wallet-amount .amount-slider .conversion .storecoin-val {
+  display: flex;
+  align-items: center;
+}
+
+#wallet-amount .amount-slider .conversion .storecoin-val img {
+  width: 20px;
+  margin-right: 3px;
+}
+
+#wallet-amount .amount-slider .conversion .exchange {
+  width: 19px;
+  margin: -3px 0;
+}
+
+#wallet-amount .repeat-check {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5em;
+}
+
+#wallet-amount .repeat-check .repeat {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+#wallet-amount .repeat-check .repeat input, label {
+  margin-bottom : 0px;
+}
+
+#wallet-amount .repeat-check .repeat-time {
+  flex: 0.8;
+}
+
+/*---------------------------------------*/
+
+#wallet-pay-method .ui.dropdown .bank-info {
+  font-size: 0.8em;
+}
+
+#wallet-pay-method .ui.dropdown .bank-info .name {
+  color: black;
+}
+
+/*---------------------------------------*/
+
+.confirm-transact.ui.modal {
+  font-size: 1em;
+  background-color: white;
+}
+
+.confirm-transact.ui.modal section {
+  padding: 0.7em;
+}
+
+.confirm-transact.ui.modal .content {
+  border-radius: 0px;
+  padding: 0px !important;
+}
+
+.confirm-transact.ui.modal .content .modal-header {
+  padding: 0.7em;
+}
+
+.confirm-transact.ui.modal .content .modal-content {
+  padding: 0em 0.7em;
+}
+
+.confirm-transact.ui.modal .content .modal-header {
+  background-color: #3e3e3e;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.confirm-transact.ui.modal .content .modal-header .logo-title {
+  display: flex;
+  align-items: center;
+}
+
+.confirm-transact.ui.modal .content .modal-header .logo-title img {
+  width: 25px;
+  margin-right: 10px;
+}
+
+.confirm-transact.ui.modal .content .modal-header .close-modal {
+  color: #9f9f9f;
+  width: 20px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.confirm-transact.ui.modal .content .modal-content .buying-info {
+  text-align: center;
+}
+
+.confirm-transact.ui.modal .content .modal-content .buying-info .buy-amount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  margin: 0.3em 0px;
+}
+
+.confirm-transact.ui.modal .content .modal-content .buying-info .buy-amount img {
+  width:45px;
+}
+
+.confirm-transact.ui.modal .content .modal-content .buying-info .per-value {
+  font-size: 0.7em;
+}
+
+.confirm-transact.ui.modal .content .modal-content .pay-info {
+  display: flex;
+  align-items: center;
+}
+
+.confirm-transact.ui.modal .content .modal-content .pay-info .icons img {
+  width: 18px;
+}
+
+.confirm-transact.ui.modal .content .modal-content .pay-info .info {
+  flex: auto;
+  padding-left: 0.5em;
+}
+
+.confirm-transact.ui.modal .content .modal-content .pay-info .info .item-head {
+  font-size: 0.7em;
+}
+
+.confirm-transact.ui.modal .content .modal-content .pay-info .info .item-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.confirm-transact.ui.modal .content .modal-content .pay-info .info .item-info a {
+  color: #3d92e4;
+  font-weight: 300;
+  font-size: 0.8em;
+}
+
+.confirm-transact.ui.modal .content .modal-content .pay-info .info hr {
+  border-top: 1px solid #eaeaea;
+  margin: 0.5em 0;
+}
+
+.confirm-transact.ui.modal .content .modal-content .cost-info {
+  border: none;
+}
+
+.confirm-transact.ui.modal .content .modal-content .cost-info .item {
+  border: none;
+  font-size: 0.9em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 5px;
+}
+
+.confirm-transact.ui.modal .content .modal-content .cost-info .item div {
+  background: white;
+}
+
+.confirm-transact.ui.modal .content .modal-content .cost-info .item hr {
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  margin: 0px;
+  border-top: 2px dotted rgba(118, 118, 118, 0.33);
+  z-index: -1;
+}
+
+.confirm-transact.ui.modal .content .modal-content .confirmation {
+  text-align: center;
+  border: none;
+  padding-top: 0px;
+}
+
+.confirm-transact.ui.modal .content .modal-content .confirmation div:last-child {
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+.confirm-transact.ui.modal .content .model-btn-grp {
+  background: #f4f4f4;
+  padding: 0.5em 0em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-transact.ui.modal .content .model-btn-grp .divider {
+  background-color: #bdbdbd;
+  width: 1px;
+  height: 40px;
+}
+
+.confirm-transact.ui.modal .content .model-btn-grp a {
+  width: 49%;
+  padding: 0.5em 0em;
+  text-align: center;
+}
+
+/*---------------------------------------*/
+
+.send-gift-to .ui.dropdown,
+.send-gift-to .ui.dropdown .menu .item {
+  padding: 1em 0.5em !important;
+}
+
+.send-gift-to .ui.dropdown .menu .item {
+  background-color: #eaeaea;
+  border-color: #eaeaea;
+  color: black !important;
+}
+
+.send-gift-to .ui.dropdown .menu .item.selected {
+  background-color: #fcda00;
+  border-color: #fcda00;
+}
+
+.send-gift-to .ui.dropdown .menu {
+  max-height: 20rem;
+}
+
+.send-gift-to .ui.dropdown i.dropdown.icon {
+  visibility: hidden;
+}
+
+.send-email {
+  margin-top: 1em;
+}
+
+/*---------------------------------------*/
+
+#wallet-tabs .tab {
+  position: absolute;
+  top: 114px;
+  width: 100%;
+  height: calc(100vh - 114px);
+  background: white;
+  display: none;
+}
+
+#wallet-tabs .tab.active {
+  display: block;
+}
+
+/*---------------------------------------*/
+
+#notification-window {
+  position: absolute;
+  top: 55px;
+  width: 100%;
+  height: calc(100vh - 55px);
+  background-color: white;
+  display: none;
+}
+
+#notification-window.show {
+  display: block;
+}
+
+#notification-window .options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7em;
+  border-bottom: 1px solid #eaeaea;
+}
+
+#notification-window .options .ui.dropdown {
+  width: 45%;
+}
+
+#notification-window .options .settings {
+  font-size: 1.5em; width:30px; text-align:center;
+}
+
+#notification-window .notification-feeds .download-time img {
+  width: 25px;
+  opacity: 0.7;
+}
+
+/*.each-feed {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.7em;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.each-feed .title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.each-feed .title .tag {
+  margin-left: 5px;
+  padding: 3px;
+  background: #eaeaea;
+  line-height: 1;
+  font-size: 0.7em;
+}
+
+.each-feed .image {
+  flex: none;
+  padding: 1em;
+  padding-left: 0.5em;
+  padding-top: 0.2em;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}*/

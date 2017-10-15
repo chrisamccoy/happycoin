@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  include sub-nav
+  section#wallet-amount(style="border-bottom: 1px solid #eaeaea;")
+    include amount-slider
+  
+  section(style="border:none;")
+    div.send-gift-to
+      div.header SEND A GIFT TO
+      .ui.fluid.search.selection.dropdown
+        input(type='hidden', name='user')
+        i.dropdown.icon
+        .default.text Add by searching names
+        .menu
+          .item(data-value='Marion Diaz')
+            img.ui.mini.avatar.image(src='/images/wallet/user-1.png')
+            |       Marion Diaz
+          .item(data-value='Danny Fortune')
+            img.ui.mini.avatar.image(src='/images/wallet/user-2.png')
+            |       Danny Fortune
+          .item(data-value='Chris McCoy')
+            img.ui.mini.avatar.image(src='/images/wallet/user-3.png')
+            |       Chris McCoy
+          .item(data-value='Chanses Armstrong')
+            img.ui.mini.avatar.image(src='/images/wallet/user-4.png')
+            |       Chanses Armstrong
+          .item(data-value='Chirstina Hayes')
+            img.ui.mini.avatar.image(src='/images/wallet/user-5.png')
+            |       Chirstina Hayes
+    div.send-email
+      div.header.blue Send by email
+      div.textarea-count
+        textarea(maxlength="250")
+        div.count 
+          span 0
+          span /250 
+  
+  div.wallet-button
+    button Gift Storecoin

@@ -1,0 +1,101 @@
+extends layout
+
+block content
+  include sub-nav 
+  section#wallet-pay-method
+    div.header PAYMENT METHOD
+    .ui.fluid.selection.dropdown
+      input(type='hidden', name='user')
+      i.dropdown.icon
+      .default.text
+        div.bank-info
+          div.name Wells Fargo - Bank
+          div.status Checking • ******2089
+      .menu
+        .item(data-value='Wells Fargo - Bank ******2089')
+          div.bank-info
+            div.name Wells Fargo - Bank
+            div.status Checking • ******2089
+        .item(data-value='Colorado - Bank ******2089')
+          div.bank-info
+            div.name Colorado - Bank
+            div.status Checking • ******2089
+        .item(data-value='California - Bank ******2089')
+          div.bank-info
+            div.name California - Bank
+            div.status Checking • ******2089
+
+  section#wallet-amount
+    div.header AMOUNT
+    include amount-slider
+    div.repeat-check
+      div.repeat
+        input#repeatField(type='checkbox')
+        label.label-inline(for='repeatField') Repeat this buy
+      div.repeat-time
+        select.ui.fluid.selection.dropdown
+          option(value='') Weekly
+          option(value='2') Weekly
+          option(value='1') Monthly
+          option(value='0') Yearly
+
+  div.wallet-button.open-transaction
+    button Buy storecoin
+
+  div.confirm-transact.ui.modal
+    div.content 
+      div.modal-header 
+        div.logo-title
+          img(src="/images/wallet/footprint-logo.png")
+          | Confirm Buy
+        div.close-modal
+          i.ion-android-close
+      div.modal-content
+        section.buying-info
+          div.bold You are buying
+          div.buy-amount
+            img(src="/images/wallet/storecoin-logo.png")
+            div.green.line-height-1.storecoin-val 0.0279
+          div.per-value @ $35.85 per storecoin
+        section.pay-info
+          div.icons
+            if (name == 'Buy')
+              img(src="/images/wallet/payment-buy-icons.png")
+            else 
+              img(src="/images/wallet/payment-sell-icons.png")
+          div.info
+            div.item
+              div.item-head Payment Method
+              div.item-info.bold.bank-info Wells Fargo - Bank ******2089
+            hr
+            div.item
+              div.item-head Available
+              div.item-info.bold 
+               | Saturday, 6/24/2017
+               a(href="#") Why?
+            hr
+            div.item
+              div.item-head Deposit to
+              div.item-info.bold 
+                | Storecoin
+                a(href="#") Change            
+        section.cost-info
+          div.item 
+            div Cost of Storecoin
+            div.bold $1.00
+            hr
+          div.item 
+            div Transaction Fee
+            div.bold $0.30
+            hr
+          div.item 
+            div Total
+            div.bold $1.30
+            hr
+        section.confirmation
+          div.bold Confirm Your Transaction
+          div Review all the details and confirm your transaction below.
+      div.model-btn-grp
+        a.red.close-modal(href="#") Cancel
+        div.divider
+        a.green(href="#") Buy Storecoin

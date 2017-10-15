@@ -18,11 +18,6 @@ router.get('/whitepaper', function(req, res, next) {
 });
 
 /* GET home page. */
-router.get('/wallet', function(req, res, next) {
-  res.render('wallet/index', { title: 'Storecoin' });
-});
-
-/* GET home page. */
 router.get('/development', function(req, res, next) {
   res.render('development', { title: 'Storecoin' });
 });
@@ -146,5 +141,22 @@ router.get('/terms', function(req, res, next) {
 router.get('/tokengrant', function(req, res, next) {
   res.render('token-grant', { title: 'Storecoin' });
 });
+
+/* ------------WALLET------------ */
+router.get('/wallet', function(req, res, next) {
+  res.render('wallet/index', { title: 'Storecoin', name : 'Home' });
+});
+
+// router.get('/wallet/buy', function(req, res, next) {
+//   res.render('wallet/buy', { title: 'Storecoin', name : 'Buy' });
+// });
+//
+// router.get('/wallet/sell', function(req, res, next) {
+//   res.render('wallet/sell', { title: 'Storecoin', name : 'Sell' });
+// });
+//
+// router.get('/wallet/gift', function(req, res, next) {
+//   res.render('wallet/gift', { title: 'Storecoin', name : 'Gift' });
+// });
 
 module.exports = router;
