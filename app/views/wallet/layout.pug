@@ -47,19 +47,20 @@ html
     script(src='/js/jquery.ui.touch-punch.min.js')
     script(src='/js/wallet/script.js')
     
-    body 
-      nav#wallet-nav
-        div.title-logo
-          img.logo(src="/images/wallet/crossfit-logo.png")
-          div.title
-            div.main.show
-              p CROSSFIT, INC.
-              p MY WALLET
-            div.notification
-              p NOTIFICATIONS
-          div.back
-            a(href="#")
-              i.ion-chevron-left
-          div.notifications 2
+    body
+      div.layout 
+        nav#wallet-nav
+          div.title-logo
+            img.logo(src="/images/wallet/crossfit-logo.png")
+            div.title
+              div.main.show
+                p CROSSFIT, INC.
+                p MY WALLET
+              div.notification
+                p NOTIFICATIONS
+            div.back
+              a(href="#")
+                i.ion-chevron-left
+            div.notifications 2
 
-      block content
+        block content

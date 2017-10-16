@@ -155,31 +155,50 @@ function initModal () {
   $modal.find('.close-modal').click(function(){
     $modal.modal('hide');
   });
+
+  $modal.find('.confirm-button').click(function(){
+    $modal.modal('hide');
+    closeAllTabs();
+  });
+}
+
+function closeAllTabs (){
+  $('#wallet-tabs').find('.tab').removeClass('active');
+  $('#wallet-sub-nav').removeClass('show');
+  $('#notification-window').removeClass('show');
 }
 
 function initRangeSlider() {
-  $("#wallet-amount .amount-slider .slider").slider({
+  var slider = $("#wallet-amount .amount-slider .slider").slider({
     range : 'min',
     max: 139.47001,
     min : 0.00001,
     step : 0.00001,
-    value: 33.83535,
+    value : 44.38385,
     create : function(){
-      sliderFunction($(this));
+      sliderFunction($(this), 'create');
     },
     slide : function(){
-      sliderFunction($(this));
+      sliderFunction($(this), 'slide');
     },
     change : function(){
-      sliderFunction($(this));
+      sliderFunction($(this), 'change');
     }
   });
+
+  // slider.slider('value', 44.38385);
 }
 
-function sliderFunction($this) {
+function sliderFunction($this, eventName) {
   var value = $this.slider('value'),
-      $parent = $this.parents('.tab');
-  changeOnSlide(value, $parent);
+      $parent = $this.parents('.tab'),
+      thisHandlePos = $this.find('.ui-slider-handle').offset().left;
+
+  // if(eventName === 'slide') {
+  //   $this.find('.ui-slider-handle').trigger('click');
+  // }
+
+  changeOnSlide(value, $parent, thisHandlePos);
 }
 
 function bankSelect() {
@@ -195,12 +214,13 @@ function bankSelect() {
   $dropdown.dropdown('set selected', 'Wells Fargo - Bank ******2089');
 }
 
-function changeOnSlide (value, $parent) {
+function changeOnSlide (value, $parent, handlePos) {
   var $storeVal = $parent.find('#wallet-amount .storecoin-val span'),
       tabName = $parent.data().tab,
       $modalStoreVal = $('.confirm-transact.ui.modal[data-modal="'+tabName+'-modal"] .modal-content .buy-amount .storecoin-val'),
       $dollarVal = $parent.find('#wallet-amount .dollar-val span'),
-      $dollarAmount = 35.58;
+      $dollarAmount = 35.58,
+      $conversion = $parent.find('.conversion');
 
   if ($storeVal) { $storeVal.text(value); }
   if ($modalStoreVal) { $modalStoreVal.text(value); }
@@ -208,6 +228,10 @@ function changeOnSlide (value, $parent) {
 
   if (tabName == 'gift') {
     giftItems.storeVal = value;
+  }
+
+  if(handlePos > $conversion.width()) {
+    $conversion.css('left', (handlePos - ($conversion.width() - 12))+'px');
   }
 }
 

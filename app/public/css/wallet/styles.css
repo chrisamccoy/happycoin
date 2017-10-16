@@ -15,10 +15,24 @@ body {
   font-family: 'ProximaNova', sans-serif;
   position: relative;
   height: 100%;
+  background-image: url(/images/wallet/wallet-background.png);
+  background-repeat: no-repeat;
+  background-position:top right;
+  background-size: auto;
+  background-color: black;
 }
 
 body.overflow {
   overflow: hidden;
+}
+
+.layout {
+  max-width: 400px;
+  height: 100%;
+  background: white;
+  position: relative;
+  box-shadow: 5px 5px 10px 0 rgba(46, 61, 73, 0.35);
+  overflow: scroll;
 }
 
 .header {
@@ -487,6 +501,12 @@ select {
 
 #wallet-amount {
   border: none;
+  position: relative;
+}
+
+#wallet-amount .amount-slider {
+  /*position: relative;*/
+  height: 100px;
 }
 
 #wallet-amount .amount-slider .amounts {
@@ -512,6 +532,7 @@ select {
 }
 
 #wallet-amount .amount-slider .conversion {
+  position: absolute;
   display: inline-block;
   margin-top: 10px;
   text-align: right;
@@ -573,7 +594,7 @@ select {
 
 .confirm-transact.ui.modal {
   font-size: 1em;
-  background-color: white;
+  background: none;
 }
 
 .confirm-transact.ui.modal section {
@@ -581,8 +602,10 @@ select {
 }
 
 .confirm-transact.ui.modal .content {
+  max-width: 400px;
   border-radius: 0px;
   padding: 0px !important;
+  margin: 0 auto;
 }
 
 .confirm-transact.ui.modal .content .modal-header {
@@ -604,6 +627,7 @@ select {
 .confirm-transact.ui.modal .content .modal-header .logo-title {
   display: flex;
   align-items: center;
+  color: white;
 }
 
 .confirm-transact.ui.modal .content .modal-header .logo-title img {
