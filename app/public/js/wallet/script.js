@@ -67,7 +67,7 @@ function sendGift () {
     $('#wallet-nav .notifications').addClass('new');
     $('.tab').removeClass('active');
     $('#wallet-sub-nav').removeClass('show');
-    $('body').removeClass('overflow');
+    $('.layout').removeClass('overflow');
   });
 }
 
@@ -94,7 +94,7 @@ function initTabs (){
 
   $tabLinks.click(function(){
     $subNav.addClass('show');
-    $('body').addClass('overflow');
+    $('.layout').addClass('overflow');
     // document.body.style.overflow = 'hidden';
   });
 
@@ -109,7 +109,7 @@ function initTabs (){
   $back.click(function(){
     $subNav.removeClass('show');
     $walletTabs.find('.tab').removeClass('active');
-    $('body').removeClass('overflow');
+    $('.layout').removeClass('overflow');
     $('#notification-window').removeClass('show');
     // document.body.style.overflow = 'scroll';
     $navTitle.find('.main').addClass('show');
@@ -232,6 +232,8 @@ function changeOnSlide (value, $parent, handlePos) {
 
   if(handlePos > $conversion.width()) {
     $conversion.css('left', (handlePos - ($conversion.width() - 12))+'px');
+  } else {
+    $conversion.css('left', '12px');
   }
 }
 

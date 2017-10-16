@@ -22,10 +22,6 @@ body {
   background-color: black;
 }
 
-body.overflow {
-  overflow: hidden;
-}
-
 .layout {
   max-width: 400px;
   height: 100%;
@@ -33,6 +29,10 @@ body.overflow {
   position: relative;
   box-shadow: 5px 5px 10px 0 rgba(46, 61, 73, 0.35);
   overflow: scroll;
+}
+
+.layout.overflow {
+  overflow: hidden;
 }
 
 .header {
@@ -792,7 +792,7 @@ select {
   position: absolute;
   top: 114px;
   width: 100%;
-  height: calc(100vh - 114px);
+  height: calc(100% - 114px);
   background: white;
   display: none;
 }
@@ -807,7 +807,7 @@ select {
   position: absolute;
   top: 55px;
   width: 100%;
-  height: calc(100vh - 55px);
+  height: calc(100% - 55px);
   background-color: white;
   display: none;
 }
