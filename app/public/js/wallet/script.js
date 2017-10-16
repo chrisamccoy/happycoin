@@ -125,7 +125,7 @@ function initTabs (){
       $walletTabs.find('.tab').removeClass('active');
 
       $subNav.find('.links .link[data-tab="'+tabName+'"]').addClass('active');
-      $walletTabs.find('.tab[data-tab="'+tabName+'"]').addClass('active');
+      $walletTabs.find('.tab[data-tab="'+tabName+'"]').addClass('active').css('height' , ($(window).height() - 114)+'px');
     }
   });
 }
