@@ -149,6 +149,7 @@ function initTabs (){
   });
 
   $('body').on('focus', 'input', function(){
+    var $this = $(this);
     setTimeout(function(){
       $('.layout').scrollTop($this.offset().top);
     }, 300);
