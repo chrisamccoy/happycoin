@@ -17,7 +17,7 @@ body {
   height: 100%;
   background-image: url(/images/wallet/wallet-background.png);
   background-repeat: no-repeat;
-  background-position:top right;
+  background-position:400px 0px;
   background-size: auto;
   background-color: black;
 }
@@ -804,6 +804,7 @@ select {
 }
 
 #wallet-tabs .tab .button-container {
+  z-index: 1;
   display: flex;
   flex: auto;
   align-items: flex-end;

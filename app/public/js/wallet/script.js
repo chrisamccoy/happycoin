@@ -137,15 +137,16 @@ function initTabs (){
     }
   });
 
-  // var $tabInputs = $walletTabs.find('input'),
-  //     $tabTextarea = $walletTabs.find('textarea');
-  // // console.log($tabInputs);
-  // $tabInputs.add($tabTextarea).focus(function(){
-  //   $walletTabs.find('.wallet-button').hide();
-  // });
-  // $tabInputs.add($tabTextarea).blur(function(){
-  //   $walletTabs.find('.wallet-button').show();
-  // });
+  var $tabInputs = $walletTabs.find('input'),
+      $tabTextarea = $walletTabs.find('textarea');
+
+  $tabTextarea.focus(function(){
+    $('.layout').scrollTop($(this).offset().top);
+  });
+
+  $('body').on('focus', 'input', function(){
+    $('.layout').scrollTop($(this).offset().top);
+  });
 }
 
 function initTextarea() {
