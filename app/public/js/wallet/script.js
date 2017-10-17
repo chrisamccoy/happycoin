@@ -70,6 +70,8 @@ function sendGift () {
 }
 
 function initDropdowns() {
+  var $tabInputs = $('#wallet-tab input'),
+      $tabTextarea = $('#wallet-tab textarea');
   $('.ui.dropdown').dropdown();
   $('.send-gift-to .ui.dropdown').dropdown({
     onChange : function(value){
@@ -125,13 +127,15 @@ function initTabs (){
     }
   });
 
-  var $tabInputs = $walletTabs.find('textarea');
-  console.log($tabInputs);
-  $tabInputs.focus(function(){
-    console.log('focused');
-    $(window).scrollTop($(window).scrollHeight);
-    $walletTabs.find('.wallet-button').hide();
-  });
+  // var $tabInputs = $walletTabs.find('input'),
+  //     $tabTextarea = $walletTabs.find('textarea');
+  // // console.log($tabInputs);
+  // $tabInputs.add($tabTextarea).focus(function(){
+  //   $walletTabs.find('.wallet-button').hide();
+  // });
+  // $tabInputs.add($tabTextarea).blur(function(){
+  //   $walletTabs.find('.wallet-button').show();
+  // });
 }
 
 function initTextarea() {

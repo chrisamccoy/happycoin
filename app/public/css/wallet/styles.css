@@ -135,9 +135,9 @@ select {
 .wallet-button {
   padding: 1em;
   background-color: #e0e0e0;
-  position: absolute;
+  /*position: absolute;
   bottom: 0px;
-  left: 0px;
+  left: 0px;*/
   width: 100%;
 }
 
