@@ -803,6 +803,12 @@ select {
   justify-content: space-between;
 }
 
+#wallet-tabs .tab .button-container {
+  display: flex;
+  flex: auto;
+  align-items: flex-end;
+}
+
 /*---------------------------------------*/
 
 #notification-window {

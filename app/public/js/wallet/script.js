@@ -23,7 +23,7 @@ giftItems = {
   sender : null,
   message : null
 },
-numNotification = 2;
+numNotification = 1;
 
 function sendGift () {
   $('#gift-button button').click(function(){
@@ -62,11 +62,20 @@ function sendGift () {
     '</section>';
     $('#notification-window .notification-feeds').append(templateNot);
     $('.feeds').append(templateFeed);
-    numNotification += 1;
-    $('#wallet-nav .notifications').text(numNotification);
-    $('#wallet-nav .notifications').addClass('new');
+    updateNotific('new');
     closeAllTabs();
   });
+}
+
+function updateNotific(type) {
+  if (type == 'new') {
+    numNotification += 1;
+    $('#wallet-nav .notifications').addClass('new');
+  } else if (type == 'reset') {
+    numNotification = 0;
+    $('#wallet-nav .notifications').removeClass('new');
+  }
+  $('#wallet-nav .notifications').text(numNotification);
 }
 
 function initDropdowns() {
@@ -107,6 +116,7 @@ function initTabs (){
     $('#notification-window').addClass('show');
     $navTitle.find('.main').removeClass('show');
     $navTitle.find('.notification').addClass('show');
+    updateNotific('reset');
   });
 
   $back.click(function(){

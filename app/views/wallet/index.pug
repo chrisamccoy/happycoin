@@ -121,8 +121,9 @@ block content
                 option(value='1') Monthly
                 option(value='0') Yearly
 
-        div.wallet-button.open-transaction
-          button(data-modal="buy-modal") Buy storecoin
+        div.button-container
+          div.wallet-button.open-transaction
+            button(data-modal="buy-modal") Buy storecoin
       
       div.tab(data-tab="sell")
         section#wallet-pay-method
@@ -161,9 +162,10 @@ block content
                 option(value='2') Weekly
                 option(value='1') Monthly
                 option(value='0') Yearly
-
-        div.wallet-button.open-transaction
-          button(data-modal="sell-modal") Sell storecoin
+                
+        div.button-container
+          div.wallet-button.open-transaction
+            button(data-modal="sell-modal") Sell storecoin
             
       div.tab(data-tab="gift")
         section#wallet-amount(style="border-bottom: 1px solid #eaeaea;")
@@ -200,8 +202,9 @@ block content
                 span 0
                 span /250 
         
-        div#gift-button.wallet-button
-          button Gift Storecoin
+        div.button-container
+          div#gift-button.wallet-button
+            button Gift Storecoin
     
   div#notification-window
     div.options
