@@ -1,5 +1,4 @@
 $(document).ready(function(){
-  drawLineChart(data);
   initRangeSlider();
   initModal();
   bankSelect();
@@ -8,17 +7,9 @@ $(document).ready(function(){
   initTabs();
   initDropdowns();
   sendGift();
+  loadChartData();
 });
-
-var data = [
-  { "date": "2016-07-19", "close": 0 },
-  { "date": "2016-07-20", "close": 12.22 },
-  { "date": "2016-07-21", "close": 23.56 },
-  { "date": "2016-07-22", "close": 38.99 },
-  { "date": "2016-07-25", "close": 37.87 },
-  { "date": "2016-07-26", "close": 35.58 }
-],
-giftItems = {
+var giftItems = {
   storeVal : null,
   sender : null,
   message : null
@@ -79,8 +70,6 @@ function updateNotific(type) {
 }
 
 function initDropdowns() {
-  var $tabInputs = $('#wallet-tab input'),
-      $tabTextarea = $('#wallet-tab textarea');
   $('.ui.dropdown').dropdown();
   $('.send-gift-to .ui.dropdown').dropdown({
     onChange : function(value){
@@ -226,10 +215,6 @@ function sliderFunction($this, eventName) {
       $parent = $this.parents('.tab'),
       thisHandlePos = $this.find('.ui-slider-handle').offset().left;
 
-  // if(eventName === 'slide') {
-  //   $this.find('.ui-slider-handle').trigger('click');
-  // }
-
   changeOnSlide(value, $parent, thisHandlePos);
 }
 
@@ -269,13 +254,34 @@ function changeOnSlide (value, $parent, handlePos) {
   }
 }
 
+function loadChartData() {
+  var $dropdown = $('#wallet-price-span .ui.dropdown');
+  $dropdown.dropdown({
+    onChange : function(value){
+      if (value == '1D') {
+        $.getJSON( "https://market.capitalstake.com/intraday/DGKC/"+value, function( result ) {
+          drawLineChart(result.data);
+        });
+      } else {
+        $.getJSON( "https://market.capitalstake.com/daily/DGKC/", function( result ) {
+          result.data = result.data.slice(0,value);
+          drawLineChart(result.data);
+        });
+      }
+    }
+  });
+  $.getJSON( "https://market.capitalstake.com/intraday/DGKC/1D", function( result ) {
+    drawLineChart(result.data);
+  });
+}
+
 function drawLineChart(data) {
-  var margin = {top: 20, right: 0, bottom: 5, left: 30},
+  var margin = {top: 20, right: 0, bottom: 5, left: 32},
       width = $('.graph').width() - margin.left - margin.right,
       height = ($('.graph').width() * 0.5) - margin.top - margin.bottom;
 
   // parse the date / time
-  var parseTime = d3.timeParse("%Y-%m-%d");
+  var parseTime = d3.timeParse("%Y-%m-%d %H:%M:%S");
 
   // set the ranges
   var x = d3.scaleTime().range([0, width]);
@@ -295,7 +301,8 @@ function drawLineChart(data) {
   // append the svg obgect to the body of the page
   // appends a 'group' element to 'svg'
   // moves the 'group' element to the top left margin
-  var svg = d3.select("svg")
+  $('#wallet-graph .graph').html('');
+  var svg = d3.select("#wallet-graph .graph").append('svg')
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
     .append("g")
@@ -310,7 +317,7 @@ function drawLineChart(data) {
 
   // Scale the range of the data
   x.domain(d3.extent(data, function(d) { return d.date; }));
-  y.domain([0, d3.max(data, function(d) { return d.close; })]);
+  y.domain(d3.extent(data, function(d) { return d.close; }));
 
   // set the gradient
   svg.append("linearGradient")
@@ -345,5 +352,5 @@ function drawLineChart(data) {
 
   // Add the Y Axis
   svg.append("g")
-      .call(d3.axisLeft(y).ticks(3));
+      .call(d3.axisLeft(y).ticks(2).tickFormat(function(d){return numeral(d).format('$(0,0a)');}));
 }
