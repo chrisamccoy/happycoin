@@ -124,6 +124,13 @@ function initTabs (){
       // $walletTabs.find('.tab[data-tab="'+tabName+'"]').addClass('active').css('height' , ($(window).height() - 114)+'px');
     }
   });
+
+  var $tabInputs = $walletTabs.find('textarea');
+  console.log($tabInputs);
+  $tabInputs.focus(function(){
+    console.log('focused');
+    $walletTabs.find('.wallet-button').hide();
+  });
 }
 
 function initTextarea() {
