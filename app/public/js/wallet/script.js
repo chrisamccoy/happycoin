@@ -143,7 +143,7 @@ function initTabs (){
   $tabTextarea.focus(function(){
     var $this = $(this);
     setTimeout(function(){
-      $(".layout").animate({ scrollTop: $this.offset().top }, 1000);
+      $(".layout").animate({ scrollTop: $this.offset().top }, 300);
       // $('.layout').scrollTop($this.offset().top);
     }, 300);
     // $('.layout').scrollTop($(this).offset().top);
@@ -152,7 +152,7 @@ function initTabs (){
   $('body').on('focus', 'input', function(){
     var $this = $(this);
     setTimeout(function(){
-      $(".layout").animate({ scrollTop: $this.offset().top }, 1000);
+      $(".layout").animate({ scrollTop: $this.offset().top }, 300);
       // $('.layout').scrollTop($this.offset().top);
     }, 300);
   });
