@@ -798,7 +798,9 @@ select {
 }
 
 #wallet-tabs .tab.active {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /*---------------------------------------*/
