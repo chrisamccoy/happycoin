@@ -129,6 +129,7 @@ function initTabs (){
   console.log($tabInputs);
   $tabInputs.focus(function(){
     console.log('focused');
+    $(window).scrollTop($(window).scrollHeight);
     $walletTabs.find('.wallet-button').hide();
   });
 }
