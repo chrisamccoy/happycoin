@@ -143,13 +143,13 @@ function initTabs (){
   $tabTextarea.focus(function(){
     setTimeout(function(){
       $('.layout').scrollTop($(this).offset().top);
-    }, 100);
+    }, 300);
   });
 
   $('body').on('focus', 'input', function(){
     setTimeout(function(){
       $('.layout').scrollTop($(this).offset().top);
-    }, 100);
+    }, 300);
   });
 }
 
