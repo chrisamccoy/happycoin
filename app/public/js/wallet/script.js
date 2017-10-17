@@ -141,11 +141,15 @@ function initTabs (){
       $tabTextarea = $walletTabs.find('textarea');
 
   $tabTextarea.focus(function(){
-    $('.layout').scrollTop($(this).offset().top);
+    setTimeout(function(){
+      $('.layout').scrollTop($(this).offset().top);
+    }, 100);
   });
 
   $('body').on('focus', 'input', function(){
-    $('.layout').scrollTop($(this).offset().top);
+    setTimeout(function(){
+      $('.layout').scrollTop($(this).offset().top);
+    }, 100);
   });
 }
 
