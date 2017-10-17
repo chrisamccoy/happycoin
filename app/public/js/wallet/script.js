@@ -65,9 +65,7 @@ function sendGift () {
     numNotification += 1;
     $('#wallet-nav .notifications').text(numNotification);
     $('#wallet-nav .notifications').addClass('new');
-    $('.tab').removeClass('active');
-    $('#wallet-sub-nav').removeClass('show');
-    $('.layout').removeClass('overflow');
+    closeAllTabs();
   });
 }
 
@@ -102,6 +100,7 @@ function initTabs (){
 
   $notifications.click(function(){
     $('#transaction-tab').hide();
+    $('#home-tab').hide();
     $(this).removeClass('new');
     $('#notification-window').addClass('show');
     $navTitle.find('.main').removeClass('show');
@@ -109,14 +108,7 @@ function initTabs (){
   });
 
   $back.click(function(){
-    $walletTabs.find('.tab').removeClass('active');
-    $('.layout').removeClass('overflow');
-    $('#notification-window').removeClass('show');
-    $('#transaction-tab').hide();
-    $('#home-tab').show();
-    // document.body.style.overflow = 'scroll';
-    $navTitle.find('.main').addClass('show');
-    $navTitle.find('.notification').removeClass('show');
+    closeAllTabs();
   });
 
   $navLinks.click(function(){
@@ -166,9 +158,13 @@ function initModal () {
 }
 
 function closeAllTabs (){
-  $('#wallet-tabs').find('.tab').removeClass('active');
-  $('#wallet-sub-nav').removeClass('show');
+  var $navTitle = $('#wallet-nav').find('.title');
+  $('#transaction-tab').hide();
   $('#notification-window').removeClass('show');
+  $('#home-tab').show();
+  $('.layout').removeClass('overflow');
+  $navTitle.find('.main').addClass('show');
+  $navTitle.find('.notification').removeClass('show');
 }
 
 function initRangeSlider() {
