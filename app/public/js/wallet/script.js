@@ -93,24 +93,27 @@ function initTabs (){
       $navTitle = $walletNav.find('.title');
 
   $tabLinks.click(function(){
-    $subNav.addClass('show');
-    $('.layout').addClass('overflow');
+    $('#transaction-tab').show();
+    $('#home-tab').hide();
+    // $subNav.addClass('show');
+    // $('.layout').addClass('overflow');
     // document.body.style.overflow = 'hidden';
   });
 
   $notifications.click(function(){
+    $('#transaction-tab').hide();
     $(this).removeClass('new');
     $('#notification-window').addClass('show');
     $navTitle.find('.main').removeClass('show');
-    $walletTabs.find('.tab').removeClass('active');
     $navTitle.find('.notification').addClass('show');
   });
 
   $back.click(function(){
-    $subNav.removeClass('show');
     $walletTabs.find('.tab').removeClass('active');
     $('.layout').removeClass('overflow');
     $('#notification-window').removeClass('show');
+    $('#transaction-tab').hide();
+    $('#home-tab').show();
     // document.body.style.overflow = 'scroll';
     $navTitle.find('.main').addClass('show');
     $navTitle.find('.notification').removeClass('show');
