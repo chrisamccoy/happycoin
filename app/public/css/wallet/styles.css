@@ -1,10 +1,18 @@
 @font-face {
  font-family: 'ProximaNova';
  font-style: normal;
- font-weight: bold;
- src: url('../../fonts/ProximaNova-Bold.otf');
- src: url('../../fonts/ProximaNova-RegularItalic.otf');
+ font-weight: normal;
  src: url('../../fonts/ProximaNova-Regular.otf') format('woff2');
+ /*src: url('../../fonts/ProximaNova-Bold.otf') format('woff2');
+ src: url('../../fonts/ProximaNova-Extrabold.otf') format('woff2');
+ src: url('../../fonts/ProximaNova-RegularItalic.otf') format('woff2');*/
+}
+
+@font-face {
+ font-family: 'ProximaNova';
+ font-style: normal;
+ font-weight: bold;
+ src: url('../../fonts/ProximaNova-Semibold.otf') format('woff2');
 }
 
 html {
@@ -17,27 +25,31 @@ body {
   height: 100%;
   background-image: url(/images/wallet/wallet-background.png);
   background-repeat: no-repeat;
-  background-position:400px 0px;
+  background-position:520px 0px;
   background-size: auto;
   background-color: black;
 }
 
 .layout {
-  max-width: 400px;
+  max-width: 528px;
   height: 100%;
   background: white;
   position: relative;
   box-shadow: 5px 5px 10px 0 rgba(46, 61, 73, 0.35);
-  overflow: scroll;
-}
-
-.layout.overflow {
   overflow: hidden;
 }
 
+/*.layout.overflow {
+  overflow: hidden;
+}*/
+
 .header {
   font-weight: bold;
-  margin-bottom: 0.7em;
+  margin-bottom: 1em;
+}
+
+.padding {
+  padding: 20px;
 }
 
 i {
@@ -53,7 +65,7 @@ a {
 }
 
 section {
-  padding: 1em 0.7em;
+  padding: 20px;
   border-bottom : 1px solid #eaeaea;
 }
 
@@ -103,6 +115,7 @@ select {
   line-height: 0.65;
   display: flex;
   align-items: flex-start;
+  font-weight: bold;
 }
 
 .price span {
@@ -117,10 +130,11 @@ select {
 }
 
 .slider .ui-slider-handle {
-  height: 15px;
-  width: 15px;
+  /*height: 15px;
+  width: 15px;*/
   border-radius: 50%;
   margin-left: -0.4em;
+  top: -0.4em;
   background: white;
   border: none;
   outline: none;
@@ -133,7 +147,7 @@ select {
 }
 
 .wallet-button {
-  padding: 1em;
+  padding: 20px;
   background-color: #e0e0e0;
   /*position: absolute;
   bottom: 0px;
@@ -143,11 +157,13 @@ select {
 
 .wallet-button button {
   width: 100%;
-  margin : 0px;
+  margin: 0px;
   background-color: #66bb6b;
   border-color: #66bb6b;
   text-transform: none;
-  font-size: 0.8em;
+  font-size: 0.9em;
+  padding: 0.5em;
+  height: auto;
 }
 
 .ui.dropdown .item {
@@ -178,6 +194,18 @@ select {
   color: #999;
 }
 
+#home-tab {
+  overflow: scroll;
+  height: calc(100% - 55px);
+}
+
+@media only screen and (max-width: 700px) {
+  .layout {
+    width: 100%;
+    max-width: none;
+  }
+}
+
 /*---------------------------------------*/
 
 #wallet-nav {
@@ -188,6 +216,7 @@ select {
   color: white;
   display: flex;
   align-items: center;
+  height: 55px;
 }
 
 #wallet-nav .title-logo .title {
@@ -201,11 +230,6 @@ select {
   word-spacing: 2px;
 }
 
-#wallet-nav .title-logo .title .notification,
-#wallet-nav .title-logo .title .main {
-  display: none;
-}
-
 #wallet-nav .title-logo .title .main.show,
 #wallet-nav .title-logo .title .notification.show {
   display: block;
@@ -213,12 +237,12 @@ select {
 
 #wallet-nav .title-logo .title .notification p,
 #wallet-nav .title-logo .title .main p:first-child {
-  font-size: 1.2em;
+  font-size: 17px;
   color: white;
 }
 
 #wallet-nav .title-logo .title .main p:last-child {
-  font-size: 0.9em;
+  font-size: 15px;
   color: #c8c8c8;
 }
 
@@ -227,7 +251,8 @@ select {
   height : 55px;
 }
 
-#wallet-nav .title-logo .back a {
+#wallet-nav .title-logo .back a,
+#wallet-nav .title-logo .close a {
   color: white;
   width: 50px;
   height: 50px;
@@ -255,6 +280,32 @@ select {
 #wallet-nav .title-logo .notifications.new {
   background-color: #ffdc00;
   color: #2a2a2a;
+}
+
+#wallet-nav .title-logo .title .notification,
+#wallet-nav .title-logo .title .main,
+#wallet-nav .title-logo .title .main p:first-child,
+#wallet-nav .title-logo .back:not(.desktop),
+#wallet-nav .title-logo .notifications,
+#wallet-nav .title-logo .logo {
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  #wallet-nav .title-logo .title .main p:first-child,
+  #wallet-nav .title-logo .back:not(.desktop),
+  #wallet-nav .title-logo .logo  {
+    display: block;
+  }
+
+  #wallet-nav .title-logo .notifications {
+    display: flex;
+  }
+
+  #wallet-nav .title-logo .back.desktop,
+  #wallet-nav .title-logo .close {
+    display: none;
+  }
 }
 
 /*---------------------------------------*/
@@ -285,6 +336,7 @@ select {
   font-size: 40px;
   margin: 0px;
   line-height: 1;
+  font-weight: bold;
 }
 
 #wallet-value .storecoin-val .unit {
@@ -317,6 +369,7 @@ select {
 
 #wallet-price-span {
   display: flex;
+  justify-content: space-between;
 }
 
 #wallet-price-span p {
@@ -324,6 +377,14 @@ select {
   display: flex;
   align-items: center;
   min-width: 140px;
+}
+
+#wallet-price-span .ui.dropdown {
+  width: 50%;
+}
+
+#wallet-price-span .ui.dropdown .menu {
+  max-height: none;
 }
 
 /*---------------------------------------*/
@@ -360,12 +421,24 @@ select {
   stroke : none;
 }
 
+#wallet-graph .graph .tick text {
+  font-size: 12px;
+}
+
 /*---------------------------------------*/
 
 .wallet-feed {
   display: flex;
   align-items: flex-start;
 }
+
+/*.wallet-feed .value {
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  line-height: 2.5;
+  font-size: 20px;
+}*/
 
 .wallet-feed .transaction {
   margin-top: 10px;
@@ -389,8 +462,8 @@ select {
 }
 
 .wallet-feed .image {
-  width: 50px;
-  padding: 0.5em 0.5em 0.5em 0;
+  width: 28px;
+  margin-right : 15px;
 }
 
 .wallet-feed .description {
@@ -400,6 +473,8 @@ select {
 .wallet-feed .description .name-val {
   display: flex;
   align-items: center;
+  line-height: 1;
+  margin-bottom: 10px;
 }
 
 .wallet-feed .description p {
@@ -408,18 +483,19 @@ select {
 
 .wallet-feed .description .name-val .name {
   color: black;
-  font-weight: 900;
+  font-weight: bold;
 }
 
 .wallet-feed .description .name-val .value {
   flex: auto;
   text-align: right;
-  font-size: 1.1em;
+  font-size: 20px;
+  /*font-weight: bold;*/
 }
 
 .wallet-feed .description .name-val .status {
   font-size: 0.7em;
-  padding: 0.1em 0.3em;
+  padding: 3px;
   margin-left: 5px;
   background: #e0e0e0;
 }
@@ -430,7 +506,7 @@ select {
 }
 
 .wallet-feed .description .download-time .icon {
-  width: 20px;
+  width: 13px;
 }
 
 .wallet-feed .description .download-time .dot {
@@ -442,8 +518,9 @@ select {
 }
 
 .wallet-feed .description .download-time .time {
-  color:#bbbbbb;
-  font-size: 0.7em;
+  line-height: 1;
+  color: rgba(0,0,0,.4);
+  font-size: 12px;
 }
 
 /*---------------------------------------*/
@@ -466,7 +543,7 @@ select {
   display: flex;
   align-items: center;
   flex: 1;
-  padding: 1em 0px 1em 0.7em;
+  padding: 15px 0px 15px 20px;
 }
 
 #wallet-sub-nav .price-logo .logo {
@@ -490,11 +567,13 @@ select {
 }
 
 #wallet-sub-nav .links .link {
-  padding: 15px;
+  padding : 15px 18px;
 }
 
 #wallet-sub-nav .links .link.active {
   border-bottom: 3px solid #ffdc00;
+  font-weight: bold;
+  color: black;
 }
 
 /*---------------------------------------*/
@@ -598,7 +677,7 @@ select {
 }
 
 .confirm-transact.ui.modal section {
-  padding: 0.7em;
+  padding: 20px;
 }
 
 .confirm-transact.ui.modal .content {
@@ -606,14 +685,17 @@ select {
   border-radius: 0px;
   padding: 0px !important;
   margin: 0 auto;
+  padding: 0.5em !important;
+  background: none;
 }
 
 .confirm-transact.ui.modal .content .modal-header {
-  padding: 0.7em;
+  padding: 20px;
 }
 
 .confirm-transact.ui.modal .content .modal-content {
-  padding: 0em 0.7em;
+  padding: 0em 1em;
+  background: white;
 }
 
 .confirm-transact.ui.modal .content .modal-header {
@@ -637,8 +719,8 @@ select {
 
 .confirm-transact.ui.modal .content .modal-header .close-modal {
   color: #9f9f9f;
-  width: 20px;
-  font-size: 1.5em;
+  width: 30px;
+  font-size: 18px;
   text-align: center;
 }
 
@@ -650,12 +732,14 @@ select {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2em;
+  font-size: 25px;
+  font-weight: bold;
   margin: 0.3em 0px;
 }
 
 .confirm-transact.ui.modal .content .modal-content .buying-info .buy-amount img {
   width:45px;
+  margin-right: 5px;
 }
 
 .confirm-transact.ui.modal .content .modal-content .buying-info .per-value {
@@ -829,7 +913,7 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.7em;
+  padding: 20px;
   border-bottom: 1px solid #eaeaea;
 }
 

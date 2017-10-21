@@ -26,7 +26,7 @@ html
     link(rel='stylesheet', href='/css/jquery-ui.css')
     link(rel='stylesheet', href='/css/slick.css')
     link(rel='stylesheet', href='/css/slick-theme.css')
-    link(rel='stylesheet', href='/css/wallet/styles.css?v=1.1.4')
+    link(rel='stylesheet', href='/css/wallet/styles.css?v=1.1.5')
 
     link(rel='icon', type='image/png', href='/images/favicon.png')
 
@@ -45,13 +45,16 @@ html
     script(src='/js/dimmer.min.js')
     script(src='/js/jquery-ui.js')
     script(src='/js/jquery.ui.touch-punch.min.js')
-    script(src='/js/wallet/script.js?v=1.1.4')
+    script(src='/js/wallet/script.js?v=1.1.5')
     
     body
       div.layout 
         nav#wallet-nav
           div.title-logo
             img.logo(src="/images/wallet/crossfit-logo.png")
+            div.back.desktop
+              a(href="#")
+                i.ion-chevron-left
             div.title
               div.main.show
                 p CROSSFIT, INC.
@@ -61,6 +64,9 @@ html
             div.back
               a(href="#")
                 i.ion-chevron-left
+            div.close
+              a(href="#")
+                i.ion-android-close
             div.notifications.new 1
 
         block content

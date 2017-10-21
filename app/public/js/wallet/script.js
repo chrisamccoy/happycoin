@@ -93,9 +93,6 @@ function initTabs (){
   $tabLinks.click(function(){
     $('#transaction-tab').show();
     $('#home-tab').hide();
-    // $subNav.addClass('show');
-    // $('.layout').addClass('overflow');
-    // document.body.style.overflow = 'hidden';
   });
 
   $notifications.click(function(){
@@ -153,7 +150,6 @@ function initTextarea() {
   $textarea.on('input', function(){
     var count = $(this).val().length;
     $(this).parents('.textarea-count').find('.count span:first-child').text(count);
-    // $(this).parents('.textarea-count').find('.count span:first-child')
     if($(this).is('.gift-textarea')) { giftItems.message = $(this).val(); }
   });
 }
@@ -184,7 +180,7 @@ function closeAllTabs (){
   $('#transaction-tab').hide();
   $('#notification-window').removeClass('show');
   $('#home-tab').show();
-  $('.layout').removeClass('overflow');
+  // $('.layout').removeClass('overflow');
   $navTitle.find('.main').addClass('show');
   $navTitle.find('.notification').removeClass('show');
 }
@@ -248,9 +244,9 @@ function changeOnSlide (value, $parent, handlePos) {
   }
 
   if(handlePos > $conversion.width()) {
-    $conversion.css('left', (handlePos - ($conversion.width() - 12))+'px');
+    $conversion.css('left', (handlePos - ($conversion.width() - 10))+'px');
   } else {
-    $conversion.css('left', '12px');
+    $conversion.css('left', '20px');
   }
 }
 
@@ -276,7 +272,7 @@ function loadChartData() {
 }
 
 function drawLineChart(data) {
-  var margin = {top: 20, right: 0, bottom: 5, left: 32},
+  var margin = {top: 20, right: 0, bottom: 5, left: 35},
       width = $('.graph').width() - margin.left - margin.right,
       height = ($('.graph').width() * 0.5) - margin.top - margin.bottom;
 
