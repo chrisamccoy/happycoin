@@ -507,6 +507,7 @@ select {
 
 .wallet-feed .description .download-time .icon {
   width: 13px;
+  font-size: 10px;
 }
 
 .wallet-feed .description .download-time .dot {
