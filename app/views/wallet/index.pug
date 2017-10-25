@@ -16,68 +16,69 @@ block content
             | storecoin
         div.est-val Estimated value 
           span.green $179.25
-    
-    section#wallet-price-span
-      p Storecoin Price
-      select.ui.fluid.selection.dropdown
-        option(value='1D') 1 Day
-        option(value='5') 5 Days
-        option(value='20') 1 Month
-        option(value='250') 1 Year
+          
+    div.graph-feeds    
+      section#wallet-price-span
+        p Storecoin Price
+        select.ui.fluid.selection.dropdown
+          option(value='1D') 1 Day
+          option(value='5') 5 Days
+          option(value='20') 1 Month
+          option(value='250') 1 Year
 
-    section#wallet-graph
-      div.price-change
-        div.price.green 
-          span $
-          | 35
-          span .58
-        div.change
-          i.ion-android-arrow-up.green
-          | $15.25 (74.03%)
-      div.graph
-        svg(width="100%", height="200")
-    
-    div.feeds
-      section.wallet-feed
-        img.image(src="/images/wallet/user-1.png")
-        div.description
-          div.name-val
-            p.name Marion Diaz
-            p.status RECEIVED
-            p.value.green 1.35353
-          div.download-time
-            img.icon(src="/images/wallet/received-icon.png")
-            div.dot 
-              i.ion-record
-            p.time Today, 12:08 PM
-      section.wallet-feed
-        img.image(src="/images/wallet/user-2.png")
-        div.description
-          div.name-val
-            p.name Danny Fortune
-            p.status SPENT
-            p.value.red 8.34316
-          div.download-time
-            img.icon(src="/images/wallet/received-icon.png")
-            div.dot 
-              i.ion-record
-            p.time Today, 12:08 PM
-      section.wallet-feed.gift-feed
-        img.image(src="/images/wallet/user-3.png")
-        div.description
-          div.name-val 
-            p.name Chris McCoy
-            p.status GIFTED
-            p.value.green 0.83853
-          div.transaction
-            a.blue Christina Hayes
-            |  gifted you storecoin:
-          div.message Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          div.download-time
-            i.icon.ion-calendar
-            div.dot 
-              i.ion-record
-            p.time just now
+      section#wallet-graph
+        div.price-change
+          div.price.green 
+            span $
+            | 35
+            span .58
+          div.change
+            i.ion-android-arrow-up.green
+            | $15.25 (74.03%)
+        div.graph
+          svg(width="100%", height="200")
+      
+      div.feeds
+        section.wallet-feed
+          img.image(src="/images/wallet/user-1.png")
+          div.description
+            div.name-val
+              p.name Marion Diaz
+              p.status RECEIVED
+              p.value.green 1.35353
+            div.download-time
+              img.icon(src="/images/wallet/received-icon.png")
+              div.dot 
+                i.ion-record
+              p.time Today, 12:08 PM
+        section.wallet-feed
+          img.image(src="/images/wallet/user-2.png")
+          div.description
+            div.name-val
+              p.name Danny Fortune
+              p.status SPENT
+              p.value.red 8.34316
+            div.download-time
+              img.icon(src="/images/wallet/received-icon.png")
+              div.dot 
+                i.ion-record
+              p.time Today, 12:08 PM
+        section.wallet-feed.gift-feed
+          img.image(src="/images/wallet/user-3.png")
+          div.description
+            div.name-val 
+              p.name Chris McCoy
+              p.status GIFTED
+              p.value.green 0.83853
+            div.transaction
+              a.blue Christina Hayes
+              |  gifted you storecoin:
+            div.message Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            div.download-time
+              i.icon.ion-calendar
+              div.dot 
+                i.ion-record
+              p.time just now
           
   div#transaction-tab
     include sub-nav

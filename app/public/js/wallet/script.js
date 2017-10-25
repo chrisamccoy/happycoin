@@ -119,7 +119,9 @@ function initTabs (){
 
       $subNav.find('.links .link[data-tab="'+tabName+'"]').addClass('active');
       // $walletTabs.find('.tab[data-tab="'+tabName+'"]').addClass('active');
-      $walletTabs.find('.tab[data-tab="'+tabName+'"]').addClass('active').css('height' , ($(window).height() - 114)+'px');
+
+      var offset = $walletNav.height() + $subNav.height();
+      $walletTabs.find('.tab[data-tab="'+tabName+'"]').addClass('active').css('height' , ($(window).height() - offset)+'px');
     }
   });
 

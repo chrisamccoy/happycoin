@@ -65,7 +65,7 @@ a {
 }
 
 section {
-  padding: 15px 20px;
+  padding: 25px;
   border-bottom : 1px solid #eaeaea;
 }
 
@@ -125,8 +125,8 @@ select {
 .slider {
   border-radius: 8px;
   background: #e1e1e1;
-  border-color: #e1e1e1 !important;
-  height: 8px;
+  border-color: #ffffff !important;
+  height: 10px;
 }
 
 .slider .ui-slider-handle {
@@ -147,7 +147,7 @@ select {
 }
 
 .wallet-button {
-  padding: 15px 20px;
+  padding: 12px 16px;
   background-color: #e0e0e0;
   /*position: absolute;
   bottom: 0px;
@@ -162,8 +162,12 @@ select {
   border-color: #66bb6b;
   text-transform: none;
   font-size: 0.9em;
-  padding: 0.5em;
+  padding: 5px;
   height: auto;
+}
+
+.ui.dropdown {
+  font-size: 14px;
 }
 
 .ui.dropdown .item {
@@ -195,14 +199,23 @@ select {
 }
 
 #home-tab {
-  overflow: scroll;
+  /*overflow: scroll;*/
   height: calc(100% - 55px);
+}
+
+#home-tab .graph-feeds {
+  overflow: scroll;
+  height: calc(100% - 125px);
 }
 
 @media only screen and (max-width: 700px) {
   .layout {
     width: 100%;
     max-width: none;
+  }
+  section {
+    padding: 15px 20px;
+    border-bottom : 1px solid #eaeaea;
   }
 }
 
@@ -220,13 +233,13 @@ select {
 }
 
 #wallet-nav .title-logo .title {
-  padding-left: 0.5em;
+  padding-left: 15px;
   flex: auto;
 }
 
 #wallet-nav .title-logo .title p {
   margin: 0px;
-  line-height: 1.3;
+  line-height: 1.1;
   word-spacing: 2px;
 }
 
@@ -306,6 +319,10 @@ select {
   #wallet-nav .title-logo .close {
     display: none;
   }
+
+  /*#wallet-nav .title-logo {
+    height: 55px;
+  }*/
 }
 
 /*---------------------------------------*/
@@ -313,6 +330,7 @@ select {
 #wallet-value {
   background-color: #2a2a2a;
   display: flex;
+  padding: 20px;
 }
 
 #wallet-value .links {
@@ -321,13 +339,24 @@ select {
 
 #wallet-value .value {
   flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #wallet-value .links a {
   display: block;
   color: white;
   text-decoration: none;
-  padding: 0.3em 0em;
+  padding: 10px 0em 10px 10px;
+}
+
+#wallet-value .links a:first-child {
+  padding-top: 0px;
+}
+
+#wallet-value .links a:last-child {
+  padding-bottom: 0px;
 }
 
 #wallet-value .storecoin-val .number {
@@ -341,13 +370,14 @@ select {
 
 #wallet-value .storecoin-val .unit {
   color: white;
-  /* text-align: right; */
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 300;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-bottom: 1.3em;
+  margin-top: 3px;
+  margin-bottom: 0px;
+  line-height: 1;
 }
 
 #wallet-value .est-val {
@@ -358,11 +388,29 @@ select {
 
 #wallet-value .storecoin-val .unit img {
   margin-right: 5px;
-  width: 25px;
+  width: 30px;
 }
 
 #wallet-value .storecoin-val .number span {
   font-size: 25px;
+}
+
+@media only screen and (max-width: 700px) {
+  #wallet-value {
+    padding: 15px 20px;
+  }
+
+  #wallet-value .links a {
+    padding: 5px 0em 5px 5px;
+  }
+
+  #wallet-value .storecoin-val .unit {
+    font-size: 12px;
+  }
+
+  #wallet-value .storecoin-val .unit img {
+    width: 20px;
+  }
 }
 
 /*---------------------------------------*/
@@ -391,15 +439,20 @@ select {
 
 #wallet-graph .price-change {
   display: flex;
+  align-items: baseline;
 }
 
 #wallet-graph .price-change .change {
   flex: auto;
   text-align: right;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 #wallet-graph .price-change .change i {
-  font-size: 1.2em;
+  font-size: 20px;
   margin-right: 5px;
 }
 
@@ -463,7 +516,7 @@ select {
 
 .wallet-feed .image {
   width: 28px;
-  margin-right : 15px;
+  margin-right : 20px;
 }
 
 .wallet-feed .description {
@@ -494,7 +547,7 @@ select {
 }
 
 .wallet-feed .description .name-val .status {
-  font-size: 0.7em;
+  font-size: 10px;
   padding: 3px;
   margin-left: 5px;
   background: #e0e0e0;
@@ -506,8 +559,11 @@ select {
 }
 
 .wallet-feed .description .download-time .icon {
-  width: 13px;
-  font-size: 10px;
+  width: 12px;
+  align-items: center;
+  font-size: 9px;
+  display: flex;
+  justify-content: center;
 }
 
 .wallet-feed .description .download-time .dot {
@@ -544,15 +600,15 @@ select {
   display: flex;
   align-items: center;
   flex: 1;
-  padding: 15px 0px 15px 20px;
+  padding: 10px 0px 10px 20px;
 }
 
 #wallet-sub-nav .price-logo .logo {
-  width: 40px;
+  width: 35px;
 }
 
 #wallet-sub-nav .price-logo .price {
-  font-size: 25px;
+  font-size: 20px;
   padding-left: 0.5em;
 }
 
@@ -568,7 +624,7 @@ select {
 }
 
 #wallet-sub-nav .links .link {
-  padding : 15px 18px;
+  padding : 12px 18px;
 }
 
 #wallet-sub-nav .links .link.active {
@@ -594,10 +650,10 @@ select {
 }
 
 #wallet-amount .amount-slider .amounts p {
-  margin : 0px;
+  margin: 0px;
   flex: auto;
-  font-size: 0.6em;
-  margin-bottom : 5px;
+  font-size: 11px;
+  margin-bottom : 3px;
 }
 
 #wallet-amount .amount-slider .amounts p:last-child {
@@ -662,12 +718,13 @@ select {
 
 /*---------------------------------------*/
 
-#wallet-pay-method .ui.dropdown .bank-info {
+/*#wallet-pay-method .ui.dropdown .bank-info {
   font-size: 0.8em;
-}
+}*/
 
 #wallet-pay-method .ui.dropdown .bank-info .name {
   color: black;
+  font-weight: bold;
 }
 
 /*---------------------------------------*/
@@ -678,7 +735,7 @@ select {
 }
 
 .confirm-transact.ui.modal section {
-  padding: 20px;
+  padding: 10px;
 }
 
 .confirm-transact.ui.modal .content {
@@ -686,16 +743,16 @@ select {
   border-radius: 0px;
   padding: 0px !important;
   margin: 0 auto;
-  padding: 0.5em !important;
+  padding: 5px !important;
   background: none;
 }
 
 .confirm-transact.ui.modal .content .modal-header {
-  padding: 20px;
+  padding: 10px;
 }
 
 .confirm-transact.ui.modal .content .modal-content {
-  padding: 0em 1em;
+  padding: 0px 10px;
   background: white;
 }
 
@@ -784,6 +841,7 @@ select {
 
 .confirm-transact.ui.modal .content .modal-content .cost-info {
   border: none;
+  padding: 10px 7px;
 }
 
 .confirm-transact.ui.modal .content .modal-content .cost-info .item {
@@ -927,7 +985,7 @@ select {
 }
 
 #notification-window .notification-feeds .download-time img {
-  width: 25px;
+  width: 20px;
   opacity: 0.7;
 }
 
