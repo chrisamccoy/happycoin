@@ -732,6 +732,7 @@ select {
 .confirm-transact.ui.modal {
   font-size: 1em;
   background: none;
+  box-shadow: none;
 }
 
 .confirm-transact.ui.modal section {
