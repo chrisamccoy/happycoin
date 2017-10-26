@@ -307,10 +307,14 @@ function drawLineChart(data) {
       .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
 
+  var min = d3.min(data, function(d) { return d.close; });
+  var max = d3.max(data, function(d) { return d.close; });
+  var random = d3.scaleLinear().range([10, 36]).domain([min, max]);
+
   // format the data
   data.forEach(function(d) {
       d.date = parseTime(d.date);
-      d.close = +d.close;
+      d.close = random(+d.close);
   });
 
   // Scale the range of the data
