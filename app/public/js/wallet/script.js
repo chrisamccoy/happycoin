@@ -245,10 +245,12 @@ function changeOnSlide (value, $parent, handlePos) {
     giftItems.storeVal = value;
   }
 
-  if(handlePos > $conversion.width()) {
-    $conversion.css('left', (handlePos - ($conversion.width() - 10))+'px');
+  var paddingLeft = $('#wallet-amount').css('padding-left');
+
+  if(handlePos > ($conversion.width() + 10)) {
+    $conversion.css('left', 'calc('+(handlePos - $conversion.width() - 10)+'px + '+paddingLeft+')');
   } else {
-    $conversion.css('left', '20px');
+    $conversion.css('left', paddingLeft);
   }
 }
 
