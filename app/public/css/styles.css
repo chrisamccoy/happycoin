@@ -846,11 +846,11 @@ input[type=number]::-webkit-outer-spin-button {
 and (min-width : 321px)
 and (max-width : 700px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 1.85em !important;
+    font-size: 1.6em !important;
   }
 
   #hc-intro .hc-feature-lead {
-    font-size: 1.15em !important;
+    font-size: 1.1em !important;
   }
 }
 
