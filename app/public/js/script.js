@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  initDropdown();
   scrollCheck();
   whyTextToggle();
   renderRadio();
@@ -40,6 +41,10 @@ $(document).ready(function(){
   hasUrl();
   fadeInContent();
 });
+
+function initDropdown () {
+  $('.ui.dropdown').dropdown();
+}
 
 
 function scrollCheck(){

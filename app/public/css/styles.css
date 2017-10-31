@@ -110,6 +110,12 @@ input[type=number]::-webkit-outer-spin-button {
   padding-bottom: 5em;
 }
 
+.hc-feature .hc-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .hc-feature .button-container {
   margin:2em 0px 0px;
   display: flex;
@@ -450,12 +456,12 @@ input[type=number]::-webkit-outer-spin-button {
   top: 0;
   width: 100%;
   z-index: 10000000;
-  height: 95px;
+  height: 135px;
   /*height:68px;*/
 }
 
 #hc-nav-wrapper .hc-intro-post {
-  background: #e97844;text-align: center; color:white;
+  background: #c6dfb7;text-align: center; color:white;
 }
 
 #hc-nav-wrapper.v2 .hc-intro-post {
@@ -464,7 +470,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #hc-nav-wrapper .hc-intro-post a {
-  color: white;
+  color: #466333;
   text-decoration: underline;
 }
 
@@ -473,7 +479,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #hc-nav-wrapper.add-background {
-  background-color: #c7dfb8;
+  background-color: #e97845;
 }
 
 #hc-nav-wrapper.add-background.v2 {
@@ -482,31 +488,54 @@ input[type=number]::-webkit-outer-spin-button {
 
 #hc-nav-wrapper .container {
   max-width:1240px;
-  padding : 0.7em 1em;
+  padding : 2em 1em;
 }
 
-#hc-nav-wrapper .hc-branding{
-  float: left;
+#hc-nav-wrapper .container .hc-menu-dropdown {
+  font-size: 2.5em;
+  width: 33%;
+  text-align: right;
+}
+
+#hc-nav-wrapper .container .hc-menu-dropdown .menu {
+  background: #8DB379;
+}
+
+#hc-nav-wrapper .container .hc-menu-dropdown .item {
+  font-size: 0.5em;
+  color: white;
+  padding: 0.7em 1em !important;
+}
+
+#hc-nav-wrapper .container .hc-menu-dropdown .ui.dropdown {
+  color: white;
+  width: 50px;
   display: inline-block;
+  text-align: center;
+}
+
+#hc-nav-wrapper .container .row {
+  display: flex;
+  justify-content: space-between;
+  /*align-items: center;*/
+}
+
+#hc-nav-wrapper .hc-branding {
+  width: 33%;
 }
 
 #hc-nav-wrapper .hc-title {
   display: block;
   background-image: url(../images/logo.png);
-  background-position: 0px -1px;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 105px;
-  height: 100px;
-  margin-right: 0.5em;
+  width: 120px;
+  height: 120px;
   text-transform: lowercase;
-  font-size: 26px;
-  line-height: 36px;
-  font-weight: 700;
-  margin-bottom: 0;
-  margin-top: -0.1em;
   transition: all .2s ease-in;
   transform: scale(1);
+  margin: auto;
+  margin-top: 8px;
 }
 
 #hc-nav-wrapper .hc-title:hover {
@@ -515,7 +544,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #hc-nav-wrapper .hc-number-dist {
-  color: #5d794c;
+  color: white;
   font-size: 0.9em;
   display: block;
   /*margin-top: 1.1em;*/
@@ -596,7 +625,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #hc-nav-wrapper .hc-navigation .hc-menu-container .hc-menu .menu-item a {
-  color: #456332;
+  color: white;
   font-size: 18px;
   text-decoration: none;
 }
@@ -608,6 +637,14 @@ input[type=number]::-webkit-outer-spin-button {
 @media only screen and (max-width: 700px) {
   #hc-nav-wrapper .hc-intro-post {
     font-size: 0.8em;
+  }
+
+  #hc-nav-wrapper .container {
+    padding : 1em;
+  }
+
+  #hc-nav-wrapper {
+    height: 105px;
   }
 }
 /* #hc-nav-wrapper  */
@@ -3221,7 +3258,7 @@ and (max-width : 700px) {
   }
 
   #hc-nav-wrapper .hc-number-dist{
-    color: #5d794c;
+    /*color: #5d794c;*/
     font-size: 0.8em;
     margin-top: 0.4em;
   }
@@ -3883,5 +3920,59 @@ and (max-width : 700px) {
 
   #hc-milestones .milestones .achievements {
     padding: 0.5em 0.7em;
+  }
+}
+
+/*----------------------------------*/
+#hc-six-engines .engines {
+  display: flex;
+}
+
+#hc-six-engines .engine {
+  width: calc(50% - 2em);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  border: 3px solid #5c794c;
+  border-bottom: 0px;
+  border-right: 0px;
+  background: white;
+}
+
+#hc-six-engines .engine:hover {
+  background: none;
+}
+
+#hc-six-engines .engine img {
+  width:200px;
+}
+
+#hc-six-engines .engine .title {
+  color: #5c794c;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+#hc-six-engines .engines:last-child .engine {
+  border-bottom: 3px solid #5c794c;
+}
+
+#hc-six-engines .engines .engine:last-child {
+  border-right: 3px solid #5c794c;
+}
+
+@media only screen and (max-width: 700px) {
+  #hc-six-engines .engines {
+    flex-direction: column;
+  }
+
+  #hc-six-engines .engine {
+    width: calc(100% - 2em);
+    border: 3px solid #5c794c !important;
+  }
+
+  #hc-six-engines .engine:not(:last-child) {
+    border-bottom: 0px !important;
   }
 }
