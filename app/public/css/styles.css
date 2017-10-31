@@ -850,7 +850,7 @@ and (max-width : 700px) {
   }
 
   #hc-intro .hc-feature-lead {
-    font-size: 0.9em !important;
+    font-size: 1em !important;
   }
 }
 
