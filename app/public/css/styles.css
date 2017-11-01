@@ -390,7 +390,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .hc-feature .hc-feature-lead {
-    font-size: 1em !important;
+    font-size: 1.2em !important;
   }
 
   .email-widget h4 {
@@ -480,6 +480,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #hc-nav-wrapper.add-background {
   background-color: #e97845;
+  border-bottom: 1px solid white;
 }
 
 #hc-nav-wrapper.add-background.v2 {
@@ -641,6 +642,25 @@ input[type=number]::-webkit-outer-spin-button {
 
   #hc-nav-wrapper .container {
     padding : 1em;
+  }
+
+  #hc-nav-wrapper .container div.hc-branding {
+    order : 1;
+    width: auto;
+  }
+
+  #hc-nav-wrapper .container a.hc-branding {
+    order : 2;
+    flex: auto;
+  }
+
+  #hc-nav-wrapper .container .hc-menu-dropdown {
+    order : 3;
+    width : auto;
+  }
+
+  #hc-nav-wrapper .container .hc-menu-dropdown .ui.dropdown {
+    width: 40px;
   }
 
   #hc-nav-wrapper {
@@ -3339,10 +3359,10 @@ and (max-width : 700px) {
     text-align: center;
   }
 
-  #hc-nav-wrapper .hc-number-dist a {
+  /*#hc-nav-wrapper .hc-number-dist a {
     display:block;
     margin: 0px;
-  }
+  }*/
 
   #hc-intro .hc-intro-text-wrapper .hc-intro-small-lead {
     font-size: 1.3em;
@@ -3367,12 +3387,12 @@ and (max-width : 700px) {
 }
 
 @media only screen and (max-width: 700px) {
-  #hc-nav-wrapper .hc-number-dist span {
-    display: block;
+  #hc-nav-wrapper .hc-number-dist {
+    margin-left: 10px;
   }
-  #hc-nav-wrapper .hc-number-dist .away {
+  /*#hc-nav-wrapper .hc-number-dist .away {
     margin:0px;
-  }
+  }*/
 }
 
 /* #solution */
@@ -3940,15 +3960,26 @@ and (max-width : 700px) {
   background: white;
 }
 
+#hc-six-engines .engine.box {
+  display: none;
+}
+
 #hc-six-engines .engine:hover {
   background: none;
 }
 
-#hc-six-engines .engine img {
-  width:200px;
+.featherlight .engine {
+  text-align: center;
 }
 
-#hc-six-engines .engine .title {
+#hc-six-engines .engine img,
+.featherlight .engine img {
+  width:200px;
+  margin: auto;
+}
+
+#hc-six-engines .engine .title,
+.featherlight .engine .title {
   color: #5c794c;
   font-size: 1.5em;
   text-align: center;
@@ -3958,7 +3989,8 @@ and (max-width : 700px) {
   border-bottom: 3px solid #5c794c;
 }
 
-#hc-six-engines .engines .engine:last-child {
+#hc-six-engines .engines .engine:last-child,
+#hc-six-engines .engines .engine.right{
   border-right: 3px solid #5c794c;
 }
 
@@ -3972,7 +4004,8 @@ and (max-width : 700px) {
     border: 3px solid #5c794c !important;
   }
 
-  #hc-six-engines .engine:not(:last-child) {
+  #hc-six-engines .engine:not(:last-child):not(.last) {
     border-bottom: 0px !important;
   }
+
 }

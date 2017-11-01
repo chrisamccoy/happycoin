@@ -50,8 +50,8 @@ block content
         p.hc-feature-lead In 1879, Thomas Edison brought commercial light bulbs to the world. The light bulbs changed how we work, how we play, and how we communicate.
         div.hc-image
           img(src="/images/storecoin-lightbulb.png", style="width:200px;")
-        p.hc-feature-lead By 2020, Storecoin will bring its own public blockchain, its DyPos consensus algorithm enabling free transactions, and its Wallet APIs top application developers all around the world.
-        p.hc-feature-lead This will light up new economics and incentives for the application stack.
+        p.hc-feature-lead By 2019, Storecoin will bring its public blockchain, its DyPoS consensus algorithm powering free transactions, and its Wallet APIs to application developers all around the world.
+        p.hc-feature-lead This will light up new economics and incentives for the web and mobile application stack.
     
     .hc-feature.over-rel.padding.inverted
       .hc-chunk
@@ -118,24 +118,42 @@ block content
         h3.hc-feature-title.inverted The Six Engines of DyPoS
         p.hc-feature-lead Dynamic Proof of Stake is powered by six interdendent systems, all using similar economic logic as Uber Serge Pricing.
         div.engines
-          div.engine
+          div.engine(data-featherlight="#dy-transactions")
             img(src="/images/dynamic-transactions.png")
             div.title Dynamic (free) Transactions
-          div.engine
+          div#dy-transactions.engine.box
+            img(src="/images/dynamic-transactions.png")
+            div.title Dynamic (free) Transactions
+          div.engine.right(data-featherlight="#dy-consensus")
+            img(src="/images/handshake.png")
+            div.title Dynamic Consensus
+          div#dy-consensus.engine.box
             img(src="/images/handshake.png")
             div.title Dynamic Consensus
         div.engines
-          div.engine
+          div.engine(data-featherlight="#dy-rewards")
             img(src="/images/coins.png")
             div.title Dynamic Rewards
-          div.engine
+          div#dy-rewards.engine.box
+            img(src="/images/coins.png")
+            div.title Dynamic Rewards
+          div.engine.right(data-featherlight="#dy-security")
+            img(src="/images/dynamic-security.png")
+            div.title Dynamic Security
+          div#dy-security.engine.box
             img(src="/images/dynamic-security.png")
             div.title Dynamic Security
         div.engines
-          div.engine
+          div.engine(data-featherlight="#dy-scaling")
             img(src="/images/dynamic-scaling.png")
             div.title Dynamic Scaling
-          div.engine
+          div#dy-scaling.engine.box
+            img(src="/images/dynamic-scaling.png")
+            div.title Dynamic Scaling
+          div.engine.last.right(data-featherlight="#dy-governance")
+            img(src="/images/dynamic-governance.png")
+            div.title Dynamic Governance
+          div#dy-governance.engine.box
             img(src="/images/dynamic-governance.png")
             div.title Dynamic Governance
     
@@ -298,7 +316,7 @@ block content
     
     .hc-feature.lite.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title Exclusive Storecoin Exchanges
+        h3.hc-feature-title Exclusive Exchanges
         p.hc-feature-lead Storecoin is establishing exclusive country-by-country exchange relationships around the globe. They'll be announced here. 
     
     //- #problem.hc-feature.inverted.over-rel.padding
@@ -666,8 +684,9 @@ block content
             
     .hc-feature.over-rel.padding(style="padding-left: 0px; padding-right:0px;")
       .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title.inverted(style=" margin:0px !important; color:#5d794c; text-decoration:underline;") 
-          a(href="/applytoforge") Apply to be a Founding Validator for Storecoin
+        h3.hc-feature-title Become a Validator
+        p.hc-feature-lead(style=" margin:0px !important; color:#5d794c; text-decoration:underline;") 
+          a(href="/applytoforge", style="font-size:30px;") Apply here
             
     #project-schedule.hc-feature.lite.over-rel.padding
       h3.hc-feature-title.break Storecoin Project Schedule
