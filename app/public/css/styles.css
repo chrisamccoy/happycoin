@@ -502,7 +502,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #hc-nav-wrapper.add-background {
   background-color: #e97845;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #e94b05;
 }
 
 #hc-nav-wrapper.add-background.v2 {
@@ -4080,6 +4080,7 @@ and (max-width : 700px) {
   #hc-six-engines .engine {
     width: calc(100% - 2em);
     border: 3px solid #5c794c !important;
+    min-height: 270px;
   }
 
   #hc-six-engines .engine:not(:last-child):not(.last) {
