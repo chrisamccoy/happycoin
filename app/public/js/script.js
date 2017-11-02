@@ -3,6 +3,8 @@ $(document).ready(function(){
   scrollCheck();
   whyTextToggle();
   renderRadio();
+  scrollCheck();
+  cardFlip();
 
   // on scroll
   $(window).scroll(function(){
@@ -46,17 +48,43 @@ function initDropdown () {
   $('.ui.dropdown').dropdown();
 }
 
-
 function scrollCheck(){
   var scrollVal = $(window).scrollTop(),
-      $navWrapper = $('#hc-nav-wrapper');
-
-  if (scrollVal > 1) {
-    //$navWrapper.addClass('add-background');
+      $navSection = $('#hc-nav-wrapper');
+  if (scrollVal > 50) {
+    $navSection.addClass('scrolling');
   } else {
-    //$navWrapper.removeClass('add-background');
+    $navSection.removeClass('scrolling');
   }
 }
+
+function cardFlip() {
+  var $engine = $('#hc-six-engines .engines .engine'),
+      width = $engine.width();
+      perspective = (width * 3) + 'px';
+
+  $engine.css('perspective', perspective);
+
+  $engine.hover(
+    function(){
+      $(this).addClass('flip');
+    },
+    function(){
+      $(this).removeClass('flip');
+    }
+  );
+}
+
+// function scrollCheck(){
+//   var scrollVal = $(window).scrollTop(),
+//       $navWrapper = $('#hc-nav-wrapper');
+//
+//   if (scrollVal > 1) {
+//     //$navWrapper.addClass('add-background');
+//   } else {
+//     //$navWrapper.removeClass('add-background');
+//   }
+// }
 
 function generateCircle (element, value, color, fontSize) {
   element = document.getElementById(element);
