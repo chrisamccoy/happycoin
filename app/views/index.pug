@@ -50,7 +50,7 @@ block content
         p.hc-feature-lead In 1879, Thomas Edison brought commercial light bulbs to the world. The light bulbs changed how we work, how we play, and how we communicate.
         div.hc-image
           img(src="/images/storecoin-lightbulb.png", style="width:200px;")
-        p.hc-feature-lead By 2019, Storecoin will bring its public blockchain, its DyPoS consensus algorithm powering free transactions, and its Wallet APIs to application developers all around the world.
+        p.hc-feature-lead By 2019, Storecoin will bring its public blockchain, the storecoin crypto token, and free transactions using the token to mobile and web application developers all around the world.
         p.hc-feature-lead This will light up new economics and incentives for the web and mobile application stack.
     
     .hc-feature.over-rel.padding.inverted
@@ -106,18 +106,52 @@ block content
     //-     .button-container
     //-       button.button.button-primary Learn More
     //-         i.ion-chevron-down
-    .hc-feature.over-rel.padding
+    #strat-dist.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted Our Technology Stack and Distribution strategy
         p.hc-feature-lead How Storecoin Wallets and the storecoin token will bedistributed to millions of users around the globe.
-        div.hc-image
-          img.desktop-image(src="/images/strategy-distribution.png", style="width:100%;")
-          img.mobile-image(src="/images/strategy-distribution-mobile.png", style="width:100%;")
+        //- div.hc-image
+        //-   img.desktop-image(src="/images/strategy-distribution.png", style="width:100%;")
+        //-   img.mobile-image(src="/images/strategy-distribution-mobile.png", style="width:100%;")
+        div.desktop-image
+          div.hc-strat-dist.five
+            img(src="/images/strat-dist-5.png")
+            p Third Party Apps can integrate the Storecoin Wallet so each user account in the app has a crypto wallet. Apps can assign actions - or paid API calls - to micro-units of storecoins so each time a user takes an action, they earnthe storecoin cryptocurrency.
+          div.hc-strat-dist.four
+            img(src="/images/strat-dist-4.png")
+            p Between the token layer and the app layer, there is a protocol-powered Wallet API allowing the Storecoin cryptocurrency to natively be distributed inside of third party apps (not dApps). Storecoin, Inc. develops and supports these Wallet APIs for the third party developers.
+          div.hc-strat-dist.three
+            img(src="/images/strat-dist-3.png")
+            p A secure, unit of value allowing the owner to access services and/or data from the Storecoin Blockchain.
+          div.hc-strat-dist.two
+            img(src="/images/strat-dist-2.png")
+            p The secure decentralized algorithm enabling new blocks of transactions to get created, confirmed, and added to the public blockchain.
+          div.hc-strat-dist.one
+            img(src="/images/strat-dist-1.png")
+            p A digitized, decentralized, public ledger containing the history of every Storecoin transaction.
+        div.mobile-image
+          div.hc-strat-dist.five
+            img(src="/images/strat-dist-mobile-5.png")
+            p Third Party Apps can integrate the Storecoin Wallet so each user account in the app has a crypto wallet. Apps can assign actions - or paid API calls - to micro-units of storecoins so each time a user takes an action, they earnthe storecoin cryptocurrency.
+          div.hc-strat-dist.four
+            img(src="/images/strat-dist-mobile-4.png")
+            p Between the token layer and the app layer, there is a protocol-powered Wallet API allowing the Storecoin cryptocurrency to natively be distributed inside of third party apps (not dApps). Storecoin, Inc. develops and supports these Wallet APIs for the third party developers.
+          div.hc-strat-dist.three
+            img(src="/images/strat-dist-mobile-3.png")
+            p A secure, unit of value allowing the owner to access services and/or data from the Storecoin Blockchain.
+          div.hc-strat-dist.two
+            img(src="/images/strat-dist-mobile-2.png")
+            p The secure decentralized algorithm enabling new blocks of transactions to get created, confirmed, and added to the public blockchain.
+          div.hc-strat-dist.one
+            img(src="/images/strat-dist-mobile-1.png")
+            p A digitized, decentralized, public ledger containing the history of every Storecoin transaction.
+        
             
     #hc-six-engines.hc-feature.lite.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted The Six Engines of DyPoS
-        p.hc-feature-lead Dynamic Proof of Stake is powered by six interdendent systems, all using similar economic logic as Uber Serge Pricing.
+        p.hc-feature-lead Dynamic Proof of Stake is powered by six interdendent systems.
+        p.hc-feature-lead Each system uses similar economic logic as Uber Serge Pricing.
         div.engines
           div.engine
             .front
@@ -179,6 +213,12 @@ block content
         //-   div.engine.last.right(data-featherlight="#dy-governance")
         //-     img(src="/images/dynamic-governance.png")
         //-     div.title Dynamic (On Chain) Governance
+        
+    .hc-feature.over-rel.padding
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title DyPoS and the Market for Distributed Consensus Mechanisms
+        .hc-image
+          img(src="/images/consensus-mechanism.png", style="width:100%;")
     
     #ethos.hc-feature.over-rel.padding.inverted.orange
       .hc-chunk.hc-customize-text-wrapper
@@ -214,12 +254,12 @@ block content
           | Can	Storecoin	as	an	organization 	 
           b support it
           | ?
-        p 
-          span 
-            b #6  
-          | Will	hierarchy-based	organizations 	 
-          b need it
-          | ?          
+        //- p 
+        //-   span 
+        //-     b #6  
+        //-   | Will	hierarchy-based	organizations 	 
+        //-   b need it
+        //-   | ?          
                   
         p.hc-feature-lead(style="text-align:left;") If so, our Dynamic (On Chain) Governance votes on it. 
         p.hc-feature-lead(style="text-align:left; margin-bottom:0px;") If 2/3 majority votes 'Yes', then we ship it. 
@@ -262,18 +302,18 @@ block content
                   td
                     b Transactions Fees
                   td Zero fees for senders, receivers, and app developers
-                tr
-                  td
-                    b Transactions Fees	for	Receivers
-                  td Never
+                //- tr
+                //-   td
+                //-     b Transactions Fees	for	Receivers
+                //-   td Never
                 tr
                   td
                     b Security Protocol
-                  td Governance Dynamic (On Chain) Governance
+                  td Security Advisory System, Security Guards, Dynamic (Free) Transactions, Dynamic Security, Dynamic (On Chain) Governance
                 tr
                   td
                     b On Chain Scalability	
-                  td R&D	in	progress	to enable	public	and/or	private	state	channels	
+                  td R&D in progress	
                 tr
                   td
                     b Off Chain Scalability	
@@ -330,11 +370,9 @@ block content
     #hc-alliance.hc-feature.over-rel.padding.inverted
       .hc-chunk
         h2.hc-feature-title The Storecoin Alliance
-        p.hc-feature-lead A collation of application developers that have entered into +4-year relationships for Storecoin to become the exclusive cryptocurrency that is integrated into their enterprise and consumer-facing applications.	
+        p.hc-feature-lead A collation of organizations that have entered into long-term relationships with Storecoin as its exclusive cryptocurrency to be integrated into enterprise and consumer-facing apps.
 
         h2.hc-feature-title(style="margin:0px !important; color:rgb(233, 120, 68);") IN PROGRESS
-          br
-          | ( announcements coming soon )
     
     //- .hc-feature.lite.over-rel.padding
     //-   .hc-chunk.hc-customize-text-wrapper
@@ -607,14 +645,14 @@ block content
                   img(src='/images/money.png')
                   p More Buyers
                 p.desc
-                  | The more app-level transactions on the Storecoin blockchain, the more demand there will be for the storecoin tokens inside third-party apps. The more demand for the token, the more valuable staking becomes for validators and security guards. The more valuable, the more token buyers.
+                  | The more demand to use the token, the more buyers there will be.
               img.arrow-flow(src='/images/arrow-mobile.png')
               .incentive
                 .title
                   img(src='/images/security-guards.png')
                   p More Security Guards
                 p.desc
-                  | The more transactions on Storecoin, the more Security Guards need to run full nodes in order to identify potential spam and attacks.
+                  | The more transactions on Storecoin, the more Security Guards are needed to identify spam and attacks.
               img.arrow-flow(src='/images/arrow-mobile.png')
               .incentive
                 .title
@@ -703,7 +741,7 @@ block content
                   img(src='/images/security-guards.png')
                   p More Security Guards
                 p.desc
-                  | The more transactions on Storecoin, the more Security Guards need to run full nodes in order to identify potential spam and attacks.
+                  | The more transactions on Storecoin, the more Security Guards are needed to identify spam and attacks.
               img.arrow-flow(src='/images/arrow-mobile.png')
           .row
             .four.columns
@@ -713,10 +751,11 @@ block content
                   img(src='/images/money.png')
                   p More Buyers
                 p.desc
-                  | The more app-level transactions on the Storecoin blockchain, the more demand there will be for the storecoin tokens inside third-party apps. The more demand for the token, the more valuable staking becomes for validators and security guards. The more valuable, the more token buyers.
+                  | The more demand to use the token, the more buyers there will be.
             .four.columns
         
-        p.hc-feature-lead Storecoin tokens are both a work and a usage token. Owning storecoins give you the right to validate transactions and earn more tokens in exchange for that work. Owning storecoins also gives the right to use applications where the Storecoin Wallet is integrated. Owning storecoins gives you access to new behaviors and business models within those applications.
+        p.hc-feature-lead Storecoin tokens are both a work and a usage token. Owning storecoins give you the right to validate transactions and earn more tokens in exchange for that work. Also, to become a Security Guard and earn tokens when you find spam or attacks.
+        p.hc-feature-lead Owning storecoins also gives the right to use applications where the Storecoin Wallet is integrated. Owning storecoins gives you access to new behaviors and business models within those applications.
             
     .hc-feature.over-rel.padding(style="padding-left: 0px; padding-right:0px;")
       .hc-chunk.hc-customize-text-wrapper
@@ -808,9 +847,6 @@ block content
                       li
                         i.ion-checkmark
                         |  Orange Paper released
-                      li 
-                        i.ion-android-time
-                        |  Core Technology Officer added full-time
                       li 
                         i.ion-android-time
                         |  VP Security Engineering added full-time

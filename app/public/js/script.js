@@ -5,6 +5,7 @@ $(document).ready(function(){
   renderRadio();
   scrollCheck();
   cardFlip();
+  stratDist();
 
   // on scroll
   $(window).scroll(function(){
@@ -73,6 +74,18 @@ function cardFlip() {
       $(this).removeClass('flip');
     }
   );
+}
+
+function stratDist() {
+  var $startDist = $('#strat-dist .hc-strat-dist');
+  $startDist.hover(
+    function(){
+      $(this).find('p').fadeIn();
+    },
+    function(){
+      $(this).find('p').hide();
+    }
+  )
 }
 
 // function scrollCheck(){
