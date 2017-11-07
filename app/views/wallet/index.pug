@@ -178,7 +178,7 @@ block content
             div.sell-buy
               div.selling
                 div.head Selling
-                div.btn 
+                a.btn 
                   img(src="/images/wallet/storecoin-logo.png")
                   div.price
                     span
@@ -188,7 +188,7 @@ block content
                 img(src="/images/wallet/exchange-icon.png")
               div.buying
                 div.head Buying
-                div.btn 
+                a.btn 
                   img(src="/images/wallet/ethereum-logo.png")
                   div.price
                     span
@@ -421,3 +421,26 @@ block content
         a.red.close-modal(href="#") Cancel
         div.divider
         a.green.confirm-button(href="#") Sell Storecoin    
+      
+  div#select-coin-modal.ui.small.modal
+    div.content
+      div.modal-header 
+        div.logo-title
+          img(src="/images/wallet/footprint-logo.png")
+          | Select Method
+        div.close-modal
+          i.ion-android-close
+      div.modal-content 
+        section.list
+          a.item(data-img="/images/wallet/ethereum-logo.png", data-name="Ethereum")
+            img(src="/images/wallet/ethereum-logo.png")
+            p Ethereum
+          a.item(data-img="/images/wallet/bitcoin-logo.png", data-name="Bitcoin") 
+            img(src="/images/wallet/bitcoin-logo.png")
+            p Bitcoin
+          a.item(data-img="/images/wallet/ripple-logo.png", data-name="Ripple")
+            img(src="/images/wallet/ripple-logo.png")
+            p Ripple
+          a.item(data-img="/images/wallet/litecoin-logo.png", data-name="Litecoin")
+            img(src="/images/wallet/litecoin-logo.png")
+            p Litecoin

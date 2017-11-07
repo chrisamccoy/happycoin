@@ -760,17 +760,17 @@ select {
 
 /*---------------------------------------*/
 
-.confirm-transact.ui.modal {
+.ui.modal {
   font-size: 1em;
   background: none;
   box-shadow: none;
 }
 
-.confirm-transact.ui.modal section {
+.ui.modal section {
   padding: 10px;
 }
 
-.confirm-transact.ui.modal .content {
+.ui.modal .content {
   max-width: 400px;
   border-radius: 0px;
   padding: 0px !important;
@@ -779,16 +779,11 @@ select {
   background: none;
 }
 
-.confirm-transact.ui.modal .content .modal-header {
+.ui.modal .content .modal-header {
   padding: 15px 10px;
 }
 
-.confirm-transact.ui.modal .content .modal-content {
-  padding: 0px 10px;
-  background: white;
-}
-
-.confirm-transact.ui.modal .content .modal-header {
+.ui.modal .content .modal-header {
   background-color: #3e3e3e;
   color: white;
   display: flex;
@@ -796,7 +791,12 @@ select {
   align-items: center;
 }
 
-.confirm-transact.ui.modal .content .modal-header .logo-title {
+.ui.modal .content .modal-content {
+  padding: 0px 10px;
+  background: white;
+}
+
+.ui.modal .content .modal-header .logo-title {
   display: flex;
   align-items: center;
   color: white;
@@ -804,14 +804,14 @@ select {
   line-height: 1;
 }
 
-.confirm-transact.ui.modal .content .modal-header .logo-title img {
+.ui.modal .content .modal-header .logo-title img {
   width: 22px;
   margin-right: 15px;
   margin-left: 8px;
   margin-top: -4px;
 }
 
-.confirm-transact.ui.modal .content .modal-header .close-modal {
+.ui.modal .content .modal-header .close-modal {
   color: #9f9f9f;
   width: 30px;
   font-size: 18px;
@@ -1164,4 +1164,24 @@ select {
   align-items: center;
   justify-content: center;
   background: white;
+}
+
+/*---------------------------------------*/
+#select-coin-modal .list .item {
+  display: flex;
+  align-items: center;
+  padding: 7px 0px;
+}
+
+#select-coin-modal .list .item:not(:last-child) {
+  border-bottom: 1px solid #e2e2e2;
+}
+
+#select-coin-modal .list .item p {
+  margin: 0px;
+  margin-left: 15px;
+}
+
+#select-coin-modal .list .item img {
+  width: 40px;
 }

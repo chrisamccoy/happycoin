@@ -94,7 +94,9 @@ function initTabs (){
       $subNavLinks = $subNav.find('.links .link'),
       $walletTabs = $('#wallet-tabs'),
       $notifications = $('#wallet-nav .notifications'),
-      $navTitle = $walletNav.find('.title');
+      $navTitle = $walletNav.find('.title'),
+      $tradeTab = $('.tab[data-tab="trade"]'),
+      $selectMethModal = $('#select-coin-modal');
 
   $tabLinks.click(function(){
     $('#transaction-tab').show();
@@ -111,8 +113,28 @@ function initTabs (){
     updateNotific('reset');
   });
 
-  $back.click(function(){
-    closeAllTabs();
+  $back.click(closeAllTabs);
+
+  $tradeTab.find('.wallet-button').click(closeAllTabs);
+
+  $tradeTab.find('.buying .btn').click(function(){
+    $selectMethModal.modal('show');
+  });
+
+  $selectMethModal.find('.list .item').click(function(){
+    $selectMethModal.modal('hide');
+    var data = $(this).data();
+    var $btn = $tradeTab.find('.buying .btn');
+    $btn.html('');
+
+    var template =
+    '<img src="'+data.img+'">'+
+      '<div class="price">'+
+        '<span><b>'+data.name+'</b></span>'+
+        '<span>@ $369.64  </span>'+
+      '</div>'+
+    '</a>';
+    $btn.append(template);
   });
 
   $navLinks.click(function(){
