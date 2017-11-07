@@ -6,6 +6,7 @@ block content
       div.links.nav-links
         a.link(href="javascript:;", data-tab="buy") Buy
         a.link(href="javascript:;", data-tab="sell") Sell
+        a.link(href="javascript:;", data-tab="trade") Trade
         a.link(href="javascript:;", data-tab="gift") Gift
       div.value
         div.storecoin-val 
@@ -85,123 +86,189 @@ block content
     
     div#wallet-tabs
       div.tab(data-tab="buy")
-        section#wallet-pay-method
-          div.header PAYMENT METHOD
-          .ui.fluid.selection.dropdown
-            input(type='hidden', name='user')
-            i.dropdown.icon
-            .default.text
-              div.bank-info
-                div.name Wells Fargo - Bank
-                div.status Checking • ******2089
-            .menu
-              .item(data-value='Wells Fargo - Bank ******2089')
+        div.content
+          section#wallet-pay-method
+            div.header PAYMENT METHOD
+            .ui.fluid.selection.dropdown
+              input(type='hidden', name='user')
+              i.dropdown.icon
+              .default.text
                 div.bank-info
                   div.name Wells Fargo - Bank
                   div.status Checking • ******2089
-              .item(data-value='Colorado - Bank ******2089')
-                div.bank-info
-                  div.name Colorado - Bank
-                  div.status Checking • ******2089
-              .item(data-value='California - Bank ******2089')
-                div.bank-info
-                  div.name California - Bank
-                  div.status Checking • ******2089
+              .menu
+                .item(data-value='Wells Fargo - Bank ******2089')
+                  div.bank-info
+                    div.name Wells Fargo - Bank
+                    div.status Checking • ******2089
+                .item(data-value='Colorado - Bank ******2089')
+                  div.bank-info
+                    div.name Colorado - Bank
+                    div.status Checking • ******2089
+                .item(data-value='California - Bank ******2089')
+                  div.bank-info
+                    div.name California - Bank
+                    div.status Checking • ******2089
 
-        section#wallet-amount
-          div.header AMOUNT
-          include amount-slider
-          div.repeat-check
-            div.repeat
-              input#repeatField(type='checkbox')
-              label.label-inline(for='repeatField') Repeat this buy
-            div.repeat-time
-              select.ui.fluid.selection.dropdown
-                option(value='') Weekly
-                option(value='2') Weekly
-                option(value='1') Monthly
-                option(value='0') Yearly
+          section#wallet-amount
+            div.header AMOUNT
+            include amount-slider
+            div.repeat-check
+              div.repeat
+                input#repeatField(type='checkbox')
+                label.label-inline(for='repeatField') Repeat this buy
+              div.repeat-time
+                select.ui.fluid.selection.dropdown
+                  option(value='') Weekly
+                  option(value='2') Weekly
+                  option(value='1') Monthly
+                  option(value='0') Yearly
 
         div.button-container
           div.wallet-button.open-transaction
             button(data-modal="buy-modal") Buy storecoin
       
       div.tab(data-tab="sell")
-        section#wallet-pay-method
-          div.header DEPOSIT TO
-          .ui.fluid.selection.dropdown
-            input(type='hidden', name='user')
-            i.dropdown.icon
-            .default.text
-              div.bank-info
-                div.name Wells Fargo - Bank
-                div.status Checking • ******2089
-            .menu
-              .item(data-value='Wells Fargo - Bank ******2089')
+        div.content
+          section#wallet-pay-method
+            div.header DEPOSIT TO
+            .ui.fluid.selection.dropdown
+              input(type='hidden', name='user')
+              i.dropdown.icon
+              .default.text
                 div.bank-info
                   div.name Wells Fargo - Bank
                   div.status Checking • ******2089
-              .item(data-value='Colorado - Bank ******2089')
-                div.bank-info
-                  div.name Colorado - Bank
-                  div.status Checking • ******2089
-              .item(data-value='California - Bank ******2089')
-                div.bank-info
-                  div.name California - Bank
-                  div.status Checking • ******2089
+              .menu
+                .item(data-value='Wells Fargo - Bank ******2089')
+                  div.bank-info
+                    div.name Wells Fargo - Bank
+                    div.status Checking • ******2089
+                .item(data-value='Colorado - Bank ******2089')
+                  div.bank-info
+                    div.name Colorado - Bank
+                    div.status Checking • ******2089
+                .item(data-value='California - Bank ******2089')
+                  div.bank-info
+                    div.name California - Bank
+                    div.status Checking • ******2089
 
-        section#wallet-amount
-          div.header AMOUNT
-          include amount-slider
-          div.repeat-check
-            div.repeat
-              input#repeatField(type='checkbox')
-              label.label-inline(for='repeatField') Repeat this sell
-            div.repeat-time
-              select.ui.fluid.selection.dropdown
-                option(value='') Weekly
-                option(value='2') Weekly
-                option(value='1') Monthly
-                option(value='0') Yearly
+          section#wallet-amount
+            div.header AMOUNT
+            include amount-slider
+            div.repeat-check
+              div.repeat
+                input#repeatField(type='checkbox')
+                label.label-inline(for='repeatField') Repeat this sell
+              div.repeat-time
+                select.ui.fluid.selection.dropdown
+                  option(value='') Weekly
+                  option(value='2') Weekly
+                  option(value='1') Monthly
+                  option(value='0') Yearly
                 
         div.button-container
           div.wallet-button.open-transaction
             button(data-modal="sell-modal") Sell storecoin
             
+      div.tab(data-tab="trade")
+        div.content
+          section.gen-order 
+            div.header GENERATE AN ORDER
+            div.sell-buy
+              div.selling
+                div.head Selling
+                div.btn 
+                  img(src="/images/wallet/storecoin-logo.png")
+                  div.price
+                    span
+                      b Storecoin
+                    span @ $35.58
+              div.exchange
+                img(src="/images/wallet/exchange-icon.png")
+              div.buying
+                div.head Buying
+                div.btn 
+                  img(src="/images/wallet/ethereum-logo.png")
+                  div.price
+                    span
+                      b Ethereum
+                    span @ $369.64  
+          section#wallet-amount(style="border-bottom: 1px solid #eaeaea;")
+            include amount-slider
+          section
+            div.header EXPIRATION
+            div.select-exp
+              div#date-picker.exp-picker
+                input
+                i.ion-calendar
+              div#time-picker.exp-picker
+                input
+                i.ion-clock
+            div.header TAKER
+            div.wallet-selection
+              .ui.fluid.search.selection.dropdown
+                input(type='hidden', name='user')
+                i.dropdown.icon
+                .default.text Add by searching names
+                .menu
+                  .item(data-value='Marion Diaz')
+                    img.ui.mini.avatar.image(src='/images/wallet/user-1.png')
+                    |       Marion Diaz
+                  .item(data-value='Danny Fortune')
+                    img.ui.mini.avatar.image(src='/images/wallet/user-2.png')
+                    |       Danny Fortune
+                  .item(data-value='Chris McCoy')
+                    img.ui.mini.avatar.image(src='/images/wallet/user-3.png')
+                    |       Chris McCoy
+                  .item(data-value='Chanses Armstrong')
+                    img.ui.mini.avatar.image(src='/images/wallet/user-4.png')
+                    |       Chanses Armstrong
+                  .item(data-value='Chirstina Hayes')
+                    img.ui.mini.avatar.image(src='/images/wallet/user-5.png')
+                    |       Chirstina Hayes
+            div.header ORDER HASH
+            input(value="0x5lkjadia4udas8ducx9909df8")
+          
+        div.button-container
+          div.wallet-button.open-transaction
+            button Trade storecoin
+      
       div.tab(data-tab="gift")
-        section#wallet-amount(style="border-bottom: 1px solid #eaeaea;")
-          include amount-slider
-        
-        section(style="border:none;")
-          div.send-gift-to
-            div.header SEND A GIFT TO
-            .ui.fluid.search.selection.dropdown
-              input(type='hidden', name='user')
-              i.dropdown.icon
-              .default.text Add by searching names
-              .menu
-                .item(data-value='Marion Diaz')
-                  img.ui.mini.avatar.image(src='/images/wallet/user-1.png')
-                  |       Marion Diaz
-                .item(data-value='Danny Fortune')
-                  img.ui.mini.avatar.image(src='/images/wallet/user-2.png')
-                  |       Danny Fortune
-                .item(data-value='Chris McCoy')
-                  img.ui.mini.avatar.image(src='/images/wallet/user-3.png')
-                  |       Chris McCoy
-                .item(data-value='Chanses Armstrong')
-                  img.ui.mini.avatar.image(src='/images/wallet/user-4.png')
-                  |       Chanses Armstrong
-                .item(data-value='Chirstina Hayes')
-                  img.ui.mini.avatar.image(src='/images/wallet/user-5.png')
-                  |       Chirstina Hayes
-          div.send-email
-            div.header.blue Send by email
-            div.textarea-count
-              textarea.gift-textarea(maxlength="250")
-              div.count 
-                span 0
-                span /250 
+        div.content
+          section#wallet-amount(style="border-bottom: 1px solid #eaeaea;")
+            include amount-slider
+          
+          section(style="border:none;")
+            div.send-gift-to.wallet-selection
+              div.header SEND A GIFT TO
+              .ui.fluid.search.selection.dropdown
+                input(type='hidden', name='user')
+                i.dropdown.icon
+                .default.text Add by searching names
+                .menu
+                  .item(data-value='Marion Diaz')
+                    img.ui.mini.avatar.image(src='/images/wallet/user-1.png')
+                    |       Marion Diaz
+                  .item(data-value='Danny Fortune')
+                    img.ui.mini.avatar.image(src='/images/wallet/user-2.png')
+                    |       Danny Fortune
+                  .item(data-value='Chris McCoy')
+                    img.ui.mini.avatar.image(src='/images/wallet/user-3.png')
+                    |       Chris McCoy
+                  .item(data-value='Chanses Armstrong')
+                    img.ui.mini.avatar.image(src='/images/wallet/user-4.png')
+                    |       Chanses Armstrong
+                  .item(data-value='Chirstina Hayes')
+                    img.ui.mini.avatar.image(src='/images/wallet/user-5.png')
+                    |       Chirstina Hayes
+            div.send-email
+              div.header.blue Send by email
+              div.textarea-count
+                textarea.gift-textarea(maxlength="250")
+                div.count 
+                  span 0
+                  span /250 
         
         div.button-container
           div#gift-button.wallet-button

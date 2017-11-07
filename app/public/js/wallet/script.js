@@ -8,6 +8,7 @@ $(document).ready(function(){
   initDropdowns();
   sendGift();
   loadChartData();
+  initDatePicker();
 });
 var giftItems = {
   storeVal : null,
@@ -15,6 +16,11 @@ var giftItems = {
   message : null
 },
 numNotification = 1;
+
+function initDatePicker(){
+  $('#date-picker input').pickadate();
+  $('#time-picker input').pickatime();
+}
 
 function sendGift () {
   $('#gift-button button').click(function(){
@@ -120,8 +126,11 @@ function initTabs (){
       $subNav.find('.links .link[data-tab="'+tabName+'"]').addClass('active');
       // $walletTabs.find('.tab[data-tab="'+tabName+'"]').addClass('active');
 
-      var offset = $walletNav.height() + $subNav.height();
-      $walletTabs.find('.tab[data-tab="'+tabName+'"]').addClass('active').css('height' , ($(window).height() - offset)+'px');
+      var $currentTab = $walletTabs.find('.tab[data-tab="'+tabName+'"]');
+      var offset = $walletNav.height() + $subNav.height() + 74;
+      // console.log($currentTab.find('.wallet-button').height());
+      $currentTab.addClass('active');
+      $currentTab.find('.content').css('height' , ($(window).height() - offset)+'px');
     }
   });
 

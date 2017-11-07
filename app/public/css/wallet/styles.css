@@ -69,6 +69,16 @@ section {
   border-bottom : 1px solid #eaeaea;
 }
 
+section .header:not(:first-child) {
+  margin-top: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 15px 10px;
+  border: 1px solid #dedede;
+}
+
 select {
   border-color: #eaeaea;
   margin: 0px;
@@ -210,7 +220,7 @@ select {
 
 #home-tab .graph-feeds {
   overflow: scroll;
-  height: calc(100% - 125px);
+  height: calc(100% - 200px);
 }
 
 @media only screen and (max-width: 700px) {
@@ -346,7 +356,8 @@ select {
   flex: 1.5;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: center; */
+  align-items: flex-end;
 }
 
 #wallet-value .links a {
@@ -389,6 +400,7 @@ select {
   color: white;
   text-align: right;
   font-size: 0.9em;
+  margin-top: 2em;
 }
 
 #wallet-value .storecoin-val .unit img {
@@ -634,6 +646,12 @@ select {
   color: black;
 }
 
+@media only screen and (max-width: 700px) {
+  #wallet-sub-nav .links .link {
+    padding : 12px 14px;
+  }
+}
+
 /*---------------------------------------*/
 
 #wallet-amount {
@@ -707,6 +725,14 @@ select {
   display: flex;
   align-items: center;
   flex: 1;
+}
+
+#wallet-amount .repeat-check .repeat input {
+  width: 20px;
+}
+
+#wallet-amount .repeat-check .repeat label {
+  flex: auto;
 }
 
 #wallet-amount .repeat-check .repeat input, label {
@@ -908,32 +934,36 @@ select {
 
 /*---------------------------------------*/
 
-.send-gift-to .ui.dropdown,
-.send-gift-to .ui.dropdown .menu .item {
+.wallet-selection .ui.dropdown,
+.wallet-selection .ui.dropdown .menu .item {
   padding: 1em 0.5em !important;
 }
 
-.send-gift-to .ui.dropdown .menu .item {
+.wallet-selection .ui.dropdown .menu .item {
   background-color: #eaeaea;
   border-color: #eaeaea;
   color: black !important;
 }
 
-.send-gift-to .ui.dropdown .menu .item .ui.image {
+.wallet-selection .ui.dropdown .menu .item .ui.image {
   border-radius: 50%;
 }
 
-.send-gift-to .ui.dropdown .menu .item.selected {
+.wallet-selection .ui.dropdown .menu .item.selected {
   background-color: #fcda00;
   border-color: #fcda00;
 }
 
-.send-gift-to .ui.dropdown .menu {
+.wallet-selection .ui.dropdown .menu {
   max-height: 20rem;
 }
 
-.send-gift-to .ui.dropdown i.dropdown.icon {
+.wallet-selection .ui.dropdown i.dropdown.icon {
   visibility: hidden;
+}
+
+.wallet-selection .ui.dropdown img {
+  border-radius: 50%;
 }
 
 .send-email {
@@ -949,6 +979,10 @@ select {
   height: 100%;
   background: white;
   display: none;
+}
+
+#wallet-tabs .tab .content {
+  overflow: scroll;
 }
 
 #wallet-tabs .tab.active {
@@ -1003,4 +1037,117 @@ select {
 /*---------------------------------------*/
 #transaction-tab {
   display: none;
+}
+
+/*---------------------------------------*/
+
+.gen-order .sell-buy {
+  display: flex;
+  align-items: center;
+}
+
+.gen-order .sell-buy .head {
+  font-size: 13px;
+}
+
+.gen-order .sell-buy .btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 25px 0px;
+  border: 1px solid #eaeaea;
+  cursor: pointer;
+  min-height: 95px;
+}
+
+.gen-order .sell-buy .btn:hover {
+  border: 1px solid #c8bfbf;
+}
+
+.gen-order .sell-buy .btn img {
+  width: 45px;
+}
+
+.gen-order .sell-buy .selling,
+.gen-order .sell-buy .buying {
+  flex: auto;
+}
+
+.gen-order .sell-buy .exchange {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  margin-top: 15px;
+}
+
+.gen-order .sell-buy .exchange img {
+  width: 20px;
+}
+
+.gen-order .sell-buy .btn .price {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: inherit;
+}
+
+.gen-order .sell-buy .btn .price span {
+  font-size: inherit;
+  line-height: 1;
+}
+
+.gen-order .sell-buy .btn .price span:last-child {
+  font-weight: 100;
+  color: rgba(0,0,0,.4);
+  text-align: left;
+  font-size: 0.8em;
+}
+
+.gen-order .sell-buy .btn .price span:first-child {
+  color: black;
+}
+
+@media only screen and (max-width: 700px) {
+  .gen-order .sell-buy .btn .price {
+    font-size: 15px;
+  }
+
+  .gen-order .sell-buy .btn {
+    padding : 15px 0px;
+    min-height: 75px;
+  }
+
+  .gen-order .sell-buy .btn img {
+    width: 35px;
+  }
+
+  .gen-order .sell-buy .exchange {
+    width:35px;
+  }
+
+  .gen-order .sell-buy .exchange img {
+    width: 15px;
+  }
+}
+
+/*---------------------------------------*/
+
+.select-exp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.select-exp .exp-picker {
+  width: 48%;
+  position: relative;
+}
+
+.select-exp .exp-picker i {
+  position: absolute;
+  top : 12px;
+  right : 15px; 
 }
