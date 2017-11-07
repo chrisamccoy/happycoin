@@ -232,6 +232,10 @@ select {
     padding: 15px 20px;
     border-bottom : 1px solid #eaeaea;
   }
+
+  #home-tab .graph-feeds {
+    height: calc(100% - 160px);
+  }
 }
 
 /*---------------------------------------*/
@@ -1146,8 +1150,18 @@ select {
   position: relative;
 }
 
-.select-exp .exp-picker i {
+.select-exp .exp-picker input {
+  margin: 0px;
+}
+
+.select-exp .exp-picker .icon {
   position: absolute;
-  top : 12px;
-  right : 15px; 
+  top: 1px;
+  right: 1px;
+  width: 30px;
+  height: calc(100% - 2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
 }
