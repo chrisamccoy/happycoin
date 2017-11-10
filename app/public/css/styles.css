@@ -549,9 +549,13 @@ input[type=number]::-webkit-outer-spin-button {
 
 #hc-nav-wrapper .hc-branding {
   width: 33%;
+  position: relative;
+  height: 60px;
 }
 
 #hc-nav-wrapper .hc-title {
+  position: absolute;
+  top: 0px;
   display: block;
   background-image: url(../images/logo.png);
   background-repeat: no-repeat;
@@ -559,6 +563,7 @@ input[type=number]::-webkit-outer-spin-button {
   background-position: center;
   width: 95px;
   height: 95px;
+  left: calc(50% - 47.5px);
   text-transform: lowercase;
   transition: all .2s ease-in;
   transform: scale(1);
@@ -569,6 +574,8 @@ input[type=number]::-webkit-outer-spin-button {
 #hc-nav-wrapper.scrolling .hc-title {
   width: 60px;
   height: 60px;
+  position: static;
+  left: calc(50% - 30px);
 }
 
 #hc-nav-wrapper .hc-title:hover {
@@ -673,7 +680,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   #hc-nav-wrapper .container {
-    padding : 0.5em;
+    padding : 0px 0.5em;
   }
 
   #hc-nav-wrapper.scrolling .container {
@@ -683,6 +690,7 @@ input[type=number]::-webkit-outer-spin-button {
   #hc-nav-wrapper .container div.hc-branding {
     order : 1;
     width: auto;
+    height: 50px;
   }
 
   #hc-nav-wrapper .container a.hc-branding {
@@ -705,14 +713,14 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* #hc-intro  */
 #hc-intro {
-  height: calc(100vh - 260px);
+  height: calc(100vh - 226px);
   background: #2a2a2a;
   background-image: url(../images/map-bg.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 90%;
   padding: 0px;
-  margin-top: 120px;
+  margin-top: 85px;
   display: flex;
   align-items: center;
 }
@@ -918,7 +926,7 @@ and (max-width : 700px) {
 
 @media only screen and (max-width: 700px) {
   #hc-intro {
-    height : calc(100vh - 315px);
+    height : calc(100vh - 290px);
   }
 
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
@@ -935,7 +943,7 @@ and (max-width : 700px) {
 
   #hc-intro {
     padding: 0px;
-    margin-top: 105px;
+    margin-top: 80px;
   }
 
   #hc-slider {
@@ -3310,11 +3318,16 @@ and (max-width : 700px) {
     z-index: 1;
     width: 75px;
     height: 75px;
+    left: unset;
   }
 
   #hc-nav-wrapper.scrolling .hc-title {
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
+  }
+
+  #hc-nav-wrapper.scrolling .container div.hc-branding {
+    height: 45px;
   }
 
   #hc-nav-wrapper > .container {
