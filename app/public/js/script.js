@@ -73,17 +73,18 @@ function imgCoords() {
       ogWidth = 900;
 
   // console.log(winWidth);
-
-  $areas.each(function(){
-    var myCoords = $(this).attr('mycoords').split(','),
-        newCoords = [];
-    myCoords.forEach(function(item){
-      var percent = item/ogWidth,
-          newVal = imgWidth * percent;
-      newCoords.push(newVal);
-      // console.log(newCoords);
+  $image.on('load', function(){
+    $areas.each(function(){
+      var myCoords = $(this).attr('mycoords').split(','),
+          newCoords = [];
+      myCoords.forEach(function(item){
+        var percent = item/ogWidth,
+            newVal = imgWidth * percent;
+        newCoords.push(newVal);
+        // console.log(newCoords);
+      });
+      $(this).attr('coords', newCoords.join(','));
     });
-    $(this).attr('coords', newCoords.join(','));
   });
 }
 
