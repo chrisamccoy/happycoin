@@ -218,8 +218,107 @@ block content
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title DyPoS and the Market for Distributed Consensus Mechanisms
         .hc-image
-          img(src="/images/consensus-mechanism.png", style="width:100%;")
-    
+          //- button.btn(title="I'm a tooltip!") Text
+          .desktop-image
+            img(src="/images/consensus-mechanism.png", style="max-width:600px; width:100%;" usemap="#desktop-image-map")
+            map(name='desktop-image-map')
+              area(title="Ripple (evolving into the inter-ledger protocol)<br>Stellar (Ripple fork)", target='', alt='', coords="" mycoords='365,585,223,833,108,750,32,607,301,512,327,552', shape='poly')
+              area(title="BigChainDB<br>RAFT<br>PAXOS (including many variances, such as Fast PAXOS, Egalitarian Paxos, etc.)<br>Juno (RAFT-Hardened Tangaroa; JP Project)<br>Tangaroa<br>Mencius<br>Viewstamped replication<br>ZAB", target='', alt='', coords="" mycoords='472,610,376,591,234,838,374,895,521,891', shape='poly')
+              area(title="Graphene<br>Steem<br>BitShares<br>EOS", target='', alt='', coords="" mycoords='486,606,568,557,786,743,670,845,536,886', shape='poly')
+              area(position="right", title="Storecoin", target='', alt='', coords="" mycoords='576,549,610,457,894,459,872,606,794,732', shape='poly')
+              area(title="Casper<br>Ethereum (moving to PoS)<br>Cosmos<br>Stratis<br>Tezos", target='', alt='', coords="" mycoords='576,354,794,170,875,294,895,445,609,445', shape='poly')
+              area(title="Bitcoin<br>Colored Coins<br>Proprietary Metacoins<br>DAG (Directed Acylic Graphs)<br>Factom<br>Zcash", target='', alt='', coords="" mycoords='569,344,788,161,683,59,532,8,484,294', shape='poly')
+              area(title="Distributed concurrence<br>Corda (R3 CEV)", target='', alt='', coords="" mycoords='521,13,473,294,377,312,233,63,377,0', shape='poly')
+              area(title="PBFT (Practical Byzantine Fault Tolerance)<br>Derived PBFT (Hyperledger project)<br>RBFT (Redundant Byzantine Fault Tolerance, e.g., Evernym)<br>SBFT (Simplified Byzantine Fault Tolerance, e.g., Chain)", target='', alt='', coords="" mycoords='304,390,368,317,225,67,107,158,35,291', shape='poly')
+              area(title="Openchain<br>PoET (Proof of Elapsed Time) by Intel (Sawtooth Lake Project)", target='', alt='', coords="" mycoords='301,496,300,402,33,305,0,443,33,598', shape='poly')
+                
+          .mobile-image
+            img(src="/images/consensus-mechanism.png", style="max-width:600px; width:100%;" usemap="#mobile-image-map")
+            map(name='mobile-image-map')
+              area(data-featherlight="#box-1", href="#", target='', alt='', coords="" mycoords='365,585,223,833,108,750,32,607,301,512,327,552', shape='poly')
+              div#box-1.image-map-modal(style="display:none;") 
+                | Ripple (evolving into the inter-ledger protocol)
+                br 
+                | Stellar (Ripple fork)
+              area(data-featherlight="#box-2", target='', alt='', coords="" mycoords='472,610,376,591,234,838,374,895,521,891', shape='poly')
+              div#box-2.image-map-modal(style="display:none;")
+                | BigChainDB
+                br 
+                | RAFT 
+                br 
+                | PAXOS (including many variances, such as Fast PAXOS, Egalitarian Paxos, etc.)
+                br
+                | Juno (RAFT-Hardened Tangaroa; JP Project)
+                br
+                | Tangaroa
+                br 
+                | Mencius 
+                br 
+                | Viewstamped replication
+                br 
+                | ZAB
+                
+              area(data-featherlight="#box-3", target='', alt='', coords="" mycoords='486,606,568,557,786,743,670,845,536,886', shape='poly')
+              div#box-3.image-map-modal(style="display:none;")
+                | Graphene
+                br 
+                | Steem
+                br 
+                | BitShares
+                br
+                | EOS
+                
+              area(data-featherlight="#box-4", target='', alt='', coords="" mycoords='576,549,610,457,894,459,872,606,794,732', shape='poly')
+              div#box-4.image-map-modal(style="display:none;") Storecoin
+              
+              area(data-featherlight="#box-5", target='', alt='', coords="" mycoords='576,354,794,170,875,294,895,445,609,445', shape='poly')
+              div#box-5.image-map-modal(style="display:none;")
+                | Casper
+                br
+                | Ethereum (moving to PoS)
+                br
+                | Cosmos
+                br
+                | Stratis
+                br
+                | Tezos
+              
+              area(data-featherlight="#box-6", target='', alt='', coords="" mycoords='569,344,788,161,683,59,532,8,484,294', shape='poly')
+              div#box-6.image-map-modal(style="display:none;")
+                | Bitcoin
+                br
+                | Colored Coins
+                br
+                | Proprietary Metacoins
+                br
+                | DAG (Directed Acylic Graphs)
+                br
+                | Factom
+                br
+                | Zcash
+              
+              area(data-featherlight="#box-7", target='', alt='', coords="" mycoords='521,13,473,294,377,312,233,63,377,0', shape='poly')
+              div#box-7.image-map-modal(style="display:none;")
+                | Distributed concurrence
+                br 
+                | Corda (R3 CEV)
+              
+              area(data-featherlight="#box-8", target='', alt='', coords="" mycoords='304,390,368,317,225,67,107,158,35,291', shape='poly')
+              div#box-8.image-map-modal(style="display:none;")
+                | PBFT (Practical Byzantine Fault Tolerance)
+                br 
+                | Derived PBFT (Hyperledger project)
+                br 
+                | RBFT (Redundant Byzantine Fault Tolerance, e.g., Evernym)
+                br 
+                | SBFT (Simplified Byzantine Fault Tolerance, e.g., Chain)
+              
+              area(data-featherlight="#box-9", target='', alt='', coords="" mycoords='301,496,300,402,33,305,0,443,33,598', shape='poly')
+              div#box-9.image-map-modal(style="display:none;")
+                | Openchain
+                br
+                | PoET (Proof of Elapsed Time) by Intel (Sawtooth Lake Project)
+  
     #ethos.hc-feature.over-rel.padding.inverted.orange
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Our Tech Ethos

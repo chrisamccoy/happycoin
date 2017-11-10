@@ -4027,7 +4027,7 @@ and (max-width : 700px) {
 }
 
 #hc-six-engines .engine .back {
-  /*background-color: rgb(199, 223, 184);*/
+  background-color: rgb(199, 223, 184);
   z-index: 1;
   transform: rotateY(-180deg);
   transform-style: preserve-3d;
@@ -4123,4 +4123,114 @@ and (max-width : 700px) {
     margin-right: 0em;
     font-size: 1em;
   }
+}
+
+/*----------------------------------*/
+.tippy-popper .tippy-tooltip-content {
+  font-size: 1.7em;
+  text-align: left;
+  padding: 0.5em;
+  color: black;
+}
+
+.tippy-popper .tippy-tooltip {
+  border-radius: 5px;
+}
+
+#box-1,
+#tippy-tooltip-1 .tippy-tooltip {
+  background-color: #91e5e2;
+  border: 3px solid #00afa8;
+}
+
+#tippy-tooltip-1 .tippy-tooltip .arrow-regular {
+  border-top-color: #00afa8;
+}
+
+#box-2,
+#tippy-tooltip-2 .tippy-tooltip {
+  background-color: #d99ee9;
+  border: 3px solid #702784;
+}
+
+#tippy-tooltip-2 .tippy-tooltip .arrow-regular {
+  border-top-color: #702784;
+}
+
+#box-3,
+#tippy-tooltip-3 .tippy-tooltip {
+  background-color: #ccb2f6;
+  border: 3px solid #4b2884;
+}
+
+#tippy-tooltip-3 .tippy-tooltip .arrow-regular {
+  border-top-color: #4b2884;
+}
+
+#box-4,
+#tippy-tooltip-4 .tippy-tooltip {
+  background-color: #b7bffa;
+  border: 3px solid #646ebc;
+}
+
+#tippy-tooltip-4 .tippy-tooltip .arrow-regular {
+  border-top-color: #646ebc;
+}
+
+#box-5,
+#tippy-tooltip-5 .tippy-tooltip {
+  background-color: #c7dfb8;
+  border: 3px solid #415834;
+}
+
+#tippy-tooltip-5 .tippy-tooltip .arrow-regular {
+  border-top-color: #415834;
+}
+
+#box-6,
+#tippy-tooltip-6 .tippy-tooltip {
+  background-color: #97e1ff;
+  border: 3px solid #009cdc;
+}
+
+#tippy-tooltip-6 .tippy-tooltip .arrow-regular {
+  border-top-color: #009cdc;
+}
+
+#box-7,
+#box-9,
+#tippy-tooltip-7 .tippy-tooltip,
+#tippy-tooltip-9 .tippy-tooltip {
+  background-color: #9fcdeb;
+  border: 3px solid #0072bc;
+}
+
+#tippy-tooltip-7 .tippy-tooltip .arrow-regular,
+#tippy-tooltip-9 .tippy-tooltip .arrow-regular {
+  border-top-color: #0072bc;
+}
+
+#box-8,
+#tippy-tooltip-8 .tippy-tooltip {
+  background-color: #ffcaab;
+  border: 3px solid #ed844d;
+}
+
+#tippy-tooltip-8 .tippy-tooltip .arrow-regular {
+  border-top-color: #ed844d;
+}
+
+.image-map-modal {
+  margin-top: 1em;
+  padding: 0.5em;
+}
+
+.featherlight-content {
+  background: none !important;
+  width: 90% !important;
+}
+
+.featherlight-content .featherlight-close {
+  background: none !important;
+  color:white !important;
 }

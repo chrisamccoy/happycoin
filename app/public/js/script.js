@@ -43,10 +43,48 @@ $(document).ready(function(){
   initTimer();
   hasUrl();
   fadeInContent();
+  imgCoords();
+  initTippy();
 });
 
 function initDropdown () {
   $('.ui.dropdown').dropdown();
+}
+
+function initTippy() {
+  // $('map[name="image-map"] area').click(function(){
+  //   var offset = $(this).offset();
+  //   console.log($('.tippy-popper'));
+  //   $('#tippy-tooltip-1').css('transform', 'translate3d('+offset.left+'px, '+offset.top+'px, 0px)');
+  // });
+  tippy('.desktop-image map[name="desktop-image-map"] area',{
+    // trigger : 'click',
+    animation: 'scale',
+    arrow: true,
+    followCursor : true
+  });
+}
+
+function imgCoords() {
+  var winWidth = $(document).width() > 700 ? 'desktop' : 'mobile',
+      $areas = $('.'+winWidth+'-image map[name="'+winWidth+'-image-map"] area'),
+      $image = $('.'+winWidth+'-image img[usemap="#'+winWidth+'-image-map"]'),
+      imgWidth = $image.width(),
+      ogWidth = 900;
+
+  // console.log(winWidth);
+
+  $areas.each(function(){
+    var myCoords = $(this).attr('mycoords').split(','),
+        newCoords = [];
+    myCoords.forEach(function(item){
+      var percent = item/ogWidth,
+          newVal = imgWidth * percent;
+      newCoords.push(newVal);
+      // console.log(newCoords);
+    });
+    $(this).attr('coords', newCoords.join(','));
+  });
 }
 
 function scrollCheck(){
