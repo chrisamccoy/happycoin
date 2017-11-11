@@ -194,19 +194,33 @@ block content
                     span
                       b Ethereum
                     span @ $369.64  
-          section#wallet-amount(style="border-bottom: 1px solid #eaeaea;")
-            include amount-slider
+          section#trade-amount(style="border-bottom: 1px solid #eaeaea;")
+            div.amount-slider
+              div.amounts
+                p 0.00001
+                p 
+                  img(src="/images/wallet/black-storecoin.png")
+                  span 139.47001
+              div.slider
+              div.conversion
+                p.storecoin-val.orange
+                  img(src="/images/wallet/orange-storecoin.png")
+                  span 33.83535
+                img.exchange(src="/images/wallet/exchange-icon.png")
+                p.dollar-val.green
+                  span ETH 
+                  span 29.95
           section
             div.header EXPIRATION
             div.select-exp
               div#date-picker.exp-picker
-                input
                 div.icon
                   i.ion-calendar
-              div#time-picker.exp-picker
                 input
+              div#time-picker.exp-picker
                 div.icon
                   i.ion-clock
+                input
             div.header TAKER
             div.wallet-selection
               .ui.fluid.search.selection.dropdown
@@ -432,15 +446,15 @@ block content
           i.ion-android-close
       div.modal-content 
         section.list
-          a.item(data-img="/images/wallet/ethereum-logo.png", data-name="Ethereum")
+          a.item(data-img="/images/wallet/ethereum-logo.png", data-name="Ethereum", data-key="eth")
             img(src="/images/wallet/ethereum-logo.png")
             p Ethereum
-          a.item(data-img="/images/wallet/bitcoin-logo.png", data-name="Bitcoin") 
+          a.item(data-img="/images/wallet/bitcoin-logo.png", data-name="Bitcoin", data-key="btc") 
             img(src="/images/wallet/bitcoin-logo.png")
             p Bitcoin
-          a.item(data-img="/images/wallet/ripple-logo.png", data-name="Ripple")
+          a.item(data-img="/images/wallet/ripple-logo.png", data-name="Ripple", data-key="xrp")
             img(src="/images/wallet/ripple-logo.png")
             p Ripple
-          a.item(data-img="/images/wallet/litecoin-logo.png", data-name="Litecoin")
+          a.item(data-img="/images/wallet/litecoin-logo.png", data-name="Litecoin", data-key="ltc")
             img(src="/images/wallet/litecoin-logo.png")
             p Litecoin

@@ -658,62 +658,64 @@ select {
 
 /*---------------------------------------*/
 
-#wallet-amount {
+#wallet-amount,
+#trade-amount {
   border: none;
   position: relative;
 }
 
-#wallet-amount .amount-slider {
+.amount-slider {
   /*position: relative;*/
   height: 100px;
 }
 
-#wallet-amount .amount-slider .amounts {
+.amount-slider .amounts {
   display: flex;
 }
 
-#wallet-amount .amount-slider .amounts p {
+.amount-slider .amounts p {
   margin: 0px;
   flex: auto;
   font-size: 11px;
   margin-bottom : 3px;
 }
 
-#wallet-amount .amount-slider .amounts p:last-child {
+.amount-slider .amounts p:last-child {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-#wallet-amount .amount-slider .amounts p:last-child img {
+.amount-slider .amounts p:last-child img {
   width : 20px;
   margin-right: 3px;
 }
 
-#wallet-amount .amount-slider .conversion {
+.amount-slider .conversion {
   position: absolute;
   display: inline-block;
   margin-top: 10px;
   text-align: right;
 }
 
-#wallet-amount .amount-slider .conversion p {
+.amount-slider .conversion p {
   margin: 0px;
   font-size: 0.9em;
   line-height: 1;
 }
 
-#wallet-amount .amount-slider .conversion .storecoin-val {
+.amount-slider .conversion .storecoin-val {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
-#wallet-amount .amount-slider .conversion .storecoin-val img {
+.amount-slider .conversion .storecoin-val img {
   width: 20px;
   margin-right: 3px;
 }
 
-#wallet-amount .amount-slider .conversion .exchange {
+.amount-slider .conversion .exchange {
   width: 19px;
   margin: -3px 0;
 }
@@ -816,6 +818,7 @@ select {
   width: 30px;
   font-size: 18px;
   text-align: center;
+  cursor: pointer;
 }
 
 .confirm-transact.ui.modal .content .modal-content .buying-info {
@@ -1064,9 +1067,9 @@ select {
   min-height: 95px;
 }
 
-.gen-order .sell-buy .btn:hover {
+/*.gen-order .sell-buy .btn:hover {
   border: 1px solid #c8bfbf;
-}
+}*/
 
 .gen-order .sell-buy .btn img {
   width: 45px;
@@ -1108,6 +1111,7 @@ select {
   color: rgba(0,0,0,.4);
   text-align: left;
   font-size: 0.8em;
+  margin-top: 2px;
 }
 
 .gen-order .sell-buy .btn .price span:first-child {
@@ -1148,10 +1152,14 @@ select {
 .select-exp .exp-picker {
   width: 48%;
   position: relative;
+  height: 50px;
 }
 
 .select-exp .exp-picker input {
+  position: absolute;
   margin: 0px;
+  /*z-index: 2;*/
+  background: none;
 }
 
 .select-exp .exp-picker .icon {
@@ -1167,21 +1175,26 @@ select {
 }
 
 /*---------------------------------------*/
+#select-coin-modal .list {
+  display: flex;
+  align-items: center;
+  flex-flow: wrap;
+  padding: 0 0 1em;
+}
+
 #select-coin-modal .list .item {
   display: flex;
   align-items: center;
-  padding: 7px 0px;
-}
-
-#select-coin-modal .list .item:not(:last-child) {
-  border-bottom: 1px solid #e2e2e2;
+  flex-flow: column;
+  /*padding: 7px 0px;*/
+  width: 50%;
+  margin-top: 1em;
 }
 
 #select-coin-modal .list .item p {
-  margin: 0px;
-  margin-left: 15px;
+  margin: 0.5em 0px;
 }
 
 #select-coin-modal .list .item img {
-  width: 40px;
+  width: 70px;
 }

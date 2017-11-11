@@ -9,13 +9,67 @@ $(document).ready(function(){
   sendGift();
   loadChartData();
   initDatePicker();
+  loadCoinsValue();
 });
 var giftItems = {
   storeVal : null,
   sender : null,
   message : null
 },
-numNotification = 1;
+numNotification = 1,
+coinsVal = {
+  eth : null,
+  btc : null,
+  xrp : null,
+  ltc : null
+},
+coinKey = 'eth';
+
+function loadCoinsValue() {
+  var $selectCoinModal =  $('#select-coin-modal');
+  $.when(
+    $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD', function(data) {
+        coinsVal.eth = data;
+    }),
+    $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD', function(data) {
+        coinsVal.btc = data;
+    }),
+    $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=XRP&tsyms=USD', function(data) {
+        coinsVal.xrp = data;
+    }),
+    $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=LTC&tsyms=USD', function(data) {
+        coinsVal.ltc = data;
+    })
+  ).then(function() {
+    if (coinsVal.eth) {
+      $('.tab[data-tab="trade"] .buying .btn .price span:last-child').text('@ $'+coinsVal.eth.USD);
+      var slider = $("#trade-amount .amount-slider .slider").slider({
+        range : 'min',
+        max: 139.47001,
+        min : 0.00001,
+        step : 0.00001,
+        value : 44.38385,
+        create : function(){
+          sliderFunction($(this), 'create');
+        },
+        slide : function(){
+          sliderFunction($(this), 'slide');
+        },
+        change : function(){
+          sliderFunction($(this), 'change');
+        }
+      });
+
+      $("#trade-amount .amount-slider .slider").slider().bind({
+        sliderchange : function (){
+          sliderFunction($(this), 'create');
+        }
+      });
+
+      $('.slider').trigger('sliderchange');
+    }
+  });
+}
 
 function initDatePicker(){
   $('#date-picker input').pickadate();
@@ -131,9 +185,11 @@ function initTabs (){
     '<img src="'+data.img+'">'+
       '<div class="price">'+
         '<span><b>'+data.name+'</b></span>'+
-        '<span>@ $369.64  </span>'+
+        '<span>@ $'+coinsVal[data.key].USD+'  </span>'+
       '</div>'+
     '</a>';
+    coinKey = data.key;
+    $('.slider').trigger('sliderchange');
     $btn.append(template);
   });
 
@@ -188,7 +244,7 @@ function initTextarea() {
 }
 
 function initModal () {
-  var $modal = $('.confirm-transact.ui.modal'),
+  var $modal = $('.ui.modal'),
       $transactBtn = $('.wallet-button.open-transaction button');
 
   $modal.modal();
@@ -236,7 +292,13 @@ function initRangeSlider() {
     }
   });
 
-  // slider.slider('value', 44.38385);
+  // $("#wallet-amount .amount-slider .slider").slider().bind({
+  //   sliderchange : function (){
+  //     sliderFunction($(this), 'create');
+  //   }
+  // });
+  //
+  // $(".slider").trigger('sliderchange');
 }
 
 function sliderFunction($this, eventName) {
@@ -261,19 +323,31 @@ function bankSelect() {
 }
 
 function changeOnSlide (value, $parent, handlePos) {
-  var $storeVal = $parent.find('#wallet-amount .storecoin-val span'),
+  var $storeVal = $parent.find('.amount-slider .storecoin-val span'),
       tabName = $parent.data().tab,
       $modalStoreVal = $('.confirm-transact.ui.modal[data-modal="'+tabName+'-modal"] .modal-content .buy-amount .storecoin-val'),
-      $dollarVal = $parent.find('#wallet-amount .dollar-val span'),
+      $dollarVal = $parent.find('.dollar-val span:last-child'),
+      $unitSign = $parent.find('.dollar-val span:first-child'),
       $dollarAmount = 35.58,
       $conversion = $parent.find('.conversion');
 
   if ($storeVal) { $storeVal.text(value); }
   if ($modalStoreVal) { $modalStoreVal.text(value); }
-  if ($dollarVal) { $dollarVal.text(numeral(value * $dollarAmount).format('0,0.00')); }
 
   if (tabName == 'gift') {
     giftItems.storeVal = value;
+  } else if (tabName == 'trade') {
+    var coinAmount = coinsVal[coinKey].USD, amount;
+    if (coinAmount > $dollarAmount) {
+      amount = coinsVal[coinKey].USD/$dollarAmount;
+    } else {
+      amount = $dollarAmount/coinsVal[coinKey].USD;
+    }
+    // console.log(value * amount);
+    $unitSign.text(coinKey.toUpperCase()+' ');
+    $dollarVal.text(numeral(value * amount).format('0,0.00'));
+  } else {
+    if ($dollarVal) { $dollarVal.text(numeral(value * $dollarAmount).format('0,0.00')); }
   }
 
   var paddingLeft = $('#wallet-amount').css('padding-left');
