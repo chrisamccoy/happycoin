@@ -23,15 +23,15 @@ body {
   font-family: 'ProximaNova', sans-serif;
   position: relative;
   height: 100%;
-  background-image: url(/images/wallet/wallet-background.png);
+  /*background-image: url(/images/wallet/wallet-background.png);
   background-repeat: no-repeat;
   background-position:520px 0px;
   background-size: auto;
-  background-color: black;
+  background-color: black;*/
 }
 
 .layout {
-  max-width: 528px;
+  /*max-width: 528px;*/
   height: 100%;
   background: white;
   position: relative;
@@ -215,7 +215,7 @@ select {
 
 #home-tab {
   /*overflow: scroll;*/
-  height: calc(100% - 55px);
+  height: 100%;
 }
 
 #home-tab .graph-feeds {
@@ -224,10 +224,10 @@ select {
 }
 
 @media only screen and (max-width: 700px) {
-  .layout {
+  /*.layout {
     width: 100%;
     max-width: none;
-  }
+  }*/
   section {
     padding: 15px 20px;
     border-bottom : 1px solid #eaeaea;

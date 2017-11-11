@@ -205,7 +205,8 @@ function initTabs (){
       // $walletTabs.find('.tab[data-tab="'+tabName+'"]').addClass('active');
 
       var $currentTab = $walletTabs.find('.tab[data-tab="'+tabName+'"]');
-      var offset = $walletNav.height() + $subNav.height() + 74;
+      var offset = $subNav.height() + 74;
+      // var offset = $walletNav.height() + $subNav.height() + 74;
       // console.log($currentTab.find('.wallet-button').height());
       $currentTab.addClass('active');
       $currentTab.find('.content').css('height' , ($(window).height() - offset)+'px');
