@@ -68,7 +68,7 @@ function initTippy() {
 function imgCoords() {
   var winWidth = $(document).width() > 700 ? 'desktop' : 'mobile',
       $areas = $('.'+winWidth+'-image map[name="'+winWidth+'-image-map"] area'),
-      ogWidth = 900;
+      ogWidth = 1000;
 
   // console.log(winWidth);
   $('.'+winWidth+'-image img[usemap="#'+winWidth+'-image-map"]').on('load', function(){
