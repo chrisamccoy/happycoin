@@ -25,15 +25,17 @@ block content
         h3.hc-feature-title(style="margin-bottom: 1.5em;") First Token Sale buyers
         #hc-buyers-slider.logo-slider
           .slide
-            img(src='/images/blacktower-logo.png')
+            a(href="http://blocktower.com", target="_blank")
+              img(src='/images/blacktower-logo.png')
           //- .slide
           //-   img(src='/images/blockfolio-logo.png')
           .slide
-            img(src='/images/palm-drive-logo.jpg')
+            a(href="http://palmdrivecap.com/", target="_blank")
+              img(src='/images/palm-drive-logo.jpg')
           .slide
             img(src='/images/clinton-polley.png', style="width:40%;")
 
-    #green-paper.hc-feature.over-rel.padding.orange.inverted(style="padding-left: 0px; padding-right:0px;")
+    #green-paper.hc-feature.over-rel.padding.orange.inverted(style="padding:2.5em;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted(style=" margin:0px !important;")  This website is our Orange Paper.
     
@@ -389,7 +391,7 @@ block content
             p A digitized, decentralized, public ledger containing the history of every Storecoin transaction.
       
         
-    .hc-feature.over-rel.padding
+    .hc-feature.over-rel.padding.lite
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Overview: Distributed Consensus Mechanisms
         .hc-image
@@ -502,23 +504,23 @@ block content
         .hc-image
           img(src="/images/blockchain-guide.png")
             
-    #learn-more.hc-feature.over-rel.padding
+    #learn-more.hc-feature.over-rel.padding.inverted
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Learn more about how Storecoin Works
         p.hc-feature-lead 
-          a(href="/#free-txn") How Dynamic Block Rewards Work (How Free Txns Are Paid For)
+          a(data-link="#free-txn") How Dynamic Block Rewards Work (How Free Txns Are Paid For)
         p.hc-feature-lead 
-          a(href="/#double-spend") How Storecoin Addresses the Double Spend Problem
+          a(data-link="#double-spend") How Storecoin Addresses the Double Spend Problem
         p.hc-feature-lead 
-          a(href="/#security-system") The Storecoin Security System
+          a(data-link="#security-system") The Storecoin Security System
         p.hc-feature-lead 
-          a(href="/#dynamic-security") How Dynamic Security Works (with Security Guards)
+          a(data-link="#dynamic-security") How Dynamic Security Works (with Security Guards)
         p.hc-feature-lead 
-          a(href="/#dynamic-transactions") How Dynamic (Free) Transactions are Secured
+          a(data-link="#dynamic-transactions") How Dynamic (Free) Transactions are Secured
         p.hc-feature-lead 
-          a(href="/#dynamic-governance") How Dynamic Governance Works
+          a(data-link="#dynamic-governance") How Dynamic Governance Works
           
-    #free-txn.hc-feature.over-rel.padding
+    #free-txn.hc-feature.over-rel.padding.learn-more(style="display:none;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title How Dynamic Block Rewards Work 
           span.orange (How Free Txns Work)
@@ -526,7 +528,7 @@ block content
         .hc-image
           img(src="/images/free-txn.png")
             
-    #double-spend.hc-feature.over-rel.padding
+    #double-spend.hc-feature.over-rel.padding.learn-more(style="display:none;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title
           span.orange Security: 
@@ -535,14 +537,14 @@ block content
         .hc-image
           img(src="/images/double-spend-flow.png")
             
-    #security-system.hc-feature.over-rel.padding
+    #security-system.hc-feature.over-rel.padding.learn-more(style="display:none;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title The Storecoin Security System 
         p.hc-feature-lead Storecoin’s Security System is modeled after the United States Homeland Security Advisory System. This system powers market prices for Dynamic Security and Dynamic (Free) Transactions.
         .hc-image
           img(src="/images/security-system-flow.png")
             
-    #dynamic-security.hc-feature.over-rel.padding
+    #dynamic-security.hc-feature.over-rel.padding.learn-more(style="display:none;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title How Dynamic Security Works  
           span.orange (with Security Guards)
@@ -550,14 +552,14 @@ block content
         .hc-image
           img(src="/images/dynamic-security-flow.png")
             
-    #dynamic-transactions.hc-feature.over-rel.padding
+    #dynamic-transactions.hc-feature.over-rel.padding.learn-more(style="display:none;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title How Dynamic (Free) Transactions Work 
         p.hc-feature-lead To prevent Storecoin from a DDoS attack or the blockchain being flooded with spammy transactions, Storecoin adds a refundable – with interest! – security bond to each transaction. 
         .hc-image
           img(src="/images/dynamic-transactions-flow.png")
             
-    #dynamic-governance.hc-feature.over-rel.padding
+    #dynamic-governance.hc-feature.over-rel.padding.learn-more(style="display:none;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title How Dynamic Governance Works
         p.hc-feature-lead A Storecoin vote is taken at least once per year. Only validators active for the past 6 months of the year have a vote. Governance determines network inflation, new feature additions, changes to consensus, changes to Governance, more.
@@ -604,9 +606,8 @@ block content
         //-   | Will	hierarchy-based	organizations 	 
         //-   b need it
         //-   | ?          
-                  
-        p.hc-feature-lead(style="text-align:left;") If so, our Dynamic (On Chain) Governance votes on it. 
-        p.hc-feature-lead(style="text-align:left; margin-bottom:0px;") If 2/3 majority votes 'Yes', then we ship it. 
+        p.hc-feature-lead(style="text-align:left;") If funded by the Storecoin Community, Governance votes on it.
+        p.hc-feature-lead(style="text-align:left; margin-bottom:0px;") If approved by Governance, then Storecoin ships it.
         
     #specs.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
@@ -964,8 +965,8 @@ block content
                       
               .item.left
                 .date
-                  span November 2017
-                .full-date November 2017
+                  span December 2017
+                .full-date December 2017
                 .box
                   h2.title
                     span.bullet 3
@@ -978,12 +979,12 @@ block content
                       li 
                         i.ion-android-time
                         |  VP Security Engineering added full-time
-                      li 
-                        i.ion-android-time
-                        |  VP Consensus Engineering added full-time
-                      li 
-                        i.ion-android-time
-                        |  VP Governance Engineering added full-time
+                      //- li 
+                      //-   i.ion-android-time
+                      //-   |  VP Consensus Engineering added full-time
+                      //- li 
+                      //-   i.ion-android-time
+                      //-   |  VP Governance Engineering added full-time
                       li 
                         i.ion-android-time
                         |  Economics Paper released

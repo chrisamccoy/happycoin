@@ -1,11 +1,12 @@
 $(document).ready(function(){
+  var isMobile = $(document).width() > 700 ? false : true;
   initDropdown();
   scrollCheck();
   whyTextToggle();
   renderRadio();
   scrollCheck();
   cardFlip();
-  stratDist();
+  stratDist(isMobile);
 
   // on scroll
   $(window).scroll(function(){
@@ -33,7 +34,7 @@ $(document).ready(function(){
   renderCards();
   toggleCardTasks();
   // toggleAppsDesc();
-  toggleIncentive();
+  // toggleIncentive();
   emailSubscribe();
   initSlider();
   initLogoSlider('#hc-partners-slider');
@@ -45,7 +46,23 @@ $(document).ready(function(){
   fadeInContent();
   imgCoords();
   initTippy();
+  initLearnMore();
 });
+
+function initLearnMore () {
+  var $learnMoreLinks = $('#learn-more .hc-feature-lead a');
+  $learnMoreLinks.click(function(){
+    var link = $(this).data().link,
+        $thisItem = $(link),
+        offset;
+
+    $('.learn-more').hide();
+    $thisItem.show();
+    offset = $thisItem.offset().top;
+
+    $('html, body').animate({ scrollTop : offset }, 600);
+  });
+}
 
 function initDropdown () {
   $('.ui.dropdown').dropdown();
@@ -114,16 +131,24 @@ function cardFlip() {
   );
 }
 
-function stratDist() {
+function stratDist(isMobile) {
   var $startDist = $('#strat-dist .hc-strat-dist');
-  $startDist.hover(
-    function(){
-      $(this).find('p').fadeIn();
-    },
-    function(){
-      $(this).find('p').hide();
-    }
-  )
+
+  if(isMobile) {
+    $startDist.click(function(){
+      $startDist.find('p').removeClass('show');
+      $(this).find('p').addClass('show');
+    });
+  } else {
+    $startDist.hover(
+      function(){
+        $(this).find('p').addClass('show');
+      },
+      function(){
+        $(this).find('p').removeClass('show');
+      }
+    )
+  }
 }
 
 // function scrollCheck(){
