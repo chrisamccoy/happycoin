@@ -47,7 +47,23 @@ $(document).ready(function(){
   imgCoords();
   initTippy();
   initLearnMore();
+  initLightBulb();
 });
+
+function initLightBulb () {
+  var $ourVision = $('#our-vision'),
+      offset = $ourVision.offset().top - 200;
+
+  $(window).scroll(function(){
+    var scrollVal  = $(window).scrollTop();
+    if (scrollVal > offset) {
+      $ourVision.addClass('active');
+    } else {
+      $ourVision.removeClass('active');
+    }
+  });
+
+}
 
 function initLearnMore () {
   var $learnMoreLinks = $('#learn-more .hc-feature-lead a');

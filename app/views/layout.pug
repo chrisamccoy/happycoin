@@ -23,7 +23,7 @@ html
     link(rel='stylesheet', href='/css/dropdown.min.css')
     link(rel='stylesheet', href='/css/transition.min.css')
     link(rel='stylesheet', href='/css/tippy.css')
-    link(rel='stylesheet', href='/css/styles.css?v=1.8.2')
+    link(rel='stylesheet', href='/css/styles.css?v=1.8.3')
 
     link(rel='icon', type='image/png', href='/images/favicon.png')
 
@@ -38,7 +38,7 @@ html
     script(src='/js/featherlight.js')
     script(src='/js/numeral.js')
     script(src='/js/tippy.min.js')
-    script(src='/js/script.js?v=1.8.2')
+    script(src='/js/script.js?v=1.8.3')
 
   body
     - var className = ''
@@ -50,7 +50,8 @@ html
         //- a(href="https://medium.com/@team_27494/introducing-storecoin-8e15c21b4335", target="_blank") Read our introductory post
         //- span(style="padding:0 0.5em;") ·
         a(href="https://techcrunch.com/2017/08/20/yesterdays-plastics-are-todays-crypto-tokens/", target="_blank")  Read our latest in TechCrunch
-        span  -
+        span
+          i.ion-record
         a(href="/blog", target="_blank")  Read our blog
       .container
         .row
@@ -58,14 +59,6 @@ html
             span.hc-number-dist
               span 1,000,000,000
               span.away storecoins authorized
-            //- div#box-branding(style="display:none; max-width:700px;")
-            //-   img(src="/images/logo.png", style="width:100px;")
-            //-   p(style="margin-bottom: 1em;") Storecoin’s 1 billion tokens are pre-mined.
-            //-   p(style="margin-bottom: 1em;") To enable free transactions for users, transactions on Storecoin will be paid for with new inflation capped at 5 percent per year. This token inflation will reward validators for staking transactions and validating the decentralized consensus. One percent of total inflation rewards will go to the Storecoin network itself, so the project can more easily change and adapt as needed.
-            //-   p(style="margin-bottom: 1em;") Storecoin will use its Dynamic Proof of Stake algorithm (DyPoS) to spread out this 5 percent per year token inflation across 365 days, to an unlimited number of blocks, and to an unlimited number of transactions. To determine dynamic block times and rewards, DyPoS uses a similar algorithm as Uber does for surge pricing that matches transaction load needs with validator data center power. In laymen’s terms, DyPoS increases the rewards for quick validation when the number of transactions increases.
-            //-   p(style="margin-bottom: 1em;") DyPoS works in two ways. First, you have an economic network effect on blockchains: the more transactions, the more valuable the token becomes (there is a 95 percent historical correlation for Ethereum, 72 percent for Bitcoin). Second, you give validators a reward in the form of inflation to do the work, so no matter what happens to price over time, the validators still accumulate coins for performing the validation work.
-            //-   p(style="margin-bottom: 1em;") Therefore, the incentives are for token holders to stake the Storecoin blockchain regardless of the validator rewards. With more transactions, there will be a higher price for their token.
-            //-   p This algorithm keeps validators producing blocks and fairly rewards all participants in the environment with scale.
           .hc-branding
             a.hc-title(href='/')
           div.hc-menu-dropdown
@@ -78,25 +71,6 @@ html
                 a.item(href='/secondtokensale') Second Token Sale
                 a.item(href='/whitepaper') Our Whitepaper
                 a.item(href='/community') Community
-          //- nav.hc-navigation
-          //-   .hc-menu-container
-          //-     ul.hc-menu
-          //-       //- li.menu-item
-          //-       //-   a(href='/') About
-          //-       li.menu-item.team
-          //-         a(href='/team') Our Team
-          //-       li.menu-item
-          //-         a(href='/examples') Use Cases
-          //-       li.menu-item
-          //-         a(href='/secondtokensale') Second Token Sale
-          //-       li.menu-item
-          //-         a(href='/whitepaper') Our Whitepaper
-          //-       li.menu-item
-          //-         a(href='/community') Community
-      //- button.menu-toggle
-      //-   div(style='background:#5d794c; height:2px; margin:9px 20px')
-      //-   div(style='background:#5d794c; height:2px; margin:9px 20px')
-      //-   div(style='background:#5d794c; height:2px; margin:9px 20px')
 
     block content
       

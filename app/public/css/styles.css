@@ -499,7 +499,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #hc-nav-wrapper .hc-intro-post {
-  background: #c6dfb7;text-align: center; color: #466333;
+  background: #c6dfb7;text-align: center;
+  color: #466333;
+  padding: 0.5em;
+}
+
+#hc-nav-wrapper .hc-intro-post span {
+  font-size: 0.1em;
+  padding: 1em;
 }
 
 #hc-nav-wrapper.v2 .hc-intro-post {
@@ -616,7 +623,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #hc-nav-wrapper .hc-number-dist .away {
   margin-left : 5px;
-  text-decoration: underline;
+  /*text-decoration: underline;*/
 }
 
 #hc-nav-wrapper .hc-navigation {
@@ -726,14 +733,14 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* #hc-intro  */
 #hc-intro {
-  height: calc(100vh - 226px);
+  height: calc(100vh - 241px);
   background: #2a2a2a;
   background-image: url(../images/map-bg.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 90%;
   padding: 0px;
-  margin-top: 85px;
+  margin-top: 100px;
   display: flex;
   align-items: center;
 }
@@ -939,7 +946,7 @@ and (max-width : 700px) {
 
 @media only screen and (max-width: 700px) {
   #hc-intro {
-    height : calc(100vh - 290px);
+    height : calc(100vh - 302px);
   }
 
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
@@ -956,7 +963,7 @@ and (max-width : 700px) {
 
   #hc-intro {
     padding: 0px;
-    margin-top: 80px;
+    margin-top: 92px;
   }
 
   #hc-slider {
@@ -3567,7 +3574,7 @@ and (max-width : 700px) {
 
 @media only screen and (max-width: 700px) {
   #ethos p {
-    font-size: 1em;
+    font-size: 1em !important;
   }
 }
 
@@ -3757,7 +3764,7 @@ and (max-width : 700px) {
   }*/
 
   #green-paper .hc-feature-title {
-    font-size: 1.8em;
+    font-size: 1.5em;
   }
 }
 
@@ -4311,14 +4318,218 @@ and (max-width : 700px) {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-#hc-buyers-slider .slide {
   transition: all .2s ease-in;
   transform: scale(1);
 }
 
-#hc-buyers-slider .slide:hover {
+#hc-buyers-slider .slide a:hover {
   transition: all .2s ease-in;
   transform: scale(1.1);
+}
+
+/*----------------------------------*/
+.bulb-container {
+  margin: auto;
+  width: 200px;
+}
+
+#on {
+  -webkit-transform: translate(50%, 50%) scale(0);
+          transform: translate(50%, 50%) scale(0);
+  opacity: 0;
+}
+.active #on {
+  opacity: 1;
+  -webkit-transform: translate(0) scale(1);
+          transform: translate(0) scale(1);
+  -webkit-transition: all 0.14s ease-in;
+  transition: all 0.14s ease-in;
+}
+
+.fancy-bulb {
+  position: relative;
+}
+
+.streaks, .streaks:after, .streaks:before {
+  position: absolute;
+  background: #FFDB55;
+  border-radius: 5.5px;
+  height: 11px;
+}
+
+.streaks:after, .streaks:before {
+  content: "";
+  display: block;
+}
+
+.streaks:before {
+  bottom: 65px;
+}
+
+.streaks:after {
+  top: 65px;
+}
+
+.left-streaks {
+  right: 217px;
+  top: 89.5px;
+}
+.active .left-streaks {
+  -webkit-animation: move-left 0.38s ease-out, width-to-zero 0.38s ease-out;
+          animation: move-left 0.38s ease-out, width-to-zero 0.38s ease-out;
+  -webkit-animation-delay: 0.14s;
+          animation-delay: 0.14s;
+}
+.left-streaks:before, .left-streaks:after {
+  left: 15px;
+}
+.active .left-streaks:before {
+  -webkit-animation: width-to-zero 0.38s ease-out, move-up 0.38s ease-out;
+          animation: width-to-zero 0.38s ease-out, move-up 0.38s ease-out;
+  -webkit-animation-delay: 0.14s;
+          animation-delay: 0.14s;
+}
+.active .left-streaks:after {
+  -webkit-animation: width-to-zero 0.38s ease-out, move-down 0.38s ease-out;
+          animation: width-to-zero 0.38s ease-out, move-down 0.38s ease-out;
+  -webkit-animation-delay: 0.14s;
+          animation-delay: 0.14s;
+}
+
+.right-streaks {
+  left: 217px;
+  top: 89.5px;
+}
+.active .right-streaks {
+  -webkit-animation: move-right 0.38s ease-out, width-to-zero 0.38s ease-out;
+          animation: move-right 0.38s ease-out, width-to-zero 0.38s ease-out;
+  -webkit-animation-delay: 0.14s;
+          animation-delay: 0.14s;
+}
+.right-streaks:before, .right-streaks:after {
+  right: 15px;
+}
+.active .right-streaks:before {
+  -webkit-animation: width-to-zero 0.38s ease-out, move-up 0.38s ease-out;
+          animation: width-to-zero 0.38s ease-out, move-up 0.38s ease-out;
+  -webkit-animation-delay: 0.14s;
+          animation-delay: 0.14s;
+}
+.active .right-streaks:after {
+  -webkit-animation: width-to-zero 0.38s ease-out, move-down 0.38s ease-out;
+          animation: width-to-zero 0.38s ease-out, move-down 0.38s ease-out;
+  -webkit-animation-delay: 0.14s;
+          animation-delay: 0.14s;
+}
+
+.left-streaks:before, .right-streaks:after {
+  -webkit-transform: rotate(34deg);
+          transform: rotate(34deg);
+}
+
+.left-streaks:after, .right-streaks:before {
+  -webkit-transform: rotate(-34deg);
+          transform: rotate(-34deg);
+}
+
+@-webkit-keyframes move-left {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  65% {
+    -webkit-transform: translateX(-80px);
+            transform: translateX(-80px);
+  }
+  100% {
+    -webkit-transform: translateX(-80px);
+            transform: translateX(-80px);
+  }
+}
+
+@keyframes move-left {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  65% {
+    -webkit-transform: translateX(-80px);
+            transform: translateX(-80px);
+  }
+  100% {
+    -webkit-transform: translateX(-80px);
+            transform: translateX(-80px);
+  }
+}
+@-webkit-keyframes move-right {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  65% {
+    -webkit-transform: translateX(80px);
+            transform: translateX(80px);
+  }
+  100% {
+    -webkit-transform: translateX(80px);
+            transform: translateX(80px);
+  }
+}
+@keyframes move-right {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  65% {
+    -webkit-transform: translateX(80px);
+            transform: translateX(80px);
+  }
+  100% {
+    -webkit-transform: translateX(80px);
+            transform: translateX(80px);
+  }
+}
+@-webkit-keyframes width-to-zero {
+  0% {
+    width: 50px;
+  }
+  100% {
+    width: 11px;
+  }
+}
+@keyframes width-to-zero {
+  0% {
+    width: 50px;
+  }
+  100% {
+    width: 11px;
+  }
+}
+@-webkit-keyframes move-up {
+  100% {
+    bottom: 100.75px;
+  }
+}
+@keyframes move-up {
+  100% {
+    bottom: 100.75px;
+  }
+}
+@-webkit-keyframes move-down {
+  100% {
+    top: 100.75px;
+  }
+}
+@keyframes move-down {
+  100% {
+    top: 100.75px;
+  }
+}
+
+#our-vision {
+  background-color: rgb(13, 113, 163);
+}
+
+#our-vision.active {
+  background-color: white;
 }
