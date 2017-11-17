@@ -52,13 +52,17 @@ $(document).ready(function(){
 
 function initLightBulb () {
   var $ourVision = $('#our-vision'),
+      $bulbOff = $ourVision.find('.bulb-off'),
+      $bulbGlow = $ourVision.find('.bulb-glow'),
       offset = $ourVision.offset().top - 200;
 
   $(window).scroll(function(){
     var scrollVal  = $(window).scrollTop();
     if (scrollVal > offset) {
+      $bulbGlow.fadeIn();
       $ourVision.addClass('active');
     } else {
+      $bulbGlow.hide();
       $ourVision.removeClass('active');
     }
   });

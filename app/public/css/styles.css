@@ -4328,7 +4328,7 @@ and (max-width : 700px) {
 }
 
 /*----------------------------------*/
-.bulb-container {
+/*.bulb-container {
   margin: auto;
   width: 200px;
 }
@@ -4524,7 +4524,7 @@ and (max-width : 700px) {
   100% {
     top: 100.75px;
   }
-}
+}*/
 
 #our-vision {
   background-color: rgb(226, 236, 241);
@@ -4532,4 +4532,15 @@ and (max-width : 700px) {
 
 #our-vision.active {
   background-color: white;
+  transition: background-color 1000ms;
+}
+
+#our-vision .hc-image {
+  position: relative;
+}
+
+#our-vision .hc-image .bulb-glow {
+  position: absolute;
+  top: 0px;
+  /*left: 0px;*/
 }
