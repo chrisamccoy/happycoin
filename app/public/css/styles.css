@@ -4367,10 +4367,17 @@ and (max-width : 700px) {
 
 #learn-more .hc-feature-lead {
   text-align: left;
-  text-decoration: underline;
   display: flex;
   align-items: center;
   overflow: hidden;
+  border: 2px solid white;
+  background: white;
+  padding: 1em;
+  cursor: pointer;
+}
+
+#learn-more .hc-feature-lead:hover {
+  border : 2px solid #415a31;
 }
 
 #learn-more .hc-feature-lead .thumbnail {
@@ -4378,6 +4385,11 @@ and (max-width : 700px) {
   background: white;
   height: 60px;
   margin-right: 0.5em;
+  overflow: hidden;
+}
+
+#learn-more .hc-feature-lead span:last-child {
+  flex: 1;
 }
 
 #learn-more .hc-feature-lead .thumbnail img {

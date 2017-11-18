@@ -70,7 +70,7 @@ function initLightBulb () {
 }
 
 function initLearnMore () {
-  var $learnMoreLinks = $('#learn-more .hc-feature-lead a');
+  var $learnMoreLinks = $('#learn-more .hc-feature-lead');
   $learnMoreLinks.click(function(){
     var link = $(this).data().link,
         $thisItem = $(link),
