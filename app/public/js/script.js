@@ -78,7 +78,7 @@ function initLearnMore () {
 
     $('.learn-more').hide();
     $thisItem.show();
-    offset = $thisItem.offset().top;
+    offset = $thisItem.offset().top - 100;
 
     $('html, body').animate({ scrollTop : offset }, 600);
   });
@@ -135,7 +135,7 @@ function scrollCheck(){
 }
 
 function cardFlip() {
-  var $engine = $('#hc-six-engines .engines .engine'),
+  var $engine = $('.engines .engine'),
       width = $engine.width();
       perspective = (width * 3) + 'px';
 
@@ -705,7 +705,7 @@ function emailSubscribe() {
         $thisStep = $(this).parents('.email-steps'),
         isChecked = $thisStep.find('input[type="checkbox"]').is(':checked'),
         $fieldGroup = $(this).parents('.field-group'),
-        isStep13 = $thisStep.hasClass('step-13'),
+        isStep12_1 = $thisStep.hasClass('step-12-1'),
         isStep15 = $thisStep.hasClass('step-15');
 
     if(isStep15) {
@@ -717,7 +717,7 @@ function emailSubscribe() {
       }
     }
 
-    if(isStep13) {
+    if(isStep12_1) {
       var input = $thisStep.find('input[name="num-of-storecoins"]');
       if(isChecked) {
         // console.log('is checked');
@@ -736,11 +736,11 @@ function emailSubscribe() {
   $emailSteps.find('input[type="text"], input[type="number"]').keyup(function(){
     var textVal = $(this).val();
     var $thisEmailStep = $(this).parents('.email-steps');
-    var isStep13 = $thisEmailStep.hasClass('step-13');
+    var isStep12_1 = $thisEmailStep.hasClass('step-12-1');
     var $thisSect = $(this).parents('.hc-email');
     // console.log(textVal);
     if(textVal.length > 0 ) {
-      if (isStep13) {
+      if (isStep12_1) {
         textVal = numeral(textVal).multiply(0.005);
         if(textVal._value >= 2500 && textVal._value <= 300000 ) {
           $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
