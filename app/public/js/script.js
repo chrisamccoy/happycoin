@@ -741,8 +741,8 @@ function emailSubscribe() {
     // console.log(textVal);
     if(textVal.length > 0 ) {
       if (isStep12_1) {
-        textVal = numeral(textVal).multiply(0.005);
-        if(textVal._value >= 2500 && textVal._value <= 300000 ) {
+        textVal = numeral(textVal).multiply(0.01);
+        if(textVal._value >= 5000 && textVal._value <= 300000 ) {
           $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
           $thisEmailStep.find('.alert').hide();
         } else if (textVal._value >= 300000) {
