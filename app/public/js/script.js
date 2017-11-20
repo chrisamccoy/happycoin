@@ -947,7 +947,7 @@ function emailSubscribe() {
   //   $thisTextarea.val('');
   // });
 
-  $emailSteps.find('.button-group .button-primary:not(.button-end)').click(function(){
+  $emailSteps.find('.button-group .button-primary:not(.button-end, .twitter, .email)').click(function(){
     var $thisEmailSect = $(this).parents('.hc-email'),
         $thisForm = $thisEmailSect.find('.form');
 

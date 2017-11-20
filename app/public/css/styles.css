@@ -232,6 +232,15 @@ input[type=number]::-webkit-outer-spin-button {
   display: block !important;
 }
 
+.featherlight .featherlight-inner .logo-container  {
+  text-align: right;
+}
+
+.featherlight .featherlight-inner .logo-container .logo {
+  width: 60px;
+  text-align: right;
+}
+
 .featherlight .featherlight-inner .points-lightbox {
   display: flex;
   align-items: center;
@@ -376,7 +385,7 @@ input[type=number]::-webkit-outer-spin-button {
   font-weight: 700;
   text-align: center;
   font-size: 2.5em;
-  margin: 0 1em 28px;
+  margin: 0 0em 28px;
 }
 
 .hc-feature.inverted .hc-feature-title {
@@ -4185,7 +4194,7 @@ and (max-width : 700px) {
 }
 
 #strat-dist .hc-strat-dist:not(:last-child) {
-  margin-bottom: 2em;
+  margin-bottom: 0em;
 }
 
 @media only screen and (max-width: 700px) {
@@ -4353,13 +4362,14 @@ and (max-width : 700px) {
 #dyn-algo .hc-image .logo {
   width: 100px;
   position: absolute;
-  bottom: 0px;
-  right: 0px;
+  /*bottom: 0px;*/
+  right: 160px;
 }
 
 @media only screen and (max-width: 700px) {
   #dyn-algo .hc-image .logo {
     width: 50px;
+    right: 0px;
   }
 }
 
