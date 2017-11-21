@@ -721,7 +721,7 @@ function emailSubscribe() {
       var input = $thisStep.find('input[name="num-of-storecoins"]');
       if(isChecked) {
         // console.log('is checked');
-        input.val(500000);
+        input.val(166667);
         input.trigger('keyup');
         input.trigger('change');
       } else {
@@ -741,7 +741,7 @@ function emailSubscribe() {
     // console.log(textVal);
     if(textVal.length > 0 ) {
       if (isStep12_1) {
-        textVal = numeral(textVal).multiply(0.01);
+        textVal = numeral(textVal).multiply(0.03);
         if(textVal._value >= 5000 && textVal._value <= 300000 ) {
           $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
           $thisEmailStep.find('.alert').hide();
@@ -752,7 +752,7 @@ function emailSubscribe() {
           $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
           $thisEmailStep.find('.alert').hide();
         }
-        textVal = textVal.format('($0,0.00)');
+        textVal = textVal.format('($0,0)');
         $thisEmailStep.find('.computed').text(' ' + textVal);
         $thisEmailStep.find('input[hidden]').val(textVal);
         $thisEmailStep.find('input[hidden]').trigger('change');
@@ -760,7 +760,7 @@ function emailSubscribe() {
       }
     } else {
       $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
-      if (isStep13) {
+      if (isStep12_1) {
         // console.log(parseInt(textVal) * 0.005);
         $thisEmailStep.find('.computed').text(' $0');
         $thisEmailStep.find('input[hidden]').val('$0');

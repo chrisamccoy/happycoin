@@ -4170,6 +4170,27 @@ and (max-width : 700px) {
   border-right: 3px solid #5c794c;
 }
 
+.hc-email .engines .engine {
+  min-height: 90px;
+}
+@media only screen and (max-width: 700px) {
+  .engines .engine {
+    min-height: 80px;
+  }
+
+  .engines .engine img {
+    width: 70px;
+  }
+
+  .hc-email .engines .engine .title {
+    font-size: 0.7em;
+  }
+
+  .engines .engine .title {
+    font-size: 0.9em;
+  }
+}
+
 /*----------------------------------*/
 
 #strat-dist img {
@@ -4362,8 +4383,8 @@ and (max-width : 700px) {
 #dyn-algo .hc-image .logo {
   width: 100px;
   position: absolute;
-  /*bottom: 0px;*/
-  right: 160px;
+  top: 54%;
+  right: 200px;
 }
 
 @media only screen and (max-width: 700px) {
@@ -4672,4 +4693,15 @@ and (max-width : 700px) {
 
 #our-token .hc-image {
   margin-top: 1em;
+}
+
+/*----------------------------------*/
+#solution-desc .large-text {
+  font-size: 2.3em !important;
+}
+
+@media only screen and (max-width: 700px) {
+  #solution-desc .large-text {
+    font-size: 1.5em !important;
+  }
 }
