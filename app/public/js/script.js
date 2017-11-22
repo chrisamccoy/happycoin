@@ -4,6 +4,7 @@ $(document).ready(function(){
     .test(navigator.userAgent) ) {
    isMobile = true;
   }
+  alert($(window).width());
   initDropdown();
   scrollCheck();
   whyTextToggle();
