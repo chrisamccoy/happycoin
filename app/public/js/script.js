@@ -4,7 +4,8 @@ $(document).ready(function(){
     .test(navigator.userAgent) ) {
    isMobile = true;
   }
-  alert($(window).width());
+  // alert($(window).width());
+  $('img[usemap]').rwdImageMaps();
   initDropdown();
   scrollCheck();
   whyTextToggle();
@@ -49,7 +50,7 @@ $(document).ready(function(){
   initTimer();
   hasUrl();
   fadeInContent();
-  imgCoords(isMobile);
+  // imgCoords(isMobile);
   initTippy();
   initLearnMore();
   initLightBulb();
