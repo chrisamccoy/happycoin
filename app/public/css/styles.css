@@ -444,6 +444,10 @@ input[type=number]::-webkit-outer-spin-button {
   .mobile-image {
     display: block;
   }
+
+  .hc-feature ul {
+    margin-left:1em;
+  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -454,10 +458,6 @@ input[type=number]::-webkit-outer-spin-button {
   .hc-feature ol,
   .hc-feature ul {
     font-size: 1em;
-  }
-
-  .hc-feature ul {
-    margin-left:1em;
   }
 
   .hc-feature {
@@ -988,6 +988,13 @@ and (max-width : 700px) {
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  #hc-slider {
+    width:90%;
+    margin:auto;
+  }
+}
+
 @media only screen and (max-width: 700px) {
   #hc-intro {
     height : calc(100vh - 302px);
@@ -1008,11 +1015,6 @@ and (max-width : 700px) {
   #hc-intro {
     padding: 0px;
     margin-top: 92px;
-  }
-
-  #hc-slider {
-    width:90%;
-    margin:auto;
   }
 
   #hc-slider .slick-next {
@@ -1445,7 +1447,17 @@ and (max-width : 700px) {
   color:green;
 }
 
+@media only screen and (max-width: 1024px) {
+  #project-schedule .container {
+    width: 100%;
+  }
+}
+
 @media only screen and (max-width: 700px) {
+  #project-schedule .container {
+    width: 80%;
+  }
+
   .hc-intro-button {
     display: block !important;
   }
@@ -2310,6 +2322,13 @@ and (max-width : 700px) {
 
 .logo-slider .slide img {
   width: 80%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .logo-slider {
+    width: 90%;
+    margin: auto;
+  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -3536,6 +3555,12 @@ and (max-width : 700px) {
   max-width: 100%;
 }
 
+@media only screen and (max-width: 1024px) {
+  #solution .hc-image img {
+    width: 50%;
+  }
+}
+
 @media only screen and (max-width: 700px) {
   #solution {
     height: calc(100vh - 92px - 4em);
@@ -4224,6 +4249,11 @@ and (max-width : 700px) {
   margin-bottom: 0em;
 }
 
+@media only screen and (max-width: 1024px) {
+  #strat-dist .desktop-image { display: block; }
+  #strat-dist .mobile-image { display: none; }
+}
+
 @media only screen and (max-width: 700px) {
   #strat-dist .hc-strat-dist p {
     margin-left: 2em;
@@ -4390,7 +4420,7 @@ and (max-width : 700px) {
   width: 100px;
   position: absolute;
   top: 54%;
-  right: 200px;
+  right: 175px;
 }
 
 @media only screen and (max-width: 700px) {
