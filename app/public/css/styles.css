@@ -4135,25 +4135,53 @@ and (max-width : 700px) {
   height: calc(100% - 2em);
   align-items: center;
   z-index: 2;
+  overflow: hidden;
+  background-color: white;
+
   transform: rotateX(0deg) rotateY(0deg);
   transform-style: preserve-3d;
   backface-visibility: hidden;
+
+  -webkit-transform: rotateX(0deg) rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+
+  -moz-transform: rotateX(0deg) rotateY(0deg);
+  -moz-transform-style: preserve-3d;
+  -moz-backface-visibility: hidden;
+
+  -o-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
-  overflow: hidden;
-  background-color: white;
 }
 
 .engine .back {
   background-color: rgb(199, 223, 184);
   z-index: 1;
-  transform: rotateY(-180deg);
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  transition: all .4s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  transform: rotateY(-180deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+
+  -webkit-transform: rotateY(-180deg);
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+
+  -moz-transform: rotateY(-180deg);
+  -moz-transform-style: preserve-3d;
+  -moz-backface-visibility: hidden;
+
+  -o-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 
 .engine .back p {
@@ -4167,11 +4195,15 @@ and (max-width : 700px) {
 
 .engine.flip .back {
   transform: rotateX(0deg) rotateY(0deg);
+  -webkit-transform: rotateX(0deg) rotateY(0deg);
+  -moz-transform: rotateX(0deg) rotateY(0deg);
   /*box-shadow: 0 15px 50px rgba(0,0,0,0.2);*/
 }
 
 .engine.flip .front {
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
   /*box-shadow: 0 15px 50px rgba(0,0,0,0.2);*/
 }
 
