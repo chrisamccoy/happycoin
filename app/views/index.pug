@@ -457,17 +457,33 @@ block content
             .back
               p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sapien metus, vestibulum a eros sit amet, facilisis suscipit neque. Donec viverra accumsan commodo. Proin semper turpis dapibus consectetur euismod. Nullam magna sem, hendrerit ultrices augue in, blandit aliquet odio. Donec cursus lacinia cursus.
 
-    .hc-feature.over-rel.padding
+    #security-system-lite.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title(style="display: flex; align-items: center; justify-content: center;")
           img(style="width: 50px; margin-right:5px;", src="/images/red-caution.png")
           | The Storecoin Security System 
         p.hc-feature-lead The Storecoin Security System powers real-time market prices for the Six Engines of DyPoS. The System threat level algorithmically updates as transaction volume rise and fall. As threat level rise, the cost of spam and attacks rise too.
-        .hc-image
-          .desktop-image
-            img(src="/images/security-system-flow-lite.png")
-          .mobile-image
-            img(src="/images/security-system-flow-lite-mobile.png")
+        div.hazard-boxes
+          div.box.red
+            h3 Severe
+            p Severe risk of an attack or an spam
+          div.box.skin
+            h3 High
+            p High risk of an attack or an spam
+          div.box.yellow
+            h3 Elevated
+            p Significant risk of an attack or an spam
+          div.box.blue
+            h3 Guarded
+            p General risk of an attack or an spam
+          div.box.green
+            h3 Low
+            p Low risk of an attack or an spam
+        //- .hc-image
+        //-   .desktop-image
+        //-     img(src="/images/security-system-flow-lite.png")
+        //-   .mobile-image
+        //-     img(src="/images/security-system-flow-lite-mobile.png")
     
     #dyn-algo.hc-feature.over-rel.padding.lite
       .hc-chunk.hc-customize-text-wrapper
