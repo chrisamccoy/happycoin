@@ -4140,6 +4140,7 @@ and (max-width : 700px) {
   backface-visibility: hidden;
   transition: all .4s ease-in-out;
   overflow: hidden;
+  background-color: white;
 }
 
 .engine .back {
