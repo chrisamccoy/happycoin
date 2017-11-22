@@ -49,7 +49,7 @@ $(document).ready(function(){
   initTimer();
   hasUrl();
   fadeInContent();
-  imgCoords();
+  imgCoords(isMobile);
   initTippy();
   initLearnMore();
   initLightBulb();
@@ -107,8 +107,8 @@ function initTippy() {
   });
 }
 
-function imgCoords() {
-  var winWidth = $(document).width() > 700 ? 'desktop' : 'mobile',
+function imgCoords(isMobile) {
+  var winWidth = isMobile ? 'mobile' : 'desktop',
       $areas = $('.'+winWidth+'-image map[name="'+winWidth+'-image-map"] area'),
       ogWidth = 1000;
 
