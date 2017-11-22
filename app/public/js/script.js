@@ -113,7 +113,8 @@ function imgCoords(isMobile) {
       ogWidth = 1000;
 
   // console.log(winWidth);
-  $('.'+winWidth+'-image img[usemap="#'+winWidth+'-image-map"]').on('load', function(){
+  var selector = '.'+winWidth+'-image img[usemap="#'+winWidth+'-image-map"]';
+  $(selector).on('load', function(){
     var imgWidth = $(this).width();
     $areas.each(function(){
       var myCoords = $(this).attr('mycoords').split(','),
