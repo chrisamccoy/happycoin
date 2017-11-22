@@ -1,5 +1,9 @@
 $(document).ready(function(){
-  var isMobile = $(document).width() > 700 ? false : true;
+  var isMobile = false;
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
+    .test(navigator.userAgent) ) {
+   isMobile = true;
+  }
   initDropdown();
   scrollCheck();
   whyTextToggle();

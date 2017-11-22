@@ -170,6 +170,10 @@ input[type=number]::-webkit-outer-spin-button {
   color: white;
 }
 
+.hc-feature .hc-feature-lead.hint-text {
+  font-size: 1em !important;
+}
+
 .hc-feature .hc-feature-lead {
   font-size: 1.8em;
   text-align: center;
