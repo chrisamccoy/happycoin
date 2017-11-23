@@ -155,11 +155,8 @@ function scrollCheck(){
 }
 
 function cardFlip() {
-  var $engine = $('.engines .engine'),
-      width = $engine.width();
-      perspective = (width * 3) + 'px';
-
-  $engine.css('perspective', perspective);
+  var $engine = $('.engines .engine');
+  $engine.css('perspective', '1000px');
 
   $engine.hover(
     function(){
