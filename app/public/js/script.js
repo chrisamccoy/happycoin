@@ -52,9 +52,21 @@ $(document).ready(function(){
   fadeInContent();
   // imgCoords(isMobile);
   initTippy();
-  initLearnMore();
+  initLearnMore(isMobile);
   initLightBulb();
+  initProblemReveal(isMobile);
 });
+
+function initProblemReveal(isMobile){
+  var $seeMoreLink = $('#network-effects .see-more'),
+      $problemReveal = $('#hc-problem-see-more');
+  $seeMoreLink.click(function(){
+    $problemReveal.addClass('show');
+    var marginTop = (isMobile) ? 92 : 100;
+    var offset = $problemReveal.offset().top - marginTop;
+    $('html, body').animate({ scrollTop : offset }, 600);
+  });
+}
 
 function initLightBulb () {
   var $ourVision = $('#our-vision'),
@@ -75,7 +87,7 @@ function initLightBulb () {
 
 }
 
-function initLearnMore () {
+function initLearnMore (isMobile) {
   var $learnMoreLinks = $('#learn-more .hc-feature-lead');
   $learnMoreLinks.click(function(){
     var link = $(this).data().link,
@@ -84,7 +96,8 @@ function initLearnMore () {
 
     $('.learn-more').hide();
     $thisItem.show();
-    offset = $thisItem.offset().top - 100;
+    var marginTop = (isMobile) ? 92 : 100;
+    offset = $thisItem.offset().top - marginTop;
 
     $('html, body').animate({ scrollTop : offset }, 600);
   });
@@ -748,17 +761,24 @@ function emailSubscribe() {
     // console.log(textVal);
     if(textVal.length > 0 ) {
       if (isStep12_1) {
-        textVal = numeral(textVal).multiply(0.03);
-        if(textVal._value >= 5000 && textVal._value <= 300000 ) {
+        textVal = numeral(textVal).multiply(0.0333);
+        if(textVal._value >= 5000) {
           $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
           $thisEmailStep.find('.alert').hide();
-        } else if (textVal._value >= 300000) {
-          $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
-          $thisEmailStep.find('.alert').show();
         } else {
           $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
           $thisEmailStep.find('.alert').hide();
         }
+        // if(textVal._value >= 5000 && textVal._value <= 300000 ) {
+        //   $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
+        //   $thisEmailStep.find('.alert').hide();
+        // } else if (textVal._value >= 300000) {
+        //   $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
+        //   $thisEmailStep.find('.alert').show();
+        // } else {
+        //   $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
+        //   $thisEmailStep.find('.alert').hide();
+        // }
         textVal = textVal.format('($0,0)');
         $thisEmailStep.find('.computed').text(' ' + textVal);
         $thisEmailStep.find('input[hidden]').val(textVal);

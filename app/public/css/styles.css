@@ -26,6 +26,10 @@
   height: 100%;
 }*/
 
+#hc-content {
+  margin-top: 130px;
+}
+
 body {
   font-family: 'Aleo', sans-serif;
   font-weight: 300;
@@ -451,6 +455,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media only screen and (max-width: 700px) {
+  #hc-content {
+    margin-top: 92px;
+  }
   .hc-feature .button-container a {
     font-size: 1em;
   }
@@ -784,7 +791,7 @@ input[type=number]::-webkit-outer-spin-button {
   background-repeat: no-repeat;
   background-size: 90%;
   padding: 0px;
-  margin-top: 130px;
+  /*margin-top: 130px;*/
   display: flex;
   align-items: center;
 }
@@ -1014,7 +1021,7 @@ and (max-width : 700px) {
 
   #hc-intro {
     padding: 0px;
-    margin-top: 92px;
+    /*margin-top: 92px;*/
   }
 
   #hc-slider .slick-next {
@@ -1469,7 +1476,7 @@ and (max-width : 700px) {
   }
 
   #network-distribution h4 {
-    margin : 2em 0px 1em;
+    margin : 1em 0px 1em;
   }
 
   #about-token-sale .sales-terms ul {
@@ -1493,6 +1500,10 @@ and (max-width : 700px) {
   #network-distribution .token-dist .subtext {
     text-align: center;
     font-size: 1em;
+  }
+
+  #network-distribution .network-stats {
+    margin-top: 1em;
   }
 
   #about-token-sale .features {
@@ -2393,7 +2404,7 @@ and (max-width : 700px) {
 #network-effects .incentives .rails-wrapper .rails {
   margin: 6em 7em;
   width: calc(100% - 14em);
-  height: 100%;
+  height: calc(100% - 11em);
   background: url(../images/network-effects-bg.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -2576,6 +2587,11 @@ and (max-width : 700px) {
   background: #5d794c;color: white; text-align: center;
   border-bottom: 1px solid #c7dfb8;
 }*/
+
+.hc-email .hc-feature .hc-feature-title {
+  font-size: 1.8em;
+  margin-bottom: 0.5em !important;
+}
 
 .email-widget {
   text-align: center;
@@ -4107,7 +4123,7 @@ and (max-width : 700px) {
 }
 
 .engine {
-  width: calc(50% - 2em);
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4233,15 +4249,19 @@ and (max-width : 700px) {
 .engines .engine.right{
   border-right: 3px solid #5c794c;
 }
+.hc-email .engines {
+  width: 100%;
+}
 
 .hc-email .engines .engine {
-  min-height: 90px;
+  min-height: 150px;
 }
 @media only screen and (max-width: 700px) {
   .engines {
     width: 100%;
   }
 
+  .hc-email .engines .engine,
   .engines .engine {
     min-height: 110px;
   }
@@ -4434,19 +4454,27 @@ and (max-width : 700px) {
   border-top-color: #00afa8;
 }
 
+#security-system-popup,
 .image-map-modal {
   margin-top: 1em;
   padding: 0.5em;
 }
 
+#security-system-popup .hc-feature {
+  max-height: 90vh;
+  overflow: scroll;
+}
+
 .featherlight-content {
   background: none !important;
-  width: 90% !important;
+  overflow: hidden !important;
 }
 
 .featherlight-content .featherlight-close {
   background: none !important;
   color:white !important;
+  /*right: 30px;
+  top: 30px;*/
 }
 
 #dyn-algo .hc-image {
@@ -4458,6 +4486,13 @@ and (max-width : 700px) {
   position: absolute;
   top: 54%;
   right: 175px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .featherlight-content {
+    width: 100% !important;
+    max-width: 600px;
+  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -4831,4 +4866,13 @@ and (max-width : 700px) {
 
 #security-system-lite .hazard-boxes .box p {
   font-size: 1.2em;
+}
+
+/*----------------------------------*/
+#hc-problem-see-more {
+  display: none;
+}
+
+#hc-problem-see-more.show {
+  display: block;
 }
