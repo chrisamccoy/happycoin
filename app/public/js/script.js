@@ -52,7 +52,7 @@ $(document).ready(function(){
   fadeInContent();
   // imgCoords(isMobile);
   initTippy();
-  initLearnMore(isMobile);
+  // initLearnMore(isMobile);
   initLightBulb();
   initProblemReveal(isMobile);
 });
@@ -87,21 +87,21 @@ function initLightBulb () {
 
 }
 
-function initLearnMore (isMobile) {
-  var $learnMoreLinks = $('#learn-more .hc-feature-lead');
-  $learnMoreLinks.click(function(){
-    var link = $(this).data().link,
-        $thisItem = $(link),
-        offset;
-
-    $('.learn-more').hide();
-    $thisItem.show();
-    var marginTop = (isMobile) ? 92 : 100;
-    offset = $thisItem.offset().top - marginTop;
-
-    $('html, body').animate({ scrollTop : offset }, 600);
-  });
-}
+// function initLearnMore (isMobile) {
+//   var $learnMoreLinks = $('#learn-more .hc-feature-lead');
+//   $learnMoreLinks.click(function(){
+//     var link = $(this).data().link,
+//         $thisItem = $(link),
+//         offset;
+//
+//     $('.learn-more').hide();
+//     $thisItem.show();
+//     var marginTop = (isMobile) ? 92 : 100;
+//     offset = $thisItem.offset().top - marginTop;
+//
+//     $('html, body').animate({ scrollTop : offset }, 600);
+//   });
+// }
 
 function initDropdown () {
   $('.ui.dropdown').dropdown();
