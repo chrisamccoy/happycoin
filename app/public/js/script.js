@@ -155,7 +155,7 @@ function scrollCheck(){
 }
 
 function cardFlip() {
-  var $engine = $('.engines .engine');
+  var $engine = $('#hc-six-engines .engines .engine');
   $engine.css('perspective', '1000px');
 
   $engine.hover(
@@ -738,7 +738,7 @@ function emailSubscribe() {
       var input = $thisStep.find('input[name="num-of-storecoins"]');
       if(isChecked) {
         // console.log('is checked');
-        input.val(166667);
+        input.val(150151);
         input.trigger('keyup');
         input.trigger('change');
       } else {
@@ -971,7 +971,7 @@ function emailSubscribe() {
   //   $thisTextarea.val('');
   // });
 
-  $emailSteps.find('.button-group .button-primary:not(.button-end, .twitter, .email)').click(function(){
+  $emailSteps.find('.button-group .button-primary:not(.button-end, .twitter, .email, .email-mobile)').click(function(){
     var $thisEmailSect = $(this).parents('.hc-email'),
         $thisForm = $thisEmailSect.find('.form');
 

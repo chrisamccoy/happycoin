@@ -178,6 +178,30 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 1em !important;
 }
 
+.hc-feature .link-container {
+  margin-top:2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hc-feature .link-text {
+  font-size: 1.8em;
+  display: flex;
+  align-items: center;
+  padding: 0.3em 1em;
+  border : 2px solid;
+  border-radius: 7px;
+}
+
+.hc-feature .link-text:hover {
+  opacity: 0.7;
+}
+
+.hc-feature .link-text i {
+  margin-left: 0.5em;
+}
+
 .hc-feature .hc-feature-lead {
   font-size: 1.8em;
   text-align: center;
@@ -528,6 +552,14 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 1em;
     font-size: 1em;
     margin : 1em ;
+  }
+
+  .hc-feature .link-container {
+    margin-top: 1.5em;
+  }
+
+  .hc-feature .link-text {
+    font-size: 1.3em;
   }
 }
 /* #hc-nav-wrapper  */
@@ -1022,6 +1054,10 @@ and (max-width : 700px) {
   #hc-intro {
     padding: 0px;
     /*margin-top: 92px;*/
+  }
+
+  #hc-intro span.parenthesis {
+    margin: 0px 0.2em;
   }
 
   #hc-slider .slick-next {
@@ -2370,6 +2406,10 @@ and (max-width : 700px) {
   text-align: center;
 }
 
+#network-effects .hc-chunk {
+  position: relative;
+}
+
 #network-effects .hc-feature-lead:last-child {
   margin-bottom: 0px;
   margin-top: 0px;
@@ -2385,6 +2425,7 @@ and (max-width : 700px) {
 
 #network-effects .incentives.mobile {
   display: none;
+  margin-bottom: 3em;
 }
 
 #network-effects .incentives .logo {
@@ -2496,7 +2537,22 @@ and (max-width : 700px) {
   justify-content: space-around;
 }
 
+#network-effects .link-container {
+  position: absolute;
+  bottom: -58px;
+  width: 100%;
+  display: flex;
+}
+
+#network-effects .link-container .link-text {
+  border: 3px solid rgba(0,0,0,0); background-color: #f47840;
+}
+
 @media only screen and (max-width: 700px) {
+  #network-effects .link-container {
+    bottom: -81px;
+  }
+
   #network-effects .hc-feature-lead:last-child {
     margin-bottom: 0px;
     margin-top: 2em;
@@ -3560,7 +3616,7 @@ and (max-width : 700px) {
 
 /* #solution */
 #solution {
-  height: calc(100vh - 100px - 7em);
+  /*height: calc(100vh - 100px - 7em);*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3575,16 +3631,6 @@ and (max-width : 700px) {
   #solution .hc-image img {
     width: 50%;
   }
-}
-
-@media only screen and (max-width: 700px) {
-  #solution {
-    height: calc(100vh - 92px - 4em);
-  }
-
-  /*#solution .hc-image img {
-    width: 80%;
-  }*/
 }
 
 .hc-share-links .button-group {
@@ -4877,4 +4923,15 @@ and (max-width : 700px) {
 
 #hc-problem-see-more.show {
   display: block;
+}
+
+/*----------------------------------*/
+#latest-updates ul {
+  font-size: 1.3em;
+}
+
+@media only screen and (max-width: 700px) {
+  #latest-updates ul {
+    font-size: 1em;
+  }
 }
