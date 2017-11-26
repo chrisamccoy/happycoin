@@ -5,23 +5,25 @@ block content
     #hc-intro.hc-feature.over-rel.padding
       .hc-chunk.hc-intro-text-wrapper
         h2.hc-intro-large-lead(style="margin-bottom:0px;")
-          b Storecoin will be a public blockchain powering 
-          span(style="color:#c6dfb7;")
-            b free transactions
+          b Storecoin will be a public blockchain powering free transactions
           b  for users and app developers using its Dynamic Proof of Stake consensus 
           span.parenthesis (
           | DyPoS
           span.parenthesis )
           | .
         h2.hc-feature-lead
-          | DyPoS is Uber Surge Pricing 
-          span.parenthesis (
-          | blockchain economics
-          span.parenthesis ) 
-          | meets the U.S. Constitution 
-          span.parenthesis (
-          | Governance
-          span.parenthesis )
+          | DyPoS is inspired by the supply and demand principles of Uber Surge Pricing 
+          span.parenthesis.lite-orange (
+          span.lite-orange blockchain economics
+          span.lite-orange.parenthesis )
+          | , checks and balances of the U.S. Constitution 
+          span.parenthesis.lite-green (
+          span.lite-green governance
+          span.parenthesis.lite-green )
+          | , and an encrypted Power of Attorney 
+          span.parenthesis.lite-yellow (
+          span.lite-yellow scaling
+          span.parenthesis.lite-yellow )
           | .
         h2.hc-feature-lead(style="margin:0px;")
           | With DyPoS, Storecoin will bring crypto-powered API calls to app developers around the world.
@@ -47,9 +49,10 @@ block content
           .slide
             img(src='/images/clinton-polley.png', style="width:40%;")
 
-    #latest-updates.hc-feature.over-rel.padding.inverted
+    #latest-updates.hc-feature.over-rel.padding.inverted.left-align
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Our Latest
+        p.hc-feature-lead Storecoin Creator Chris McCoy will be speaking publicly for the first time about Storecoin at the Crypto Finance Conference in Switzerland, January 17-19.
         ul(style="list-style:disc;")
           li 
             b Ari David Paul
@@ -64,19 +67,16 @@ block content
             b Rajiv Patel 
             | of Fenwick and West joins to help Storecoin file patents for DyPoS
         div.link-container
-          a.link-text(href="/blog") See More
-            i.ion-ios-arrow-forward
+          a.link-text.see-more(data-link="#hc-blog-feeds", data-margin="0,0", data-scroll="true") See More
+            i.ion-ios-arrow-down
+    
+    div#hc-blog-feeds.see-more-reveal
+      include blog-feeds
+    
     #green-paper.hc-feature.over-rel.padding.orange.inverted(style="padding:2.5em;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted(style=" margin:0px !important;")  This website is our Orange Paper.
     
-    //- .hc-feature.over-rel.padding.inverted.orange
-    //-   .hc-chunk.hc-customize-text-wrapper
-    //-     h3.hc-feature-title.inverted What We Believe
-    //-     p.hc-feature-lead(style="margin-bottom:0px;") Franchises,	chain	stores,	sports	leagues,	and affiliate-based	organizations	— industries governed	by	hierarchy,	by	privacy,	by complex	revenue	sharing,	and	by commissions	— will	all eventually	be tokenized	and blockchain-powered.
-        //- p.hc-feature-lead
-        //-   | Storecoin	will	be	the	leading	public	blockchain	powering	cryptocurrency-based	payments,	decentralized	applications,	loyalty
-        //-   | points,	and	market	networks	for	industries	representing	over	25%	of	global	GDP.
     #our-vision.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted Our Vision
@@ -111,88 +111,28 @@ block content
           //- .power
           //-   | Power
         p.hc-feature-lead By 2020, Storecoin will bring free, crypto-powered transactions to millions of apps, to trillions of API calls, and to thousands of mobile and web developers.
-        p.hc-feature-lead(style="margin-bottom:0px;") On-chain, crypto-powered API calls will create entirely new markets and new incentives for apps.
-    
-    //- .hc-feature.over-rel.padding.inverted
-    //-   .hc-chunk
-    //-     h2.hc-feature-title Why This Matters
-    //-     p.hc-feature-lead Only	10-20	million	people	own	digital	currency	today. 		
-    //-     p.hc-feature-lead This	is	less	than	0.3%	of	the	world’s	population.	
-    //-     p.hc-feature-lead Rather than wait for decentralized apps to
-    //-       b  a)
-    //-       |  get built on top of smart contract platforms like Ethereum and 
-    //-       b b)
-    //-       |  get mainstream adoption with users, Storecoin is bringing cryptocurrency to existing web and mobile apps where Identity, Communication and Utility already have global network effects.
-    //-     p.hc-feature-lead Our on-chain, Wallet SDK distribution strategy gives the Storecoin token a market of billions of existing API calls and user behaviors to incentivize.
-    //-     p.hc-feature-lead(style="margin:0px;") Along with free transactions, once launched, this strategy for adoption positions Storecoin to be a dominant public blockchain for the globe.
-    
-    //- #vision.hc-feature.lite.over-rel.padding
-    //-   .hc-chunk.hc-customize-text-wrapper
-    //-     h3.hc-feature-title.inverted Our Target Market
-    //-     p.hc-feature-lead Storecoin will focus on hierarchy-based industries that represent +25% of global GDP.
-    //-     .row.global-stats
-    //-       .three.columns
-    //-         .num
-    //-           h3 $4
-    //-           p Trillion
-    //-         .text Global	Franchise	Industry
-    //-       .three.columns
-    //-         .num
-    //-           h3 $18
-    //-           p Trillion
-    //-         .text Global	Chain-based	Businesses
-    //-       .three.columns
-    //-         .num
-    //-           h3 $1.3
-    //-           p Trillion
-    //-         .text Global	Sports	Industry
-    //-       .three.columns
-    //-         .num
-    //-           h3 $200
-    //-           p Billion
-    //-         .text Global	Affiliate	Industry
+        p.hc-feature-lead(style="margin-bottom:0px;") On-chain, crypto-powered API calls will create entirely new markets and incentives for apps.
+        
+    .hc-feature.over-rel.inverted.padding
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title The Business Case for Storecoin
+        p.hc-feature-lead Today, using traditional banking infrastructure, mobile and web app developers have to pay fees ranging from 2.5%-3% of the transaction size plus an additional $0.30 to process in-app payments – for every single transaction!
+        p.hc-feature-lead This limits innovation, especially innovation powered by micropayments.
+        .hc-image
+          img(src="/images/wallet-icon.png", style="max-width:100px;")
+        p.hc-feature-lead With free transactions for cryptocurrency-based payments, Storecoin will unlock new innovation for consumer and enterprise developers.
+        .hc-image
+          img(src="/images/storecoin-currency.png", style="max-width:200px;")
             
-    //- #hc-current-status.inverted.orange.hc-feature.over-rel.padding
-    //-   .hc-chunk.hc-customize-text-wrapper
-    //-     h3.hc-feature-title.inverted Storecoin Status
-    //-     p.hc-feature-lead Storecoin	is	a	deep	R&D	initiative	in	the	earliest	stages	of	development.
-    //-           
-    //-     .text-group  
-    //-       p.hc-feature-lead Our	aim	is	to	one	day	release	a	main	network	for	a	public	Storecoin	blockchain	but	first	we	need	to	verify	that	our	technology	goals	and	consensus	protocol	are	secure	and	scalable.	
-    //-       p.hc-feature-lead To	fund	the	second	phase	of	this	deep	R&D	work,	we	are	selling	6%	of	the	Storecoin	token	supply	for	$300,000	USD.
-    //-       p.hc-feature-lead Once	through	all	phases	of	R&D,	we’ll	release	the	Storecoin	Whitepaper	that	explains	our	technical	design	for	Storecoin	either	as	a	new	public	blockchain	or	as	an	ERC20-compatible	token.
-    //-       p.hc-feature-lead Our	aim	is	to	release	Storecoin	as	a	new	public	blockchain.	
-    //-     
-    //-     .button-container
-    //-       button.button.button-primary Learn More
-    //-         i.ion-chevron-down
-    
-    //- #our-token.hc-feature.lite.over-rel.padding
-    //-   .hc-chunk.hc-customize-text-wrapper
-    //-     h3.hc-feature-title.inverted Our Token
-    //-     p.hc-feature-lead Storecoin will mint storecoins, a unique piece of code that can be used to:
-    //-     p.hc-feature-lead
-    //-       span.big-font.orange #1 
-    //-       | Validate the decentralized consensus
-    //-     p.hc-feature-lead
-    //-       span.big-font.orange #2 
-    //-       | Secure the decentralized consensus
-    //-     p.hc-feature-lead
-    //-       span.big-font.orange #3 
-    //-       | Secure blockchain transactions
-    //-     p.hc-feature-lead
-    //-       span.big-font.orange #4 
-    //-       | Bring new incentives and business models to mobile and web applications
-    //-     .hc-image
-    //-       img(src="/images/storecoin-currency.png", style="width:100%; max-width:220px;")
+    include app-types
         
     #network-effects.hc-feature.over-rel.inverted.padding
       .hc-chunk
         h2.hc-feature-title Problems with Public Blockchains Today
         p.hc-feature-lead 
           b.big-font.orange #1 
-          | Only 10 - 20 million people own cryptocurrency today.
-        p.hc-feature-lead This is less than 0.3% of the world's population.
+          | Only 20 to 30 million people own cryptocurrency today.
+        p.hc-feature-lead This is less than 0.4% of the world's population.
         p.hc-feature-lead To gain mainstream adoption, public blockchains need use cases beyond financial speculation and decentralized applications.
         .incentives.desktop
           .rails-wrapper
@@ -328,11 +268,11 @@ block content
                   | The more demand to use the token, the more buyers there will be.
             .four.columns
               
-        div.link-container
-          a.link-text.see-more See More
+        div.link-container.hanging
+          a.link-text.see-more(data-link="#hc-problem-see-more", data-margin="33,44", data-scroll="true") See 7 More Problems
             i.ion-ios-arrow-down
               
-    div#hc-problem-see-more
+    div#hc-problem-see-more.see-more-reveal
       .hc-feature.over-rel.padding
         .hc-chunk.hc-customize-text-wrapper
           p.hc-feature-lead(style="margin-top:0px;") 
@@ -393,7 +333,7 @@ block content
         .hc-chunk.hc-customize-text-wrapper
           p.hc-feature-lead(style="margin-top:0px;")
             span.big-font.orange #5 
-            | To profitably operate forever without relying on new token sales, blockchains need a native, on-chain, ongoing income stream to support security, engineering, governance, and operations. 
+            | To sustainably operate forever without relying on new token sales, blockchains need a native, on-chain, and perpetual income stream to support security, engineering, governance, and operations.
           hr
           p.hc-feature-lead(style="margin-bottom:0.5em; margin-top:0px;")
             span.big-font.orange #6 
@@ -445,6 +385,302 @@ block content
           span.icon.ion-record.bullet
           span Governance modeled after the United States Constitution where checks and balances ensure a) Security Matters Most and b) No Centralization of Power 
     
+    #hc-six-engines.hc-feature.over-rel.padding.inverted
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title.inverted The Six Engines of DyPoS
+        p.hc-feature-lead Dynamic Proof of Stake is made up of six interdependent engines.
+        p.hc-feature-lead Each engine is based on similar dynamic supply and demand principles as Uber Surge Pricing. Prices for all six engines are driven by real-time threat levels in the 
+          a.open-modal(data-modal="#security-system-popup", style="text-decoration:underline;") 
+            b Storecoin Security System.
+        p.hc-feature-lead DyPoS is also inspired by checks and balances of the U.S. Constitution (governance) and Power of Attorney (scaling).
+        div.desktop-image      
+          div.engines
+            div.engine 
+              .front
+                img(src="/images/dynamic-transactions-v2.png")
+                div.title Dynamic (free) Transactions
+              .back
+                h5 Dynamic (free) Transactions
+                p To secure transactions, a small security bond is required with each transaction that is returned to the sender, with interest, once the transaction is determined by dSecurity Guards to not to be spam or an attack.
+                a.engine-learn-more.open-modal(data-modal="#dynamic-free-trans-modal") Learn More
+            div.engine.right
+              .front
+                img(src="/images/dynamic-validation-v2.png")
+                div.title Dynamic Validation
+              .back
+                h5 Dynamic Validation
+                p An unlimited number of Validators can participate in Consensus. No single Validator ever has greater than 5% odds of winning the Block Reward. Every Validator has a chance at winning each new block. Decentralization is maximized.
+                a.engine-learn-more.open-modal(data-modal="#dynamic-validation-modal") Learn More
+          div.engines
+            div.engine
+              .front
+                img(src="/images/dynamic-rewards-v2.png")
+                div.title Dynamic Block Rewards
+              .back
+                h5 Dynamic Block Rewards
+                p Capped, yearly token inflation of 5% is used to pay Block Rewards to Validators. The reward amount is dynamic based upon a number of real-time factors. Storecoin Inc. takes 1% of the inflation to pay for security, engineering, Governance, and blockchain operations.
+                a.engine-learn-more.open-modal(data-modal="#dynamic-reward-modal") Learn More
+            div.engine.right
+              .front
+                img(src="/images/dynamic-security-v2.png")
+                div.title Dynamic Security
+              .back
+                h5 Dynamic Security
+                p The Storecoin Security System determines real-time prices for DyPoS. dSecurity Guards study transactions and Validator activity and report potential spam or attacks to Storecoin, Inc. dGuards earn +50% of the stake or the bond of the found bad actors. The rest is burnt.
+                a.engine-learn-more.open-modal(data-modal="#security-system-popup") Learn More
+          div.engines
+            div.engine
+              .front
+                img(src="/images/dynamic-scaling-v2.png")
+                div.title Dynamic Scaling
+              .back
+                h5 Dynamic Scaling
+                p To scale blockchain transactions by making validation instant -- without expensive and unnecessary network hops -- Storecoin is introducing the concept of an "Agent". It's similar to Power of Attorney but with Merkle hashes.
+                a.engine-learn-more.open-modal(data-modal="#dynamic-scaling-modal") Learn More
+            div.engine
+              .front
+                img(src="/images/dynamic-governance-v2.png")
+                div.title Dynamic Governance
+              .back
+                h5 Dynamic Governance
+                p Storecoin Governance is inspired by the United States Constitution where checks and balances ensure that: a) Security Matters Most and b) No Centralization of Power. For the first 4 years, Storecoin, Inc. will have executive power.
+                a.engine-learn-more.open-modal(data-modal="#dynamic-governance-modal") Learn More
+        div.mobile-image
+          div.engines
+            div.engine(data-featherlight="#dyn-trans")
+              .front
+                img(src="/images/dynamic-transactions-v2.png")
+                div.title Dynamic (free) Transactions
+              .back
+                h5 Dynamic (free) Transactions
+                p To secure transactions, a small security bond is required with each transaction that is returned to the sender, with interest, once the transaction is determined by dSecurity Guards to not to be spam or an attack.
+                a.engine-learn-more.open-modal(data-modal="#dynamic-free-trans-modal") Learn More
+              div#dyn-trans.engine-popup(style="display:none;")
+                h5 Dynamic (free) Transactions
+                p To secure transactions, a small security bond is required with each transaction that is returned to the sender, with interest, once the transaction is determined by dSecurity Guards to not to be spam or an attack.
+                a.engine-learn-more.open-modal(data-modal="#dynamic-free-trans-modal") Learn More
+            div.engine.right(data-featherlight="#dyn-val")
+              .front
+                img(src="/images/dynamic-validation-v2.png")
+                div.title Dynamic Validation
+              .back
+                h5 Dynamic Validation
+                p An unlimited number of Validators can participate in Consensus. No single Validator ever has greater than 5% odds of winning the Block Reward. Every Validator has a chance at winning each new block. Decentralization is maximized.
+                a.engine-learn-more.open-modal(data-modal="#dynamic-validation-modal") Learn More
+              div#dyn-val.engine-popup(style="display:none;")
+                h5 Dynamic Validation
+                p An unlimited number of Validators can participate in Consensus. No single Validator ever has greater than 5% odds of winning the Block Reward. Every Validator has a chance at winning each new block. Decentralization is maximized.
+                a.engine-learn-more.open-modal(data-modal="#dynamic-validation-modal") Learn More
+          div.engines
+            div.engine(data-featherlight="#dyn-rewards")
+              .front
+                img(src="/images/dynamic-rewards-v2.png")
+                div.title Dynamic Block Rewards
+              .back
+                h5 Dynamic Block Rewards
+                p Capped, yearly token inflation of 5% is used to pay Block Rewards to Validators. The reward amount is dynamic based upon a number of real-time factors. Storecoin Inc. takes 1% of the inflation to pay for security, engineering, Governance, and blockchain operations.
+                a.engine-learn-more.open-modal(data-modal="#dynamic-reward-modal") Learn More
+              div#dyn-rewards.engine-popup(style="display:none;")
+                h5 Dynamic Block Rewards
+                p Capped, yearly token inflation of 5% is used to pay Block Rewards to Validators. The reward amount is dynamic based upon a number of real-time factors. Storecoin Inc. takes 1% of the inflation to pay for security, engineering, Governance, and blockchain operations.
+                a.engine-learn-more.open-modal(data-modal="#dynamic-reward-modal") Learn More
+            div.engine.right(data-featherlight="#dyn-sec")
+              .front
+                img(src="/images/dynamic-security-v2.png")
+                div.title Dynamic Security
+              .back
+                h5 Dynamic Security
+                p The Storecoin Security System determines real-time prices for DyPoS. dSecurity Guards study transactions and Validator activity and report potential spam or attacks to Storecoin, Inc. dGuards earn +50% of the stake or the bond of the found bad actors. The rest is burnt.
+                a.engine-learn-more Learn More
+              div#dyn-sec.engine-popup(style="display:none;")
+                h5 Dynamic Security
+                p The Storecoin Security System determines real-time prices for DyPoS. dSecurity Guards study transactions and Validator activity and report potential spam or attacks to Storecoin, Inc. dGuards earn +50% of the stake or the bond of the found bad actors. The rest is burnt.
+                a.engine-learn-more.open-modal(data-modal="#security-system-popup") Learn More
+          div.engines
+            div.engine(data-featherlight="#dyn-scale")
+              .front
+                img(src="/images/dynamic-scaling-v2.png")
+                div.title Dynamic Scaling
+              .back
+                h5 Dynamic Scaling
+                p To scale blockchain transactions by making validation instant -- without expensive and unnecessary network hops -- Storecoin is introducing the concept of an "Agent". It's similar to Power of Attorney but with Merkle hashes.
+                a.engine-learn-more.open-modal(data-modal="#dynamic-scaling-modal") Learn More
+              div#dyn-scale.engine-popup(style="display:none;")
+                h5 Dynamic Scaling
+                p To scale blockchain transactions by making validation instant -- without expensive and unnecessary network hops -- Storecoin is introducing the concept of an "Agent". It's similar to Power of Attorney but with Merkle hashes.
+                a.engine-learn-more.open-modal(data-modal="#dynamic-scaling-modal") Learn More
+            div.engine(data-featherlight="#dyn-gov")
+              .front
+                img(src="/images/dynamic-governance-v2.png")
+                div.title Dynamic Governance
+              .back
+                h5 Dynamic Governance
+                p Storecoin Governance is inspired by the United States Constitution where checks and balances ensure that: a) Security Matters Most and b) No Centralization of Power. For the first 4 years, Storecoin, Inc. will have executive power.
+                a.engine-learn-more.open-modal(data-modal="#dynamic-governance-modal") Learn More
+              div#dyn-gov.engine-popup(style="display:none;")
+                h5 Dynamic Governance
+                p Storecoin Governance is inspired by the United States Constitution where checks and balances ensure that: a) Security Matters Most and b) No Centralization of Power. For the first 4 years, Storecoin, Inc. will have executive power.
+                a.engine-learn-more.open-modal(data-modal="#dynamic-governance-modal") Learn More
+
+    div.engine-modals
+      div#security-system-popup.engine-modal.ui.modal
+        i.ion-android-close
+        .engine-slider
+          .slide
+            #security-system-lite.hc-feature.over-rel.padding
+              .hc-chunk.hc-customize-text-wrapper
+                h3.hc-feature-title.title-icon
+                  img.icon(src="/images/red-caution.png", align="top") 
+                  | The Storecoin Security System 
+                p.hc-feature-lead The Storecoin Security System powers real-time market prices for the Six Engines of DyPoS. The System threat level algorithmically updates as transaction volume rise and fall. As threat level rise, the cost of spam and attacks rise too.
+                div.hazard-boxes
+                  div.box.red
+                    h3 Severe
+                    p Severe risk of an attack or an spam
+                  div.box.skin
+                    h3 High
+                    p High risk of an attack or an spam
+                  div.box.yellow
+                    h3 Elevated
+                    p Significant risk of an attack or an spam
+                  div.box.blue
+                    h3 Guarded
+                    p General risk of an attack or an spam
+                  div.box.green
+                    h3 Low
+                    p Low risk of an attack or an spam
+          .slide
+            .hc-feature.over-rel.padding
+              .hc-chunk.hc-customize-text-wrapper
+                h3.hc-feature-title.title-icon
+                  img.icon(src="/images/dynamic-security-mini.png", align="top")
+                  span How Storecoin Addresses the Double Spend Problem 
+                  span.orange(style="margin-left:5px;") (with dSecurity Guards) 
+                p.hc-feature-lead dSecurity Guards are the decentralized security network on Storecoin that secures the blockchain by finding bad actors across the validator pool, the Wallet SDK network, and in transactions. dSecurity Guards run full nodes to study transactions and validator behavior. They're rewarded with +50% of the burned stake from bad validators or +50% of the security bond from bad senders.
+                .hc-image
+                  img(src="/images/how-dynamic-sec-works.png", style="width:100%;")
+          .slide
+            .hc-feature.over-rel.padding
+              .hc-chunk.hc-customize-text-wrapper
+                h3.hc-feature-title.title-icon
+                  img.icon(src="/images/dynamic-security-mini.png", align="top")
+                  span
+                    span.orange(style="margin-right:5px;") Security: 
+                    span How Storecoin Addresses the Double Spend Problem
+                p.hc-feature-lead Storecoin’s Dynamic Proof of Stake protocol solves the double spend problem by implementing harsh penalties for getting caught, thus making it unprofitable for the bad actor to engage in such activity.
+                .hc-image
+                  img(src="/images/double-spend-problem.png", style="width:100%;")
+        
+      div#dynamic-free-trans-modal.engine-modal.ui.modal 
+        i.ion-android-close
+        .hc-feature.over-rel.padding
+          .hc-chunk.hc-customize-text-wrapper
+            h3.hc-feature-title.title-icon
+              img.icon(src="/images/dynamic-transactions-v2.png", align="top")
+              span How Dynamic 
+              span.orange (Free) 
+              span Transactions are Secured  
+            p.hc-feature-lead To prevent Storecoin from a DDoS attack or from the blockchain being flooded with spammy transactions, Storecoin adds a refundable – with interest! – security bond to each transaction. 
+            .hc-image
+              img(src="/images/how-dynamic-transaction-works.png", style="width:100%;") 
+              
+      div#dynamic-validation-modal.engine-modal.ui.modal 
+        i.ion-android-close
+        .hc-feature.over-rel.padding
+          .hc-chunk.hc-customize-text-wrapper
+            h3.hc-feature-title.title-icon
+              img.icon(src="/images/dynamic-validation-v2.png", align="top")
+              span.orange #3 
+              span The Block Proposer is Chosen 
+            p.hc-feature-lead A new block proposer is chosen through Dynamic Validation – a patent pending algorithm that optimizes for consensus decentralization. It combines relative token stake, dynamic weighting, and a lottery to give every validator a chance at being selected block proposer.
+            .hc-image
+              img(src="/images/dynamic-validation-flow.png", style="width:100%;") 
+      
+      div#dynamic-reward-modal.engine-modal.ui.modal 
+        i.ion-android-close
+        .hc-feature.over-rel.padding
+          .hc-chunk.hc-customize-text-wrapper
+            h3.hc-feature-title.title-icon
+              img.icon(src="/images/dynamic-rewards-v2.png", align="top")
+              span How Dynamic Block Rewards Work 
+              span.orange (How Free Txns are Financed) 
+            p.hc-feature-lead Transactions are free for users because they are paid for with capped, yearly token inflation of 5%. 4% is paid to block proposers. 1% endows Storecoin to secure, build, and operate the blockchain.
+            .hc-image
+              img(src="/images/dynamic-reward-flow.png", style="width:100%;") 
+              
+      div#dynamic-scaling-modal.engine-modal.ui.modal 
+        i.ion-android-close
+        .hc-feature.over-rel.padding
+          .hc-chunk.hc-customize-text-wrapper
+            h3.hc-feature-title.title-icon
+              img.icon(src="/images/dynamic-scaling-v2.png", align="top")
+              span.orange #4 
+              span How Instant Blockchian Scaling Happens 
+            p.hc-feature-lead To scale blockchain transactions by making validation instant – without expensive and unnecessary network hops – Storecoin is introducing the concept of an "Agent". It's similar to Power of Attorney giving one entity the authority to executive private transactions on another entity's behalf. This is called Dynamic Scaling.
+            .hc-image
+              img(src="/images/dynamic-scaling-flow.png", style="width:100%;") 
+              
+      div#dynamic-governance-modal.engine-modal.ui.modal 
+        i.ion-android-close
+        .engine-slider
+          .slide
+            .hc-feature.over-rel.padding
+              .hc-chunk.hc-customize-text-wrapper
+                h3.hc-feature-title.title-icon
+                  img.icon(src="/images/dynamic-governance-v2.png", align="top") 
+                  | The Three Branches of Storecoin Governance 
+                p.hc-feature-lead Storecoin Governance is inspired by the United States Constitution where checks and balances ensure that: a) Security Matters Most and b) No Centralization of Power. For the first 4 years, Storecoin, Inc will have executive power over the blockchain. Then Governance shepards all proposed changes and leadership changes.
+                .hc-image
+                  img(src="/images/dynamic-gov-flow-1.png", style="width:100%;")
+          .slide
+            .hc-feature.over-rel.padding
+              .hc-chunk.hc-customize-text-wrapper
+                h3.hc-feature-title.title-icon
+                  img.icon(src="/images/dynamic-governance-v2.png", align="top") 
+                  | How Governance is Hired 
+                p.hc-feature-lead For the first 4 years, Storecoin, Inc. will have executive power over the blockchain. Then, our security-first Governance will guide all Changes to leadership, to features, and to Governance itself.
+                .hc-image
+                  img(src="/images/dynamic-gov-flow-2.png", style="width:100%;")
+          .slide
+            .hc-feature.over-rel.padding
+              .hc-chunk.hc-customize-text-wrapper
+                h3.hc-feature-title.title-icon
+                  img.icon(src="/images/dynamic-governance-v2.png", align="top") 
+                  | How Checks and Balances Work 
+                p.hc-feature-lead 
+                  | How protocol changes, security fixes, and Governance amendments are made.
+                  br 
+                  span.orange (The Constitution)
+                .hc-image
+                  img(src="/images/dynamic-gov-flow-3.png", style="width:100%;")
+          .slide
+            .hc-feature.over-rel.padding
+              .hc-chunk.hc-customize-text-wrapper
+                h3.hc-feature-title.title-icon
+                  img.icon(src="/images/dynamic-governance-v2.png", align="top") 
+                  | How Every Storecoin Token Owner Can Create Change 
+                p.hc-feature-lead 
+                  span.orange (Democracy)
+                .hc-image
+                  img(src="/images/dynamic-gov-flow-4.png", style="width:100%;")
+          .slide
+            .hc-feature.over-rel.padding.inverted.orange.left-align
+              .hc-chunk.hc-customize-text-wrapper
+                h3.hc-feature-title.title-icon
+                  img.icon(src="/images/dynamic-governance-mini-inverted.png", align="top") 
+                  | Why Governance Matters 
+                p.hc-feature-lead Governance takes a system that has been vetted for hundreds of years – the U.S. Constitution – but removes the politics and replaces it with technology.
+                p.hc-feature-lead
+                  | With Governance, Storecoin will:
+                ul(style='list-style:disc; font-size: 2em; margin-left: 1em;')
+                  li Operate with yearly income that funds blockchain security, engineering, governance, and operations
+                  li Make changes only if they can be secured
+                  li Mitigate spam, attacks, and fraud throughout the entire blockchain ecosystem
+                  li Prevent malicious activity such as a hard fork
+                  li Maximize decentralization
+                  li Give every token holder a voice
+                  li Allow application developers to deliver crypto-powered free transactions for users, forever
+    
     #dyn-algo.hc-feature.over-rel.padding.lite
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Where Storecoin and our DyPoS algorithm fit in
@@ -453,7 +689,7 @@ block content
           //- button.btn(title="I'm a tooltip!") Text
           img.logo(src="/images/logo.png")
           .desktop-image
-            img(src="/images/consensus-mechanism-wheel-v2.png", style="max-width:550px; width:100%;" usemap="#desktop-image-map")
+            img(src="/images/consensus-mechanism-wheel-v3.png", style="max-width:550px; width:100%;" usemap="#desktop-image-map")
             map(name='desktop-image-map')              
               area(title='<ul><li>BigChainDB</li><li>RAFT</li><li>PAXOS (including many variances, such as Fast PAXOS, Egalitarian Paxos, etc.)</li><li>Juno (RAFT-Hardened Tangaroa; JP Project)</li><li>Tangaroa</li><li>Mencius</li><li>Viewstamped replication</li><li>ZAB</li></ul>', coords='348,550,73,632,119,740,205,833,392,619', shape='poly')
               area(title='<ul><li>Graphene</li><li>Steem</li><li>BitShares</li><li>EOS</li></ul>', coords='213,839,314,907,432,940,473,657,401,625', shape='poly')
@@ -468,7 +704,7 @@ block content
               area(title='<ul><li>Ripple (evolving into the inter-ledger protocol)</li><li>Stellar (Ripple fork)</li></ul>', coords='348,538,347,462,68,376,51,505,69,620', shape='poly')
                 
           .mobile-image
-            img(src="/images/consensus-mechanism-wheel-v2.png", style="max-width:600px; width:90%;" usemap="#mobile-image-map")
+            img(src="/images/consensus-mechanism-wheel-v3.png", style="max-width:600px; width:90%;" usemap="#mobile-image-map")
             map(name='mobile-image-map')
               area(data-featherlight="#box-1", coords='348,550,73,632,119,740,205,833,392,619', shape='poly')
               div#box-1.image-map-modal(style="display:none;")
@@ -543,6 +779,31 @@ block content
                   li Stellar (Ripple fork)      
         p.hc-feature-lead.hint-text(style="margin:0px;") Click to see blockchains using each algorithm
     
+    #storeco-fits-in.hc-feature.over-rel.padding.inverted
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title Where Storecoin fits in
+        p.hc-feature-lead The market for public blockchains incentivizing API calls inside of web and mobile applications. 
+        .hc-image
+          .desktop-image 
+            img(src='/images/storecoin-fits-in.png')
+          .mobile-image 
+            img(src='/images/storecoin-fits-in-mobile.png')
+            
+        //- div.graph
+        //-   div.y.axis
+        //-     p Transactions Paid for By Fees
+        //-     p Permanently Free Transactions
+        //-   div.graph-container
+        //-     div.graph-lines
+        //-       img.graph-lines-image(src='/images/graph-lines.png')
+        //-       img.eth-logo(src="/images/ethereum-logo.png")
+        //-       img.btc-logo(src="/images/bitc-logo.png")
+        //-       img.eos-logo(src="/images/eos-logo.png")
+        //-       img.storecoin-logo(src="/images/logo.png")
+        //-     div.x.axis
+        //-       p Decentralized Public Blockchains that can incentivize Decentralized Apps
+        //-       p Decentralized Public Blockchains that can incentivize Centralized Apps
+    
     #strat-dist.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted Our Wallet-based Distribution Strategy
@@ -567,11 +828,11 @@ block content
             img(src="/images/strat-dist-1-v2.png")
             p A digitized, decentralized, public ledger containing the history of every Storecoin transaction.
         div.mobile-image
+          p(style="text-align:center; margin: 1em;") 
+            span(style="border: 2px solid #44613478; border-radius: 7px; padding: 0.3em 0.5em; color: #446134;") Click Graphics to Learn More
           div.hc-strat-dist.five
             img(src="/images/strat-dist-mobile-5-v2.png")
             p Third Party Apps will integrate the Storecoin Wallet so each user account in the app has a crypto wallet. Apps can assign actions – or crypto-powered API calls – to micro-units of storecoins so each time a user takes an action, they earn the storecoin cryptocurrency. They can then exchange storecoins for other cryptocurrencies using a decentralized exchange. From there, they can move into fiat.
-          p(style="text-align:center; margin: 1em;") 
-            span(style="border: 2px solid #44613478; border-radius: 7px; padding: 0.3em 0.5em; color: #446134;") Click to learn more
           div.hc-strat-dist.four
             img(src="/images/strat-dist-mobile-4-v2.png")
             p Between the token layer and the app layer, there is a protocol-powered Wallet API allowing the Storecoin cryptocurrency to natively be distributed inside of third party apps (not dApps). Storecoin, Inc. develops and supports these Wallet APIs for the third party developers.
@@ -584,9 +845,74 @@ block content
           div.hc-strat-dist.one
             img(src="/images/strat-dist-mobile-1-v2.png")
             p A digitized, decentralized, public ledger containing the history of every Storecoin transaction.
-  
-    include app-types
     
+    .hc-feature.over-rel.padding.lite
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title How the Storecoin Wallet Works
+        p.hc-feature-lead Once Third Party Developers integrate the Storecoin Wallet using APIs, every user on their app can have a Storecoin crypto wallet. Developers can reward storecoins to users when they take pre-defined actions. They can even “tax” their app and take a small cut of each crypto-powered transaction. The possibilities are endless.
+        div.wallet-screens
+          div.screen
+            div.title 
+              b A User Wallet inside the App
+            img(src="/images/wallet-screen-1.png")
+          div.screen
+            div.title 
+              b Assigning tokens to API calls
+            img(src="/images/wallet-screen-2.png")
+          div.screen
+            div.title 
+              b The App "taxing" transactions
+            img(src="/images/wallet-screen-3.png")
+    
+    .hc-feature.over-rel.padding(style="overflow:visible;")
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title How Secure Payments Work with Storecoin
+        p.hc-feature-lead When you pay for something with physical cash (U.S. paper dollar bills), the person who handed it over can’t spend the same money on something else (unless you have a quarter on a string). Preventing this type of “double spending” in a digital currency is more complex.
+        div.blockchain-works(style="margin-bottom: 1em;")
+          div.steps
+            div.step
+              div.title 
+                b Transaction
+              div.icon
+                img(src="/images/blchain-transaction.png")
+              div.desc Jane uses storecoin to buy a cup of coffee at the Coffee Cafe. She users her private key to transfer ownership of the currency to the Coffee Cafe. Once the transaction is verified by Storecoin Validators, it processes and is written to the Storecoin public blockchain.
+            div.step
+              div.title 
+                b Validator Network
+              div.icon
+                img(src="/images/blchain-network.png")
+              div.desc Word of this transaction is gossiped between all the Validator agents, who sit in a single machine and attempt to come to consensus on valid blocks of transactions.
+            div.step
+              div.title 
+                b Block
+              div.icon
+                img(src="/images/blchain-block.png")
+              div.desc For each new round, a validator is chosen to create and propose a block of transactions. The odds of a validator getting chosen is based on their stake relative to all other stake as well as decentralization weighting factors and tenure.
+            div.step
+              div.title 
+                b Verification
+              div.icon
+                img(src="/images/blchain-verification.png")
+              div.desc The winning validator, who becomes the proposer, will be awarded with newly minted coins if the block they broadcast is successfully added to the blockchain. The block must be voted and agreed upon by >2/3 of the network to become valid. Validators have “Agents” that do their consensus work for them in order to allow for scale and maintain decentralization.
+          div.steps
+            div.step
+              div.title 
+                b The Chain
+              div.icon
+                img(src="/images/blchain-chain.png")
+              div.desc Blockchain acts as a public ledger showing all transactions, though the identities of participants are obscured. Each block has a cryptographic link to the previous one. In order for a Validator to re-write the blockchain and commit a double-spend, they violate the network safety. If caught, the validator will lose all of their stake, therefore making it extremely expensive to try and act maliciously about what the actual transactions in the blockchain are.
+        div.link-container.hanging
+          a.link-text.see-more.green(data-link="#storecoin-12-steps", data-margin="33,44", data-scroll="true") Storecoin in 12 Steps
+            i.ion-ios-arrow-down
+              
+    #storecoin-12-steps.see-more-reveal.hc-feature.over-rel.padding(style="overflow:visible;")
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title 
+          span.orange Overview: 
+          | How the Storecoin Blockchain Works
+        p.hc-feature-lead How the patent-pending Dynamic Proof of Stake consensus algorithm keeps transactions permanently free while perpetually funding blockchain security, engineering and governance.
+        .hc-image
+          img(src="/images/blockchain-guide-v2.png")
     //- .hc-feature.over-rel.padding
     //-   .hc-chunk.hc-customize-text-wrapper
     //-     h3.hc-feature-title 
@@ -682,87 +1008,10 @@ block content
         //-   span.thumbnail
         //-     img(src="/images/dynamic-governance-flow.png")
         //-   span How Dynamic Governance Works
-        
-    #hc-six-engines.hc-feature.over-rel.padding.lite
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title.inverted The Six Engines of DyPoS
-        p.hc-feature-lead Dynamic Proof of Stake is made up of six interdependent engines.
-        p.hc-feature-lead Each engine is based on similar dynamic supply and demand principles as Uber Surge Pricing.
-        p.hc-feature-lead Prices for all six engines are driven by real-time threat levels in the 
-          a(data-featherlight="#security-system-popup", style="text-decoration:underline;") 
-            b Storecoin Security System.
-        div#security-system-popup(style="display:none;")
-          #security-system-lite.hc-feature.over-rel.padding
-            .hc-chunk.hc-customize-text-wrapper
-              h3.hc-feature-title(style="display: flex; align-items: center; justify-content: center;")
-                img(style="width: 50px; margin-right:5px;", src="/images/red-caution.png")
-                | The Storecoin Security System 
-              p.hc-feature-lead The Storecoin Security System powers real-time market prices for the Six Engines of DyPoS. The System threat level algorithmically updates as transaction volume rise and fall. As threat level rise, the cost of spam and attacks rise too.
-              div.hazard-boxes
-                div.box.red
-                  h3 Severe
-                  p Severe risk of an attack or an spam
-                div.box.skin
-                  h3 High
-                  p High risk of an attack or an spam
-                div.box.yellow
-                  h3 Elevated
-                  p Significant risk of an attack or an spam
-                div.box.blue
-                  h3 Guarded
-                  p General risk of an attack or an spam
-                div.box.green
-                  h3 Low
-                  p Low risk of an attack or an spam
-              //- .hc-image
-              //-   .desktop-image
-              //-     img(src="/images/security-system-flow-lite.png")
-              //-   .mobile-image
-              //-     img(src="/images/security-system-flow-lite-mobile.png")
-              
-        div.engines
-          a.engine(href="#", target="_blank") 
-            .front
-              img(src="/images/dynamic-transactions-v2.png")
-              div.title Dynamic (free) Transactions
-            .back
-              p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sapien metus, vestibulum a eros sit amet, facilisis suscipit neque. Donec viverra accumsan commodo. Proin semper turpis dapibus consectetur euismod. Nullam magna sem, hendrerit ultrices augue in, blandit aliquet odio. Donec cursus lacinia cursus.
-          a.engine.right(href="#", target="_blank")
-            .front
-              img(src="/images/dynamic-validation-v2.png")
-              div.title Dynamic Validation
-            .back
-              p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sapien metus, vestibulum a eros sit amet, facilisis suscipit neque. Donec viverra accumsan commodo. Proin semper turpis dapibus consectetur euismod. Nullam magna sem, hendrerit ultrices augue in, blandit aliquet odio. Donec cursus lacinia cursus.
-        div.engines
-          a.engine(href="#", target="_blank")
-            .front
-              img(src="/images/dynamic-rewards-v2.png")
-              div.title Dynamic Block Rewards
-            .back
-              p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sapien metus, vestibulum a eros sit amet, facilisis suscipit neque. Donec viverra accumsan commodo. Proin semper turpis dapibus consectetur euismod. Nullam magna sem, hendrerit ultrices augue in, blandit aliquet odio. Donec cursus lacinia cursus.
-          a.engine.right(href="#", target="_blank")
-            .front
-              img(src="/images/dynamic-security-v2.png")
-              div.title Dynamic Security
-            .back
-              p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sapien metus, vestibulum a eros sit amet, facilisis suscipit neque. Donec viverra accumsan commodo. Proin semper turpis dapibus consectetur euismod. Nullam magna sem, hendrerit ultrices augue in, blandit aliquet odio. Donec cursus lacinia cursus.
-        div.engines
-          a.engine(href="#", target="_blank")
-            .front
-              img(src="/images/dynamic-scaling-v2.png")
-              div.title Dynamic Scaling
-            .back
-              p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sapien metus, vestibulum a eros sit amet, facilisis suscipit neque. Donec viverra accumsan commodo. Proin semper turpis dapibus consectetur euismod. Nullam magna sem, hendrerit ultrices augue in, blandit aliquet odio. Donec cursus lacinia cursus.
-          a.engine(href="#", target="_blank")
-            .front
-              img(src="/images/dynamic-governance-v2.png")
-              div.title Dynamic Governance
-            .back
-              p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sapien metus, vestibulum a eros sit amet, facilisis suscipit neque. Donec viverra accumsan commodo. Proin semper turpis dapibus consectetur euismod. Nullam magna sem, hendrerit ultrices augue in, blandit aliquet odio. Donec cursus lacinia cursus.
-    
+                             
     #ethos.hc-feature.over-rel.padding.inverted.orange
       .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title Our Tech Ethos
+        h3.hc-feature-title(style="margin-top:1.5em !important") Our Tech Ethos
         p.hc-feature-lead This is how we make technology decisions at Storecoin
         p 
           span 
@@ -852,7 +1101,7 @@ block content
                 tr
                   td
                     b On Chain Scalability	
-                  td R&D in progress	
+                  td Dynamic Scaling	
                 tr
                   td
                     b Off Chain Scalability	
@@ -936,161 +1185,6 @@ block content
           .slide
             img(src='/images/clinton-polley.png', style='width: auto; height: 110px;')
             p Founding Validators for Storecoin
-
-            
-    .hc-feature.over-rel.inverted.padding.lite
-      .hc-chunk
-        include join-community
-                  
-    //- #network-effects.hc-feature.over-rel.inverted.padding
-    //-   .hc-chunk
-    //-     h2.hc-feature-title Storecoin	Network	Effects
-    //-     p.hc-feature-lead
-    //-       | The	magic	of	the	Storecoin	is	that	it	aligns	incentives across	all	stakeholders	to hold the	token.
-    //-     .incentives.desktop
-    //-       .rails-wrapper
-    //-         .rails
-    //-       .row
-    //-         .four.columns
-    //-         .four.columns.horizontal
-    //-           .incentive
-    //-             .title
-    //-               img(src='/images/chart-2.png')
-    //-               p Token	Value
-    //-             p.desc
-    //-               | The Storecoin token value could increase with more Storecoin Wallets deployed into the hands of users. Also, with more app-level transactions on the Storecoin blockchain.
-    //-           img.arrow-flow(src='/images/arrow-mobile.png')
-    //-         .four.columns
-    //-       .row.middle
-    //-         .four.columns.vertical
-    //-           .incentive
-    //-             .title
-    //-               img(src='/images/money.png')
-    //-               p More Buyers
-    //-             p.desc
-    //-               | The more demand to use the token, the more buyers there will be.
-    //-           img.arrow-flow(src='/images/arrow-mobile.png')
-    //-           .incentive
-    //-             .title
-    //-               img(src='/images/security-guards.png')
-    //-               p More Security Guards
-    //-             p.desc
-    //-               | The more transactions on Storecoin, the more Security Guards are needed to identify spam and attacks.
-    //-           img.arrow-flow(src='/images/arrow-mobile.png')
-    //-           .incentive
-    //-             .title
-    //-               img(src='/images/hammer.png')
-    //-               p More Validators
-    //-             p.desc
-    //-               | The more users and third-party developers, the more transactions. The more transactions, the more validators that are needed to reach consensus on the Storecoin blockchain.
-    //-           img.arrow-flow(src='/images/arrow-mobile.png')
-    //-         .four.columns.logo-wrapper
-    //-           img.logo(src='/images/logo.png')
-    //-         .four.columns.vertical
-    //-           .incentive
-    //-             .title
-    //-               img(src='/images/keyboard.png')
-    //-               p More Developers
-    //-             p.desc
-    //-               | As	token	value	increases,	more	3rd party	developers	want	to	build	using	storecoins.
-    //-           img.arrow-flow(src='/images/arrow-mobile.png')
-    //-           .incentive
-    //-             .title
-    //-               img(src='/images/building.png')
-    //-               p More Organizations
-    //-             p.desc
-    //-               | As more developers build with Storecoin, more enterprise organizations will use (and pay for the usage of) Storecoin-powered apps.
-    //-           img.arrow-flow(src='/images/arrow-mobile.png')
-    //-       .row
-    //-         .four.columns
-    //-         .four.columns.horizontal
-    //-           .incentive
-    //-             .title
-    //-               img(src='/images/smile.png')
-    //-               p More Users
-    //-             p.desc
-    //-               | The	more	apps	powered	by Storecoin,	the	more	users	that will	have	Storecoin	wallets
-    //-         .four.columns
-    //-           
-    //-     .incentives.mobile
-    //-       .rails-wrapper
-    //-         .rails
-    //-       .row
-    //-         .four.columns
-    //-         .four.columns.horizontal
-    //-           .incentive
-    //-             .title
-    //-               img(src='/images/chart-2.png')
-    //-               p Token	Value
-    //-             p.desc
-    //-               | The Storecoin token value could increase with more Storecoin Wallets deployed into the hands of users. Also, with more app-level transactions on the Storecoin blockchain.
-    //-           img.arrow-flow(src='/images/arrow-mobile.png')
-    //-         .four.columns
-    //-       .row.middle
-    //-         .four.columns.vertical
-    //-           .incentive
-    //-             .title
-    //-               img(src='/images/keyboard.png')
-    //-               p More Developers
-    //-             p.desc
-    //-               | As	token	value	increases,	more	3rd party	developers	want	to	build	using	storecoins.
-    //-           img.arrow-flow(src='/images/arrow-mobile.png')
-    //-           .incentive
-    //-             .title
-    //-               img(src='/images/building.png')
-    //-               p More Organizations
-    //-             p.desc
-    //-               | As more developers build with Storecoin, more enterprise organizations will use (and pay for the usage of) Storecoin-powered apps.
-    //-           img.arrow-flow(src='/images/arrow-mobile.png')
-    //-         .four.columns.logo-wrapper
-    //-           img.logo(src='/images/logo.png')
-    //-         .four.columns.vertical
-    //-           .incentive
-    //-             .title
-    //-               img(src='/images/smile.png')
-    //-               p More Users
-    //-             p.desc
-    //-               | The	more	apps	powered	by Storecoin,	the	more	users	that will	have	Storecoin	wallets
-    //-           img.arrow-flow(src='/images/arrow-mobile.png')
-    //-           .incentive
-    //-             .title
-    //-               img(src='/images/hammer.png')
-    //-               p More Validators
-    //-             p.desc
-    //-               | The more users and third-party developers, the more transactions. The more transactions, the more validators that are needed to reach consensus on the Storecoin blockchain. 
-    //-           img.arrow-flow(src='/images/arrow-mobile.png')
-    //-           .incentive
-    //-             .title
-    //-               img(src='/images/security-guards.png')
-    //-               p More Security Guards
-    //-             p.desc
-    //-               | The more transactions on Storecoin, the more Security Guards are needed to identify spam and attacks.
-    //-           img.arrow-flow(src='/images/arrow-mobile.png')
-    //-       .row
-    //-         .four.columns
-    //-         .four.columns.horizontal
-    //-           .incentive
-    //-             .title
-    //-               img(src='/images/money.png')
-    //-               p More Buyers
-    //-             p.desc
-    //-               | The more demand to use the token, the more buyers there will be.
-    //-         .four.columns
-    //-     
-    //-     p.hc-feature-lead Storecoin tokens are both a work and a usage token. Owning storecoins give you the right to validate transactions and earn more tokens in exchange for that work. Also, to become a Security Guard and earn tokens when you find spam or attacks.
-    //-     p.hc-feature-lead Owning storecoins also gives the right to use applications where the Storecoin Wallet is integrated. Owning storecoins gives you access to new behaviors and business models within those applications.
-            
-    .hc-feature.over-rel.padding(style="padding-left: 0px; padding-right:0px;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title Become a Validator
-        p.hc-feature-lead(style=" margin:0px !important; color:#5d794c; text-decoration:underline;") 
-          a(href="/applytoforge", style="font-size:30px;") Apply here
-          
-    .hc-feature.over-rel.padding.inverted.orange(style="padding-left: 0px; padding-right:0px;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title Become a Security Guard
-        p.hc-feature-lead(style=" margin:0px !important; color:#5d794c; text-decoration:underline;") 
-          a(href="/applytoforge", style="font-size:30px;") Apply here
             
     #project-schedule.hc-feature.lite.over-rel.padding
       h3.hc-feature-title.break Storecoin Project Schedule
@@ -1259,6 +1353,22 @@ block content
                         |  Storecoin Alliance launches initial apps on top of Wallet SDK
     
     include network-distribution
+    
+    .hc-feature.over-rel.inverted.padding.lite
+      .hc-chunk
+        include join-community
+            
+    .hc-feature.over-rel.padding(style="padding-left: 0px; padding-right:0px;")
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title Become a Validator
+        p.hc-feature-lead(style=" margin:0px !important; color:#5d794c; text-decoration:underline;") 
+          a(href="/applytoforge", style="font-size:30px;") Apply here
+          
+    .hc-feature.over-rel.padding.inverted.orange(style="padding-left: 0px; padding-right:0px;")
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title Become a Security Guard
+        p.hc-feature-lead(style=" margin:0px !important; color:#5d794c; text-decoration:underline;") 
+          a(href="/applytoforge", style="font-size:30px;") Apply here
     
     //- include about-second-token-sale
     

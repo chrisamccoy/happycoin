@@ -296,13 +296,17 @@
           | Next
           i.ion-chevron-right
             
-    .email-steps.step-9
+    .email-steps.step-9.storeco-vs-blchains
       p(style="font-size: 1.2em; margin-bottom: 0.5em;") 
         b Storecoin vs. Other Blockchain Token Sales 
       p What it would cost to buy 1 one-hundredth of a percent of all tokens minted in the first 10 years for major public blockchains
       .hc-image
-        img(src="/images/comparison-chart.png")
-      p(style="margin-top: 1em; font-size: 0.7em;") The Zcash price of $250 is a snapshot of the price as of Nov 9th, 2017. The "Filecoin (first hour)" price of $2.25 factors in a 15% discount off of $2.65 (the price during the first hour of the sale) as a result of the 2-year unlocking option. The Tezos price of $0.39 is the effective price paid on the first day of the main sale, taking into account the 20% bonus and an average Bitcoin price of $2,350 on July 1. The EOS price of $1.90 is based on the pre-launch trading price on November 22, 2017. EOS was assumed to have 5% annual inflation starting at 1 billion tokens.
+        img(src="/images/comparison-chart.png", style="width:80%;")
+      .link-container
+        a.link-text.see-more(data-link='.zcash-text', data-margin="0,0", data-scroll="false")
+          | See More
+          i.ion-ios-arrow-down
+      p.zcash-text.see-more-reveal(style="margin-top: 1em; font-size: 0.7em;") The Zcash price of $250 is a snapshot of the price as of Nov 9th, 2017. The "Filecoin (first hour)" price of $2.25 factors in a 15% discount off of $2.65 (the price during the first hour of the sale) as a result of the 2-year unlocking option. The Tezos price of $0.39 is the effective price paid on the first day of the main sale, taking into account the 20% bonus and an average Bitcoin price of $2,350 on July 1. The EOS price of $1.90 is based on the pre-launch trading price on November 22, 2017. EOS was assumed to have 5% annual inflation starting at 1 billion tokens.
       hr
       .button-group
         button.button-back.button-primary(data-step='step-8-1')
@@ -337,8 +341,8 @@
     .email-steps.step-10-0
       p Will you be participating on behalf of yourself or another organization/entity?
       .field.radio-field
-        .hc-radio-btn
-        input(type='radio', name="participate-org", value='Myself')
+        .hc-radio-btn.checked
+        input(type='radio', name="participate-org", value='Myself', checked)
         label(for='participate-yes') Myself
       .field.radio-field
         .hc-radio-btn
@@ -658,11 +662,11 @@
         //-   p In	the	case	the	First	ICO	is	oversubscribed	or	there	are	issues	with	your	transaction,	we	may	
         //-     | issue	you	a	refund	to	this	address.
         
-      .field-group  
-        .field.radio-field
-          .hc-radio-btn
-          input(type='checkbox', name='payment-type', value=' USD Paypal')
-          label(for='payment-type') USD Paypal
+      //- .field-group  
+      //-   .field.radio-field
+      //-     .hc-radio-btn
+      //-     input(type='checkbox', name='payment-type', value=' USD Paypal')
+      //-     label(for='payment-type') USD Paypal
           
       .field-group  
         .field.radio-field
@@ -853,7 +857,7 @@
         button.button-primary.button-submit(type="submit")
           | Next
           
-    .email-steps.step-19 
+    .email-steps.step-19
       p Thanks for applying to participate in the Storecoin Second Token Sale.
       p Our team will review your application. Once approved, we'll email you a Token Sale agreement to e-sign and then fund. You'll have 48 hours to fund the contract before your invite expires.
       p In the meantime, to stay up-to-date on Storecoin, 
@@ -875,10 +879,10 @@
             //- a.button.button-primary.facebook(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u=storeco.in")
             //-   i.ion-social-facebook
             //-   | Facebook
-            a.button.button-primary.email(target="_blank", href="https://mail.google.com/mail/?view=cm&fs=1&su=Participate%20in%20the%20Storecoin%20Second%20ICO&body=Storecoin%20will%20be%20a%20public%20blockchain%20powering%20free%20transactions%20for%20users%20and%20app%20developers%20using%20its%20Dynamic%20Proof%20of%20Stake%20consensus%20(DyPoS).%0A%0ADyPoS%20is%20Uber%20Surge%20Pricing%20(blockchain%20economics)%20meets%20the%20U.S.%20Constitution%20(Governance).%0A%0AWith%20DyPoS%2C%20Storecoin%20will%20bring%20crypto-powered%20API%20calls%20to%20app%20developers%20around%20the%20world.%0A%0AParticipate%20at%20http%3A%2F%2Fstorecoin.in")
+            a.button.button-primary.email(target="_blank", href="https://mail.google.com/mail/?view=cm&fs=1&su=I%20RECOMMEND%3A%20The%20Storecoin%20Second%20Token%20Sale%20(invite-only)&body=Storecoin%20will%20be%20a%20public%20blockchain%20powering%20free%20transactions%20for%20users%20and%20app%20developers%20using%20its%20Dynamic%20Proof%20of%20Stake%20consensus%20(DyPoS).%0A%0ADyPoS%20is%20Uber%20Surge%20Pricing%20(blockchain%20economics)%20meets%20the%20U.S.%20Constitution%20(Governance).%0A%0AWith%20DyPoS%2C%20Storecoin%20will%20bring%20crypto-powered%20API%20calls%20to%20app%20developers%20around%20the%20world.%0A%0AYou%20can%20get%20an%20invite%20by%20filling%20out%20their%20app%20at%20http%3A%2F%2Fstoreco.in.")
               i.ion-email
               | Email
-            a.button.button-primary.email-mobile(target="_blank", href="mailto:?subject=Participate%20in%20the%20Storecoin%20Second%20ICO&body=Storecoin%20will%20be%20a%20public%20blockchain%20powering%20free%20transactions%20for%20users%20and%20app%20developers%20using%20its%20Dynamic%20Proof%20of%20Stake%20consensus%20(DyPoS).%0A%0ADyPoS%20is%20Uber%20Surge%20Pricing%20(blockchain%20economics)%20meets%20the%20U.S.%20Constitution%20(Governance).%0A%0AWith%20DyPoS%2C%20Storecoin%20will%20bring%20crypto-powered%20API%20calls%20to%20app%20developers%20around%20the%20world.%0A%0AParticipate%20at%20http%3A%2F%2Fstorecoin.in")
+            a.button.button-primary.email-mobile(target="_blank", href="mailto:?subject=I%20RECOMMEND%3A%20The%20Storecoin%20Second%20Token%20Sale%20(invite-only)&body=Storecoin%20will%20be%20a%20public%20blockchain%20powering%20free%20transactions%20for%20users%20and%20app%20developers%20using%20its%20Dynamic%20Proof%20of%20Stake%20consensus%20(DyPoS).%0A%0ADyPoS%20is%20Uber%20Surge%20Pricing%20(blockchain%20economics)%20meets%20the%20U.S.%20Constitution%20(Governance).%0A%0AWith%20DyPoS%2C%20Storecoin%20will%20bring%20crypto-powered%20API%20calls%20to%20app%20developers%20around%20the%20world.%0A%0AYou%20can%20get%20an%20invite%20by%20filling%20out%20their%20app%20at%20http%3A%2F%2Fstoreco.in.")
               i.ion-email
               | Email
               
@@ -906,4 +910,15 @@
             i.ion-link
             |  Copy Link
 
-//- include countdown
+.hc-feature.over-rel.padding.inverted.storeco-vs-blchains
+  .hc-chunk.hc-intro-text-wrapper
+    h3.hc-feature-title Storecoin vs. Other Public Blockchains
+    p.hc-feature-lead What it would cost to buy 1 one-hundredth of a percent of all tokens minted in the first 10 years for major public blockchains.
+    .hc-image
+      img(src="/images/comparison-chart.png")
+    .link-container
+      a.link-text.see-more(data-link='.zcash-text', data-margin="0,0", data-scroll="false")
+        | See More
+        i.ion-ios-arrow-down
+    p.zcash-text.hc-feature-lead.hint-text.see-more-reveal(style="margin-bottom:0px;") The Zcash price of $250 is a snapshot of the price as of Nov 9th, 2017. The "Filecoin (first hour)" price of $2.25 factors in a 15% discount off of $2.65 (the price during the first hour of the sale) as a result of the 2-year unlocking option. The Tezos price of $0.39 is the effective price paid on the first day of the main sale, taking into account the 20% bonus and an average Bitcoin price of $2,350 on July 1. The EOS price of $1.90 is based on the pre-launch trading price on November 22, 2017. EOS was assumed to have 5% annual inflation starting at 1 billion tokens.
+    

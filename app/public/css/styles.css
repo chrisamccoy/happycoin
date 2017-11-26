@@ -60,6 +60,18 @@ input[type=number]::-webkit-outer-spin-button {
   color: #e97844;
 }
 
+.lite-orange {
+  color: #ffcaaa;
+}
+
+.lite-green {
+  color: #c6dfb7;
+}
+
+.lite-yellow {
+  color: #ffc013;
+}
+
 .big-font {
   font-size: 1.5em;
 }
@@ -192,6 +204,11 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 0.3em 1em;
   border : 2px solid;
   border-radius: 7px;
+}
+
+.hc-email .link-text {
+  font-size: 1em !important;
+  margin-bottom: 1em;
 }
 
 .hc-feature .link-text:hover {
@@ -405,6 +422,16 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 2em;
 }
 
+/*.hc-feature .hc-feature-title.title-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+}*/
+
+.hc-feature .hc-feature-title.title-icon .icon {
+  display: inline;
+  width: 50px;
+  margin-right:15px;
+}
+
 /*.hc-feature .hc-feature-title.break {
   margin: 1em 0 30px;
 }*/
@@ -570,7 +597,7 @@ input[type=number]::-webkit-outer-spin-button {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 10000000;
+  z-index: 21;
   /*height: 135px;*/
   /*height:68px;*/
 }
@@ -830,6 +857,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #hc-intro .hc-feature-lead {
   margin : 1.5em 0px;
+  font-size: 1.75em;
 }
 
 #hc-intro .hc-intro-text-wrapper {
@@ -1013,7 +1041,7 @@ and (max-width : 700px) {
   }
 
   #hc-intro .hc-feature-lead {
-    font-size: 1em !important;
+    font-size: 1.05em !important;
   }
 }
 
@@ -2404,10 +2432,8 @@ and (max-width : 700px) {
 #network-effects {
   margin: auto;
   text-align: center;
-}
-
-#network-effects .hc-chunk {
   position: relative;
+  overflow: visible;
 }
 
 #network-effects .hc-feature-lead:last-child {
@@ -2537,20 +2563,44 @@ and (max-width : 700px) {
   justify-content: space-around;
 }
 
-#network-effects .link-container {
+.link-container.hanging {
   position: absolute;
-  bottom: -58px;
+  bottom: -40px;
   width: 100%;
   display: flex;
+  z-index: 1;
+  left: 0px;
 }
 
-#network-effects .link-container .link-text {
+.link-container.hanging .link-text {
   border: 3px solid rgba(0,0,0,0); background-color: #f47840;
+  color: white;
+}
+
+.link-container.hanging .link-text.green {
+  background-color: #5D794E;
+}
+
+.link-container.hanging .link-text {
+  font-size: 2.5em;
+}
+
+.link-container.hanging .link-text:hover {
+  opacity: 1;
+  background-color: #ed6b30;
+}
+
+.link-container.hanging .link-text.green:hover {
+  background-color: #4f6841;
 }
 
 @media only screen and (max-width: 700px) {
-  #network-effects .link-container {
-    bottom: -81px;
+  .link-container.hanging {
+    bottom: -31px;
+  }
+
+  .link-container.hanging .link-text {
+    font-size: 1.8em;
   }
 
   #network-effects .hc-feature-lead:last-child {
@@ -3622,6 +3672,10 @@ and (max-width : 700px) {
   justify-content: center;
 }
 
+#solution .hc-feature-title {
+  margin-top: 1em;
+}
+
 #solution .hc-image img {
   width: 80%;
   max-width: 100%;
@@ -3630,6 +3684,16 @@ and (max-width : 700px) {
 @media only screen and (max-width: 1024px) {
   #solution .hc-image img {
     width: 50%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #solution {
+    height: calc(100vh - 92px - 6.5em);
+  }
+
+  #solution .hc-feature-title {
+    margin-top: 0px;
   }
 }
 
@@ -4220,10 +4284,15 @@ and (max-width : 700px) {
 }
 
 .engine .back {
-  background-color: rgb(199, 223, 184);
+
+  padding: 0em 1em;
+  width: calc(100% - 2em);
+  text-align: left;
+  background-color: white;
   z-index: 1;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   overflow: hidden;
 
@@ -4244,11 +4313,6 @@ and (max-width : 700px) {
   -moz-transition: all .4s ease-in-out;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
-}
-
-.engine .back p {
-  margin: 0px;
-  line-height: 1.3;
 }
 
 .engine.box {
@@ -4302,7 +4366,80 @@ and (max-width : 700px) {
 .hc-email .engines .engine {
   min-height: 150px;
 }
+
+.engine .back h5 {
+  margin: 0px;
+  margin-bottom: 0.5em;
+  text-align: left;
+  width: 100%;
+  color: black;
+}
+
+.engine .back p {
+  margin: 0px;
+  line-height: 1.3;
+  color: black;
+}
+
+.engine .back a {
+  width: 100%;
+  text-align: left;
+  text-decoration: underline;
+  margin-top: 0.5em;
+  font-size: 1.2em;
+  color: #5d794c;
+}
+
+.engine-popup {
+  background-color: white;
+  padding: 0.5em;
+  margin-top: 1em;
+}
+
+.engine-popup h5 {
+  margin: 0px;
+  margin-bottom: 0.5em;
+  text-align: left;
+  width: 100%;
+}
+
+.engine-popup a {
+  width: 100%;
+  text-align: left;
+  text-decoration: underline;
+  margin-top: 0.5em;
+  font-size: 1.2em;
+}
+
+@media only screen and (max-width: 1024px) {
+  .engine .back h5 {
+    font-size: 1.3em;
+    margin-bottom: 0.3em;
+  }
+
+  .engine .back a {
+    font-size: 1em;
+    margin-top: 0.3em;
+  }
+
+  #hc-six-engines .desktop-image {
+    display: block;
+  }
+
+  #hc-six-engines .mobile-image {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 700px) {
+  #hc-six-engines .desktop-image {
+    display: none;
+  }
+
+  #hc-six-engines .mobile-image {
+    display: block;
+  }
+
   .engines {
     width: 100%;
   }
@@ -4374,6 +4511,10 @@ and (max-width : 700px) {
   padding: 0.5em;
   color: black;
 }
+
+/*.featherlight {
+  width: 100%;
+}*/
 
 .featherlight-content ul,
 .tippy-popper .tippy-tooltip-content ul {
@@ -4502,16 +4643,15 @@ and (max-width : 700px) {
   border-top-color: #00afa8;
 }
 
-#security-system-popup,
 .image-map-modal {
   margin-top: 1em;
   padding: 0.5em;
 }
 
-#security-system-popup .hc-feature {
+/*#security-system-popup .hc-feature {
   max-height: 90vh;
   overflow: scroll;
-}
+}*/
 
 .featherlight-content {
   background: none !important;
@@ -4871,6 +5011,8 @@ and (max-width : 700px) {
   justify-content: center;
   height: 100px;
   border-radius: 10px;
+  max-width: 600px;
+  margin: auto
 }
 
 #security-system-lite .hazard-boxes .box.green {
@@ -4917,11 +5059,11 @@ and (max-width : 700px) {
 }
 
 /*----------------------------------*/
-#hc-problem-see-more {
+.see-more-reveal {
   display: none;
 }
 
-#hc-problem-see-more.show {
+.see-more-reveal.show {
   display: block;
 }
 
@@ -4933,5 +5075,232 @@ and (max-width : 700px) {
 @media only screen and (max-width: 700px) {
   #latest-updates ul {
     font-size: 1em;
+  }
+}
+
+
+/*----------------------------------*/
+.engine-modal {
+  /*padding: 0px 4em !important;*/
+  position: relative;
+}
+
+.engine-modal .engine-slider .slick-arrow:before {
+  color: white;
+}
+
+.engine-modal .engine-slider .slick-next {
+  right: -35px;
+}
+
+.engine-modal .engine-slider .slick-prev {
+  left: -35px;
+}
+
+.engine-modal i.ion-android-close {
+  position: absolute;
+  /*top: -35px;
+  right: -25px;*/
+  top: 15px;
+  right: 15px;
+  font-size: 3em;
+  cursor: pointer;
+  color: black;
+  z-index: 1;
+}
+
+.engine-modal .hc-feature {
+  padding: 2em 1em;
+}
+
+.engine-modal .hc-feature .hc-feature-title {
+  font-size: 4em;
+  margin: 0px !important;
+}
+
+.engine-modal .hc-feature .hc-feature-lead {
+  font-size: 2.5em;
+}
+
+@media only screen and (max-width: 700px) {
+  /*.engine-modal .engine-slider .slick-arrow:before {
+    color: black;
+  }*/
+
+  .engine-modal .engine-slider .slick-next {
+    right: -25px;
+  }
+
+  .engine-modal .engine-slider .slick-prev {
+    left: -25px;
+  }
+
+  .engine-modal i.ion-android-close {
+    right: -25px;
+    top: 0px;
+    color: white;
+  }
+
+  .engine-modal .hc-feature .hc-feature-title.title-icon .icon {
+    width: 40px;
+    margin-right: 7px;
+  }
+  .engine-modal .hc-feature .hc-feature-title {
+    font-size: 3em !important;
+  }
+  .engine-modal .hc-feature .hc-feature-lead {
+    font-size: 1.5em !important;
+  }
+  .engine-modal {
+    /*padding: 0px 3em !important;*/
+    width: 80% !important;
+  }
+
+  .engine-modal .hc-feature {
+    padding: 1em 0.5em;
+  }
+}
+
+/*----------------------------------*/
+#app-types .hc-chunk {
+  background-image: url(/images/coin-network.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/*----------------------------------*/
+#storeco-fits-in .graph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#storeco-fits-in .graph .graph-lines {
+  position: relative;
+}
+
+#storeco-fits-in .graph .graph-lines img {
+  width: 100%;
+}
+
+#storeco-fits-in .graph .graph-lines .btc-logo,
+#storeco-fits-in .graph .graph-lines .eth-logo,
+#storeco-fits-in .graph .graph-lines .eos-logo,
+#storeco-fits-in .graph .graph-lines .storecoin-logo {
+  position: absolute;
+}
+
+#storeco-fits-in .graph .graph-lines .eos-logo {
+  width: 15%;
+  left: 10%;
+  top: 42%;
+}
+
+#storeco-fits-in .graph .graph-lines .btc-logo {
+  width: 30%;
+  left: 47%;
+  top: 85%;
+}
+
+#storeco-fits-in .graph .graph-lines .eth-logo {
+  width: 20%;
+  left: 8%;
+  top: 76%;
+}
+
+#storeco-fits-in .graph .graph-lines .storecoin-logo {
+  width: 15%;
+  left: 82%;
+  top: 3%;
+}
+
+#storeco-fits-in .graph .axis {
+  font-size: 1.5em;
+}
+
+#storeco-fits-in .graph .x.axis {
+  display: flex;
+  text-align: center;
+}
+
+#storeco-fits-in .graph .y.axis {
+  position: absolute;
+  width: 840px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(270deg);
+  left: -38%;
+  /*bottom: 50%;*/
+}
+
+#storeco-fits-in .graph .y.axis p {
+  text-align: center;
+  flex:1;
+}
+@media only screen and (max-width: 1024px) {
+  #storeco-fits-in .graph .y.axis {
+    left: -32%;
+  }
+}
+
+
+@media only screen and (max-width: 700px) {
+  #storeco-fits-in .graph .axis {
+    font-size: 0.8em;
+  }
+}
+
+/*----------------------------------*/
+.blockchain-works .steps,
+.wallet-screens {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blockchain-works .steps .step,
+.wallet-screens .screen {
+  flex: 1;
+  padding: 0px 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blockchain-works .steps .step .title,
+.wallet-screens .screen .title {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.blockchain-works .steps .step .icon img,
+.wallet-screens .screen img {
+  width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .wallet-screens .screen .title {
+    font-size: 1.2em;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .blockchain-works .steps,
+  .wallet-screens {
+    display: block;
+  }
+
+  .blockchain-works .steps .step {
+    margin-top: 1em;
+  }
+
+  .wallet-screens .screen {
+    margin-bottom: 1em;
+  }
+
+  .wallet-screens .screen img {
+    width: 80%;
   }
 }
