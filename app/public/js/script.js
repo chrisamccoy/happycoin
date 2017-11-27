@@ -97,9 +97,20 @@ function initProblemReveal(isMobile){
         $reveal;
 
     if (link == '.zcash-text') {
-      $reveal = $(this).parents('.storeco-vs-blchains').find(link).addClass('show');
+      $reveal = $(this).parents('.storeco-vs-blchains').find(link).toggleClass('show');
     } else {
-      $reveal = $(link).addClass('show');
+      if($(this).data().back) {
+        $reveal = $(link).toggleClass('show');
+      } else {
+        $reveal = $(link).addClass('show');
+      }
+    }
+
+    if($(this).data().inner) {
+      var texts = $(this).data().inner.split(',');
+      $(this).html(function(i, text){
+          return text === texts[0] ? texts[1] : texts[0];
+      });
     }
 
     var marginTop = (isMobile) ? (92 - extraMargin[0]) : (100 - extraMargin[1]),
