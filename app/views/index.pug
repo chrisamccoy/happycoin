@@ -16,11 +16,11 @@ block content
           span.parenthesis.lite-orange (
           span.lite-orange blockchain economics
           span.lite-orange.parenthesis )
-          | , checks and balances of the U.S. Constitution 
+          | , the checks and balances of the U.S. Constitution  
           span.parenthesis.lite-green (
           span.lite-green governance
           span.parenthesis.lite-green )
-          | , and an encrypted Power of Attorney 
+          | , and Power of Attorney 
           span.parenthesis.lite-yellow (
           span.lite-yellow scaling
           span.parenthesis.lite-yellow )
@@ -31,25 +31,8 @@ block content
     div#first-token-sale
     - var top = true  
     include email-widget
-    
-    //- include countdown
-    
-    .hc-feature.over-rel.padding
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title(style="margin-bottom: 1.5em;") First Token Sale buyers
-        #hc-buyers-slider.logo-slider
-          .slide
-            a(href="http://blocktower.com", target="_blank")
-              img(src='/images/blacktower-logo.png')
-          //- .slide
-          //-   img(src='/images/blockfolio-logo.png')
-          .slide
-            a(href="http://palmdrivecap.com/", target="_blank")
-              img(src='/images/palm-drive-logo.jpg')
-          .slide
-            img(src='/images/clinton-polley.png', style="width:40%;")
 
-    #latest-updates.hc-feature.over-rel.padding.inverted.left-align
+    #latest-updates.hc-feature.over-rel.padding.lite.left-align
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Our Latest
         p.hc-feature-lead Storecoin Creator Chris McCoy will be speaking publicly for the first time about Storecoin at the Crypto Finance Conference in Switzerland, January 17-19.
@@ -70,8 +53,19 @@ block content
           a.link-text.see-more(data-link="#hc-blog-feeds", data-margin="0,0", data-scroll="true") See More
             i.ion-ios-arrow-down
     
-    div#hc-blog-feeds.see-more-reveal
-      include blog-feeds
+    div#hc-blog-feeds.see-more-reveal.hc-feature.over-rel.padding.lite
+      .hc-chunk.hc-customize-text-wrapper
+        ul(style="list-style:disc;")
+          li Storecoin hires Rajiv Patel of Fenwick & West to file blockchain patents - 
+            a(href="https://medium.com/@storecoin/storecoin-hires-rajiv-patel-of-fenwick-west-to-file-blockchain-patents-cf75b7172018", target="_blank") Read More
+          li Why Storecoin is Inventing Dynamic Proof of Stake (DyPoS) - 
+            a(href="https://medium.com/@storecoin/why-storecoin-is-inventing-dynamic-proof-of-stake-dypos-61529d02240f", target="_blank") Read More
+          li Storecoin Update — August 2017 - 
+            a(href="https://medium.com/@storecoin/storecoin-update-august-2017-edadc94f1a8f", target="_blank") Read More
+          li Yesterday’s “plastics” are today’s crypto tokens -  
+            a(href="https://techcrunch.com/2017/08/20/yesterdays-plastics-are-todays-crypto-tokens/", target="_blank") Read More
+          li Introducing Storecoin - 
+            a(href="https://medium.com/@team_27494/introducing-storecoin-8e15c21b4335", target="_blank") Read More
     
     #green-paper.hc-feature.over-rel.padding.orange.inverted(style="padding:2.5em;")
       .hc-chunk.hc-customize-text-wrapper
@@ -383,303 +377,9 @@ block content
           span A decentralized Security Guard network incentivized to find spam and attacks
         p.hc-feature-lead.bulleted
           span.icon.ion-record.bullet
-          span Governance modeled after the United States Constitution where checks and balances ensure a) Security Matters Most and b) No Centralization of Power 
+          span Governance inspired by the United States Constitution where checks and balances ensure a) Security Matters Most and b) No Centralization of Power 
     
-    #hc-six-engines.hc-feature.over-rel.padding.inverted
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title.inverted The Six Engines of DyPoS
-        p.hc-feature-lead Dynamic Proof of Stake is made up of six interdependent engines.
-        p.hc-feature-lead Each engine is based on similar dynamic supply and demand principles as Uber Surge Pricing. Prices for all six engines are driven by real-time threat levels in the 
-          a.open-modal(data-modal="#security-system-popup", style="text-decoration:underline;") 
-            b Storecoin Security System.
-        p.hc-feature-lead DyPoS is also inspired by checks and balances of the U.S. Constitution (governance) and Power of Attorney (scaling).
-        div.desktop-image      
-          div.engines
-            div.engine 
-              .front
-                img(src="/images/dynamic-transactions-v2.png")
-                div.title Dynamic (free) Transactions
-              .back
-                h5 Dynamic (free) Transactions
-                p To secure transactions, a small security bond is required with each transaction that is returned to the sender, with interest, once the transaction is determined by dSecurity Guards to not to be spam or an attack.
-                a.engine-learn-more.open-modal(data-modal="#dynamic-free-trans-modal") Learn More
-            div.engine.right
-              .front
-                img(src="/images/dynamic-validation-v2.png")
-                div.title Dynamic Validation
-              .back
-                h5 Dynamic Validation
-                p An unlimited number of Validators can participate in Consensus. No single Validator ever has greater than 5% odds of winning the Block Reward. Every Validator has a chance at winning each new block. Decentralization is maximized.
-                a.engine-learn-more.open-modal(data-modal="#dynamic-validation-modal") Learn More
-          div.engines
-            div.engine
-              .front
-                img(src="/images/dynamic-rewards-v2.png")
-                div.title Dynamic Block Rewards
-              .back
-                h5 Dynamic Block Rewards
-                p Capped, yearly token inflation of 5% is used to pay Block Rewards to Validators. The reward amount is dynamic based upon a number of real-time factors. Storecoin Inc. takes 1% of the inflation to pay for security, engineering, Governance, and blockchain operations.
-                a.engine-learn-more.open-modal(data-modal="#dynamic-reward-modal") Learn More
-            div.engine.right
-              .front
-                img(src="/images/dynamic-security-v2.png")
-                div.title Dynamic Security
-              .back
-                h5 Dynamic Security
-                p The Storecoin Security System determines real-time prices for DyPoS. dSecurity Guards study transactions and Validator activity and report potential spam or attacks to Storecoin, Inc. dGuards earn +50% of the stake or the bond of the found bad actors. The rest is burnt.
-                a.engine-learn-more.open-modal(data-modal="#security-system-popup") Learn More
-          div.engines
-            div.engine
-              .front
-                img(src="/images/dynamic-scaling-v2.png")
-                div.title Dynamic Scaling
-              .back
-                h5 Dynamic Scaling
-                p To scale blockchain transactions by making validation instant -- without expensive and unnecessary network hops -- Storecoin is introducing the concept of an "Agent". It's similar to Power of Attorney but with Merkle hashes.
-                a.engine-learn-more.open-modal(data-modal="#dynamic-scaling-modal") Learn More
-            div.engine
-              .front
-                img(src="/images/dynamic-governance-v2.png")
-                div.title Dynamic Governance
-              .back
-                h5 Dynamic Governance
-                p Storecoin Governance is inspired by the United States Constitution where checks and balances ensure that: a) Security Matters Most and b) No Centralization of Power. For the first 4 years, Storecoin, Inc. will have executive power.
-                a.engine-learn-more.open-modal(data-modal="#dynamic-governance-modal") Learn More
-        div.mobile-image
-          div.engines
-            div.engine(data-featherlight="#dyn-trans")
-              .front
-                img(src="/images/dynamic-transactions-v2.png")
-                div.title Dynamic (free) Transactions
-              .back
-                h5 Dynamic (free) Transactions
-                p To secure transactions, a small security bond is required with each transaction that is returned to the sender, with interest, once the transaction is determined by dSecurity Guards to not to be spam or an attack.
-                a.engine-learn-more.open-modal(data-modal="#dynamic-free-trans-modal") Learn More
-              div#dyn-trans.engine-popup(style="display:none;")
-                h5 Dynamic (free) Transactions
-                p To secure transactions, a small security bond is required with each transaction that is returned to the sender, with interest, once the transaction is determined by dSecurity Guards to not to be spam or an attack.
-                a.engine-learn-more.open-modal(data-modal="#dynamic-free-trans-modal") Learn More
-            div.engine.right(data-featherlight="#dyn-val")
-              .front
-                img(src="/images/dynamic-validation-v2.png")
-                div.title Dynamic Validation
-              .back
-                h5 Dynamic Validation
-                p An unlimited number of Validators can participate in Consensus. No single Validator ever has greater than 5% odds of winning the Block Reward. Every Validator has a chance at winning each new block. Decentralization is maximized.
-                a.engine-learn-more.open-modal(data-modal="#dynamic-validation-modal") Learn More
-              div#dyn-val.engine-popup(style="display:none;")
-                h5 Dynamic Validation
-                p An unlimited number of Validators can participate in Consensus. No single Validator ever has greater than 5% odds of winning the Block Reward. Every Validator has a chance at winning each new block. Decentralization is maximized.
-                a.engine-learn-more.open-modal(data-modal="#dynamic-validation-modal") Learn More
-          div.engines
-            div.engine(data-featherlight="#dyn-rewards")
-              .front
-                img(src="/images/dynamic-rewards-v2.png")
-                div.title Dynamic Block Rewards
-              .back
-                h5 Dynamic Block Rewards
-                p Capped, yearly token inflation of 5% is used to pay Block Rewards to Validators. The reward amount is dynamic based upon a number of real-time factors. Storecoin Inc. takes 1% of the inflation to pay for security, engineering, Governance, and blockchain operations.
-                a.engine-learn-more.open-modal(data-modal="#dynamic-reward-modal") Learn More
-              div#dyn-rewards.engine-popup(style="display:none;")
-                h5 Dynamic Block Rewards
-                p Capped, yearly token inflation of 5% is used to pay Block Rewards to Validators. The reward amount is dynamic based upon a number of real-time factors. Storecoin Inc. takes 1% of the inflation to pay for security, engineering, Governance, and blockchain operations.
-                a.engine-learn-more.open-modal(data-modal="#dynamic-reward-modal") Learn More
-            div.engine.right(data-featherlight="#dyn-sec")
-              .front
-                img(src="/images/dynamic-security-v2.png")
-                div.title Dynamic Security
-              .back
-                h5 Dynamic Security
-                p The Storecoin Security System determines real-time prices for DyPoS. dSecurity Guards study transactions and Validator activity and report potential spam or attacks to Storecoin, Inc. dGuards earn +50% of the stake or the bond of the found bad actors. The rest is burnt.
-                a.engine-learn-more Learn More
-              div#dyn-sec.engine-popup(style="display:none;")
-                h5 Dynamic Security
-                p The Storecoin Security System determines real-time prices for DyPoS. dSecurity Guards study transactions and Validator activity and report potential spam or attacks to Storecoin, Inc. dGuards earn +50% of the stake or the bond of the found bad actors. The rest is burnt.
-                a.engine-learn-more.open-modal(data-modal="#security-system-popup") Learn More
-          div.engines
-            div.engine(data-featherlight="#dyn-scale")
-              .front
-                img(src="/images/dynamic-scaling-v2.png")
-                div.title Dynamic Scaling
-              .back
-                h5 Dynamic Scaling
-                p To scale blockchain transactions by making validation instant -- without expensive and unnecessary network hops -- Storecoin is introducing the concept of an "Agent". It's similar to Power of Attorney but with Merkle hashes.
-                a.engine-learn-more.open-modal(data-modal="#dynamic-scaling-modal") Learn More
-              div#dyn-scale.engine-popup(style="display:none;")
-                h5 Dynamic Scaling
-                p To scale blockchain transactions by making validation instant -- without expensive and unnecessary network hops -- Storecoin is introducing the concept of an "Agent". It's similar to Power of Attorney but with Merkle hashes.
-                a.engine-learn-more.open-modal(data-modal="#dynamic-scaling-modal") Learn More
-            div.engine(data-featherlight="#dyn-gov")
-              .front
-                img(src="/images/dynamic-governance-v2.png")
-                div.title Dynamic Governance
-              .back
-                h5 Dynamic Governance
-                p Storecoin Governance is inspired by the United States Constitution where checks and balances ensure that: a) Security Matters Most and b) No Centralization of Power. For the first 4 years, Storecoin, Inc. will have executive power.
-                a.engine-learn-more.open-modal(data-modal="#dynamic-governance-modal") Learn More
-              div#dyn-gov.engine-popup(style="display:none;")
-                h5 Dynamic Governance
-                p Storecoin Governance is inspired by the United States Constitution where checks and balances ensure that: a) Security Matters Most and b) No Centralization of Power. For the first 4 years, Storecoin, Inc. will have executive power.
-                a.engine-learn-more.open-modal(data-modal="#dynamic-governance-modal") Learn More
-
-    div.engine-modals
-      div#security-system-popup.engine-modal.ui.modal
-        i.ion-android-close
-        .engine-slider
-          .slide
-            #security-system-lite.hc-feature.over-rel.padding
-              .hc-chunk.hc-customize-text-wrapper
-                h3.hc-feature-title.title-icon
-                  img.icon(src="/images/red-caution.png", align="top") 
-                  | The Storecoin Security System 
-                p.hc-feature-lead The Storecoin Security System powers real-time market prices for the Six Engines of DyPoS. The System threat level algorithmically updates as transaction volume rise and fall. As threat level rise, the cost of spam and attacks rise too.
-                div.hazard-boxes
-                  div.box.red
-                    h3 Severe
-                    p Severe risk of an attack or an spam
-                  div.box.skin
-                    h3 High
-                    p High risk of an attack or an spam
-                  div.box.yellow
-                    h3 Elevated
-                    p Significant risk of an attack or an spam
-                  div.box.blue
-                    h3 Guarded
-                    p General risk of an attack or an spam
-                  div.box.green
-                    h3 Low
-                    p Low risk of an attack or an spam
-          .slide
-            .hc-feature.over-rel.padding
-              .hc-chunk.hc-customize-text-wrapper
-                h3.hc-feature-title.title-icon
-                  img.icon(src="/images/dynamic-security-mini.png", align="top")
-                  span How Storecoin Addresses the Double Spend Problem 
-                  span.orange(style="margin-left:5px;") (with dSecurity Guards) 
-                p.hc-feature-lead dSecurity Guards are the decentralized security network on Storecoin that secures the blockchain by finding bad actors across the validator pool, the Wallet SDK network, and in transactions. dSecurity Guards run full nodes to study transactions and validator behavior. They're rewarded with +50% of the burned stake from bad validators or +50% of the security bond from bad senders.
-                .hc-image
-                  img(src="/images/how-dynamic-sec-works.png", style="width:100%;")
-          .slide
-            .hc-feature.over-rel.padding
-              .hc-chunk.hc-customize-text-wrapper
-                h3.hc-feature-title.title-icon
-                  img.icon(src="/images/dynamic-security-mini.png", align="top")
-                  span
-                    span.orange(style="margin-right:5px;") Security: 
-                    span How Storecoin Addresses the Double Spend Problem
-                p.hc-feature-lead Storecoin’s Dynamic Proof of Stake protocol solves the double spend problem by implementing harsh penalties for getting caught, thus making it unprofitable for the bad actor to engage in such activity.
-                .hc-image
-                  img(src="/images/double-spend-problem.png", style="width:100%;")
-        
-      div#dynamic-free-trans-modal.engine-modal.ui.modal 
-        i.ion-android-close
-        .hc-feature.over-rel.padding
-          .hc-chunk.hc-customize-text-wrapper
-            h3.hc-feature-title.title-icon
-              img.icon(src="/images/dynamic-transactions-v2.png", align="top")
-              span How Dynamic 
-              span.orange (Free) 
-              span Transactions are Secured  
-            p.hc-feature-lead To prevent Storecoin from a DDoS attack or from the blockchain being flooded with spammy transactions, Storecoin adds a refundable – with interest! – security bond to each transaction. 
-            .hc-image
-              img(src="/images/how-dynamic-transaction-works.png", style="width:100%;") 
-              
-      div#dynamic-validation-modal.engine-modal.ui.modal 
-        i.ion-android-close
-        .hc-feature.over-rel.padding
-          .hc-chunk.hc-customize-text-wrapper
-            h3.hc-feature-title.title-icon
-              img.icon(src="/images/dynamic-validation-v2.png", align="top")
-              span.orange #3 
-              span The Block Proposer is Chosen 
-            p.hc-feature-lead A new block proposer is chosen through Dynamic Validation – a patent pending algorithm that optimizes for consensus decentralization. It combines relative token stake, dynamic weighting, and a lottery to give every validator a chance at being selected block proposer.
-            .hc-image
-              img(src="/images/dynamic-validation-flow.png", style="width:100%;") 
-      
-      div#dynamic-reward-modal.engine-modal.ui.modal 
-        i.ion-android-close
-        .hc-feature.over-rel.padding
-          .hc-chunk.hc-customize-text-wrapper
-            h3.hc-feature-title.title-icon
-              img.icon(src="/images/dynamic-rewards-v2.png", align="top")
-              span How Dynamic Block Rewards Work 
-              span.orange (How Free Txns are Financed) 
-            p.hc-feature-lead Transactions are free for users because they are paid for with capped, yearly token inflation of 5%. 4% is paid to block proposers. 1% endows Storecoin to secure, build, and operate the blockchain.
-            .hc-image
-              img(src="/images/dynamic-reward-flow.png", style="width:100%;") 
-              
-      div#dynamic-scaling-modal.engine-modal.ui.modal 
-        i.ion-android-close
-        .hc-feature.over-rel.padding
-          .hc-chunk.hc-customize-text-wrapper
-            h3.hc-feature-title.title-icon
-              img.icon(src="/images/dynamic-scaling-v2.png", align="top")
-              span.orange #4 
-              span How Instant Blockchian Scaling Happens 
-            p.hc-feature-lead To scale blockchain transactions by making validation instant – without expensive and unnecessary network hops – Storecoin is introducing the concept of an "Agent". It's similar to Power of Attorney giving one entity the authority to executive private transactions on another entity's behalf. This is called Dynamic Scaling.
-            .hc-image
-              img(src="/images/dynamic-scaling-flow.png", style="width:100%;") 
-              
-      div#dynamic-governance-modal.engine-modal.ui.modal 
-        i.ion-android-close
-        .engine-slider
-          .slide
-            .hc-feature.over-rel.padding
-              .hc-chunk.hc-customize-text-wrapper
-                h3.hc-feature-title.title-icon
-                  img.icon(src="/images/dynamic-governance-v2.png", align="top") 
-                  | The Three Branches of Storecoin Governance 
-                p.hc-feature-lead Storecoin Governance is inspired by the United States Constitution where checks and balances ensure that: a) Security Matters Most and b) No Centralization of Power. For the first 4 years, Storecoin, Inc will have executive power over the blockchain. Then Governance shepards all proposed changes and leadership changes.
-                .hc-image
-                  img(src="/images/dynamic-gov-flow-1.png", style="width:100%;")
-          .slide
-            .hc-feature.over-rel.padding
-              .hc-chunk.hc-customize-text-wrapper
-                h3.hc-feature-title.title-icon
-                  img.icon(src="/images/dynamic-governance-v2.png", align="top") 
-                  | How Governance is Hired 
-                p.hc-feature-lead For the first 4 years, Storecoin, Inc. will have executive power over the blockchain. Then, our security-first Governance will guide all Changes to leadership, to features, and to Governance itself.
-                .hc-image
-                  img(src="/images/dynamic-gov-flow-2.png", style="width:100%;")
-          .slide
-            .hc-feature.over-rel.padding
-              .hc-chunk.hc-customize-text-wrapper
-                h3.hc-feature-title.title-icon
-                  img.icon(src="/images/dynamic-governance-v2.png", align="top") 
-                  | How Checks and Balances Work 
-                p.hc-feature-lead 
-                  | How protocol changes, security fixes, and Governance amendments are made.
-                  br 
-                  span.orange (The Constitution)
-                .hc-image
-                  img(src="/images/dynamic-gov-flow-3.png", style="width:100%;")
-          .slide
-            .hc-feature.over-rel.padding
-              .hc-chunk.hc-customize-text-wrapper
-                h3.hc-feature-title.title-icon
-                  img.icon(src="/images/dynamic-governance-v2.png", align="top") 
-                  | How Every Storecoin Token Owner Can Create Change 
-                p.hc-feature-lead 
-                  span.orange (Democracy)
-                .hc-image
-                  img(src="/images/dynamic-gov-flow-4.png", style="width:100%;")
-          .slide
-            .hc-feature.over-rel.padding.inverted.orange.left-align
-              .hc-chunk.hc-customize-text-wrapper
-                h3.hc-feature-title.title-icon
-                  img.icon(src="/images/dynamic-governance-mini-inverted.png", align="top") 
-                  | Why Governance Matters 
-                p.hc-feature-lead Governance takes a system that has been vetted for hundreds of years – the U.S. Constitution – but removes the politics and replaces it with technology.
-                p.hc-feature-lead
-                  | With Governance, Storecoin will:
-                ul(style='list-style:disc; font-size: 2em; margin-left: 1em;')
-                  li Operate with yearly income that funds blockchain security, engineering, governance, and operations
-                  li Make changes only if they can be secured
-                  li Mitigate spam, attacks, and fraud throughout the entire blockchain ecosystem
-                  li Prevent malicious activity such as a hard fork
-                  li Maximize decentralization
-                  li Give every token holder a voice
-                  li Allow application developers to deliver crypto-powered free transactions for users, forever
+    include six-engines
     
     #dyn-algo.hc-feature.over-rel.padding.lite
       .hc-chunk.hc-customize-text-wrapper
@@ -785,7 +485,7 @@ block content
         p.hc-feature-lead The market for public blockchains incentivizing API calls inside of web and mobile applications. 
         .hc-image
           .desktop-image 
-            img(src='/images/storecoin-fits-in.png')
+            img(src='/images/storecoin-fits-in.png', style="max-width:700px; width:100%;")
           .mobile-image 
             img(src='/images/storecoin-fits-in-mobile.png')
             
@@ -902,7 +602,7 @@ block content
                 img(src="/images/blchain-chain.png")
               div.desc Blockchain acts as a public ledger showing all transactions, though the identities of participants are obscured. Each block has a cryptographic link to the previous one. In order for a Validator to re-write the blockchain and commit a double-spend, they violate the network safety. If caught, the validator will lose all of their stake, therefore making it extremely expensive to try and act maliciously about what the actual transactions in the blockchain are.
         div.link-container.hanging
-          a.link-text.see-more.green(data-link="#storecoin-12-steps", data-margin="33,44", data-scroll="true") Storecoin in 12 Steps
+          a.link-text.see-more(data-link="#storecoin-12-steps", data-margin="33,44", data-scroll="true") See Storecoin in 12 Steps
             i.ion-ios-arrow-down
               
     #storecoin-12-steps.see-more-reveal.hc-feature.over-rel.padding(style="overflow:visible;")
@@ -1362,17 +1062,34 @@ block content
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Become a Validator
         p.hc-feature-lead(style=" margin:0px !important; color:#5d794c; text-decoration:underline;") 
-          a(href="/applytoforge", style="font-size:30px;") Apply here
+          a(href="/applytoforge", target="_blank",style="font-size:30px;") Apply here
           
     .hc-feature.over-rel.padding.inverted.orange(style="padding-left: 0px; padding-right:0px;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Become a Security Guard
         p.hc-feature-lead(style=" margin:0px !important; color:#5d794c; text-decoration:underline;") 
-          a(href="/applytoforge", style="font-size:30px;") Apply here
+          a(href="/securityguardapp", target="_blank",style="font-size:30px;") Apply here
     
-    //- include about-second-token-sale
+    .hc-feature.over-rel.padding
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title(style="margin-bottom: 1.5em;") First Token Sale buyers
+        #hc-buyers-slider.logo-slider
+          .slide
+            a(href="http://blocktower.com", target="_blank")
+              img(src='/images/blacktower-logo.png')
+          //- .slide
+          //-   img(src='/images/blockfolio-logo.png')
+          .slide
+            a(href="http://palmdrivecap.com/", target="_blank")
+              img(src='/images/palm-drive-logo.jpg')
+          .slide
+            img(src='/images/clinton-polley.png', style="width:40%;")
     
-    //- include first-token-proceeds
+    .hc-feature.over-rel.padding.inverted(style="padding-left: 0px; padding-right:0px;")
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title(style="margin:0px;") What It'd Cost
+        //- p.hc-feature-lead(style=" margin:0px !important; color:#5d794c; text-decoration:underline;") 
+        //-   a(href="/securityguardapp", target="_blank",style="font-size:30px;") Apply here
 
     - top = false
     include email-widget

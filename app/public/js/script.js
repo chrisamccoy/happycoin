@@ -4,6 +4,16 @@ $(document).ready(function(){
     .test(navigator.userAgent) ) {
    isMobile = true;
   }
+  $(document).mouseup(function(e)
+  {
+      var container = $(".hc-email .usd-val");
+
+      // if the target of the click isn't the container nor a descendant of the container
+      if (!container.is(e.target) && container.has(e.target).length === 0)
+      {
+          container.hide();
+      }
+  });
   // alert($(window).width());
   $('img[usemap]').rwdImageMaps();
   initDropdown();
@@ -197,41 +207,41 @@ function cardFlip() {
         '#dynamic-governance-modal' : false
       };
 
-  $engineModal.modal({
-    observeChanges : true
-  });
-
   $engineModal.find('i.ion-android-close').click(function(){
     $(this).parents('.engine-modal').modal('hide');
   });
 
   $openModal.click(function(){
     var modalName = $(this).data().modal;
-    $(modalName).modal('refresh');
-    $(modalName).modal('show');
-    $('.featherlight').hide();
+    $(modalName).modal({
+      observeChanges : true,
+      onVisible : function(){
+        if(modalName == '#security-system-popup') {
+          if(!isSlider[modalName]) {
+            $(modalName+' .engine-slider').slick({
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              arrows : true,
+              adaptiveHeight : true
+            });
+            isSlider[modalName] = true;
+          }
+        } else if (modalName == '#dynamic-governance-modal') {
+          if(!isSlider[modalName]) {
+            $(modalName+' .engine-slider').slick({
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              arrows : true,
+              adaptiveHeight : true
+            });
+            isSlider[modalName] = true;
+          }
+        }
+      }
+    }).modal('show');
 
-    if(modalName == '#security-system-popup') {
-      if(!isSlider[modalName]) {
-        $(modalName+' .engine-slider').slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows : true,
-          adaptiveHeight : true
-        });
-        isSlider[modalName] = true;
-      }
-    } else if (modalName == '#dynamic-governance-modal') {
-      if(!isSlider[modalName]) {
-        $(modalName+' .engine-slider').slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows : true,
-          adaptiveHeight : true
-        });
-        isSlider[modalName] = true;
-      }
-    }
+
+    console.log(isSlider);
   });
 
   if($(window).width() > 700) {
@@ -245,6 +255,27 @@ function cardFlip() {
         $(this).removeClass('flip');
       }
     );
+  } else {
+    $('#engine-cards-modal').modal({ observeChanges : true });
+    var isCardSlider = false;
+    $engine.click(function(){
+      var goto = $(this).data().goto;
+      $('#engine-cards-modal').modal('show');
+      $('#engine-cards-modal').modal('refresh');
+      if(!isCardSlider) {
+        $('#engine-cards-modal .card-slider').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows : true,
+          adaptiveHeight : true
+        });
+        isCardSlider = true;
+      }
+      $('#engine-cards-modal .card-slider').slick('slickGoTo', goto);
+      $('#engine-cards-modal i.ion-android-close').click(function(){
+        $('#engine-cards-modal').modal('hide');
+      });
+    });
   }
 }
 
@@ -832,6 +863,8 @@ function emailSubscribe() {
 
   $emailSteps.find('input[type="text"], input[type="number"]').keyup(function(){
     var textVal = $(this).val();
+    var thisHeight = $(this).height() + 14;
+    var thisOffset = $(this).offset();
     var $thisEmailStep = $(this).parents('.email-steps');
     var isStep12_1 = $thisEmailStep.hasClass('step-12-1');
     var $thisSect = $(this).parents('.hc-email');
@@ -846,7 +879,7 @@ function emailSubscribe() {
           $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
           $thisEmailStep.find('.alert').hide();
         }
-        // if(textVal._value >= 5000 && textVal._value <= 300000 ) {
+        if(textVal._value >= 5000 && textVal._value <= 300000 ) {
         //   $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
         //   $thisEmailStep.find('.alert').hide();
         // } else if (textVal._value >= 300000) {
@@ -855,12 +888,17 @@ function emailSubscribe() {
         // } else {
         //   $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
         //   $thisEmailStep.find('.alert').hide();
-        // }
+        }
         textVal = textVal.format('($0,0)');
         $thisEmailStep.find('.computed').text(' ' + textVal);
         $thisEmailStep.find('input[hidden]').val(textVal);
         $thisEmailStep.find('input[hidden]').trigger('change');
         $thisSect.find('.email-steps.step-15 .usd-value').text(' ' + textVal + ' ');
+        $thisEmailStep.find('.usd-val').css({
+          top : (thisOffset.top - $thisSect.offset().top + thisHeight)+'px',
+          left : (thisOffset.left + 2)+'px'
+        });
+        $thisEmailStep.find('.usd-val').show();
       }
     } else {
       $thisEmailStep.find('.button-primary.button-next').attr('disabled','');

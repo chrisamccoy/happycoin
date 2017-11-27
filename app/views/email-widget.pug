@@ -159,7 +159,7 @@
       p(style="font-size: 1.2em; margin-bottom: 0.5em;") 
         b About Dynamic Proof of Stake
       p Dynamic Proof of Stake (DyPoS) is the decentralized consensus algorithm invented by Storecoin Inc. to keep transactions free for users. It is patent pending.
-      p DyPoS is Uber Surge Pricing (blockchain economics) meets the U.S. Constitution (Governance).
+      p DyPoS is inspired by the supply and demand principles of Uber Surge Pricing (blockchain economics), checks and balances of the U.S. Constitution (governance), and an encrypted Power of Attorney (scaling).
       p With DyPoS, Storecoin will bring crypto-powered API calls to app developers around the world.
       div
         div.engines
@@ -298,7 +298,7 @@
             
     .email-steps.step-9.storeco-vs-blchains
       p(style="font-size: 1.2em; margin-bottom: 0.5em;") 
-        b Storecoin vs. Other Blockchain Token Sales 
+        b Storecoin vs. Blockchains 
       p What it would cost to buy 1 one-hundredth of a percent of all tokens minted in the first 10 years for major public blockchains
       .hc-image
         img(src="/images/comparison-chart.png", style="width:80%;")
@@ -320,7 +320,7 @@
       p Do you want to participate in the Storecoin Second Token Sale?
       .field.radio-field
         .hc-radio-btn.checked
-        input(type='radio', name="participate", value='Yes' checked)
+        input(type='radio', name="participate", value='Yes')
         label(for='participate-yes') Yes
       .field.radio-field
         .hc-radio-btn
@@ -331,7 +331,7 @@
         button.button-back.button-primary(data-step='step-9')
           i.ion-chevron-left
           | Back
-        button.button-next.button-primary(data-step='step-10-0')
+        button.button-next.button-primary(disabled='', data-step='step-10-0')
           | Next
           i.ion-chevron-right
         button.button-end.button-primary(style='display:none;')
@@ -358,7 +358,7 @@
         button.button-back.button-primary(data-step='step-10')
           i.ion-chevron-left
           | Back
-        button.button-next.button-primary(disabled='', data-step='step-10-1')
+        button.button-next.button-primary(data-step='step-10-1')
           | Next
           i.ion-chevron-right
             
@@ -508,13 +508,13 @@
         input.u-full-width(type='text', name='num-of-storecoins', data-type="number", style="max-width: 120px;")
         label(style="margin:4px;") storecoins
         input.u-full-width(type='text', name='storecoins-value', hidden, value="0")
+        p.usd-val 
+          b USD Value:
+            span.computed  $0
       .field.radio-field(style="margin-bottom:1em;")
         .hc-radio-btn
         input(type='checkbox')
         label Buy the minimum
-      p 
-        b USD Value:
-          span.computed  $0
       //- p.alert You cannot exceed more than $300,000 amount.
       hr
       .button-group
@@ -701,7 +701,7 @@
         textarea(data-maxlength="100", name="how-learn", onkeyup="maxcount(this)" placeholder="Type in the name of who referred you, copy and paste the URL of where you learned of Storecoin, or just share how you found us." style="min-height:70px;")
         p.text-area-count(style="color:green;") (100)
       .button-group
-        button.button-back.button-primary(data-step='step-15-1')
+        button.button-back.button-primary(data-step='step-15')
           i.ion-chevron-left
           | Back
         button.button-next.button-primary(data-step='step-17')
@@ -879,10 +879,10 @@
             //- a.button.button-primary.facebook(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u=storeco.in")
             //-   i.ion-social-facebook
             //-   | Facebook
-            a.button.button-primary.email(target="_blank", href="https://mail.google.com/mail/?view=cm&fs=1&su=I%20RECOMMEND%3A%20The%20Storecoin%20Second%20Token%20Sale%20(invite-only)&body=Storecoin%20will%20be%20a%20public%20blockchain%20powering%20free%20transactions%20for%20users%20and%20app%20developers%20using%20its%20Dynamic%20Proof%20of%20Stake%20consensus%20(DyPoS).%0A%0ADyPoS%20is%20Uber%20Surge%20Pricing%20(blockchain%20economics)%20meets%20the%20U.S.%20Constitution%20(Governance).%0A%0AWith%20DyPoS%2C%20Storecoin%20will%20bring%20crypto-powered%20API%20calls%20to%20app%20developers%20around%20the%20world.%0A%0AYou%20can%20get%20an%20invite%20by%20filling%20out%20their%20app%20at%20http%3A%2F%2Fstoreco.in.")
+            a.button.button-primary.email(target="_blank", href="https://mail.google.com/mail/?view=cm&fs=1&su=I%20RECOMMEND%3A%20The%20Storecoin%20Second%20Token%20Sale%20(invite-only)&body=Storecoin%20will%20be%20a%20public%20blockchain%20powering%20free%20transactions%20for%20users%20and%20app%20developers%20using%20its%20Dynamic%20Proof%20of%20Stake%20consensus%20(DyPoS).%0A%0ADyPoS+is+inspired+by+the+supply+and+demand+principles+of+Uber+Surge+Pricing+%28blockchain+economics%29%2C+checks+and+balances+of+the+U.S.+Constitution+%28governance%29%2C+and+an+encrypted+Power+of+Attorney+%28scaling%29.%0A%0AWith%20DyPoS%2C%20Storecoin%20will%20bring%20crypto-powered%20API%20calls%20to%20app%20developers%20around%20the%20world.%0A%0AYou%20can%20get%20an%20invite%20by%20filling%20out%20their%20app%20at%20http%3A%2F%2Fstoreco.in.")
               i.ion-email
               | Email
-            a.button.button-primary.email-mobile(target="_blank", href="mailto:?subject=I%20RECOMMEND%3A%20The%20Storecoin%20Second%20Token%20Sale%20(invite-only)&body=Storecoin%20will%20be%20a%20public%20blockchain%20powering%20free%20transactions%20for%20users%20and%20app%20developers%20using%20its%20Dynamic%20Proof%20of%20Stake%20consensus%20(DyPoS).%0A%0ADyPoS%20is%20Uber%20Surge%20Pricing%20(blockchain%20economics)%20meets%20the%20U.S.%20Constitution%20(Governance).%0A%0AWith%20DyPoS%2C%20Storecoin%20will%20bring%20crypto-powered%20API%20calls%20to%20app%20developers%20around%20the%20world.%0A%0AYou%20can%20get%20an%20invite%20by%20filling%20out%20their%20app%20at%20http%3A%2F%2Fstoreco.in.")
+            a.button.button-primary.email-mobile(target="_blank", href="mailto:?subject=I%20RECOMMEND%3A%20The%20Storecoin%20Second%20Token%20Sale%20(invite-only)&body=Storecoin%20will%20be%20a%20public%20blockchain%20powering%20free%20transactions%20for%20users%20and%20app%20developers%20using%20its%20Dynamic%20Proof%20of%20Stake%20consensus%20(DyPoS).%0A%0ADyPoS+is+inspired+by+the+supply+and+demand+principles+of+Uber+Surge+Pricing+%28blockchain+economics%29%2C+checks+and+balances+of+the+U.S.+Constitution+%28governance%29%2C+and+an+encrypted+Power+of+Attorney+%28scaling%29.%0A%0AWith%20DyPoS%2C%20Storecoin%20will%20bring%20crypto-powered%20API%20calls%20to%20app%20developers%20around%20the%20world.%0A%0AYou%20can%20get%20an%20invite%20by%20filling%20out%20their%20app%20at%20http%3A%2F%2Fstoreco.in.")
               i.ion-email
               | Email
               
@@ -915,7 +915,7 @@
     h3.hc-feature-title Storecoin vs. Other Public Blockchains
     p.hc-feature-lead What it would cost to buy 1 one-hundredth of a percent of all tokens minted in the first 10 years for major public blockchains.
     .hc-image
-      img(src="/images/comparison-chart.png")
+      img(src="/images/comparison-chart.png", style="width:100%; max-width: 700px;")
     .link-container
       a.link-text.see-more(data-link='.zcash-text', data-margin="0,0", data-scroll="false")
         | See More

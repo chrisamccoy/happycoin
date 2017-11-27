@@ -48,6 +48,11 @@ router.get('/applytoforge', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/securityguardapp', function(req, res, next) {
+  res.render('security-guard-app', { title: 'Storecoin' });
+});
+
+/* GET home page. */
 router.get('/firsttokensalefaq', function(req, res, next) {
   res.render('token-faq', { title: 'Storecoin' });
 });

@@ -524,7 +524,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .hc-feature .hc-feature-lead {
-    font-size: 1.2em !important;
+    font-size: 1.2em;
   }
 
   .email-widget h4 {
@@ -1031,6 +1031,16 @@ input[type=number]::-webkit-outer-spin-button {
 .slick-next:before {
   content : "\f3d1";
   font-family: "Ionicons";
+}
+
+@media only screen and (max-width : 1024px) {
+  #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
+    font-size: 2.5em !important;
+  }
+
+  #hc-intro .hc-feature-lead {
+    font-size: 1.6em !important;
+  }
 }
 
 @media only screen
@@ -2764,11 +2774,23 @@ and (max-width : 700px) {
   font-size: 1.5em;
 }
 
-.hc-email .step-13 .computed {
+.hc-email .step-12-1 .usd-val {
+  position: absolute;
+  top: 286px;
+  background: white;
+  padding: 0.5em;
+  box-shadow: 6px 8px 20px #91a983;
+  font-size: 0.8em;
+  border-radius: 3px;
+  display: none;
+  z-index: 2;
+}
+
+.hc-email .step-12-1 .computed {
   color : #E97847;
 }
 
-.hc-email .step-13 .alert {
+.hc-email .step-12-1 .alert {
   color : red;
   display: none;
 }
@@ -4392,23 +4414,30 @@ and (max-width : 700px) {
 
 .engine-popup {
   background-color: white;
-  padding: 0.5em;
-  margin-top: 1em;
+  padding: 1.5em 3.5em;
 }
 
 .engine-popup h5 {
   margin: 0px;
   margin-bottom: 0.5em;
+  margin-top: 0px;
   text-align: left;
   width: 100%;
+  font-size: 2em;
 }
 
 .engine-popup a {
   width: 100%;
   text-align: left;
   text-decoration: underline;
-  margin-top: 0.5em;
-  font-size: 1.2em;
+  font-size: 1.5em;
+}
+
+.engine-popup p {
+  width: 100%;
+  text-align: left;
+  font-size: 1.5em;
+  margin-bottom: 1em;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -5073,13 +5102,15 @@ and (max-width : 700px) {
 }
 
 @media only screen and (max-width: 700px) {
+  #latest-updates .hc-feature-lead,
   #latest-updates ul {
-    font-size: 1em;
+    font-size: 1em !important;
   }
 }
 
 
 /*----------------------------------*/
+#engine-cards-modal,
 .engine-modal {
   /*padding: 0px 4em !important;*/
   position: relative;
@@ -5097,6 +5128,15 @@ and (max-width : 700px) {
   left: -35px;
 }
 
+#engine-cards-modal .card-slider .slick-prev {
+  left: 5px;
+}
+
+#engine-cards-modal .card-slider .slick-next {
+  right : 5px;
+}
+
+#engine-cards-modal i.ion-android-close,
 .engine-modal i.ion-android-close {
   position: absolute;
   /*top: -35px;
@@ -5107,6 +5147,11 @@ and (max-width : 700px) {
   cursor: pointer;
   color: black;
   z-index: 1;
+}
+
+#engine-cards-modal i.ion-android-close {
+  top: 5px;
+  right: 5px;
 }
 
 .engine-modal .hc-feature {
