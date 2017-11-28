@@ -4,16 +4,6 @@ $(document).ready(function(){
     .test(navigator.userAgent) ) {
    isMobile = true;
   }
-  $(document).mouseup(function(e)
-  {
-      var container = $(".hc-email .usd-val");
-
-      // if the target of the click isn't the container nor a descendant of the container
-      if (!container.is(e.target) && container.has(e.target).length === 0)
-      {
-          container.hide();
-      }
-  });
   // alert($(window).width());
   $('img[usemap]').rwdImageMaps();
   initDropdown();
@@ -212,9 +202,13 @@ function cardFlip() {
   var $sixEngines = $('#hc-six-engines'),
       $engine = $sixEngines.find('.engines .engine'),
       $engineModal = $('.engine-modals .engine-modal'),
-      $openModal = $sixEngines.find('.open-modal'),
+      $openModal = $('.open-modal'),
       isSlider = {
         '#security-system-popup' : false,
+        '#dynamic-free-trans-modal' : false,
+        '#dynamic-validation-modal' : false,
+        '#dynamic-reward-modal' : false,
+        '#dynamic-scaling-modal' : false,
         '#dynamic-governance-modal' : false
       };
 
@@ -227,32 +221,22 @@ function cardFlip() {
     $(modalName).modal({
       observeChanges : true,
       onVisible : function(){
-        if(modalName == '#security-system-popup') {
+        if(modalName in isSlider) {
           if(!isSlider[modalName]) {
             $(modalName+' .engine-slider').slick({
               slidesToShow: 1,
               slidesToScroll: 1,
-              arrows : true,
-              adaptiveHeight : true
+              arrows : true
+              // adaptiveHeight : true
             });
-            isSlider[modalName] = true;
-          }
-        } else if (modalName == '#dynamic-governance-modal') {
-          if(!isSlider[modalName]) {
-            $(modalName+' .engine-slider').slick({
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              arrows : true,
-              adaptiveHeight : true
-            });
+            // $(modalName+' .engine-slider').on('afterChange', function(){
+            //   $(window).trigger('resize');
+            // });
             isSlider[modalName] = true;
           }
         }
       }
     }).modal('show');
-
-
-    console.log(isSlider);
   });
 
   if($(window).width() > 700) {
@@ -857,69 +841,61 @@ function emailSubscribe() {
     }
 
     if(isStep12_1) {
-      var input = $thisStep.find('input[name="num-of-storecoins"]');
+      var inputStc = $thisStep.find('input[name="num-of-storecoins"]'),
+          inputDol = $thisStep.find('input[name="storecoins-value"]');
       if(isChecked) {
         // console.log('is checked');
-        input.val(150151);
-        input.trigger('keyup');
-        input.trigger('change');
+        inputStc.val(150151).trigger('keyup').trigger('change');
+        inputDol.val(5000).trigger('keyup').trigger('change');
       } else {
         // console.log('is not checked');
-        input.val('');
-        input.trigger('keyup');
-        input.trigger('change');
+        inputStc.val('').trigger('keyup').trigger('change');
+        inputDol.val(0).trigger('keyup').trigger('change');
       }
     }
   });
 
   $emailSteps.find('input[type="text"], input[type="number"]').keyup(function(){
     var textVal = $(this).val();
-    var thisHeight = $(this).height() + 14;
-    var thisOffset = $(this).offset();
     var $thisEmailStep = $(this).parents('.email-steps');
     var isStep12_1 = $thisEmailStep.hasClass('step-12-1');
     var $thisSect = $(this).parents('.hc-email');
     // console.log(textVal);
     if(textVal.length > 0 ) {
       if (isStep12_1) {
-        textVal = numeral(textVal).multiply(0.0333);
-        if(textVal._value >= 5000) {
-          $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
-          $thisEmailStep.find('.alert').hide();
-        } else {
-          $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
-          $thisEmailStep.find('.alert').hide();
+        if($(this).attr('name') == 'num-of-storecoins') {
+          textVal = numeral(textVal).multiply(0.0333);
+          if(textVal._value >= 5000) {
+            $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
+            $thisEmailStep.find('.alert').hide();
+          } else {
+            $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
+            $thisEmailStep.find('.alert').hide();
+          }
+          textVal = textVal.format('(0,0)');
+          // $thisEmailStep.find('.computed').text(' ' + textVal);
+          $thisEmailStep.find('input[name="storecoins-value"]').val(textVal);
+          $thisEmailStep.find('input[name="storecoins-value"]').trigger('change');
+          // $thisSect.find('.email-steps.step-15 .usd-value').text(' ' + textVal + ' ');
+        } else if ($(this).attr('name') == 'storecoins-value') {
+          textVal = numeral(textVal).divide(0.0333);
+          var dollarVal = numeral($(this).val())._value;
+          if(dollarVal >= 5000) {
+            $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
+            $thisEmailStep.find('.alert').hide();
+          } else {
+            $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
+            $thisEmailStep.find('.alert').hide();
+          }
+          textVal = textVal.format('(0,0)');
+          // $thisEmailStep.find('.computed').text(' ' + textVal);
+          $thisEmailStep.find('input[name="num-of-storecoins"]').val(textVal);
+          $thisEmailStep.find('input[name="num-of-storecoins"]').trigger('change');
+          // $thisSect.find('.email-steps.step-15 .usd-value').text(' ' + textVal + ' ');
         }
-        if(textVal._value >= 5000 && textVal._value <= 300000 ) {
-        //   $thisEmailStep.find('.button-primary.button-next').removeAttr('disabled');
-        //   $thisEmailStep.find('.alert').hide();
-        // } else if (textVal._value >= 300000) {
-        //   $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
-        //   $thisEmailStep.find('.alert').show();
-        // } else {
-        //   $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
-        //   $thisEmailStep.find('.alert').hide();
-        }
-        textVal = textVal.format('($0,0)');
-        $thisEmailStep.find('.computed').text(' ' + textVal);
-        $thisEmailStep.find('input[hidden]').val(textVal);
-        $thisEmailStep.find('input[hidden]').trigger('change');
-        $thisSect.find('.email-steps.step-15 .usd-value').text(' ' + textVal + ' ');
-        $thisEmailStep.find('.usd-val').css({
-          top : (thisOffset.top - $thisSect.offset().top + thisHeight)+'px',
-          left : (thisOffset.left + 2)+'px'
-        });
-        $thisEmailStep.find('.usd-val').show();
       }
     } else {
       $thisEmailStep.find('.button-primary.button-next').attr('disabled','');
-      if (isStep12_1) {
-        // console.log(parseInt(textVal) * 0.005);
-        $thisEmailStep.find('.computed').text(' $0');
-        $thisEmailStep.find('input[hidden]').val('$0');
-        $thisEmailStep.find('input[hidden]').trigger('change');
-        $thisSect.find('.email-steps.step-15 .usd-value').text(' $0 ');
-      }
     }
   });
 

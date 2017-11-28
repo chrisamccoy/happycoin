@@ -48,7 +48,7 @@ router.get('/applytoforge', function(req, res, next) {
 });
 
 /* GET home page. */
-router.get('/securityguardapp', function(req, res, next) {
+router.get('/guard', function(req, res, next) {
   res.render('security-guard-app', { title: 'Storecoin' });
 });
 

@@ -1,4 +1,4 @@
-      
+            
 .hc-feature.over-rel.padding.hc-email
   .email-widget
     //- p.hc-email-invite
@@ -320,7 +320,7 @@
       p Do you want to participate in the Storecoin Second Token Sale?
       .field.radio-field
         .hc-radio-btn.checked
-        input(type='radio', name="participate", value='Yes')
+        input(type='radio', name="participate", value='Yes', checked)
         label(for='participate-yes') Yes
       .field.radio-field
         .hc-radio-btn
@@ -331,7 +331,7 @@
         button.button-back.button-primary(data-step='step-9')
           i.ion-chevron-left
           | Back
-        button.button-next.button-primary(disabled='', data-step='step-10-0')
+        button.button-next.button-primary(data-step='step-10-0')
           | Next
           i.ion-chevron-right
         button.button-end.button-primary(style='display:none;')
@@ -507,15 +507,18 @@
       .field
         input.u-full-width(type='text', name='num-of-storecoins', data-type="number", style="max-width: 120px;")
         label(style="margin:4px;") storecoins
-        input.u-full-width(type='text', name='storecoins-value', hidden, value="0")
-        p.usd-val 
-          b USD Value:
-            span.computed  $0
+        //- input.u-full-width(type='text', name='storecoins-value', value="0")
+      .field
+        input.u-full-width(type='text', name='storecoins-value', data-type="number", style="max-width: 120px;")
+        label(style="margin:4px;") USD Value
       .field.radio-field(style="margin-bottom:1em;")
         .hc-radio-btn
         input(type='checkbox')
         label Buy the minimum
       //- p.alert You cannot exceed more than $300,000 amount.
+      //- p.usd-val 
+      //-   b USD Value:
+      //-     span.computed  $0
       hr
       .button-group
         button.button-back.button-primary(data-step='step-12')
@@ -867,7 +870,7 @@
         |  on Medium.
       hr
       .button-group
-        button.button-end.button-primary.orange
+        button.button-end.button-primary.orange-btn
           | Done
           
       .hc-share-links
@@ -879,10 +882,10 @@
             //- a.button.button-primary.facebook(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u=storeco.in")
             //-   i.ion-social-facebook
             //-   | Facebook
-            a.button.button-primary.email(target="_blank", href="https://mail.google.com/mail/?view=cm&fs=1&su=I%20RECOMMEND%3A%20The%20Storecoin%20Second%20Token%20Sale%20(invite-only)&body=Storecoin%20will%20be%20a%20public%20blockchain%20powering%20free%20transactions%20for%20users%20and%20app%20developers%20using%20its%20Dynamic%20Proof%20of%20Stake%20consensus%20(DyPoS).%0A%0ADyPoS+is+inspired+by+the+supply+and+demand+principles+of+Uber+Surge+Pricing+%28blockchain+economics%29%2C+checks+and+balances+of+the+U.S.+Constitution+%28governance%29%2C+and+an+encrypted+Power+of+Attorney+%28scaling%29.%0A%0AWith%20DyPoS%2C%20Storecoin%20will%20bring%20crypto-powered%20API%20calls%20to%20app%20developers%20around%20the%20world.%0A%0AYou%20can%20get%20an%20invite%20by%20filling%20out%20their%20app%20at%20http%3A%2F%2Fstoreco.in.")
+            a.button.button-primary.email(target="_blank", href="https://mail.google.com/mail/?view=cm&fs=1&su=I%20RECOMMEND%3A%20The%20Storecoin%20Second%20Token%20Sale%20(invite-only)&body=Storecoin%20will%20be%20a%20public%20blockchain%20powering%20free%20transactions%20for%20users%20and%20app%20developers%20using%20its%20Dynamic%20Proof%20of%20Stake%20consensus%20(DyPoS).%0A%0ADyPoS%20is%20inspired%20by%20the%20supply%20and%20demand%20principles%20of%20Uber%20Surge%20Pricing%20(blockchain%20economics)%2C%20checks%20and%20balances%20of%20the%20U.S.%20Constitution%20(governance)%2C%20and%20Power%20of%20Attorney%20(scaling).%0A%0AWith%20DyPoS%2C%20Storecoin%20will%20bring%20crypto-powered%20API%20calls%20to%20app%20developers%20around%20the%20world.%0A%0AYou%20can%20get%20an%20invite%20by%20filling%20out%20their%20app%20at%20http%3A%2F%2Fstoreco.in.")
               i.ion-email
               | Email
-            a.button.button-primary.email-mobile(target="_blank", href="mailto:?subject=I%20RECOMMEND%3A%20The%20Storecoin%20Second%20Token%20Sale%20(invite-only)&body=Storecoin%20will%20be%20a%20public%20blockchain%20powering%20free%20transactions%20for%20users%20and%20app%20developers%20using%20its%20Dynamic%20Proof%20of%20Stake%20consensus%20(DyPoS).%0A%0ADyPoS+is+inspired+by+the+supply+and+demand+principles+of+Uber+Surge+Pricing+%28blockchain+economics%29%2C+checks+and+balances+of+the+U.S.+Constitution+%28governance%29%2C+and+an+encrypted+Power+of+Attorney+%28scaling%29.%0A%0AWith%20DyPoS%2C%20Storecoin%20will%20bring%20crypto-powered%20API%20calls%20to%20app%20developers%20around%20the%20world.%0A%0AYou%20can%20get%20an%20invite%20by%20filling%20out%20their%20app%20at%20http%3A%2F%2Fstoreco.in.")
+            a.button.button-primary.email-mobile(target="_blank", href="mailto:?subject=I%20RECOMMEND%3A%20The%20Storecoin%20Second%20Token%20Sale%20(invite-only)&body=Storecoin%20will%20be%20a%20public%20blockchain%20powering%20free%20transactions%20for%20users%20and%20app%20developers%20using%20its%20Dynamic%20Proof%20of%20Stake%20consensus%20(DyPoS).%0A%0ADyPoS%20is%20inspired%20by%20the%20supply%20and%20demand%20principles%20of%20Uber%20Surge%20Pricing%20(blockchain%20economics)%2C%20checks%20and%20balances%20of%20the%20U.S.%20Constitution%20(governance)%2C%20and%20Power%20of%20Attorney%20(scaling).%0A%0AWith%20DyPoS%2C%20Storecoin%20will%20bring%20crypto-powered%20API%20calls%20to%20app%20developers%20around%20the%20world.%0A%0AYou%20can%20get%20an%20invite%20by%20filling%20out%20their%20app%20at%20http%3A%2F%2Fstoreco.in.")
               i.ion-email
               | Email
               
@@ -909,16 +912,4 @@
           button.button.button-primary.copy-button
             i.ion-link
             |  Copy Link
-
-.hc-feature.over-rel.padding.inverted.storeco-vs-blchains
-  .hc-chunk.hc-intro-text-wrapper
-    h3.hc-feature-title Storecoin vs. Other Public Blockchains
-    p.hc-feature-lead What it would cost to buy 1 one-hundredth of a percent of all tokens minted in the first 10 years for major public blockchains.
-    .hc-image
-      img(src="/images/comparison-chart.png", style="width:100%; max-width: 700px;")
-    .link-container
-      a.link-text.see-more(data-link='.zcash-text', data-margin="0,0", data-scroll="false", data-back="true", data-inner="See More<i class=\"ion-ios-arrow-down\"></i>, See Less<i class=\"ion-ios-arrow-up\"></i>")
-        | See More
-        i.ion-ios-arrow-down
-    p.zcash-text.hc-feature-lead.hint-text.see-more-reveal(style="margin-bottom:0px;") The Zcash price of $250 is a snapshot of the price as of Nov 9th, 2017. The "Filecoin (first hour)" price of $2.25 factors in a 15% discount off of $2.65 (the price during the first hour of the sale) as a result of the 2-year unlocking option. The Tezos price of $0.39 is the effective price paid on the first day of the main sale, taking into account the 20% bonus and an average Bitcoin price of $2,350 on July 1. The EOS price of $1.90 is based on the pre-launch trading price on November 22, 2017. EOS was assumed to have 5% annual inflation starting at 1 billion tokens.
     
