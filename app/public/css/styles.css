@@ -5138,23 +5138,25 @@ and (max-width : 700px) {
 .engine-modal .engine-slider .hc-image img {
   width: 80%;
 }
-
+/*
 .engine-modal .engine-slider .slick-arrow:before {
   color: white;
-}
+}*/
 
-.engine-modal .engine-slider .slick-next {
+/*.engine-modal .engine-slider .slick-next {
   right: -35px;
 }
 
 .engine-modal .engine-slider .slick-prev {
   left: -35px;
-}
+}*/
 
+.engine-modal .engine-slider .slick-prev,
 #engine-cards-modal .card-slider .slick-prev {
   left: 5px;
 }
 
+.engine-modal .engine-slider .slick-next,
 #engine-cards-modal .card-slider .slick-next {
   right : 5px;
 }
@@ -5178,7 +5180,11 @@ and (max-width : 700px) {
 }
 
 .engine-modal .hc-feature {
-  padding: 2em 1em;
+  padding: 2em 3em;
+}
+
+.engine-modal .hc-feature ul {
+  font-size: 2em;
 }
 
 .engine-modal .hc-feature .hc-feature-title {
@@ -5198,19 +5204,19 @@ and (max-width : 700px) {
     width: 100%;
   }
 
-  .engine-modal .engine-slider .slick-next {
+  /*.engine-modal .engine-slider .slick-next {
     right: -25px;
   }
 
   .engine-modal .engine-slider .slick-prev {
     left: -25px;
-  }
+  }*/
 
-  .engine-modal i.ion-android-close {
+  /*.engine-modal i.ion-android-close {
     right: -25px;
     top: 0px;
     color: white;
-  }
+  }*/
 
   .engine-modal .hc-feature .hc-feature-title.title-icon .icon {
     width: 40px;
@@ -5224,11 +5230,15 @@ and (max-width : 700px) {
   }
   .engine-modal {
     /*padding: 0px 3em !important;*/
-    width: 80% !important;
+    /*width: 80% !important;*/
   }
 
   .engine-modal .hc-feature {
-    padding: 1em 0.5em;
+    padding: 1em 2.5em;
+  }
+
+  .engine-modal .hc-feature ul {
+    font-size: 1.5em;
   }
 }
 
