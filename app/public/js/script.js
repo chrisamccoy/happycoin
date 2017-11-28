@@ -204,12 +204,7 @@ function cardFlip() {
       $engineModal = $('.engine-modals .engine-modal'),
       $openModal = $('.open-modal'),
       isSlider = {
-        '#security-system-popup' : false,
-        '#dynamic-free-trans-modal' : false,
-        '#dynamic-validation-modal' : false,
-        '#dynamic-reward-modal' : false,
-        '#dynamic-scaling-modal' : false,
-        '#dynamic-governance-modal' : false
+        '#dypos-modal' : false
       };
 
   $engineModal.find('i.ion-android-close').click(function(){
@@ -217,7 +212,8 @@ function cardFlip() {
   });
 
   $openModal.click(function(){
-    var modalName = $(this).data().modal;
+    var modalName = $(this).data().modal,
+        goto = $(this).data().goto;
     $(modalName).modal({
       observeChanges : true,
       onVisible : function(){
@@ -229,12 +225,10 @@ function cardFlip() {
               arrows : true
               // adaptiveHeight : true
             });
-            // $(modalName+' .engine-slider').on('afterChange', function(){
-            //   $(window).trigger('resize');
-            // });
             isSlider[modalName] = true;
           }
         }
+        $(modalName+' .engine-slider').slick('slickGoTo', goto);
       }
     }).modal('show');
   });

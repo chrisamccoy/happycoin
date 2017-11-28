@@ -51,8 +51,9 @@ block content
     #latest-updates.hc-feature.over-rel.padding.lite.left-align
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Our Latest
-        p.hc-feature-lead Storecoin Creator Chris McCoy will be speaking publicly for the first time about Storecoin at the Crypto Finance Conference in Switzerland, January 17-19.
+        //- p.hc-feature-lead Storecoin Creator Chris McCoy will be speaking publicly for the first time about Storecoin at the Crypto Finance Conference in Switzerland, January 17-19.
         ul(style="list-style:disc;")
+          li Storecoin Creator Chris McCoy will be speaking publicly for the first time about Storecoin at the Crypto Finance Conference in Switzerland, January 17-19.
           li 
             b Ari David Paul
             | , the CIO of BlockTower Capital, joins as a Strategic Advisor
@@ -66,14 +67,10 @@ block content
             b Rajiv Patel 
             | of Fenwick and West joins to help Storecoin file patents for DyPoS
         ul#hc-blog-feeds.see-more-reveal(style="list-style:disc;margin-top: 0.5em;")
-          li Why Storecoin is Inventing Dynamic Proof of Stake (DyPoS) - 
-            a(href="https://medium.com/@storecoin/why-storecoin-is-inventing-dynamic-proof-of-stake-dypos-61529d02240f", target="_blank") Read More
-          li Storecoin Update — August 2017 - 
-            a(href="https://medium.com/@storecoin/storecoin-update-august-2017-edadc94f1a8f", target="_blank") Read More
-          li Yesterday’s “plastics” are today’s crypto tokens -  
+          li 
+            b TechCrunch 
+            | publishes Chris McCoy's thoughts on the future of tokenization -- or Securitization 2.0 -  
             a(href="https://techcrunch.com/2017/08/20/yesterdays-plastics-are-todays-crypto-tokens/", target="_blank") Read More
-          li Introducing Storecoin - 
-            a(href="https://medium.com/@team_27494/introducing-storecoin-8e15c21b4335", target="_blank") Read More
         div.link-container
           a.link-text.see-more(data-link="#hc-blog-feeds", data-margin="0,0", data-scroll="false", data-back="true", data-inner="See More<i class=\"ion-ios-arrow-down\"></i>, See Less<i class=\"ion-ios-arrow-up\"></i>") See More
             i.ion-ios-arrow-down
@@ -575,7 +572,7 @@ block content
             img(src="/images/wallet-screen-2.png")
           div.screen
             div.title 
-              b An app taxing transactions
+              b An app "taxing" its transactions
             img(src="/images/wallet-screen-3.png")
     
     .hc-feature.over-rel.padding(style="overflow:visible;")
@@ -769,12 +766,16 @@ block content
                   td
                     b Security Protocol
                   td 
-                    a.open-modal(data-modal="#dynamic-free-trans-modal") Security Advisory System, Security Guards, Dynamic (Free) Transactions, Dynamic Security, Dynamic (On Chain) Governance
+                    a(data-modal="#dypos-modal", data-goto="0") Security Advisory System, 
+                    a(data-modal="#dypos-modal", data-goto="0") Security Guards, 
+                    a(data-modal="#dypos-modal", data-goto="6") Dynamic (Free) Transactions, 
+                    a(data-modal="#dypos-modal", data-goto="0") Dynamic Security, 
+                    a(data-modal="#dypos-modal", data-goto="14") Dynamic (On Chain) Governance
                 tr
                   td
                     b On Chain Scalability	
                   td
-                    a.open-modal(data-modal="#dynamic-scaling-modal") Dynamic Scaling	
+                    a.open-modal(data-modal="#dypos-modal", data-goto="12") Dynamic Scaling	
                 tr
                   td
                     b Off Chain Scalability	
@@ -860,7 +861,9 @@ block content
         //-   | Will	hierarchy-based	organizations 	 
         //-   b need it
         //-   | ?          
-        p.hc-feature-lead(style="text-align:left;") If funded by the Storecoin Community, Governance votes on it.
+        p.hc-feature-lead(style="text-align:left;") If funded by the Storecoin Community, 
+          a.open-modal(data-modal="#dypos-modal", data-goto="14", style="text-decoration:underline;") Governance 
+          | votes on it.
         p.hc-feature-lead(style="text-align:left; margin-bottom:0px;") If approved by Governance, then Storecoin ships it.  
             
     //- include app-types

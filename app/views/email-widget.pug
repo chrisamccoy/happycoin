@@ -505,12 +505,13 @@
       p Our purchase minimum is $5,000. This buys 150,151 storecoins.
       p At $0.0333 per storecoin, how many storecoins do you want to purchase?
       .field
-        input.u-full-width(type='text', name='num-of-storecoins', data-type="number", style="max-width: 120px;")
+        input.u-full-width(type='text', name='num-of-storecoins', data-type="number", style="max-width: 120px;", value="0")
         label(style="margin:4px;") storecoins
         //- input.u-full-width(type='text', name='storecoins-value', value="0")
-      .field
-        input.u-full-width(type='text', name='storecoins-value', data-type="number", style="max-width: 120px;")
+      .field(style="position: relative;")
+        input.u-full-width(type='text', name='storecoins-value', data-type="number", style="max-width: 120px; padding-left: 22px;", value="0")
         label(style="margin:4px;") USD Value
+        div.prefix(style="position: absolute; left:11px; top:4px;") $
       .field.radio-field(style="margin-bottom:1em;")
         .hc-radio-btn
         input(type='checkbox')
