@@ -16,7 +16,7 @@ block content
           span.parenthesis.lite-orange (
           span.lite-orange blockchain economics
           span.lite-orange.parenthesis )
-          | , the checks and balances of the U.S. Constitution  
+          | , checks and balances of the U.S. Constitution  
           span.parenthesis.lite-green (
           span.lite-green governance
           span.parenthesis.lite-green )
@@ -26,7 +26,7 @@ block content
           span.parenthesis.lite-yellow )
           | .
         h2.hc-feature-lead(style="margin:0px;")
-          | With DyPoS, Storecoin will bring crypto-powered API calls to app developers around the world.
+          | With DyPoS, Storecoin will bring crypto-powered API calls and payments to app developers around the world.
     
     div#first-token-sale
     - var top = true  
@@ -136,7 +136,7 @@ block content
       .hc-chunk
         h2.hc-feature-title Problems with Public Blockchains Today
         p.hc-feature-lead 
-          b.big-font.orange #1 
+          b.big-font.orange-color #1 
           | Only 20 to 30 million people own cryptocurrency today.
         p.hc-feature-lead This is less than 0.4% of the world's population.
         p.hc-feature-lead To gain mainstream adoption, public blockchains need use cases beyond financial speculation and decentralized applications.
@@ -282,14 +282,14 @@ block content
       .hc-feature.over-rel.padding
         .hc-chunk.hc-customize-text-wrapper
           p.hc-feature-lead(style="margin-top:0px;") 
-            b.big-font.orange #2 
+            b.big-font.orange-color #2 
             | Decentralized applications (dApps) powered by smart contracts will one day reinvent traditional software, but it's going to take a while.
           .hc-image
             img(src="/images/intersect-circles.png", style="max-width:100%; width:750px;")
           p.hc-feature-lead Meanwhile, today there are 
             b billions 
             |  of active users generating 
-            span.orange trillions 
+            span.orange-color trillions 
             | of API calls on 
             b millions 
             | of different web and mobile applications – all without a native cryptocurrency to further incentivize and reward user actions in those apps.
@@ -299,7 +299,7 @@ block content
         .hc-chunk.hc-customize-text-wrapper
           //- h3.hc-feature-title Problems in Public Blockchains Today, Continued
           p.hc-feature-lead(style="margin-top:0px;") 
-            b.orange.big-font #3 
+            b.orange-color.big-font #3 
             | To realize its full potential, blockchain transactions need to be permanently free.
           p.hc-feature-lead As of Oct 17, transaction fees on Ethereum were 32 cents. On Bitcoin they were $3.11.
           p.hc-feature-lead Emerging public blockchains like EOS promote free transactions but in reality they'll require developers to own tokens in order for transactions to be 
@@ -312,7 +312,7 @@ block content
       .hc-feature.over-rel.padding.left-align
         .hc-chunk.hc-customize-text-wrapper
           p.hc-feature-lead(style="margin-top:0px;") 
-            span.big-font.orange #4 
+            span.big-font.orange-color #4 
             | To achieve true global decentralization, today's public blockchains need to incetivize and govern for decentralization in the consensus pool.
           p.hc-feature-lead(style="margin:0px; text-decoration:underline;")
             b Facts:
@@ -338,11 +338,11 @@ block content
       .hc-feature.over-rel.padding.left-align.inverted
         .hc-chunk.hc-customize-text-wrapper
           p.hc-feature-lead(style="margin-top:0px;")
-            span.big-font.orange #5 
+            span.big-font.orange-color #5 
             | To sustainably operate forever without relying on new token sales, blockchains need a native, on-chain, and perpetual income stream to support security, engineering, governance, and operations.
           hr
           p.hc-feature-lead(style="margin-bottom:0.5em; margin-top:0px;")
-            span.big-font.orange #6 
+            span.big-font.orange-color #6 
             | To remain secure at both the transaction layer and the mining/validator layer, blockchains need their own decentralized security network to prevent both spam and attacks so they can:
           p.hc-feature-lead.bulleted
             span.icon.ion-record.bullet
@@ -352,13 +352,13 @@ block content
             span Remove bad actors from blockchain participation
           hr 
           p.hc-feature-lead(style="margin-top:0px;")
-            span.big-font.orange #7  
+            span.big-font.orange-color #7  
             | To scale decentralization around the globe while also maintaining consistency, availability, and partition tolerance (CAP theorem), public blockchains need 
             b new thinking and new innovation 
             | at the intersection of cryptography and distributed systems engineering.
           hr
           p.hc-feature-lead(style="margin:0px;")
-            span.big-font.orange #8 
+            span.big-font.orange-color #8 
             | To manage the ever-evolving economic and political interests of all sides in a public blockchain network, Governance needs to be both on-chain and off-chain, needs a proven process for making changes to the protocol (especially new features), needs term limits, and needs to prevent centralization.
     
     #solution.hc-feature.over-rel.padding.lite
@@ -519,7 +519,7 @@ block content
     #strat-dist.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted Our Wallet-based Distribution Strategy
-        p.hc-feature-lead(style="font-size:1.6em;") Through the Storecoin-powered Wallet, storecoin tokens will be distributed inside of web and mobile apps (not dApps). Apps integrate the Wallet using the Storecoin Developer Kit and then assign crypto amounts to key in-app API calls. When users take those pre-defined actions, they earn storecoins as a reward.
+        p.hc-feature-lead Through the Storecoin-powered Wallet, storecoin tokens will be distributed inside of web and mobile apps (not dApps). Apps integrate the Wallet using the Storecoin Developer Kit and then assign crypto amounts to key in-app API calls. When users take those pre-defined actions, they earn storecoins as a reward.
         //- div.hc-image
         //-   img.desktop-image(src="/images/strategy-distribution.png", style="width:100%;")
         //-   img.mobile-image(src="/images/strategy-distribution-mobile.png", style="width:100%;")
@@ -560,12 +560,14 @@ block content
     
     .hc-feature.over-rel.padding.lite
       .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title How the Storecoin Wallet Works
+        h3.hc-feature-title.title-icon How the 
+          img.icon(src="/images/logo-text.png", style="margin:0px; width:65px;")
+          |  Wallet Works
         p.hc-feature-lead Once Third Party Developers integrate the Storecoin Wallet using APIs, every user on their app can have a Storecoin crypto wallet. Developers can reward storecoins to users when they take pre-defined actions. They can even “tax” their app and take a small cut of each crypto-powered transaction. The possibilities are endless.
         div.wallet-screens
           div.screen
             div.title 
-              b A User Wallet inside the App
+              b A User Wallet inside any App
             img(src="/images/wallet-screen-1.png")
           div.screen
             div.title 
@@ -573,7 +575,7 @@ block content
             img(src="/images/wallet-screen-2.png")
           div.screen
             div.title 
-              b The App "taxing" transactions
+              b An app taxing transactions
             img(src="/images/wallet-screen-3.png")
     
     .hc-feature.over-rel.padding(style="overflow:visible;")
@@ -620,7 +622,7 @@ block content
     #storecoin-12-steps.see-more-reveal.hc-feature.over-rel.padding(style="overflow:visible;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title 
-          span.orange Overview: 
+          span.orange-color Overview: 
           | How the Storecoin Blockchain Works
         p.hc-feature-lead How the patent-pending Dynamic Proof of Stake consensus algorithm keeps transactions permanently free while perpetually funding blockchain security, engineering and governance.
         .hc-image

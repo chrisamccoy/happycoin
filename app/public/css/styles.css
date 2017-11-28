@@ -56,8 +56,8 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-.orange {
-  color: #e97844 !important;
+.orange-color {
+  color: #e97844;
 }
 
 .lite-orange {
@@ -862,7 +862,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #hc-intro .hc-feature-lead {
   margin : 1.5em 0px;
-  font-size: 1.75em;
+  font-size: 1.65em;
 }
 
 #hc-intro .hc-intro-text-wrapper {
@@ -1044,7 +1044,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   #hc-intro .hc-feature-lead {
-    font-size: 1.6em !important;
+    font-size: 1.5em !important;
   }
 }
 
