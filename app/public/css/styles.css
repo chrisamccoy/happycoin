@@ -1099,9 +1099,9 @@ and (max-width : 700px) {
     /*margin-top: 92px;*/
   }
 
-  #hc-intro span.parenthesis {
+  /*#hc-intro span.parenthesis {
     margin: 0px 0.2em;
-  }
+  }*/
 
   #hc-slider .slick-next {
     right: -20px ;
