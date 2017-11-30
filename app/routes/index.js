@@ -148,7 +148,7 @@ router.get('/tokengrant', function(req, res, next) {
 });
 
 /* ------------WALLET------------ */
-router.get('/wallet', function(req, res, next) {
+router.get('/wallet/wallet-app', function(req, res, next) {
   res.render('wallet/index', { title: 'Storecoin', name : 'Home' });
 });
 
