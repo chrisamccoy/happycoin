@@ -255,6 +255,9 @@ function cardFlip() {
           }
         }
         $(modalName+' .engine-slider').slick('slickGoTo', goto);
+        $(modalName+' .engine-slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
+          console.log(currentSlide);
+        });
       }
     }).modal('show');
   });
@@ -271,26 +274,26 @@ function cardFlip() {
       }
     );
   } else {
-    $('#engine-cards-modal').modal({ observeChanges : true });
-    var isCardSlider = false;
-    $engine.click(function(){
-      var goto = $(this).data().goto;
-      $('#engine-cards-modal').modal('show');
-      $('#engine-cards-modal').modal('refresh');
-      if(!isCardSlider) {
-        $('#engine-cards-modal .card-slider').slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows : true,
-          adaptiveHeight : true
-        });
-        isCardSlider = true;
-      }
-      $('#engine-cards-modal .card-slider').slick('slickGoTo', goto);
-      $('#engine-cards-modal i.ion-android-close').click(function(){
-        $('#engine-cards-modal').modal('hide');
-      });
-    });
+    // $('#engine-cards-modal').modal({ observeChanges : true });
+    // var isCardSlider = false;
+    // $engine.click(function(){
+    //   var goto = $(this).data().goto;
+    //   $('#engine-cards-modal').modal('show');
+    //   $('#engine-cards-modal').modal('refresh');
+    //   if(!isCardSlider) {
+    //     $('#engine-cards-modal .card-slider').slick({
+    //       slidesToShow: 1,
+    //       slidesToScroll: 1,
+    //       arrows : true,
+    //       adaptiveHeight : true
+    //     });
+    //     isCardSlider = true;
+    //   }
+    //   $('#engine-cards-modal .card-slider').slick('slickGoTo', goto);
+    //   $('#engine-cards-modal i.ion-android-close').click(function(){
+    //     $('#engine-cards-modal').modal('hide');
+    //   });
+    // });
   }
 }
 

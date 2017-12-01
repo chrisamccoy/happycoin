@@ -5082,7 +5082,7 @@ and (max-width : 700px) {
 }
 
 #security-system-lite .hazard-boxes .box:not(:last-child) {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 #security-system-lite .hazard-boxes .box h3,
@@ -5101,7 +5101,11 @@ and (max-width : 700px) {
 
 @media only screen and (max-width: 1024px) {
   #security-system-lite .hazard-boxes .box {
-    height: 70px;
+    height: 55px;
+  }
+
+  #security-system-lite .hazard-boxes .box h3 {
+    font-size: 2.5em;
   }
 }
 
@@ -5129,7 +5133,7 @@ and (max-width : 700px) {
 
 
 /*----------------------------------*/
-#engine-cards-modal,
+/*#engine-cards-modal,*/
 .engine-modal {
   /*padding: 0px 4em !important;*/
   position: relative;
@@ -5158,17 +5162,15 @@ and (max-width : 700px) {
   left: -35px;
 }*/
 
-.engine-modal .engine-slider .slick-prev,
-#engine-cards-modal .card-slider .slick-prev {
+.engine-modal .engine-slider .slick-prev {
   left: 5px;
 }
 
-.engine-modal .engine-slider .slick-next,
-#engine-cards-modal .card-slider .slick-next {
+.engine-modal .engine-slider .slick-next {
   right : 5px;
 }
 
-#engine-cards-modal i.ion-android-close,
+/*#engine-cards-modal i.ion-android-close,*/
 .engine-modal i.ion-android-close {
   position: absolute;
   /*top: -35px;
@@ -5181,10 +5183,10 @@ and (max-width : 700px) {
   z-index: 1;
 }
 
-#engine-cards-modal i.ion-android-close {
+/*#engine-cards-modal i.ion-android-close {
   top: 5px;
   right: 5px;
-}
+}*/
 
 .engine-modal .hc-feature {
   padding: 2em 3em;
@@ -5195,12 +5197,12 @@ and (max-width : 700px) {
 }
 
 .engine-modal .hc-feature .hc-feature-title {
-  font-size: 4em;
+  font-size: 3em;
   margin: 0px !important;
 }
 
 .engine-modal .hc-feature .hc-feature-lead {
-  font-size: 2.5em;
+  font-size: 2em;
 }
 
 @media only screen and (max-width: 700px) {
@@ -5226,11 +5228,11 @@ and (max-width : 700px) {
   }*/
 
   .engine-modal .hc-feature .hc-feature-title.title-icon .icon {
-    width: 40px;
+    width: 25px;
     margin-right: 7px;
   }
   .engine-modal .hc-feature .hc-feature-title {
-    font-size: 3em !important;
+    font-size: 2.5em !important;
   }
   .engine-modal .hc-feature .hc-feature-lead {
     font-size: 1.5em !important;
