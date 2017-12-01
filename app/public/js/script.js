@@ -56,6 +56,7 @@ $(document).ready(function(){
   initLightBulb();
   initProblemReveal(isMobile);
   // yAxisWidth();
+  initCoinFlip();
 });
 
 // function yAxisWidth () {
@@ -77,6 +78,23 @@ $(document).ready(function(){
 //     });
 //   });
 // }
+
+function initCoinFlip () {
+  var $coinCont = $('#hc-coin'),
+      height = $coinCont.height(),
+      $coin = $coinCont.find('.coin'),
+      offset = $coinCont.offset().top - 200;
+
+  $(window).scroll(function(){
+    var scrollVal  = $(window).scrollTop();
+    if (scrollVal > offset) {
+      $coin.addClass('flip');
+    } else {
+      $coin.removeClass('flip');
+    }
+  });
+}
+
 
 function initProblemReveal(isMobile){
   var $seeMoreLink = $('.see-more');

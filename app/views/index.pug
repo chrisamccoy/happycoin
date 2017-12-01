@@ -48,13 +48,16 @@ block content
             img(src='/images/clinton-polley.png', style="width:40%;")
               
     include storeco-vs-blockchains
+    include our-team-widget
 
     #latest-updates.hc-feature.over-rel.padding.lite.left-align
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Our Latest
         //- p.hc-feature-lead Storecoin Creator Chris McCoy will be speaking publicly for the first time about Storecoin at the Crypto Finance Conference in Switzerland, January 17-19.
         ul(style="list-style:disc;")
-          li Storecoin Creator Chris McCoy will be speaking publicly for the first time about Storecoin at the Crypto Finance Conference in Switzerland, January 17-19.
+          li 
+            b Chris McCoy
+            | , Storecoin's Creator, will be speaking publicly for the first time about Storecoin at the Crypto Finance Conference in Switzerland, January 17-19.
           li 
             b Ari David Paul
             | , the CIO of BlockTower Capital, joins as a Strategic Advisor
@@ -117,16 +120,21 @@ block content
         p.hc-feature-lead By 2020, Storecoin will bring free, crypto-powered transactions to millions of apps, to trillions of API calls, and to thousands of mobile and web developers.
         p.hc-feature-lead(style="margin-bottom:0px;") On-chain, crypto-powered API calls will create entirely new markets and incentives for apps.
         
-    .hc-feature.over-rel.inverted.padding
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title The Business Case for Storecoin
-        p.hc-feature-lead Today, using traditional banking infrastructure, mobile and web app developers have to pay fees ranging from 2.5%-3% of the transaction size plus an additional $0.30 to process in-app payments – for every single transaction!
-        p.hc-feature-lead This limits innovation, especially innovation powered by micropayments.
-        .hc-image
-          img(src="/images/wallet-icon.png", style="max-width:100px;")
-        p.hc-feature-lead With free transactions for cryptocurrency-based payments, Storecoin will unlock it.
-        .hc-image
-          img(src="/images/storecoin-currency.png", style="max-width:200px;")
+    #hc-coin
+      .hc-feature.over-rel.inverted.padding
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title The Business Case for Storecoin
+          p.hc-feature-lead Today, using traditional banking infrastructure, mobile and web app developers have to pay fees ranging from 2.5%-3% of the transaction size plus an additional $0.30 to process in-app payments – for every single transaction!
+          p.hc-feature-lead This limits innovation, especially innovation powered by micropayments.
+          .hc-image
+            img(src="/images/wallet-icon.png", style="max-width:100px;")
+          p.hc-feature-lead With free transactions for cryptocurrency-based payments, Storecoin will unlock it.
+          //- .hc-image
+          //-   img(src="/images/storecoin-currency.png", style="max-width:200px;")
+          div.coin
+            div.front
+            div.back
+            div.shade
             
     include app-types
         
@@ -872,8 +880,6 @@ block content
     include first-dapp
     
     include footprint-matters
-
-    include our-team-widget
                   
     #hc-alliance.hc-feature.over-rel.padding.inverted
       .hc-chunk
