@@ -83,14 +83,22 @@ function initCoinFlip () {
   var $coinCont = $('#hc-coin'),
       height = $coinCont.height(),
       $coin = $coinCont.find('.coin'),
-      offset = $coinCont.offset().top - 200;
+      offset = $coinCont.offset().top - 200,
+      flipping = false;
 
   $(window).scroll(function(){
     var scrollVal  = $(window).scrollTop();
     if (scrollVal > offset) {
-      $coin.addClass('flip');
+      if(!flipping) {
+        $coin.addClass('flip');
+        setTimeout(function(){
+          $coin.removeClass('flip');
+        }, 3000);
+        flipping = true;
+      }
     } else {
       $coin.removeClass('flip');
+      flipping = false;
     }
   });
 }
