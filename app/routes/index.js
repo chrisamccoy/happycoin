@@ -1,5 +1,7 @@
 var express = require('express');
+// var cookieParser = require('cookie-parser');
 var router = express.Router();
+// router.use(cookieParser());
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -10,6 +12,11 @@ router.get('/', function(req, res, next) {
   } else {
      res.render('index', { v2: false, title: 'Storecoin' });
   }
+});
+
+/* GET home page. */
+router.get('/ref/:email', function(req, res, next) {
+  res.cookie('ref_email' , req.params.email).redirect('/');
 });
 
 /* GET home page. */

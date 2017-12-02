@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  // console.log(getCookie('ref_email'));
   var isMobile = false;
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
     .test(navigator.userAgent) ) {
@@ -662,6 +663,9 @@ function emailSubscribe() {
       };
 
   autosize($('textarea'));
+
+  $('input[name="ref_email"]').val(getCookie('ref_email'));
+  deleteCookie('ref_email');
 
   $.when(
     $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD', function(data) {
@@ -1537,3 +1541,23 @@ function fadeInContent () {
     });
   }
 }
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+      }
+  }
+  return "None";
+}
+
+function deleteCookie (name) {
+    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+};
