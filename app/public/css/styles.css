@@ -5432,7 +5432,7 @@ and (max-width : 700px) {
   content: '';
   height: 200px;
   width: 200px;
-  -webkit-transform: translateZ(-0.75em);
+  -webkit-transform: translateZ(-15px);
 }
 #hc-coin .coin:after {
   background-color: #d1ac58;
