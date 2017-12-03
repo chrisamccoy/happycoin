@@ -5459,7 +5459,7 @@ and (max-width : 700px) {
   width: 200px;
   /*-webkit-transform: translateZ(-0.005em);*/
   -webkit-transform: translateZ(-0.1px);
-  border: 1px solid #FF9900;
+  /*border: 1px solid #FF9900;*/
 }
 
 #hc-coin .heads {
