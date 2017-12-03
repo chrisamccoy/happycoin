@@ -94,7 +94,7 @@ function initCoinFlip () {
         $coin.addClass('flip');
         setTimeout(function(){
           $coin.removeClass('flip');
-        }, 3000);
+        }, 4000);
         flipping = true;
       }
     } else {
