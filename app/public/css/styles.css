@@ -5405,8 +5405,8 @@ and (max-width : 700px) {
   /*background: #FFDE00;*/
   background-image: url(/images/storecoin-currency.png);
   background-size: auto 100%;
-  width: 10em;
-  height: 10em;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   position: relative;
   -webkit-transform-style: preserve-3d;
@@ -5429,17 +5429,19 @@ and (max-width : 700px) {
   position: absolute;
   border-radius: 50%;
   content: '';
-  height: 10em;
-  width: 10em;
+  height: 200px;
+  width: 200px;
   -webkit-transform: translateZ(-0.75em);
 }
 #hc-coin .coin:after {
   background-color: #d1ac58;
   content: '';
-  left: 4.25em;
+  /*left: 4.25em;*/
+  left : 85px;
   position: absolute;
-  height: 10em;
-  width: 0.75em;
+  height: 200px;
+  /*width: 0.75em;*/
+  width: 15px;
   z-index: -10;
   -webkit-transform: rotateY(-90deg);
   -webkit-transform-origin: 100% 50%;
@@ -5452,9 +5454,10 @@ and (max-width : 700px) {
   position: absolute;
   border-radius: 50%;
   content: '';
-  height: 10em;
-  width: 10em;
-  -webkit-transform: translateZ(-0.005em);
+  height: 200px;
+  width: 200px;
+  /*-webkit-transform: translateZ(-0.005em);*/
+  -webkit-transform: translateZ(-0.1px);
   border: 1px solid #FF9900;
 }
 
@@ -5466,9 +5469,10 @@ and (max-width : 700px) {
   position: absolute;
   border-radius: 50%;
   content: '';
-  height: 10em;
-  width: 10em;
-  -webkit-transform: translateZ(-0.755em) scaleY(-1) rotate(180deg);
+  height: 200px;
+  width: 200px;
+  /*-webkit-transform: translateZ(-0.755em) scaleY(-1) rotate(180deg);*/
+  -webkit-transform: translateZ(-15.1px) scaleY(-1) rotate(180deg);
   /*border: 1px solid #FF9900;*/
 }
 /*#hc-coin .coin {
