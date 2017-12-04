@@ -25,7 +25,7 @@ html
     link(rel='stylesheet', href='/css/dimmer.min.css')
     link(rel='stylesheet', href='/css/transition.min.css')
     link(rel='stylesheet', href='/css/tippy.css')
-    link(rel='stylesheet', href='/css/styles.css?v=2.2.6')
+    link(rel='stylesheet', href='/css/styles.css?v=2.2.7')
 
     link(rel='icon', type='image/png', href='/images/favicon.png')
 
@@ -43,7 +43,7 @@ html
     script(src='/js/numeral.js')
     script(src='/js/tippy.min.js')
     script(src='/js/jquery.rwdImageMaps.min.js')
-    script(src='/js/script.js?v=2.2.6')
+    script(src='/js/script.js?v=2.2.7')
 
   body
     - var className = ''
@@ -76,6 +76,8 @@ html
                 a.item(href='/secondtokensale') Second Token Sale
                 a.item(href='/whitepaper') Our Whitepaper
                 a.item(href='/community') Community
+                a.item(href='/applytoforge', target="_blank") Become a Validator
+                a.item(href='/guard', target="_blank") Become a dGuard
 
     block content
       
@@ -101,36 +103,22 @@ html
               li
                 a(href='/blog') Our Blog
               li
-                a(href='/firsttokensalefaq') Token Sale FAQ
+                a(href='/secondtokensale') Our Token Sale
+              //- li
+              //-   a(href='/firsttokensalefaq') Token Sale FAQ
               li
                 a(href='http://twitter.com/storecointeam', target="_blank") Twitter
               li
                 a(href='https://github.com/StorecoinProject', target="_blank") Github
-              //- li
-              //-   a(href='/subscribe') Subscribe to Updates
-              //- li
-              //-   a(href='/faq') FAQ
-              //- li
-              //-   a(href='/press') Press
-              //- li
-              //-   .footer-bridge-contentStart
-              //-     //- a.footer-social-icon(href='/coming-soon')
-              //-     //-   span.graphic-socialHover-facebook
-              //-     a.footer-social-icon(href='http://twitter.com/storecointeam', target="_blank")
-              //-       span.graphic-socialHover-twitter
-              //-     //- a.footer-social-icon(href='/coming-soon')
-              //-     //-   span.graphic-socialHover-linkedin
-              //-     a.footer-social-icon(href='https://github.com/StorecoinProject', target="_blank")
-              //-       span.graphic-socialHover-github
           .three.columns
             h3 Info
             ul
               li
                 a(href='/community') Join Community
               li
-                a(href='/applytoforge') Apply to Validate/Forge
+                a(href='/applytoforge', target="_blank") Become a Validator
               li
-                a(href='/secondtokensale') Our Token Sale
+                a(href='/guard', target="_blank") Become a dGuard
               li
                 a(href='/team') Our Team
               li

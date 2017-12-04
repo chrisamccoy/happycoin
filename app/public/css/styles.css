@@ -72,6 +72,10 @@ input[type=number]::-webkit-outer-spin-button {
   color: #ffc013;
 }
 
+.dark-green {
+  color: #5B774E;
+}
+
 .big-font {
   font-size: 1.5em;
 }
@@ -2735,6 +2739,17 @@ and (max-width : 700px) {
 
 .hc-email .steps-form {
   margin: 0px;
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+  display: none;
+}
+
+.hc-email .steps-form .step-numbers {
+  bottom: 1.4em;
+  right: 1.5em;
+  position: absolute;
+  font-size: 1.5em;
 }
 
 .hc-email .email-steps ul li span.eth-value,
@@ -2769,8 +2784,8 @@ and (max-width : 700px) {
 }
 
 .hc-email .email-steps {
-  max-width: 700px;
-  margin: 0 auto;
+  /*max-width: 700px;
+  margin: 0 auto;*/
   padding: 1em;
   display: none;
   font-size: 1.3em;
@@ -3164,6 +3179,11 @@ and (max-width : 700px) {
   .hc-email .mobile-link a,
   .hc-email .desktop-link a {
     width: 100%;
+  }
+
+  .hc-email .steps-form .step-numbers {
+    bottom: 0.4em;
+    right: 0.5em;
   }
 }
 
@@ -5530,3 +5550,18 @@ and (max-width : 700px) {
     transform: rotateY(360deg);
   }
 }*/
+
+/*---------------------------------*/
+
+#hc-alliance .hc-image img {
+  width: 100%;
+}
+
+#hc-alliance .hc-image {
+  padding: 2em;
+  background: white;
+  border-radius: 15px;
+  max-width: 350px;
+  margin: auto;
+  margin-top: 2em;
+}

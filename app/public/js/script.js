@@ -653,6 +653,8 @@ function emailSubscribe() {
       $emailInput = $emailSection.find('input[type=email]'),
       $emailSteps = $emailSection.find('.email-steps'),
       $stepsform = $emailSection.find('.steps-form'),
+      curStep = 1,
+      totalSteps = 26,
       btcVal, ethVal, bchVal,
       preTokenSaleMailchimp = 'https://hooks.zapier.com/hooks/catch/2306819/rageg0/',
       postTokenSaleEmail = 'https://hooks.zapier.com/hooks/catch/2306819/rak7mz/',
@@ -660,7 +662,8 @@ function emailSubscribe() {
       formData = {
         'payment-type' : [],
         'accredited-investor' : 'No'
-      };
+      },
+      isStep11Checked = false;
 
   autosize($('textarea'));
 
@@ -725,6 +728,7 @@ function emailSubscribe() {
   $emailSteps.find('input[type="radio"]').change(function(){
     // console.log('changed');
     var $thisEmailStep = $(this).parents('.email-steps');
+    var $thisForm = $(this).parents('.steps-form');
     var step101 = $thisEmailStep.hasClass('step-10-1');
     var step102 = $thisEmailStep.hasClass('step-10-2');
     var step17 = $thisEmailStep.hasClass('step-17');
@@ -741,12 +745,16 @@ function emailSubscribe() {
         var $step11 = $(this).parents('.hc-email').find('.step-11');
         if ($(this).val() == 'Yes') {
           // console.log($(this).val());
+          totalSteps = 26;
+          $thisForm.find('.out-of').text(totalSteps);
           $thisEmailStep.find('.button-primary.button-next[data-step="step-11"]').hide();
           $thisEmailStep.find('.button-primary.button-next[data-step="step-10-2"]').show();
           $step11.find('.button-primary.button-back[data-step="step-10-2"]').show();
           $step11.find('.button-primary.button-back[data-step="step-10-1"]').hide();
         } else if ($(this).val() == 'No') {
           // console.log($(this).val());
+          totalSteps = 25;
+          $thisForm.find('.out-of').text(totalSteps);
           $thisEmailStep.find('.button-primary.button-next[data-step="step-11"]').show();
           $thisEmailStep.find('.button-primary.button-next[data-step="step-10-2"]').hide();
           $step11.find('.button-primary.button-back[data-step="step-10-1"]').show();
@@ -773,11 +781,17 @@ function emailSubscribe() {
       }
     } else if (step11) {
       if ($(this).val() == 'Yes') {
+        totalSteps += 1;
+        $thisForm.find('.out-of').text(totalSteps);
         $thisEmailStep.find('.button-primary.button-next[data-step="step-12"]').show();
         $thisEmailStep.find('.button-primary.button-next[data-step="step-12-1"]').hide();
+        isStep11Checked = true;
       } else if ($(this).val() == 'No') {
+        totalSteps = (isStep11Checked) ? totalSteps - 1 : totalSteps;
+        $thisForm.find('.out-of').text(totalSteps);
         $thisEmailStep.find('.button-primary.button-next[data-step="step-12"]').hide();
         $thisEmailStep.find('.button-primary.button-next[data-step="step-12-1"]').show();
+        isStep11Checked = true;
       }
     } else if (step1_0) {
       if ($(this).val() == 'Yes') {
@@ -932,7 +946,10 @@ function emailSubscribe() {
     var $thisWidget = $form.parents('.hc-email');
     $thisEmailStep.hide();
     $thisWidget.find('.email-widget').show();
+    $form.hide();
     $form.find('.email-steps.step-1-0 input[value="No"]').trigger('click');
+    curStep = 1;
+    $form.find('.step-numbers .with-in').text(curStep);
     // $thisWidget.find('.email-widget input[type="email"]').empty();
   });
 
@@ -991,6 +1008,7 @@ function emailSubscribe() {
     if(emailVal){
       $thisEmailSect.find('.email-steps.step-17 input[type="text"]').val(emailVal);
       $thisEmailSect.find('.email-widget').hide();
+      $thisEmailSect.find('.steps-form').show();
       $thisEmailSect.find('.email-steps.step-1').show();
       setTimeout(function(){
         $(window).scrollTop($thisEmailSect.offset().top - 90);
@@ -1105,9 +1123,22 @@ function emailSubscribe() {
 
   $emailSteps.find('.button-group .button-primary:not(.button-end, .twitter, .email, .email-mobile)').click(function(){
     var $thisEmailSect = $(this).parents('.hc-email'),
-        $thisForm = $thisEmailSect.find('.form');
+        $thisForm = $thisEmailSect.find('.form'),
+        stepVal = $(this).data().step,
+        $numSteps = $thisEmailSect.find('.step-numbers');
 
-    var stepVal = $(this).data().step;
+    if($(this).hasClass('button-next')){
+      curStep += 1;
+      $numSteps.find('.with-in').text(curStep);
+    } else if ($(this).hasClass('button-back')) {
+      if (stepVal == 'step-1') {
+        curStep = 1;
+        $numSteps.find('.with-in').text(curStep);
+      } else {
+        curStep -= 1;
+        $numSteps.find('.with-in').text(curStep);
+      }
+    }
 
     setTimeout(function(){
       $(window).scrollTop($thisEmailSect.offset().top - 90);

@@ -12,6 +12,10 @@
     //- p(style="text-align:left; max-width: 960px;") Invites to our Second Token Sale will be sent December 2017
           
   form.steps-form
+    .step-numbers.dark-green 
+      span.with-in 1 
+      span  of 
+      span.out-of 26
     .email-steps.step-1
       h4 Welcome to the private, invite-only Second Token Sale for Storecoin #💰
       p Please take three minutes to apply.
@@ -841,7 +845,8 @@
           | Next
           
     .email-steps.step-18-2
-      p As a future Storecoin token owner, would you be interested in earning extra storecoins by staking your tokens for 3+ months to help Validate our future decentralized blockchain consensus? This would make you a founding Validator (miner) for Storecoin. After six months of actively validating, you'd have a vote in Governance, too.
+      p As a future Storecoin token owner, would you be interested in earning extra storecoins by staking your tokens for 3+ months to help Validate our future decentralized blockchain consensus? This would make you a founding Validator (miner) for Storecoin. After six months of actively validating, you'd have a vote in Governance, too. You can also apply directly 
+        a(href="/applytoforge", target="_blank") here.
       .field.radio-field
         .hc-radio-btn.checked
         input(type='radio', name="extra-coin", value='Yes')
@@ -857,6 +862,29 @@
       hr
       .button-group
         button.button-back.button-primary(data-step='step-18-1')
+          i.ion-chevron-left
+          | Back
+        button.button-primary.button-next(data-step='step-18-3')
+          | Next
+          
+    .email-steps.step-18-3
+      p As a future Storecoin token owner, would you be interested in earning storecoins by helping Secure our blockchain? This would make you a founding Decentralized Security Guard (dGuard). After three months of actively Securing, you'd have a vote in Governance, too. Requirements are experiences in fraud detection, information security, and related fields. You can also apply directly 
+        a(href="/guard", target="_blank") here.
+      .field.radio-field
+        .hc-radio-btn.checked
+        input(type='radio', name="extra-coin-2", value='Yes')
+        label Yes
+      .field.radio-field
+        .hc-radio-btn
+        input(type='radio', name="extra-coin-2", value='No')
+        label No
+      .field.radio-field
+        .hc-radio-btn
+        input(type='radio', name="extra-coin-2", value='Maybe, send me more information')
+        label Maybe, send me more information
+      hr
+      .button-group
+        button.button-back.button-primary(data-step='step-18-2')
           i.ion-chevron-left
           | Back
         button.button-primary.button-submit(type="submit")
