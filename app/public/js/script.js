@@ -60,28 +60,8 @@ $(document).ready(function(){
   initCoinFlip();
 });
 
-// function yAxisWidth () {
-//   $('#storeco-fits-in .graph-lines-image').on('load',function(){
-//     var graphLineWdth,
-//         yAxisHeight = $('#storeco-fits-in .y.axis').height() / 2;
-//
-//     $('#storeco-fits-in .graph-container').css({
-//       'width' : 'calc(100% - '+yAxisHeight+'px)',
-//       'margin-left' : yAxisHeight*2+'px',
-//     });
-//
-//     graphLineWdth = $(this).height();
-//
-//     $('#storeco-fits-in .y.axis').css({
-//       'width' : graphLineWdth,
-//       'top' : 'calc('+graphLineWdth/2+'px - '+yAxisHeight+'px)',
-//       'left' : 'calc(-'+graphLineWdth/2+'px + '+yAxisHeight+'px)'
-//     });
-//   });
-// }
-
 function initCoinFlip () {
-  var $coinCont = $('#hc-coin'),
+  var $coinCont = $('#business-case'),
       height = $coinCont.height(),
       $coin = $coinCont.find('.coin'),
       offset = $coinCont.offset().top - 200,
@@ -226,7 +206,7 @@ function scrollCheck(){
 }
 
 function cardFlip() {
-  var $sixEngines = $('#hc-six-engines'),
+  var $sixEngines = $('#six-engines'),
       $engine = $sixEngines.find('.engines .engine'),
       $engineModal = $('.engine-modals .engine-modal'),
       $openModal = $('.open-modal'),
@@ -299,7 +279,7 @@ function cardFlip() {
 }
 
 function stratDist(isMobile) {
-  var $startDist = $('#strat-dist .hc-strat-dist');
+  var $startDist = $('#distribution-strategy .hc-strat-dist');
 
   if(isMobile) {
     $startDist.click(function(){
@@ -1523,8 +1503,8 @@ function initTimer () {
 function hasUrl () {
   // console.log(window.location.hash);
   var hash = window.location.hash;
-  if (hash == '#first-token-sale') {
-    $(window).scrollTop($('#first-token-sale').offset().top - 90);
+  if (hash) {
+    $(window).scrollTop($(hash).offset().top - 100);
   }
 }
 

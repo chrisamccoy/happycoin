@@ -1,11 +1,13 @@
-#hc-six-engines.hc-feature.over-rel.padding.inverted
+#six-engines.hc-feature.over-rel.padding.inverted
   .hc-chunk.hc-customize-text-wrapper
     h3.hc-feature-title.inverted The Six Engines of DyPoS
     p.hc-feature-lead Dynamic Proof of Stake is made up of six interdependent engines.
     p.hc-feature-lead Each engine is based on similar dynamic supply and demand principles as Uber Surge Pricing. Prices for all six engines are driven by real-time threat levels in the 
       a.open-modal.orange-color(data-modal="#dypos-modal", data-goto="0", style="text-decoration:underline;") 
         b Storecoin Security System.
-    p.hc-feature-lead DyPoS is also inspired by checks and balances of the U.S. Constitution (governance) and Power of Attorney (scaling).
+    p.hc-feature-lead Governance in DyPoS is inspired by the checks and balances of the U.S. Constitution.
+    p(style="text-align:center; margin: 1em;") 
+      span(style="border: 2px solid #ffffff3d; border-radius: 7px; padding: 0.3em 0.5em; color: #ffffff;") Click a Card to Learn More
     div.desktop-image      
       div.engines
         div.engine
@@ -111,41 +113,7 @@
             p Storecoin Governance is inspired by the United States Constitution where checks and balances ensure that: a) Security Matters Most and b) No Centralization of Power. For the first 4 years, Storecoin, Inc. will have executive power.
             a.engine-learn-more.open-modal(data-modal="#dypos-modal") Learn More
 
-  div.engine-modals
-    //- div#engine-cards-modal.ui.modal
-    //-   i.ion-android-close
-    //-   div.card-slider
-    //-     .slide
-    //-       div.engine-popup
-    //-         h5 Dynamic (free) Transactions
-    //-         p To secure transactions, a small security bond is required with each transaction that is returned to the sender, with interest, once the transaction is determined by dSecurity Guards to not to be spam or an attack.
-    //-         a.engine-learn-more.open-modal(data-modal="#dypos-modal", data-goto="6") Learn More
-    //-     .slide
-    //-       div.engine-popup
-    //-         h5 Dynamic Validation
-    //-         p An unlimited number of Validators can participate in Consensus. No single Validator ever has greater than 5% odds of winning the Block Reward. Every Validator has a chance at winning each new block. Decentralization is maximized.
-    //-         a.engine-learn-more.open-modal(data-modal="#dypos-modal", data-goto="8") Learn More
-    //-     .slide
-    //-       div.engine-popup
-    //-         h5 Dynamic Block Rewards
-    //-         p Capped, yearly token inflation of 5% is used to pay Block Rewards to Validators. The reward amount is dynamic based upon a number of real-time factors. Storecoin Inc. takes 1% of the inflation to pay for security, engineering, Governance, and blockchain operations.
-    //-         a.engine-learn-more.open-modal(data-modal="#dypos-modal", data-goto="10") Learn More
-    //-     .slide
-    //-       div.engine-popup
-    //-         h5 Dynamic Security
-    //-         p The Storecoin Security System determines real-time prices for DyPoS. dSecurity Guards study transactions and Validator activity and report potential spam or attacks to Storecoin, Inc. dGuards earn +50% of the stake or the bond of the found bad actors. The rest is burnt.
-    //-         a.engine-learn-more.open-modal(data-modal="#dypos-modal", data-goto="0") Learn More
-    //-     .slide
-    //-       div.engine-popup
-    //-         h5 Dynamic Scaling
-    //-         p To scale blockchain transactions by making validation instant -- without expensive and unnecessary network hops -- Storecoin is introducing the concept of an "Agent". It's similar to Power of Attorney but with Merkle hashes.
-    //-         a.engine-learn-more.open-modal(data-modal="#dypos-modal", data-goto="12") Learn More
-    //-     .slide
-    //-       div.engine-popup
-    //-         h5 Dynamic Governance
-    //-         p Storecoin Governance is inspired by the United States Constitution where checks and balances ensure that: a) Security Matters Most and b) No Centralization of Power. For the first 4 years, Storecoin, Inc. will have executive power.
-    //-         a.engine-learn-more.open-modal(data-modal="#dypos-modal", data-goto="14") Learn More
-            
+  div.engine-modals            
     div#dypos-modal.engine-modal.ui.modal
       i.ion-android-close
       .engine-slider
@@ -157,7 +125,7 @@
               h3.hc-feature-title Dynamic Security 
               p.hc-feature-lead The Storecoin Security System determines real-time prices for DyPoS. dSecurity Guards study transactions and Validator activity and report potential spam or attacks to Storecoin, Inc. dGuards earn +50% of the stake or the bond of the found bad actors. The rest is burnt.
         .slide
-          #security-system-lite.hc-feature.over-rel.padding
+          .security-system-lite.hc-feature.over-rel.padding
             .hc-chunk.hc-customize-text-wrapper
               h3.hc-feature-title.title-icon
                 img.icon(src="/images/red-caution.png", align="top") 
@@ -277,7 +245,7 @@
               h3.hc-feature-title Dynamic Governance
               p.hc-feature-lead Storecoin Governance is inspired by the United States Constitution where checks and balances ensure that: a) Security Matters Most and b) No Centralization of Power. For the first 4 years, Storecoin, Inc. will have executive power.
         .slide
-          .hc-feature.over-rel.padding
+          .hc-feature.over-rel.padding.hc-engine-governance
             .hc-chunk.hc-customize-text-wrapper
               h3.hc-feature-title.title-icon
                 img.icon(src="/images/dynamic-governance-v2.png", align="top") 

@@ -28,11 +28,11 @@ block content
         h2.hc-feature-lead(style="margin:0px;")
           | With DyPoS, Storecoin will bring crypto-powered API calls and payments to app developers around the world.
     
-    div#first-token-sale
+    div#second-token-sale
     - var top = true  
     include email-widget
     
-    .hc-feature.over-rel.padding
+    #token-sale-buyers.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title(style="margin-bottom: 1.5em;") First Token Sale buyers
         #hc-buyers-slider.logo-slider
@@ -49,8 +49,18 @@ block content
               
     include storeco-vs-blockchains
     include our-team-widget
+    
+    #our-vision.hc-feature.over-rel.padding
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title.inverted Our Vision
+        p.hc-feature-lead In 1879, Thomas Edison brought commercial light bulbs to the world. These light bulbs eventually changed how we work, how we play, and how we communicate.
+        div.hc-image
+          img.bulb-off(src="/images/bulb-glow.png")
+          img.bulb-glow(src="/images/bulb-glow-v2.png", style="display:none;")
+        p.hc-feature-lead By 2020, Storecoin will bring free, crypto-powered transactions to millions of apps, to trillions of API calls, and to thousands of mobile and web developers.
+        p.hc-feature-lead(style="margin-bottom:0px;") On-chain, crypto-powered API calls will create entirely new markets and new incentives for apps.
 
-    #latest-updates.hc-feature.over-rel.padding.lite.left-align
+    #our-latest.hc-feature.over-rel.padding.lite.left-align
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Our Latest
         //- p.hc-feature-lead Storecoin Creator Chris McCoy will be speaking publicly for the first time about Storecoin at the Crypto Finance Conference in Switzerland, January 17-19.
@@ -80,47 +90,11 @@ block content
             i.ion-ios-arrow-down
 
     
-    #green-paper.hc-feature.over-rel.padding.orange.inverted(style="padding:2.5em;")
+    #orange-paper.hc-feature.over-rel.padding.orange.inverted(style="padding:2.5em;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted(style=" margin:0px !important;")  This website is our Orange Paper.
-    
-    #our-vision.hc-feature.over-rel.padding
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title.inverted Our Vision
-        p.hc-feature-lead In 1879, Thomas Edison brought commercial light bulbs to the world. These light bulbs eventually changed how we work, how we play, and how we communicate.
-        div.hc-image
-          img.bulb-off(src="/images/bulb-glow.png")
-          img.bulb-glow(src="/images/bulb-glow-v2.png", style="display:none;")
-        //- .bulb-container
-        //-   .fancy-bulb
-        //-     .left-streaks.streaks
-        //-     svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 275.3 413.3', enable-background='new 0 0 275.3 413.3', xml:space='preserve')
-        //-       g#off
-        //-         path(fill='#E2ECF1', d='M137.7,13.7C67.2,13.7,10,70.9,10,141.4c0,58.3,72.8,118.2,79.9,162.3h47.8h47.8\
-        //-         c7.1-44,79.9-103.9,79.9-162.3C265.3,70.9,208.2,13.7,137.7,13.7z')
-        //-       g#on
-        //-         path(fill='#FFDB55', d='M137.7,13.7C67.2,13.7,10,70.9,10,141.4c0,58.3,72.8,118.2,79.9,162.3h47.8h47.8\
-        //-         c7.1-44,79.9-103.9,79.9-162.3C265.3,70.9,208.2,13.7,137.7,13.7z')
-        //-       g#outline
-        //-         path(fill='#F1F2F2', stroke='#38434A', stroke-width='19.1022', stroke-miterlimit='10', d='M168.5,375.5h-61.7c-8.9,0-16-7.2-16-16\
-        //-         v-55.8h93.8v55.8C184.6,368.3,177.4,375.5,168.5,375.5z')
-        //-         path(fill='#F1F2F2', stroke='#38434A', stroke-width='19.1022', stroke-miterlimit='10', d='M151.2,401.5h-27.1c-3.9,0-7-3.2-7-7v-19\
-        //-         h41.1v19C158.2,398.4,155.1,401.5,151.2,401.5z')
-        //-         line(fill='none', stroke='#38434A', stroke-width='19.1022', stroke-miterlimit='10', x1='184.6', y1='339.6', x2='90.8', y2='339.6')
-        //-         path(fill='none', stroke='#38434A', stroke-width='19.1022', stroke-miterlimit='10', d='M137.7,13.7C67.2,13.7,10,70.9,10,141.4\
-        //-         c0,58.3,72.8,118.2,79.9,162.3h47.8h47.8c7.1-44,79.9-103.9,79.9-162.3C265.3,70.9,208.2,13.7,137.7,13.7z')
-        //-       g#highlight
-        //-         path(fill='#FFDB55', stroke='#FFFFFF', stroke-width='21.0124', stroke-linecap='round', stroke-miterlimit='10', d='M207.1,89.5\
-        //-         c-12.3-16.1-28.4-29.1-46.9-37.8')
-        //-         path(fill='#FFDB55', stroke='#FFFFFF', stroke-width='21.0124', stroke-linecap='round', stroke-miterlimit='10', d='M225,121.4\
-        //-         c-0.8-2.2-1.8-4.4-2.7-6.5')
-        //-     .right-streaks.streaks
-          //- .power
-          //-   | Power
-        p.hc-feature-lead By 2020, Storecoin will bring free, crypto-powered transactions to millions of apps, to trillions of API calls, and to thousands of mobile and web developers.
-        p.hc-feature-lead(style="margin-bottom:0px;") On-chain, crypto-powered API calls will create entirely new markets and incentives for apps.
         
-    #hc-coin
+    div#business-case
       .hc-feature.over-rel.inverted.padding
         .hc-chunk.hc-customize-text-wrapper
           h3.hc-feature-title The Business Case for Storecoin
@@ -140,6 +114,16 @@ block content
             div.heads
             
     include app-types
+    
+    #storecoin-fits-in.hc-feature.over-rel.padding.inverted
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title Where Storecoin fits in
+        p.hc-feature-lead The market for crypto-based payments and incentives inside of web and mobile apps - called cApps
+        .hc-image
+          .desktop-image 
+            img(src='/images/storecoin-fits-in.png', style="max-width:700px; width:100%;")
+          .mobile-image 
+            img(src='/images/storecoin-fits-in-mobile.png')
         
     #network-effects.hc-feature.over-rel.inverted.padding
       .hc-chunk
@@ -376,7 +360,7 @@ block content
         .hc-image
           img(src="/images/logo.png")
             
-    #solution-desc.hc-feature.over-rel.padding.left-align
+    #what-is-storecoin.hc-feature.over-rel.padding.left-align
       .hc-chunk.hc-customize-text-wrapper
         p.hc-feature-lead.large-text(style="margin-top:0px;") Storecoin is a new public blockchain with permanently free transactions through a new decentralized consensus algorithm called 
           b Dynamic Proof of Stake (DyPoS).
@@ -400,9 +384,32 @@ block content
           span.icon.ion-record.bullet
           span Governance inspired by the United States Constitution where checks and balances ensure a) Security Matters Most and b) No Centralization of Power 
     
+    #security-system.security-system-lite.hc-feature.over-rel.padding.lite
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title.title-icon
+          img.icon(src="/images/red-caution.png", align="top") 
+          | The Storecoin Security System 
+        p.hc-feature-lead The Storecoin Security System powers real-time market prices for the Six Engines of DyPoS. The System threat level algorithmically updates as transaction volume rise and fall. As threat level rise, the cost of spam and attacks rise too.
+        div.hazard-boxes
+          div.box.red
+            h3 Severe
+            p Severe risk of an attack or an spam
+          div.box.skin
+            h3 High
+            p High risk of an attack or an spam
+          div.box.yellow
+            h3 Elevated
+            p Significant risk of an attack or an spam
+          div.box.blue
+            h3 Guarded
+            p General risk of an attack or an spam
+          div.box.green
+            h3 Low
+            p Low risk of an attack or an spam
+    
     include six-engines
     
-    #dyn-algo.hc-feature.over-rel.padding.lite
+    #dypos-algorithm.hc-feature.over-rel.padding.lite
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Where Storecoin and our DyPoS algorithm fit in
         p.hc-feature-lead The market of permissioned vs. permissionless consensus algorithms and blockchains
@@ -500,32 +507,7 @@ block content
                   li Stellar (Ripple fork)      
         p.hc-feature-lead.hint-text(style="margin:0px;") Click to see blockchains using each algorithm
     
-    #storeco-fits-in.hc-feature.over-rel.padding.inverted
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title Where Storecoin fits in
-        p.hc-feature-lead The market for public blockchains incentivizing API calls inside of web and mobile applications. 
-        .hc-image
-          .desktop-image 
-            img(src='/images/storecoin-fits-in.png', style="max-width:700px; width:100%;")
-          .mobile-image 
-            img(src='/images/storecoin-fits-in-mobile.png')
-            
-        //- div.graph
-        //-   div.y.axis
-        //-     p Transactions Paid for By Fees
-        //-     p Permanently Free Transactions
-        //-   div.graph-container
-        //-     div.graph-lines
-        //-       img.graph-lines-image(src='/images/graph-lines.png')
-        //-       img.eth-logo(src="/images/ethereum-logo.png")
-        //-       img.btc-logo(src="/images/bitc-logo.png")
-        //-       img.eos-logo(src="/images/eos-logo.png")
-        //-       img.storecoin-logo(src="/images/logo.png")
-        //-     div.x.axis
-        //-       p Decentralized Public Blockchains that can incentivize Decentralized Apps
-        //-       p Decentralized Public Blockchains that can incentivize Centralized Apps
-    
-    #strat-dist.hc-feature.over-rel.padding
+    #distribution-strategy.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted Our Wallet-based Distribution Strategy
         p.hc-feature-lead Through the Storecoin-powered Wallet, storecoin tokens will be distributed inside of web and mobile apps (not dApps). Apps integrate the Wallet using the Storecoin Developer Kit and then assign crypto amounts to key in-app API calls. When users take those pre-defined actions, they earn storecoins as a reward.
@@ -567,7 +549,7 @@ block content
             img(src="/images/strat-dist-mobile-1-v2.png")
             p A digitized, decentralized, public ledger containing the history of every Storecoin transaction.
     
-    .hc-feature.over-rel.padding.lite
+    #how-wallet-works.hc-feature.over-rel.padding.lite
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.title-icon How the 
           img.icon(src="/images/logo-text.png", style="margin:0px; width:65px;")
@@ -575,19 +557,24 @@ block content
         p.hc-feature-lead Once Third Party Developers integrate the Storecoin Wallet using APIs, every user on their app can have a Storecoin crypto wallet. Developers can reward storecoins to users when they take pre-defined actions. They can even “tax” their app and take a small cut of each crypto-powered transaction. The possibilities are endless.
         div.wallet-screens
           div.screen
-            div.title 
-              b A User Wallet inside any App
+            div.title
+              a(href="/wallet", target="_blank").orange-color 
+                b A User Wallet inside any App
             img(src="/images/wallet-screen-1.png")
           div.screen
             div.title 
-              b Assigning tokens to API calls
+              a(href="/wallet", target="_blank").orange-color 
+                b Assigning tokens to API calls
             img(src="/images/wallet-screen-2.png")
           div.screen
             div.title 
-              b An app "taxing" its transactions
+              a(href="/wallet", target="_blank").orange-color
+                b An app "taxing" its transactions
             img(src="/images/wallet-screen-3.png")
+        p.hc-feature-lead(style="margin-bottom: 0px;")
+          a(href="/wallet", target="_blank").orange-color See a Prototype for the Storecoin Wallet.
     
-    .hc-feature.over-rel.padding(style="overflow:visible;")
+    #how-payment-works.hc-feature.over-rel.padding(style="overflow:visible;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title How Secure Payments Work with Storecoin
         p.hc-feature-lead When you pay for something with physical cash (U.S. paper dollar bills), the person who handed it over can’t spend the same money on something else (unless you have a quarter on a string). Preventing this type of “double spending” in a digital currency is more complex.
@@ -745,11 +732,11 @@ block content
     
     include footprint-matters
                   
-    #hc-alliance.hc-feature.over-rel.padding.inverted
+    #alliance.hc-feature.over-rel.padding.inverted
       .hc-chunk
         h2.hc-feature-title The Storecoin Alliance
         p.hc-feature-lead A collation of organizations that have entered into long-term relationships with Storecoin as its exclusive cryptocurrency to be integrated into enterprise and consumer-facing apps.
-        .hc-image
+        a(href="http://footprintchat.com", target="_blank").hc-image
           img(src='/images/footprint-white-logo.png')
 
     
@@ -758,20 +745,24 @@ block content
         h2.hc-feature-title Our Partners
         #hc-partners-slider.logo-slider
           .slide
-            img(src='/images/AWS-Activate.png')
-            p $100,000	in	Amazon	AWS	credits
+            a(href="https://aws.amazon.com/activate/", target="_blank")
+              img(src='/images/AWS-Activate.png')
+              p $100,000	in	Amazon	AWS	credits
           //- .slide
           //-   img(src='/images/footprint-white-logo.png')
           //-   p First	major	App developers
           .slide
-            img(src='/images/fenwick-west-logo.png', style='width:60%;')
-            p Blockchain Patent Lawyers
+            a(href="https://www.fenwick.com/pages/default.aspx", target="_blank")
+              img(src='/images/fenwick-west-logo.png', style='width:60%;')
+              p Blockchain Patent Lawyers
           .slide
-            img(src='/images/logo-coinfabrik.png', style='width:80%;')
-            p Blockchain	Development	Partners
+            a(href="https://www.coinfabrik.com/", target="_blank")
+              img(src='/images/logo-coinfabrik.png', style='width:80%;')
+              p Blockchain	Development	Partners
           .slide
-            img(src='/images/bottom-line-logo.png', style='width:80%;')
-            p Legal and SEC Compliance
+            a(href="http://bottomlinelawgroup.com/", target="_blank")
+              img(src='/images/bottom-line-logo.png', style='width:80%;')
+              p Legal and SEC Compliance
           .slide
             img(src='/images/clinton-polley.png', style='width: auto; height: 110px;')
             p Founding Validators for Storecoin
@@ -854,7 +845,7 @@ block content
                 .box
                   h2.title
                     span.bullet 3
-                    | Second Token Sale (6% sale)
+                    | Second Token Sale (3% sale)
                   .content
                     ul
                       li
@@ -944,21 +935,25 @@ block content
     
     include network-distribution
     
-    .hc-feature.over-rel.inverted.padding.lite
+    #join-community.hc-feature.over-rel.inverted.padding.lite
       .hc-chunk
         include join-community
             
-    .hc-feature.over-rel.padding(style="padding-left: 0px; padding-right:0px;")
+    #validate.hc-feature.over-rel.padding(style="padding-left: 0px; padding-right:0px;")
       .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title Become a Validator
-        p.hc-feature-lead(style=" margin:0px !important; color:#5d794c; text-decoration:underline;") 
+        h3.hc-feature-title Help Validate the future Storecoin Blockchain
+        .hc-image
+          img(src="/images/blchain-verification.png", style="max-width:200px; width:100%;")
+        p.hc-feature-lead(style=" margin-bottom:0px !important; color:#5d794c; text-decoration:underline;") 
           a(href="/applytoforge", target="_blank",style="font-size:30px;") Apply here
           
-    .hc-feature.over-rel.padding.inverted.orange(style="padding-left: 0px; padding-right:0px;")
+    #security-guard.hc-feature.over-rel.padding.inverted.orange(style="padding-left: 0px; padding-right:0px;")
       .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title Become a Security Guard
-        p.hc-feature-lead(style=" margin:0px !important; color:#5d794c; text-decoration:underline;") 
-          a(href="/guard", target="_blank",style="font-size:30px;") Apply here
+        h3.hc-feature-title Become a dSecurity Guard for Storecoin
+        .hc-image
+          img(src="/images/security-guards.png", style="max-width:200px;width:100%;background: white;border-radius: 15px;padding: 1em;")
+        p.hc-feature-lead(style=" margin-bottom:0px !important; color:#5d794c; text-decoration:underline;") 
+          a(href="/dguard", target="_blank",style="font-size:30px;") Apply here
     
     //- .hc-feature.over-rel.padding.inverted(style="padding-left: 0px; padding-right:0px;")
     //-   .hc-chunk.hc-customize-text-wrapper

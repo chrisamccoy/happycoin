@@ -55,7 +55,7 @@ router.get('/applytoforge', function(req, res, next) {
 });
 
 /* GET home page. */
-router.get('/guard', function(req, res, next) {
+router.get('/dguard', function(req, res, next) {
   res.render('security-guard-app', { title: 'Storecoin' });
 });
 
@@ -160,7 +160,7 @@ router.get('/wallet/wallet-app', function(req, res, next) {
 });
 
 router.get('/wallet', function(req, res, next) {
-  res.render('wallet/index', { title: 'Storecoin', name : 'Home' });
+  res.render('wallet/index-desktop', { title: 'Storecoin', name : 'Home' });
 });
 
 // router.get('/wallet/buy', function(req, res, next) {
