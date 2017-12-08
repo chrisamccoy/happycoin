@@ -616,7 +616,7 @@ function toggleAppsDesc() {
 }
 
 function toggleIncentive () {
-  var $network = $('#network-effects'),
+  var $network = $('#problems'),
       $incentive = $network.find('.incentive');
 
   $incentive.click(function () {

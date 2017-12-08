@@ -1202,67 +1202,67 @@ and (max-width : 700px) {
   color:rgb(93, 121, 76);
 }
 
-#network-distribution h4 {
+#distribution-plan h4 {
   font-weight: normal;
   color: #333;
   text-align: center;
 }
 
-/*#network-distribution .lead {
+/*#distribution-plan .lead {
   font-size: 1.4em;
   margin-bottom: 2em;
   text-align: center;
   max-width: 700px;
 }*/
 
-#network-distribution .network-stats {
+#distribution-plan .network-stats {
   margin-top: 3em;
 }
 
-#network-distribution .token-dist .circle {
+#distribution-plan .token-dist .circle {
   position : relative;
 }
 
-#network-distribution .token-dist .subtext {
+#distribution-plan .token-dist .subtext {
   font-size: 1.5em;
 }
 
-#network-distribution .token-dist .row {
+#distribution-plan .token-dist .row {
   margin-bottom: 1em;
   display: flex;
   align-items: center;
 }
 
-#network-distribution .token-price > h4 {
+#distribution-plan .token-price > h4 {
   margin-top: 2em;
 }
 
-#network-distribution > .row {
+#distribution-plan > .row {
   margin-bottom: 2em;
 }
 
-#network-distribution .note {
+#distribution-plan .note {
   color: #666;
   font-size: 1em;
   margin: 1em 0.5em;
 }
 
 
-#network-distribution .highlight {
+#distribution-plan .highlight {
   text-align: center;
   margin: 1.2em auto;
 }
 
-#network-distribution .highlight h5 {
+#distribution-plan .highlight h5 {
   margin : 0px;
   font-size: 1em;
 }
 
-#network-distribution .highlight .text {
+#distribution-plan .highlight .text {
   font-size: 2.2em;
 }
 
-#network-distribution .highlight .subtext {
+#distribution-plan .highlight .subtext {
   font-size: 0.9em;
   color: #666;
   margin: 0 2em;
@@ -1558,7 +1558,7 @@ and (max-width : 700px) {
     margin-top : 1em;
   }
 
-  #network-distribution h4 {
+  #distribution-plan h4 {
     margin : 1em 0px 1em;
   }
 
@@ -1566,26 +1566,26 @@ and (max-width : 700px) {
     font-size: 1em;
   }
 
-  #network-distribution .token-dist .row {
+  #distribution-plan .token-dist .row {
     display: block;
     margin-bottom: 3em;
   }
 
-  #network-distribution .highlight .text {
+  #distribution-plan .highlight .text {
     font-size: 2em;
   }
 
-  #network-distribution .token-dist .circle {
+  #distribution-plan .token-dist .circle {
     width: 50%;
     margin: auto;
   }
 
-  #network-distribution .token-dist .subtext {
+  #distribution-plan .token-dist .subtext {
     text-align: center;
     font-size: 1em;
   }
 
-  #network-distribution .network-stats {
+  #distribution-plan .network-stats {
     margin-top: 1em;
   }
 
@@ -2467,21 +2467,21 @@ and (max-width : 700px) {
 }
 
 /*--------------------------*/
-/* #network-effects  */
+/* #problems  */
 
-#network-effects {
+#problems {
   margin: auto;
   text-align: center;
   position: relative;
   overflow: visible;
 }
 
-#network-effects .hc-feature-lead:last-child {
+#problems .hc-feature-lead:last-child {
   margin-bottom: 0px;
   margin-top: 0px;
 }
 
-#network-effects .incentives {
+#problems .incentives {
   max-width: 900px;
   margin: auto;
   margin-top: 2em;
@@ -2489,17 +2489,17 @@ and (max-width : 700px) {
   z-index: 1;
 }
 
-#network-effects .incentives.mobile {
+#problems .incentives.mobile {
   display: none;
   margin-bottom: 3em;
 }
 
-#network-effects .incentives .logo {
+#problems .incentives .logo {
   width: 120%;
   margin: -2em;
 }
 
-#network-effects .incentives .rails-wrapper {
+#problems .incentives .rails-wrapper {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -2508,7 +2508,7 @@ and (max-width : 700px) {
   z-index: -1;
 }
 
-#network-effects .incentives .rails-wrapper .rails {
+#problems .incentives .rails-wrapper .rails {
   margin: 6em 7em;
   width: calc(100% - 14em);
   height: calc(100% - 11em);
@@ -2517,27 +2517,27 @@ and (max-width : 700px) {
   background-repeat: no-repeat;
 }
 
-#network-effects .incentives .columns {
+#problems .incentives .columns {
   min-height: 175px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#network-effects .incentives .row.middle .columns {
+#problems .incentives .row.middle .columns {
   min-height: 300px;
 }
 
-#network-effects .incentives .columns.vertical {
+#problems .incentives .columns.vertical {
   flex-direction: column;
   justify-content: space-around;
 }
 
-/*#network-effects .incentives .columns.vertical .incentive:first-child {
+/*#problems .incentives .columns.vertical .incentive:first-child {
   margin-top: 0em;
 }*/
 
-#network-effects .incentives .columns .incentive {
+#problems .incentives .columns .incentive {
   background: #c7dfb8;
   font-size: 1.5em;
   padding: 0.5em;
@@ -2550,26 +2550,26 @@ and (max-width : 700px) {
   /*margin-top: 4em;*/
 }
 
-#network-effects .incentives .columns .incentive.reveal {
+#problems .incentives .columns .incentive.reveal {
   z-index: 2;
 }
 
-#network-effects .incentives .columns .incentive:hover {
+#problems .incentives .columns .incentive:hover {
   transition: all .2s ease-in;
   transform: scale(1.05);
 }
 
-#network-effects .incentives .columns .incentive .title{
+#problems .incentives .columns .incentive .title{
   display: flex;
   justify-content: center;
 }
 
-#network-effects .incentives .columns .incentive .title p {
+#problems .incentives .columns .incentive .title p {
   font-size: 0.9em;
   margin: auto 0px;
 }
 
-#network-effects .incentives .columns .incentive .desc {
+#problems .incentives .columns .incentive .desc {
   font-size: 0.55em;
   display: none;
   position: absolute;
@@ -2583,21 +2583,21 @@ and (max-width : 700px) {
   box-shadow: 12px 15px 20px 0 rgba(46,61,73,.15);
 }
 
-#network-effects .incentives .columns .incentive.reveal .desc {
+#problems .incentives .columns .incentive.reveal .desc {
   display: block;
 }
 
-#network-effects .incentives .columns .incentive img {
+#problems .incentives .columns .incentive img {
   width: 40px;
   height: 40px;
   margin-right: 0.1em;
 }
 
-#network-effects .incentives .arrow-flow {
+#problems .incentives .arrow-flow {
   display: none;
 }
 
-#network-effects .incentives .row.bottom .columns {
+#problems .incentives .row.bottom .columns {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -2643,20 +2643,20 @@ and (max-width : 700px) {
     font-size: 1.5em;
   }
 
-  #network-effects .hc-feature-lead:last-child {
+  #problems .hc-feature-lead:last-child {
     margin-bottom: 0px;
     margin-top: 2em;
   }
 
-  #network-effects .incentives.mobile {
+  #problems .incentives.mobile {
     display: block;
   }
 
-  #network-effects .incentives.desktop {
+  #problems .incentives.desktop {
     display: none;
   }
 
-  #network-effects .incentives .rails-wrapper {
+  #problems .incentives .rails-wrapper {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -2666,7 +2666,7 @@ and (max-width : 700px) {
     z-index: -1;
   }
 
-  #network-effects .incentives .rails-wrapper .rails {
+  #problems .incentives .rails-wrapper .rails {
     /*border: none;
     width: 4px;
     height: 90%;
@@ -2675,46 +2675,46 @@ and (max-width : 700px) {
     display: none;
   }
 
-  #network-effects .incentives .columns.vertical .incentive:nth-child(3) {
+  #problems .incentives .columns.vertical .incentive:nth-child(3) {
     margin : 0px;
   }
 
-  #network-effects .incentives .columns {
+  #problems .incentives .columns {
     min-height: inherit !important;
     flex-direction: column;
   }
 
-  #network-effects .incentives .arrow-flow {
+  #problems .incentives .arrow-flow {
     display: block;
   }
 
-  #network-effects .incentives .arrow-flow {
+  #problems .incentives .arrow-flow {
     width : 50%;
   }
 
-  /*#network-effects .incentives .columns.horizontal,
-  #network-effects .incentives .columns.vertical {
+  /*#problems .incentives .columns.horizontal,
+  #problems .incentives .columns.vertical {
     margin-bottom: 1em;
   }*/
 
-  #network-effects .logo-wrapper {
+  #problems .logo-wrapper {
     display: none !important;
   }
 
-  #network-effects .incentives .columns.vertical .incentive:last-child {
+  #problems .incentives .columns.vertical .incentive:last-child {
     margin: 0px;
     /*margin-top: 0.7em;*/
   }
 
-  #network-effects .incentives .columns .incentive {
+  #problems .incentives .columns .incentive {
     width: 90%;
   }
 
-  #network-effects .incentives .columns .incentive.reveal {
+  #problems .incentives .columns .incentive.reveal {
     transform: scale(1);
   }
 
-  #network-effects .incentives .columns .incentive .desc {
+  #problems .incentives .columns .incentive .desc {
     position: inherit;
     box-shadow: none;
   }
@@ -3646,7 +3646,7 @@ and (max-width : 700px) {
     margin-bottom: 0px;
   }
 
-  #network-distribution h5 {
+  #distribution-plan h5 {
     font-size: 1.8em;
     font-weight: bold;
     margin: 1em 0 0;
