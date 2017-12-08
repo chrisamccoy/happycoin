@@ -123,10 +123,10 @@ function initLightBulb () {
   var $ourVision = $('#our-vision'),
       $bulbOff = $ourVision.find('.bulb-off'),
       $bulbGlow = $ourVision.find('.bulb-glow'),
-      offset = $ourVision.offset().top - 200;
+      offset = $ourVision.find('.hc-image').offset().top + ($ourVision.find('.hc-image').height() / 2);
 
   $(window).scroll(function(){
-    var scrollVal  = $(window).scrollTop();
+    var scrollVal  = $(window).scrollTop() + $(window).height();
     if (scrollVal > offset) {
       $bulbGlow.fadeIn();
       $ourVision.addClass('active');
