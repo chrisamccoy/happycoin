@@ -60,6 +60,10 @@ function loadCoinsValue() {
         }
       });
 
+      $('#trade-amount .amount-slider .slider').append(
+        '<div class="slider-rail"></div>'
+      );
+
       $("#trade-amount .amount-slider .slider").slider().bind({
         sliderchange : function (){
           sliderFunction($(this), 'create');
@@ -172,6 +176,7 @@ function initTabs (){
   $tradeTab.find('.wallet-button').click(closeAllTabs);
 
   $tradeTab.find('.buying .btn').click(function(){
+    $(this).addClass('active');
     $selectMethModal.modal('show');
   });
 
@@ -293,6 +298,10 @@ function initRangeSlider() {
     }
   });
 
+  $('#wallet-amount .amount-slider .slider').append(
+    '<div class="slider-rail"></div>'
+  );
+
   // $("#wallet-amount .amount-slider .slider").slider().bind({
   //   sliderchange : function (){
   //     sliderFunction($(this), 'create');
@@ -362,24 +371,90 @@ function changeOnSlide (value, $parent, handlePos) {
 
 function loadChartData() {
   var $dropdown = $('#wallet-price-span .ui.dropdown');
-  $dropdown.dropdown({
-    onChange : function(value){
-      if (value == '1D') {
-        $.getJSON( "https://market.capitalstake.com/intraday/DGKC/"+value, function( result ) {
-          drawLineChart(result.data);
-        });
-      } else {
-        $.getJSON( "https://market.capitalstake.com/daily/DGKC/", function( result ) {
-          result.data = result.data.slice(0,value);
-          drawLineChart(result.data);
-        });
-      }
-    }
-  });
+  $dropdown.dropdown();
+  // $dropdown.dropdown({
+  //   onChange : function(value){
+  //     if (value == '1D') {
+  //       $.getJSON( "https://market.capitalstake.com/intraday/DGKC/"+value, function( result ) {
+  //         drawLineChart(result.data);
+  //       });
+  //     } else {
+  //       $.getJSON( "https://market.capitalstake.com/daily/DGKC/", function( result ) {
+  //         result.data = result.data.slice(0,value);
+  //         drawLineChart(result.data);
+  //       });
+  //     }
+  //   }
+  // });
   $.getJSON( "https://market.capitalstake.com/intraday/DGKC/1D", function( result ) {
     drawLineChart(result.data);
   });
 }
+
+// function drawLineChart(data) {
+//   // console.log(d3.min(data, function (d) { return d.date; }));
+//   var minN = d3.min(data, function (d) { return d.date; }),
+//       maxN = d3.max(data, function (d) { return d.date; });
+//   var minDate = new Date(minN - 8.64e7),
+//       maxDate = new Date(maxN + 8.64e7);
+//   var yMin = d3.min(data, function (d) { return d.low; }),
+//       yMax = d3.max(data, function (d) { return d.high; });
+//
+//   // var margin = {top: 20, right: 20, bottom: 30, left: 35},
+//   //   width = 660 - margin.left - margin.right,
+//   //   height = 400 - margin.top - margin.bottom;
+//
+//   var margin = {top: 20, right: 0, bottom: 5, left: 35},
+//       width = $('#wallet-graph .graph').width() - margin.left - margin.right,
+//       height = ($('#wallet-graph .graph').width() * 0.5) - margin.top - margin.bottom;
+//
+//   var plotChart = d3.select('#wallet-graph .graph').classed('chart', true).append('svg')
+//       .attr('width', width + margin.left + margin.right)
+//       .attr('height', height + margin.top + margin.bottom)
+//       .append('g')
+//       .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+//
+//   var plotArea = plotChart.append('g')
+//       .attr('clip-path', 'url(#plotAreaClip)');
+//
+//   plotArea.append('clipPath')
+//       .attr('id', 'plotAreaClip')
+//       .append('rect')
+//       .attr({ width: width, height: height });
+//
+//   var xScale = d3.time.scale()
+//     .domain([minDate, maxDate])
+//     .range([0, width]),
+//     yScale = d3.scale.linear()
+//     .domain([yMin, yMax]).nice()
+//     .range([height, 0]);
+//
+//   var xAxis = d3.svg.axis()
+//     .scale(xScale)
+//     .orient('bottom')
+//     .ticks(5),
+//     yAxis = d3.svg.axis()
+//     .scale(yScale)
+//     .orient('left');
+//
+//   plotChart.append('g')
+//       .attr('class', 'x axis')
+//       .attr('transform', 'translate(0,' + height + ')')
+//       .call(xAxis);
+//
+//   plotChart.append('g')
+//       .attr('class', 'y axis')
+//       .call(yAxis);
+//
+//   var series = sl.series.candlestick()
+//     .xScale(xScale)
+//     .yScale(yScale);
+//
+//   var dataSeries = plotArea.append('g')
+//       .attr('class', 'series')
+//       .datum(data)
+//       .call(series);
+// }
 
 function drawLineChart(data) {
   var margin = {top: 20, right: 0, bottom: 5, left: 35},

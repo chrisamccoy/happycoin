@@ -133,10 +133,16 @@ select {
 }
 
 .slider {
+  background: white;
+  border-color: #ffffff !important;
+  height: 23px;
+}
+
+.slider .slider-rail {
   border-radius: 8px;
   background: #e1e1e1;
-  border-color: #ffffff !important;
   height: 10px;
+  margin-top: 5px;
 }
 
 .slider .ui-slider-handle {
@@ -144,7 +150,7 @@ select {
   width: 15px;*/
   border-radius: 50%;
   margin-left: -0.4em;
-  top: -0.4em;
+  top: 0em;
   background: white;
   border: none;
   outline: none;
@@ -154,6 +160,9 @@ select {
 .slider .ui-slider-range {
   background: #ed844d;
   border-color: #ed844d !important;
+  height: 10px;
+  border-radius: 8px;
+  top:5px;
 }
 
 .wallet-button {
@@ -369,6 +378,10 @@ select {
   color: white;
   text-decoration: none;
   padding: 10px 0em 10px 10px;
+}
+
+#wallet-value .links a:hover {
+  opacity: 0.7;
 }
 
 #wallet-value .links a:first-child {
@@ -694,7 +707,7 @@ select {
 .amount-slider .conversion {
   position: absolute;
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 4px;
   text-align: right;
 }
 
@@ -1067,9 +1080,9 @@ select {
   min-height: 95px;
 }
 
-/*.gen-order .sell-buy .btn:hover {
+.gen-order .sell-buy .btn.active {
   border: 1px solid #c8bfbf;
-}*/
+}
 
 .gen-order .sell-buy .btn img {
   width: 45px;
