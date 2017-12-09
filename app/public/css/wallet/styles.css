@@ -485,6 +485,8 @@ select {
   margin-right: 5px;
 }
 
+/*
+
 #wallet-graph .graph .line {
   fill: none;
   stroke : #66bb6b;
@@ -494,6 +496,7 @@ select {
 #wallet-graph .graph .area {
   fill: url(#area-gradient);
 }
+*/
 
 #wallet-graph .graph .domain {
   stroke : none;
@@ -504,7 +507,24 @@ select {
 }
 
 #wallet-graph .graph .tick text {
-  font-size: 12px;
+  font-size: 9px;
+}
+
+#wallet-graph .graph .area {
+  fill: #def2e2;
+  stroke-width:1px;
+  stroke:#5ab96d;
+  clip-path: url(#clip);
+}
+
+#wallet-graph .graph .zoom {
+  cursor: move;
+  fill: none;
+  pointer-events: all;
+}
+
+#wallet-graph .graph .context {
+  display: none;
 }
 
 /*---------------------------------------*/

@@ -386,109 +386,65 @@ function loadChartData() {
   //     }
   //   }
   // });
-  $.getJSON( "https://market.capitalstake.com/intraday/DGKC/1D", function( result ) {
+  $.getJSON( "https://market.capitalstake.com/daily/DGKC/", function( result ) {
     drawLineChart(result.data);
   });
+  // drawLineChart();
 }
 
-// function drawLineChart(data) {
-//   // console.log(d3.min(data, function (d) { return d.date; }));
-//   var minN = d3.min(data, function (d) { return d.date; }),
-//       maxN = d3.max(data, function (d) { return d.date; });
-//   var minDate = new Date(minN - 8.64e7),
-//       maxDate = new Date(maxN + 8.64e7);
-//   var yMin = d3.min(data, function (d) { return d.low; }),
-//       yMax = d3.max(data, function (d) { return d.high; });
-//
-//   // var margin = {top: 20, right: 20, bottom: 30, left: 35},
-//   //   width = 660 - margin.left - margin.right,
-//   //   height = 400 - margin.top - margin.bottom;
-//
-//   var margin = {top: 20, right: 0, bottom: 5, left: 35},
-//       width = $('#wallet-graph .graph').width() - margin.left - margin.right,
-//       height = ($('#wallet-graph .graph').width() * 0.5) - margin.top - margin.bottom;
-//
-//   var plotChart = d3.select('#wallet-graph .graph').classed('chart', true).append('svg')
-//       .attr('width', width + margin.left + margin.right)
-//       .attr('height', height + margin.top + margin.bottom)
-//       .append('g')
-//       .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
-//
-//   var plotArea = plotChart.append('g')
-//       .attr('clip-path', 'url(#plotAreaClip)');
-//
-//   plotArea.append('clipPath')
-//       .attr('id', 'plotAreaClip')
-//       .append('rect')
-//       .attr({ width: width, height: height });
-//
-//   var xScale = d3.time.scale()
-//     .domain([minDate, maxDate])
-//     .range([0, width]),
-//     yScale = d3.scale.linear()
-//     .domain([yMin, yMax]).nice()
-//     .range([height, 0]);
-//
-//   var xAxis = d3.svg.axis()
-//     .scale(xScale)
-//     .orient('bottom')
-//     .ticks(5),
-//     yAxis = d3.svg.axis()
-//     .scale(yScale)
-//     .orient('left');
-//
-//   plotChart.append('g')
-//       .attr('class', 'x axis')
-//       .attr('transform', 'translate(0,' + height + ')')
-//       .call(xAxis);
-//
-//   plotChart.append('g')
-//       .attr('class', 'y axis')
-//       .call(yAxis);
-//
-//   var series = sl.series.candlestick()
-//     .xScale(xScale)
-//     .yScale(yScale);
-//
-//   var dataSeries = plotArea.append('g')
-//       .attr('class', 'series')
-//       .datum(data)
-//       .call(series);
-// }
-
 function drawLineChart(data) {
-  var margin = {top: 20, right: 0, bottom: 5, left: 35},
-      width = $('.graph').width() - margin.left - margin.right,
-      height = ($('.graph').width() * 0.5) - margin.top - margin.bottom;
+  var svg = d3.select("#wallet-graph .graph svg");
+      svg.attr("width", $('#wallet-graph .graph').width());
+  var margin = {top: 20, right: 0, bottom: 5, left: 30},
+      margin2 = {top: 0, right: 20, bottom: 30, left: 40},
+      width = +svg.attr("width") - margin.left - margin.right,
+      height = +svg.attr("height") - margin.top - margin.bottom,
+      height2 = +svg.attr("height") - margin2.top - margin2.bottom;
 
-  // parse the date / time
-  var parseTime = d3.timeParse("%Y-%m-%d %H:%M:%S");
+  var parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S");
 
-  // set the ranges
-  var x = d3.scaleTime().range([0, width]);
-  var y = d3.scaleLinear().range([height, 0]);
+  var x = d3.scaleTime().range([0, width]),
+      x2 = d3.scaleTime().range([0, width]),
+      y = d3.scaleLinear().range([height, 0]),
+      y2 = d3.scaleLinear().range([height2, 0]);
 
-  // define the area
-  var	area = d3.area()
+  var xAxis = d3.axisBottom(x),
+      xAxis2 = d3.axisBottom(x2),
+      yAxis = d3.axisLeft(y);
+
+  var brush = d3.brushX()
+      .extent([[0, 0], [width, height2]])
+      .on("brush end", brushed);
+
+  var zoom = d3.zoom()
+      .scaleExtent([1, 90])
+      .translateExtent([[0, 0], [width, height]])
+      .extent([[0, 0], [width, height]])
+      .on("zoom", zoomed);
+
+  var area = d3.area()
       .x(function(d) { return x(d.date); })
       .y0(height)
       .y1(function(d) { return y(d.close); });
 
-  // define the line
-  var valueline = d3.line()
-      .x(function(d) { return x(d.date); })
-      .y(function(d) { return y(d.close); });
+  var area2 = d3.area()
+      .x(function(d) { return x2(d.date); })
+      .y0(height2)
+      .y1(function(d) { return y2(d.close); });
 
-  // append the svg obgect to the body of the page
-  // appends a 'group' element to 'svg'
-  // moves the 'group' element to the top left margin
-  $('#wallet-graph .graph').html('');
-  var svg = d3.select("#wallet-graph .graph").append('svg')
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-      .attr("transform",
-            "translate(" + margin.left + "," + margin.top + ")");
+  svg.append("defs").append("clipPath")
+      .attr("id", "clip")
+    .append("rect")
+      .attr("width", width)
+      .attr("height", height);
+
+  var focus = svg.append("g")
+      .attr("class", "focus")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  var context = svg.append("g")
+      .attr("class", "context")
+      .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
 
   var min = d3.min(data, function(d) { return d.close; });
   var max = d3.max(data, function(d) { return d.close; });
@@ -496,7 +452,7 @@ function drawLineChart(data) {
 
   // format the data
   data.forEach(function(d) {
-      d.date = parseTime(d.date);
+      d.date = parseDate(d.date);
       d.close = random(+d.close);
   });
 
@@ -504,38 +460,154 @@ function drawLineChart(data) {
   x.domain(d3.extent(data, function(d) { return d.date; }));
   y.domain(d3.extent(data, function(d) { return d.close; }));
 
-  // set the gradient
-  svg.append("linearGradient")
-    .attr("id", "area-gradient")
-    .attr("gradientUnits", "userSpaceOnUse")
-    .attr("x1", 0).attr("y1", y(0))
-    .attr("x2", 0).attr("y2", y(1000))
-  .selectAll("stop")
-    .data([
-      {offset: "100%", color: "#e0f3e2"}
-    ])
-  .enter().append("stop")
-    .attr("offset", function(d) { return d.offset; })
-    .attr("stop-color", function(d) { return d.color; });
+  // x.domain(d3.extent(data, function(d) { return d.date; }));
+  // y.domain([0, d3.max(data, function(d) { return d.close; })]);
+  x2.domain(x.domain());
+  y2.domain(y.domain());
 
-  // Add the line.
-  svg.append("path")
-      .data([data])
-      .attr("class", "line")
-      .attr("d", valueline);
-
-  // Add the area.
-  svg.append("path")
-      .data([data])
+  focus.append("path")
+      .datum(data)
       .attr("class", "area")
       .attr("d", area);
 
-  // Add the X Axis
-  svg.append("g")
+  focus.append("g")
+      .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
+      .call(xAxis);
 
-  // Add the Y Axis
-  svg.append("g")
+  focus.append("g")
+      .attr("class", "axis axis--y")
       .call(d3.axisLeft(y).ticks(2).tickFormat(function(d){return numeral(d).format('$(0,0a)');}));
+
+  context.append("path")
+      .datum(data)
+      .attr("class", "area")
+      .attr("d", area2);
+
+  context.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + height2 + ")")
+      .call(xAxis2);
+
+  context.append("g")
+      .attr("class", "brush")
+      .call(brush)
+      .call(brush.move, x.range());
+
+  svg.append("rect")
+      .attr("class", "zoom")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+      .call(zoom);
+
+  function brushed() {
+    if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
+    var s = d3.event.selection || x2.range();
+    x.domain(s.map(x2.invert, x2));
+    focus.select(".area").attr("d", area);
+    focus.select(".axis--x").call(xAxis);
+    svg.select(".zoom").call(zoom.transform, d3.zoomIdentity
+        .scale(width / (s[1] - s[0]))
+        .translate(-s[0], 0));
+  }
+
+  function zoomed() {
+    if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return; // ignore zoom-by-brush
+    var t = d3.event.transform;
+    x.domain(t.rescaleX(x2).domain());
+    focus.select(".area").attr("d", area);
+    focus.select(".axis--x").call(xAxis);
+    context.select(".brush").call(brush.move, x.range().map(t.invertX, t));
+  }
+
+  function type(d) {
+    d.date = parseDate(d.date);
+    d.close = +d.close;
+    return d;
+  }
 }
+
+// function drawLineChart(data) {
+//   var margin = {top: 20, right: 0, bottom: 5, left: 35},
+//       width = $('.graph').width() - margin.left - margin.right,
+//       height = ($('.graph').width() * 0.5) - margin.top - margin.bottom;
+//
+//   // parse the date / time
+//   var parseTime = d3.timeParse("%Y-%m-%d %H:%M:%S");
+//
+//   // set the ranges
+//   var x = d3.scaleTime().range([0, width]);
+//   var y = d3.scaleLinear().range([height, 0]);
+//
+//   // define the area
+//   var	area = d3.area()
+//       .x(function(d) { return x(d.date); })
+//       .y0(height)
+//       .y1(function(d) { return y(d.close); });
+//
+//   // define the line
+//   var valueline = d3.line()
+//       .x(function(d) { return x(d.date); })
+//       .y(function(d) { return y(d.close); });
+//
+//   // append the svg obgect to the body of the page
+//   // appends a 'group' element to 'svg'
+//   // moves the 'group' element to the top left margin
+//   $('#wallet-graph .graph').html('');
+//   var svg = d3.select("#wallet-graph .graph").append('svg')
+//       .attr("width", width + margin.left + margin.right)
+//       .attr("height", height + margin.top + margin.bottom)
+//     .append("g")
+//       .attr("transform",
+//             "translate(" + margin.left + "," + margin.top + ")");
+//
+//   var min = d3.min(data, function(d) { return d.close; });
+//   var max = d3.max(data, function(d) { return d.close; });
+//   var random = d3.scaleLinear().range([10, 36]).domain([min, max]);
+//
+//   // format the data
+//   data.forEach(function(d) {
+//       d.date = parseTime(d.date);
+//       d.close = random(+d.close);
+//   });
+//
+//   // Scale the range of the data
+//   x.domain(d3.extent(data, function(d) { return d.date; }));
+//   y.domain(d3.extent(data, function(d) { return d.close; }));
+//
+//   // set the gradient
+//   svg.append("linearGradient")
+//     .attr("id", "area-gradient")
+//     .attr("gradientUnits", "userSpaceOnUse")
+//     .attr("x1", 0).attr("y1", y(0))
+//     .attr("x2", 0).attr("y2", y(1000))
+//   .selectAll("stop")
+//     .data([
+//       {offset: "100%", color: "#e0f3e2"}
+//     ])
+//   .enter().append("stop")
+//     .attr("offset", function(d) { return d.offset; })
+//     .attr("stop-color", function(d) { return d.color; });
+//
+//   // Add the line.
+//   svg.append("path")
+//       .data([data])
+//       .attr("class", "line")
+//       .attr("d", valueline);
+//
+//   // Add the area.
+//   svg.append("path")
+//       .data([data])
+//       .attr("class", "area")
+//       .attr("d", area);
+//
+//   // Add the X Axis
+//   svg.append("g")
+//       .attr("transform", "translate(0," + height + ")")
+//       .call(d3.axisBottom(x));
+//
+//   // Add the Y Axis
+//   svg.append("g")
+//       .call(d3.axisLeft(y).ticks(2).tickFormat(function(d){return numeral(d).format('$(0,0a)');}));
+// }
