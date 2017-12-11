@@ -500,9 +500,7 @@ function drawLineChart(data) {
       .attr("height", height)
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
       .call(zoom)
-      .call(zoom.transform, d3.zoomIdentity.scale(2))
-      .append("svg:g")
-      .attr("transform","translate(100,50) scale(.5,.5)");
+      .call(zoom.transform, d3.zoomIdentity.translate(- width, 0).scale(2))
 
 
   function brushed() {
