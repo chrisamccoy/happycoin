@@ -500,7 +500,7 @@ function drawLineChart(data) {
       .attr("height", height)
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
       .call(zoom)
-      .call(zoom.transform, d3.zoomIdentity.translate(- width, 0).scale(2))
+      .call(zoom.transform, d3.zoomIdentity.translate( -1 * (width * 5), 0).scale(6))
 
 
   function brushed() {
