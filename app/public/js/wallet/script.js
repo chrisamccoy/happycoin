@@ -417,7 +417,7 @@ function drawLineChart(data) {
       .on("brush end", brushed);
 
   var zoom = d3.zoom()
-      .scaleExtent([1, 90])
+      .scaleExtent([1, 100])
       .translateExtent([[0, 0], [width, height]])
       .extent([[0, 0], [width, height]])
       .on("zoom", zoomed);
@@ -434,7 +434,7 @@ function drawLineChart(data) {
 
   svg.append("defs").append("clipPath")
       .attr("id", "clip")
-    .append("rect")
+      .append("rect")
       .attr("width", width)
       .attr("height", height);
 
@@ -499,7 +499,11 @@ function drawLineChart(data) {
       .attr("width", width)
       .attr("height", height)
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-      .call(zoom);
+      .call(zoom)
+      .call(zoom.transform, d3.zoomIdentity.scale(2))
+      .append("svg:g")
+      .attr("transform","translate(100,50) scale(.5,.5)");
+
 
   function brushed() {
     if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
@@ -513,12 +517,14 @@ function drawLineChart(data) {
   }
 
   function zoomed() {
-    if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return; // ignore zoom-by-brush
-    var t = d3.event.transform;
-    x.domain(t.rescaleX(x2).domain());
-    focus.select(".area").attr("d", area);
-    focus.select(".axis--x").call(xAxis);
-    context.select(".brush").call(brush.move, x.range().map(t.invertX, t));
+    if(d3.event) {
+      if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return; // ignore zoom-by-brush
+      var t = d3.event.transform;
+      x.domain(t.rescaleX(x2).domain());
+      focus.select(".area").attr("d", area);
+      focus.select(".axis--x").call(xAxis);
+      context.select(".brush").call(brush.move, x.range().map(t.invertX, t));
+    }
   }
 
   function type(d) {
