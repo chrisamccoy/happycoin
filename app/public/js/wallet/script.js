@@ -76,7 +76,9 @@ function loadCoinsValue() {
 }
 
 function initDatePicker(){
-  $('#date-picker input').pickadate();
+  $('#date-picker input').pickadate({
+    format: 'd mmm, yyyy'
+  });
   $('#time-picker input').pickatime();
 }
 
@@ -118,7 +120,7 @@ function sendGift () {
     $('#notification-window .notification-feeds').append(templateNot);
     $('.feeds').append(templateFeed);
     updateNotific('new');
-    closeAllTabs();
+    initloader();
   });
 }
 
@@ -173,7 +175,7 @@ function initTabs (){
 
   $back.click(closeAllTabs);
 
-  $tradeTab.find('.wallet-button').click(closeAllTabs);
+  $tradeTab.find('.wallet-button').click(initloader);
 
   $tradeTab.find('.buying .btn').click(function(){
     $(this).addClass('active');
@@ -182,6 +184,8 @@ function initTabs (){
 
   $selectMethModal.find('.list .item').click(function(){
     $selectMethModal.modal('hide');
+    $selectMethModal.find('.list .item').removeClass('active');
+    $(this).addClass('active');
     var data = $(this).data();
     var $btn = $tradeTab.find('.buying .btn');
     $btn.html('');
@@ -210,7 +214,7 @@ function initTabs (){
       // $walletTabs.find('.tab[data-tab="'+tabName+'"]').addClass('active');
 
       var $currentTab = $walletTabs.find('.tab[data-tab="'+tabName+'"]');
-      var offset = $subNav.height() + 74;
+      var offset = (($walletNav.length > 0) ? $walletNav.height() : 0)  + $subNav.height() + 74;
       // var offset = $walletNav.height() + $subNav.height() + 74;
       // console.log($currentTab.find('.wallet-button').height());
       $currentTab.addClass('active');
@@ -266,8 +270,26 @@ function initModal () {
 
   $modal.find('.confirm-button').click(function(){
     $modal.modal('hide');
-    closeAllTabs();
+    initloader();
   });
+}
+
+function initloader() {
+  // $('.loader .content.loading').removeClass('show');
+  // $('.loader .content.complete').addClass('show');
+  // $('.loader').height($(window).height()).transition('fade');
+
+  $('.loader .content.loading').addClass('show');
+  $('.loader .content.complete').removeClass('show');
+  $('.loader').height($(window).height()).transition('fade');
+  setTimeout(function(){
+    $('.loader .content.loading').removeClass('show');
+    $('.loader .content.complete').addClass('show');
+    setTimeout(function(){
+      closeAllTabs();
+      $('.loader').height($(window).height()).transition('fade');
+    }, 2000);
+  }, 2000);
 }
 
 function closeAllTabs (){
@@ -395,7 +417,7 @@ function loadChartData() {
 function drawLineChart(data) {
   var svg = d3.select("#wallet-graph .graph svg");
       svg.attr("width", $('#wallet-graph .graph').width());
-  var margin = {top: 20, right: 0, bottom: 5, left: 30},
+  var margin = {top: 20, right: 0, bottom: 20, left: 30},
       margin2 = {top: 0, right: 20, bottom: 30, left: 40},
       width = +svg.attr("width") - margin.left - margin.right,
       height = +svg.attr("height") - margin.top - margin.bottom,
@@ -408,16 +430,16 @@ function drawLineChart(data) {
       y = d3.scaleLinear().range([height, 0]),
       y2 = d3.scaleLinear().range([height2, 0]);
 
-  var xAxis = d3.axisBottom(x),
+  var xAxis = d3.axisBottom(x).ticks(4),
       xAxis2 = d3.axisBottom(x2),
-      yAxis = d3.axisLeft(y);
+      yAxis = d3.axisLeft(y).ticks(2).tickFormat(function(d){return numeral(d).format('$(0,0a)');});
 
   var brush = d3.brushX()
       .extent([[0, 0], [width, height2]])
       .on("brush end", brushed);
 
   var zoom = d3.zoom()
-      .scaleExtent([1, 100])
+      .scaleExtent([20, 300])
       .translateExtent([[0, 0], [width, height]])
       .extent([[0, 0], [width, height]])
       .on("zoom", zoomed);
@@ -457,6 +479,11 @@ function drawLineChart(data) {
   });
 
   // Scale the range of the data
+  // x.domain(d3.extent(data, function(d) {
+  //   return d[0];
+  // })).range([0, width - margin.left - margin.right]);
+  //
+  // xAxis.scale(x).orient('bottom').tickPadding(5);
   x.domain(d3.extent(data, function(d) { return d.date; }));
   y.domain(d3.extent(data, function(d) { return d.close; }));
 
@@ -477,7 +504,7 @@ function drawLineChart(data) {
 
   focus.append("g")
       .attr("class", "axis axis--y")
-      .call(d3.axisLeft(y).ticks(2).tickFormat(function(d){return numeral(d).format('$(0,0a)');}));
+      .call(yAxis);
 
   context.append("path")
       .datum(data)
@@ -500,7 +527,7 @@ function drawLineChart(data) {
       .attr("height", height)
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
       .call(zoom)
-      .call(zoom.transform, d3.zoomIdentity.translate( -1 * (width * 5), 0).scale(6))
+      .call(zoom.transform, d3.zoomIdentity.translate( -1 * (width * 299), 0).scale(300))
 
 
   function brushed() {

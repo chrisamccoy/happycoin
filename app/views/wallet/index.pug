@@ -1,6 +1,18 @@
 extends layout
 
 block content
+  
+  div.loader
+    div.loading-container
+      .content.loading      
+        div.sp.sp-wave
+        div.text Loading...
+      .content.complete
+        div
+          svg.checkmark(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 52 52')
+            circle.checkmark__circle(cx='26', cy='26', r='25', fill='none')
+            path.checkmark__check(fill='none', d='M14.1 27.2l7.1 7.2 16.7-16.8')
+        div.text Complete
   div#home-tab
     section#wallet-value
       div.links.nav-links
@@ -15,7 +27,7 @@ block content
           p.unit
             img(src="/images/wallet/white-storecoin.png")
             | storecoin
-        div.est-val Estimated Value 
+        div.est-val Estimated Value:  
           span.green $183.68
           
     div.graph-feeds    
@@ -475,9 +487,7 @@ block content
   div#select-coin-modal.ui.small.modal
     div.content
       div.modal-header 
-        div.logo-title
-          img(src="/images/wallet/footprint-logo.png")
-          | Select Method
+        div.logo-title Select a Token to Trade for
         div.close-modal
           i.ion-android-close
       div.modal-content 

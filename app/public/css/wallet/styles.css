@@ -1100,6 +1100,10 @@ select {
   min-height: 95px;
 }
 
+.gen-order .sell-buy .buying .btn {
+  box-shadow: 2px 2px 5px lightgrey;
+}
+
 .gen-order .sell-buy .btn.active {
   border: 1px solid #c8bfbf;
 }
@@ -1219,9 +1223,14 @@ select {
   display: flex;
   align-items: center;
   flex-flow: column;
-  /*padding: 7px 0px;*/
+  padding: 7px 0px;
   width: 50%;
   margin-top: 1em;
+}
+
+#select-coin-modal .list .item.active {
+  background: #8080802e;
+  border-radius: 10px;
 }
 
 #select-coin-modal .list .item p {
@@ -1265,5 +1274,178 @@ select {
     position: static;
     width: 100%;
     height: 100%;
+  }
+}
+
+/*---------------------------------------*/
+.loader {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height : 100%;
+  background: black;
+  background: #000000d6;
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader .loading-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader .loading-container .content {
+  /*height: 80px;*/
+  width: 210px;
+  border-radius: 2px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loader .loading-container .content.show {
+  display: flex;
+}
+
+.loader .loading-container .text {
+  color: white;
+  font-size: 1.2em;
+  margin-top: 1em;
+}
+
+/* Spinner Wave */
+.sp-wave {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: relative;
+  opacity: 1;
+}
+
+.sp-wave:before, .sp-wave:after {
+  content: '';
+  border: 1px #ffffff solid;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+}
+
+.sp-wave:before {
+  transform: scale(1, 1);
+  opacity: 1;
+  -webkit-animation: spWaveBe 0.6s infinite linear;
+  animation: spWaveBe 0.6s infinite linear;
+}
+
+.sp-wave:after {
+  transform: scale(0, 0);
+  opacity: 0;
+  -webkit-animation: spWaveAf 0.6s infinite linear;
+  animation: spWaveAf 0.6s infinite linear;
+}
+
+@-webkit-keyframes spWaveAf {
+  from {
+    -webkit-transform: scale(0.5, 0.5);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+@keyframes spWaveAf {
+  from {
+    transform: scale(0.5, 0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes spWaveBe {
+  from {
+    -webkit-transform: scale(1, 1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes spWaveBe {
+  from {
+    -webkit-transform: scale(1, 1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
+}
+
+/*---------------------------------*/
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #7ac142;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  margin: 10% auto;
+  box-shadow: inset 0px 0px 0px #7ac142;
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #7ac142;
   }
 }
