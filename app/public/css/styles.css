@@ -4828,10 +4828,17 @@ and (max-width : 700px) {
   left: 40%;
 }
 
+#our-vision .hc-feature-lead:last-child {
+  font-size: 1.7em;
+}
+
 @media only screen and (max-width: 700px) {
   #our-vision .hc-image img {
     width: 40%;
     left: auto !important;
+  }
+  #our-vision .hc-feature-lead:last-child {
+    font-size: 1.2em;
   }
 }
 
