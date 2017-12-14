@@ -428,7 +428,7 @@ function drawLineChart(data) {
       height = +svg.attr("height") - margin.top - margin.bottom,
       height2 = +svg.attr("height") - margin2.top - margin2.bottom;
 
-  var parseDate = d3.timeParse("%m/%d/%Y");
+  var parseDate = d3.timeParse("%m/%d/%y");
 
   var x = d3.scaleTime().range([0, width]),
       x2 = d3.scaleTime().range([0, width]),
@@ -444,7 +444,7 @@ function drawLineChart(data) {
       .on("brush end", brushed);
 
   var zoom = d3.zoom()
-      .scaleExtent([50, 250])
+      .scaleExtent([1, 150])
       .translateExtent([[0, 0], [width, height]])
       .extent([[0, 0], [width, height]])
       .on("zoom", zoomed);
@@ -532,7 +532,7 @@ function drawLineChart(data) {
       .attr("height", height)
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
       .call(zoom)
-      .call(zoom.transform, d3.zoomIdentity.translate( -1 * (width * 249), 0).scale(250))
+      .call(zoom.transform, d3.zoomIdentity.translate( -1 * (width * 5), 0).scale(6))
 
 
   function brushed() {
