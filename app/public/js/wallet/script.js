@@ -413,7 +413,7 @@ function loadChartData() {
   //     }
   //   }
   // });
-  $.getJSON( "/data/vix.json", function( result ) {
+  $.getJSON( "/data/ixic.json", function( result ) {
     drawLineChart(result);
   });
   // drawLineChart();
@@ -444,7 +444,7 @@ function drawLineChart(data) {
       .on("brush end", brushed);
 
   var zoom = d3.zoom()
-      .scaleExtent([20, 150])
+      .scaleExtent([50, 250])
       .translateExtent([[0, 0], [width, height]])
       .extent([[0, 0], [width, height]])
       .on("zoom", zoomed);
@@ -475,7 +475,7 @@ function drawLineChart(data) {
 
   var min = d3.min(data, function(d) { return d.close; });
   var max = d3.max(data, function(d) { return d.close; });
-  var random = d3.scaleLinear().range([36, 5]).domain([min, max]);
+  var random = d3.scaleLinear().range([5, 36]).domain([min, max]);
 
   // format the data
   data.forEach(function(d) {
@@ -532,7 +532,7 @@ function drawLineChart(data) {
       .attr("height", height)
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
       .call(zoom)
-      .call(zoom.transform, d3.zoomIdentity.translate( -1 * (width * 149), 0).scale(150))
+      .call(zoom.transform, d3.zoomIdentity.translate( -1 * (width * 249), 0).scale(250))
 
 
   function brushed() {
