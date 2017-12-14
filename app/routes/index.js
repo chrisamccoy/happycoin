@@ -167,6 +167,10 @@ router.get('/wallet', function(req, res, next) {
   res.render('wallet/index-desktop', { title: 'Storecoin', name : 'Home' });
 });
 
+router.get('/wallet2', function(req, res, next) {
+  res.render('wallet/index-2', { title: 'Storecoin', name : 'Home' });
+});
+
 // router.get('/wallet/buy', function(req, res, next) {
 //   res.render('wallet/buy', { title: 'Storecoin', name : 'Buy' });
 // });

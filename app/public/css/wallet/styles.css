@@ -354,11 +354,14 @@ select {
 }
 
 /*---------------------------------------*/
-
 #wallet-value {
   background-color: #2a2a2a;
-  display: flex;
+  padding: 0px;
+}
+
+#wallet-value .wallet-container {
   padding: 20px;
+  display: flex;
 }
 
 #wallet-value .links {
@@ -430,7 +433,7 @@ select {
 }
 
 @media only screen and (max-width: 700px) {
-  #wallet-value {
+  #wallet-value .wallet-container {
     padding: 15px 20px;
   }
 
@@ -655,6 +658,7 @@ select {
 
 #wallet-sub-nav .price-logo .logo {
   width: 35px;
+  cursor: pointer;
 }
 
 #wallet-sub-nav .price-logo .price {
@@ -1448,4 +1452,27 @@ select {
   100% {
     box-shadow: inset 0px 0px 0px 30px #7ac142;
   }
+}
+
+/*---------------------------------*/
+.graph-feeds .page-loading {
+  display: none;
+}
+
+.graph-feeds .page-loading .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+.graph-feeds .page-loading .content .sp-wave {
+  height: 30px;
+  width: 30px;
+  margin-right: 1em;
+}
+
+.graph-feeds .page-loading .content .sp-wave:before,
+.graph-feeds .page-loading .content .sp-wave:after {
+  border: 1px #828282 solid;
 }

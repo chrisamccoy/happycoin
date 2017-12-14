@@ -15,20 +15,21 @@ block content
         div.text Complete
   div#home-tab
     section#wallet-value
-      div.links.nav-links
-        a.link(href="javascript:;", data-tab="buy") Buy
-        a.link(href="javascript:;", data-tab="sell") Sell
-        a.link(href="javascript:;", data-tab="trade") Trade
-        a.link(href="javascript:;", data-tab="gift") Gift
-      div.value
-        div.storecoin-val 
-          p.number 5
-            span .13434
-          p.unit
-            img(src="/images/wallet/white-storecoin.png")
-            | storecoin
-        div.est-val Estimated Value:  
-          span.green $183.68
+      div.wallet-container
+        div.links.nav-links
+          a.link(href="javascript:;", data-tab="buy") Buy
+          a.link(href="javascript:;", data-tab="sell") Sell
+          a.link(href="javascript:;", data-tab="trade") Trade
+          a.link(href="javascript:;", data-tab="gift") Gift
+        div.value
+          div.storecoin-val 
+            p.number 5
+              span .13434
+            p.unit
+              img(src="/images/wallet/white-storecoin.png")
+              | storecoin
+          div.est-val Estimated Value:  
+            span.green $183.68
           
     div.graph-feeds    
       section#wallet-price-span
@@ -128,6 +129,10 @@ block content
               div.dot 
                 i.ion-record
               p.time just now
+      div.page-loading
+        .content
+          div.sp.sp-wave
+          div.text Loading...
           
   div#transaction-tab
     include sub-nav

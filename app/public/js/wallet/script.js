@@ -10,6 +10,7 @@ $(document).ready(function(){
   loadChartData();
   initDatePicker();
   loadCoinsValue();
+  initPaginate();
 });
 var giftItems = {
   storeVal : null,
@@ -163,6 +164,10 @@ function initTabs (){
     $('#home-tab').hide();
   });
 
+  $subNav.find('.logo').click(function(){
+    closeAllTabs();
+  });
+
   $notifications.click(function(){
     $('#transaction-tab').hide();
     $('#home-tab').hide();
@@ -214,8 +219,8 @@ function initTabs (){
       // $walletTabs.find('.tab[data-tab="'+tabName+'"]').addClass('active');
 
       var $currentTab = $walletTabs.find('.tab[data-tab="'+tabName+'"]');
-      var offset = (($walletNav.length > 0) ? $walletNav.height() : 0)  + $subNav.height() + 74;
-      // var offset = $walletNav.height() + $subNav.height() + 74;
+      // var offset = (($walletNav.length > 0) ? $walletNav.height() : 0)  + $subNav.height() + 74;
+      var offset = $subNav.height() + 74;
       // console.log($currentTab.find('.wallet-button').height());
       $currentTab.addClass('active');
       $currentTab.find('.content').css('height' , ($(window).height() - offset)+'px');
@@ -408,8 +413,8 @@ function loadChartData() {
   //     }
   //   }
   // });
-  $.getJSON( "https://market.capitalstake.com/daily/DGKC/", function( result ) {
-    drawLineChart(result.data);
+  $.getJSON( "/data/vix.json", function( result ) {
+    drawLineChart(result);
   });
   // drawLineChart();
 }
@@ -423,7 +428,7 @@ function drawLineChart(data) {
       height = +svg.attr("height") - margin.top - margin.bottom,
       height2 = +svg.attr("height") - margin2.top - margin2.bottom;
 
-  var parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S");
+  var parseDate = d3.timeParse("%m/%d/%Y");
 
   var x = d3.scaleTime().range([0, width]),
       x2 = d3.scaleTime().range([0, width]),
@@ -432,14 +437,14 @@ function drawLineChart(data) {
 
   var xAxis = d3.axisBottom(x).ticks(4),
       xAxis2 = d3.axisBottom(x2),
-      yAxis = d3.axisLeft(y).ticks(2).tickFormat(function(d){return numeral(d).format('$(0,0a)');});
+      yAxis = d3.axisLeft(y).ticks(3).tickFormat(function(d){return numeral(d).format('$(0,0a)');});
 
   var brush = d3.brushX()
       .extent([[0, 0], [width, height2]])
       .on("brush end", brushed);
 
   var zoom = d3.zoom()
-      .scaleExtent([20, 300])
+      .scaleExtent([20, 150])
       .translateExtent([[0, 0], [width, height]])
       .extent([[0, 0], [width, height]])
       .on("zoom", zoomed);
@@ -470,7 +475,7 @@ function drawLineChart(data) {
 
   var min = d3.min(data, function(d) { return d.close; });
   var max = d3.max(data, function(d) { return d.close; });
-  var random = d3.scaleLinear().range([10, 36]).domain([min, max]);
+  var random = d3.scaleLinear().range([36, 5]).domain([min, max]);
 
   // format the data
   data.forEach(function(d) {
@@ -527,7 +532,7 @@ function drawLineChart(data) {
       .attr("height", height)
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
       .call(zoom)
-      .call(zoom.transform, d3.zoomIdentity.translate( -1 * (width * 299), 0).scale(300))
+      .call(zoom.transform, d3.zoomIdentity.translate( -1 * (width * 149), 0).scale(150))
 
 
   function brushed() {
@@ -559,86 +564,22 @@ function drawLineChart(data) {
   }
 }
 
-// function drawLineChart(data) {
-//   var margin = {top: 20, right: 0, bottom: 5, left: 35},
-//       width = $('.graph').width() - margin.left - margin.right,
-//       height = ($('.graph').width() * 0.5) - margin.top - margin.bottom;
-//
-//   // parse the date / time
-//   var parseTime = d3.timeParse("%Y-%m-%d %H:%M:%S");
-//
-//   // set the ranges
-//   var x = d3.scaleTime().range([0, width]);
-//   var y = d3.scaleLinear().range([height, 0]);
-//
-//   // define the area
-//   var	area = d3.area()
-//       .x(function(d) { return x(d.date); })
-//       .y0(height)
-//       .y1(function(d) { return y(d.close); });
-//
-//   // define the line
-//   var valueline = d3.line()
-//       .x(function(d) { return x(d.date); })
-//       .y(function(d) { return y(d.close); });
-//
-//   // append the svg obgect to the body of the page
-//   // appends a 'group' element to 'svg'
-//   // moves the 'group' element to the top left margin
-//   $('#wallet-graph .graph').html('');
-//   var svg = d3.select("#wallet-graph .graph").append('svg')
-//       .attr("width", width + margin.left + margin.right)
-//       .attr("height", height + margin.top + margin.bottom)
-//     .append("g")
-//       .attr("transform",
-//             "translate(" + margin.left + "," + margin.top + ")");
-//
-//   var min = d3.min(data, function(d) { return d.close; });
-//   var max = d3.max(data, function(d) { return d.close; });
-//   var random = d3.scaleLinear().range([10, 36]).domain([min, max]);
-//
-//   // format the data
-//   data.forEach(function(d) {
-//       d.date = parseTime(d.date);
-//       d.close = random(+d.close);
-//   });
-//
-//   // Scale the range of the data
-//   x.domain(d3.extent(data, function(d) { return d.date; }));
-//   y.domain(d3.extent(data, function(d) { return d.close; }));
-//
-//   // set the gradient
-//   svg.append("linearGradient")
-//     .attr("id", "area-gradient")
-//     .attr("gradientUnits", "userSpaceOnUse")
-//     .attr("x1", 0).attr("y1", y(0))
-//     .attr("x2", 0).attr("y2", y(1000))
-//   .selectAll("stop")
-//     .data([
-//       {offset: "100%", color: "#e0f3e2"}
-//     ])
-//   .enter().append("stop")
-//     .attr("offset", function(d) { return d.offset; })
-//     .attr("stop-color", function(d) { return d.color; });
-//
-//   // Add the line.
-//   svg.append("path")
-//       .data([data])
-//       .attr("class", "line")
-//       .attr("d", valueline);
-//
-//   // Add the area.
-//   svg.append("path")
-//       .data([data])
-//       .attr("class", "area")
-//       .attr("d", area);
-//
-//   // Add the X Axis
-//   svg.append("g")
-//       .attr("transform", "translate(0," + height + ")")
-//       .call(d3.axisBottom(x));
-//
-//   // Add the Y Axis
-//   svg.append("g")
-//       .call(d3.axisLeft(y).ticks(2).tickFormat(function(d){return numeral(d).format('$(0,0a)');}));
-// }
+function initPaginate() {
+  var loading = false,
+      $graphFeeds = $('.graph-feeds'),
+      $pageLoading = $graphFeeds.find('.page-loading'),
+      $feeds = $graphFeeds.find('.feeds'),
+      html = $feeds.html();
+  $graphFeeds.scroll(function() {
+    if (!loading) {
+      if($graphFeeds.scrollTop() == $graphFeeds[0].scrollHeight - $graphFeeds.height()) {
+        loading = true;
+        $pageLoading.show();
+        setTimeout(function(){
+          $feeds.append(html);
+          loading = false;
+        }, 5000);
+      }
+    }
+  });
+}
