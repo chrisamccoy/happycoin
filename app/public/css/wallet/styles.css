@@ -196,7 +196,7 @@ select {
 
 .ui.dropdown .item {
   font-size: 1em !important;
-  color: #c7c7c7 !important;
+  /*color: black !important;*/
 }
 
 .ui.dropdown i.dropdown.icon {
@@ -1106,6 +1106,11 @@ select {
 
 .gen-order .sell-buy .buying .btn {
   box-shadow: 2px 2px 5px lightgrey;
+}
+
+.gen-order .sell-buy .buying .btn:hover {
+   border: 1px solid #c8bfbf;
+   background-color: #e2e2e240;
 }
 
 .gen-order .sell-buy .btn.active {

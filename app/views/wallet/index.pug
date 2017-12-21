@@ -35,10 +35,10 @@ block content
       section#wallet-price-span
         p Storecoin Price
         select.ui.fluid.selection.dropdown
-          option(value='1D') 1 Day
-          option(value='1W') 1 Week
-          option(value='20') 1 Month
-          option(value='250') 1 Year
+          option(value='daily') 1 Day
+          option(value='weekly') 1 Week
+          option(value='monthly') 1 Month
+          option(value='yearly') 1 Year
 
       section#wallet-graph
         div.price-change
@@ -50,7 +50,7 @@ block content
             i.ion-android-arrow-up.green
             | $15.25 (74.03%)
         div.graph
-          svg(width="900", height="200")
+          //- svg(width="900", height="200")
       
       div.feeds
         section.wallet-feed

@@ -399,36 +399,43 @@ function changeOnSlide (value, $parent, handlePos) {
 function loadChartData() {
   var $dropdown = $('#wallet-price-span .ui.dropdown');
   $dropdown.dropdown();
-  // $dropdown.dropdown({
-  //   onChange : function(value){
-  //     if (value == '1D') {
-  //       $.getJSON( "https://market.capitalstake.com/intraday/DGKC/"+value, function( result ) {
-  //         drawLineChart(result.data);
-  //       });
-  //     } else {
-  //       $.getJSON( "https://market.capitalstake.com/daily/DGKC/", function( result ) {
-  //         result.data = result.data.slice(0,value);
-  //         drawLineChart(result.data);
-  //       });
-  //     }
-  //   }
-  // });
-  $.getJSON( "/data/ixic.json", function( result ) {
-    drawLineChart(result);
+  $dropdown.dropdown({
+    onChange : function(value){
+      // if (value == '1D') {
+      //   $.getJSON( "https://market.capitalstake.com/intraday/DGKC/"+value, function( result ) {
+      //     drawLineChart(result.data);
+      //   });
+      // } else {
+      //   $.getJSON( "https://market.capitalstake.com/daily/DGKC/", function( result ) {
+      //     result.data = result.data.slice(0,value);
+      //     drawLineChart(result.data);
+      //   });
+      // }
+      $.getJSON( "/data/"+value+".json", function( result ) {
+        // console.log(result.data.prices);
+        drawLineChart(result.data.prices);
+      });
+    }
+  });
+  $.getJSON( "/data/daily.json", function( result ) {
+    drawLineChart(result.data.prices);
   });
   // drawLineChart();
 }
 
 function drawLineChart(data) {
-  var svg = d3.select("#wallet-graph .graph svg");
+  $("#wallet-graph .graph").html('');
+  var svg = d3.select("#wallet-graph .graph").append('svg');
       svg.attr("width", $('#wallet-graph .graph').width());
+      svg.attr("height", 200);
   var margin = {top: 20, right: 0, bottom: 20, left: 30},
       margin2 = {top: 0, right: 20, bottom: 30, left: 40},
       width = +svg.attr("width") - margin.left - margin.right,
       height = +svg.attr("height") - margin.top - margin.bottom,
       height2 = +svg.attr("height") - margin2.top - margin2.bottom;
 
-  var parseDate = d3.timeParse("%m/%d/%y");
+  // var parseDate = d3.timeParse("%m/%d/%y");
+  var parseDate = d3.utcParse("%Y-%m-%dT%H:%M:%S%Z");
 
   var x = d3.scaleTime().range([0, width]),
       x2 = d3.scaleTime().range([0, width]),
@@ -444,20 +451,20 @@ function drawLineChart(data) {
       .on("brush end", brushed);
 
   var zoom = d3.zoom()
-      .scaleExtent([1, 150])
+      .scaleExtent([1, 30])
       .translateExtent([[0, 0], [width, height]])
       .extent([[0, 0], [width, height]])
       .on("zoom", zoomed);
 
   var area = d3.area()
-      .x(function(d) { return x(d.date); })
+      .x(function(d) { return x(d.time); })
       .y0(height)
-      .y1(function(d) { return y(d.close); });
+      .y1(function(d) { return y(d.price); });
 
   var area2 = d3.area()
-      .x(function(d) { return x2(d.date); })
+      .x(function(d) { return x2(d.time); })
       .y0(height2)
-      .y1(function(d) { return y2(d.close); });
+      .y1(function(d) { return y2(d.price); });
 
   svg.append("defs").append("clipPath")
       .attr("id", "clip")
@@ -473,14 +480,14 @@ function drawLineChart(data) {
       .attr("class", "context")
       .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
 
-  var min = d3.min(data, function(d) { return d.close; });
-  var max = d3.max(data, function(d) { return d.close; });
+  var min = d3.min(data, function(d) { return d.price; });
+  var max = d3.max(data, function(d) { return d.price; });
   var random = d3.scaleLinear().range([5, 36]).domain([min, max]);
 
   // format the data
   data.forEach(function(d) {
-      d.date = parseDate(d.date);
-      d.close = random(+d.close);
+      d.time = parseDate(d.time);
+      d.price = random(+d.price);
   });
 
   // Scale the range of the data
@@ -489,11 +496,11 @@ function drawLineChart(data) {
   // })).range([0, width - margin.left - margin.right]);
   //
   // xAxis.scale(x).orient('bottom').tickPadding(5);
-  x.domain(d3.extent(data, function(d) { return d.date; }));
-  y.domain(d3.extent(data, function(d) { return d.close; }));
+  x.domain(d3.extent(data, function(d) { return d.time; }));
+  y.domain(d3.extent(data, function(d) { return d.price; }));
 
-  // x.domain(d3.extent(data, function(d) { return d.date; }));
-  // y.domain([0, d3.max(data, function(d) { return d.close; })]);
+  // x.domain(d3.extent(data, function(d) { return d.time; }));
+  // y.domain([0, d3.max(data, function(d) { return d.price; })]);
   x2.domain(x.domain());
   y2.domain(y.domain());
 
@@ -526,13 +533,19 @@ function drawLineChart(data) {
       .call(brush)
       .call(brush.move, x.range());
 
+  // svg.append("rect")
+  //     .attr("class", "zoom")
+  //     .attr("width", width)
+  //     .attr("height", height)
+  //     .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+  //     .call(zoom)
+  //     .call(zoom.transform, d3.zoomIdentity.translate( -1 * (width * 5), 0).scale(6))
   svg.append("rect")
       .attr("class", "zoom")
       .attr("width", width)
       .attr("height", height)
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-      .call(zoom)
-      .call(zoom.transform, d3.zoomIdentity.translate( -1 * (width * 5), 0).scale(6))
+      .call(zoom);
 
 
   function brushed() {
@@ -558,8 +571,8 @@ function drawLineChart(data) {
   }
 
   function type(d) {
-    d.date = parseDate(d.date);
-    d.close = +d.close;
+    d.time = parseDate(d.time);
+    d.price = +d.price;
     return d;
   }
 }
