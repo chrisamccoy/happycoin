@@ -174,15 +174,22 @@ select {
   width: 100%;
 }
 
-.wallet-button button {
-  width: 100%;
+button {
+  min-width: 80px;
   margin: 0px;
   background-color: #66bb6b;
   border-color: #66bb6b;
   text-transform: none;
   font-size: 0.9em;
-  padding: 5px;
   height: auto;
+}
+
+button.small {
+  padding: 0px 2px;
+}
+
+.wallet-button button {
+  width: 100%;
 }
 
 .ui.dropdown {
@@ -1480,4 +1487,59 @@ select {
 .graph-feeds .page-loading .content .sp-wave:before,
 .graph-feeds .page-loading .content .sp-wave:after {
   border: 1px #828282 solid;
+}
+
+/*---------------------------------*/
+#api-header {
+  display: flex;
+  align-items: center;
+  /*justify-content: center;*/
+}
+
+#api-header .image {
+  width: 55px;
+  height: 55px;
+  margin-right: 1em;
+}
+
+#api-header .image img {
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid #8080805c;
+}
+
+/*---------------------------------*/
+#api-balance {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#api-balance .logo-amount {
+  display: flex;
+  align-items: center;
+}
+
+#api-balance .logo-amount .logo {
+  width: 35px;
+  margin-right: 1em;
+}
+
+#api-balance .logo-amount .amount {
+  font-size: 20px;
+}
+
+/*---------------------------------*/
+#api-bugget-api .api-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#api-bugget-api .api-item .ui.dropdown {
+  max-width: 80px;
+}
+
+#api-bugget-api .api-item section {
+  flex: auto;
 }

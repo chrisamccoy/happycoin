@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  
+  section#api-header
+    div.image
+      img(src="/images/wallet/asana-logo.jpg")
+    div.title
+      div 
+        b Asana
+      div Project Management
+  section#api-balance
+    div.balance
+      div Storecoin Balance:
+      div.logo-amount
+        img.logo(src="/images/wallet/storecoin-logo.png")
+        div.amount.green 5.13434
+    div.buy
+      button.small Buy
+  section#api-budget-app-slider.tab(data-tab="none")
+    div.header Budget for your app
+    include amount-slider
+  section#api-bugget-api
+    div.header Set budget for API calls
+    div.api-list
+      div.api-item
+        select.ui.fluid.selection.dropdown
+          option(value='api') API
+          option(value='api') API
+        section.tab(data-tab="none")
+          include amount-slider

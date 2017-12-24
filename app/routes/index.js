@@ -163,6 +163,10 @@ router.get('/wallet/wallet-app/header', function(req, res, next) {
   res.render('wallet/index', { title: 'Storecoin', name : 'Home', header : true });
 });
 
+router.get('/wallet/wallet-app/api', function(req, res, next) {
+  res.render('wallet/api', { title: 'Storecoin', name : 'Home', header : true });
+});
+
 router.get('/wallet', function(req, res, next) {
   res.render('wallet/index-desktop', { title: 'Storecoin', name : 'Home' });
 });
