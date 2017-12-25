@@ -88,6 +88,10 @@ input[type=number]::-webkit-outer-spin-button {
   display: none;
 }
 
+.info-graph-fullscreen {
+  cursor: pointer;
+}
+
 .field.radio-field {
   position: relative;
   min-height: 33px;
@@ -210,7 +214,16 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 7px;
 }
 
-.hc-email .link-text {
+.hc-email .email-widget .link-container {
+  margin-top: 1em;
+}
+
+.hc-email .email-widget .link-text {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.hc-email .steps-form .link-text {
   font-size: 1em !important;
   margin-bottom: 1em;
 }
@@ -518,6 +531,16 @@ input[type=number]::-webkit-outer-spin-button {
   #hc-content {
     margin-top: 92px;
   }
+
+  .hc-email .email-widget .link-container {
+    margin-top: 1.5em;
+  }
+
+  .hc-email .email-widget .link-text {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+  }
+
   .hc-feature .button-container a {
     font-size: 1em;
   }
@@ -1085,7 +1108,7 @@ and (max-width : 700px) {
   }
 
   #hc-intro .hc-feature-lead {
-    font-size: 1em !important;
+    font-size: 1.15em !important;
   }
 }
 
@@ -4330,6 +4353,11 @@ and (max-width : 700px) {
   border-radius: 5px;
 }
 
+.tippy-tooltip {
+  background-color: white;
+  border: 1px solid black;
+}
+
 #box-1,
 #tippy-tooltip-1 .tippy-tooltip {
   background-color: #d99ee9;
@@ -4590,7 +4618,8 @@ and (max-width : 700px) {
   height: 80px;
   border-radius: 10px;
   max-width: 600px;
-  margin: auto
+  margin: auto;
+  cursor: pointer;
 }
 
 .security-system-lite .hazard-boxes .box.green {
@@ -4714,6 +4743,7 @@ and (max-width : 700px) {
 }
 
 /*#engine-cards-modal i.ion-android-close,*/
+#info-image-modal i.ion-android-close,
 .engine-modal i.ion-android-close {
   position: absolute;
   /*top: -35px;
@@ -4724,6 +4754,9 @@ and (max-width : 700px) {
   cursor: pointer;
   color: black;
   z-index: 1;
+  background: #cccccc;
+  padding: 0px 5px;
+  border: 0px;
 }
 
 /*#engine-cards-modal i.ion-android-close {
@@ -5072,5 +5105,18 @@ and (max-width : 700px) {
 
   #comparison-table table .mobile-table .head span {
     font-size: 0.7em;
+  }
+}
+
+/*----------------------------------*/
+#our-latest .hc-feature-lead,
+#our-latest ul {
+  font-size: 1.3em;
+}
+
+@media only screen and (max-width: 700px) {
+  #our-latest .hc-feature-lead,
+  #our-latest ul {
+    font-size: 1em !important;
   }
 }

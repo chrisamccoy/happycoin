@@ -58,7 +58,43 @@ $(document).ready(function(){
   initProblemReveal(isMobile);
   // yAxisWidth();
   initCoinFlip();
+  initInviteSale();
+  initFullscreenImage(isMobile);
 });
+
+function initFullscreenImage (isMobile) {
+  var $infoImage = $('.info-graph-fullscreen'),
+      $infoModal = $('#info-image-modal');
+  $infoImage.click(function(){
+    var src = $(this).attr('src');
+    if (isMobile) {
+      $infoModal.find('.content')
+                .css('width', 'auto')
+                .html('')
+                .append('<img src="'+src+'" style="height:90vh; width:unset;">');
+    } else {
+      $infoModal.find('.content').html('').append('<img src="'+src+'" style="height:100%; width:unset;">');
+    }
+    $infoModal.modal({
+      onShow : function(){
+        $(window).trigger('resize');
+      }
+    }).modal('show');
+    $infoModal.find('i.ion-android-close').click(function(){
+      $infoModal.modal('hide');
+    });
+  });
+}
+
+function initInviteSale() {
+  var $navWrap = $('#hc-nav-wrapper'),
+      $inviteSale = $navWrap.find('.sale-invite'),
+      $tokenSale = $('#tokensale');
+
+  $inviteSale.click(function(){
+    $('html, body').animate({ scrollTop : $tokenSale.offset().top - $navWrap.height() }, 600);
+  });
+}
 
 function initCoinFlip () {
   var $coinCont = $('#business-case'),
@@ -165,6 +201,13 @@ function initTippy() {
   //   $('#tippy-tooltip-1').css('transform', 'translate3d('+offset.left+'px, '+offset.top+'px, 0px)');
   // });
   tippy('.desktop-image map[name="desktop-image-map"] area',{
+    // trigger : 'click',
+    animation: 'scale',
+    arrow: true,
+    followCursor : true
+  });
+
+  tippy('#security-system .hazard-boxes .box',{
     // trigger : 'click',
     animation: 'scale',
     arrow: true,
@@ -988,6 +1031,7 @@ function emailSubscribe() {
     if(emailVal){
       $thisEmailSect.find('.email-steps.step-17 input[type="text"]').val(emailVal);
       $thisEmailSect.find('.email-widget').hide();
+      $('#about-second-token-sale').hide();
       $thisEmailSect.find('.steps-form').show();
       $thisEmailSect.find('.email-steps.step-1').show();
       setTimeout(function(){
