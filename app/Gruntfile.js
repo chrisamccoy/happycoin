@@ -14,9 +14,6 @@ module.exports = function(grunt) {
 
     // CONCAT TASK
     concat: {
-      options: {
-        separator: ';'
-      },
       // JS FILES TO CONCAT
       js: {
         src: [
