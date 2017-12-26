@@ -25,7 +25,7 @@ html
     link(rel='stylesheet', href='/css/dimmer.min.css')
     link(rel='stylesheet', href='/css/transition.min.css')
     link(rel='stylesheet', href='/css/tippy.css')
-    link(rel='stylesheet', href='/css/styles.css?v=2.3.8')
+    link(rel='stylesheet', href='/css/styles.css?v=2.3.9')
 
     link(rel='icon', type='image/png', href='/images/favicon.png')
 
@@ -43,7 +43,7 @@ html
     script(src='/js/numeral.js')
     script(src='/js/tippy.min.js')
     script(src='/js/jquery.rwdImageMaps.min.js')
-    script(src='/js/script.js?v=2.3.8')
+    script(src='/js/script.js?v=2.3.9')
 
   body
     - var className = ''
@@ -67,7 +67,7 @@ html
           .hc-branding.logo
             a.hc-title(href='/')
           div.hc-branding.invite-dropdown
-            a.sale-invite Receive a Token Sale invite
+            a.sale-invite(data-id="#tokensale-top") Receive a Token Sale invite
             div.hc-menu-dropdown
               .ui.dropdown
                 i.ion-android-more-vertical
@@ -105,7 +105,7 @@ html
               li
                 a(href='/blog') Our Blog
               li
-                a(href='/secondtokensale') Our Token Sale
+                a.sale-invite(data-id="#tokensale-bottom") Our Token Sale
               //- li
               //-   a(href='/firsttokensalefaq') Token Sale FAQ
               li
@@ -133,7 +133,7 @@ html
             p(style='font-size: 0.7em; padding: 0.5em 0;')
               a(href='')
                 strong Storecoin
-              |  is a new public blockchain be powered by Dynamic Proof of Stake (DyPoS).
+              |  is a new public blockchain powered by Dynamic Proof of Stake (DyPoS).
         section.row
           b(style='color: white;') © 2017 Storecoin, Inc
           ul#menu-footer-menu.menu

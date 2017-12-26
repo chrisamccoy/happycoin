@@ -18,10 +18,10 @@ block content
     
     include about-token-sale-2
     
-    .hc-feature.over-rel.padding.inverted
+    #our-mission.hc-feature.over-rel.padding.inverted
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted Our Mission
-        p.hc-feature-lead(style="margin: 0 auto; max-width: 600px;") Storecoin will become new payment infrastructure and new incentivization infrastructure for the global internet. 
+        p.hc-feature-lead(style="margin: 0 auto; max-width: 660px;") To become new payment infrastructure and new incentivization infrastructure for the global internet. 
     
     #token-sale-buyers.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
@@ -112,12 +112,12 @@ block content
     
     include dypos-algorithm
     
-    .hc-feature.over-rel.padding
+    .hc-feature.over-rel.padding.info-fullscreen
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title How Free Transactions are Financed 
         p.hc-feature-lead Transactions are free for users because they are paid for with capped, yearly token inflation of 5%. 4% is paid to block proposers. 1% endows Storecoin to secure, build, and operate the blockchain.
         .hc-image
-          img.info-graph-fullscreen(src="/images/dynamic-reward-flow-v2.png") 
+          img(src="/images/dynamic-reward-flow-v3.png") 
     
     //- banner
     .hc-feature.over-rel.padding.orange.inverted(style="padding:2.5em;")
@@ -130,9 +130,11 @@ block content
           img.icon(src="/images/red-caution.png", align="top") 
           | The Storecoin Security System 
         p.hc-feature-lead The Storecoin Security System powers real-time market prices for the Six Engines of DyPoS. The System threat level algorithmically updates as transaction volumes rise and fall. As threat levels rise, the cost of spam and attacks rise too.
+        p(style="text-align:center; margin: 1em;") 
+          span(style="border: 2px solid #65954c; border-radius: 7px; padding: 0.3em 0.5em;") Click boxes to see Economics
         div.hazard-boxes
           - var secVals = ['5,000 storecoins', '5,000 edisons', '5%', '50', '50', '1,000 edisons', '90%'];
-          - var secTemplate = function(secVals) { return 'Stake Required For New Validators: <span class="orange-color">'+secVals[0]+'</span><br>Security Bond to Send Txn: <span class="orange-color">'+secVals[1]+'</span><br>Interest Paid on Security Bond: <span class="orange-color">'+secVals[2]+'</span><br># of Security Guards Needed: <span class="orange-color">'+secVals[3]+'</span><br>Stake Required to Guard: <span class="orange-color">'+secVals[4]+'</span><br>Cost to File a Ticket: <span class="orange-color">'+secVals[5]+'</span><br>Stake or Bond Earned by Guard: <span class="orange-color">'+secVals[6]+'</span>';};
+          - var secTemplate = function(secVals) { return '<ul><li>Stake Required For New Validators: <span class="orange-color">'+secVals[0]+'</span></li><li>Security Bond to Send Txn: <span class="orange-color">'+secVals[1]+'</span></li><li>Interest Paid on Security Bond: <span class="orange-color">'+secVals[2]+'</span></li><li># of Security Guards Needed: <span class="orange-color">'+secVals[3]+'</span></li><li>Stake Required to Guard: <span class="orange-color">'+secVals[4]+'</span></li><li>Cost to File a Ticket: <span class="orange-color">'+secVals[5]+'</span></li><li>Stake or Bond Earned by Guard: <span class="orange-color">'+secVals[6]+'</span></li></ul>';};
           - var title = secTemplate(secVals);
           div.box.red(title=title)
             h3 Severe
@@ -158,51 +160,51 @@ block content
             h3 Low
             p Low risk of an attack or an spam
             
-    .hc-feature.over-rel.padding(style="border-bottom: 2px dashed grey;")
+    .hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title How dGuards Secure the Blockchain
         p.hc-feature-lead dGuards are the decentralized security network on Storecoin that secures the blockchain by finding bad actors across the validator pool, the Wallet SDK network, and in transactions. dGuards run full nodes to study transactions and validator behavior. They're rewarded with +50% of the burned stake from bad validators or +50% of the security bond from bad senders.
         .hc-image
-          img.info-graph-fullscreen(src="/images/how-dynamic-sec-works-v2.png")
+          img(src="/images/how-dynamic-sec-works-v3.png")
     
-    .hc-feature.over-rel.padding
+    .hc-feature.over-rel.padding.info-fullscreen
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title How Free Transactions are Secured With Bonds  
         p.hc-feature-lead To prevent Storecoin from a DDoS attack or from the blockchain being flooded with spammy transactions, Storecoin adds a refundable – with interest! – security bond to each transaction. 
         .hc-image
-          img.info-graph-fullscreen(src="/images/how-dynamic-transaction-works-v2.png") 
+          img(src="/images/how-dynamic-transaction-works-v3.png") 
           
     //- banner
     .hc-feature.over-rel.padding.orange.inverted(style="padding:2.5em;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted(style=" margin:0px !important;") How Checks and Balances prevent centralization
     
-    .hc-feature.over-rel.padding(style="border-bottom: 2px dashed grey;")
+    .hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title The Four Branches of Storecoin Governance  
         p.hc-feature-lead Storecoin Governance is inspired by the United States Constitution where checks and balances ensure that: a) Security Matters Most and b) No Centralization of Power. 
         .hc-image
-          img.info-graph-fullscreen(src="/images/gov-branches.png") 
+          img(src="/images/gov-branches-v2.png") 
           
-    .hc-feature.over-rel.padding(style="border-bottom: 2px dashed grey;")
+    .hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title How Governance is Hired  
         p.hc-feature-lead For the first 4 years, Storecoin, Inc. will have executive power over the blockchain. Then, our security-first Governance will guide all Changes to leadership, to features, and to Governance itself. 
         .hc-image
-          img.info-graph-fullscreen(src="/images/gov-hired.png") 
+          img(src="/images/gov-hired-v2.png") 
           
-    .hc-feature.over-rel.padding(style="border-bottom: 2px dashed grey;")
+    .hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title How Checks and Balances Work  
         p.hc-feature-lead How protocol changes, security fixes, and Governance amendments are made. 
         .hc-image
-          img.info-graph-fullscreen(src="/images/checks-balances-work.png") 
+          img(src="/images/checks-balances-work-v2.png") 
           
-    .hc-feature.over-rel.padding
+    .hc-feature.over-rel.padding.info-fullscreen
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title How Every Storecoin Token Owner Can Create Change  
         .hc-image
-          img.info-graph-fullscreen(src="/images/token-owner.png") 
+          img(src="/images/token-owner-v2.png") 
     
     .hc-feature.over-rel.padding.inverted.left-align
       .hc-chunk.hc-customize-text-wrapper
@@ -221,24 +223,6 @@ block content
           
     //- banner
     .hc-feature.over-rel.padding.orange.inverted(style="padding:2.5em;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title.inverted(style=" margin:0px !important;") How the Storecoin public blockchain works
-        
-    .hc-feature.over-rel.padding(style="overflow:visible;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title How Payments Are Free, Fast, and Scalable  
-        p.hc-feature-lead How the Dynamic Proof of Stake consensus algorithm keeps transactions permanently free while perpetually funding blockchain security, engineering, and governance. 
-        .hc-image
-          img.info-graph-fullscreen(src="/images/blockchain-steps-1-4.png") 
-        div.link-container.hanging
-          a.link-text.see-more.green(data-link="#8-steps", data-margin="33,44", data-scroll="true") See 8 More Steps
-            i.ion-ios-arrow-down
-        #8-steps.see-more-reveal
-          .hc-image
-            img.info-graph-fullscreen(src="/images/blockchain-8-steps.png")
-              
-    //- banner
-    .hc-feature.over-rel.padding.orange.inverted
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted(style=" margin: 0px !important;") How Storecoin gets market adoption
         
@@ -327,22 +311,22 @@ block content
             div.title
               a(href="/wallet", target="_blank") 
                 b Every user has a wallet
-            img(src="/images/wall-screen-1.png")
+            img(src="/images/wall-screen-1-v2.png")
           div.screen
             div.title 
               a(href="/wallet", target="_blank") 
-                b Users can sell their Storecoins
-            img(src="/images/wall-screen-2.png")
+                b Users can sell their storecoins
+            img(src="/images/wall-screen-2-v2.png")
           div.screen
             div.title 
               a(href="/wallet", target="_blank")
-                b Users can trade their Storecoins
-            img(src="/images/wall-screen-3.png")
+                b Users can trade their storecoins
+            img(src="/images/wall-screen-3-v2.png")
           div.screen
             div.title 
               a(href="/wallet", target="_blank")
-                b Users can trade their Storecoins
-            img(src="/images/wall-screen-4.png")
+                b Users can gift their storecoins
+            img(src="/images/wall-screen-4-v2.png")
         p.hc-feature-lead(style="margin-bottom: 0px; text-decoration: underline; margin-top:1.5em;")
           a(href="/wallet", target="_blank").orange-color See a Prototype for the Storecoin Wallet.
     
@@ -351,10 +335,31 @@ block content
         h3.hc-feature-title How Storecoin Grows
         p.hc-feature-lead Using our 33% Incentivization Pool, we can award tokens to third party developers – both Fortune 100 companies and indie developers – to kickstart their development with storecoins. If Storecoin drives either revenue, engagement, or user growth, then they'll likely buy additional tokens to continue the new growth.
         .hc-image
-          img(src="/images/storecoin-grow.png")
-            
+          img(src="/images/storecoin-grow-v2.png")
+    
     //- banner
     .hc-feature.over-rel.padding.orange.inverted(style="padding:2.5em;")
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title.inverted(style=" margin:0px !important;") How the Storecoin public blockchain works
+        
+    .hc-feature.over-rel.padding.info-fullscreen(style="overflow:visible;")
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title How Payments Are Free, Fast, and Scalable  
+        p.hc-feature-lead How the Dynamic Proof of Stake consensus algorithm keeps transactions permanently free while perpetually funding blockchain security, engineering, and governance. 
+        .hc-image
+          img(src="/images/blockchain-steps-1-4-v2.png") 
+        #8-steps.see-more-reveal
+          .hc-image
+            img(src="/images/blockchain-8-steps-v2.png")
+    //- 
+    .hc-feature.over-rel.padding.inverted.orange(style="overflow:visible; padding: 0px;")
+      .hc-chunk.hc-customize-text-wrapper
+        div.link-container.hanging
+          a.link-text.see-more(data-link="#8-steps", data-margin="33,44", data-scroll="true", style="border: 3px solid;") See 8 More Steps
+            i.ion-ios-arrow-down
+            
+    //- banner
+    .hc-feature.over-rel.padding.orange.inverted
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted(style=" margin:0px !important;") How to get involved
         
@@ -385,4 +390,4 @@ block content
 
   div#info-image-modal.ui.large.modal
     i.ion-android-close
-    div.content(style="overflow:scroll;")
+    div.content

@@ -2490,7 +2490,7 @@ and (max-width : 700px) {
 
 .link-container.hanging {
   position: absolute;
-  bottom: -40px;
+  bottom: -35px;
   width: 100%;
   display: flex;
   z-index: 1;
@@ -2500,15 +2500,12 @@ and (max-width : 700px) {
 .link-container.hanging .link-text {
   border: 3px solid rgba(0,0,0,0); background-color: #f47840;
   color: white;
+  font-size: 2em;
 }
 
 .link-container .link-text.green {
   background-color: #5D794E;
   color: white;
-}
-
-.link-container.hanging .link-text {
-  font-size: 2.5em;
 }
 
 .link-container.hanging .link-text:hover {
@@ -4326,7 +4323,7 @@ and (max-width : 700px) {
 
 /*----------------------------------*/
 .tippy-popper .tippy-tooltip-content {
-  font-size: 1.7em;
+  font-size: 1.5em;
   text-align: left;
   padding: 0.5em;
   color: black;
@@ -5119,4 +5116,49 @@ and (max-width : 700px) {
   #our-latest ul {
     font-size: 1em !important;
   }
+}
+
+/*----------------------------------*/
+
+#info-image-modal {
+  text-align: center;
+}
+
+#info-image-modal .content {
+  overflow: scroll;width: auto;
+}
+
+#info-image-modal .hc-chunk {
+  min-width: 700px;
+}
+
+#info-image-modal .hc-feature-title {
+  font-weight: bold;
+}
+
+#info-image-modal .hc-feature-lead {
+  font-size: 2em;
+}
+
+#info-image-modal .hc-image {
+  margin-top: 2em;
+}
+
+#info-image-modal .hc-image img {
+  width: 100%;
+}
+
+.info-fullscreen {
+  cursor: pointer;
+}
+
+/*----------------------------------*/
+#our-mission .hc-feature-title {
+  font-size: 4em;
+  line-height: 1;
+}
+
+#our-mission .hc-feature-lead {
+  font-size: 2.5em;
+  line-height: 1.4;
 }

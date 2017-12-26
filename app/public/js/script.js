@@ -63,17 +63,17 @@ $(document).ready(function(){
 });
 
 function initFullscreenImage (isMobile) {
-  var $infoImage = $('.info-graph-fullscreen'),
+  var $infoFullScreen = $('.info-fullscreen'),
       $infoModal = $('#info-image-modal');
-  $infoImage.click(function(){
-    var src = $(this).attr('src');
+  $infoFullScreen.click(function(){
+    var html = $(this).html();
     if (isMobile) {
       $infoModal.find('.content')
                 .css('width', 'auto')
                 .html('')
-                .append('<img src="'+src+'" style="height:90vh; width:unset;">');
+                .append(html);
     } else {
-      $infoModal.find('.content').html('').append('<img src="'+src+'" style="height:100%; width:unset;">');
+      $infoModal.find('.content').html('').append(html);
     }
     $infoModal.modal({
       onShow : function(){
@@ -88,11 +88,14 @@ function initFullscreenImage (isMobile) {
 
 function initInviteSale() {
   var $navWrap = $('#hc-nav-wrapper'),
-      $inviteSale = $navWrap.find('.sale-invite'),
-      $tokenSale = $('#tokensale');
+      $inviteSale = $('.sale-invite');
 
   $inviteSale.click(function(){
-    $('html, body').animate({ scrollTop : $tokenSale.offset().top - $navWrap.height() }, 600);
+    // console.log($(this).data().id);
+    var $tokenSale = $($(this).data().id);
+    if($tokenSale.length) {
+      $('html, body').animate({ scrollTop : $tokenSale.offset().top - $navWrap.height() }, 600);
+    }
   });
 }
 
