@@ -15,41 +15,15 @@ html
 
     link(href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', rel='stylesheet')
     link(href='//cdn-images.mailchimp.com/embedcode/classic-10_7.css', rel='stylesheet', type='text/css')
-    link(rel='stylesheet', href='/css/normalize.css')
-    link(rel='stylesheet', href='/css/featherlight.css')
-    link(rel='stylesheet', href='/css/skeleton.css')
-    link(rel='stylesheet', href='/css/slick.css')
-    link(rel='stylesheet', href='/css/slick-theme.css')
-    link(rel='stylesheet', href='/css/dropdown.min.css')
-    link(rel='stylesheet', href='/css/modal.min.css')
-    link(rel='stylesheet', href='/css/dimmer.min.css')
-    link(rel='stylesheet', href='/css/transition.min.css')
-    link(rel='stylesheet', href='/css/tippy.css')
-    link(rel='stylesheet', href='/css/styles.css?v=2.3.9')
-
     link(rel='icon', type='image/png', href='/images/favicon.png')
-
-    script(src='/js/sticky.js')
-    script(src='/js/jquery-3.2.1.min.js')
-    script(src='/js/progressbar.js')
-    script(src='/js/autosize.js')
-    script(src='/js/slick.js')
-    script(src='/js/dropdown.min.js')
-    script(src='/js/transition.min.js')
-    script(src='/js/dimmer.min.js')
-    script(src='/js/modal.min.js')
-    script(src='/js/scrollreveal.js')
-    script(src='/js/featherlight.js')
-    script(src='/js/numeral.js')
-    script(src='/js/tippy.min.js')
-    script(src='/js/jquery.rwdImageMaps.min.js')
-    script(src='/js/script.js?v=2.3.9')
+    link(rel='stylesheet', href='/assets/styles.css')
+    script(src='/assets/script.js')
 
   body
     - var className = ''
     if v2
       - className = 'v2'
-      
+
     #hc-nav-wrapper.add-background(class=className)
       p.hc-intro-post
         //- a(href="https://medium.com/@team_27494/introducing-storecoin-8e15c21b4335", target="_blank") Read our introductory post
@@ -82,7 +56,7 @@ html
                   a.item(href='/dguard', target="_blank") Become a dGuard
 
     block content
-      
+
     footer#hc-footer(class=className)
       .hc-footer-chunk(style='padding: 3em 1em;')
         section.footer-light.row
