@@ -52,7 +52,7 @@ $(document).ready(function(){
   hasUrl();
   fadeInContent();
   // imgCoords(isMobile);
-  initTippy();
+  initTippy(isMobile);
   // initLearnMore(isMobile);
   initLightBulb();
   initProblemReveal(isMobile);
@@ -197,7 +197,7 @@ function initDropdown () {
   $('.ui.dropdown').dropdown();
 }
 
-function initTippy() {
+function initTippy(isMobile) {
   // $('map[name="image-map"] area').click(function(){
   //   var offset = $(this).offset();
   //   console.log($('.tippy-popper'));
@@ -216,6 +216,15 @@ function initTippy() {
     arrow: true,
     followCursor : true
   });
+
+  if (isMobile) {
+    tippy('#comparison-table td',{
+      // trigger : 'click',
+      animation: 'scale',
+      arrow: true,
+      followCursor : true
+    });
+  }
 }
 
 function imgCoords(isMobile) {
