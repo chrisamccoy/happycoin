@@ -5024,8 +5024,10 @@ and (max-width : 700px) {
 }
 
 #comparison-table table .note {
+  display: block;
   font-size: 0.6em;
   font-style: italic;
+  line-height: 1.5;
 }
 
 #comparison-table table tbody {
@@ -5093,10 +5095,11 @@ and (max-width : 700px) {
 @media only screen and (max-width: 700px) {
   #comparison-table table .icon {
     width: 35px;
+    margin-right: 0.5em;
   }
 
   #comparison-table table {
-    width: 470px;
+    width: 410px;
   }
 
   #comparison-table table tbody tr {
@@ -5129,6 +5132,10 @@ and (max-width : 700px) {
 
   #comparison-table table .see-more {
     display: block;
+  }
+
+  #comparison-table table td {
+    border: 2px solid #5b774d;
   }
 
   /*#comparison-table thead,
