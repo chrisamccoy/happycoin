@@ -4844,7 +4844,7 @@ and (max-width : 700px) {
 .blockchain-works .steps .step,
 .wallet-screens .screen {
   flex: 1;
-  padding: 0px 1em;
+  /*padding: 0px 1em;*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4852,7 +4852,7 @@ and (max-width : 700px) {
 
 .blockchain-works .steps .step .title,
 .wallet-screens .screen .title {
-  font-size: 1.2em;
+  font-size: 1em;
   text-align: center;
 }
 
@@ -4861,7 +4861,7 @@ and (max-width : 700px) {
 }
 
 .wallet-screens .screen img {
-  max-height: 500px;
+  max-height: 420px;
   height:100%;
 }
 
@@ -5185,15 +5185,15 @@ and (max-width : 700px) {
   overflow: scroll;width: auto;
 }
 
-#info-image-modal .hc-chunk {
+#info-image-modal .image-modal-container {
   min-width: 700px;
 }
 
-#info-image-modal .hc-feature-title {
+#info-image-modal h3 {
   font-weight: bold;
 }
 
-#info-image-modal .hc-feature-lead {
+#info-image-modal p {
   font-size: 2em;
 }
 

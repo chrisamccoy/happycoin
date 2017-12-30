@@ -42,7 +42,7 @@ $(document).ready(function(){
   toggleCardTasks();
   // toggleAppsDesc();
   // toggleIncentive();
-  emailSubscribe();
+  emailSubscribe(isMobile);
   initSlider();
   initLogoSlider('#hc-partners-slider');
   initLogoSlider('#hc-buyers-slider');
@@ -75,12 +75,12 @@ function initFullscreenImage (isMobile) {
   $infoFullScreen.click(function(){
     var html = $(this).html();
     if (isMobile) {
-      $infoModal.find('.content')
+      $infoModal.find('.content .image-modal-container')
                 .css('width', 'auto')
                 .html('')
                 .append(html);
     } else {
-      $infoModal.find('.content').html('').append(html);
+      $infoModal.find('.content .image-modal-container').html('').append(html);
     }
     $infoModal.modal({
       onShow : function(){
@@ -687,7 +687,7 @@ function toggleIncentive () {
   });
 }
 
-function emailSubscribe() {
+function emailSubscribe(isMobile) {
   var $emailSection = $('.hc-email'),
       $emailForm = $emailSection.find('.form'),
       $emailWidget = $emailSection.find('.email-widget'),
@@ -1004,7 +1004,7 @@ function emailSubscribe() {
     var $thisForm = $(this).parents('.steps-form');
 
     setTimeout(function(){
-      $(window).scrollTop($thisEmailSect.offset().top - 90);
+      $(window).scrollTop($thisEmailSect.offset().top - ((isMobile) ? 77 : 100));
     }, 300);
 
     var formArray = $thisForm.serializeArray();
@@ -1054,7 +1054,7 @@ function emailSubscribe() {
       $thisEmailSect.find('.steps-form').show();
       $thisEmailSect.find('.email-steps.step-1').show();
       setTimeout(function(){
-        $(window).scrollTop($thisEmailSect.offset().top - 90);
+        $(window).scrollTop($thisEmailSect.offset().top - ((isMobile) ? 77 : 100));
       }, 300);
       $.ajax({
         type : 'GET',
@@ -1080,7 +1080,7 @@ function emailSubscribe() {
     $thisEmailSect.hide();
 
     setTimeout(function(){
-      $(window).scrollTop($next.offset().top - 90);
+      $(window).scrollTop($thisEmailSect.offset().top - ((isMobile) ? 77 : 100));
     }, 300);
   });
 
@@ -1184,7 +1184,7 @@ function emailSubscribe() {
     }
 
     setTimeout(function(){
-      $(window).scrollTop($thisEmailSect.offset().top - 90);
+      $(window).scrollTop($thisEmailSect.offset().top - ((isMobile) ? 77 : 100));
     }, 300);
 
     // console.log(stepVal);git p
