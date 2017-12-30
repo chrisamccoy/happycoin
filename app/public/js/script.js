@@ -60,7 +60,14 @@ $(document).ready(function(){
   initCoinFlip();
   initInviteSale();
   initFullscreenImage(isMobile);
+  initIntroHeight(isMobile);
 });
+
+function initIntroHeight (isMobile) {
+  var introHeight = $(window).height() - ((isMobile) ? 232 : 271);
+  // console.log(introHeight);
+  $('#hc-intro').height(introHeight);
+}
 
 function initFullscreenImage (isMobile) {
   var $infoFullScreen = $('.info-fullscreen'),
