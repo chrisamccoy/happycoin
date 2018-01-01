@@ -1542,4 +1542,22 @@ button.small {
 
 #api-bugget-api .api-item section {
   flex: auto;
+  padding: 0px;
+  padding-left: 1em;
+  border-bottom: 0px;
+}
+
+#api-bugget-api .api-item section .amount-slider {
+  height: 65px;
+}
+
+#api-bugget-api .api-item section .amount-slider .conversion .exchange,
+#api-bugget-api .api-item section .amount-slider .conversion .dollar-val {
+  display: none;
+}
+
+.api-container {
+  height: calc(100% - 55px);
+  overflow: scroll;
+  position: relative;
 }

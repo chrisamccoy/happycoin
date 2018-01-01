@@ -389,12 +389,13 @@ function changeOnSlide (value, $parent, handlePos) {
   }
 
   var $thisSection = $dollarVal.parents('section'),
-      paddingLeft = $thisSection.css('padding-left') + $thisSection.offset().left;
+      paddingLeft = $thisSection.css('padding-left') + $thisSection.offset().left,
+      spacing = ($thisSection.hasClass('no-padding')) ? 0 : 10;
 
   // console.log(handlePos > ($conversion.width() + 10 + $thisSection.offset().left), handlePos, $conversion.width() + 10 + $thisSection.offset().left);
 
-  if(handlePos > ($conversion.width() + 10 + $thisSection.offset().left)) {
-    $conversion.css('left', 'calc('+(handlePos - $conversion.width() - 10)+'px + '+$thisSection.css('padding-left')+')');
+  if(handlePos > ($conversion.width() + spacing + $thisSection.offset().left)) {
+    $conversion.css('left', 'calc('+(handlePos - $conversion.width() - spacing)+'px + '+$thisSection.css('padding-left')+')');
   } else {
     $conversion.css('left', paddingLeft );
   }
