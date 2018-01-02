@@ -5233,11 +5233,54 @@ and (max-width : 700px) {
 
 /*----------------------------------*/
 #checks-balances-work .charter {
-  font-size:1.5em; font-style:italic; color:red; margin:1em;
+  font-size:1.1em; font-style:italic; color:red; margin:1em;
 }
 
 @media only screen and (max-width: 700px) {
   #checks-balances-work .charter {
-    font-size:1em;
+    font-size:0.8em;
+  }
+}
+
+/*----------------------------------*/
+#get-involve {
+  padding: 4em 0em 3em;
+}
+
+@media only screen and (max-width: 700px) {
+  #get-involve {
+    padding : 3em 0em 2em;
+  }
+}
+
+/*----------------------------------*/
+#rec-revenue .row {
+  display: flex;
+  align-items: center;
+}
+
+#rec-revenue .row #rev-recur-circle {
+  width: 15%;
+  position: relative;
+  margin-right: 2em;
+}
+
+#rec-revenue .row .hc-feature-lead {
+  margin: 0px;
+}
+
+@media only screen and (max-width: 700px) {
+  #rec-revenue .row {
+    flex-direction: column;
+  }
+
+  #rec-revenue .row #rev-recur-circle {
+    width: 50%;
+    margin-right: 0px;
+  }
+
+  #rec-revenue .row .hc-feature-lead {
+    font-size: 1em;
+    margin-top: 1em;
   }
 }
