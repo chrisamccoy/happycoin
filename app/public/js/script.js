@@ -65,7 +65,7 @@ $(document).ready(function(){
 
 function initIntroHeight (isMobile) {
   // var introHeight = $(window).height() - ((isMobile) ? 232 : 271);
-  var introHeight = $(window).height() - ((isMobile) ? 262 : 282);
+  var introHeight = $(window).height() - ((isMobile) ? 262 : 292);
   // console.log(introHeight);
   $('#hc-intro').height(introHeight);
 }
