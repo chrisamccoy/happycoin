@@ -1265,6 +1265,10 @@ and (max-width : 700px) {
   margin-top: 3em;
 }
 
+#distribution-plan .token-dist:not(:first-child) {
+  margin-top: 2em;
+}
+
 #distribution-plan .token-dist .circle {
   position : relative;
 }
@@ -1614,6 +1618,9 @@ and (max-width : 700px) {
 
   #distribution-plan .token-dist .row {
     display: block;
+  }
+
+  #distribution-plan .token-dist .row:not(:last-child) {
     margin-bottom: 3em;
   }
 
@@ -1629,6 +1636,7 @@ and (max-width : 700px) {
   #distribution-plan .token-dist .subtext {
     text-align: center;
     font-size: 1em;
+    margin-top: 1em;
   }
 
   #distribution-plan .network-stats {
@@ -5011,9 +5019,21 @@ and (max-width : 700px) {
   font-size: 1.1em;
 }
 
+#orange-paper a {
+  text-align: center;
+  padding: 1em 0em 0.1em;
+  font-size: 1.5em;
+  border-bottom: 1px solid white;
+  display: inline-block;
+}
+
 @media only screen and (max-width: 700px) {
   #orange-paper .hc-feature-title {
     font-size: 2em;
+  }
+
+  #orange-paper a {
+    font-size: 1.2em;
   }
 }
 
@@ -5253,17 +5273,17 @@ and (max-width : 700px) {
 
 /*----------------------------------*/
 #get-involve {
-  padding: 4em 0em 3em;
+  padding: 5em 0em 3em;
 }
 
 @media only screen and (max-width: 700px) {
   #get-involve {
-    padding : 3em 0em 2em;
+    padding : 4em 0em 2em;
   }
 }
 
 /*----------------------------------*/
-#rec-revenue .row {
+/*#rec-revenue .row {
   display: flex;
   align-items: center;
 }
@@ -5292,4 +5312,21 @@ and (max-width : 700px) {
     font-size: 1em;
     margin-top: 1em;
   }
+}*/
+
+/*----------------------------------*/
+/*.tweets {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}*/
+
+.tweets .tweet {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tweets .tweet:not(:last-child) {
+  margin-bottom: 2em;
 }
