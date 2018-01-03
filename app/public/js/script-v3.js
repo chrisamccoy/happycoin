@@ -64,8 +64,7 @@ $(document).ready(function(){
 });
 
 function initIntroHeight (isMobile) {
-  // var introHeight = $(window).height() - ((isMobile) ? 232 : 271);
-  var introHeight = $(window).height() - ((isMobile) ? 262 : 282);
+  var introHeight = $(window).height() - ((isMobile) ? 232 : 271);
   // console.log(introHeight);
   $('#hc-intro').height(introHeight);
 }
@@ -1051,11 +1050,10 @@ function emailSubscribe(isMobile) {
 
     if(emailVal){
       $thisEmailSect.find('.email-steps.step-17 input[type="text"]').val(emailVal);
-      $thisEmailSect.find('.email-widget .form').hide();
+      $thisEmailSect.find('.email-widget').hide();
       $('#about-second-token-sale').hide();
-      // $thisEmailSect.find('.steps-form').show();
-      // $thisEmailSect.find('.email-steps.step-1').show();
-      $thisEmailSect.find('.success-message').show();
+      $thisEmailSect.find('.steps-form').show();
+      $thisEmailSect.find('.email-steps.step-1').show();
       setTimeout(function(){
         $(window).scrollTop($thisEmailSect.offset().top - ((isMobile) ? 77 : 100));
       }, 300);
