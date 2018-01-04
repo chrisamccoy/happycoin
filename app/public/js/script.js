@@ -435,7 +435,7 @@ function renderCircles() {
   generateCircle('circle2', 0.33, '#5d794c', '2rem');
   generateCircle('circle3', 0.33, '#5d794c', '2rem');
   generateCircle('circle4', 0.01, '#5d794c', '2rem');
-  generateCircle('rev-recur-circle', 0.01, '#5d794c', '2rem');
+  // generateCircle('rev-recur-circle', 0.01, '#5d794c', '2rem');
 }
 
 function whyTextToggle () {

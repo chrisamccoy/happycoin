@@ -3,8 +3,9 @@ div(id=top ? 'tokensale' : 'tokensale-bottom')
     .email-widget
       //- p.hc-email-invite
       //-   b Our invite-only First Token Sale is now complete!
-      h4(style="margin:0px;") Second Token Sale: Funding Complete
-      div.sub-head Get notified about new updates and upcoming token sale
+      h4(style="margin:0px;") Our Token Second Token Sale 
+        a.orange-color(href="https://twitter.com/StorecoinTeam/status/948466693776457728", target="_blank", style="text-decoration:underline;") is now complete 
+      div.sub-head Enter your email to subscribe to information about our next, invite-only token sale
       form.row.form
         .eight.columns
           input.u-full-width(type='email', name='email', placeholder='Enter your email address')
@@ -14,11 +15,11 @@ div(id=top ? 'tokensale' : 'tokensale-bottom')
       .success-message.message
         h4(style="color: #515151;")
           | Thanks for your email address! You'll start receiving updates soon.
-      if top
-        .link-container
-          a.link-text.see-more(data-link='#about-second-token-sale', data-margin='0,0', data-scroll='false', data-back='true', data-inner='See Less<i class="ion-ios-arrow-up"></i>, See More<i class="ion-ios-arrow-down"></i>')
-            | See More
-            i.ion-ios-arrow-down  
+      //- if top
+      //-   .link-container
+      //-     a.link-text.see-more(data-link='#about-second-token-sale', data-margin='0,0', data-scroll='false', data-back='true', data-inner='See Less<i class="ion-ios-arrow-up"></i>, See More<i class="ion-ios-arrow-down"></i>')
+      //-       | See More
+      //-       i.ion-ios-arrow-down  
              
     form.steps-form
       .step-numbers.dark-green 
