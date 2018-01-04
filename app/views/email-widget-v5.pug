@@ -3,18 +3,23 @@ div(id=top ? 'tokensale' : 'tokensale-bottom')
     .email-widget
       //- p.hc-email-invite
       //-   b Our invite-only First Token Sale is now complete!
-      h4(style="margin:0px;") Get invited to our Second Token Sale
+      h4(style="margin:0px;") Our Token Second Token Sale 
+        a.orange-color(href="https://twitter.com/StorecoinTeam/status/948466693776457728", target="_blank", style="text-decoration:underline;") is now complete 
+      div.sub-head Enter your email to subscribe to information about our next, invite-only token sale
       form.row.form
         .eight.columns
           input.u-full-width(type='email', name='email', placeholder='Enter your email address')
         .four.columns
-          input.button-primary(type='submit', value='Get Started')
+          input.button-primary(type='submit', value='SIGN UP')
       //- p(style="text-align:left; max-width: 960px;") Invites to our Second Token Sale will be sent December 2017
-      if top
-        .link-container
-          a.link-text.see-more(data-link='#about-second-token-sale', data-margin='0,0', data-scroll='false', data-back='true', data-inner='See Less<i class="ion-ios-arrow-up"></i>, See More<i class="ion-ios-arrow-down"></i>')
-            | See More
-            i.ion-ios-arrow-down   
+      .success-message.message
+        h4(style="color: #515151;")
+          | Thanks for your email address! You'll start receiving updates soon.
+      //- if top
+      //-   .link-container
+      //-     a.link-text.see-more(data-link='#about-second-token-sale', data-margin='0,0', data-scroll='false', data-back='true', data-inner='See Less<i class="ion-ios-arrow-up"></i>, See More<i class="ion-ios-arrow-down"></i>')
+      //-       | See More
+      //-       i.ion-ios-arrow-down  
              
     form.steps-form
       .step-numbers.dark-green 
@@ -928,28 +933,3 @@ div(id=top ? 'tokensale' : 'tokensale-bottom')
               a.button.button-primary.email-mobile(target="_blank", href="mailto:?subject=I%20RECOMMEND%3A%20The%20Storecoin%20Second%20Token%20Sale%20(invite-only)&body=Storecoin%20is%20a%20new%20public%20blockchain.%0D%0A%0D%0AWith%20its%20Dynamic%20Proof%20of%20Stake%20consensus%20protocol%20%28DyPoS%29%2C%20Storecoin%20will%20deliver%20free%20transactions%2C%20high-throughput%2C%20dynamic%20economics%2C%20decentralized%20security%2C%20and%20a%20governance%20system%20with%20built-in%20checks%20and%20balances%20inspired%20by%20the%20United%20States%20Constitution.%0D%0A%0D%0AStorecoin%20will%20become%20the%20best%20digital%20asset%20for%20delivering%20free%2C%20fast%2C%20and%20scalable%20payments.%0D%0A%0D%0AYou%20can%20get%20an%20invite%20by%20filling%20out%20their%20app%20at%20http%3A%2F%2Fstoreco.in.")
                 i.ion-email
                 | Email
-                
-      
-      .success-message.message
-        h4
-          | Thanks for applying to the Storecoin Second Token Sale! Our team greatly appreciates your interest in our research and development.
-        p
-          | Once your application is approved, we'll email you an invite to participate in our Second Token Sale. It opens up in December 2017.
-        p
-          | In the meantime, to stay up-to-date on Storecoin, follow-us on Twitter and read our blog on Medium.
-        .mobile-link
-          a.button.button-primary(target='_blank', href='mailto:?Subject=FWD: Storecoin First Token Sale - By Invite Only?Body=http://storeco.in/firsttokensale')
-            i.ion-email
-            | Share with your friend
-        .desktop-link
-          a.button.button-primary(target='_blank', href='https://mail.google.com/mail/?view=cm&fs=1&to=&su=FWD: Storecoin First Token Sale - By Invite Only&body=http://storeco.in/firsttokensale')
-            i.ion-email
-            | Share with your friend
-        .form.row.copy-link
-          .eight.columns
-            input.u-full-width.copy-target(readonly='', type='text', value='http://storeco.in/firsttokensale')
-          .four.columns
-            button.button.button-primary.copy-button
-              i.ion-link
-              |  Copy Link
-      
