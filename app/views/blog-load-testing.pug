@@ -1,0 +1,225 @@
+extends layout
+
+block content
+  div#hc-content
+    //- #hc-intro.hc-feature.over-rel.padding
+    //-   .hc-chunk.hc-intro-text-wrapper
+    //-     h2.hc-intro-large-lead(style='font-weight: bold; font-size: 2.7em; margin: 2em auto;') Blog
+
+    div(style="margin-top:5em;")
+      .blog-news.hc-feature.over-rel.padding
+        .hc-chunk.hc-customize-text-wrapper
+          h3 Load Testing Storecoin’s Dynamic Proof-of-Stake Consensus Algorithm: Test 1 of 7
+          
+          p.italics
+            b Testing the impact of varying numbers and sizes of transactions processed on a 4-node network running the Storecoin Dynamic Proof-of-Stake Consensus Algorithm (DyPoS).
+            
+          p.italics
+            b Purpose
+            
+          p.italics This document explains the activities performed in Phase One load testing of the decentralized Storecoin consensus algorithm called Dynamic Proof of Stake (DyPoS). DyPoS is partially built on top of Tendermint. This is the first of a series of tests designed to measure the performance of DyPoS.
+        
+          p
+            b About Storecoin
+            
+          p Storecoin will be a public blockchain powering free, fast, and scalable payments using its new consensus protocol called Dynamic Proof of Stake (DyPoS).
+          
+          p DyPoS is inspired by the supply and demand principles of Uber Surge Pricing 
+            span.italics (blockchain economics)
+            | , the checks and balances of the U.S. Constitution 
+            span.italics (blockchain governance)
+            | , and Power of Attorney 
+            span.italics (blockchain scaling).
+            
+          p Storecoin will power crypto-powered incentives and payments inside of apps.
+          
+          .hc-image
+            img(src="/images/blog-load-testing.png")
+          p.note Figure 1 — Illustration of the Storecoin underlying blockchain architecture.
+            
+          h5 General Test Summary
+          p
+            b What we are trying to learn
+          
+          p In testing the Dynamic Proof of Stake consensus algorithm, we want to see how the software responds to processing multiple transactions of different sizes at different rates (transactions per second) consecutively on a P2P network consisting of four validator nodes. The validator nodes are configured geographically in different regions to mimic a real-world setup.
+          p These are the remaining tests planned.
+          
+          .hc-image
+            img(src="/images/table-1.png")
+          p.note Table 1: Criteria and scenarios to load test the DyPoS consensus protocol.
+            
+          p In Test №1, a total of 24 inquiries were performed over four nodes using six groups of transactions of varying number (5, 100, 1,000, 10,000, 100,000 and 1,000,000) and four transaction sizes (500 bytes, 1 kilobyte, 10 kilobytes and 100 kilobytes).
+          
+          h5 Test Details and Results
+          p
+            b Environment and Tools
+            
+          p To load test the Storecoin consensus algorithm, a cluster containing four nodes was set up on an Amazon Web Services (AWS) Elastic Compute Cloud (EC2).
+
+          p Each node is running a r3.xlarge instance with 4 CPUs, 30.5GB memory, and a 80GB SSD drive.
+
+          p The nodes were physically located in the following regions.
+          
+          p
+            b Nodes : r3.xlarge instances
+          
+          ul
+            li California
+            li Virginia
+            li Ohio
+            li Oregon
+            
+          .hc-image
+            img(src="/images/table-2.png")
+          p.note Figure 2: Illustration of the Storecoin four-node validator used for the first load test of the DyPoS consensus algorithm.
+            
+          p The transactions were generated from an 
+            b m4.2xlarge 
+            | instance located in Canada.
+            
+          p 
+            b Type of Test Performed
+            
+          p Load testing is the process of putting demand on a software system and measuring its response. The load test client used was TM-Bench while the transaction monitoring tool utilized was TM-Monitor.
+
+          p TM-bench allows for benchmarking the performance with a specified transaction rate and size. For example:
+
+          p.italics TM-bench –T 5 –r 10000 –c5 127.0.0.1:46657
+
+          p The load test indicated above simulates five clients (indicated by “c” in code above) sending 10,000 transactions per second with a 5-second timeout. For each test, we used the transaction sizes listed above (500 bytes, 1KB, 10KB, and 100KB.)
+          
+          p
+            b Procedure
+            
+          p The 4-node load test was run using the following procedure:
+
+          ol
+            li In each inquiry, a specific transaction size (say, 500 bytes) and transaction rate (say, 100 transactions/second.) was selected. The transactions are sent from five clients in each test.
+            li The inquiry is run until the validator nodes are saturated.
+            li At the end of the inquiry, statistics for block latency, blocks per second, and transactions per second are collected.
+            li The inquiry is repeated for different combinations of transaction sizes and rates.
+            li The performance statistics are plotted for average blocks and transactions per second to number of transactions.
+            
+          p
+            b Results
+            
+          p Transaction Size: 500 bytes
+          
+          .hc-image
+            img(src="/images/table-3.png")
+          p.note Table 2 — Test results for the DyPoS consensus algorithm using 500-byte transactions on a four-node validator network
+          .hc-image
+            img(src="/images/chart-1.png") 
+          p.note Figure 3 — Graph of 4 nodes running 500-byte transactions showing the number of transactions run by average block processing time in seconds
+          
+          p In the graph above, the green line shows the number of blocks processed per second as measured by the average blocks per second. The red line shows the number of transactions processed per second as measured by average transactions per second. The X-axis shows the input transaction rate originated from each client.
+
+          p The graph shows results for five different inquiries of 5, 100, 1,000, 10,000, and 100,000 transactions 500 bytes in size. At five transactions, the system is able to process the greatest number of transactions at the greatest speed. This is to be expected, as the system is running the lightest load in terms of size and number of transactions.
+
+          p At 100 transactions, the system is processing a greater load in terms of the number of transactions. As a result, the number of blocks and transaction time increase. This was expected.
+
+          p At 1,000 transactions, the number of blocks and transaction time decreases. This is also to be expected. The trend continues through 10,000 transactions, when the computers containing the nodes processing transactions start timing out.
+
+          p Between 100 and 1,000 transactions per second, the slope is gradual and parallel to blocks processed per second. At 500 bytes, this would be the “sweet spot” where the system is performing optimally. Between 100 and 1,000 transactions, the system was able to process between 11,923,200 and 14,342,400 transactions per day.
+
+          p Transaction Size: 1 Kilobyte
+          
+          .hc-image  
+            img(src="/images/table-4.png")
+          p.note Table 3 — Test results for the DyPoS consensus algorithm using a 1 kilobyte transaction size.
+          .hc-image  
+            img(src="/images/chart-2-blog.png")
+          p.note Figure 4 — Graph of 4 nodes running 1 kilobyte transactions showing the number of transactions run by average block processing time in seconds
+            
+          p The graph above shows 5, 100, 1,000, 10,000, 100,000 and 1,000,000 transactions of 1 kilobyte in size. Performance between 100 and 1,000 transactions per second dropped considerably. This shows that the optimal load in this configuration is much closer to 100 transactions, but the system was able to support upwards of 1,000 transactions, albeit at a decreasing rate.
+
+          p Like the load test of transactions 500 bytes in size, optimal performance is between 100 and 1,000 transactions. Unlike the previous tests, system performance declines at a much faster rate as the number of transactions processed per second approaches 1,000.
+
+          p As the system processes more than 1,000 transaction more than 1 kilobyte in size, performance declines at a greater rate until the system starts timing out approaching 10,000 transactions, returning an error messages.
+
+          p Transaction Size: 10 Kilobytes
+          
+          .hc-image
+            img(src="/images/table-5.png")
+          p.note Table 4 — Load test results for the DyPoS consensus algorithm using a 10 kilobyte transaction size.
+          .hc-image
+            img(src="/images/chart-3.png")
+          p.note Figure 5 — Graph of 4 nodes running 10 kilobyte transactions showing the number of transactions run by average block processing time in seconds
+            
+          p The graph above shows results for 5, 100, 1,000, 10,000, 100,000 and 1,000,000 transactions of 10 kilobytes in size. The first three inquiries running 5, 100, and 1,000 transactions were completed successfully, whereas inquiries running 10,000, and 100,000 transactions ended in failure as the system timed out before the transactions could be completed. The test of 1,000,000 transactions at 10 kilobytes was not run.
+
+          p It should be noted that in our experience, transactions 10 kilobytes in size or greater are an uncommon, if not rare, event. In this test, the system is sending 100 transactions to the nodes for processing. The system is able to process the transactions received at a rate of 5 transactions per second. This performance can most likely be explained by the node receiving the transactions being saturated rather than validators not being able to keep up with the transactions.
+
+          p The evidence for the node receiving the transaction becoming saturated can be found in the next inquiry processing transactions 100 kilobytes in size. In this series, the inquiries return error messages almost immediately at higher transaction rates.
+
+          p Transaction Size: 100 Kilobytes
+          
+          .hc-image
+            img(src="/images/table-6.png")
+          p.note Table 5 — Load test results for the DyPoS consensus algorithm using a 100 kilobyte transaction size.
+          .hc-image
+            img(src="/images/chart-4.png")
+          p.note Figure 6 — Graph of 4 nodes running 100 kilobyte transactions showing the number of transactions run by average block processing time in seconds
+            
+          p The graph above shows 5, 100, 1,000, 10,000, 100,000 and 1,000,000 transactions of 100 kilobytes in size. Of the six inquiries run, only three — processing 5, 100, and 1,000 transactions — were completed successfully. However, the inquiry processing 1,000 transactions appears to have finished processing just before the system timed out. Since the system did not return an error message, the inquiry is considered a success, but just barely.
+
+          p The last three inquiries running 10,000, and 100,000 transactions ended in failure when the system timed out before the transactions could be completed. The inquiry of 1,000,000 transactions at 100 kilobytes was not run.
+          
+          p
+            b Discussion
+            
+          p The results of Test №1 show some interesting characteristics that are typical of many blockchain networks. The consensus protocol works great with smaller transaction sizes (say, < 1–2 KB) at a lower rate (< 100–150 txs/sec.) This is to be expected because a small subset of transactions is picked up to be included in the block and each validator needs to sign a smaller chunk of data. Gossip for pre-vote and pre-commit also requires sharing smaller datasets.
+
+          p As the transaction rate or size increases, there is a drop in the block creation time and transactions per second (txs/sec). Near the breakout point, where the rate and size is just enough for the validators, the total transaction “bytes” processed per second is almost the same.
+
+          p In this series of tests, the number of validators was held constant at 4. However, in future tests where the variable tested is the number of nodes processing transactions, it would be expected that changing the number of validators would have a similar effect as increasing the number of transactions and the size of transactions. Increasing the number of validators should slow the rate at which transactions are approved. As the number of nodes increases in future load tests, throughput can be expected to drop at a proportional rate.
+          
+          p 
+            b Next Steps
+
+          p With active software development ongoing, the following tests are planned for the DyPoS consensus protocol:
+          
+          h5 Test 2
+          p To build upon the results of Test №1, users will send transactions to all four validator nodes to observe behavior when transactions are distributed between nodes. Whereas in Test №1, one node was allocated a large number of transactions and transactions large in size, Test № 2 does the same but to four nodes rather than one.
+
+          h5 Test 3
+          p In Test № 3, transaction rates and sizes are distributed between a minimum and a maximum range in order to mimic real world events. Node performance is measured as transactions of different sizes are sent at differing rates.
+
+          h5 Test 4
+          p An extension of Test № 3, which is run over a predetermined length of time such as 48 hours or 1 week. The purpose of Test № 4 is to measure the network performance over an extended period of time focusing on system stability and consistency.
+
+          h5 Test 5
+          p In Test № 5, different scenarios will run with an increasing number of validator nodes ranging from 4, 8, 16, 32, 64, 128, to 256 nodes. This will measure the degree of decentralization, as additional nodes cause the blockchain to become more decentralized. The effect on the block creation time and the number of transactions processed is measured as validator nodes on the network increase.
+
+          p We expect that the throughput will drop to a point of failure as the number of validator nodes on the network increases. This test enables us to determine the number of validator nodes the system can support prior to failure.
+
+          h5 Test 6
+          p In Test № 6, the validator “agents” are made to participate in consensus rounds to increase performance with a larger number of validators. With agents performing the consensus function, we expect the added throughput to be largely unaffected by the increased number of validators on the system.
+
+          h5 Test 7
+          p In Test № 7, the objective is to determine if transaction data can persist off the blockchain while nodes cryptographically verify transactions included on the block. This approach is designed to minimize the size of the main blockchain by keeping only that data required to validate the entire chain.
+    
+          p 
+            b Definitions, Acronyms, and Abbreviations
+            
+          p 
+            b Blockchain: 
+            | A digital ledger in which transactions made in bitcoin or another cryptocurrency are recorded chronologically and publicly.
+
+          p 
+            b Breakout Point: 
+            | The point or range of points where system performance is at its optimum.
+
+          p 
+            b Node: 
+            | Node refers to a “full” client. A “full” client is a client that owns the block chain and that is sharing blocks and transaction across the network.
+
+          p 
+            b Block: 
+            | Blocks are files where data pertaining to the Bitcoin network are permanently recorded. A block records some or all of the most recent Bitcoin transactions that have not yet entered any prior blocks. Thus a block is like a page of a ledger or record book.
+
+          p 
+            b Latency: 
+            | Blockchains are designed to run on commodity machines that may be thousands of miles apart. Arriving at a common history of transaction order in this kind of asynchronous network is the classic distributed computing problem that distributed systems engineers deal with. The time lag between writing a packet onto the wire to receiving it on the other end could be on the order of milliseconds, seconds, minutes or even days. This is latency.  
+          
+    include email-widget

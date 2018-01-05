@@ -70,6 +70,11 @@ router.get('/blog', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/blog/load-testing-storecoins-dynamic-proof-of-stake-consensus-algorithm-test-1-of-7', function(req, res, next) {
+  res.render('blog-load-testing', { title: 'Storecoin' });
+});
+
+/* GET home page. */
 router.get('/cryptoeconomics', function(req, res, next) {
   res.render('crypto-economics', { title: 'Storecoin' });
 });
@@ -90,7 +95,7 @@ router.get('/contact', function(req, res, next) {
 });
 
 /* GET home page. */
-router.get('/developer-api', function(req, res, next) {
+router.get('/api', function(req, res, next) {
   res.render('developer-api', { title: 'Storecoin' });
 });
 
