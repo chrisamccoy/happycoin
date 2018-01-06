@@ -1,12 +1,6 @@
-extends layout
+extends wallet/layout-desktop
 
 block content
-  div#hc-content
-    div(style="margin-top:5em;")
-      .hc-api-container.hc-feature.over-rel.padding
-        .hc-chunk.hc-customize-text-wrapper
-          div.iphone
-            img(src="/images/wallet/iphone.png")
-            iframe(src="/wallet/wallet-app/api", frameBorder="0")
-      
-    include email-widget
+  div.iphone
+    img(src="/images/wallet/iphone.png")
+    iframe(src="/wallet/wallet-app/api", frameBorder="0")
