@@ -1,17 +1,10 @@
 var express = require('express');
-// var cookieParser = require('cookie-parser');
 var router = express.Router();
-// router.use(cookieParser());
+var meta = require('../helpers/meta')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var host = req.headers.host;
-
-  if (host.search('2.storeco.in') >= 0) {
-     res.render('index', { v2: true, title: 'Storecoin' });
-  } else {
-     res.render('index', { v2: false, title: 'Storecoin' });
-  }
+  res.render('index', { title: 'Storecoin', meta: meta() });
 });
 
 /* GET home page. */
