@@ -1,4 +1,4 @@
-extends layout
+extends layout-api
 
 block content
   
@@ -22,8 +22,51 @@ block content
       div.header Budget for your app
       include amount-slider
     section#api-bugget-api
-      div.header Set budget for API calls
+      //- div.header Set budget for API calls
+      div.header Set Paid API Calls
       div.api-list
+        div.api-item
+          select.ui.fluid.selection.dropdown
+            option(value='api') API
+            option(value='api') API
+          section.tab.no-padding(data-tab="none")
+            include amount-slider
+        div.api-item
+          select.ui.fluid.selection.dropdown
+            option(value='api') API
+            option(value='api') API
+          section.tab.no-padding(data-tab="none")
+            include amount-slider
+        div.api-item
+          select.ui.fluid.selection.dropdown
+            option(value='api') API
+            option(value='api') API
+          section.tab.no-padding(data-tab="none")
+            include amount-slider
+        div.api-item
+          select.ui.fluid.selection.dropdown
+            option(value='api') API
+            option(value='api') API
+          section.tab.no-padding(data-tab="none")
+            include amount-slider
+        div.api-item
+          select.ui.fluid.selection.dropdown
+            option(value='api') API
+            option(value='api') API
+          section.tab.no-padding(data-tab="none")
+            include amount-slider
+        div.api-item
+          select.ui.fluid.selection.dropdown
+            option(value='api') API
+            option(value='api') API
+          section.tab.no-padding(data-tab="none")
+            include amount-slider
+        div.api-item
+          select.ui.fluid.selection.dropdown
+            option(value='api') API
+            option(value='api') API
+          section.tab.no-padding(data-tab="none")
+            include amount-slider
         div.api-item
           select.ui.fluid.selection.dropdown
             option(value='api') API

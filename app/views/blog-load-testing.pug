@@ -56,12 +56,14 @@ block content
             
           p To load test the Storecoin consensus algorithm, a cluster containing four nodes was set up on an Amazon Web Services (AWS) Elastic Compute Cloud (EC2).
 
-          p Each node is running a r3.xlarge instance with 4 CPUs, 30.5GB memory, and a 80GB SSD drive.
+          p Each node is running a 
+            b r3.xlarge instance 
+            | with 4 CPUs, 30.5GB memory, and a 80GB SSD drive.
 
           p The nodes were physically located in the following regions.
           
-          p
-            b Nodes : r3.xlarge instances
+          //- p
+          //-   b Nodes : r3.xlarge instances
           
           ul
             li California
@@ -77,8 +79,8 @@ block content
             b m4.2xlarge 
             | instance located in Canada.
             
-          p 
-            b Type of Test Performed
+          //- p 
+          //-   b Type of Test Performed
             
           p Load testing is the process of putting demand on a software system and measuring its response. The load test client used was TM-Bench while the transaction monitoring tool utilized was TM-Monitor.
 
@@ -103,7 +105,7 @@ block content
           p
             b Results
             
-          p Transaction Size: 500 bytes
+          h5 Transaction Size: 500 bytes
           
           .hc-image
             img(src="/images/table-3.png")
@@ -122,7 +124,7 @@ block content
 
           p Between 100 and 1,000 transactions per second, the slope is gradual and parallel to blocks processed per second. At 500 bytes, this would be the “sweet spot” where the system is performing optimally. Between 100 and 1,000 transactions, the system was able to process between 11,923,200 and 14,342,400 transactions per day.
 
-          p Transaction Size: 1 Kilobyte
+          h5 Transaction Size: 1 KB
           
           .hc-image  
             img(src="/images/table-4.png")
@@ -137,7 +139,7 @@ block content
 
           p As the system processes more than 1,000 transaction more than 1 kilobyte in size, performance declines at a greater rate until the system starts timing out approaching 10,000 transactions, returning an error messages.
 
-          p Transaction Size: 10 Kilobytes
+          h5 Transaction Size: 10 KB
           
           .hc-image
             img(src="/images/table-5.png")
@@ -152,7 +154,7 @@ block content
 
           p The evidence for the node receiving the transaction becoming saturated can be found in the next inquiry processing transactions 100 kilobytes in size. In this series, the inquiries return error messages almost immediately at higher transaction rates.
 
-          p Transaction Size: 100 Kilobytes
+          h5 Transaction Size: 100 KB
           
           .hc-image
             img(src="/images/table-6.png")
