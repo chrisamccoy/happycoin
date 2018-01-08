@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var meta = require('../helpers/meta')
+var getblog = require('../helpers/blogs')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -63,8 +64,16 @@ router.get('/blog', function(req, res, next) {
 });
 
 /* GET home page. */
-router.get('/blog/load-testing-storecoins-dynamic-proof-of-stake-consensus-algorithm-test-1-of-7', function(req, res, next) {
-  res.render('blog-load-testing', { title: 'Storecoin', meta: meta() });
+router.get('/blog/:slug', function(req, res, next) {
+  var bg = getblog(req.params.slug);
+  var mt = meta({
+    title: bg.title,
+    desc: bg.desc,
+    image: bg.image,
+    url: req.protocol + '://' + req.get('host') + req.originalUrl
+  });
+
+  res.render(bg.template, { title: 'Storecoin', meta: mt });
 });
 
 /* GET home page. */
