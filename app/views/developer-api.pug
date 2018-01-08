@@ -1,12 +1,6 @@
-extends layout
+extends wallet/layout-desktop
 
 block content
-  div#hc-content
-    #hc-intro.hc-feature.over-rel.padding
-      .hc-chunk.hc-intro-text-wrapper
-        h2.hc-intro-large-lead(style='font-weight: bold; font-size: 2.7em; margin: 2em auto;') Storecoin Developer API
-
-    .hc-feature.over-rel.padding
-      h2.hc-feature-title(style='margin-bottom:0px;') Coming Soon
-      
-    include email-widget
+  div.iphone
+    img(src="/images/wallet/iphone.png")
+    iframe(src="/wallet/wallet-app/api", frameBorder="0")
