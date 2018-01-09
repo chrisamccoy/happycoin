@@ -59,6 +59,11 @@ router.get('/firsttokensalefaq', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/url', function(req, res, next) {
+  res.render('url', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
 router.get('/blog', function(req, res, next) {
   res.render('blog', { title: 'Storecoin', meta: meta() });
 });

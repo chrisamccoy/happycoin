@@ -508,6 +508,34 @@ button.small {
 }
 */
 
+#wallet-graph .graph-container {
+  position: relative;
+  height : 200px;
+}
+
+#wallet-graph .graph-container .loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#wallet-graph .graph-container .loading .sp-wave:before,
+#wallet-graph .graph-container .loading .sp-wave:after {
+  border-color: black;
+}
+
+#wallet-graph .graph-container .loading .sp-wave {
+  height: 40px;
+  width: 40px;
+  margin-right: 1em;
+}
+
 #wallet-graph .graph .domain {
   stroke : none;
 }
