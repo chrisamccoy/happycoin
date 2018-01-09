@@ -69,7 +69,7 @@ router.get('/blog/:slug', function(req, res, next) {
   var mt = meta({
     title: bg.title,
     desc: bg.desc,
-    image: bg.image,
+    image: bg.img,
     url: req.protocol + '://' + req.get('host') + req.originalUrl
   });
 
