@@ -16,6 +16,7 @@ block content
             a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fstoreco.in%2Fblog%2Fload-testing-storecoins-dynamic-proof-of-stake-consensus-algorithm-test-1-of-7&title=Load%20Testing%20Storecoin%E2%80%99s%20Dynamic%20Proof-of-Stake%20Consensus%20Algorithm%3A%20Test%201%20of%207")
               b
                 i.ion-social-facebook-outline
+          p.time-stamp Dec 13, 2017 - 9 min Read
           h1.article-title Load Testing Storecoin’s Dynamic Proof-of-Stake Consensus Algorithm: Test 1 of 7
           
           div.article-sub-title Testing the impact of varying numbers and sizes of transactions processed on a 4-node network running the Storecoin Dynamic Proof-of-Stake Consensus Algorithm (DyPoS).
@@ -43,8 +44,9 @@ block content
             img(src="/images/blog-load-testing.png")
           p.caption Figure 1 — Illustration of the Storecoin underlying blockchain architecture.
             
-          h2.article-h2 General Test Summary
-          h2.article-h3 What we are trying to learn
+          h2.article-h3 General Test Summary
+          p
+            b What we are trying to learn
           
           p In testing the Dynamic Proof of Stake consensus algorithm, we want to see how the software responds to processing multiple transactions of different sizes at different rates (transactions per second) consecutively on a P2P network consisting of four validator nodes. The validator nodes are configured geographically in different regions to mimic a real-world setup.
           p These are the remaining tests planned.
@@ -55,8 +57,9 @@ block content
             
           p In Test №1, a total of 24 inquiries were performed over four nodes using six groups of transactions of varying number (5, 100, 1,000, 10,000, 100,000 and 1,000,000) and four transaction sizes (500 bytes, 1 kilobyte, 10 kilobytes and 100 kilobytes).
           
-          h2.article-h2 Test Details and Results
-          h2.article-h3 Environment and Tools
+          h2.article-h3 Test Details and Results
+          p
+            b Environment and Tools
             
           p To load test the Storecoin consensus algorithm, a cluster containing four nodes was set up on an Amazon Web Services (AWS) Elastic Compute Cloud (EC2).
 

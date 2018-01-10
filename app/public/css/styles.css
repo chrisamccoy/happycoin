@@ -5609,9 +5609,17 @@ and (max-width : 700px) {
 .blog-news .caption {
   font-size: 15px;
   text-align: center;
+  margin-bottom: 3em;
 }
 
 .blog-news .italics {
+  font-style: italic;
+}
+
+.blog-news .time-stamp {
+  margin-bottom: 0.3em;
+  font-size: 15px;
+  color: #959595;
   font-style: italic;
 }
 
