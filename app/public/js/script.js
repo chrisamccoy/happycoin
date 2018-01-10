@@ -61,7 +61,27 @@ $(document).ready(function(){
   initInviteSale();
   initFullscreenImage(isMobile);
   initIntroHeight(isMobile);
+  initBlogShare();
 });
+
+function initBlogShare (){
+  var $blogNews = $('.blog-news');
+
+  if($blogNews.length) {
+    var $blogHead = $blogNews.find('.article-title'),
+        $blogShare = $blogNews.find('.blog-share');
+
+    $(window).scroll(function(){
+      var scrollVal  = $(window).scrollTop();
+      // console.log(scrollVal);
+      if (scrollVal > $blogHead.offset().top - 100) {
+        $blogShare.fadeIn();
+      } else {
+        $blogShare.fadeOut();
+      }
+    });
+  }
+}
 
 function initIntroHeight (isMobile) {
   // var introHeight = $(window).height() - ((isMobile) ? 232 : 271);
@@ -108,27 +128,30 @@ function initInviteSale() {
 }
 
 function initCoinFlip () {
-  var $coinCont = $('#business-case'),
-      height = $coinCont.height(),
-      $coin = $coinCont.find('.coin'),
-      offset = $coinCont.offset().top - 200,
-      flipping = false;
+  var $coinCont = $('#business-case');
 
-  $(window).scroll(function(){
-    var scrollVal  = $(window).scrollTop();
-    if (scrollVal > offset) {
-      if(!flipping) {
-        $coin.addClass('flip');
-        setTimeout(function(){
-          $coin.removeClass('flip');
-        }, 2000);
-        flipping = true;
+  if ($coinCont.length) {
+    var height = $coinCont.height(),
+        $coin = $coinCont.find('.coin'),
+        offset = $coinCont.offset().top - 200,
+        flipping = false;
+
+    $(window).scroll(function(){
+      var scrollVal  = $(window).scrollTop();
+      if (scrollVal > offset) {
+        if(!flipping) {
+          $coin.addClass('flip');
+          setTimeout(function(){
+            $coin.removeClass('flip');
+          }, 2000);
+          flipping = true;
+        }
+      } else {
+        $coin.removeClass('flip');
+        flipping = false;
       }
-    } else {
-      $coin.removeClass('flip');
-      flipping = false;
-    }
-  });
+    });
+  }
 }
 
 
@@ -167,22 +190,24 @@ function initProblemReveal(isMobile){
 }
 
 function initLightBulb () {
-  var $ourVision = $('#our-vision'),
-      $bulbOff = $ourVision.find('.bulb-off'),
-      $bulbGlow = $ourVision.find('.bulb-glow'),
-      offset = $ourVision.find('.hc-image').offset().top + ($ourVision.find('.hc-image').height() / 2);
+  var $ourVision = $('#our-vision');
 
-  $(window).scroll(function(){
-    var scrollVal  = $(window).scrollTop() + $(window).height();
-    if (scrollVal > offset) {
-      $bulbGlow.fadeIn();
-      $ourVision.addClass('active');
-    } else {
-      $bulbGlow.hide();
-      $ourVision.removeClass('active');
-    }
-  });
+  if ($ourVision.length) {
+    var $bulbOff = $ourVision.find('.bulb-off'),
+        $bulbGlow = $ourVision.find('.bulb-glow'),
+        offset = $ourVision.find('.hc-image').offset().top + ($ourVision.find('.hc-image').height() / 2);
 
+    $(window).scroll(function(){
+      var scrollVal  = $(window).scrollTop() + $(window).height();
+      if (scrollVal > offset) {
+        $bulbGlow.fadeIn();
+        $ourVision.addClass('active');
+      } else {
+        $bulbGlow.hide();
+        $ourVision.removeClass('active');
+      }
+    });
+  }
 }
 
 // function initLearnMore (isMobile) {
