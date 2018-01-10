@@ -5617,10 +5617,10 @@ and (max-width : 700px) {
 }
 
 .blog-news .time-stamp {
-  margin-bottom: 0.3em;
+  margin-bottom: .6em;
   font-size: 15px;
-  color: #959595;
-  font-style: italic;
+  color: #959595 ;
+  font-family: 'Aleo';
 }
 
 .blog-news ul,
