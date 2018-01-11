@@ -5551,51 +5551,102 @@ and (max-width : 700px) {
 
 /*------------------------------------*/
 .blog-news .hc-chunk {
+  position: relative;
   max-width: 740px;
-  font-family: 'Georgia'
+  font-family: 'Georgia';
 }
 
-.blog-news h5 {
-  margin-bottom: 0.3em;
+.blog-news .blog-share {
+  position: fixed;
+  top: 200px;
+  margin-left: -80px;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30px;
+  border: 2px solid #44613463;
+  box-shadow: 1px 1px 5px #4461346b;
+  padding: 0.3em;
+  border-radius: 25px;
+  display: none;
+}
+
+.blog-news .blog-share a {
+  display: block;
+  text-align: center;
+}
+
+.blog-news .article-title {
+  font-family: 'Aleo';
+  font-size: 2.6em;
   font-weight: bold;
-  font-size: 1.7em;
+}
+
+.blog-news .article-sub-title {
+  font-style: italic;
+  font-size: 21px;
+  margin-bottom: 1em;
+}
+
+.blog-news .article-h2,
+.blog-news .article-h3 {
+  font-family: 'Aleo';
+  font-weight: bold;
+}
+
+.blog-news .article-h2 {
+  font-size: 34px;
+}
+
+.blog-news .article-h3 {
+  font-size: 26px;
 }
 
 .blog-news p {
-  font-size: 1.4em;
-  line-height: 1.8;
-  margin-bottom: 1.5em;
+  font-size: 21px;
+  margin-bottom: 1em;
+}
+
+.blog-news .caption {
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.blog-news .italics {
+  font-style: italic;
+}
+
+.blog-news .time-stamp {
+  margin-bottom: .6em;
+  font-size: 15px;
+  color: #959595 ;
+  font-family: 'Aleo';
 }
 
 .blog-news ul,
-.blog-news ol {
-  margin-bottom: 1.5em;
-  font-size: 1.5em;
-}
-
-.blog-news ul {
-  margin-left: 1em;
-  list-style: disc;
-}
-
-.blog-news ol {
-  text-indent : -20px;
-  margin-left: 20px;
-}
-
-.blog-news p.note {
-  text-align: center;
-  font-size: 1em;
+.blog-news ol,
+.blog-news .hc-image {
+  margin-bottom: 1em;
 }
 
 @media only screen and (max-width: 700px) {
-  .blog-news p,
-  .blog-news ul,
-  .blog-news ol {
-    font-size: 1.2em;
+  .blog-news .article-title {
+    font-size: 2em;
   }
 
-  .blog-news h3 {
-    font-size: 1.5em;
+  .blog-news .article-sub-title {
+    font-size: 18px;
+  }
+
+  .blog-news .article-h2 {
+    font-size: 30px;
+  }
+
+  .blog-news .article-h3 {
+    font-size: 24px;
+  }
+
+  .blog-news p {
+    font-size: 18px;
   }
 }
