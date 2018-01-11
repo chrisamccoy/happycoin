@@ -9,14 +9,13 @@ var blogs = [
 ];
 
 function getblog(slug) {
-  console.log(slug);
   for (var i = 0; i < blogs.length; i++) {
     if (blogs[i]['slug'] === slug) {
       return blogs[i];
     }
   }
 
-  return {}
+  return null
 }
 
 module.exports = getblog;

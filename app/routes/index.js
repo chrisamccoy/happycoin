@@ -71,6 +71,12 @@ router.get('/blog', function(req, res, next) {
 /* GET home page. */
 router.get('/blog/:slug', function(req, res, next) {
   var bg = getblog(req.params.slug);
+
+  if (!bg) {
+    res.render('notfound', { url: req.url, meta: null });
+    return;
+  }
+
   var mt = meta({
     title: bg.title,
     desc: bg.desc,
