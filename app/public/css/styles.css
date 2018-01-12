@@ -930,14 +930,14 @@ input[type=number]::-webkit-outer-spin-button {
   background-repeat: no-repeat;
   background-size: 90%;
   padding: 0px;
-  /*margin-top: 130px;*/
   display: flex;
   align-items: center;
 }
 
 #hc-intro .hc-feature-lead {
-  /*margin : 1.5em 0px;*/
-  font-size: 2.4em;
+  margin: 0.5em 0px;
+  font-size: 2.2em;
+  max-width: 852px;
 }
 
 #hc-intro .hc-intro-text-wrapper {
@@ -953,7 +953,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-  font-size: 4em;
+  font-size: 3.5em;
   text-align: center;
   line-height: 1;
 }
@@ -1117,7 +1117,7 @@ input[type=number]::-webkit-outer-spin-button {
 and (min-width : 321px)
 and (max-width : 700px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 2.6em !important;
+    font-size: 2.2em !important;
   }
 
   #hc-intro .hc-feature-lead {
@@ -4856,7 +4856,7 @@ and (max-width : 700px) {
 }
 
 /*----------------------------------*/
-.blockchain-works .steps,
+/*.blockchain-works .steps,
 .wallet-screens {
   display: flex;
   justify-content: space-between;
@@ -4865,14 +4865,30 @@ and (max-width : 700px) {
 .blockchain-works .steps .step,
 .wallet-screens .screen {
   flex: 1;
-  /*padding: 0px 1em;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}*/
+
+.blockchain-works .steps {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blockchain-works .steps .step {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.blockchain-works .steps .step .title,
+/*.blockchain-works .steps .step .title,
 .wallet-screens .screen .title {
+  font-size: 1em;
+  text-align: center;
+}*/
+
+.blockchain-works .steps .step .title {
   font-size: 1em;
   text-align: center;
 }
@@ -4881,7 +4897,7 @@ and (max-width : 700px) {
   width: 100%;
 }
 
-.wallet-screens .screen img {
+/*.wallet-screens .screen img {
   max-height: 420px;
   height:100%;
 }
@@ -4894,7 +4910,7 @@ and (max-width : 700px) {
   .wallet-screens .screen img {
     max-height: 420px;
   }
-}
+}*/
 
 @media only screen and (max-width: 700px) {
   .blockchain-works .steps,
@@ -5650,5 +5666,21 @@ and (max-width : 700px) {
 
   .blog-news p {
     font-size: 18px;
+  }
+}
+
+/*------------------------------------*/
+#wallet-slider .slide {
+  height: auto;
+}
+
+#wallet-slider .slide img {
+  width: 95%;
+}
+
+@media only screen and (max-width: 700px) {
+  #wallet-slider .slide img {
+    width: auto;
+    height: 460px;
   }
 }

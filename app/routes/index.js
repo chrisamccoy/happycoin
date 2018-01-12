@@ -54,6 +54,11 @@ router.get('/dguard', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/communityfund', function(req, res, next) {
+  res.render('community-fund', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
 router.get('/firsttokensalefaq', function(req, res, next) {
   res.render('token-faq', { title: 'Storecoin', meta: meta() });
 });
