@@ -5219,6 +5219,12 @@ and (max-width : 700px) {
   font-size: 1.3em;
 }
 
+#our-latest ul li span.dot {
+  vertical-align: middle;
+  font-size: 7px;
+  padding: 0px 10px;
+}
+
 @media only screen and (max-width: 700px) {
   #our-latest .hc-feature-lead,
   #our-latest ul {
