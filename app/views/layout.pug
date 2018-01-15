@@ -22,15 +22,15 @@ html
 
     link(href='//cdn-images.mailchimp.com/embedcode/classic-10_7.css', rel='stylesheet', type='text/css')
     link(rel='icon', type='image/png', href='/images/favicon.png')
-    link(rel='stylesheet', href='/assets/styles.css')
+    link(rel='stylesheet', href='/assets/styles.css?v=1.1')
     link(href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', rel='stylesheet')
-    script(src='/assets/script.js')
+    script(src='/assets/script.js?v=1.1')
 
   body
     - var className = ''
     if v2
       - className = 'v2'
-      
+
     #hc-nav-wrapper.add-background(class=className)
       p.hc-intro-post
         //- a(href="https://medium.com/@team_27494/introducing-storecoin-8e15c21b4335", target="_blank") Read our introductory post
@@ -62,9 +62,9 @@ html
                   a.item(href='/community') Community
                   a.item(href='/applytoforge', target="_blank") Become a Validator
                   a.item(href='/dGuard', target="_blank") Become a dGuard
-    
+
       include email-subscribe
-    
+
     block content
 
     footer#hc-footer(class=className)
