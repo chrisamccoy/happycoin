@@ -1,4 +1,4 @@
-div(id=top ? 'tokensale' : 'tokensale-bottom')            
+div.form-subscribe(id=top ? 'tokensale' : 'tokensale-bottom')            
   .hc-feature.over-rel.padding.hc-email(style="overflow:visible;")
     .email-widget
       //- p.hc-email-invite
@@ -6,11 +6,19 @@ div(id=top ? 'tokensale' : 'tokensale-bottom')
       h4(style="margin:0px;") Our Invite-only Second Token Sale 
         a.orange-color(href="https://twitter.com/StorecoinTeam/status/948466693776457728", target="_blank", style="text-decoration:underline;") is now complete 
       div.sub-head Enter your email to subscribe to information about our next, invite-only token sale
-      form.row.form
+      //- TOKEN SALE BEFORE
+      //- form.row.form
+      //-   .eight.columns
+      //-     input.u-full-width(type='email', name='email', placeholder='Enter your email address')
+      //-   .four.columns
+      //-     input.button-primary(type='submit', value='SIGN UP')
+            
+      //- EMAIL SUBMIT
+      form.row.form(action='https://storeco.us16.list-manage.com/subscribe/post?u=49990f91819fec5293c84bbe8&id=2aca88b02e', method='POST', target='_blank', novalidate='')
         .eight.columns
-          input.u-full-width(type='email', name='email', placeholder='Enter your email address')
+          input.u-full-width(type='email', name='EMAIL', placeholder='Enter your email address')
         .four.columns
-          input.button-primary(type='submit', value='SIGN UP')
+          input.button-primary(type='submit', value='SUBMIT')
       //- p(style="text-align:left; max-width: 960px;") Invites to our Second Token Sale will be sent December 2017
       .success-message.message
         h4(style="color: #515151;")

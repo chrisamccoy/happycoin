@@ -18,11 +18,6 @@ block content
     
     include about-token-sale-2
     
-    #our-mission.hc-feature.over-rel.padding.inverted
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title.inverted Our Mission
-        p.hc-feature-lead(style="margin: 0 auto; max-width: 660px;") To become new payment infrastructure and new incentivization infrastructure for the global internet. 
-    
     include storecoin-comparison-table
     
     #token-sale-buyers.hc-feature.over-rel.padding
@@ -86,6 +81,11 @@ block content
             div.tails
             div.heads
               
+    #our-mission.hc-feature.over-rel.padding.lite
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title.inverted Our Mission
+        p.hc-feature-lead(style="margin: 0 auto; max-width: 660px;") To become new payment infrastructure and new incentivization infrastructure for the global internet. 
+              
     #market-case.hc-feature.over-rel.padding.left-align
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title The Market Case for Storecoin
@@ -148,7 +148,7 @@ block content
           | The Storecoin Threat Level System
         p.hc-feature-lead The Storecoin Security System powers real-time market prices for the Six Engines of DyPoS. The System threat level algorithmically updates as transaction volumes rise and fall. As threat levels rise, the cost of spam and attacks rise too.
         p(style="text-align:center; margin: 1em;") 
-          span(style="border: 2px solid #65954c; border-radius: 7px; padding: 0.3em 0.5em;") Click boxes to see Economics
+          span(style="border: 2px solid #65954c; border-radius: 7px; padding: 0.3em 0.5em;") Click to learn about our crypto economics
         div.hazard-boxes
           - var secVals = ['5,000 storecoins', '5,000 edisons', '5%', '50', '50', '1,000 edisons', '90%'];
           - var secTemplate = function(secVals) { return '<ul><li>Stake Required For New Validators: <span class="orange-color">'+secVals[0]+'</span></li><li>Security Bond to Send Txn: <span class="orange-color">'+secVals[1]+'</span></li><li>Interest Paid on Security Bond: <span class="orange-color">'+secVals[2]+'</span></li><li># of Security Guards Needed: <span class="orange-color">'+secVals[3]+'</span></li><li>Stake Required to Guard: <span class="orange-color">'+secVals[4]+'</span></li><li>Cost to File a Ticket: <span class="orange-color">'+secVals[5]+'</span></li><li>Stake or Bond Earned by Guard: <span class="orange-color">'+secVals[6]+'</span></li></ul>';};
@@ -214,9 +214,9 @@ block content
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title How Checks and Balances Work
         p.hc-feature-lead How protocol changes, security fixes, and Governance amendments are made. 
-        p.hc-feature-lead.charter (The Charter) 
+        //- p.hc-feature-lead.charter (The Charter) 
         .hc-image
-          img(src="/images/checks-balances-work-v4.png") 
+          img(src="/images/checks-balances-work-v2.png") 
           
     #token-owner.hc-feature.over-rel.padding.info-fullscreen
       .hc-chunk.hc-customize-text-wrapper

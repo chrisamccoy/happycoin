@@ -8,16 +8,14 @@ $(document).ready(function(){
   // alert($(window).width());
   $('img[usemap]').rwdImageMaps();
   initDropdown();
-  scrollCheck();
   whyTextToggle();
   renderRadio();
-  scrollCheck();
   cardFlip();
   stratDist(isMobile);
 
   // on scroll
   $(window).scroll(function(){
-    scrollCheck();
+    scrollCheck(isMobile);
   });
 
   $('#hc-nav-wrapper .menu-toggle').click(function (){
@@ -63,6 +61,7 @@ $(document).ready(function(){
   initFullscreenImage(isMobile);
   initIntroHeight(isMobile);
   initBlogShare();
+  initFormSubscribe();
 });
 
 function initBlogShare (){
@@ -284,14 +283,34 @@ function imgCoords(isMobile) {
   });
 }
 
-function scrollCheck(){
+function scrollCheck(isMobile){
   var scrollVal = $(window).scrollTop(),
-      $navSection = $('#hc-nav-wrapper');
+      $navSection = $('#hc-nav-wrapper'),
+      $emailSubscribe = $('#email-subscribe');
   if (scrollVal > 50) {
     $navSection.addClass('scrolling');
   } else {
     $navSection.removeClass('scrolling');
   }
+
+  if (scrollVal > 60 && !isMobile) {
+    $emailSubscribe.fadeIn();
+  } else {
+    $emailSubscribe.fadeOut();
+  }
+
+  $emailSubscribe.find('.close').click(function(){
+    $(this).parents('#email-subscribe').remove();
+  });
+}
+
+function initFormSubscribe () {
+  var $form = $('.form-subscribe'),
+      $button = $form.find('button[type="submit"]');
+
+  $form.find('form').on('submit', function(){
+    $form.addClass('hidden');
+  });
 }
 
 function cardFlip() {
@@ -1066,35 +1085,37 @@ function emailSubscribe(isMobile) {
     });
   });
 
-  $subscribeBtn.click(function(){
-    var $thisEmailSect = $(this).parents('.hc-email');
-    var $thisForm = $(this).parents('.form');
-    var emailVal = $thisForm.find('input[type="email"]').val();
 
-    $thisForm.submit(function(e){
-      e.preventDefault();
-    });
-
-    if(emailVal){
-      $thisEmailSect.find('.email-steps.step-17 input[type="text"]').val(emailVal);
-      $thisEmailSect.find('.email-widget .form').hide();
-      $('#about-second-token-sale').hide();
-      // $thisEmailSect.find('.steps-form').show();
-      // $thisEmailSect.find('.email-steps.step-1').show();
-      $thisEmailSect.find('.success-message').show();
-      setTimeout(function(){
-        $(window).scrollTop($thisEmailSect.offset().top - ((isMobile) ? 77 : 100));
-      }, 300);
-      $.ajax({
-        type : 'GET',
-        url : preTokenSaleMailchimp,
-        // url : 'https://market.capitalstake.com',
-        data : $thisForm.serialize()
-      }).done(function(result){
-        // console.log(result);
-      });
-    }
-  });
+  // TOKEN SALE BEFORE
+  // $subscribeBtn.click(function(){
+  //   var $thisEmailSect = $(this).parents('.hc-email');
+  //   var $thisForm = $(this).parents('.form');
+  //   var emailVal = $thisForm.find('input[type="email"]').val();
+  //
+  //   $thisForm.submit(function(e){
+  //     e.preventDefault();
+  //   });
+  //
+  //   if(emailVal){
+  //     $thisEmailSect.find('.email-steps.step-17 input[type="text"]').val(emailVal);
+  //     $thisEmailSect.find('.email-widget .form').hide();
+  //     $('#about-second-token-sale').hide();
+  //     // $thisEmailSect.find('.steps-form').show();
+  //     // $thisEmailSect.find('.email-steps.step-1').show();
+  //     $thisEmailSect.find('.success-message').show();
+  //     setTimeout(function(){
+  //       $(window).scrollTop($thisEmailSect.offset().top - ((isMobile) ? 77 : 100));
+  //     }, 300);
+  //     $.ajax({
+  //       type : 'GET',
+  //       url : preTokenSaleMailchimp,
+  //       // url : 'https://market.capitalstake.com',
+  //       data : $thisForm.serialize()
+  //     }).done(function(result){
+  //       // console.log(result);
+  //     });
+  //   }
+  // });
 
   if (getParameterByName('e')) {
     var $firstEmailWidgetSection = $('.hc-email').first(),

@@ -30,7 +30,7 @@ html
     - var className = ''
     if v2
       - className = 'v2'
-
+      
     #hc-nav-wrapper.add-background(class=className)
       p.hc-intro-post
         //- a(href="https://medium.com/@team_27494/introducing-storecoin-8e15c21b4335", target="_blank") Read our introductory post
@@ -38,7 +38,7 @@ html
         a(href="https://techcrunch.com/2017/08/20/yesterdays-plastics-are-todays-crypto-tokens/", target="_blank")  See our latest in TechCrunch
         span
           i.ion-record
-        a(href="/blog", target="_blank")  Read our blog
+        a(href="/blog", target="_blank")  Our latest Tech R&D
       .container
         .row
           a.hc-branding.store-auth
@@ -62,7 +62,9 @@ html
                   a.item(href='/community') Community
                   a.item(href='/applytoforge', target="_blank") Become a Validator
                   a.item(href='/dGuard', target="_blank") Become a dGuard
-
+    
+      include email-subscribe
+    
     block content
 
     footer#hc-footer(class=className)

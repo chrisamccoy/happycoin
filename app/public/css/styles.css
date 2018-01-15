@@ -5099,7 +5099,8 @@ and (max-width : 700px) {
 }
 
 #comparison-table table td {
-  border: 2px solid #979797;
+  /*border: 2px solid #979797;*/
+  border: 2px solid #5b774d;
 }
 
 #comparison-table table td div.name-icon {
@@ -5112,7 +5113,8 @@ and (max-width : 700px) {
 }
 
 #comparison-table table tbody tr:nth-child(even) td {
-  background: #DBDBDD;
+  /*background: #DBDBDD;*/
+  background: #c5deb8;
 }
 
 #comparison-table table tbody tr td:nth-child(2),
@@ -5124,7 +5126,7 @@ and (max-width : 700px) {
   font-size: 1.2em;
   text-align: center;
   line-height: 1.3;
-  color: #446134;
+  /*color: #446134;*/
 }
 
 #comparison-table table th span {
@@ -5183,10 +5185,6 @@ and (max-width : 700px) {
 
   #comparison-table table .see-more {
     display: block;
-  }
-
-  #comparison-table table td {
-    border: 1px solid;
   }
 
   /*#comparison-table thead,
@@ -5689,4 +5687,86 @@ and (max-width : 700px) {
     width: auto;
     height: 460px;
   }
+}
+
+/*------------------------------------*/
+#email-subscribe {
+  position: fixed;
+  top: 100px;
+  width: 100%;
+  z-index: 21;
+  background: #000000de;
+  color: white;
+  /*border-bottom: 1px solid #e94b05;*/
+  display: none;
+}
+
+#email-subscribe .sub-container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+
+#email-subscribe .sub-container .message {
+  padding: 0px 3em 0em 0em;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#email-subscribe .sub-container .form {
+  display: flex;
+  align-items: center;
+  margin: 0px;
+}
+
+#email-subscribe .sub-container .form input {
+  margin: 0px;
+  padding: 0.5em 1em;
+  height: 40px;
+  min-width: 300px;
+  color: black;
+  border-radius: 18px;
+  margin-right: 1em;
+}
+
+/*#email-subscribe .sub-container .form input::placeholder {
+  color: black;
+  opacity: 0.5;
+}*/
+
+#email-subscribe .sub-container .form button {
+  margin: 0px;
+  color: white;
+  font-size: 13px;
+  border-radius: 21px;
+  border: 2px solid #f47840;
+  background-color: #000000bf;
+  transition: background-color 0.2s;
+}
+
+#email-subscribe .sub-container .form button:hover {
+  background-color: #f47840;
+  transition: background-color 0.2s;
+}
+
+#email-subscribe .sub-container .close {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0px;
+  cursor: pointer;
+}
+
+#email-subscribe .sub-container .close i {
+  font-size: 35px;
+}
+
+.form-subscribe.hidden {
+  display: none!important;
 }
