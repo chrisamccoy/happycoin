@@ -937,7 +937,7 @@ input[type=number]::-webkit-outer-spin-button {
 #hc-intro .hc-feature-lead {
   margin: 0.5em 0px;
   font-size: 2.2em;
-  max-width: 852px;
+  /*max-width: 852px;*/
 }
 
 #hc-intro .hc-intro-text-wrapper {
@@ -5217,6 +5217,12 @@ and (max-width : 700px) {
 #our-latest .hc-feature-lead,
 #our-latest ul {
   font-size: 1.3em;
+}
+
+#our-latest ul li span.dot {
+  vertical-align: middle;
+  font-size: 7px;
+  padding: 0px 10px;
 }
 
 @media only screen and (max-width: 700px) {
