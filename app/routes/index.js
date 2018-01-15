@@ -93,6 +93,7 @@ router.get('/blog/:slug', function(req, res, next) {
     title: bg.title,
     desc: bg.desc,
     image: bg.img,
+    image_tw: bg.img,
     url: req.protocol + '://' + req.get('host') + req.originalUrl
   });
 
