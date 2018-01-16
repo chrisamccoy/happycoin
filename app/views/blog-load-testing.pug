@@ -51,7 +51,7 @@ block content
           p Storecoin will power crypto-powered incentives and payments inside of apps.
           
           .hc-image
-            img(src="/images/blog-load-testing.png")
+            img(src='/images/empty.png', data-src="/images/blog-load-testing.png")
           p.caption Figure 1 — Illustration of the Storecoin underlying blockchain architecture.
             
           h2.article-h3 General Test Summary
@@ -62,7 +62,7 @@ block content
           p These are the remaining tests planned.
           
           .hc-image
-            img(src="/images/table-1.png")
+            img(src='/images/empty.png', data-src="/images/table-1.png")
           p.caption Table 1: Criteria and scenarios to load test the DyPoS consensus protocol.
             
           p In Test №1, a total of 24 inquiries were performed over four nodes using six groups of transactions of varying number (5, 100, 1,000, 10,000, 100,000 and 1,000,000) and four transaction sizes (500 bytes, 1 kilobyte, 10 kilobytes and 100 kilobytes).
@@ -89,7 +89,7 @@ block content
             li Oregon
             
           .hc-image
-            img(src="/images/table-2.png")
+            img(src='/images/empty.png', data-src="/images/table-2.png")
           p.caption Figure 2: Illustration of the Storecoin four-node validator used for the first load test of the DyPoS consensus algorithm.
             
           p The transactions were generated from an 
@@ -126,10 +126,10 @@ block content
             b Transaction Size: 500 bytes
           
           .hc-image
-            img(src="/images/table-3.png")
+            img(src='/images/empty.png', data-src="/images/table-3.png")
           p.caption Table 2 — Test results for the DyPoS consensus algorithm using 500-byte transactions on a four-node validator network
           .hc-image
-            img(src="/images/chart-1.png") 
+            img(src='/images/empty.png', data-src="/images/chart-1.png") 
           p.caption Figure 3 — Graph of 4 nodes running 500-byte transactions showing the number of transactions run by average block processing time in seconds
           
           p In the graph above, the green line shows the number of blocks processed per second as measured by the average blocks per second. The red line shows the number of transactions processed per second as measured by average transactions per second. The X-axis shows the input transaction rate originated from each client.
@@ -146,10 +146,10 @@ block content
             b Transaction Size: 1 KB
           
           .hc-image  
-            img(src="/images/table-4.png")
+            img(src='/images/empty.png', data-src="/images/table-4.png")
           p.caption Table 3 — Test results for the DyPoS consensus algorithm using a 1 kilobyte transaction size.
           .hc-image  
-            img(src="/images/chart-2-blog.png")
+            img(src='/images/empty.png', data-src="/images/chart-2-blog.png")
           p.caption Figure 4 — Graph of 4 nodes running 1 kilobyte transactions showing the number of transactions run by average block processing time in seconds
             
           p The graph above shows 5, 100, 1,000, 10,000, 100,000 and 1,000,000 transactions of 1 kilobyte in size. Performance between 100 and 1,000 transactions per second dropped considerably. This shows that the optimal load in this configuration is much closer to 100 transactions, but the system was able to support upwards of 1,000 transactions, albeit at a decreasing rate.
@@ -162,10 +162,10 @@ block content
             b Transaction Size: 10 KB
           
           .hc-image
-            img(src="/images/table-5.png")
+            img(src='/images/empty.png', data-src="/images/table-5.png")
           p.caption Table 4 — Load test results for the DyPoS consensus algorithm using a 10 kilobyte transaction size.
           .hc-image
-            img(src="/images/chart-3.png")
+            img(src='/images/empty.png', data-src="/images/chart-3.png")
           p.caption Figure 5 — Graph of 4 nodes running 10 kilobyte transactions showing the number of transactions run by average block processing time in seconds
             
           p The graph above shows results for 5, 100, 1,000, 10,000, 100,000 and 1,000,000 transactions of 10 kilobytes in size. The first three inquiries running 5, 100, and 1,000 transactions were completed successfully, whereas inquiries running 10,000, and 100,000 transactions ended in failure as the system timed out before the transactions could be completed. The test of 1,000,000 transactions at 10 kilobytes was not run.
@@ -178,10 +178,10 @@ block content
             b Transaction Size: 100 KB
           
           .hc-image
-            img(src="/images/table-6.png")
+            img(src='/images/empty.png', data-src="/images/table-6.png")
           p.caption Table 5 — Load test results for the DyPoS consensus algorithm using a 100 kilobyte transaction size.
           .hc-image
-            img(src="/images/chart-4.png")
+            img(src='/images/empty.png', data-src="/images/chart-4.png")
           p.caption Figure 6 — Graph of 4 nodes running 100 kilobyte transactions showing the number of transactions run by average block processing time in seconds
             
           p The graph above shows 5, 100, 1,000, 10,000, 100,000 and 1,000,000 transactions of 100 kilobytes in size. Of the six inquiries run, only three — processing 5, 100, and 1,000 transactions — were completed successfully. However, the inquiry processing 1,000 transactions appears to have finished processing just before the system timed out. Since the system did not return an error message, the inquiry is considered a success, but just barely.

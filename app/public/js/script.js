@@ -195,11 +195,11 @@ function initLightBulb () {
 
   if ($ourVision.length) {
     var $bulbOff = $ourVision.find('.bulb-off'),
-        $bulbGlow = $ourVision.find('.bulb-glow'),
-        offset = $ourVision.find('.hc-image').offset().top + ($ourVision.find('.hc-image').height() / 2);
+        $bulbGlow = $ourVision.find('.bulb-glow');
 
     $(window).scroll(function(){
-      var scrollVal  = $(window).scrollTop() + $(window).height();
+      var scrollVal  = $(window).scrollTop() + $(window).height(),
+          offset = $ourVision.find('.hc-image').offset().top + ($ourVision.find('.hc-image').height() / 2);
       if (scrollVal > offset) {
         $bulbGlow.fadeIn();
         $ourVision.addClass('active');
