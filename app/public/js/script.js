@@ -75,9 +75,9 @@ function initBlogShare (){
       var scrollVal  = $(window).scrollTop();
       // console.log(scrollVal);
       if (scrollVal > $blogHead.offset().top - 100) {
-        $blogShare.fadeIn();
+        $blogShare.not('.fixed').fadeIn();
       } else {
-        $blogShare.fadeOut();
+        $blogShare.not('.fixed').fadeOut();
       }
     });
   }
@@ -120,7 +120,8 @@ function initInviteSale() {
 
   $inviteSale.click(function(){
     // console.log($(this).data().id);
-    var $tokenSale = $($(this).data().id);
+    var id = $(this).data().id;
+    var $tokenSale = ($(id).length) ? $(id) : $('#tokensale-bottom');
     if($tokenSale.length) {
       $('html, body').animate({ scrollTop : $tokenSale.offset().top - $navWrap.height() }, 600);
     }
