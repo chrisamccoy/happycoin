@@ -653,6 +653,11 @@ input[type=number]::-webkit-outer-spin-button {
   background: #c6dfb7;text-align: center;
   color: #466333;
   padding: 0.5em;
+  height: auto;
+  max-height: 25px;
+  overflow: hidden;
+  transition: padding .2s ease-in;
+  transition: max-height .2s ease-in;
 }
 
 #hc-nav-wrapper .hc-intro-post span {
@@ -767,6 +772,13 @@ input[type=number]::-webkit-outer-spin-button {
   height: 60px;
   position: static;
   left: calc(50% - 30px);
+}
+
+#hc-nav-wrapper.scrolling .hc-intro-post {
+  max-height: 0px;
+  padding: 0px;
+  transition: padding .2s ease-in;
+  transition: max-height .2s ease-in;
 }
 
 #hc-nav-wrapper.scrolling .container {
@@ -5603,6 +5615,7 @@ and (max-width : 700px) {
   font-family: 'Aleo';
   font-size: 2.6em;
   font-weight: bold;
+  margin: 0px;
 }
 
 .blog-news .article-sub-title {
@@ -5653,6 +5666,28 @@ and (max-width : 700px) {
   margin-bottom: 1em;
 }
 
+.blog-news .blog-share.fixed {
+  position: static;
+  display: inline-block !important;
+  margin: 0px;
+  /*font-size: 25px;*/
+  box-shadow: none;
+  border: none;
+  padding-left: 0px;
+}
+
+.blog-news .blog-share.fixed .share {
+  color: #f4783f;
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+.blog-news .blog-share.fixed a {
+  display: inline-block;
+  text-align: center;
+  width: 35px;
+}
+
 @media only screen and (max-width: 700px) {
   .blog-news .article-title {
     font-size: 2em;
@@ -5694,9 +5729,9 @@ and (max-width : 700px) {
 /*------------------------------------*/
 #email-subscribe {
   position: fixed;
-  top: 100px;
+  top: 61px;
   width: 100%;
-  z-index: 21;
+  z-index: 10;
   background: #000000de;
   color: white;
   /*border-bottom: 1px solid #e94b05;*/
@@ -5710,12 +5745,12 @@ and (max-width : 700px) {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1em;
+  padding: 0.5em;
 }
 
 #email-subscribe .sub-container .message {
   padding: 0px 3em 0em 0em;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: bold;
 }
 
@@ -5728,7 +5763,7 @@ and (max-width : 700px) {
 #email-subscribe .sub-container .form input {
   margin: 0px;
   padding: 0.5em 1em;
-  height: 40px;
+  height: 35px;
   min-width: 300px;
   color: black;
   border-radius: 18px;
@@ -5741,13 +5776,15 @@ and (max-width : 700px) {
 }*/
 
 #email-subscribe .sub-container .form button {
+  height: 35px;
   margin: 0px;
   color: white;
-  font-size: 13px;
+  font-size: 12px;
   border-radius: 21px;
   border: 2px solid #f47840;
   background-color: #000000bf;
   transition: background-color 0.2s;
+  line-height: normal;
 }
 
 #email-subscribe .sub-container .form button:hover {

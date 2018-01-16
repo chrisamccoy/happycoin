@@ -5,19 +5,29 @@ block content
     //- #hc-intro.hc-feature.over-rel.padding
     //-   .hc-chunk.hc-intro-text-wrapper
     //-     h2.hc-intro-large-lead(style='font-weight: bold; font-size: 2.7em; margin: 2em auto;') Blog
-
+    - var blogTitle = 'Load Testing Storecoin’s Dynamic Proof-of-Stake Consensus Algorithm: Test 1 of 7';
+    - var encodedTitle = encodeURI(blogTitle)
+    - var url = 'http://storeco.in/blog/load-testing-storecoins-dynamic-proof-of-stake-consensus-algorithm-test-1-of-7';
+    - var encodedUrl = encodeURI(url)
     div(style="margin-top:5em;")
       .blog-news.hc-feature.over-rel.padding
         .hc-chunk.hc-customize-text-wrapper
           div.blog-share
-            a(target="_blank", href="https://twitter.com/intent/tweet?text=Load%20Testing%20Storecoin%E2%80%99s%20Dynamic%20Proof-of-Stake%20Consensus%20Algorithm%3A%20Test%201%20of%207&url=http://storeco.in/blog/load-testing-storecoins-dynamic-proof-of-stake-consensus-algorithm-test-1-of-7&via=storecointeam")
+            a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
               b
                 i.ion-social-twitter-outline
-            a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fstoreco.in%2Fblog%2Fload-testing-storecoins-dynamic-proof-of-stake-consensus-algorithm-test-1-of-7&title=Load%20Testing%20Storecoin%E2%80%99s%20Dynamic%20Proof-of-Stake%20Consensus%20Algorithm%3A%20Test%201%20of%207")
+            a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
               b
                 i.ion-social-facebook-outline
           p.time-stamp Dec 13, 2017 - 9 min Read
           h1.article-title Load Testing Storecoin’s Dynamic Proof-of-Stake Consensus Algorithm: Test 1 of 7
+          div.blog-share.fixed
+            a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
+              b
+                i.ion-social-twitter-outline
+            a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+              b
+                i.ion-social-facebook-outline
           
           div.article-sub-title Testing the impact of varying numbers and sizes of transactions processed on a 4-node network running the Storecoin Dynamic Proof-of-Stake Consensus Algorithm (DyPoS).
             
@@ -234,5 +244,13 @@ block content
           p 
             b Latency: 
             | Blockchains are designed to run on commodity machines that may be thousands of miles apart. Arriving at a common history of transaction order in this kind of asynchronous network is the classic distributed computing problem that distributed systems engineers deal with. The time lag between writing a packet onto the wire to receiving it on the other end could be on the order of milliseconds, seconds, minutes or even days. This is latency.  
+          div.blog-share.fixed
+            div.share Share:
+            a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
+              b
+                i.ion-social-twitter-outline
+            a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+              b
+                i.ion-social-facebook-outline
           
     include email-widget
