@@ -33,7 +33,7 @@
 }
 
 body {
-  font-family: 'Aleo';
+  font-family: 'Aleo', sans-serif;
   font-weight: 300;
   background: #e97844;
 }
