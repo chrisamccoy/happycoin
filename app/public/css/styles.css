@@ -2,6 +2,7 @@
  font-family: 'Aleo';
  font-style: normal;
  font-weight: normal;
+ font-display: auto;
  src: url('../fonts/aleo-regular-webfont.eot'); /* IE9 Compat Modes */
  src: url('../fonts/aleo-regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
       url('../fonts/aleo-regular-webfont.woff2') format('woff2'), /* Super Modern Browsers */
@@ -14,6 +15,7 @@
  font-family: 'Aleo';
  font-style: normal;
  font-weight: bold;
+ font-display: auto;
  src: url('../fonts/aleo-bold-webfont.eot'); /* IE9 Compat Modes */
  src: url('../fonts/aleo-bold-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
       url('../fonts/aleo-bold-webfont.woff2') format('woff2'), /* Super Modern Browsers */
