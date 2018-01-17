@@ -76,7 +76,7 @@ function initBlogShare (){
           offset = $blogHead.offset().top - 100,
           height = $blogNews.height();
       // console.log(scrollVal, height - 200);
-      if (scrollVal > offset && scrollVal < height - 200) {
+      if (scrollVal > offset && scrollVal < height - 300) {
         $blogShare.not('.fixed').fadeIn();
       } else {
         $blogShare.not('.fixed').fadeOut();
