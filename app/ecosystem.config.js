@@ -10,6 +10,8 @@ module.exports = {
       name      : 'storecoin',
       script    : './bin/storecoin',
       cwd       : '/srv/happycoin/app',
+      instances : 'max',
+      exec_mode : 'cluster',
       env: {
         NODE_ENV: 'production'
       }
