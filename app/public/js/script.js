@@ -299,7 +299,7 @@ function scrollCheck(isMobile){
   if (scrollVal > 60 && !isMobile) {
     $emailSubscribe.fadeIn();
   } else {
-    $emailSubscribe.fadeOut();
+    $emailSubscribe.fadeOut(100);
   }
 
   $emailSubscribe.find('.close').click(function(){
