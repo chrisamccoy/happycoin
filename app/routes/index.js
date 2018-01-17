@@ -25,7 +25,7 @@ router.get('/development', function(req, res, next) {
 
 /* GET home page. */
 router.get('/community', function(req, res, next) {
-  res.render('community', { title: 'Storecoin', meta: meta() });
+  res.redirect('/newsletter');
 });
 
 /* GET home page. */
