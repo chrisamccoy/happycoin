@@ -52,6 +52,25 @@ p {
   line-height: 1.65;
 }
 
+button.hc-button {
+  font-size: 1.1em;
+  padding: 0.2em;
+  color: white;
+}
+
+button.hc-button:hover {
+  opacity: 0.7;
+}
+
+button.hc-button.orange {
+  background: #f47840;
+  border-color: #f47840;
+}
+
+button.hc-button.orange.full-width {
+  width:100%;
+}
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -5808,4 +5827,9 @@ and (max-width : 700px) {
 
 .form-subscribe.hidden {
   display: none!important;
+}
+
+/*------------------------------------*/
+#newsletter .hc-chunk {
+  max-width: 500px;
 }
