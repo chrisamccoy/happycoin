@@ -40,6 +40,7 @@ module.exports = function(grunt) {
       css: {
         src: [
           '<%= paths.css %>normalize.css',
+          '<%= paths.css %>ionicons.css',
           '<%= paths.css %>featherlight.css',
           '<%= paths.css %>skeleton.css',
           '<%= paths.css %>slick.css',
