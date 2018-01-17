@@ -72,9 +72,11 @@ function initBlogShare (){
         $blogShare = $blogNews.find('.blog-share');
 
     $(window).scroll(function(){
-      var scrollVal  = $(window).scrollTop();
-      // console.log(scrollVal);
-      if (scrollVal > $blogHead.offset().top - 100) {
+      var scrollVal  = $(window).scrollTop(),
+          offset = $blogHead.offset().top - 100,
+          height = $blogNews.height();
+      // console.log(scrollVal, height - 200);
+      if (scrollVal > offset && scrollVal < height - 200) {
         $blogShare.not('.fixed').fadeIn();
       } else {
         $blogShare.not('.fixed').fadeOut();
