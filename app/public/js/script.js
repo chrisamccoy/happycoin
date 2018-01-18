@@ -12,6 +12,7 @@ $(document).ready(function(){
   renderRadio();
   cardFlip();
   stratDist(isMobile);
+  scrollCheck(isMobile);
 
   // on scroll
   $(window).scroll(function(){
@@ -303,6 +304,9 @@ function scrollCheck(isMobile){
     } else {
       $emailSubscribe.fadeOut(100);
     }
+  } else {
+    $navSection.addClass('scrolling');
+    $('#hc-content').css('margin-top', (isMobile) ? '46px' : '50px');
   }
 
   $emailSubscribe.find('.close').click(function(){
