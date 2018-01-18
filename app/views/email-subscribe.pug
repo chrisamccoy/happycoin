@@ -1,8 +1,11 @@
 #email-subscribe.form-subscribe
   div.sub-container
     div.message Get the latest news on Storecoin delivered to your inbox
-    form.form(action='https://storeco.us16.list-manage.com/subscribe/post?u=49990f91819fec5293c84bbe8&id=2aca88b02e', method='POST', target='_blank', novalidate='')
-      input(type="email", placeholder="Your Email", name="EMAIL")
-      button(type="submit") Submit
-    div.close
-      i.ion-android-close
+    div.mobile-reveal
+      form.form(action='https://storeco.us16.list-manage.com/subscribe/post?u=49990f91819fec5293c84bbe8&id=2aca88b02e', method='POST', target='_blank', novalidate='')
+        input(type="email", placeholder="Your Email", name="EMAIL")
+        button(type="submit") Submit
+      div.close.icon-btn
+        i.ion-android-close
+    div.reveal.icon-btn
+      i.ion-chevron-down

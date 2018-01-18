@@ -558,7 +558,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 @media only screen and (max-width: 700px) {
   #hc-content {
-    margin-top: 92px;
+    margin-top: 82px;
   }
 
   .hc-email .email-widget .sub-head {
@@ -5813,11 +5813,13 @@ and (max-width : 700px) {
 
 #email-subscribe .sub-container .close {
   width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
   right: 0px;
+  top: 0px;
   cursor: pointer;
 }
 
@@ -5825,8 +5827,84 @@ and (max-width : 700px) {
   font-size: 35px;
 }
 
+#email-subscribe .sub-container .reveal {
+  display: none;
+}
+
 .form-subscribe.hidden {
   display: none!important;
+}
+
+@media only screen and (max-width: 700px) {
+  #email-subscribe {
+    top: 46px;
+  }
+
+  #email-subscribe .sub-container {
+    display: block;
+    width: calc(100% - 1em);
+    padding: 0em 0.5em;
+  }
+
+  #email-subscribe .sub-container .message {
+    font-size: 0.85em;
+    text-align: center;
+    margin: 1em 0px;
+    padding: 0px;
+  }
+
+  #email-subscribe .sub-container .form {
+    flex-direction: column;
+  }
+
+  #email-subscribe .sub-container .form input {
+    width: 100%;
+    margin: 0px;
+  }
+
+  #email-subscribe .sub-container .form button {
+    width: 100%;
+    margin-top: 1em;
+  }
+
+  #email-subscribe .sub-container .close {
+    position: static;
+    display: block;
+    margin: 1em auto;
+  }
+
+  #email-subscribe .sub-container .icon-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 25px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #email-subscribe .sub-container .icon-btn i {
+    font-size: 20px;
+  }
+
+  #email-subscribe .sub-container .mobile-reveal {
+    height: 0px;
+    overflow: hidden;
+  }
+
+  #email-subscribe .sub-container .mobile-reveal.show {
+    height: auto;
+  }
+
+  #email-subscribe .sub-container .reveal {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: -14px;
+    left: calc(50% - 15px);
+    background: #212121;
+  }
 }
 
 /*------------------------------------*/

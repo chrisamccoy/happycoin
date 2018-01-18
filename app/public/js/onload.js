@@ -16,7 +16,14 @@ function deferImages() {
 }
 
 function deferThirdParty() {
-  $.getScript('https://platform.twitter.com/widgets.js');
+  $.getScript( "https://www.googletagmanager.com/gtag/js?id=UA-112685273-1" )
+    .done(function( script, textStatus ) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-112685273-1');
+    });
 }
 
 function deferIframes() {

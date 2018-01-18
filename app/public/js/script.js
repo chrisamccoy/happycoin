@@ -87,7 +87,7 @@ function initBlogShare (){
 
 function initIntroHeight (isMobile) {
   // var introHeight = $(window).height() - ((isMobile) ? 232 : 271);
-  var introHeight = $(window).height() - ((isMobile) ? 262 : 292);
+  var introHeight = $(window).height() - $('#hc-nav-wrapper').height() - $('#tokensale').height();
   // console.log(introHeight);
   $('#hc-intro').height(introHeight);
 }
@@ -290,20 +290,28 @@ function scrollCheck(isMobile){
   var scrollVal = $(window).scrollTop(),
       $navSection = $('#hc-nav-wrapper'),
       $emailSubscribe = $('#email-subscribe');
-  if (scrollVal > 50) {
-    $navSection.addClass('scrolling');
-  } else {
-    $navSection.removeClass('scrolling');
-  }
 
-  if (scrollVal > 60 && !isMobile) {
-    $emailSubscribe.fadeIn();
-  } else {
-    $emailSubscribe.fadeOut(100);
+  if (window.location.pathname != '/communityfund') {
+    if (scrollVal > 50) {
+      $navSection.addClass('scrolling');
+    } else {
+      $navSection.removeClass('scrolling');
+    }
+
+    if (scrollVal > 60) {
+      $emailSubscribe.fadeIn();
+    } else {
+      $emailSubscribe.fadeOut(100);
+    }
   }
 
   $emailSubscribe.find('.close').click(function(){
     $(this).parents('#email-subscribe').remove();
+  });
+
+  $emailSubscribe.find('.reveal').click(function(){
+    $emailSubscribe.find('.mobile-reveal').addClass('show');
+    $(this).fadeOut();
   });
 }
 
