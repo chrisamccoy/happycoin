@@ -5904,6 +5904,7 @@ and (max-width : 700px) {
     bottom: -14px;
     left: calc(50% - 15px);
     background: #212121;
+    border: 0px;
   }
 }
 
