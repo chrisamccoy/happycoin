@@ -290,9 +290,13 @@ function imgCoords(isMobile) {
 function scrollCheck(isMobile){
   var scrollVal = $(window).scrollTop(),
       $navSection = $('#hc-nav-wrapper'),
-      $emailSubscribe = $('#email-subscribe');
+      $emailSubscribe = $('#email-subscribe'),
+      pathname = window.location.pathname,
+      paths = ['/communityfund', '/cfc18'];
 
-  if (window.location.pathname != '/communityfund') {
+  // console.log(paths.indexOf(pathname));
+
+  if (paths.indexOf(pathname) < 0) {
     if (scrollVal > 50) {
       $navSection.addClass('scrolling');
     } else {

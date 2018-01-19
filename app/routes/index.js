@@ -70,6 +70,13 @@ router.get('/communityfund', function(req, res, next) {
   });
 });
 
+router.get('/cfc18', function(req, res, next) {
+  res.render('cfc18', {
+    title: 'Storecoin',
+    meta: meta()
+  });
+});
+
 /* GET home page. */
 router.get('/firsttokensalefaq', function(req, res, next) {
   res.render('token-faq', { title: 'Storecoin', meta: meta() });
