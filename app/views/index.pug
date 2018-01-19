@@ -27,7 +27,7 @@ block content
     
     #token-sale-buyers.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title(style="margin-bottom: 1.5em;") Token Sale buyers
+        h3.hc-feature-title(style="margin-bottom: 1.5em;") Our Token Partners
         #hc-buyers-slider.logo-slider
           .slide
             a(href="http://blocktower.com", target="_blank")
@@ -58,7 +58,7 @@ block content
           .slide
             img(src='/images/empty.png', data-src='/images/clinton-polley.png', style="width:40%;")
               
-    include storeco-vs-blockchains
+    //- include storeco-vs-blockchains
     
     include network-distribution
     
@@ -101,7 +101,7 @@ block content
     #market-case.hc-feature.over-rel.padding.left-align
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title The Market Case for Storecoin
-        p.hc-feature-lead Storecoin is the only digital asset with a clear payments use case designed to solve a multi-billion dollar problem – the transaction fee problem for mobile and web app developers all around the world.
+        p.hc-feature-lead Storecoin is the only blockchain protocol with a clear payments use case designed to solve a multi-billion dollar problem – the transaction fee problem for mobile and web app developers all around the world.
         p.hc-feature-lead Storecoin keeps payments 
           b permanently free 
           | for application developers – including payments that are less than a penny.
@@ -164,28 +164,28 @@ block content
         div.hazard-boxes
           - var secVals = ['5,000 storecoins', '5,000 edisons', '5%', '50', '50', '1,000 edisons', '90%'];
           - var secTemplate = function(secVals) { return '<ul><li>Stake Required For New Validators: <span class="orange-color">'+secVals[0]+'</span></li><li>Security Bond to Send Txn: <span class="orange-color">'+secVals[1]+'</span></li><li>Interest Paid on Security Bond: <span class="orange-color">'+secVals[2]+'</span></li><li># of Security Guards Needed: <span class="orange-color">'+secVals[3]+'</span></li><li>Stake Required to Guard: <span class="orange-color">'+secVals[4]+'</span></li><li>Cost to File a Ticket: <span class="orange-color">'+secVals[5]+'</span></li><li>Stake or Bond Earned by Guard: <span class="orange-color">'+secVals[6]+'</span></li></ul>';};
-          - var title = secTemplate(secVals);
-          div.box.red(title=title)
+          - var boxTitle = secTemplate(secVals);
+          div.box.red(title=boxTitle)
             h3 Severe
             p Severe risk of an attack or an spam
           - secVals = ['2,500 storecoins', '2,500 edisons', '4%', '40', '100', '750 edisons', '80%'];
-          - title = secTemplate(secVals);
-          div.box.skin(title=title)
+          - boxTitle = secTemplate(secVals);
+          div.box.skin(title=boxTitle)
             h3 High
             p High risk of an attack or an spam
           - secVals = ['1,500 storecoins', '1,000 edisons', '3%', '30', '200', '500 edisons', '70%'];
-          - title = secTemplate(secVals);
-          div.box.yellow(title=title)
+          - boxTitle = secTemplate(secVals);
+          div.box.yellow(title=boxTitle)
             h3 Elevated
             p Significant risk of an attack or an spam
           - secVals = ['1,000 storecoins', '500 edisons', '2%', '20', '500', '250 edisons', '60%'];
-          - title = secTemplate(secVals);
-          div.box.blue(title=title)
+          - boxTitle = secTemplate(secVals);
+          div.box.blue(title=boxTitle)
             h3 Guarded
             p General risk of an attack or an spam
           - secVals = ['500 storecoins', '250 edisons', '1%', '10', '1,000', '100 edisons', '50%'];
-          - title = secTemplate(secVals);
-          div.box.green(title=title)
+          - boxTitle = secTemplate(secVals);
+          div.box.green(title=boxTitle)
             h3 Low
             p Low risk of an attack or an spam
             
