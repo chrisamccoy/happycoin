@@ -31,7 +31,7 @@ var blogs = [
       slug: 'storecoin-hires-rajiv-patel-of-fenwick-west-to-file-blockchain-patents',
       title: 'Storecoin hires Rajiv Patel of Fenwick & West to file blockchain patents',
       desc: 'Storecoin, a new public blockchain with a governance similar to the checks and balances of the U.S. Constitution and dynamic economics similar to ride-sharing companies like Uber, has hired one of the nation’s leading intellectual property and patent lawyers to guide the company in the next step of its blockchain development.',
-      img: 'https://storeco.in/images/akamai-logo.png',
+      img: 'https://storeco.in/images/fenwick-west-logo.png',
       template: 'blog-hires-rajiv'
   },
   {
