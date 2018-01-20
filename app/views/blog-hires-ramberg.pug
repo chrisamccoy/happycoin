@@ -1,74 +1,35 @@
-extends layout
+extends blog-wrapper
 
-block content
-  div#hc-content
-    //- #hc-intro.hc-feature.over-rel.padding
-    //-   .hc-chunk.hc-intro-text-wrapper
-    //-     h2.hc-intro-large-lead(style='font-weight: bold; font-size: 2.7em; margin: 2em auto;') Blog
-    - var blogTitle = meta.title;
-    - var encodedTitle = encodeURI(blogTitle)
-    - var url = meta.url;
-    - var encodedUrl = encodeURI(url)
-    div(style="margin-top:5em;")
-      .blog-news.hc-feature.over-rel.padding
-        .hc-chunk.hc-customize-text-wrapper
-          div.blog-share
-            a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
-              b
-                i.ion-social-twitter-outline
-            a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
-              b
-                i.ion-social-facebook-outline
-          p.time-stamp November 15, 2017 - 2 min Read
-          h1.article-title=blogTitle
-          div.blog-share.fixed
-            a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
-              b
-                i.ion-social-twitter-outline
-            a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
-              b
-                i.ion-social-facebook-outline
-        
-          p SAN FRANCISCO — For more than a decade, 
-            a(href="https://twitter.com/markramberg?lang=en", target="_blank") Mark Ramberg
-            |  has been ahead of the technological curve. In leadership roles previously at Microsoft and Amazon Web Services and now at Akamai Technologies, Ramberg has developed an unparalleled depth of knowledge of media content, delivery and security.
-          
-          .hc-image
-            img(src='/images/empty.png', data-src="/images/blog/blog-hires-ramberg-1.png", style="max-width: 400px;")
-          
-          p.caption Rajiv P. Patel of Fenwick & West
-        
-          p Today, Storecoin creator 
-            a(href="https://twitter.com/chrisamccoy", target="_blank") Chris McCoy
-            |  is pleased to announce that Ramberg will assist the company, advising on platforms and Wallet SDK.
+block blog-news   
+  p SAN FRANCISCO — For more than a decade, 
+    a(href="https://twitter.com/markramberg?lang=en", target="_blank") Mark Ramberg
+    |  has been ahead of the technological curve. In leadership roles previously at Microsoft and Amazon Web Services and now at Akamai Technologies, Ramberg has developed an unparalleled depth of knowledge of media content, delivery and security.
 
-          p “Mark is one of the great operators and visionaries in database technologies. His role in Storecoin ensures we will have a Wallet SDK that enables applications to integrate cryptocurrency directly into their API calls and user actions as a new type of incentive and/or reward. Mark will also help the project make important strategic decisions on the hardware and software fronts. It’s an honor to work with him. ” McCoy said.
-      
-          p.image-text 
-            img(src='/images/empty.png', data-src="/images/akamai-logo.png")
-            span Ramberg is vice president of business development for media at 
-              a(href="https://www.akamai.com/", target="_blank") Akamai
-              | , a company that specializes in cloud network delivery. Akamai is a leader in creating software solutions to help provide live streaming content for major global events, such as the Olympic Games and the World Cup.
-          
-          p “Storecoin is at the forefront of the blockchain and cryptocurrency ecosystem, enabling the future of transaction-based incentive programs. Chris McCoy has quickly become a leader in this foundational technology space by leveraging his passion and experience in data science, public policy and politics, and economics to position Storecoin for rapid growth,” Ramberg said.
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/blog-hires-ramberg-1.png", style="max-width: 400px;")
 
-          p Before joining Akamai, Ramberg was general manager of media and entertainment at Amazon Web Services from 2011 to 2015 and general manager of business development and marketing at Microsoft, from 2001 to 2011. He earned a Bachelor’s Degree in computer science and an MBA in technology management from the University of Washington.
+  p.caption Rajiv P. Patel of Fenwick & West
 
-          p 
-            a(href="http://storeco.in/", target="_blank") Storecoin
-            |  will be a public blockchain 
-            b powering free transactions 
-            |  for users and app developers using its Dynamic Proof of Stake consensus (DyPoS).
+  p Today, Storecoin creator 
+    a(href="https://twitter.com/chrisamccoy", target="_blank") Chris McCoy
+    |  is pleased to announce that Ramberg will assist the company, advising on platforms and Wallet SDK.
 
-          p McCoy said he is eager to expand on his partnership with Ramberg, who is a board member of Storecoin’s major developer partner, Footprint, enterprise chat for franchises and chain stores, integrating Storecoin as its native cryptocurrency.
-          
-          div.blog-share.fixed
-            div.share Share:
-            a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
-              b
-                i.ion-social-twitter-outline
-            a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
-              b
-                i.ion-social-facebook-outline
-                  
-    include email-widget
+  p “Mark is one of the great operators and visionaries in database technologies. His role in Storecoin ensures we will have a Wallet SDK that enables applications to integrate cryptocurrency directly into their API calls and user actions as a new type of incentive and/or reward. Mark will also help the project make important strategic decisions on the hardware and software fronts. It’s an honor to work with him. ” McCoy said.
+
+  p.image-text 
+    img(src='/images/empty.png', data-src="/images/akamai-logo.png")
+    span Ramberg is vice president of business development for media at 
+      a(href="https://www.akamai.com/", target="_blank") Akamai
+      | , a company that specializes in cloud network delivery. Akamai is a leader in creating software solutions to help provide live streaming content for major global events, such as the Olympic Games and the World Cup.
+
+  p “Storecoin is at the forefront of the blockchain and cryptocurrency ecosystem, enabling the future of transaction-based incentive programs. Chris McCoy has quickly become a leader in this foundational technology space by leveraging his passion and experience in data science, public policy and politics, and economics to position Storecoin for rapid growth,” Ramberg said.
+
+  p Before joining Akamai, Ramberg was general manager of media and entertainment at Amazon Web Services from 2011 to 2015 and general manager of business development and marketing at Microsoft, from 2001 to 2011. He earned a Bachelor’s Degree in computer science and an MBA in technology management from the University of Washington.
+
+  p 
+    a(href="http://storeco.in/", target="_blank") Storecoin
+    |  will be a public blockchain 
+    b powering free transactions 
+    |  for users and app developers using its Dynamic Proof of Stake consensus (DyPoS).
+
+  p McCoy said he is eager to expand on his partnership with Ramberg, who is a board member of Storecoin’s major developer partner, Footprint, enterprise chat for franchises and chain stores, integrating Storecoin as its native cryptocurrency.
