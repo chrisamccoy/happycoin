@@ -1,0 +1,72 @@
+extends layout
+
+block content
+  div#hc-content
+    //- #hc-intro.hc-feature.over-rel.padding
+    //-   .hc-chunk.hc-intro-text-wrapper
+    //-     h2.hc-intro-large-lead(style='font-weight: bold; font-size: 2.7em; margin: 2em auto;') Blog
+    - var blogTitle = meta.title;
+    - var encodedTitle = encodeURI(blogTitle)
+    - var url = meta.url;
+    - var encodedUrl = encodeURI(url)
+    div(style="margin-top:5em;")
+      .blog-news.hc-feature.over-rel.padding
+        .hc-chunk.hc-customize-text-wrapper
+          div.blog-share
+            a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
+              b
+                i.ion-social-twitter-outline
+            a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+              b
+                i.ion-social-facebook-outline
+          p.time-stamp November 28, 2017 - 2 min Read
+          h1.article-title=blogTitle
+          div.blog-share.fixed
+            a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
+              b
+                i.ion-social-twitter-outline
+            a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+              b
+                i.ion-social-facebook-outline
+        
+          p Early in his career, 
+            a(href="http://twitter.com/aridavidpaul", target="_blank") Ari Paul
+            |  recognized the need for cryptocurrencies to occupy a place in consumers’ (virtual) wallets and investors’ holdings. As co-founder and chief investment officer for 
+            a(href="https://blocktower.com/", target="_blank") BlockTower Capital,
+            |  Paul specializes in professional trading and portfolio management of cryptocurrencies.
+          
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-hires-ari-1.png", style="max-width: 400px;")
+        
+          p With confidence in his vast knowledge and experience in the virtual currency marketplace and the technology behind the blockchain process on which it runs, Storecoin creator 
+            a(href="https://twitter.com/chrisamccoy", target="_blank") Chris McCoy
+            |  announces Paul’s affiliation with the company as strategic advisor.
+
+          p “Ari’s belief in the potential of blockchain technology across multiple industries, his deep understanding of the underlying economics powering cryptocurrencies, and his faith in our team’s ability to deliver upon the ambitious technology goals of Storecoin positions Ari as a tremendous long-term advisor to our protocol. We’re all very excited to work with him.” McCoy said.
+      
+          p.image-text 
+            img(src='/images/empty.png', data-src="/images/blocktower-logo.png")
+            span Before co-founding BlockTower Capital, Paul spent four years managing investments for the University of Chicago. He was portfolio manager for the $150 million long volatility tail protection portfolio, and led projects analyzing private equity cash flows, factor based investing, and performance attribution.
+          
+          p “The Storecoin project is at the intersection of innovative blockchain engineering and a clear business use case. Equally important in my view, the project leader 
+            a(href="https://twitter.com/chrisamccoy", target="_blank") Chris McCoy
+            |  has a history of executing on ideas as a successful serial entrepreneur,” Paul said.
+
+          p Before taking a position with the University of Chicago, Paul was a derivatives market maker and proprietary trader for Susquehanna International Group. Recognized as a leading expert on cryptocurrency investing, Paul began writing about investing and economics shortly before the 2008 market crash. He still contributes regularly to The Cryptocurrency Investor blog.
+
+          p Paul earned a Bachelor’s degree in political science from the University of Pennsylvania and an MBA from the University of Chicago with concentrations in economics, entrepreneurship, strategic management and econometrics and statistics.
+
+          p Storecoin, a new public blockchain with a governance similar to the checks and balances of the U.S. Constitution and dynamic economics similar to ride-sharing companies like Uber, is powered by a Dynamic Proof of Stake consensus algorithm ensuring free transactions and continuously profitable operations.
+
+          p McCoy said the Storecoin team is confident that Paul’s deep knowledge of the cryptocurrency space will prove indispensable as the company sets strategy for the future.
+          
+          div.blog-share.fixed
+            div.share Share:
+            a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
+              b
+                i.ion-social-twitter-outline
+            a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+              b
+                i.ion-social-facebook-outline
+                  
+    include email-widget

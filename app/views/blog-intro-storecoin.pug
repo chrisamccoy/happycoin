@@ -1,0 +1,323 @@
+extends layout
+
+block content
+  div#hc-content
+    //- #hc-intro.hc-feature.over-rel.padding
+    //-   .hc-chunk.hc-intro-text-wrapper
+    //-     h2.hc-intro-large-lead(style='font-weight: bold; font-size: 2.7em; margin: 2em auto;') Blog
+    - var blogTitle = meta.title;
+    - var encodedTitle = encodeURI(blogTitle)
+    - var url = meta.url;
+    - var encodedUrl = encodeURI(url)
+    div(style="margin-top:5em;")
+      .blog-news.hc-feature.over-rel.padding
+        .hc-chunk.hc-customize-text-wrapper
+          div.blog-share
+            a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
+              b
+                i.ion-social-twitter-outline
+            a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+              b
+                i.ion-social-facebook-outline
+          p.time-stamp August 2, 2017 - 9 min Read
+          h1.article-title Introducing Storecoin — a new public blockchain for franchise and chain stores
+          div.blog-share.fixed
+            a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
+              b
+                i.ion-social-twitter-outline
+            a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+              b
+                i.ion-social-facebook-outline
+          
+          div.article-sub-title Hello world, it’s August 2017 — the first month of a third, new phase in the blockchain industry — and we’re ready to bring blockchain technologies to franchise and chain store businesses.
+            
+          p 
+            b Meet Storecoin
+            |, a new public blockchain protocol powered by a byzantine fault tolerant Dynamic Proof of Stake consensus algorithm (DyPoS) ensuring free transactions and continuously profitable operations.
+            
+          p Storecoin is also being designed to solve the unique privacy, revenue sharing, and Smart Contract UI needs of hierarchy-based organizations such as franchise and chain stores systems.
+        
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-1.png")
+              
+          p Storecoin aims to be the leading public blockchain powering cryptocurrency-based payments, decentralized apps, supply chains, and loyalty points for industries representing over 25% of global GDP.
+          
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-2.png")
+          
+          p You can learn more about Storecoin in our just released Green Paper: 
+            a(href="http://storeco.in" target="_blank") http://storeco.in
+          
+          p You can participate in the invite-only First Storecoin Token sale 
+            a(href="http://storeco.in/#first-token-sale" target="_blank")  here.
+            
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-3.png")
+          p.caption The invite only First Token Sale whenever 6% of all tokens have been sold. The Minimum Token Buy is $2,500 USD and the cap to be raised is $300,000. Storecoin will approve all token buyers before accepting payment.
+          
+          p If you participate in the Token Sale now, you can also be an early forger (or validator) for our Dynamic Proof of Stake distributed consensus — which will enable you to earn interest on your storecoins by helping helping validate new transaction blocks.
+          
+          p 
+            b Storecoin exists because of our five core beliefs: 
+            br
+            | #1: Franchises, chain stores, sports leagues, and affiliate-based organizations
+            br 
+            b  will all eventually be tokenized and blockchain-powered.
+            
+          p Understanding the unique business rules of payments and social networks inside these hierarchy-based systems is our secret sauce.
+          
+          p #2: 
+            b  Current blockchains 
+              a(href="https://storeco.in/#problem", target="_blank")  don’t solve for
+              |  the unique needs of hierarchy-based organizations
+            | , specifically the need for free transactions for senders and receivers especially with micropayments. Also, the need for privacy inside smart contracts, hierarchy in smart contracts, and UI-friendliness for the creation and management of smart contracts.
+          
+          p #3: Only 10–20 million people own digital currency today. This is less than 0.3% of the world’s population.
+            b  Storecoin — with the help of its developer partners — can help get cryptocurrency into the hands of millions of hourly and part-time workers around the globe 
+            |  before current major public blockchains like Ethereum and Bitcoin.
+            
+          p Through our strategic relationship with Footprint — enterprise chat for hierarchy-based systems such as franchises and chain stores — the Storecoin Wallet APIs can make storecoin tokens the native cryptocurrency inside of the Footprint HQ2B communication system.
+
+          p Footprint will then kick start Storecoin network effects between Corporate Headquarters, Store Locations, those validating the consensus, 3rd party app developers, distribution partners, and storecoin token buyers.
+          
+          .hc-image.overflow
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-4.png")
+            p.caption By 2020, new business models and behaviors can be introduced into the global $23 Franchise and Chain Store industry through Footprint Chat, the Storecoin Wallet API, and their symbiotic API roadmap. You can find more examples of how Footprint and Storecoin may one day interoperate 
+              a(href="https://storeco.in/#first-app", target="_blank")  here.
+              
+          p #4: We’re now entering the third phase of blockchain technology where new consensus algorithms, security protocols, and crypto economic designs will help mainstream cryptocurrency to new audiences.
+          
+          p 
+            b We believe a public blockchain can be secured and made scalable with free transactions.
+            |  As of late July, Ethereum transactions cost $0.12. Bitcoin costs $2.46 — and they promised us free transactions!)
+          
+          p We also believe that most smart contract powered apps simply need a base protocol cryptocurrency, a Wallet API that syncs with the app, a simple UI to create smart contracts, and an on-chain escrow mechanism — not necessarily a unique utility token.
+          
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-5.png")
+          p.caption Here’s the cryptocurrency technology stack. With Storecoin, between the token layer and the app layer, there will be a protocol-powered wallet API allowing cryptocurrency to natively be distributed inside of apps. This Wallet API doesn’t exist with Bitcoin, Ethereum, and other public blockchains.
+          
+          p 
+            a(href="https://storeco.in", target="_blank") Storecoin
+            |  can lead on all fronts here and become the dominant blockchain protocol inside of franchises, chain stores, and affiliate-based organizations.
+          
+          p You can learn more about our technology 
+            a(href="https://storeco.in/#technology", target="_blank")  here
+            | .
+            
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-6.png")
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-7.png")
+          p.caption An early look at the crypto economics underneath the Storecoin public blockchain. We’ll release our full economic model before our Second Token Sale scheduled for sometime in Late 2017.
+          
+          p #5: We have a team that has been thinking 
+            b very long term
+            |  about the potential for blockchain-based payments to introduce new business models and behaviors inside hierarchy-based organizations.
+          
+          p After diving deep into the Bitcoin and Ethereum ecosystems, we concluded that 
+            a(href="https://medium.com/@FEhrsam/scaling-ethereum-to-billions-of-users-f37d9f487db1", target="_blank")  inefficiencies
+            |  in current public blockchains will prevent them from gaining meaningful adoption inside of franchise and chain stores.
+          
+          p We also recognized that the cash register and supply chain of the future for retail stores will one day be decentralized and tokenized — and these applications will be integrated into Footprint Chat in a similar way that apps integrate into team-based messaging systems like 
+            a(href="https://decentraland.slack.com/apps", target="_blank") Slack
+            | .
+          
+          p Also, major customers in the Footprint customer pipeline became interested in how a cryptocurrency could introduce new behaviors and business models inside of their 
+            a(href="http://footprintchat.com/", target="_blank") Footprint
+            |  app. Amazon even offered us $100,000 in AWS credits for blockchain R&D efforts.
+          
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-8.png")
+          
+          p By late June, recognizing the unique differences and structures between 
+            a(href="By late June, recognizing the unique differences and structures between thin apps and fat protocols, we successfully separated the two entities and made Footprint (an app) a Founding Team Member in Storecoin (a protocol) — one that is required to actively develop using Storecoin APIs in order to vest over 4-years (33% of all storecoins will be allocated to founders, early engineers, and main contributors — everyone vests).", target="_blank") thin apps and fat protocols
+            | , we successfully separated the two entities and made Footprint (an app) a Founding Team Member in Storecoin (a protocol) — one that is required to actively develop using Storecoin APIs in order to vest over 4-years (33% of all storecoins will be allocated to founders, early engineers, and main contributors — everyone vests).
+          
+          .hc-image.overflow
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-9.png")
+            p.caption Per “
+              a(href="http://www.usv.com/blog/fat-protocols", target="_blank") Fat Protocols
+              |  Union Square Ventures: “This relationship between protocols and applications is reversed in the blockchain application stack. Value concentrates at the shared protocol layer and only a fraction of that value is distributed along at the applications layer. It’s a stack with “fat” protocols and “thin” applications.”
+          
+          p 
+            b As of August 1st 2017, Storecoin and Footprint officially exist as separate legal entities, with their own bank accounts, EINs, and core engineering teams.
+            |  To keep the symbiotic relationship in sync, specifically their APIs, the two entities do share executive-level leadership — for now.
+          
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-10.png")
+          p.caption To learn more about Footprint, 
+            a(href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=chris@footprintlabs.co&su=Referred+from+Storecoin&tf=1", target="_blank") email the team
+          
+          p As the relationship unfolds, we envision future Footprint customers joining
+            b  The Storecoin Alliance
+            |  — a coalition of hierarchy-based organizations paying membership fees to run their own Storecoin R&D experiments on and off of Footprint.
+          
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-11.png")
+          
+          p.caption We expect to announce first members of The Storecoin Alliance by our Second Token Sale
+          
+          p We’ll bring Storecoin to life with a network of partners including a founding app developer, a founding validator pool for our distributed Proof of Stake- consensus, an expert team of core blockchain developers, and with the help of Amazon AWS.
+          
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-12.png")
+          p.caption We’re building relationships with future Storecoin validators now.
+          
+          p Here’s the 
+            a(href="https://storeco.in/#technology", target="_blank") technology
+            |  that, over time, we’re introducing into Storecoin
+          
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-13.png")
+          p.caption To scale Storecoin, our team is committed to minimizing on-chain data while maximizing off chain transactions. We’re also experimenting with new forms of cryptography for privacy inside of smart contracts — and eventually inside state channels.
+          
+          p As we build, we’re guided by the following technology 
+            a(href="https://storeco.in/#ethos", target="_blank") ethos
+            |  before we ship.
+          
+          .hc-image.overflow
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-14.png")
+          
+          p Now that we’re through the founding of Storecoin, our First Token Sale for Storecoin launches Friday, August 18th.
+          
+          p
+            b You can join in 
+              a(href="https://storeco.in/#first-token-sale", target="_blank") here
+            | .
+          
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-3.png")
+          p.caption The invite only First Token Sale whenever 6% of all tokens have been sold. The Minimum Token Buy is $2,500 USD and the cap to be raised is $300,000. Storecoin will approve all token buyers before accepting payment.
+          
+          p Tokens can be purchased with $USD, Bitcoin, Bitcoin Cash, Ethereum. Coinbase payments, Paypal payments, checks, and bank wire transfers.
+          
+          p This $300,000 will be used for
+            b  extensive research and development
+            |  on the Storecoin consensus algorithm, security protocol, and underlying public blockchain economics.
+          
+          p Our results will be published in the first version of our  
+            a(href="https://storeco.in/#whitepaper", target="_blank") Whitepaper
+            |  — to be released in early 2018.
+          
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-15.png")
+          
+          p 
+            b Storecoin tokens are both a work and a usage token.
+            |  Owning storecoins gives token owners the right to validate transactions in a Proof of Stake consensus and to earn more tokens in exchange for that work. Owning storecoins also gives a token owner the right to use applications where the Storecoin Wallet is integrated.
+          
+          p
+            b IMPORTANT:
+            |  Storecoin tokens are not being sold or marketed as securities, nor are they intended to be a commodity or any kind of financial instrument. In July 2017, the SEC released 
+            a(href="https://www.sec.gov/news/press-release/2017-131", target="_blank") guidance
+            |  clarifying that token sales by organizations using distributed ledger or blockchain technology may fall within the category of “securities” regulated by US law, depending on the facts and circumstances. We’ve carefully studied this guidance with the help of our legal team at 
+            a(href="http://bottomlinelawgroup.com/", target="_blank") Bottom Line Law Group
+            | . In our view, following the SEC’s analysis in the 
+            a(href="https://www.sec.gov/litigation/investreport/34-81207.pdf", target="_blank") report
+            | , Storecoin tokens do not meet the definition of securities: They carry no rights other than the right to use tokens as a means to enable usage of and interaction with apps and services enabled by the Storecoin blockchain. Tokens do not represent any ownership stake, or any right to receive shares in future revenue or profits of the company. Buyers will be required to 
+            a(href="https://storeco.in/firsttokensale", target="_blank") explicitly acknowledge
+            |  this distinction and sign our 
+            a(href="https://storeco.in/terms", target="_blank") Token Sale Terms and Agreement
+            |  containing more detailed representations and information.
+          
+          .hc-image.overflow
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-16.png")
+            p.caption The 
+              a(href="", target="_blank") magic
+              |  of the Storecoin is that it aligns incentives across all stakeholders to hold the token.
+          
+          p As we invent, introduce, and govern Storecoin, we’re committed to 
+            b Doing The Right Thing
+            | .
+            
+          p For example, we 
+            b  do not believe
+            |  in the ethos behind Centralized, One Token Sale models being used by other decentralized technologies.
+          
+          p Therefore, only as we achieve technology and adoption milestones will we issue new token sales. We may have 
+            b up to six
+            |  individual token sales — selling 2-6% of the network each time.
+          
+          p Our next token sale will take place in late 2017 and we’ll sell 4% of all storecoins to further fund research and development.
+          
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-17.png")
+          
+          p Over time, only 
+            b  33%
+            |  of storecoins will ever be sold to the public.
+
+          p
+            b 33%
+            |  will also be used to incentivize the network including application development partners, hierarchy-based business systems who use apps with the Storecoin Wallet, and to future acquisitions in the blockchain space.
+
+          p
+            b 33%
+            |  will be used to incentivize Storecoin founders, core developers, and team.
+
+          p Founders and Partners will vest over 4-years. Early contributors and contractors will vest over 2-years.
+
+          p
+            b 1%
+            |  will be used to cover the cost of tokensales.
+
+          p Here’s how Storecoin, Inc. will use proceeds from its public token sales:
+          
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-18.png", style="max-width:700px;")
+          
+          p The incentive structure and underlying economics of Storecoin are being designed as a perpetual, economically sustainable blockchain protocol.
+
+          p For example, when we release version 1 of Storecoin Cryptoeconomics, we’ll also release a P&L that shows how Storecoin the protocol and operating entity — using dynamic inflation never above 5% per year — stays profitable each year while also 
+            b keeping transaction free for both senders and receivers.
+
+          p We’ll also show how our Dynamic Proof of Stake consensus algorithm (DyPoS) is profitable for block validators — and how it decentralizes.
+
+          p Working with a world class blockchain development group in Buenos Aires, we’ve already started the R&D efforts and, as of today, we’re confident that we can solve for the following solutions:
+          
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-19.png")
+          
+          p.caption Storecoin will enable transactions in a smart contract to be private, public or both
+          
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-20.png")
+          
+          p.caption Storecoin will enable unlimited levels of revenue sharing in unlimited directions.
+          
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-21.png")
+          
+          p.caption Storecoin will introduce fully customizable, UI friendly smart contracts for hierarchy-based business systems
+          
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blog/blog-intro-img-22.png")
+          
+          p.caption Using new cryptography and cryptoeconomics, Storecoin aims to do this with zero transaction fees to the sender and to the receiver.
+          
+          p
+            b Here’s how to get involved with Storecoin:
+
+          p 1/ Join our  
+            a(href="https://storeco.in/#first-token-sale", target="_blank") First Token Sale
+
+          p 2/ Learn more about Storecoin from our Green Paper: 
+            a(href="https://storeco.in", target="_blank") http://storeco.in
+
+          p 3/ Follow us on Twitter: 
+            a(href="https://twitter.com/storecointeam", target="_blank") @StorecoinTeam
+
+          p 4/ 
+            a(href="https://storeco.in/contact", target="_blank") Ask us a question
+          
+          div.blog-share.fixed
+            div.share Share:
+            a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
+              b
+                i.ion-social-twitter-outline
+            a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+              b
+                i.ion-social-facebook-outline
+                  
+    include email-widget

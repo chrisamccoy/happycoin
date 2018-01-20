@@ -5,7 +5,7 @@ block content
     //- #hc-intro.hc-feature.over-rel.padding
     //-   .hc-chunk.hc-intro-text-wrapper
     //-     h2.hc-intro-large-lead(style='font-weight: bold; font-size: 2.7em; margin: 2em auto;') Blog
-    - var blogTitle = 'Load Testing Storecoin’s Dynamic Proof-of-Stake Consensus Algorithm: Test 1 of 7';
+    - var blogTitle = meta.title;
     - var encodedTitle = encodeURI(blogTitle)
     - var url = 'http://storeco.in/blog/load-testing-storecoins-dynamic-proof-of-stake-consensus-algorithm-test-1-of-7';
     - var encodedUrl = encodeURI(url)
@@ -20,7 +20,7 @@ block content
               b
                 i.ion-social-facebook-outline
           p.time-stamp Dec 13, 2017 - 9 min Read
-          h1.article-title Load Testing Storecoin’s Dynamic Proof-of-Stake Consensus Algorithm: Test 1 of 7
+          h1.article-title=meta.title
           div.blog-share.fixed
             a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
               b

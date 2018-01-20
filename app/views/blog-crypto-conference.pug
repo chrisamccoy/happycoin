@@ -1,0 +1,65 @@
+extends layout
+
+block content
+  div#hc-content
+    //- #hc-intro.hc-feature.over-rel.padding
+    //-   .hc-chunk.hc-intro-text-wrapper
+    //-     h2.hc-intro-large-lead(style='font-weight: bold; font-size: 2.7em; margin: 2em auto;') Blog
+    - var blogTitle = meta.title;
+    - var encodedTitle = encodeURI(blogTitle)
+    - var url = meta.url;
+    - var encodedUrl = encodeURI(url)
+    div(style="margin-top:5em;")
+      .blog-news.hc-feature.over-rel.padding
+        .hc-chunk.hc-customize-text-wrapper
+          div.blog-share
+            a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
+              b
+                i.ion-social-twitter-outline
+            a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+              b
+                i.ion-social-facebook-outline
+          p.time-stamp November 28, 2017 - 2 min Read
+          h1.article-title=blogTitle
+          div.blog-share.fixed
+            a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
+              b
+                i.ion-social-twitter-outline
+            a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+              b
+                i.ion-social-facebook-outline
+        
+          p SAN FRANCISCO — Organizers have invited Storecoin creator 
+            a(href="https://twitter.com/chrisamccoy?lang=en", target="_blank") Chris McCoy
+            |  to speak at the first international conference designed specifically for online currency and blockchain investors. The three-day 
+            a(href="https://www.crypto-finance-conference.com/en/#", target="_blank") Crypto Finance Conference
+            |  takes place in St. Moritz, Switzerland, Jan. 17–19.
+          
+          p In addition to creating 
+            a(href="http://storeco.in/", target="_blank") Storecoin’s
+            |  public blockchain, which powers free transactions using Dynamic Proof of Stake, McCoy is a longtime, successful digital asset investor.
+          
+          p He joins an impressive panel of more than 20 crypto fund founders and managers who will share information and expertise, provide investment opportunities and offer participants the chance to network with the world’s leaders in the industry.
+
+          p “I am both thrilled and humbled to have the opportunity to participate in this inaugural event,” McCoy said. “As more investors add online currencies to their portfolios, it is increasingly important that they begin to learn things like how blockchains work and how to participate in ICOs.”
+
+          p The Swiss canton (roughly comparable to a state in the U.S.) of Zug is widely recognized as the world’s epicenter of cryptocurrency development. It is home to Ethereum, Xapo, Tezos and Monetas, just to name a few, making Switzerland a natural choice of location for the conference, which takes place about three hours south in one of the country’s premier ski resorts.
+
+          p Leading organizer Dr. Tobias Reichmuth told British journal Fintech Finance that he and the group developing the conference identified a lack of education and information for investors and wanted to fill the void.
+
+          p “While there are many tech-oriented blockchain conferences, a professional and global investor-focused crypto finance conference was missing, so far,” Reichmuth said.
+
+          p Organizer Daniel Gutenberg lauded the level of expertise found in the speakers who will appear.
+
+          p “The line-up of the conference is second to none,” Gutenberg said. “I have not heard of any format bringing together so much knowledge in the cryptocurrency and Bitcoin world as the Crypto Finance Conference,” he told Fintech Finance.
+          
+          div.blog-share.fixed
+            div.share Share:
+            a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
+              b
+                i.ion-social-twitter-outline
+            a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+              b
+                i.ion-social-facebook-outline
+                  
+    include email-widget
