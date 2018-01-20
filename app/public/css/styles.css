@@ -1646,6 +1646,11 @@ and (max-width : 335px) {
     color: #5d794c;
 }
 
+#project-schedule .timeline .year .items .item .box .title .sub {
+  font-size: 0.8em;
+  margin-left: 2.6em;
+}
+
 #project-schedule .timeline .year .items .item .box .title .bullet {
   padding: 0.1em 0.5em;
   border-radius: 2px;
