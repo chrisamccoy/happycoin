@@ -32,10 +32,10 @@ html
       p.hc-intro-post
         //- a(href="https://medium.com/@team_27494/introducing-storecoin-8e15c21b4335", target="_blank") Read our introductory post
         //- span(style="padding:0 0.5em;") ·
-        a(href="https://techcrunch.com/2017/08/20/yesterdays-plastics-are-todays-crypto-tokens/", target="_blank")  See our latest in TechCrunch
+        a(href=URL("https://techcrunch.com/2017/08/20/yesterdays-plastics-are-todays-crypto-tokens/"), target="_blank")  See our latest in TechCrunch
         span
           i.ion-record
-        a(href="/blog/load-testing-storecoins-dynamic-proof-of-stake-consensus-algorithm-test-1-of-7", target="_blank")  Our latest Tech R&D
+        a(href=URL("/blog/load-testing-storecoins-dynamic-proof-of-stake-consensus-algorithm-test-1-of-7"), target="_blank")  Our latest Tech R&D
       .container
         .row
           a.hc-branding.store-auth
@@ -43,7 +43,7 @@ html
               span 1,000,000,000
               span.away storecoins authorized
           .hc-branding.logo
-            a.hc-title(href='/')
+            a.hc-title(href=URL('/'))
           div.hc-branding.invite-dropdown
             a.sale-invite(data-id="#tokensale") Receive a Round 3 Token Invite
             div.hc-menu-dropdown
@@ -52,13 +52,13 @@ html
                 .left.menu
                   div.item 1,000,000,000 storecoins authorized
                   a.item(href=URL('/#six-engines')) About DyPoS
-                  a.item(href='/team') Our Team
+                  a.item(href=URL('/team')) Our Team
                   //- a.item(href='/examples') Use Cases
                   //- a.item(href='/secondtokensale') Second Token Sale
-                  a.item(href='/whitepaper') Our Whitepaper
-                  a.item(href='/community') Community
-                  a.item(href='/applytoforge', target="_blank") Become a Validator
-                  a.item(href='/dGuard', target="_blank") Become a dGuard
+                  a.item(href=URL('/whitepaper')) Our Whitepaper
+                  a.item(href=URL('/community')) Community
+                  a.item(href=URL('/applytoforge'), target="_blank") Become a Validator
+                  a.item(href=URL('/dGuard'), target="_blank") Become a dGuard
 
       include email-subscribe
 
@@ -71,9 +71,9 @@ html
             h3 Software
             ul
               li
-                a(href='/whitepaper') Our Whitepaper
+                a(href=URL('/whitepaper')) Our Whitepaper
               li
-                a(href='/cryptoeconomics') Our Cryptoeconomics
+                a(href=URL('/cryptoeconomics')) Our Cryptoeconomics
               //- li
               //-   a(href='/development') Product Roadmap
               //- li
@@ -82,37 +82,37 @@ html
             h3 About
             ul
               li
-                a(href='/milestones') Milestones
+                a(href=URL('/milestones')) Milestones
               li
-                a(href='/blog') Our Blog
+                a(href=URL('/blog')) Our Blog
               li
                 a.sale-invite(data-id="#tokensale-bottom") Our Token Sale
               //- li
               //-   a(href='/firsttokensalefaq') Token Sale FAQ
               li
-                a(href='http://twitter.com/storecointeam', target="_blank") Twitter
+                a(href=URL('http://twitter.com/storecointeam'), target="_blank") Twitter
               li
-                a(href='https://github.com/StorecoinProject', target="_blank") Github
+                a(href=URL('https://github.com/StorecoinProject'), target="_blank") Github
           .three.columns
             h3 Info
             ul
               li
-                a(href='/community') Join Community
+                a(href=URL('/community')) Join Community
               li
-                a(href='/applytoforge', target="_blank") Become a Validator
+                a(href=URL('/applytoforge'), target="_blank") Become a Validator
               li
-                a(href='/dGuard', target="_blank") Become a dGuard
+                a(href=URL('/dGuard'), target="_blank") Become a dGuard
               li
-                a(href='/team') Our Team
+                a(href=URL('/team')) Our Team
               li
-                a(href='/jobs') Jobs
+                a(href=URL('/jobs')) Jobs
               li
-                a(href='/contact') Contact Us
+                a(href=URL('/contact')) Contact Us
           .three.columns
             img(src='/images/empty.png', data-src='/images/logo.png', style='width:100px; height: auto;')
             div
             p(style='font-size: 0.7em; padding: 0.5em 0;')
-              a(href='')
+              a(href=URL('/'))
                 strong Storecoin
               |  is a new public blockchain powered by Dynamic Proof of Stake (DyPoS).
         section.row
@@ -121,4 +121,4 @@ html
             //- li#menu-item-37.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-37
             //-   a(href='https://www.stellar.org/privacy-policy/') Privacy Policy
             li#menu-item-150.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-150
-              a(href='/terms') Terms of Service
+              a(href=URL('/terms')) Terms of Service
