@@ -21,6 +21,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(function(req, res, next){
+  var host = req.headers.host;
+
+  res.locals.URL = function(val) {
+    if (host.search('news.storeco.in') >= 0) {
+      return req.protocol + "://storeco.in" + val;
+    }
+
+    return val;
+  };
+  next();
+});
+
 app.use('/', index);
 
 // catch 404 and forward to error handler
