@@ -26,7 +26,7 @@ app.use(function(req, res, next){
 
   res.locals.URL = function(val) {
     if (host.search('news.storeco.in') >= 0) {
-      return req.protocol + "://storeco.in" + val;
+      return "https://storeco.in" + val;
     }
 
     return val;
