@@ -35,7 +35,7 @@ var blogs = [
       slug: 'storecoin-hires-rajiv-patel-of-fenwick-west-to-file-blockchain-patents',
       title: 'Storecoin hires Rajiv Patel of Fenwick & West to file blockchain patents',
       desc: 'Storecoin, a new public blockchain with a governance similar to the checks and balances of the U.S. Constitution and dynamic economics similar to ride-sharing companies like Uber, has hired one of the nation’s leading intellectual property and patent lawyers to guide the company in the next step of its blockchain development.',
-      img: 'https://storeco.in/images/fenwick-west-logo.png',
+      img: 'https://storeco.in/images/blog/blog-hires-rajiv-1.png',
       template: 'blog-hires-rajiv',
       timeStamp : 'Oct 4, 2017 . 2 min read'
   },
@@ -43,7 +43,7 @@ var blogs = [
       slug: 'digital-innovator-mark-ramberg-to-advise-storecoin-on-platforms-and-api',
       title: 'Digital Innovator Mark Ramberg to Advise Storecoin on Platforms and API',
       desc: 'SAN FRANCISCO — For more than a decade, Mark Ramberg has been ahead of the technological curve. In leadership roles previously at Microsoft and Amazon Web Services and now at Akamai Technologies, Ramberg has developed an unparalleled depth of knowledge of media content, delivery and security.',
-      img: 'https://storeco.in/images/akamai-logo.png',
+      img: 'https://storeco.in/images/blog/blog-hires-ramberg-1.png',
       template: 'blog-hires-ramberg',
       timeStamp : 'Nov 15, 2017 . 2 min read'
   },
@@ -51,7 +51,7 @@ var blogs = [
       slug: 'virtual-currency-leader-ari-paul-joins-storecoin-as-a-strategic-advisor',
       title: 'Virtual Currency Leader Ari Paul Joins Storecoin as a Strategic Advisor',
       desc: 'Early in his career, Ari Paul recognized the need for cryptocurrencies to occupy a place in consumers’ (virtual) wallets and investors’ holdings. As co-founder and chief investment officer for BlockTower Capital, Paul specializes in professional trading and portfolio management of cryptocurrencies.',
-      img: 'https://storeco.in/images/blocktower-logo.png',
+      img: 'https://storeco.in/images/blog/blog-hires-ari-1.png',
       template: 'blog-hires-ari',
       timeStamp : 'Nov 28, 2017 . 2 min read'
   },
@@ -78,6 +78,14 @@ var blogs = [
       img: 'https://storeco.in/images/blog/blog-crypto-summit.png',
       template: 'blog-crypto-summit',
       timeStamp : 'Jan 11, 2018 . 1 min read'
+  },
+  {
+      slug: 'how-storecoins-blockchain-design-is-different-from-directed-acrylic-graph',
+      title: 'How Storecoin’s Blockchain Design is Different from Directed Acrylic Graph',
+      desc: 'How Storecoin’s Blockchain Design is Different from Directed Acrylic Graph',
+      img: 'https://storeco.in/images/blog/blog-blockchain-design.png',
+      template: 'blog-blockchain-design',
+      timeStamp : 'Jan 19, 2018 . 1 min read'
   }
 ];
 
