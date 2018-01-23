@@ -5195,7 +5195,7 @@ and (max-width : 335px) {
 #comparison-table table th,
 #comparison-table table td {
   border: 0px;
-  padding: 12px 15px;
+  padding: 12px 12px;
 }
 
 #comparison-table table thead th:nth-child(3) {
