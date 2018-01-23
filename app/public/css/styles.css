@@ -2550,7 +2550,7 @@ and (max-width : 335px) {
   margin-bottom: 1em;
 }
 
-#partners p {
+.logo-slider p {
   font-size: 1em;
   color: grey;
   margin: 0px 0px 0em;
@@ -2566,12 +2566,12 @@ and (max-width : 335px) {
   justify-content: center;
   padding: 0em;
   outline: 0px;
-  transition: all .2s ease-in;
-  transform: scale(1);
 }
 
 .logo-slider .slide img {
   width: 80%;
+  transition: all .2s ease-in;
+  transform: scale(1);
 }
 
 .logo-slider .slide a {
@@ -2581,7 +2581,7 @@ and (max-width : 335px) {
   flex-direction: column;
 }
 
-.logo-slider .slide:hover {
+.logo-slider .slide img:hover {
   transition: all .2s ease-in;
   transform: scale(1.04);
 }
