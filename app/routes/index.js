@@ -110,7 +110,7 @@ router.get('/blog/:slug', function(req, res, next) {
     timeStamp : bg.timeStamp
   });
 
-  res.render(bg.template, { title: 'Storecoin', meta: mt });
+  res.render(bg.template, { title: bg.title, meta: mt });
 });
 
 /* GET home page. */
