@@ -86,6 +86,14 @@ var blogs = [
       img: 'https://storeco.in/images/blog/blog-blockchain-design.png',
       template: 'blog-blockchain-design',
       timeStamp : 'Jan 19, 2018 . 1 min read'
+  },
+  {
+      slug: 'finance-professor-stephen-mckeon-joins-storecoin-as-economics-advisor',
+      title: 'Finance Professor Stephen McKeon Joins Storecoin as Economics Advisor',
+      desc: 'One of the nation’s leading thinkers on the economics of blockchain and cryptocurrencies, Stephen McKeon, has joined Storecoin’s team of advisors.',
+      img: 'https://storeco.in/images/blog/blog-hires-mckeon.png',
+      template: 'blog-hires-mckeon',
+      timeStamp : 'Jan 24, 2018 . 2 min read'
   }
 ];
 
