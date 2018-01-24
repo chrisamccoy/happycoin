@@ -3742,6 +3742,8 @@ and (max-width : 335px) {
 
 #hc-medium-blog .card .post img {
   width: 100%;
+  display: block;
+  margin: 0 auto;
 }
 
 /*#hc-medium-blog .card .writer {
