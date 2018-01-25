@@ -33,7 +33,7 @@ var blogs = [
   },
   {
       slug: 'storecoin-hires-rajiv-patel-of-fenwick-west-to-file-blockchain-patents',
-      title: 'Storecoin hires Rajiv Patel of Fenwick & West to file blockchain patents',
+      title: 'Storecoin Hires Rajiv Patel of Fenwick & West to File Blockchain Patents',
       desc: 'Storecoin, a new public blockchain with a governance similar to the checks and balances of the U.S. Constitution and dynamic economics similar to ride-sharing companies like Uber, has hired one of the nation’s leading intellectual property and patent lawyers to guide the company in the next step of its blockchain development.',
       img: 'https://storeco.in/images/blog/blog-hires-rajiv-1.png',
       template: 'blog-hires-rajiv',
@@ -41,15 +41,15 @@ var blogs = [
   },
   {
       slug: 'digital-innovator-mark-ramberg-to-advise-storecoin-on-platforms-and-api',
-      title: 'Digital Innovator Mark Ramberg to Advise Storecoin on Platforms and API',
+      title: 'Digital Innovator Mark Ramberg to Advise Storecoin On Platforms And API',
       desc: 'SAN FRANCISCO — For more than a decade, Mark Ramberg has been ahead of the technological curve. In leadership roles previously at Microsoft and Amazon Web Services and now at Akamai Technologies, Ramberg has developed an unparalleled depth of knowledge of media content, delivery and security.',
       img: 'https://storeco.in/images/blog/blog-hires-ramberg-1.png',
       template: 'blog-hires-ramberg',
       timeStamp : 'Nov 15, 2017 . 2 min read'
   },
   {
-      slug: 'virtual-currency-leader-ari-paul-joins-storecoin-as-a-strategic-advisor',
-      title: 'Virtual Currency Leader Ari Paul Joins Storecoin as a Strategic Advisor',
+      slug: 'virtual-currency-leader-ari-paul-joins-storecoin-as-strategic-advisor',
+      title: 'Virtual Currency Leader Ari Paul Joins Storecoin As Strategic Advisor',
       desc: 'Early in his career, Ari Paul recognized the need for cryptocurrencies to occupy a place in consumers’ (virtual) wallets and investors’ holdings. As co-founder and chief investment officer for BlockTower Capital, Paul specializes in professional trading and portfolio management of cryptocurrencies.',
       img: 'https://storeco.in/images/blog/blog-hires-ari-1.png',
       template: 'blog-hires-ari',
@@ -57,7 +57,7 @@ var blogs = [
   },
   {
       slug: 'nate-lubin-president-obamas-director-of-digital-strategy-joins-storecoin-as-communications',
-      title: 'Nate Lubin, President Obama’s Director of Digital Strategy, Joins Storecoin as Communications Advisor',
+      title: 'Obama’s Digital Strategist Nate Lubin Advises Storecoin On Communications',
       desc: 'He transformed the way American presidents communicate with their citizens. Now, Storecoin is turning to Nathaniel Lubin to do the same for its fee-free public blockchain.',
       img: 'https://storeco.in/images/blog/blog-hires-lubin-1.png',
       template: 'blog-hires-lubin',
@@ -67,13 +67,13 @@ var blogs = [
       slug: 'storecoin-creator-chris-mccoy-to-speak-at-words-1st-crypto-finance-conference',
       title: 'Storecoin Creator Chris McCoy to Speak at Word’s 1st Crypto Finance Conference',
       desc: 'SAN FRANCISCO — Organizers have invited Storecoin creator Chris McCoy to speak at the first international conference designed specifically for online currency and blockchain investors. The three-day Crypto Finance Conference takes place in St. Moritz, Switzerland, Jan. 17–19.',
-      img: 'https://storeco.in/images/logo.png',
+      img: 'https://storeco.in/images/blog/chris_cfc18_preso.png',
       template: 'blog-crypto-conference',
       timeStamp : 'Nov 28, 2017 . 2 min read'
   },
   {
       slug: 'storecoin-creator-scheduled-to-speak-at-la-crypto-funding-summit',
-      title: 'Storecoin Creator Scheduled to Speak At LA Crypto Funding Summit',
+      title: 'Storecoin Creator Scheduled to Speak at LA Crypto Funding Summit',
       desc: 'The creator of Storecoin, a new public blockchain with a governance similar to the checks and balances of the U.S. Constitution and dynamic economics similar to ride-sharing companies like Uber, is among the presenters at the Crypto Funding Summit at the Los Angeles Convention Center.',
       img: 'https://storeco.in/images/blog/blog-crypto-summit.png',
       template: 'blog-crypto-summit',
@@ -81,7 +81,7 @@ var blogs = [
   },
   {
       slug: 'how-storecoins-blockchain-design-is-different-from-directed-acrylic-graph',
-      title: 'How Storecoin’s Blockchain Design is Different from Directed Acrylic Graph',
+      title: 'How Storecoin’s Blockchain Design is Different From Directed Acrylic Graph',
       desc: 'How Storecoin’s Blockchain Design is Different from Directed Acrylic Graph',
       img: 'https://storeco.in/images/blog/blog-blockchain-design.png',
       template: 'blog-blockchain-design',
@@ -89,7 +89,7 @@ var blogs = [
   },
   {
       slug: 'finance-professor-stephen-mckeon-joins-storecoin-as-economics-advisor',
-      title: 'Finance Professor Stephen McKeon Joins Storecoin as Economics Advisor',
+      title: 'Finance Professor Stephen McKeon Joins Storecoin As Economics Advisor',
       desc: 'One of the nation’s leading thinkers on the economics of blockchain and cryptocurrencies, Stephen McKeon, has joined Storecoin’s team of advisors.',
       img: 'https://storeco.in/images/blog/blog-hires-mckeon.png',
       template: 'blog-hires-mckeon',
