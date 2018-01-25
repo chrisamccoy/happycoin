@@ -41,7 +41,7 @@ var blogs = [
   },
   {
       slug: 'digital-innovator-mark-ramberg-to-advise-storecoin-on-platforms-and-api',
-      title: 'Digital Innovator Mark Ramberg to Advise Storecoin On Platforms And API',
+      title: 'Digital Innovator Mark Ramberg to Advise Storecoin on Platforms And API',
       desc: 'SAN FRANCISCO — For more than a decade, Mark Ramberg has been ahead of the technological curve. In leadership roles previously at Microsoft and Amazon Web Services and now at Akamai Technologies, Ramberg has developed an unparalleled depth of knowledge of media content, delivery and security.',
       img: 'https://storeco.in/images/blog/blog-hires-ramberg-1.png',
       template: 'blog-hires-ramberg',
@@ -49,7 +49,7 @@ var blogs = [
   },
   {
       slug: 'virtual-currency-leader-ari-paul-joins-storecoin-as-strategic-advisor',
-      title: 'Virtual Currency Leader Ari Paul Joins Storecoin As Strategic Advisor',
+      title: 'Virtual Currency Leader Ari Paul Joins Storecoin as Strategic Advisor',
       desc: 'Early in his career, Ari Paul recognized the need for cryptocurrencies to occupy a place in consumers’ (virtual) wallets and investors’ holdings. As co-founder and chief investment officer for BlockTower Capital, Paul specializes in professional trading and portfolio management of cryptocurrencies.',
       img: 'https://storeco.in/images/blog/blog-hires-ari-1.png',
       template: 'blog-hires-ari',
@@ -57,7 +57,7 @@ var blogs = [
   },
   {
       slug: 'nate-lubin-president-obamas-director-of-digital-strategy-joins-storecoin-as-communications',
-      title: 'Obama’s Digital Strategist Nate Lubin Advises Storecoin On Communications',
+      title: 'Obama’s Digital Strategist Nate Lubin Advises Storecoin on Communications',
       desc: 'He transformed the way American presidents communicate with their citizens. Now, Storecoin is turning to Nathaniel Lubin to do the same for its fee-free public blockchain.',
       img: 'https://storeco.in/images/blog/blog-hires-lubin-1.png',
       template: 'blog-hires-lubin',
@@ -81,7 +81,7 @@ var blogs = [
   },
   {
       slug: 'how-storecoins-blockchain-design-is-different-from-directed-acrylic-graph',
-      title: 'How Storecoin’s Blockchain Design is Different From Directed Acrylic Graph',
+      title: 'How Storecoin’s Blockchain Design is Different from Directed Acrylic Graph',
       desc: 'How Storecoin’s Blockchain Design is Different from Directed Acrylic Graph',
       img: 'https://storeco.in/images/blog/blog-blockchain-design.png',
       template: 'blog-blockchain-design',
@@ -89,7 +89,7 @@ var blogs = [
   },
   {
       slug: 'finance-professor-stephen-mckeon-joins-storecoin-as-economics-advisor',
-      title: 'Finance Professor Stephen McKeon Joins Storecoin As Economics Advisor',
+      title: 'Finance Professor Stephen McKeon Joins Storecoin as Economics Advisor',
       desc: 'One of the nation’s leading thinkers on the economics of blockchain and cryptocurrencies, Stephen McKeon, has joined Storecoin’s team of advisors.',
       img: 'https://storeco.in/images/blog/blog-hires-mckeon.png',
       template: 'blog-hires-mckeon',
