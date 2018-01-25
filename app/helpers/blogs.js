@@ -41,7 +41,7 @@ var blogs = [
   },
   {
       slug: 'digital-innovator-mark-ramberg-to-advise-storecoin-on-platforms-and-api',
-      title: 'Digital Innovator Mark Ramberg to Advise Storecoin on Platforms And API',
+      title: 'Digital Innovator Mark Ramberg to Advise Storecoin on Platforms and API',
       desc: 'SAN FRANCISCO — For more than a decade, Mark Ramberg has been ahead of the technological curve. In leadership roles previously at Microsoft and Amazon Web Services and now at Akamai Technologies, Ramberg has developed an unparalleled depth of knowledge of media content, delivery and security.',
       img: 'https://storeco.in/images/blog/blog-hires-ramberg-1.png',
       template: 'blog-hires-ramberg',
