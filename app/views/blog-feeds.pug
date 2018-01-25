@@ -1,6 +1,19 @@
 #hc-medium-blog.hc-feature.over-rel.padding
   .hc-chunk
-    h2.hc-feature-title The Storecoin Blog
+    - var blogTitle = 'Storecoin News'
+    - var encodedTitle = encodeURI(blogTitle)
+    - var url = meta.url;
+    - var encodedUrl = encodeURI(url)
+    s
+    h2.hc-feature-title=blogTitle
+    
+    div.blog-share.center.fixed
+      a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
+        b
+          i.ion-social-twitter-outline
+      a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+        b
+          i.ion-social-facebook-outline
     
     div.card
       a(href="/blog/finance-professor-stephen-mckeon-joins-storecoin-as-economics-advisor", target="_blank")

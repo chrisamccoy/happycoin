@@ -5684,7 +5684,7 @@ and (max-width : 335px) {
   font-family: 'Georgia';
 }
 
-.blog-news .blog-share {
+.blog-share {
   position: fixed;
   top: 200px;
   margin-left: -80px;
@@ -5699,7 +5699,7 @@ and (max-width : 335px) {
   z-index: 1;
 }
 
-.blog-news .blog-share a {
+.blog-share a {
   display: block;
   text-align: center;
 }
@@ -5764,9 +5764,9 @@ and (max-width : 335px) {
   margin-bottom: 1em;
 }
 
-.blog-news .blog-share.fixed {
+.blog-share.fixed {
   position: static;
-  display: inline-block !important;
+  display: inline-block;
   margin: 0px;
   /*font-size: 25px;*/
   box-shadow: none;
@@ -5774,16 +5774,25 @@ and (max-width : 335px) {
   padding-left: 0px;
 }
 
-.blog-news .blog-share.fixed .share {
+.blog-share.fixed .share {
   color: #f4783f;
   display: inline-block;
   margin-right: 0.5em;
 }
 
-.blog-news .blog-share.fixed a {
+.blog-share.fixed a {
   display: inline-block;
   text-align: center;
   width: 35px;
+}
+
+.blog-share.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  flex-direction: row;
+  margin-bottom: 1em;
 }
 
 .blog-news .hc-image.overflow {
