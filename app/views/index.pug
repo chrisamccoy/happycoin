@@ -6,7 +6,7 @@ block content
       .hc-chunk.hc-intro-text-wrapper
         h2.hc-intro-large-lead(style="margin-bottom:0px;")
           b Storecoin is a new public blockchain.
-        h2.hc-feature-lead(style="margin-bottom:0px;") With its Dynamic Proof of Stake consensus protocol (DyPoS), Storecoin will secure free transactions, high-throughput, dynamic cryptoeconomics, and a decentralized governance system with built-in checks and balances inspired by the United States Constitution.
+        h2.hc-feature-lead(style="margin-bottom:0px;") With its Dynamic Proof of Stake consensus protocol (DyPoS), Storecoin will secure free transactions, high-throughput, cryptoeconomics modeled after surge pricing in ride sharing companies like Uber, and a decentralized governance system with built-in checks and balances inspired by the United States Constitution.
         //- div.desktop-image
         //-   h2.hc-feature-lead(style="margin:0px;") Storecoin will become the best digital asset for delivering free, fast, and scalable payments.
         //- div.mobile-image
@@ -23,7 +23,7 @@ block content
     #our-mission.hc-feature.over-rel.padding.lite
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted Our Mission
-        p.hc-feature-lead(style="margin: 0 auto; max-width: 550px;") To become fee-less payment and incentivization infrastructure for the global internet. 
+        p.hc-feature-lead(style="margin: 0 auto; max-width: 440px;") To become zero-fee payment infrastructure for the global internet.
     
     #token-sale-buyers.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
@@ -32,10 +32,6 @@ block content
           .slide
             a(href="http://blocktower.com", target="_blank")
               img(src='/images/empty.png', data-src='/images/blacktower-logo.png')
-          //- .slide
-          //-   a(href="https://www.lw.com/", target="_blank")
-          //-     img(src='/images/empty.png', data-src='/images/latham-watkins-logo.png')
-          //-     p Strategy and Compliance Lawyers
           .slide
             a(href="http://arringtonxrpcapital.com/", target="_blank")
               img(src='/images/empty.png', data-src='/images/arrington-logo.png')
@@ -141,14 +137,23 @@ block content
 
     include six-engines
     
+    include worker-types
+    
     include dypos-algorithm
     
-    #free-transactions.hc-feature.over-rel.padding.info-fullscreen
+    #free-transactions.hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title How Free Transactions are Financed 
-        p.hc-feature-lead Transactions are free for users because they are paid for with capped, yearly token inflation of 5%. 4% is paid to block proposers. 1% endows Storecoin to secure, build, and operate the blockchain.
+        p.hc-feature-lead Transactions are free for users because they are paid for with capped, yearly token inflation of 5%. 2.5% is paid to eAgents, 1.5% to validators, and 1% endows Storecoin to secure, build, and operate the blockchain.
         .hc-image
-          img(src='/images/empty.png', data-src="/images/dynamic-reward-flow-v3.png") 
+          img(src='/images/empty.png', data-src="/images/dynamic-reward-flow-v4.png") 
+          
+    #rewards-allocated.hc-feature.over-rel.padding.info-fullscreen
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title How Block Rewards are Allocated
+        p.hc-feature-lead 5% yearly, capped token inflation is allocated to a) reward its four types of decentralized Workers (node operators) and b) to endow the public blockchain on a daily basis to operate, be upgraded, be governed, and to stay secure.
+        .hc-image
+          img(src='/images/empty.png', data-src="/images/rewards-allocated.png") 
     
     //- banner
     #secure-storecoin.hc-feature.over-rel.padding.orange.inverted(style="padding:2.5em;")
@@ -215,14 +220,14 @@ block content
         h3.hc-feature-title The Four Branches of Storecoin Governance  
         p.hc-feature-lead Storecoin Governance is inspired by the United States Constitution where checks and balances ensure that: a) Security Matters Most and b) No Centralization of Power. 
         .hc-image
-          img(src='/images/empty.png', data-src="/images/gov-branches-v2.png") 
+          img(src='/images/empty.png', data-src="/images/gov-branches-v3.png") 
           
     #governance-hired.hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title How Governance is Hired  
         p.hc-feature-lead For the first 4 years, Storecoin, Inc. will have executive power over the blockchain. Then, our security-first Governance will guide all Changes to leadership, to features, and to Governance itself. 
         .hc-image
-          img(src='/images/empty.png', data-src="/images/gov-hired-v2.png") 
+          img(src='/images/empty.png', data-src="/images/gov-hired-v3.png") 
           
     #checks-balances-work.hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
       .hc-chunk.hc-customize-text-wrapper
@@ -230,13 +235,13 @@ block content
         p.hc-feature-lead How protocol changes, security fixes, and Governance amendments are made. 
         //- p.hc-feature-lead.charter (The Charter) 
         .hc-image
-          img(src='/images/empty.png', data-src="/images/checks-balances-work-v5.png") 
+          img(src='/images/empty.png', data-src="/images/checks-balances-work-v6.png") 
           
     #token-owner.hc-feature.over-rel.padding.info-fullscreen
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title How Every Storecoin Token Owner Can Create Change  
         .hc-image
-          img(src='/images/empty.png', data-src="/images/token-owner-v2.png") 
+          img(src='/images/empty.png', data-src="/images/token-owner-v3.png") 
     
     #governance-matters.hc-feature.over-rel.padding.inverted.left-align
       .hc-chunk.hc-customize-text-wrapper
@@ -249,23 +254,53 @@ block content
           li Make changes only if they can be secured
           li Mitigate spam, attacks, and fraud throughout the entire blockchain ecosystem
           li Prevent malicious activity such as a hard fork
-          li Maximize decentralization
+          li Maximize decentralization in Consensus
+          li Ensure that Governance is decentralized
           li Give every token holder a voice
           li Allow application developers to deliver crypto-powered free transactions for users, forever
           
     //- banner
-    #storecoin-adoption.hc-feature.over-rel.padding.orange.inverted(style="padding:2.5em;")
+    #public-blockchain-works.hc-feature.over-rel.padding.orange.inverted(style="padding:2.5em;")
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title.inverted(style=" margin:0px !important;") How the Storecoin public blockchain works
+        
+    #payments.hc-feature.over-rel.padding.info-fullscreen(style="overflow:visible;")
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title How Payments Are Free, Fast, and Scalable  
+        p.hc-feature-lead How the Dynamic Proof of Stake consensus algorithm keeps transactions permanently free while perpetually funding blockchain security, engineering, and governance. 
+        .hc-image
+          img(src='/images/empty.png', data-src="/images/blockchain-steps-1-4-v3.png") 
+        #8-steps.see-more-reveal
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blockchain-8-steps-v3.png")
+    //- 
+    .hc-feature.over-rel.padding.inverted.orange(style="overflow:visible; padding: 0px;")
+      .hc-chunk.hc-customize-text-wrapper
+        div.link-container.hanging
+          a.link-text.see-more.green(data-link="#8-steps", data-margin="33,44", data-scroll="false", style="border: 3px solid;", data-inner="See 8 More Steps<i class=\"ion-ios-arrow-down\"></i>, See Less<i class=\"ion-ios-arrow-up\"></i>", data-back="true") See 8 More Steps
+            i.ion-ios-arrow-down
+    
+    //- banner
+    #storecoin-adoption.hc-feature.over-rel.padding.orange.inverted
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted(style=" margin: 0px !important;") How Storecoin gets market adoption
         
     include network-effects
         
-    #alliance.hc-feature.over-rel.padding.lite
+    #dev-eco.hc-feature.over-rel.padding.lite
       .hc-chunk
-        h2.hc-feature-title The Storecoin Alliance
+        h2.hc-feature-title The Storecoin Developer Ecosystem
         p.hc-feature-lead A collation of organizations that have entered into long-term relationships with Storecoin as its exclusive cryptocurrency to be integrated into enterprise and consumer-facing apps.
-        a(href="http://footprintchat.com", target="_blank").hc-image
-          img(src='/images/empty.png', data-src='/images/footprint-white-logo.png')
+        div.logo-wrapper
+          div.logo
+            a(href="http://footprintchat.com", target="_blank").hc-image
+              img(src='/images/empty.png', data-src='/images/footprint-white-logo.png')
+          div.logo
+            | Apply at 
+            br
+            a(href="/developer", target="_blank") http://storeco.in/developer
+            
+            
     
     #partners.hc-feature.over-rel.padding
       .hc-chunk
@@ -275,24 +310,25 @@ block content
             a(href="https://aws.amazon.com/activate/", target="_blank")
               img(src='/images/empty.png', data-src='/images/AWS-Activate.png')
               p $100,000	in	Amazon	AWS	credits
-          //- .slide
-          //-   img(src='/images/footprint-white-logo.png')
-          //-   p First	major	App developers
+          .slide
+            a(href="https://www.lw.com/", target="_blank")
+              img(src='/images/empty.png', data-src='/images/latham-watkins-logo-v2.png')
+              p Blockchain Strategy Lawyers
           .slide
             a(href="https://www.fenwick.com/pages/default.aspx", target="_blank")
               img(src='/images/empty.png', data-src='/images/fenwick-west-logo.png', style='width:60%;')
               p Blockchain Patent Lawyers
           .slide
-            a(href="https://www.coinfabrik.com/", target="_blank")
-              img(src='/images/empty.png', data-src='/images/logo-coinfabrik.png', style='width:80%;')
-              p Blockchain	Development	Partners
-          .slide
             a(href="http://bottomlinelawgroup.com/", target="_blank")
-              img(src='/images/empty.png', data-src='/images/bottom-line-logo.png', style='width:80%;')
-              p Legal and SEC Compliance
+              img(src='/images/empty.png', data-src='/images/bottom-line-logo-v2.png', style='width:80%;')
+              p Corporate Lawyers
           .slide
             img(src='/images/empty.png', data-src='/images/clinton-polley.png', style='width: auto; height: 110px;')
-            p Founding Validators for Storecoin
+            p PoW Test Network
+          .slide
+            a(href="https://www.coinfabrik.com/", target="_blank")
+              img(src='/images/empty.png', data-src='/images/logo-coinfabrik.png', style='width:80%;')
+              p Blockchain Development	Partners
     
     #distribution-strategy.hc-feature.over-rel.padding.lite
       .hc-chunk.hc-customize-text-wrapper
@@ -340,58 +376,37 @@ block content
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title How the Storecoin Wallet Works
         p.hc-feature-lead Once Third Party Developers integrate the Storecoin Wallet into their apps, every user on their app can have a Storecoin wallet. Storecoin can even power payments. Apps that build on top of Storecoin will be called crypto-powered apps -- or cApps.
-        //- div.wallet-screens
-        //-   div.screen
-        //-     div.title
-        //-       a(href="/wallet", target="_blank") 
-        //-         b Every user has a wallet
-        //-     img(src="/images/wall-screen-1-v2.png")
-        //-   div.screen
-        //-     div.title 
-        //-       a(href="/wallet", target="_blank") 
-        //-         b Users can sell their storecoins
-        //-     img(src="/images/wall-screen-2-v2.png")
-        //-   div.screen
-        //-     div.title 
-        //-       a(href="/wallet", target="_blank")
-        //-         b Users can trade their storecoins
-        //-     img(src="/images/wall-screen-3-v2.png")
-        //-   div.screen
-        //-     div.title 
-        //-       a(href="/wallet", target="_blank")
-        //-         b Users can gift their storecoins
-        //-     img(src="/images/wall-screen-4-v2.png")
-        //-   div.screen
-        //-     div.title 
-        //-       a(href="/wallet", target="_blank")
-        //-         b A user can buy more storecoins
-        //-     img(src="/images/wall-screen-5-v2.png")
         #wallet-slider.logo-slider
           .slide
             p
               a(href="/wallet", target="_blank") 
                 b Every user has a wallet
-            img(src='/images/empty.png', data-src='/images/wall-screen-1-v2.png')
-          .slide
-            p
-              a(href="/wallet", target="_blank") 
-                b Users can sell their storecoins
-            img(src='/images/empty.png', data-src='/images/wall-screen-2-v2.png')
+            img(src='/images/empty.png', data-src='/images/wall-screen-1-v3.png')
           .slide
             p
               a(href="/wallet", target="_blank") 
                 b Users can trade their storecoins
-            img(src='/images/empty.png', data-src='/images/wall-screen-3-v2.png')
+            img(src='/images/empty.png', data-src='/images/wall-screen-3-v3.png')
           .slide
             p
               a(href="/wallet", target="_blank") 
-                b Users can gift their storecoins
-            img(src='/images/empty.png', data-src='/images/wall-screen-4-v2.png')
+                b Users can sell their storecoins
+            img(src='/images/empty.png', data-src='/images/wall-screen-2-v3.png')
+          //- .slide
+          //-   p
+          //-     a(href="/wallet", target="_blank") 
+          //-       b Users can gift their storecoins
+          //-   img(src='/images/empty.png', data-src='/images/wall-screen-4-v3.png')
+          //- .slide
+          //-   p
+          //-     a(href="/wallet", target="_blank") 
+          //-       b A user can buy more storecoins
+          //-   img(src='/images/empty.png', data-src='/images/wall-screen-5-v3.png')
           .slide
             p
               a(href="/wallet", target="_blank") 
-                b A user can buy more storecoins
-            img(src='/images/empty.png', data-src='/images/wall-screen-5-v2.png')
+                b Developer can assign storecoins
+            img(src='/images/empty.png', data-src='/images/wall-screen-6-v3.png')
               
         p.hc-feature-lead(style="margin-bottom: 0px; text-decoration: underline; margin-top:1.5em;")
           a(href="/wallet", target="_blank").orange-color See a Prototype for the Storecoin Wallet.
@@ -402,28 +417,7 @@ block content
         p.hc-feature-lead Using our 33% Incentivization Pool, we can award tokens to third party developers – both Fortune 100 companies and indie developers – to kickstart their development with storecoins. If Storecoin drives either revenue, engagement, or user growth, then they'll likely buy additional tokens to continue the new growth.
         .hc-image
           img(src='/images/empty.png', data-src="/images/storecoin-grow-v2.png")
-    
-    //- banner
-    #public-blockchain-works.hc-feature.over-rel.padding.orange.inverted(style="padding:2.5em;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title.inverted(style=" margin:0px !important;") How the Storecoin public blockchain works
-        
-    #payments.hc-feature.over-rel.padding.info-fullscreen(style="overflow:visible;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title How Payments Are Free, Fast, and Scalable  
-        p.hc-feature-lead How the Dynamic Proof of Stake consensus algorithm keeps transactions permanently free while perpetually funding blockchain security, engineering, and governance. 
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/blockchain-steps-1-4-v2.png") 
-        #8-steps.see-more-reveal
-          .hc-image
-            img(src='/images/empty.png', data-src="/images/blockchain-8-steps-v2.png")
-    //- 
-    .hc-feature.over-rel.padding.inverted.orange(style="overflow:visible; padding: 0px;")
-      .hc-chunk.hc-customize-text-wrapper
-        div.link-container.hanging
-          a.link-text.see-more.green(data-link="#8-steps", data-margin="33,44", data-scroll="false", style="border: 3px solid;", data-inner="See 8 More Steps<i class=\"ion-ios-arrow-down\"></i>, See Less<i class=\"ion-ios-arrow-up\"></i>", data-back="true") See 8 More Steps
-            i.ion-ios-arrow-down
-            
+              
     //- banner
     #get-involve.hc-feature.over-rel.padding.orange.inverted
       .hc-chunk.hc-customize-text-wrapper
@@ -446,6 +440,22 @@ block content
           img(src='/images/empty.png', data-src="/images/security-guards.png", style="max-width:200px;width:100%;background: white;border-radius: 15px;padding: 1em;")
         p.hc-feature-lead(style=" margin-bottom:0px !important; color:#5d794c; text-decoration:underline;") 
           a(href="/dGuard", target="_blank",style="font-size:30px;") Apply
+          
+    #host-eagent.hc-feature.over-rel.padding.lite(style="padding-left: 0px; padding-right:0px;")
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title Host eAgent Master Nodes for Storecoin
+        .hc-image
+          img(src='/images/empty.png', data-src="/images/master-node.png", style="max-width:200px; width:100%;")
+        p.hc-feature-lead(style=" margin-bottom:0px !important; color:#5d794c; text-decoration:underline;") 
+          a(href="/masternode", target="_blank",style="font-size:30px;") Apply
+          
+    #run-govnode.hc-feature.over-rel.padding.inverted.inverted(style="padding-left: 0px; padding-right:0px;")
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title Run a Govnode to keep Storecoin decentralized
+        .hc-image
+          img(src='/images/empty.png', data-src="/images/run-govnode.png", style="max-width:200px;width:100%;background: white;border-radius: 15px;padding: 1em;")
+        p.hc-feature-lead(style=" margin-bottom:0px !important; color:#5d794c; text-decoration:underline;") 
+          a(href="/govnode", target="_blank",style="font-size:30px;") Apply
 
     //- #join-community.hc-feature.over-rel.padding
     //-   .hc-chunk

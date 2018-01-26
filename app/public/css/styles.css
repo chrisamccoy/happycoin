@@ -4306,7 +4306,7 @@ and (max-width : 335px) {
 
 .engine .back h5 {
   margin: 0px;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.2em;
   text-align: left;
   width: 100%;
   color: black;
@@ -4322,7 +4322,7 @@ and (max-width : 335px) {
   width: 100%;
   text-align: left;
   text-decoration: underline;
-  margin-top: 0.5em;
+  margin-top: 0.2em;
   font-size: 1.2em;
   color: #5d794c;
 }
@@ -4961,83 +4961,11 @@ and (max-width : 335px) {
   background-size: cover;
 }
 
-/*----------------------------------*/
-/*.blockchain-works .steps,
-.wallet-screens {
-  display: flex;
-  justify-content: space-between;
-}
-
-.blockchain-works .steps .step,
-.wallet-screens .screen {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}*/
-
-.blockchain-works .steps {
-  display: flex;
-  justify-content: space-between;
-}
-
-.blockchain-works .steps .step {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/*.blockchain-works .steps .step .title,
-.wallet-screens .screen .title {
-  font-size: 1em;
-  text-align: center;
-}*/
-
-.blockchain-works .steps .step .title {
-  font-size: 1em;
-  text-align: center;
-}
-
-.blockchain-works .steps .step .icon img {
-  width: 100%;
-}
-
-/*.wallet-screens .screen img {
-  max-height: 420px;
-  height:100%;
-}
-
-@media only screen and (max-width: 1024px) {
-  .wallet-screens .screen .title {
-    font-size: 1.2em;
-  }
-
-  .wallet-screens .screen img {
-    max-height: 420px;
-  }
-}*/
-
-@media only screen and (max-width: 700px) {
-  .blockchain-works .steps,
-  .wallet-screens {
-    display: block;
-  }
-
-  .blockchain-works .steps .step {
-    margin-top: 1em;
-  }
-
-  .wallet-screens .screen {
-    margin-bottom: 1em;
-  }
-}
-
 /*---------------------------------------*/
 #business-case .coin {
   margin: 0 auto;
   /*background: #FFDE00;*/
-  background-image: url(/images/storecoin-currency.png);
+  background-image: url(/images/storecoin-currency-v2.png);
   background-size: cover;
   background-position: center;
   width: 200px;
@@ -5060,7 +4988,7 @@ and (max-width : 335px) {
   }
 }
 #business-case .coin:before {
-  background-color: #d1ac58;
+  background-color: #ffc013;
   position: absolute;
   border-radius: 50%;
   content: '';
@@ -5069,7 +4997,7 @@ and (max-width : 335px) {
   -webkit-transform: translateZ(-15px);
 }
 #business-case .coin:after {
-  background-color: #d1ac58;
+  background-color: #ffc013;
   content: '';
   /*left: 4.25em;*/
   left : 85px;
@@ -5083,7 +5011,7 @@ and (max-width : 335px) {
 }
 
 #business-case .tails {
-  background-color: #d1ac58;
+  background-color: #ffc013;
   /*background-image: url(/images/storecoin-currency.png);
   background-size: auto 100%;*/
   position: absolute;
@@ -5098,7 +5026,7 @@ and (max-width : 335px) {
 
 #business-case .heads {
   /*background-color: #FFDE00;*/
-  background-image: url(/images/storecoin-currency.png);
+  background-image: url(/images/storecoin-currency-v2.png);
   background-size: auto 100%;
   /*transform: scaleY(-1);*/
   position: absolute;
@@ -5112,27 +5040,62 @@ and (max-width : 335px) {
 }
 
 /*---------------------------------*/
-#alliance .hc-image img {
+#dev-eco .logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#dev-eco .hc-image img {
   width: 100%;
 }
 
-#alliance .hc-image {
+#dev-eco .logo {
   transition: all .2s ease-in;
   transform: scale(1);
 }
 
-#alliance .hc-image:hover {
+#dev-eco .logo:hover {
   transition: all .2s ease-in;
   transform: scale(1.1);
 }
 
-#alliance .hc-image {
-  padding: 2em;
+#dev-eco .logo {
   background: white;
   border-radius: 15px;
-  max-width: 280px;
-  margin: auto;
-  margin-top: 2em;
+  max-width: 320px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin: auto 1em;
+  color: #5b774d;
+  font-size: 1.5em;
+}
+
+#dev-eco .logo a {
+  text-decoration: underline;
+}
+
+#dev-eco .hc-image {
+  padding: 1em;
+}
+
+@media only screen and (max-width: 700px) {
+  #dev-eco .logo-wrapper {
+    display: block;
+  }
+
+  #dev-eco .logo-wrapper .logo {
+    margin: 0px;
+    max-width: 100%;
+  }
+
+  #dev-eco .logo-wrapper .logo:last-child {
+    margin-top: 1em;
+  }
 }
 
 /*---------------------------------*/
@@ -5292,29 +5255,6 @@ and (max-width : 335px) {
   #comparison-table table .see-more {
     display: block;
   }
-
-  /*#comparison-table thead,
-  #comparison-table tbody tr td:not(:first-child) {
-      display: none;
-  }
-
-  #comparison-table table .mobile-table {
-    display: block;
-  }
-
-  #comparison-table table .mobile-table .head {
-    margin-top: 0.5em;
-    padding-top: 0.5em;
-    border-top: 1px solid #5b774d;
-  }
-
-  #comparison-table table .mobile-table .desc {
-    font-size: 0.9em;
-  }
-
-  #comparison-table table .mobile-table .head span {
-    font-size: 0.7em;
-  }*/
 }
 
 /*----------------------------------*/
@@ -5404,54 +5344,15 @@ and (max-width : 335px) {
 }
 
 /*----------------------------------*/
-#get-involve {
+#storecoin-adoption {
   padding: 5em 0em 3em;
 }
 
 @media only screen and (max-width: 700px) {
-  #get-involve {
+  #storecoin-adoption {
     padding : 4em 0em 2em;
   }
 }
-
-/*----------------------------------*/
-/*#rec-revenue .row {
-  display: flex;
-  align-items: center;
-}
-
-#rec-revenue .row #rev-recur-circle {
-  width: 15%;
-  position: relative;
-  margin-right: 2em;
-}
-
-#rec-revenue .row .hc-feature-lead {
-  margin: 0px;
-}
-
-@media only screen and (max-width: 700px) {
-  #rec-revenue .row {
-    flex-direction: column;
-  }
-
-  #rec-revenue .row #rev-recur-circle {
-    width: 50%;
-    margin-right: 0px;
-  }
-
-  #rec-revenue .row .hc-feature-lead {
-    font-size: 1em;
-    margin-top: 1em;
-  }
-}*/
-
-/*----------------------------------*/
-/*.tweets {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}*/
 
 .tweets .tweet {
   display: flex;
