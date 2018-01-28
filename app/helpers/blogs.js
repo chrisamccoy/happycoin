@@ -80,9 +80,9 @@ var blogs = [
       timeStamp : 'Jan 11, 2018 . 1 min read'
   },
   {
-      slug: 'how-storecoins-blockchain-design-is-different-from-directed-acrylic-graph',
-      title: 'How Storecoin’s Blockchain Design is Different from Directed Acrylic Graph',
-      desc: 'How Storecoin’s Blockchain Design is Different from Directed Acrylic Graph',
+      slug: 'how-storecoins-blockchain-design-is-different-from-directed-acyclic-graph',
+      title: 'How Storecoin’s Blockchain Design is Different from Directed Acyclic Graph',
+      desc: 'How Storecoin’s Blockchain Design is Different from Directed Acyclic Graph',
       img: 'https://storeco.in/images/blog/blog-blockchain-design.png',
       template: 'blog-blockchain-design',
       timeStamp : 'Jan 19, 2018 . 1 min read'
