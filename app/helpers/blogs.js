@@ -94,6 +94,14 @@ var blogs = [
       img: 'https://storeco.in/images/blog/blog-hires-mckeon.png',
       template: 'blog-hires-mckeon',
       timeStamp : 'Jan 24, 2018 . 2 min read'
+  },
+  {
+      slug: 'software-engineer-accepts-role-of-technology-advisor-for-storecoin',
+      title: 'Software Engineer Accepts Role of Technology Advisor for Storecoin',
+      desc: 'A software engineer who has built a career studying online privacy and cryptocurrency architectures has joined @StorecoinTeam as technology advisor.',
+      img: 'https://storeco.in/images/noah-ruderman.png',
+      template: 'blog-hires-noah',
+      timeStamp : 'Jan 29, 2018 . 2 min read'
   }
 ];
 
