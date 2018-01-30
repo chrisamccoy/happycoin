@@ -89,11 +89,12 @@ router.get('/url', function(req, res, next) {
 
 /* GET home page. */
 router.get('/blog', function(req, res, next) {
-  var blogs = getblog();
-  res.render('blog', {
-    title: 'Storecoin', meta: meta(), blogs : blogs,
-    url : req.protocol + '://' + req.get('host') + req.originalUrl
-   });
+  // var blogs = getblog();
+  // res.render('blog', {
+  //   title: 'Storecoin', meta: meta(), blogs : blogs,
+  //   url : req.protocol + '://' + req.get('host') + req.originalUrl
+  //  });
+  res.redirect('https://news.storeco.in/');
 });
 
 /* GET home page. */
