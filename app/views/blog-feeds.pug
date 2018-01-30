@@ -1,143 +1,37 @@
 #hc-medium-blog.hc-feature.over-rel.padding
   .hc-chunk
-    - var blogTitle = 'Storecoin News'
-    - var encodedTitle = encodeURI(blogTitle)
-    - var url = meta.url;
-    - var encodedUrl = encodeURI(url)
-    s
-    h2.hc-feature-title=blogTitle
-    
-    div.blog-share.center.fixed
-      a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
-        b
-          i.ion-social-twitter-outline
-      a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
-        b
-          i.ion-social-facebook-outline
-    
-    div.card
-      a(href="/blog/software-engineer-accepts-role-of-technology-advisor-for-storecoin", target="_blank")
-        div.post
-          h3 Software Engineer Accepts Role of Technology Advisor for Storecoin
-          img(src='/images/empty.png', data-src="/images/noah-ruderman.png", style="max-width: 280px;")
+
+    h2.hc-feature-title Storecoin News
+            
+    each blog in blogs
+      - var blogTitle = (blog.twtitle) ? blog.twtitle : blog.title;
+      - var encodedTitle = encodeURI(blogTitle)
+      - var encodedUrl = encodeURI(url)
+      div.card
+        a(href=(blog.template) ? "/blog/"+blog.slug : blog.slug, target="_blank")
+          div.post
+            h3=blog.title
+            img(src='/images/empty.png', data-src=blog.img, style=(blog.maxwidth) ? 'max-width:'+blog.maxwidth+';': '')
         hr(style="margin-top: 1rem; margin-bottom: 1.5rem;")
         div.card-footer
-          p January 29, 2018
-          
-    div.card
-      a(href="/blog/finance-professor-stephen-mckeon-joins-storecoin-as-economics-advisor", target="_blank")
-        div.post
-          h3 Finance Professor Stephen McKeon Joins Storecoin as Economics Advisor
-          img(src='/images/empty.png', data-src="/images/blog/blog-hires-mckeon.png", style="max-width: 280px;")
-        hr(style="margin-top: 1rem; margin-bottom: 1.5rem;")
-        div.card-footer
-          p January 24, 2018
-    
-    div.card
-      a(href="/blog/how-storecoins-blockchain-design-is-different-from-directed-acyclic-graph", target="_blank")
-        div.post
-          h3 How Storecoin’s Blockchain Design is Different from Directed Acyclic Graph
-          img(src='/images/empty.png', data-src="/images/blog/blog-blockchain-design.png")
-        hr(style="margin-top: 1rem; margin-bottom: 1.5rem;")
-        div.card-footer
-          p January 19, 2018
-    
-    div.card
-      a(href="/blog/storecoin-creator-scheduled-to-speak-at-la-crypto-funding-summit", target="_blank")
-        div.post
-          h3 Storecoin Creator Scheduled to Speak at LA Crypto Funding Summit
-          img(src='/images/empty.png', data-src="/images/blog/blog-crypto-summit.png")
-        hr(style="margin-top: 1rem; margin-bottom: 1.5rem;")
-        div.card-footer
-          p January 11, 2018
-    
-    div.card
-      a(href="/blog/load-testing-storecoins-dynamic-proof-of-stake-consensus-algorithm-test-1-of-7", target="_blank")
-        div.post
-          h3 Load Testing Storecoin’s Dynamic Proof-of-Stake Consensus Algorithm
-          img(src='/images/empty.png', data-src="/images/blog/blog-load-testing.png")
-        hr(style="margin-top: 1rem; margin-bottom: 1.5rem;")
-        div.card-footer
-          p December 13, 2017
-          
-    div.card
-      a(href="/blog/virtual-currency-leader-ari-paul-joins-storecoin-as-strategic-advisor", target="_blank")
-        div.post
-          h3 Virtual Currency Leader Ari Paul Joins Storecoin as Strategic Advisor
-          img(src='/images/empty.png', data-src="/images/blog/blog-hires-ari-1.png")
-        hr(style="margin-top: 1rem; margin-bottom: 1.5rem;")
-        div.card-footer
-          p November 28, 2017
+          if blog.template
+            div.blog-share.fixed
+              a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
+                b
+                  i.ion-social-twitter-outline
+              a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+                b
+                  i.ion-social-facebook-outline
+          if blog.logo
+            img(src='/images/empty.png', data-src=blog.logo)
+          p=blog.date
     
     //- div.card
-    //-   a(href="/blog/storecoin-creator-chris-mccoy-to-speak-at-words-1st-crypto-finance-conference", target="_blank")
+    //-   a(href="https://techcrunch.com/2017/08/20/yesterdays-plastics-are-todays-crypto-tokens/", target="_blank")
     //-     div.post
-    //-       h3 Storecoin Creator Chris McCoy to Speak at Word’s 1st Crypto Finance Conference
-    //-       img(src='/images/empty.png', data-src="/images/blog/chris_cfc18_preso.png")
+    //-       h3 Yesterday’s “Plastics” are Today’s Crypto Tokens
+    //-       img(src='/images/empty.png', data-src="/images/the-graduate.png")
     //-     hr(style="margin-top: 1rem; margin-bottom: 1.5rem;")
     //-     div.card-footer
-    //-       p November 28, 2017
-
-    div.card
-      a(href="/blog/nate-lubin-president-obamas-director-of-digital-strategy-joins-storecoin-as-communications", target="_blank")
-        div.post
-          h3 Obama’s Digital Strategist Nate Lubin Advises Storecoin on Communications
-          img(src='/images/empty.png', data-src="/images/blog/blog-hires-lubin-1.png")
-        hr(style="margin-top: 1rem; margin-bottom: 1.5rem;")
-        div.card-footer
-          p November 15, 2017
-
-    div.card
-      a(href="/blog/digital-innovator-mark-ramberg-to-advise-storecoin-on-platforms-and-api", target="_blank")
-        div.post
-          h3 Digital Innovator Mark Ramberg to Advise Storecoin on Platforms and API
-          img(src='/images/empty.png', data-src="/images/blog/blog-hires-ramberg-1.png")
-        hr(style="margin-top: 1rem; margin-bottom: 1.5rem;")
-        div.card-footer
-          p November 15, 2017
-    
-    div.card
-      a(href="/blog/storecoin-hires-rajiv-patel-of-fenwick-west-to-file-blockchain-patents", target="_blank")
-        div.post
-          h3 Storecoin Hires Rajiv Patel of Fenwick & West to File Blockchain Patents
-          img(src='/images/empty.png', data-src="/images/blog/blog-hires-rajiv-1.png")
-        hr(style="margin-top: 1rem; margin-bottom: 1.5rem;")
-        div.card-footer
-          p October 4, 2017
-          
-    div.card
-      a(href="/blog/why-storecoin-is-inventing-dynamic-proof-of-stake-dypos", target="_blank")
-        div.post
-          h3 Why Storecoin is Inventing Dynamic Proof of Stake (DyPoS)
-          img(src='/images/empty.png', data-src="/images/blog-thumbnail-sep-24.png")
-        hr(style="margin-top: 1rem; margin-bottom: 1.5rem;")
-        div.card-footer
-          p September 24, 2017
-          
-    div.card
-      a(href="/blog/storecoin-update-august-2017", target="_blank")
-        div.post
-          h3 Storecoin Update — August 2017
-          img(src='/images/empty.png', data-src="/images/blog-thumbnail-aug-30.jpg")
-        hr(style="margin-top: 1rem; margin-bottom: 1.5rem;")
-        div.card-footer
-          p August 30, 2017
-    
-    div.card
-      a(href="https://techcrunch.com/2017/08/20/yesterdays-plastics-are-todays-crypto-tokens/", target="_blank")
-        div.post
-          h3 Yesterday’s “Plastics” are Today’s Crypto Tokens
-          img(src='/images/empty.png', data-src="/images/the-graduate.png")
-        hr(style="margin-top: 1rem; margin-bottom: 1.5rem;")
-        div.card-footer
-          img(src='/images/empty.png', data-src="/images/tc-logo.svg")
-          p August 21, 2017
-          
-    div.card
-      a(href="/blog/introducing-storecoin", target="_blank")
-        div.post
-          h3 Introducing Storecoin
-          img(src='/images/empty.png', data-src="/images/storecoin-screen.png")
-        hr(style="margin-top: 1rem; margin-bottom: 1.5rem;")
-        div.card-footer
-          p August 2, 2017
+    //-       img(src='/images/empty.png', data-src="/images/tc-logo.svg")
+    //-       p August 21, 2017
