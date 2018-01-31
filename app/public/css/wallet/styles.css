@@ -1296,15 +1296,16 @@ button.small {
 }
 
 .iphone img {
+  max-width: 330px;
   width: 100%;
 }
 
 .iphone iframe {
   position: absolute;
-  height: calc(100% - 219px);
-  width: calc(100% - 30px);
-  top: 105px;
-  left: 17px;
+  height: calc(100% - 180px);
+  width: calc(100% - 94px);
+  top: 86px;
+  left: 49px;
 }
 
 @media only screen and (max-width: 700px) {

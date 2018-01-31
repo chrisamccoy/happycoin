@@ -89,7 +89,12 @@ router.get('/url', function(req, res, next) {
 
 /* GET home page. */
 router.get('/blog', function(req, res, next) {
-  res.render('blog', { title: 'Storecoin', meta: meta() });
+  var blogs = getblog();
+  res.render('blog', {
+    title: 'Storecoin', meta: meta(), blogs : blogs,
+    url : req.protocol + '://' + req.get('host') + req.originalUrl
+   });
+  // res.redirect('https://news.storeco.in/');
 });
 
 /* GET home page. */
@@ -103,14 +108,15 @@ router.get('/blog/:slug', function(req, res, next) {
 
   var mt = meta({
     title: bg.title,
+    twtitle : (bg.twtitle) ? bg.twtitle : false,
     desc: bg.desc,
     image: bg.img,
     image_tw: bg.img,
     url: req.protocol + '://' + req.get('host') + req.originalUrl,
-    timeStamp : bg.timeStamp
+    timeStamp : bg.date+' . '+bg.readTime
   });
 
-  res.render(bg.template, { title: bg.title, meta: mt });
+  res.render(bg.template, { title: (bg.twtitle) ? bg.twtitle : bg.title, meta: mt });
 });
 
 /* GET home page. */

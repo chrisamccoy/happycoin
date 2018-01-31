@@ -20,8 +20,8 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1')
 
     link(rel='icon', type='image/png', href='/images/favicon.png')
-    link(rel='stylesheet', href='/assets/styles.css?v=1.18')
-    script(async, src='/assets/script.js?v=1.18')
+    link(rel='stylesheet', href='/assets/styles.css?v=1.20')
+    script(async, src='/assets/script.js?v=1.20')
 
   body
     - var className = ''
@@ -57,8 +57,11 @@ html
                   //- a.item(href='/secondtokensale') Second Token Sale
                   a.item(href=URL('/whitepaper')) Our Whitepaper
                   a.item(href=URL('/community')) Community
-                  a.item(href=URL('/applytoforge'), target="_blank") Become a Validator
-                  a.item(href=URL('/dGuard'), target="_blank") Become a dGuard
+                  a.item(href=URL('/applytoforge')) Become a Validator
+                  a.item(href=URL('/masternode')) Host eAgent Master Nodes
+                  a.item(href=URL('/applytoforge')) Become a dGuard
+                  a.item(href=URL('/govnode')) Run a Govnode
+                  a.item(href=URL('/info')) Jobs
 
       include email-subscribe
 
@@ -68,46 +71,45 @@ html
       .hc-footer-chunk(style='padding: 3em 1em;')
         section.footer-light.row
           .three.columns
-            h3 Software
+            h3 Work on Storecoin
             ul
               li
-                a(href=URL('/whitepaper')) Our Whitepaper
+                a(href=URL('/applytoforge')) Become a Validator
               li
-                a(href=URL('/cryptoeconomics')) Our Cryptoeconomics
-              //- li
-              //-   a(href='/development') Product Roadmap
-              //- li
-              //-   a(href='/developer-api') Developer API
+                a(href=URL('/masternode')) Host eAgent Master Nodes
+              li
+                a(href=URL('/applytoforge')) Become a dGuard
+              li
+                a(href=URL('/govnode')) Run a Govnode
+              li
+                a(href=URL('/info')) Jobs
+                
           .three.columns
             h3 About
             ul
               li
+                a(href="https://news.storeco.in/") News
+              li
+                a(href=URL('/team')) Our Team
+              li
                 a(href=URL('/milestones')) Milestones
-              li
-                a(href=URL('/blog')) Our Blog
-              li
-                a.sale-invite(data-id="#tokensale-bottom") Our Token Sale
-              //- li
-              //-   a(href='/firsttokensalefaq') Token Sale FAQ
-              li
-                a(href='http://twitter.com/storecointeam', target="_blank") Twitter
-              li
-                a(href='https://github.com/StorecoinProject', target="_blank") Github
+                
           .three.columns
             h3 Info
             ul
               li
-                a(href=URL('/community')) Join Community
+                a(href="http://t.me/storecoin", target="_blank") Join our Telegram Super Group
               li
-                a(href=URL('/applytoforge'), target="_blank") Become a Validator
+                a(href="http://t.me/storecointeam", target="_blank") Join our Telegram Announcement Channel
               li
-                a(href=URL('/dGuard'), target="_blank") Become a dGuard
-              li
-                a(href=URL('/team')) Our Team
-              li
-                a(href=URL('/jobs')) Jobs
+                a(href=URL('/community')) Subscribe to Email Updates
               li
                 a(href=URL('/contact')) Contact Us
+              li
+                a(href='http://twitter.com/storecointeam', target="_blank") Twitter
+              li
+                a(href='https://github.com/StorecoinProject', target="_blank") Github
+                
           .three.columns
             img(src='/images/empty.png', data-src='/images/logo.png', style='width:100px; height: auto;')
             div
@@ -117,8 +119,8 @@ html
               |  is a new public blockchain powered by Dynamic Proof of Stake (DyPoS).
         section.row
           b(style='color: white;') © 2018 Storecoin, Inc
-          ul#menu-footer-menu.menu
-            //- li#menu-item-37.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-37
-            //-   a(href='https://www.stellar.org/privacy-policy/') Privacy Policy
-            li#menu-item-150.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-150
-              a(href=URL('/terms')) Terms of Service
+          //- ul#menu-footer-menu.menu
+          //-   //- li#menu-item-37.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-37
+          //-   //-   a(href='https://www.stellar.org/privacy-policy/') Privacy Policy
+          //-   li#menu-item-150.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-150
+          //-     a(href=URL('/terms')) Terms of Service
