@@ -1563,10 +1563,13 @@ button.small {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1em 0em;
+  border-bottom: 1px solid #eaeaea;
 }
 
-#api-bugget-api .api-item .ui.dropdown {
-  max-width: 80px;
+#api-bugget-api .api-item button.small {
+  padding: 0px 4px;
+  font-size: 0.7em;
 }
 
 #api-bugget-api .api-item section {
@@ -1589,4 +1592,22 @@ button.small {
   height: calc(100% - 55px);
   overflow: scroll;
   position: relative;
+}
+
+#select-api-modal .list .item {
+  padding: 0.5em 0px;
+  cursor: pointer;
+}
+
+#select-api-modal .list .item:not(:last-child) {
+  border-bottom : 1px solid #e2e2e2; 
+}
+
+#select-api-modal .list .item .name {
+  display: flex;
+  align-items: center;
+}
+
+#select-api-modal .list .item i {
+  margin-left: 0.5em;
 }

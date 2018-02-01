@@ -11,6 +11,7 @@ $(document).ready(function(){
   initDatePicker();
   loadCoinsValue();
   initPaginate();
+  initApi();
 });
 var giftItems = {
   storeVal : null,
@@ -81,6 +82,24 @@ function initDatePicker(){
     format: 'd mmm, yyyy'
   });
   $('#time-picker input').pickatime();
+}
+
+function initApi(){
+  var $api = $('#api-bugget-api');
+  if($api.length){
+    var $item = $api.find('.api-item'),
+    $button = $item.find('.select-api'),
+    $selectModal = $('#select-api-modal'),
+    $modalItem = $selectModal.find('.item');
+
+    $button.click(function(){
+      $selectModal.modal('show');
+    });
+
+    $modalItem.click(function(){
+      $(this).find('i').toggleClass('ion-chevron-down ion-chevron-up');
+    });
+  }
 }
 
 function sendGift () {
