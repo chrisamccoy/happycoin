@@ -51,6 +51,7 @@ var blogs = [
   {
       slug: 'chris-mccoy-introduces-storecoin-at-worlds-1st-crypto-finance-conf',
       title: 'Creator Chris McCoy Introduces Storecoin at World’s 1st Crypto Finance Conference',
+      twtitle : 'Creator Chris McCoy (@chrisamccoy) Introduces Storecoin at World’s 1st Crypto Finance Conference',
       desc: 'St. MORITZ, Switzerland — Storecoin creator Chris McCoy introduced the Storecoin blockchain to an international audience at the Crypto Finance Conference 2018 in St. Moritz.',
       img: 'https://storeco.in/images/blog/chris_cfc18_preso.png',
       template: 'blog-crypto-conference',
