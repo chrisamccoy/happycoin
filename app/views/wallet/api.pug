@@ -5,10 +5,11 @@ block content
   div.api-container
     section#api-header
       div.image
-        img(src="/images/wallet/asana-logo.jpg")
+        //- img(src="/images/wallet/asana-logo.jpg")
+        i.ion-calendar(style="font-size:1.8em;")
       div.title
         div 
-          b Asana
+          b Easy Schedule
         div Project Management
     section#api-balance
       div.balance
@@ -17,7 +18,7 @@ block content
           img.logo(src="/images/wallet/storecoin-logo.png")
           div.amount.green 5.13434
       div.buy
-        button.small Buy
+        a(href="/wallet/wallet-app/#buy").button.small Buy
     section#api-budget-app-slider.tab(data-tab="none")
       div.header Budget for your app
       include amount-slider
@@ -29,42 +30,62 @@ block content
           button.small.select-api SELECT API
           section.tab.no-padding(data-tab="none")
             include amount-slider
+          div.selected-api
+            
         div.api-item
           button.small.select-api SELECT API
           section.tab.no-padding(data-tab="none")
             include amount-slider
+          div.selected-api
+            
         div.api-item
           button.small.select-api SELECT API
           section.tab.no-padding(data-tab="none")
             include amount-slider
+          div.selected-api
+            
         div.api-item
           button.small.select-api SELECT API
           section.tab.no-padding(data-tab="none")
             include amount-slider
+          div.selected-api
+            
         div.api-item
           button.small.select-api SELECT API
           section.tab.no-padding(data-tab="none")
             include amount-slider
+          div.selected-api
+            
         div.api-item
           button.small.select-api SELECT API
           section.tab.no-padding(data-tab="none")
             include amount-slider
+          div.selected-api
+            
         div.api-item
           button.small.select-api SELECT API
           section.tab.no-padding(data-tab="none")
             include amount-slider
+          div.selected-api
+            
         div.api-item
           button.small.select-api SELECT API
           section.tab.no-padding(data-tab="none")
             include amount-slider
+          div.selected-api
+            
         div.api-item
           button.small.select-api SELECT API
           section.tab.no-padding(data-tab="none")
             include amount-slider
+          div.selected-api
+            
         div.api-item
           button.small.select-api SELECT API
           section.tab.no-padding(data-tab="none")
             include amount-slider
+          div.selected-api
+            
 
   div#select-api-modal.ui.small.modal
     div.content
@@ -77,16 +98,55 @@ block content
           div.item 
             div.name TASKS
               i.ion-chevron-down
+            div.sub-list
+              ul
+                li Task actions
+                li Task fields
+                li Task assignee & followers
+                li Task dependencies
+                li Task comments & attachments
+                li Subtasks
+                li Celebration Creatures
+                
           div.item
             div.name PROJECTS
               i.ion-chevron-down
+            div.sub-list
+              ul
+                li Understanding projects
+                li Project actions
+                li Project Owner & members
+                li Project progress
+                li Sections
+                li Asana-created templates
+                
           div.item
             div.name CONVERATIONS
               i.ion-chevron-down
+            div.sub-list
+              ul
+                li Understanding conversations
+                li Team Conversations
+                li Project Conversations
+                li Conversations & email
+                
           div.item
-            div.name ORGANIZATIONS & TERMS
+            div.name ORGANIZATIONS & TEAMS
               i.ion-chevron-down
+            div.sub-list
+              ul
+                li Managing an Organization
+                li Creating Organizations
+                li Team basics
+                li Managing a team
+                li Team calendars & conversations
+                
           div.item
-            div.name ORGANIZATIONS & TERMS
+            div.name WORKSPACES
               i.ion-chevron-down
+            div.sub-list
+              ul
+                li Understanding Workspaces
+                li Creating & managing Workspaces
+                li Workspace Members & Limited Access Members
             

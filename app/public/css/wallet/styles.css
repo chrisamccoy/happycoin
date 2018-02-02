@@ -174,7 +174,7 @@ select {
   width: 100%;
 }
 
-button {
+button, .button {
   min-width: 80px;
   margin: 0px;
   background-color: #66bb6b;
@@ -184,7 +184,8 @@ button {
   height: auto;
 }
 
-button.small {
+button.small,
+.button.small {
   padding: 0px 2px;
 }
 
@@ -1529,6 +1530,10 @@ button.small {
   width: 55px;
   height: 55px;
   margin-right: 1em;
+  border: 1px solid #e2e2e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #api-header .image img {
@@ -1563,10 +1568,17 @@ button.small {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   padding: 1em 0em;
   border-bottom: 1px solid #eaeaea;
 }
 
+#api-bugget-api .api-item .selected-api {
+  margin-top: 1em;
+  color: mediumseagreen;
+}
+
+#api-bugget-api .api-item .button.small,
 #api-bugget-api .api-item button.small {
   padding: 0px 4px;
   font-size: 0.7em;
@@ -1595,19 +1607,37 @@ button.small {
 }
 
 #select-api-modal .list .item {
-  padding: 0.5em 0px;
   cursor: pointer;
 }
 
 #select-api-modal .list .item:not(:last-child) {
-  border-bottom : 1px solid #e2e2e2; 
+  border-bottom : 1px solid #e2e2e2;
 }
 
 #select-api-modal .list .item .name {
+  padding: 0.5em 0px;
   display: flex;
   align-items: center;
 }
 
 #select-api-modal .list .item i {
   margin-left: 0.5em;
+}
+
+#select-api-modal .list .item .sub-list {
+  /*display: none;*/
+  transition: max-height 1s;
+  overflow: hidden;
+  max-height: 0;
+}
+
+#select-api-modal .list .item.active .sub-list {
+  /*display: block;*/
+  max-height: 300px;
+}
+
+#select-api-modal .list .item .sub-list ul {
+  list-style: none;
+  margin: 0px 0px 1em;
+  color: mediumseagreen;
 }
