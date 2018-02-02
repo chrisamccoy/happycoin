@@ -1538,7 +1538,7 @@ button.small,
 
 #api-header .image img {
   width: 100%;
-  padding: 0.5em;
+  /*padding: 0.5em;*/
   border: 1px solid #8080805c;
 }
 
@@ -1574,8 +1574,9 @@ button.small,
 }
 
 #api-bugget-api .api-item .selected-api {
-  margin-top: 1em;
+  margin-bottom: 0.1em;
   color: mediumseagreen;
+  width: 100%;
 }
 
 #api-bugget-api .api-item .button.small,

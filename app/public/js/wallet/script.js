@@ -107,6 +107,7 @@ function initApi(){
     $thisItem = null;
 
     $button.click(function(){
+      $(this).text('Edit');
       $thisItem = $(this).parents('.api-item');
       $selectModal.modal('show');
     });
