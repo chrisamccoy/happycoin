@@ -84,15 +84,27 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* Click message */
 .click-message {
-  text-align:center; margin: 1em;
+  text-align:center;
+  margin: 1em;
+  color: white;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.click-message span {
-  border: 2px solid #0000003d; border-radius: 7px; padding: 0.3em 0.5em;
+.click-message .message-container {
+  background-color: #e97844;
+  border-radius: 10px;
+  padding: 0px 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hc-feature.inverted .click-message span {
-  border: 2px solid #ffffff3d;
+.click-message .message-container i {
+  font-size: 1.7em;
+  margin-right: 10px;
 }
 
 #info-image-modal .click-message {
