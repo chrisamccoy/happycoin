@@ -82,6 +82,24 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
 }
 
+/* Click message */
+.click-message {
+  text-align:center; margin: 1em;
+}
+
+.click-message span {
+  border: 2px solid #0000003d; border-radius: 7px; padding: 0.3em 0.5em;
+}
+
+.hc-feature.inverted .click-message span {
+  border: 2px solid #ffffff3d;
+}
+
+#info-image-modal .click-message {
+  display: none;
+}
+/* Click message */
+
 .italics {
   font-style: italic;
 }

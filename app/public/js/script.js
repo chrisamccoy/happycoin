@@ -45,7 +45,7 @@ $(document).ready(function(){
   initSlider();
   initLogoSlider('#hc-partners-slider', 3);
   initLogoSlider('#hc-buyers-slider', 3);
-  initLogoSlider('#wallet-slider', 4);
+  initLogoSlider('#wallet-slider', 3);
   // initLogoSlider('#dev-eco-slider', 3);
   initProblemSlider();
   toggleStatusText();
