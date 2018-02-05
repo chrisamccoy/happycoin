@@ -49,7 +49,7 @@ router.get('/secondtokensale', function(req, res, next) {
 });
 
 /* GET home page. */
-router.get('/applytoforge', function(req, res, next) {
+router.get('/validate', function(req, res, next) {
   res.render('apply-forge', { title: 'Storecoin', meta: meta() });
 });
 

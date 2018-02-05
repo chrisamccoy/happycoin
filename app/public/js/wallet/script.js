@@ -11,6 +11,8 @@ $(document).ready(function(){
   initDatePicker();
   loadCoinsValue();
   initPaginate();
+  initApi();
+  triggerBuy();
 });
 var giftItems = {
   storeVal : null,
@@ -76,11 +78,60 @@ function loadCoinsValue() {
   });
 }
 
+function triggerBuy() {
+  // console.log(window.location.hash);
+  var hash = window.location.hash;
+  if (hash == '#buy') {
+    $('#wallet-value .links.nav-links .link[data-tab="buy"]').trigger('click');
+  }
+}
+
 function initDatePicker(){
   $('#date-picker input').pickadate({
     format: 'd mmm, yyyy'
   });
   $('#time-picker input').pickatime();
+}
+
+function initApi(){
+  var $api = $('#api-bugget-api');
+  if($api.length){
+    var $item = $api.find('.api-item'),
+    $button = $item.find('.select-api'),
+    $selectModal = $('#select-api-modal'),
+    $modalItem = $selectModal.find('.item'),
+    $itemName = $modalItem.find('.name'),
+    $itemIcon = $itemName.find('i'),
+    $subListItem = $modalItem.find('.sub-list li'),
+    timeout = null,
+    $thisItem = null;
+
+    $button.click(function(){
+      $(this).text('Edit');
+      $thisItem = $(this).parents('.api-item');
+      $selectModal.modal('show');
+    });
+
+    $itemName.click(function(){
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+      var $this = $(this);
+      $itemName.not($this).find('i').removeClass('ion-chevron-up').addClass('ion-chevron-down');
+      $this.find('i').toggleClass('ion-chevron-down ion-chevron-up');
+      $itemName.not($this).parents('.item').removeClass('active');
+      $this.parents('.item').toggleClass('active');
+
+      timeout = setTimeout(function(){
+        $selectModal.modal('refresh');
+      }, 1000);
+    });
+
+    $subListItem.click(function(){
+      $selectModal.modal('hide');
+      $thisItem.find('.selected-api').text($(this).text());
+    });
+  }
 }
 
 function sendGift () {

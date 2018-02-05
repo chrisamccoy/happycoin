@@ -2,12 +2,15 @@ extends layout
 
 block content
   div#hc-content
-    .hc-feature.over-rel.padding(style="padding-top:10em; padding-bottom: 10em;")
+    .hc-feature.over-rel.padding
       .hc-chunk
-        h2.hc-feature-title(style='margin-top:1em;') Ooops!
-        h3.hc-feature-title(style='font-size:1.7em;') Page not found.
-          |
-          a(href="/") Take me home.
+        h2.hc-feature-title Ooops!
+        p.hc-feature-lead Blocks are melting. No page found here.
+        p.hc-feature-lead
+          a.underline(href="/") Visit Storecoin
+          
+        .hc-image
+          img(src='/images/empty.png', data-src='/images/melting-blocks.png', style="max-width:400px;")
 
 
     include email-widget

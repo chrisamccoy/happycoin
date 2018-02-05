@@ -49,9 +49,10 @@ var blogs = [
       date : 'December 13, 2017'
   },
   {
-      slug: 'storecoin-creator-chris-mccoy-to-speak-at-words-1st-crypto-finance-conference',
-      title: 'Storecoin Creator Chris McCoy to Speak at Word’s 1st Crypto Finance Conference',
-      desc: 'SAN FRANCISCO — Organizers have invited Storecoin creator Chris McCoy to speak at the first international conference designed specifically for online currency and blockchain investors. The three-day Crypto Finance Conference takes place in St. Moritz, Switzerland, Jan. 17–19.',
+      slug: 'chris-mccoy-introduces-storecoin-at-worlds-1st-crypto-finance-conf',
+      title: 'Creator Chris McCoy Introduces Storecoin at World’s 1st Crypto Finance Conference',
+      twtitle : 'Creator Chris McCoy (@chrisamccoy) Introduces Storecoin at World’s 1st Crypto Finance Conference',
+      desc: 'St. MORITZ, Switzerland — Storecoin creator Chris McCoy introduced the Storecoin blockchain to an international audience at the Crypto Finance Conference 2018 in St. Moritz.',
       img: 'https://storeco.in/images/blog/chris_cfc18_preso.png',
       template: 'blog-crypto-conference',
       readTime : '2 min read',

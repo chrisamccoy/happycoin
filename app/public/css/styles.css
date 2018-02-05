@@ -43,6 +43,11 @@ a {
   text-decoration: none;
 }
 
+a.underline {
+  padding-bottom: 2px;
+  border-bottom: 2px solid;
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -76,6 +81,36 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+/* Click message */
+.click-message {
+  text-align:center;
+  margin: 1em;
+  color: white;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.click-message .message-container {
+  background-color: #e97844;
+  border-radius: 10px;
+  padding: 0px 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.click-message .message-container i {
+  font-size: 1.7em;
+  margin-right: 10px;
+}
+
+#info-image-modal .click-message {
+  display: none;
+}
+/* Click message */
 
 .italics {
   font-style: italic;
@@ -4974,7 +5009,7 @@ and (max-width : 335px) {
 #business-case .coin {
   margin: 0 auto;
   /*background: #FFDE00;*/
-  background-image: url(/images/storecoin-currency-v2.png);
+  background-image: url(/images/storecoin-currency.png);
   background-size: cover;
   background-position: center;
   width: 200px;
@@ -4997,7 +5032,8 @@ and (max-width : 335px) {
   }
 }
 #business-case .coin:before {
-  background-color: #ffc013;
+  /*background-color: #ffc013;*/
+  background-color: #caa14b;
   position: absolute;
   border-radius: 50%;
   content: '';
@@ -5006,7 +5042,8 @@ and (max-width : 335px) {
   -webkit-transform: translateZ(-15px);
 }
 #business-case .coin:after {
-  background-color: #ffc013;
+  /*background-color: #ffc013;*/
+  background-color: #caa14b;
   content: '';
   /*left: 4.25em;*/
   left : 85px;
@@ -5020,7 +5057,8 @@ and (max-width : 335px) {
 }
 
 #business-case .tails {
-  background-color: #ffc013;
+  /*background-color: #ffc013;*/
+  background-color: #caa14b;
   /*background-image: url(/images/storecoin-currency.png);
   background-size: auto 100%;*/
   position: absolute;
@@ -5035,7 +5073,7 @@ and (max-width : 335px) {
 
 #business-case .heads {
   /*background-color: #FFDE00;*/
-  background-image: url(/images/storecoin-currency-v2.png);
+  background-image: url(/images/storecoin-currency.png);
   background-size: auto 100%;
   /*transform: scaleY(-1);*/
   position: absolute;
