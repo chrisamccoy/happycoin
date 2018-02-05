@@ -25,7 +25,7 @@ block content
     #our-mission.hc-feature.over-rel.padding.lite
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted Our Mission
-        p.hc-feature-lead(style="margin: 0 auto; max-width: 440px;") To become zero-fee payment infrastructure for the global internet.
+        p.hc-feature-lead(style="margin: 0 auto; max-width: 630px;") To become zero-fee payment infrastructure for the global internet.
 
     #token-sale-buyers.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
@@ -71,7 +71,7 @@ block content
         h3.hc-feature-title.inverted(style=" margin:0px !important;")  This is our Orange Paper
         p (Our Whitepaper will release once we're finished with technical R&D)
         div(style="text-align:center;")
-          a(href="https://dl.dropbox.com/s/jihuxepp853opkh/Storecoin_HowItWorks_v15.pdf", target="_blank") Download the PDF version
+          a(href="https://dl.dropbox.com/s/scsv6uqc7g7e6as/Storecoin_OrangePaper_v29.pdf", target="_blank") Download the PDF version
 
     #our-vision.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
@@ -129,9 +129,15 @@ block content
     #big-market.hc-feature.over-rel.padding.lite
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title How big is this market?
-        p.hc-feature-lead There are millions of web and mobile app developers, with billions of users, all making trillions of API calls on their applications everyday.
+        p.hc-feature-lead There are millions of web and mobile app developers, with billions of users, all making trillions of API calls on their applications everyday. 
+
         p.hc-feature-lead As a developer platform, Storecoin can turn these basic API calls into paid and monetizable API calls where the payment has zero fees.
-        p.hc-feature-lead.last-child Storecoin can do this for the global internet.
+
+        p.hc-feature-lead Storecoin can do this for the global internet.
+
+        p.hc-feature-lead Through Governance, features like smart contracts can be added to the decentalized blockchain protocol.
+
+        p.hc-feature-lead.last-child Then, both cApps and dApps can be built on top of Storecoin.
 
     #about-dypos.hc-feature.over-rel.padding.orange.inverted(style="padding:2.5em;")
       .hc-chunk.hc-customize-text-wrapper
@@ -152,18 +158,18 @@ block content
             i.ion-arrow-expand 
             span Click to expand
         .hc-image
-          img(src='/images/empty.png', data-src="/images/dynamic-reward-flow-v4.png")
+          img(src='/images/empty.png', data-src="/images/dynamic-reward-flow-v5.png")
 
     #rewards-allocated.hc-feature.over-rel.padding.info-fullscreen
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title How Block Rewards are Allocated
-        p.hc-feature-lead 5% yearly, capped token inflation is allocated to a) reward its four types of decentralized Workers (node operators) and b) to endow the public blockchain on a daily basis to operate, be upgraded, be governed, and to stay secure.
+        p.hc-feature-lead 5% yearly, capped token inflation is allocated to a) reward its four types of decentralized Workers [node operators] and b) to endow the public blockchain on a daily basis to operate, be upgraded, be governed, and to stay secure.
         div.click-message
           div.message-container
             i.ion-arrow-expand 
             span Click to expand
         .hc-image
-          img(src='/images/empty.png', data-src="/images/rewards-allocated.png")
+          img(src='/images/empty.png', data-src="/images/rewards-allocated-v2.png")
 
     //- banner
     #secure-storecoin.hc-feature.over-rel.padding.orange.inverted(style="padding:2.5em;")
@@ -175,32 +181,32 @@ block content
         h3.hc-feature-title.title-icon
           img.icon(src='/images/empty.png', data-src="/images/red-caution.png", align="top")
           | The Storecoin Threat Level System
-        p.hc-feature-lead The Storecoin Security System powers real-time market prices for the Six Engines of DyPoS. The System threat level algorithmically updates as transaction volumes rise and fall. As threat levels rise, the cost of spam and attacks rise too.
+        p.hc-feature-lead The Storecoin Threat Level System powers real-time market prices for the Six Engines of DyPoS. The System threat level algorithmically updates as transaction volumes rise and fall. As threat levels rise, the cost of spam and attacks rise too.
         p(style="text-align:center; margin: 1em;")
           span(style="border: 1px solid #65954c; border-radius: 7px; padding: 0.3em 0.5em;") Click to learn about our crypto economics
         div.hazard-boxes
-          - var secVals = ['5,000 storecoins', '5,000 edisons', '5%', '50', '50', '1,000 edisons', '90%'];
-          - var secTemplate = function(secVals) { return '<ul><li>Stake Required For New Validators: <span class="orange-color">'+secVals[0]+'</span></li><li>Security Bond to Send Txn: <span class="orange-color">'+secVals[1]+'</span></li><li>Interest Paid on Security Bond: <span class="orange-color">'+secVals[2]+'</span></li><li># of Security Guards Needed: <span class="orange-color">'+secVals[3]+'</span></li><li>Stake Required to Guard: <span class="orange-color">'+secVals[4]+'</span></li><li>Cost to File a Ticket: <span class="orange-color">'+secVals[5]+'</span></li><li>Stake or Bond Earned by Guard: <span class="orange-color">'+secVals[6]+'</span></li></ul>';};
+          - var secVals = ['5,000 storecoins', '5,000 storecoins', '50 storecoins', '500 storecoins', '5,000 edisons', '5%', '50', '1,000 edisons', '90%'];
+          - var secTemplate = function(secVals) { return '<ul><li>Stake Required For new Validators: <span class="orange-color">'+secVals[0]+'</span></li><li>Stake Required For new eAgents: <span class="orange-color">'+secVals[1]+'</span></li><li>Stake Required For new dGuards: <span class="orange-color">'+secVals[2]+'</span></li><li>Stake Required For new Govnodes: <span class="orange-color">'+secVals[2]+'</span></li><li>Security Bond to Send Txn: <span class="orange-color">'+secVals[4]+'</span></li><li>Interest Paid on Security Bond: <span class="orange-color">'+secVals[5]+'</span></li><li># of Security Guards Needed: <span class="orange-color">'+secVals[6]+'</span></li><li>Cost to File a Ticket: <span class="orange-color">'+secVals[7]+'</span></li><li>Stake or Bond Earned by Guard: <span class="orange-color">'+secVals[8]+'</span></li></ul>';};
           - var boxTitle = secTemplate(secVals);
           div.box.red(title=boxTitle)
             h3 Severe
             p Severe risk of an attack or an spam
-          - secVals = ['2,500 storecoins', '2,500 edisons', '4%', '40', '100', '750 edisons', '80%'];
+          - secVals = ['2,500 storecoins', '800 storecoins', '100 storecoins', '400 storecoins', '2,500 edisons', '4%', '40', '750 edisons', '80%'];
           - boxTitle = secTemplate(secVals);
           div.box.skin(title=boxTitle)
             h3 High
             p High risk of an attack or an spam
-          - secVals = ['1,500 storecoins', '1,000 edisons', '3%', '30', '200', '500 edisons', '70%'];
+          - secVals = ['1,500 storecoins', '600 storecoins', '200 storecoins', '300 storecoins', '1,000 edisons', '3%', '30', '500 edisons', '70%'];
           - boxTitle = secTemplate(secVals);
           div.box.yellow(title=boxTitle)
             h3 Elevated
             p Significant risk of an attack or an spam
-          - secVals = ['1,000 storecoins', '500 edisons', '2%', '20', '500', '250 edisons', '60%'];
+          - secVals = ['1,000 storecoins', '400 storecoins', '500 storecoins', '200 storecoins', '500 edisons', '2%', '20', '250 edisons', '60%'];
           - boxTitle = secTemplate(secVals);
           div.box.blue(title=boxTitle)
             h3 Guarded
             p General risk of an attack or an spam
-          - secVals = ['500 storecoins', '250 edisons', '1%', '10', '1,000', '100 edisons', '50%'];
+          - secVals = ['500 storecoins', '200 storecoins', '1,000 storecoins', '100 storecoins', '250 edisons', '1%', '10', '100 edisons', '50%'];
           - boxTitle = secTemplate(secVals);
           div.box.green(title=boxTitle)
             h3 Low
@@ -208,25 +214,25 @@ block content
 
     #dGuard-secure.hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
       .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title dGuards Secure the Blockchain
+        h3.hc-feature-title How dGuards Secure the Blockchain
         p.hc-feature-lead dGuards are the decentralized security network on Storecoin that secures the blockchain by finding bad actors across the validator pool, the Wallet SDK network, and in transactions. dGuards run full nodes to study transactions and validator behavior. They're rewarded with +50% of the burned stake from bad validators or +50% of the security bond from bad senders.
         div.click-message
           div.message-container
             i.ion-arrow-expand 
             span Click to expand
         .hc-image
-          img(src='/images/empty.png', data-src="/images/how-dynamic-sec-works-v3.png")
+          img(src='/images/empty.png', data-src="/images/how-dynamic-sec-works-v4.png")
 
     #transactions-secure.hc-feature.over-rel.padding.info-fullscreen
       .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title Transactions are Secured With Bonds
-        p.hc-feature-lead To prevent Storecoin from a DDoS attack or from the blockchain being flooded with spammy transactions, Storecoin adds a refundable – with interest! – security bond to each transaction.
+        h3.hc-feature-title How Free Transactions are Secured With Bonds
+        p.hc-feature-lead To prevent Storecoin from a DDoS attack or from the blockchain being flooded with spammy transactions, Storecoin adds a refundable – with interest! – security bond to each transaction. 
         div.click-message
           div.message-container
             i.ion-arrow-expand 
             span Click to expand
         .hc-image
-          img(src='/images/empty.png', data-src="/images/how-dynamic-transaction-works-v3.png")
+          img(src='/images/empty.png', data-src="/images/how-dynamic-transaction-works-v4.png")
 
     //- banner
     #checks-balances.hc-feature.over-rel.padding.orange.inverted(style="padding:2.5em;")
@@ -242,7 +248,7 @@ block content
             i.ion-arrow-expand 
             span Click to expand
         .hc-image
-          img(src='/images/empty.png', data-src="/images/gov-branches-v3.png")
+          img(src='/images/empty.png', data-src="/images/gov-branches-v4.png")
 
     #governance-hired.hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
       .hc-chunk.hc-customize-text-wrapper
@@ -253,7 +259,7 @@ block content
             i.ion-arrow-expand 
             span Click to expand
         .hc-image
-          img(src='/images/empty.png', data-src="/images/gov-hired-v3.png")
+          img(src='/images/empty.png', data-src="/images/gov-hired-v4.png")
 
     #checks-balances-work.hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
       .hc-chunk.hc-customize-text-wrapper
@@ -265,7 +271,7 @@ block content
             i.ion-arrow-expand 
             span Click to expand
         .hc-image
-          img(src='/images/empty.png', data-src="/images/checks-balances-work-v6.png")
+          img(src='/images/empty.png', data-src="/images/checks-balances-work-v7.png")
 
     #token-owner.hc-feature.over-rel.padding.info-fullscreen
       .hc-chunk.hc-customize-text-wrapper
@@ -275,7 +281,7 @@ block content
             i.ion-arrow-expand 
             span Click to expand
         .hc-image
-          img(src='/images/empty.png', data-src="/images/token-owner-v3.png")
+          img(src='/images/empty.png', data-src="/images/token-owner-v4.png")
 
     #governance-matters.hc-feature.over-rel.padding.inverted.left-align
       .hc-chunk.hc-customize-text-wrapper
@@ -307,10 +313,10 @@ block content
             i.ion-arrow-expand 
             span Click to expand
         .hc-image
-          img(src='/images/empty.png', data-src="/images/blockchain-steps-1-4-v3.png")
+          img(src='/images/empty.png', data-src="/images/blockchain-steps-1-4-v4.png")
         #8-steps.see-more-reveal
           .hc-image
-            img(src='/images/empty.png', data-src="/images/blockchain-8-steps-v3.png")
+            img(src='/images/empty.png', data-src="/images/blockchain-8-steps-v4.png")
     //-
     .hc-feature.over-rel.padding.inverted.orange(style="overflow:visible; padding: 0px;")
       .hc-chunk.hc-customize-text-wrapper
@@ -334,11 +340,10 @@ block content
             a(href="http://footprintchat.com", target="_blank").hc-image
               img(src='/images/empty.png', data-src='/images/footprint-white-logo.png')
           div.logo
-            | Apply at
-            br
-            a(href="/developer", target="_blank") http://storeco.in/developer
-
-
+            a(href="/developer", target="_blank") 
+              | Apply at
+              br
+              span http://storeco.in/developer
 
     #partners.hc-feature.over-rel.padding
       .hc-chunk
@@ -421,16 +426,16 @@ block content
               a(href="/wallet", target="_blank")
                 b Users can trade their storecoins
             img(src='/images/empty.png', data-src='/images/wall-screen-3-v3.png')
-          //- .slide
-          //-   p
-          //-     a(href="/wallet", target="_blank")
-          //-       b Users can sell their storecoins
-          //-   img(src='/images/empty.png', data-src='/images/wall-screen-2-v3.png')
+          .slide
+            p
+              a(href="/wallet", target="_blank")
+                b Users can sell their storecoins
+            img(src='/images/empty.png', data-src='/images/wall-screen-2-v3.png')
           .slide
             p
               a(href="/wallet", target="_blank")
                 b Developer can assign storecoins
-            img(src='/images/empty.png', data-src='/images/wall-screen-6-v3.png')
+            img(src='/images/empty.png', data-src='/images/wall-screen-6-v4.png')
               
         p.hc-feature-lead(style="margin-bottom: 0px; margin-top:1.5em;")
           a.underline(href="/wallet", target="_blank").orange-color See a Prototype for the Storecoin Wallet.
@@ -453,7 +458,7 @@ block content
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Help Validate the future Storecoin Blockchain
         .hc-image
-          img(src='/images/empty.png', data-src="/images/blchain-verification.png", style="max-width:200px; width:100%;")
+          img(src='/images/empty.png', data-src="/images/validate-icon.png", style="max-width:200px; width:100%;")
         p.hc-feature-lead(style=" margin-bottom:0px !important; color:#5d794c;") 
           a.underline(href="/validate", target="_blank",style="font-size:30px;") Apply
           
@@ -461,7 +466,7 @@ block content
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Become a dGuard to keep Storecoin secure
         .hc-image
-          img(src='/images/empty.png', data-src="/images/security-guards.png", style="max-width:200px;width:100%;background: white;border-radius: 15px;padding: 1em;")
+          img(src='/images/empty.png', data-src="/images/dguard-icon.png", style="max-width:200px;width:100%;background: white;border-radius: 15px;padding: 1em;")
         p.hc-feature-lead(style=" margin-bottom:0px !important; color:#5d794c;") 
           a.underline(href="/dGuard", target="_blank",style="font-size:30px;") Apply
           
@@ -469,7 +474,7 @@ block content
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Host eAgent Master Nodes to scale Storecoin
         .hc-image
-          img(src='/images/empty.png', data-src="/images/master-node.png", style="max-width:200px; width:100%;")
+          img(src='/images/empty.png', data-src="/images/eagent-icon.png", style="max-width:200px; width:100%;")
         p.hc-feature-lead(style=" margin-bottom:0px !important; color:#5d794c;") 
           a.underline(href="/masternode", target="_blank",style="font-size:30px;") Apply
           
@@ -477,7 +482,7 @@ block content
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Run a Govnode to keep Storecoin decentralized
         .hc-image
-          img(src='/images/empty.png', data-src="/images/run-govnode.png", style="max-width:200px;width:100%;background: white;border-radius: 15px;padding: 1em;")
+          img(src='/images/empty.png', data-src="/images/govnode-icon.png", style="max-width:200px;width:100%;background: white;border-radius: 15px;padding: 1em;")
         p.hc-feature-lead(style=" margin-bottom:0px !important; color:#5d794c;") 
           a.underline(href="/govnode", target="_blank",style="font-size:30px;") Apply
 

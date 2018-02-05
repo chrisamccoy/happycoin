@@ -86,17 +86,18 @@ input[type=number]::-webkit-outer-spin-button {
 .click-message {
   text-align:center;
   margin: 1em;
-  color: white;
-  font-size: 1.1em;
+  font-size: 0.8em;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .click-message .message-container {
-  background-color: #e97844;
+  /*background-color: #e97844;*/
   border-radius: 10px;
-  padding: 0px 0.5em;
+  color: #000000a8;
+  border: 2px solid #0000003d;
+  padding: 0.2em 0.5em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,6 +106,11 @@ input[type=number]::-webkit-outer-spin-button {
 .click-message .message-container i {
   font-size: 1.7em;
   margin-right: 10px;
+}
+
+.hc-feature.inverted .click-message .message-container {
+  color: #ffffff;
+  border: 2px solid #ffffff3d;
 }
 
 #info-image-modal .click-message {
@@ -5123,6 +5129,10 @@ and (max-width : 335px) {
 }
 
 #dev-eco .logo a {
+  text-align: center;
+}
+
+#dev-eco .logo span {
   text-decoration: underline;
 }
 
