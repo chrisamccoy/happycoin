@@ -138,6 +138,10 @@ input[type=number]::-webkit-outer-spin-button {
   color: #ffc013;
 }
 
+.color-red {
+  color: #E21415;
+}
+
 .dark-green {
   color: #5B774E;
 }
@@ -145,6 +149,22 @@ input[type=number]::-webkit-outer-spin-button {
 .big-font {
   font-size: 1.5em;
 }
+
+.sub-text {
+  font-size: 17px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#info-image-modal .sub-text {
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+#six-engines .sub-text {
+  margin-bottom: 20px;
+}
+
 
 .desktop-image {
   display: block;
