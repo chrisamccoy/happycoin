@@ -125,6 +125,26 @@ router.get('/cryptoeconomics', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/developer', function(req, res, next) {
+  res.render('developer', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
+router.get('/govnode', function(req, res, next) {
+  res.render('govnode', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
+router.get('/masternode', function(req, res, next) {
+  res.render('masternode', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
+router.get('/careers', function(req, res, next) {
+  res.render('careers', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
 router.get('/about', function(req, res, next) {
   res.render('about', { title: 'Storecoin', meta: meta() });
 });
