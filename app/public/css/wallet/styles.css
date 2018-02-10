@@ -1346,6 +1346,8 @@ button.small,
   .iphone {
     height: 100%;
   }
+
+  .iphone .page-loading,
   .iphone img {
     display: none;
   }
