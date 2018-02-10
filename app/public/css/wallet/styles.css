@@ -1302,11 +1302,44 @@ button.small,
 }
 
 .iphone iframe {
+  z-index: 2;
+}
+
+.iphone iframe,
+.iphone .page-loading {
   position: absolute;
   height: calc(100% - 180px);
   width: calc(100% - 94px);
   top: 86px;
   left: 49px;
+}
+
+.iphone .page-loading {
+  z-index: 1;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iphone .page-loading .text {
+  display: none;
+}
+
+.iphone .page-loading .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.iphone .sp-wave {
+  margin: 0px 0px 1em;
+}
+
+.iphone .sp-wave:before,
+.iphone .sp-wave:after {
+  border: 1px #0000006b solid;
 }
 
 @media only screen and (max-width: 700px) {
@@ -1316,6 +1349,8 @@ button.small,
   .iphone img {
     display: none;
   }
+
+  .iphone .page-loading,
   .iphone iframe {
     position: static;
     width: 100%;
@@ -1573,6 +1608,11 @@ button.small,
   border-bottom: 1px solid #eaeaea;
 }
 
+#api-bugget-api .api-item .ui.dropdown {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
 #api-bugget-api .api-item .selected-api {
   margin-bottom: 0.1em;
   color: mediumseagreen;
@@ -1588,7 +1628,7 @@ button.small,
 #api-bugget-api .api-item section {
   flex: auto;
   padding: 0px;
-  padding-left: 1em;
+  /*padding-left: 1em;*/
   border-bottom: 0px;
 }
 
