@@ -1635,10 +1635,12 @@ function initTimer () {
 
 function hasUrl () {
   // console.log(window.location.hash);
-  var hash = window.location.hash;
-  if (hash) {
-    $(window).scrollTop($(hash).offset().top - 100);
-  }
+  var timeout = setTimeout(function () {
+    var hash = window.location.hash;
+    if (hash) {
+      $(window).scrollTop($(hash).offset().top - 100);
+    }
+  }, 2000);
 }
 
 function maxcount(t) {
