@@ -145,6 +145,11 @@ router.get('/careers', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/peltzinternational', function(req, res, next) {
+  res.render('peltzinternational', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
 router.get('/about', function(req, res, next) {
   res.render('about', { title: 'Storecoin', meta: meta() });
 });
