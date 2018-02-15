@@ -26,7 +26,8 @@ coinsVal = {
   xrp : null,
   ltc : null
 },
-coinKey = 'eth';
+coinKey = 'eth',
+isApiBuy = false;
 
 function loadCoinsValue() {
   var $selectCoinModal =  $('#select-coin-modal');
@@ -81,7 +82,8 @@ function loadCoinsValue() {
 function triggerBuy() {
   // console.log(window.location.hash);
   var hash = window.location.hash;
-  if (hash == '#buy') {
+  if (hash == '#api-buy') {
+    isApiBuy = true;
     $('#wallet-value .links.nav-links .link[data-tab="buy"]').trigger('click');
   }
 }
@@ -327,6 +329,9 @@ function initModal () {
   $modal.find('.confirm-button').click(function(){
     $modal.modal('hide');
     initloader();
+    if (isApiBuy) {
+      window.location = '/api';
+    }
   });
 }
 

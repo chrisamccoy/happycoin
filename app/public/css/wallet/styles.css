@@ -1613,6 +1613,11 @@ button.small,
 #api-bugget-api .api-item .ui.dropdown {
   width: 100%;
   margin-bottom: 1em;
+  padding: 1.3em;
+}
+
+#api-bugget-api .api-item .ui.dropdown .item {
+  padding: 1em !important;
 }
 
 #api-bugget-api .api-item .selected-api {
