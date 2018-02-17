@@ -30,8 +30,13 @@ block content
               | storecoin
           div.est-val Estimated Value:  
             span.green $183.68
+      
+    div#feeds-tab
+      div.item.active(data-tab="#price") Price
+      div.item(data-tab="#activity") Activity
+      div.item(data-tab="#apps") Apps
           
-    div.graph-feeds    
+    div#price.feeds-tab.active.graph-feeds    
       section#wallet-price-span
         p Storecoin Price
         select.ui.fluid.selection.dropdown
@@ -137,6 +142,25 @@ block content
         .content
           div.sp.sp-wave
           div.text Loading...
+    div#apps.feeds-tab
+      section.item-app
+        .image
+          img(src='/images/wallet/calender-icon.png')
+        .title
+          div
+            b Easy Schedule
+          div Project Management 
+        a.button.small.icon(href='/api')
+          i.ion-gear-a
+      section.item-app
+        .image
+          img(src='/images/wallet/socail-media-logo.png')
+        .title
+          div
+            b Smart Analytics
+          div Social Media Analytics 
+        a.button.small.icon(href='javascript:;')
+          i.ion-gear-a    
           
   div#transaction-tab
     include sub-nav

@@ -13,6 +13,7 @@ $(document).ready(function(){
   initPaginate();
   initApi();
   triggerBuy();
+  initFeedsTab();
 });
 var giftItems = {
   storeVal : null,
@@ -86,6 +87,20 @@ function triggerBuy() {
     isApiBuy = true;
     $('#wallet-value .links.nav-links .link[data-tab="buy"]').trigger('click');
   }
+}
+
+function initFeedsTab() {
+  var $tabs = $('#feeds-tab'),
+  $items = $tabs.find('.item');
+
+  $items.click(function(){
+    $items.removeClass('active');
+    $('.feeds-tab').removeClass('active');
+    $(this).addClass('active');
+
+    var $tab = $($(this).data().tab);
+    $tab.addClass('active');
+  });
 }
 
 function initDatePicker(){
