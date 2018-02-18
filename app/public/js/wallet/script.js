@@ -28,7 +28,8 @@ coinsVal = {
   ltc : null
 },
 coinKey = 'eth',
-isApiBuy = false;
+isApiBuy = false,
+budgetVal = 44.38385;
 
 function loadCoinsValue() {
   var $selectCoinModal =  $('#select-coin-modal');
@@ -55,13 +56,13 @@ function loadCoinsValue() {
         step : 0.00001,
         value : 44.38385,
         create : function(){
-          sliderFunction($(this), 'create');
+          sliderFunction($(this), 'create', null);
         },
         slide : function(){
-          sliderFunction($(this), 'slide');
+          sliderFunction($(this), 'slide', null);
         },
         change : function(){
-          sliderFunction($(this), 'change');
+          sliderFunction($(this), 'change', null);
         }
       });
 
@@ -71,7 +72,7 @@ function loadCoinsValue() {
 
       $("#trade-amount .amount-slider .slider").slider().bind({
         sliderchange : function (){
-          sliderFunction($(this), 'create');
+          sliderFunction($(this), 'create', null);
         }
       });
 
@@ -379,56 +380,86 @@ function closeAllTabs (){
 }
 
 function initRangeSlider() {
-  var $sliders = $('#wallet-amount, #api-budget-app-slider, #api-bugget-api');
-  var slider = $sliders.find(".amount-slider .slider").slider({
-    range : 'min',
-    max: 139.47001,
-    min : 0.00001,
-    step : 0.00001,
-    value : 44.38385,
-    create : function(){
-      sliderFunction($(this), 'create');
-    },
-    slide : function(){
-      sliderFunction($(this), 'slide');
-    },
-    change : function(){
-      sliderFunction($(this), 'change');
-    }
-  });
 
-  $sliders.find(".amount-slider .slider").append(
-    '<div class="slider-rail"></div>'
-  );
-
-  // $("#wallet-amount .amount-slider .slider").slider().bind({
-  //   sliderchange : function (){
-  //     sliderFunction($(this), 'create');
-  //   }
-  // });
-  //
-  // $(".slider").trigger('sliderchange');
+  initSlider({ el : '#wallet-tabs .tab[data-tab="buy"]', value : 44.38385 });
+  initSlider({ el : '#wallet-tabs .tab[data-tab="sell"]', value : 44.38385 });
+  initSlider({ el : '#wallet-tabs .tab[data-tab="gift"]', value : 44.38385 });
+  initSlider({ el : '#api-budget-app-slider', value : budgetVal, name : 'budget-slider' });
+  initSlider({ el : '#api-bugget-api', value : 0.00001, name : 'api-slider' });
 }
 
-function sliderFunction($this, eventName) {
+function initSlider(params) {
+  var $slider = $(params.el);
+  if ($slider.length) {
+    var slider = $slider.find(".amount-slider .slider").slider({
+      range : 'min',
+      max: 139.47001,
+      min : 0.00001,
+      step : 0.00001,
+      value : params.value,
+      create : function(ev, ui){
+        sliderFunction($(this), 'create', params);
+        // if (params.name == 'api-slider') {
+        //   budgetCheck(ui);
+        // }
+      },
+      slide : function(ev, ui){
+        sliderFunction($(this), 'slide', params);
+        if (params.name == 'api-slider') {
+          var total = ui.value;
+          $('#api-bugget-api .amount-slider .slider').not(this).each(function () {
+              total += $(this).slider('value');
+          })
+          if (total > budgetVal) {
+              return false;
+          }
+        }
+
+        if (params.name == 'budget-slider') {
+          // console.log(value);
+          budgetVal = ui.value;
+
+          $('#api-bugget-api .amount-slider .slider').each(function () {
+              $(this).slider('option','max', budgetVal);
+          });
+
+          $('#api-bugget-api').find('.end span').text(budgetVal);
+        }
+      },
+      change : function(ev, ui){
+        sliderFunction($(this), 'change', params);
+        if (params.name == 'api-slider') {
+          var total = ui.value;
+          $('#api-bugget-api .amount-slider .slider').not(this).each(function () {
+              total += $(this).slider('value');
+          });
+        }
+
+        if (params.name == 'budget-slider') {
+          // console.log(value);
+          budgetVal = ui.value;
+
+          $('#api-bugget-api .amount-slider .slider').each(function () {
+              $(this).slider('option','max', budgetVal);
+          });
+
+          $('#api-bugget-api').find('.end span').text(budgetVal);
+        }
+      }
+    });
+
+    $slider.find(".amount-slider .slider").append(
+      '<div class="slider-rail"></div>'
+    );
+  }
+}
+
+function sliderFunction($this, eventName, params) {
   var value = $this.slider('value'),
       $parent = $this.parents('.tab'),
       thisHandlePos = $this.find('.ui-slider-handle').offset().left;
 
   changeOnSlide(value, $parent, thisHandlePos);
-}
-
-function bankSelect() {
-  var $dropdown = $('#wallet-pay-method .ui.dropdown'),
-      $modalBankInfo = $('.confirm-transact.ui.modal .content .modal-content .pay-info .bank-info');
-
-  $dropdown.dropdown({
-    onChange : function (value) {
-      $modalBankInfo.text(value);
-    },
-  });
-
-  $dropdown.dropdown('set selected', 'Wells Fargo - Bank ******2089');
 }
 
 function changeOnSlide (value, $parent, handlePos) {
@@ -470,6 +501,19 @@ function changeOnSlide (value, $parent, handlePos) {
   } else {
     $conversion.css('left', paddingLeft );
   }
+}
+
+function bankSelect() {
+  var $dropdown = $('#wallet-pay-method .ui.dropdown'),
+      $modalBankInfo = $('.confirm-transact.ui.modal .content .modal-content .pay-info .bank-info');
+
+  $dropdown.dropdown({
+    onChange : function (value) {
+      $modalBankInfo.text(value);
+    },
+  });
+
+  $dropdown.dropdown('set selected', 'Wells Fargo - Bank ******2089');
 }
 
 function loadChartData() {
