@@ -6,14 +6,18 @@ block content
       .hc-chunk.hc-intro-text-wrapper
         h2.hc-intro-large-lead(style="margin-bottom:0px;")
           b Storecoin is a new public blockchain.
-        h2.hc-feature-lead(style="margin-bottom:0px;") With its Dynamic Proof of Stake consensus protocol (DyPoS), Storecoin will
-          b  secure
-          |  free transactions, high-throughput, cryptoeconomics modeled after surge pricing in ride sharing companies like Uber, and a decentralized governance system with built-in checks and balances inspired by the United States Constitution.
-        //- div.desktop-image
-        //-   h2.hc-feature-lead(style="margin:0px;") Storecoin will become the best digital asset for delivering free, fast, and scalable payments.
-        //- div.mobile-image
-        //-   h2.hc-feature-lead(style="margin:0px;") Storecoin will become the best digital asset for delivering free, fast, and scalable payments.
+        h2.hc-feature-lead(style="margin-bottom:0px;") With its 
+          a.lite-green.underline(data-featherlight="#dynamic") Dynamic
+          | , 
+          a.lite-green.underline(data-featherlight="#fork") Fork-tolerant
+          | , and 
+          a.lite-green.underline(data-featherlight="#auditable") Auditable
+          |  Proof of Stake-based consensus protocol (DyPoS), Storecoin will secure free transactions, high-throughput, and a decentralized governance system with built-in checks and balances inspired by the United States Constitution.
 
+    #dynamic.intro-popup(style="display:none;") Dynamic because our crypto economics for block rewards, validation/consensus, throughput/scaling, and security are modeled after the dynamic nature of surge pricing in ride-sharing companies like Uber.
+    #fork.intro-popup(style="display:none;") Fork-tolerant because we are not fork-shy, instead, we are a fork-loving blockchain. Chain forks are designed into DyPoS so the protocol can take advantage of them.
+    #auditable.intro-popup(style="display:none;") Auditable because if you touch the blockchain, you leave your fingerprints. Every change made by everyone is auditable.
+    
     div#second-token-sale
     - var top = true
     include email-widget
