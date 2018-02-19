@@ -133,8 +133,8 @@ select {
 }
 
 .slider {
-  background: white;
-  border-color: #ffffff !important;
+  background: #ffffff00;
+  border-color: #ffffff00 !important;
   height: 23px;
 }
 
@@ -1673,18 +1673,24 @@ button.small,
   margin-bottom: 1em;
 }
 
+#api-bugget-api .api-item section.percent-slider {
+  background-color: #80808024;
+  padding: 0.5em;
+  border-radius: 7px;
+}
+
 #api-bugget-api .api-item section.percent-slider .slider .ui-slider-range {
   background: #61bb71;
   border-color: #61bb71 !important;
 }
 
 #api-percent-global-slider .amount-slider,
-#api-bugget-api .api-item section .amount-slider {
+#api-bugget-api .api-item section.percent-slider .amount-slider {
   height: 65px;
 }
 
-#api-bugget-api .api-item section .amount-slider .conversion .exchange,
-#api-bugget-api .api-item section .amount-slider .conversion .dollar-val {
+#api-bugget-api .api-item section.percent-slider .amount-slider .conversion .exchange,
+#api-bugget-api .api-item section.percent-slider .amount-slider .conversion .dollar-val {
   display: none;
 }
 
