@@ -19,9 +19,15 @@ block content
           div.amount.green 139.470001
       div.buy
         a(href="/wallet/wallet-app/#api-buy").button.small Buy
+        
     section#api-budget-app-slider.tab(data-tab="none")
       div.header Budget for your app
       include amount-slider
+      
+    section#api-percent-global-slider.tab(data-tab="none")
+      div.header Set a global % to earn for each transaction
+      include percent-slider
+      
     section#api-bugget-api
       //- div.header Set budget for API calls
       div.header Set Paid API Calls
@@ -41,8 +47,11 @@ block content
               .item User accepts 3 invites in a row
               .item User creates an event and schedules +3 people
 
-          section.tab.no-padding(data-tab="none")
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+          
+          section.tab.no-padding.percent-slider(data-tab="none")
+            include percent-slider
             
         div.api-item
           div.selected-api
@@ -59,8 +68,11 @@ block content
               .item User accepts 3 invites in a row
               .item User creates an event and schedules +3 people
 
-          section.tab.no-padding(data-tab="none")
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+            
+          section.tab.no-padding.percent-slider(data-tab="none")
+            include percent-slider
             
         div.api-item
           div.selected-api
@@ -77,8 +89,11 @@ block content
               .item User accepts 3 invites in a row
               .item User creates an event and schedules +3 people
 
-          section.tab.no-padding(data-tab="none")
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+            
+          section.tab.no-padding.percent-slider(data-tab="none")
+            include percent-slider
             
         div.api-item
           div.selected-api
@@ -95,8 +110,11 @@ block content
               .item User accepts 3 invites in a row
               .item User creates an event and schedules +3 people
 
-          section.tab.no-padding(data-tab="none")
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+            
+          section.tab.no-padding.percent-slider(data-tab="none")
+            include percent-slider
             
         div.api-item
           div.selected-api
@@ -113,8 +131,11 @@ block content
               .item User accepts 3 invites in a row
               .item User creates an event and schedules +3 people
 
-          section.tab.no-padding(data-tab="none")
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+            
+          section.tab.no-padding.percent-slider(data-tab="none")
+            include percent-slider
             
         div.api-item
           div.selected-api
@@ -131,8 +152,11 @@ block content
               .item User accepts 3 invites in a row
               .item User creates an event and schedules +3 people
 
-          section.tab.no-padding(data-tab="none")
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+            
+          section.tab.no-padding.percent-slider(data-tab="none")
+            include percent-slider
             
         div.api-item
           div.selected-api
@@ -149,8 +173,11 @@ block content
               .item User accepts 3 invites in a row
               .item User creates an event and schedules +3 people
 
-          section.tab.no-padding(data-tab="none")
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+            
+          section.tab.no-padding.percent-slider(data-tab="none")
+            include percent-slider
             
         div.api-item
           div.selected-api
@@ -167,8 +194,11 @@ block content
               .item User accepts 3 invites in a row
               .item User creates an event and schedules +3 people
 
-          section.tab.no-padding(data-tab="none")
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+            
+          section.tab.no-padding.percent-slider(data-tab="none")
+            include percent-slider
             
         div.api-item
           div.selected-api
@@ -185,8 +215,11 @@ block content
               .item User accepts 3 invites in a row
               .item User creates an event and schedules +3 people
 
-          section.tab.no-padding(data-tab="none")
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+            
+          section.tab.no-padding.percent-slider(data-tab="none")
+            include percent-slider
             
         div.api-item
           div.selected-api
@@ -203,8 +236,11 @@ block content
               .item User accepts 3 invites in a row
               .item User creates an event and schedules +3 people
 
-          section.tab.no-padding(data-tab="none")
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+            
+          section.tab.no-padding.percent-slider(data-tab="none")
+            include percent-slider
             
 
   div#select-api-modal.ui.small.modal

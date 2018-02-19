@@ -419,8 +419,10 @@ function initRangeSlider() {
   initSlider({ el : '#wallet-tabs .tab[data-tab="sell"]', value : 44.38385 });
   initSlider({ el : '#wallet-tabs .tab[data-tab="gift"]', value : 44.38385 });
   initSlider({ el : '#api-budget-app-slider', value : budgetVal, name : 'budget-slider' });
-  initSlider({ el : '#api-bugget-api', value : 0.00001, name : 'api-slider' });
-  initSlider({ el : '.royalty-container', value : 0.00001, max : 99 });
+  initSlider({ el : '#api-percent-global-slider', value : 0.0001, max : 99, name : 'global-percent-slider' });
+  initSlider({ el : '#api-bugget-api .storecoin-slider', value : 0.00001, name : 'api-slider' });
+  initSlider({ el : '#api-bugget-api .percent-slider', value : 0.00001, max : 99 });
+  $('#api-bugget-api .amount-slider .amounts .end span').text(budgetVal);
 }
 
 function initSlider(params) {
@@ -460,6 +462,10 @@ function initSlider(params) {
 
           $('#api-bugget-api').find('.end span').text(budgetVal);
         }
+
+        if (params.name == 'global-percent-slider') {
+          $('#api-bugget-api .percent-slider .amount-slider .slider').slider('option', 'value', ui.value);
+        }
       },
       change : function(ev, ui){
         sliderFunction($(this), 'change', params);
@@ -479,6 +485,10 @@ function initSlider(params) {
           });
 
           $('#api-bugget-api').find('.end span').text(budgetVal);
+        }
+
+        if (params.name == 'global-percent-slider') {
+          $('#api-bugget-api .percent-slider .amount-slider .slider').slider('option', 'value', ui.value);
         }
       }
     });

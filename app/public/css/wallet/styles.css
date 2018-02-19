@@ -1665,10 +1665,20 @@ button.small,
 #api-bugget-api .api-item section {
   flex: auto;
   padding: 0px;
-  /*padding-left: 1em;*/
+  width: 100%;
   border-bottom: 0px;
 }
 
+#api-bugget-api .api-item section.storecoin-slider {
+  margin-bottom: 1em;
+}
+
+#api-bugget-api .api-item section.percent-slider .slider .ui-slider-range {
+  background: #61bb71;
+  border-color: #61bb71 !important;
+}
+
+#api-percent-global-slider .amount-slider,
 #api-bugget-api .api-item section .amount-slider {
   height: 65px;
 }
