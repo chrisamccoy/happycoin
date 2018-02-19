@@ -14,6 +14,8 @@ $(document).ready(function(){
   initApi();
   triggerBuy();
   initFeedsTab();
+  initPercentSlider();
+  initRoyaltyTabs();
 });
 var giftItems = {
   storeVal : null,
@@ -90,8 +92,41 @@ function triggerBuy() {
   }
 }
 
+function initPercentSlider() {
+  var $tab = $('.royalty-container section.tab[data-tab]'),
+  $checkbox = $tab.find('.wallet-checkbox input');
+  $checkbox.change(function() {
+      var $this = $(this),
+      $amountSlider = $this.parents('.tab').find('.amount-slider'),
+      $thisSlider = $amountSlider.find('.slider');
+      // console.log($thisSlider);
+      if(this.checked) {
+        $amountSlider.addClass('disabled');
+        $thisSlider.slider('disable');
+      } else {
+        $thisSlider.slider('enable');
+        $amountSlider.removeClass('disabled');
+      }
+  });
+}
+
+function initRoyaltyTabs() {
+  var lastScrollTop = 0;
+  $('.royalty-tabs .feeds-tab').scroll(function(event){
+     var st = $(this).scrollTop();
+     if (st > lastScrollTop){
+        $('.royalty-tabs .feeds-tab-items').addClass('top');
+        //  $('.royalty-tabs .feeds-tab-items').slideUp();
+     } else {
+        // upscroll code
+        $('.royalty-tabs .feeds-tab-items').removeClass('top');
+     }
+     lastScrollTop = st;
+  });
+}
+
 function initFeedsTab() {
-  var $tabs = $('#feeds-tab'),
+  var $tabs = $('.feeds-tab-items'),
   $items = $tabs.find('.item');
 
   $items.click(function(){
@@ -380,12 +415,12 @@ function closeAllTabs (){
 }
 
 function initRangeSlider() {
-
   initSlider({ el : '#wallet-tabs .tab[data-tab="buy"]', value : 44.38385 });
   initSlider({ el : '#wallet-tabs .tab[data-tab="sell"]', value : 44.38385 });
   initSlider({ el : '#wallet-tabs .tab[data-tab="gift"]', value : 44.38385 });
   initSlider({ el : '#api-budget-app-slider', value : budgetVal, name : 'budget-slider' });
   initSlider({ el : '#api-bugget-api', value : 0.00001, name : 'api-slider' });
+  initSlider({ el : '.royalty-container', value : 0.00001, max : 99 });
 }
 
 function initSlider(params) {
@@ -393,7 +428,7 @@ function initSlider(params) {
   if ($slider.length) {
     var slider = $slider.find(".amount-slider .slider").slider({
       range : 'min',
-      max: 139.47001,
+      max: (params.max) ? params.max : 139.47001,
       min : 0.00001,
       step : 0.00001,
       value : params.value,
@@ -463,7 +498,7 @@ function sliderFunction($this, eventName, params) {
 }
 
 function changeOnSlide (value, $parent, handlePos) {
-  var $storeVal = $parent.find('.amount-slider .storecoin-val span'),
+  var $storeVal = $parent.find('.amount-slider .storecoin-val span.value'),
       tabName = $parent.data().tab,
       $modalStoreVal = $('.confirm-transact.ui.modal[data-modal="'+tabName+'-modal"] .modal-content .buy-amount .storecoin-val'),
       $dollarVal = $parent.find('.dollar-val span:last-child'),

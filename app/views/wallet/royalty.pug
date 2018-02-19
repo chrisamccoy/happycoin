@@ -1,0 +1,81 @@
+extends layout-royalty
+
+block content
+  
+  div.royalty-container
+    section
+      section.tab.no-padding(data-tab="none")
+        .wallet-checkbox
+          input(type='checkbox', id="input-1")
+          label(for="input-1") Set a global royalty for Acme Corp to earn for every storecoin-powered transaction inside Footprint
+        include percent-slider
+    div.royalty-tabs(style="position:relative; overflow:hidden;")
+      div.feeds-tab-items.fixed
+        .item(data-tab='#hq') HQ
+        .item(data-tab='#location') Location
+        .item.active(data-tab='#user') User
+      div#hq.feeds-tab.active
+        section
+          section.tab.no-padding(data-tab="none")
+            .wallet-checkbox
+              input(type='checkbox', id="hq-1")
+              label(for="hq-1") When user earns storecoin for sharing, reposting and retweeting content
+            include percent-slider
+            
+        section
+          section.tab.no-padding(data-tab="none")
+            .wallet-checkbox
+              input(type='checkbox', id="hq-2")
+              label(for="hq-2") When user pays to advertise their product and services to Acme Corp
+            include percent-slider
+            
+        section
+          section.tab.no-padding(data-tab="none")
+            .wallet-checkbox
+              input(type='checkbox', id="hq-3")
+              label(for="hq-3") HQ sends a Broadcast to Staff
+            include percent-slider
+              
+      div#location.feeds-tab
+        section
+          section.tab.no-padding(data-tab="none")
+            .wallet-checkbox
+              input(type='checkbox', id="location-1")
+              label(for="location-1") Location sends a Broadcast to staff
+            include percent-slider
+            
+        section
+          section.tab.no-padding(data-tab="none")
+            .wallet-checkbox
+              input(type='checkbox', id="location-2")
+              label(for="location-2") Location sends a message to HQ
+            include percent-slider
+            
+        section
+          section.tab.no-padding(data-tab="none")
+            .wallet-checkbox
+              input(type='checkbox', id="location-3")
+              label(for="location-3") Location sends a message to other Locations
+            include percent-slider
+              
+      div#user.feeds-tab  
+        section
+          section.tab.no-padding(data-tab="none")
+            .wallet-checkbox
+              input(type='checkbox', id="user-1")
+              label(for="user-1") User tip other users in Acme Corp chat
+            include percent-slider
+            
+        section
+          section.tab.no-padding(data-tab="none")
+            .wallet-checkbox
+              input(type='checkbox', id="user-2")
+              label(for="user-2") User pays to promote their Broadcasts
+            include percent-slider
+            
+        section
+          section.tab.no-padding(data-tab="none")
+            .wallet-checkbox
+              input(type='checkbox', id="user-3")
+              label(for="user-3") User pays to join Pop-up channel
+            include percent-slider

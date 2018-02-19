@@ -165,11 +165,6 @@ router.get('/contact', function(req, res, next) {
 });
 
 /* GET home page. */
-router.get('/api', function(req, res, next) {
-  res.render('developer-api', { title: 'Storecoin', meta: meta() });
-});
-
-/* GET home page. */
 router.get('/examples', function(req, res, next) {
   res.render('examples', { title: 'Storecoin', meta: meta() });
 });
@@ -242,12 +237,26 @@ router.get('/wallet/wallet-app/api', function(req, res, next) {
   res.render('wallet/api', { title: 'Storecoin', name : 'Home', header : true, meta: meta() });
 });
 
+router.get('/wallet/wallet-app/royalty', function(req, res, next) {
+  res.render('wallet/royalty', { title: 'Storecoin', name : 'Home', header : true, meta: meta() });
+});
+
 router.get('/wallet', function(req, res, next) {
   res.render('wallet/index-desktop', { title: 'Storecoin', name : 'Home', meta: meta() });
 });
 
 router.get('/wallet2', function(req, res, next) {
   res.render('wallet/index-2', { title: 'Storecoin', name : 'Home', meta: meta() });
+});
+
+/* GET home page. */
+router.get('/api', function(req, res, next) {
+  res.render('developer-api', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
+router.get('/royalty', function(req, res, next) {
+  res.render('developer-royalty', { title: 'Storecoin', meta: meta() });
 });
 
 // router.get('/wallet/buy', function(req, res, next) {

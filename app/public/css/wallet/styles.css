@@ -751,8 +751,17 @@ button.small,
 }
 
 .amount-slider {
-  /*position: relative;*/
+  position: relative;
   height: 100px;
+}
+
+.amount-slider.disabled {
+  opacity: 0.7;
+}
+
+.amount-slider.disabled .slider .ui-slider-range {
+  background: #2a2a2a;
+  border-color: #2a2a2a !important;
 }
 
 .amount-slider .amounts {
@@ -794,6 +803,10 @@ button.small,
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+
+.amount-slider.disabled .conversion .storecoin-val {
+  color: #2a2a2a85;
 }
 
 .amount-slider .conversion .storecoin-val img {
@@ -1709,14 +1722,28 @@ button.small,
 
 /*---------------------------------*/
 
-#feeds-tab {
+.feeds-tab-items {
   display: flex;
   flex-wrap: wrap;
   border-bottom: 1px solid #eaeaea;
-  box-shadow: 0px 0px 2px grey;
+  box-shadow: 0px 1px 2px #e1e1e1;
+  background-color: white;
 }
 
-#feeds-tab .item {
+.feeds-tab-items.fixed {
+  z-index: 5;
+  position: absolute;
+  top:0px;
+  left: 0px;
+  width: 100%;
+  transition: all .5s;
+}
+
+.feeds-tab-items.fixed.top {
+  top:-57px;
+}
+
+.feeds-tab-items .item {
   width: 33.33%;
   text-align: center;
   padding: 1em 0px;
@@ -1724,7 +1751,7 @@ button.small,
   position: relative;
 }
 
-#feeds-tab .item.active::before {
+.feeds-tab-items .item.active::before {
   content: '';
   width: 100%;
   position: absolute;
@@ -1734,12 +1761,51 @@ button.small,
   background-color: #ffdc00;
 }
 
-#home-tab .feeds-tab {
+.feeds-tab {
   display: none;
-  height: calc(100% - 219px);
   overflow: scroll;
 }
 
-#home-tab .feeds-tab.active {
+.royalty-container .feeds-tab {
+  height: calc(100vh - 239px);
+  padding-top: 57px;
+}
+
+#home-tab .feeds-tab {
+  height: calc(100% - 219px);
+}
+
+.feeds-tab.active {
   display: block;
+}
+
+/*---------------------------------*/
+
+.royalty-container section.tab {
+  padding: 0px;
+  border: 0px;
+}
+
+.royalty-container section.tab .amount-slider {
+  height: 65px;
+}
+
+/*---------------------------------*/
+
+.wallet-checkbox {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5em;
+}
+
+.wallet-checkbox input[type="checkbox"] {
+  width: 30px;
+  /*height: 30px;*/
+  margin-right: 1em;
+  margin-top: 5px;
+}
+
+.wallet-checkbox label {
+  font-weight: 300;
+  line-height: 1.4;
 }
