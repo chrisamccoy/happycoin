@@ -444,7 +444,7 @@ function initSlider(params) {
         sliderFunction($(this), 'slide', params);
         if (params.name == 'api-slider') {
           var total = ui.value;
-          $('#api-bugget-api .amount-slider .slider').not(this).each(function () {
+          $('#api-bugget-api .storecoin-slider .amount-slider .slider').not(this).each(function () {
               total += $(this).slider('value');
           })
           if (total > budgetVal) {
@@ -471,7 +471,7 @@ function initSlider(params) {
         sliderFunction($(this), 'change', params);
         if (params.name == 'api-slider') {
           var total = ui.value;
-          $('#api-bugget-api .amount-slider .slider').not(this).each(function () {
+          $('#api-bugget-api .storecoin-slider .amount-slider .slider').not(this).each(function () {
               total += $(this).slider('value');
           });
         }
