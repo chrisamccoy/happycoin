@@ -1679,9 +1679,14 @@ button.small,
   border-radius: 7px;
 }
 
+#api-percent-global-slider .slider .ui-slider-range,
 #api-bugget-api .api-item section.percent-slider .slider .ui-slider-range {
   background: #61bb71;
   border-color: #61bb71 !important;
+}
+
+#api-percent-global-slider {
+  background-color: #f6f6f6;
 }
 
 #api-percent-global-slider .amount-slider,
