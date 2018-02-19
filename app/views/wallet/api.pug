@@ -1,14 +1,14 @@
 extends layout-api
 
 block content
-  
+
   div.api-container
     section.item-app
       div.image
         img(src="/images/wallet/calender-icon.png")
         //- i.ion-calendar(style="font-size:1.8em;")
       div.title
-        div 
+        div
           b Easy Schedule
         div Project Management
     section#api-balance
@@ -19,15 +19,15 @@ block content
           div.amount.green 139.470001
       div.buy
         a(href="/wallet/wallet-app/#api-buy").button.small Buy
-        
+
     section#api-budget-app-slider.tab(data-tab="none")
-      div.header Budget for your app
+      div.header Total #💰 budget for incentivized API calls
       include amount-slider
-      
+
     section#api-percent-global-slider.tab(data-tab="none")
-      div.header Set a global % to earn for each transaction
+      div.header Set a Developer royalty all #💰-powered API's (%)
       include percent-slider
-      
+
     section#api-bugget-api
       //- div.header Set budget for API calls
       div.header Set Paid API Calls
@@ -49,11 +49,11 @@ block content
 
           section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
-          
+
           section.tab.no-padding.percent-slider(data-tab="none")
             div.header Set % for this transaction
             include percent-slider
-            
+
         div.api-item
           div.selected-api
           //- button.small.select-api SELECT API
@@ -71,11 +71,11 @@ block content
 
           section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
-            
+
           section.tab.no-padding.percent-slider(data-tab="none")
             div.header Set % for this transaction
             include percent-slider
-            
+
         div.api-item
           div.selected-api
           //- button.small.select-api SELECT API
@@ -93,11 +93,11 @@ block content
 
           section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
-            
+
           section.tab.no-padding.percent-slider(data-tab="none")
             div.header Set % for this transaction
             include percent-slider
-            
+
         div.api-item
           div.selected-api
           //- button.small.select-api SELECT API
@@ -115,11 +115,11 @@ block content
 
           section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
-            
+
           section.tab.no-padding.percent-slider(data-tab="none")
             div.header Set % for this transaction
             include percent-slider
-            
+
         div.api-item
           div.selected-api
           //- button.small.select-api SELECT API
@@ -137,11 +137,11 @@ block content
 
           section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
-            
+
           section.tab.no-padding.percent-slider(data-tab="none")
             div.header Set % for this transaction
             include percent-slider
-            
+
         div.api-item
           div.selected-api
           //- button.small.select-api SELECT API
@@ -159,11 +159,11 @@ block content
 
           section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
-            
+
           section.tab.no-padding.percent-slider(data-tab="none")
             div.header Set % for this transaction
             include percent-slider
-            
+
         div.api-item
           div.selected-api
           //- button.small.select-api SELECT API
@@ -181,11 +181,11 @@ block content
 
           section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
-            
+
           section.tab.no-padding.percent-slider(data-tab="none")
             div.header Set % for this transaction
             include percent-slider
-            
+
         div.api-item
           div.selected-api
           //- button.small.select-api SELECT API
@@ -203,11 +203,11 @@ block content
 
           section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
-            
+
           section.tab.no-padding.percent-slider(data-tab="none")
             div.header Set % for this transaction
             include percent-slider
-            
+
         div.api-item
           div.selected-api
           //- button.small.select-api SELECT API
@@ -225,11 +225,11 @@ block content
 
           section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
-            
+
           section.tab.no-padding.percent-slider(data-tab="none")
             div.header Set % for this transaction
             include percent-slider
-            
+
         div.api-item
           div.selected-api
           //- button.small.select-api SELECT API
@@ -247,21 +247,21 @@ block content
 
           section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
-            
+
           section.tab.no-padding.percent-slider(data-tab="none")
             div.header Set % for this transaction
             include percent-slider
-            
+
 
   div#select-api-modal.ui.small.modal
     div.content
-      div.modal-header 
+      div.modal-header
         div.logo-title Select API
         div.close-modal
           i.ion-android-close
-      div.modal-content 
+      div.modal-content
         section.list
-          div.item 
+          div.item
             div.name TASKS
               i.ion-chevron-down
             div.sub-list
@@ -273,7 +273,7 @@ block content
                 li Task comments & attachments
                 li Subtasks
                 li Celebration Creatures
-                
+
           div.item
             div.name PROJECTS
               i.ion-chevron-down
@@ -285,7 +285,7 @@ block content
                 li Project progress
                 li Sections
                 li Asana-created templates
-                
+
           div.item
             div.name CONVERATIONS
               i.ion-chevron-down
@@ -295,7 +295,7 @@ block content
                 li Team Conversations
                 li Project Conversations
                 li Conversations & email
-                
+
           div.item
             div.name ORGANIZATIONS & TEAMS
               i.ion-chevron-down
@@ -306,7 +306,7 @@ block content
                 li Team basics
                 li Managing a team
                 li Team calendars & conversations
-                
+
           div.item
             div.name WORKSPACES
               i.ion-chevron-down
@@ -315,4 +315,3 @@ block content
                 li Understanding Workspaces
                 li Creating & managing Workspaces
                 li Workspace Members & Limited Access Members
-            
