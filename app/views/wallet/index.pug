@@ -33,7 +33,7 @@ block content
       
     div.feeds-tab-items
       div.item.active(data-tab="#price") Price
-      div.item(data-tab="#activity") Activity
+      div.item(data-tab="#txns") Txns
       div.item(data-tab="#apps") Apps
           
     div#price.feeds-tab.active.graph-feeds    
@@ -143,7 +143,7 @@ block content
           div.sp.sp-wave
           div.text Loading...
     
-    div#activity.feeds-tab.graph-feeds
+    div#txns.feeds-tab.graph-feeds
       div.feeds
         section.wallet-feed
           img.image(src="/images/wallet/user-1.png")
@@ -233,19 +233,25 @@ block content
         .title
           div
             b Easy Schedule
-          div Project Management 
-        a.button.small.icon(href='/api')
+          div.meta Project Management 
+        div.ui.dropdown.button.small.icon(href='/api')
           i.ion-gear-a
+          .right.menu
+            a.item(href="/wallet") Set Incentives
+            a.item(href="/api") Send API calls to Storecoin
       section.item-app
         .image
           img(src='/images/wallet/social-media-logo-v2.png')
         .title
           div
             b Smart Analytics
-          div Social Media Analytics 
-        a.button.small.icon(href='javascript:;')
+          div.meta Social Media Analytics 
+        div.ui.dropdown.button.small.icon(href='javascript:;')
           i.ion-gear-a    
-          
+          .right.menu
+            a.item(href="/wallet") Set Incentives
+            a.item(href="/api") Send API calls to Storecoin
+            
   div#transaction-tab
     include sub-nav
     

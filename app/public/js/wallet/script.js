@@ -31,7 +31,9 @@ coinsVal = {
 },
 coinKey = 'eth',
 isApiBuy = false,
-budgetVal = 44.38385;
+budgetVal = 44.38385,
+buyAmount = 0,
+storecoinBal = 139.470001;
 
 function loadCoinsValue() {
   var $selectCoinModal =  $('#select-coin-modal');
@@ -184,6 +186,16 @@ function initApi(){
       $selectModal.modal('hide');
       $thisItem.find('.selected-api').text($(this).text());
     });
+
+    if (window.location.pathname == '/wallet/wallet-app/api') {
+      if (window.location.search) {
+        var q = parseFloat(window.location.search.substring(1).split('=')[1]);
+        storecoinBal += q;
+      }
+    }
+    $('#api-balance .amount').text(storecoinBal);
+    $('#api-budget-app-slider .amount-slider .end span').text(storecoinBal);
+    initSlider({ el : '#api-budget-app-slider', value : budgetVal, name : 'budget-slider', max : storecoinBal });
   }
 }
 
@@ -381,7 +393,7 @@ function initModal () {
     $modal.modal('hide');
     initloader();
     if (isApiBuy) {
-      window.location = '/api';
+      window.location = '/wallet/wallet-app/api?bought='+buyAmount;
     }
   });
 }
@@ -418,7 +430,6 @@ function initRangeSlider() {
   initSlider({ el : '#wallet-tabs .tab[data-tab="buy"]', value : 44.38385 });
   initSlider({ el : '#wallet-tabs .tab[data-tab="sell"]', value : 44.38385 });
   initSlider({ el : '#wallet-tabs .tab[data-tab="gift"]', value : 44.38385 });
-  initSlider({ el : '#api-budget-app-slider', value : budgetVal, name : 'budget-slider' });
   initSlider({ el : '#api-percent-global-slider', value : 0.0001, max : 99, name : 'global-percent-slider' });
   initSlider({ el : '#api-bugget-api .storecoin-slider', value : 0.00001, name : 'api-slider' });
   initSlider({ el : '#api-bugget-api .percent-slider', value : 0.00001, max : 99 });
@@ -517,6 +528,7 @@ function changeOnSlide (value, $parent, handlePos) {
       $conversion = $parent.find('.conversion');
 
   if ($storeVal) { $storeVal.text(value); }
+  buyAmount = value;
   if ($modalStoreVal) { $modalStoreVal.text(value); }
 
   if (tabName == 'gift') {
@@ -596,7 +608,7 @@ function drawLineChart(data) {
     if ($("#wallet-graph .graph").length) {
       var svg = d3.select("#wallet-graph .graph").append('svg');
           svg.attr("width", $('#wallet-graph .graph').width());
-          svg.attr("height", 200);
+          svg.attr("height", 170);
       var margin = {top: 20, right: 0, bottom: 20, left: 30},
           margin2 = {top: 0, right: 20, bottom: 30, left: 40},
           width = +svg.attr("width") - margin.left - margin.right,

@@ -525,7 +525,7 @@ button.small,
 
 #wallet-graph .graph-container {
   position: relative;
-  height : 200px;
+  height : 170px;
 }
 
 #wallet-graph .graph-container .loading {
@@ -681,6 +681,20 @@ button.small,
   line-height: 1;
   color: rgba(0,0,0,.4);
   font-size: 12px;
+}
+
+@media only screen and (max-width: 330px) {
+  .wallet-feed .description .name-val .name {
+    font-size: 0.9em;
+  }
+
+  .wallet-feed .description .name-val .value {
+    font-size: 17px;
+  }
+
+  .wallet-feed .description .name-val .status {
+    font-size: 9px;
+  }
 }
 
 /*---------------------------------------*/
@@ -1594,6 +1608,10 @@ button.small,
   flex: auto;
 }
 
+.item-app .title .meta {
+  font-size: 0.8em;
+}
+
 .item-app .image {
   width: 55px;
   height: 55px;
@@ -1610,6 +1628,10 @@ button.small,
   /*border: 1px solid #8080805c;*/
 }
 
+.item-app .ui.dropdown .item {
+  padding: 1em !important;
+  background: #dcdcdc3d;
+}
 /*---------------------------------*/
 #api-balance {
   display: flex;
@@ -1768,9 +1790,10 @@ button.small,
 .feeds-tab-items .item {
   width: 33.33%;
   text-align: center;
-  padding: 1em 0px;
+  padding: 0.7em 0px;
   font-weight: bold;
   position: relative;
+  cursor: pointer;
 }
 
 .feeds-tab-items .item.active::before {
@@ -1794,7 +1817,7 @@ button.small,
 }
 
 #home-tab .feeds-tab {
-  height: calc(100% - 219px);
+  height: calc(100% - 208px);
 }
 
 .feeds-tab.active {

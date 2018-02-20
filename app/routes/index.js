@@ -237,6 +237,10 @@ router.get('/wallet/wallet-app/api', function(req, res, next) {
   res.render('wallet/api', { title: 'Storecoin', name : 'Home', header : true, meta: meta() });
 });
 
+router.get('/api-m', function(req, res, next) {
+  res.render('wallet/api', { title: 'Storecoin', name : 'Home', header : true, meta: meta() });
+});
+
 router.get('/wallet/wallet-app/royalty', function(req, res, next) {
   res.render('wallet/royalty', { title: 'Storecoin', name : 'Home', header : true, meta: meta() });
 });
