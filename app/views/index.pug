@@ -14,9 +14,15 @@ block content
           a.lite-green.underline(data-featherlight="#auditable") Auditable
           |  Proof of Stake-based consensus protocol (DyPoS), Storecoin will secure free transactions, high-throughput, and a decentralized governance system with built-in checks and balances inspired by the United States Constitution.
 
-    #dynamic.intro-popup(style="display:none;") Dynamic because our crypto economics for block rewards, validation/consensus, throughput/scaling, and security are modeled after the dynamic nature of surge pricing in ride-sharing companies like Uber.
-    #fork.intro-popup(style="display:none;") Fork-tolerant because we are not fork-shy, instead, we are a fork-loving blockchain. Chain forks are designed into DyPoS so the protocol can take advantage of them.
-    #auditable.intro-popup(style="display:none;") Auditable because if you touch the blockchain, you leave your fingerprints. Every change made by everyone is auditable.
+    #dynamic.intro-popup(style="display:none;") 
+      b Dynamic
+      |  because our crypto economics for block rewards, validation/consensus, throughput/scaling, and security are modeled after the dynamic nature of surge pricing in ride-sharing companies like Uber.
+    #fork.intro-popup(style="display:none;")
+      b Fork-tolerant
+      |  because forks are first-class citizens in the BlockFin consensus algorithm. Forks typically indicate disagreement in traditional blockchains and hence, block creation is globally serialized. So, forks throttle the throughput artificially. By embracing chain forks, BlockFin allows for parallel block assembly and sealing by multiple validator nodes resulting in substantial improvements in throughput.
+    #auditable.intro-popup(style="display:none;") 
+      b Auditable
+      |  because if you touch the blockchain, you leave your fingerprints. Every change made by everyone is auditable.
     
     div#second-token-sale
     - var top = true
@@ -146,6 +152,24 @@ block content
     #about-dypos.hc-feature.over-rel.padding.orange.inverted(style="padding:2.5em;")
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted(style=" margin:0px !important;")  About Dynamic Proof of Stake (DyPoS)
+          
+    #blockfin.hc-feature.over-rel.padding
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title It starts with our BlockFin consensus algorithm
+        p.hc-feature-lead BlockFin is a Fork-Tolerant, Decentralized, and High Throughput Consensus Protocol invented by Storecoin.
+        div.tweets
+          div.tweet 
+            blockquote.twitter-tweet(data-lang='en')
+              p(lang='en', dir='ltr')
+                | Here's a look at our first technical research paper at 
+                a(href='https://twitter.com/StorecoinTeam?ref_src=twsrc%5Etfw') @StorecoinTeam
+                | .  This details our consensus algorithm currently code named "BlockFin". 
+                br
+                br
+                | We'll release to the public before our final token event, in 2019. 
+                a(href='https://t.co/TYGGg4qPQ9') pic.twitter.com/TYGGg4qPQ9
+              | — Storecoin (@StorecoinTeam) 
+              a(href='https://twitter.com/StorecoinTeam/status/963511294941790208?ref_src=twsrc%5Etfw') February 13, 2018
 
     include six-engines
 
@@ -456,7 +480,7 @@ block content
             a.underline(href="/wallet", target="_blank").orange-color See a Prototype for the Storecoin Wallet
             
           p.hc-feature-lead(style="margin-bottom: 0px; margin-top:1.5em;")
-            a.underline(href="/wallet", target="_blank").orange-color See a Prototype of the Developer API
+            a.underline(href="/api", target="_blank").orange-color See a Prototype of the Developer API
     
     #storecoin-grows.hc-feature.over-rel.padding.inverted
       .hc-chunk.hc-customize-text-wrapper

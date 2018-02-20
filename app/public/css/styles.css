@@ -4398,6 +4398,7 @@ and (max-width : 335px) {
   text-align: left;
   width: 100%;
   color: black;
+  font-size: 1.3em;
 }
 
 .engine .back p {
