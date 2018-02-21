@@ -235,11 +235,11 @@ block content
           div
             b Easy Schedule
           div.meta Project Management 
-        div.ui.dropdown.button.small.icon(href='/api')
+        div.button.small.icon.open-process(data-process="api-process", data-app="easy-schedule")
           i.ion-gear-a
-          .right.menu
-            a.item.open-process(data-process="incentive-process", data-app="easy-schedule") Set Incentives
-            a.item.open-process(data-process="api-process", data-app="easy-schedule") Send API calls to Storecoin
+          //- .right.menu
+          //-   a.item.open-process(data-process="incentive-process", data-app="easy-schedule") Set Incentives
+          //-   a.item.open-process(data-process="api-process", data-app="easy-schedule") Send API calls to Storecoin
       section.item-app
         .image
           img(src='/images/wallet/social-media-logo-v2.png')
@@ -247,11 +247,11 @@ block content
           div
             b Smart Analytics
           div.meta Social Media Analytics 
-        div.ui.dropdown.button.small.icon(href='javascript:;')
+        div.button.small.icon.open-process(data-process="api-process", data-app="smart-analytics")
           i.ion-gear-a    
-          .right.menu
-            a.item.open-process(data-process="incentive-process", data-app="smart-analytics") Set Incentives
-            a.item.open-process(data-process="api-process", data-app="smart-analytics") Send API calls to Storecoin
+          //- .right.menu
+          //-   a.item.open-process(data-process="incentive-process", data-app="smart-analytics") Set Incentives
+          //-   a.item.open-process(data-process="api-process", data-app="smart-analytics") Send API calls to Storecoin
             
   div#transaction-tab
     include sub-nav
@@ -523,17 +523,39 @@ block content
             div.name User invites a friend who onboards
             div.check 
               i.ion-checkmark-circled
+          div.item
+            div.name User accepts 3 invites in a row
+            div.check 
+              i.ion-checkmark-circled
+          div.item
+            div.name User creates a new project
+            div.check 
+              i.ion-checkmark-circled
+          div.item
+            div.name User creates an event
+            div.check 
+              i.ion-checkmark-circled
+          div.item
+            div.name User creates an event and schedules +3 people
+            div.check 
+              i.ion-checkmark-circled
+          div.item
+            div.name User archives an event
+            div.check 
+              i.ion-checkmark-circled
+                
         div.proceed.next.wallet-button(data-step="step-2")
           button Next
     div.process-step.step-2
       section
         div.head Name you API Calls
-        div.input-field
-          label User sign up
-          input(type="text", placeholder="Enter name here")
-        div.input-field
-          label User successfully onboards
-          input(type="text", placeholder="Enter name here")
+        div.fields
+          //- div.input-field
+          //-   label User sign up
+          //-   input(type="text", placeholder="Enter name here")
+          //- div.input-field
+          //-   label User successfully onboards
+          //-   input(type="text", placeholder="Enter name here")
             
         div.proceed.publish.wallet-button(data-message="Sending API calls to the <br> Storecoin blockchain")
           button Publish API Calls

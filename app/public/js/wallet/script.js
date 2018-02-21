@@ -108,7 +108,8 @@ function initProcess() {
     var data = $(this).data(),
     appData = appInfo[data.app],
     $thisProcess = $('#'+data.process);
-    $thisApp = $thisProcess.find('.item-app');
+    $thisApp = $thisProcess.find('.item-app'),
+    selectedApi = [];
 
     $thisProcess.height($(window).height()).show();
     $thisApp.find('.image img').attr('src', appData.img);
@@ -119,8 +120,20 @@ function initProcess() {
   });
 
   $checkList.find('.item').click(function(){
-    $checkList.find('.item').removeClass('active');
-    $(this).addClass('active');
+    $(this).toggleClass('active');
+    var itemText = $(this).find('.name').text();
+    if (selectedApi.indexOf(itemText) < 0) {
+      selectedApi.push(itemText);
+    } else {
+      selectedApi.splice(selectedApi.indexOf(itemText), 1);
+    }
+    // console.log(selectedApi);
+    var inputField = '';
+    selectedApi.forEach(function(api){
+      // console.log(api);
+      inputField += '<div class="input-field"><label>'+api+'</label><input type="text" placeholder="Enter name here"></div>';
+      $('#api-process .step-2 .fields').html(inputField);
+    });
   });
 
   $processWin.find('.proceed.next').click(function(){
@@ -130,7 +143,14 @@ function initProcess() {
     $thisWindow.find('.process-step.'+stepName).addClass('show');
   });
 
-  $processWin.find('.proceed.publish').click(function(){
+  $('#api-process .proceed.publish').click(function(){
+    var message = $(this).data().message;
+    $processWin.hide();
+    $('#incentive-process').show();
+    initloader({ message : message });
+  });
+
+  $('#incentive-process .proceed.publish').click(function(){
     var message = $(this).data().message;
     $processWin.hide();
     initloader({ message : message });

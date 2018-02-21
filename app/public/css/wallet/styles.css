@@ -1411,7 +1411,7 @@ button.small,
   height : 100%;
   background: black;
   background: #000000d6;
-  z-index: 10;
+  z-index: 20;
   align-items: center;
   justify-content: center;
 }
@@ -1697,11 +1697,11 @@ button.small,
   margin-bottom: 1em;
 }
 
-#api-bugget-api .api-item section.percent-slider {
+/*#api-bugget-api .api-item section.percent-slider {
   background-color: #80808024;
   padding: 0.5em;
   border-radius: 7px;
-}
+}*/
 
 #api-percent-global-slider .slider .ui-slider-range,
 #api-bugget-api .api-item section.percent-slider .slider .ui-slider-range {
@@ -1709,9 +1709,9 @@ button.small,
   border-color: #61bb71 !important;
 }
 
-#api-percent-global-slider {
+/*#api-percent-global-slider {
   background-color: #f6f6f6;
-}
+}*/
 
 #api-percent-global-slider .amount-slider,
 #api-bugget-api .api-item section.percent-slider .amount-slider {
