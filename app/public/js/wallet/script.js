@@ -16,6 +16,7 @@ $(document).ready(function(){
   initFeedsTab();
   initPercentSlider();
   initRoyaltyTabs();
+  initProcess();
 });
 var giftItems = {
   storeVal : null,
@@ -82,6 +83,57 @@ function loadCoinsValue() {
 
       $('.slider').trigger('sliderchange');
     }
+  });
+}
+
+function initProcess() {
+  var $openProcess = $('.open-process'),
+  $processWin = $('.process-window'),
+  $checkList = $processWin.find('.check-list');
+
+  appInfo = {
+    'easy-schedule' : {
+      img : '/images/wallet/calender-icon.png',
+      head : 'Easy Schedule',
+      meta : 'Project Management'
+    },
+    'smart-analytics' : {
+      img : '/images/wallet/social-media-logo-v2.png',
+      head : 'Smart Analytics',
+      meta : 'Social Media Analytics'
+    }
+  }
+
+  $openProcess.click(function(){
+    var data = $(this).data(),
+    appData = appInfo[data.app],
+    $thisProcess = $('#'+data.process);
+    $thisApp = $thisProcess.find('.item-app');
+
+    $thisProcess.height($(window).height()).show();
+    $thisApp.find('.image img').attr('src', appData.img);
+    $thisApp.find('.title b').text(appData.head);
+    $thisApp.find('.title .meta').text(appData.meta);
+    var offset = $thisApp.outerHeight() + $thisProcess.find('.process-head .header').outerHeight() + 48;
+    $thisProcess.find('.process-step').height($(window).height() - offset);
+  });
+
+  $checkList.find('.item').click(function(){
+    $checkList.find('.item').removeClass('active');
+    $(this).addClass('active');
+  });
+
+  $processWin.find('.proceed.next').click(function(){
+    var stepName = $(this).data().step,
+    $thisWindow = $(this).parents('.process-window');
+    $thisWindow.find('.process-step').removeClass('show');
+    $thisWindow.find('.process-step.'+stepName).addClass('show');
+  });
+
+  $processWin.find('.proceed.publish').click(function(){
+    var message = $(this).data().message;
+    $processWin.hide();
+    initloader({ message : message });
   });
 }
 
@@ -237,7 +289,7 @@ function sendGift () {
     $('#notification-window .notification-feeds').append(templateNot);
     $('.feeds').append(templateFeed);
     updateNotific('new');
-    initloader();
+    initloader({ message : 'Loading...' });
   });
 }
 
@@ -296,7 +348,9 @@ function initTabs (){
 
   $back.click(closeAllTabs);
 
-  $tradeTab.find('.wallet-button').click(initloader);
+  $tradeTab.find('.wallet-button').click(function(){
+    initloader({ message : 'Loading...' });
+  });
 
   $tradeTab.find('.buying .btn').click(function(){
     $(this).addClass('active');
@@ -336,7 +390,7 @@ function initTabs (){
 
       var $currentTab = $walletTabs.find('.tab[data-tab="'+tabName+'"]');
       // var offset = (($walletNav.length > 0) ? $walletNav.height() : 0)  + $subNav.height() + 74;
-      var offset = $subNav.height() + 74;
+      var offset = $subNav.height() + 63;
       // console.log($currentTab.find('.wallet-button').height());
       $currentTab.addClass('active');
       $currentTab.find('.content').css('height' , ($(window).height() - offset)+'px');
@@ -391,18 +445,20 @@ function initModal () {
 
   $modal.find('.confirm-button').click(function(){
     $modal.modal('hide');
-    initloader();
+    initloader({ message : 'Loading...' });
     if (isApiBuy) {
       window.location = '/wallet/wallet-app/api?bought='+buyAmount;
     }
   });
 }
 
-function initloader() {
+function initloader(params) {
   // $('.loader .content.loading').removeClass('show');
   // $('.loader .content.complete').addClass('show');
   // $('.loader').height($(window).height()).transition('fade');
-
+  if (params) {
+    $('.loader .content.loading .text').html(params.message);
+  }
   $('.loader .content.loading').addClass('show');
   $('.loader .content.complete').removeClass('show');
   $('.loader').height($(window).height()).transition('fade');

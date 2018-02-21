@@ -13,6 +13,7 @@ block content
             circle.checkmark__circle(cx='26', cy='26', r='25', fill='none')
             path.checkmark__check(fill='none', d='M14.1 27.2l7.1 7.2 16.7-16.8')
         div.text Complete
+        
   div#home-tab
     section#wallet-value
       div.wallet-container
@@ -237,8 +238,8 @@ block content
         div.ui.dropdown.button.small.icon(href='/api')
           i.ion-gear-a
           .right.menu
-            a.item(href="/wallet") Set Incentives
-            a.item(href="/api") Send API calls to Storecoin
+            a.item.open-process(data-process="incentive-process", data-app="easy-schedule") Set Incentives
+            a.item.open-process(data-process="api-process", data-app="easy-schedule") Send API calls to Storecoin
       section.item-app
         .image
           img(src='/images/wallet/social-media-logo-v2.png')
@@ -249,8 +250,8 @@ block content
         div.ui.dropdown.button.small.icon(href='javascript:;')
           i.ion-gear-a    
           .right.menu
-            a.item(href="/wallet") Set Incentives
-            a.item(href="/api") Send API calls to Storecoin
+            a.item.open-process(data-process="incentive-process", data-app="smart-analytics") Set Incentives
+            a.item.open-process(data-process="api-process", data-app="smart-analytics") Send API calls to Storecoin
             
   div#transaction-tab
     include sub-nav
@@ -491,6 +492,326 @@ block content
             div.dot
               i.ion-record
             p.time Crossfit
+      
+  div#api-process.process-window
+    div.process-head
+      div.header Setup API Calls
+      section.item-app
+        .image
+          img(src='/images/wallet/calender-icon.png')
+        .title
+          div
+            b Easy Schedule
+          div.meta Project Management 
+    div.process-step.step-1.show
+      section
+        div.head Choose API Calls
+        div.check-list
+          div.item
+            div.name User signs up
+            div.check 
+              i.ion-checkmark-circled
+          div.item
+            div.name User successfully onboards
+            div.check 
+              i.ion-checkmark-circled
+          div.item
+            div.name User invites a friend
+            div.check 
+              i.ion-checkmark-circled
+          div.item
+            div.name User invites a friend who onboards
+            div.check 
+              i.ion-checkmark-circled
+        div.proceed.next.wallet-button(data-step="step-2")
+          button Next
+    div.process-step.step-2
+      section
+        div.head Name you API Calls
+        div.input-field
+          label User sign up
+          input(type="text", placeholder="Enter name here")
+        div.input-field
+          label User successfully onboards
+          input(type="text", placeholder="Enter name here")
+            
+        div.proceed.publish.wallet-button(data-message="Sending API calls to the <br> Storecoin blockchain")
+          button Publish API Calls
+  
+  div#incentive-process.process-window
+    div.process-head
+      div.header Setup API Incentives
+      section.item-app
+        .image
+          img(src='/images/wallet/calender-icon.png')
+        .title
+          div
+            b Easy Schedule
+          div.meta Project Management 
+          
+    div.process-step.step-1.show
+      section#api-balance
+        div.balance
+          div Storecoin Balance:
+          div.logo-amount
+            img.logo(src="/images/wallet/storecoin-logo.png")
+            div.amount.green 139.470001
+        div.buy
+          a(href="/wallet/wallet-app/#api-buy").button.small Buy
+          
+      section#api-budget-app-slider.tab(data-tab="none")
+        //- div.header Total #💰 budget for incentivized API calls
+        div.header Total budget for incentivized API calls
+        include amount-slider
+
+      section#api-bugget-api
+        //- div.header Set budget for API calls
+        div.header Set Paid API Calls
+        div.api-list
+          div.api-item
+            div.selected-api
+            //- button.small.select-api SELECT API
+            .ui.selection.dropdown
+              input(type='hidden', name='gender')
+              .default.text Select API
+              i.dropdown.icon
+              .menu
+                .item User signs up
+                .item User successfully onboards
+                .item User invites a friend
+                .item User invites a friend who onboards
+                .item User accepts 3 invites in a row
+                .item User creates an event and schedules +3 people
+
+            section.tab.no-padding.storecoin-slider(data-tab="none")
+              include amount-slider
+
+          div.api-item
+            div.selected-api
+            //- button.small.select-api SELECT API
+            .ui.selection.dropdown
+              input(type='hidden', name='gender')
+              .default.text Select API
+              i.dropdown.icon
+              .menu
+                .item User signs up
+                .item User successfully onboards
+                .item User invites a friend
+                .item User invites a friend who onboards
+                .item User accepts 3 invites in a row
+                .item User creates an event and schedules +3 people
+
+            section.tab.no-padding.storecoin-slider(data-tab="none")
+              include amount-slider
+
+          div.api-item
+            div.selected-api
+            //- button.small.select-api SELECT API
+            .ui.selection.dropdown
+              input(type='hidden', name='gender')
+              .default.text Select API
+              i.dropdown.icon
+              .menu
+                .item User signs up
+                .item User successfully onboards
+                .item User invites a friend
+                .item User invites a friend who onboards
+                .item User accepts 3 invites in a row
+                .item User creates an event and schedules +3 people
+
+            section.tab.no-padding.storecoin-slider(data-tab="none")
+              include amount-slider
+
+          div.api-item
+            div.selected-api
+            //- button.small.select-api SELECT API
+            .ui.selection.dropdown
+              input(type='hidden', name='gender')
+              .default.text Select API
+              i.dropdown.icon
+              .menu
+                .item User signs up
+                .item User successfully onboards
+                .item User invites a friend
+                .item User invites a friend who onboards
+                .item User accepts 3 invites in a row
+                .item User creates an event and schedules +3 people
+
+            section.tab.no-padding.storecoin-slider(data-tab="none")
+              include amount-slider
+
+          div.api-item
+            div.selected-api
+            //- button.small.select-api SELECT API
+            .ui.selection.dropdown
+              input(type='hidden', name='gender')
+              .default.text Select API
+              i.dropdown.icon
+              .menu
+                .item User signs up
+                .item User successfully onboards
+                .item User invites a friend
+                .item User invites a friend who onboards
+                .item User accepts 3 invites in a row
+                .item User creates an event and schedules +3 people
+
+            section.tab.no-padding.storecoin-slider(data-tab="none")
+              include amount-slider
+
+          div.api-item
+            div.selected-api
+            //- button.small.select-api SELECT API
+            .ui.selection.dropdown
+              input(type='hidden', name='gender')
+              .default.text Select API
+              i.dropdown.icon
+              .menu
+                .item User signs up
+                .item User successfully onboards
+                .item User invites a friend
+                .item User invites a friend who onboards
+                .item User accepts 3 invites in a row
+                .item User creates an event and schedules +3 people
+
+            section.tab.no-padding.storecoin-slider(data-tab="none")
+              include amount-slider
+
+          div.api-item
+            div.selected-api
+            //- button.small.select-api SELECT API
+            .ui.selection.dropdown
+              input(type='hidden', name='gender')
+              .default.text Select API
+              i.dropdown.icon
+              .menu
+                .item User signs up
+                .item User successfully onboards
+                .item User invites a friend
+                .item User invites a friend who onboards
+                .item User accepts 3 invites in a row
+                .item User creates an event and schedules +3 people
+
+            section.tab.no-padding.storecoin-slider(data-tab="none")
+              include amount-slider
+
+          div.api-item
+            div.selected-api
+            //- button.small.select-api SELECT API
+            .ui.selection.dropdown
+              input(type='hidden', name='gender')
+              .default.text Select API
+              i.dropdown.icon
+              .menu
+                .item User signs up
+                .item User successfully onboards
+                .item User invites a friend
+                .item User invites a friend who onboards
+                .item User accepts 3 invites in a row
+                .item User creates an event and schedules +3 people
+
+            section.tab.no-padding.storecoin-slider(data-tab="none")
+              include amount-slider
+
+          div.api-item
+            div.selected-api
+            //- button.small.select-api SELECT API
+            .ui.selection.dropdown
+              input(type='hidden', name='gender')
+              .default.text Select API
+              i.dropdown.icon
+              .menu
+                .item User signs up
+                .item User successfully onboards
+                .item User invites a friend
+                .item User invites a friend who onboards
+                .item User accepts 3 invites in a row
+                .item User creates an event and schedules +3 people
+
+            section.tab.no-padding.storecoin-slider(data-tab="none")
+              include amount-slider
+
+          div.api-item
+            div.selected-api
+            //- button.small.select-api SELECT API
+            .ui.selection.dropdown
+              input(type='hidden', name='gender')
+              .default.text Select API
+              i.dropdown.icon
+              .menu
+                .item User signs up
+                .item User successfully onboards
+                .item User invites a friend
+                .item User invites a friend who onboards
+                .item User accepts 3 invites in a row
+                .item User creates an event and schedules +3 people
+
+            section.tab.no-padding.storecoin-slider(data-tab="none")
+              include amount-slider
+
+      div.proceed.next.wallet-button(data-step="step-2")
+        button Next
+        
+    div.process-step.step-2           
+      section#api-percent-global-slider.tab(data-tab="none")
+        div.header Set a Developer royalty all #💰-powered API's (%)
+        include percent-slider
+
+      section#api-bugget-api
+        //- div.header Set budget for API calls
+        div.header Set Paid API Calls
+        div.api-list
+          div.api-item
+            section.tab.no-padding.percent-slider(data-tab="none")
+              div.header Set a Developer royalty for this transaction (%)
+              include percent-slider
+
+          div.api-item
+            section.tab.no-padding.percent-slider(data-tab="none")
+              div.header Set a Developer royalty for this transaction (%)
+              include percent-slider
+
+          div.api-item
+            section.tab.no-padding.percent-slider(data-tab="none")
+              div.header Set a Developer royalty for this transaction (%)
+              include percent-slider
+
+          div.api-item
+            section.tab.no-padding.percent-slider(data-tab="none")
+              div.header Set a Developer royalty for this transaction (%)
+              include percent-slider
+
+          div.api-item
+            section.tab.no-padding.percent-slider(data-tab="none")
+              div.header Set a Developer royalty for this transaction (%)
+              include percent-slider
+
+          div.api-item
+            section.tab.no-padding.percent-slider(data-tab="none")
+              div.header Set a Developer royalty for this transaction (%)
+              include percent-slider
+
+          div.api-item
+            section.tab.no-padding.percent-slider(data-tab="none")
+              div.header Set a Developer royalty for this transaction (%)
+              include percent-slider
+
+          div.api-item
+            section.tab.no-padding.percent-slider(data-tab="none")
+              div.header Set a Developer royalty for this transaction (%)
+              include percent-slider
+
+          div.api-item
+            section.tab.no-padding.percent-slider(data-tab="none")
+              div.header Set a Developer royalty for this transaction (%)
+              include percent-slider
+
+          div.api-item
+            section.tab.no-padding.percent-slider(data-tab="none")
+              div.header Set a Developer royalty for this transaction (%)
+              include percent-slider
+            
+        div.proceed.publish.wallet-button(data-message="Saving Settings")
+          button Publish API Calls    
       
   div.confirm-transact.ui.small.modal(data-modal="buy-modal")
     div.content 
