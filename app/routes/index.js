@@ -242,7 +242,7 @@ router.get('/wallet', function(req, res, next) {
     res.render('wallet/index-desktop', {
       title: 'Storecoin',
       name : 'Home',
-      meta: meta() 
+      meta: meta()
     });
   }
 });

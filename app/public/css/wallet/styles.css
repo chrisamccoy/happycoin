@@ -1911,6 +1911,11 @@ button.small,
   font-size: 1.1em;
 }
 
+.process-window .process-step .check-list .item.active .name {
+  color: #5ab96d;
+  font-weight: bold;
+}
+
 .process-window .process-step .check-list .item .check {
   font-size: 2.5em;
   line-height: 1;
@@ -1919,7 +1924,7 @@ button.small,
 }
 
 .process-window .process-step .check-list .item.active .check {
-  color: #66bb6b;
+  color: #76EA81;
 }
 
 .process-window .process-step .input-field {

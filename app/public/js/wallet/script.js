@@ -12,7 +12,7 @@ $(document).ready(function(){
   loadCoinsValue();
   initPaginate();
   initApi();
-  triggerBuy();
+  triggerOnUrl();
   initFeedsTab();
   initPercentSlider();
   initRoyaltyTabs();
@@ -102,14 +102,14 @@ function initProcess() {
       head : 'Smart Analytics',
       meta : 'Social Media Analytics'
     }
-  }
+  },
+  selectedApi = [];
 
   $openProcess.click(function(){
     var data = $(this).data(),
     appData = appInfo[data.app],
     $thisProcess = $('#'+data.process);
-    $thisApp = $thisProcess.find('.item-app'),
-    selectedApi = [];
+    $thisApp = $thisProcess.find('.item-app');
 
     $thisProcess.height($(window).height()).show();
     $thisApp.find('.image img').attr('src', appData.img);
@@ -117,6 +117,11 @@ function initProcess() {
     $thisApp.find('.title .meta').text(appData.meta);
     var offset = $thisApp.outerHeight() + $thisProcess.find('.process-head .header').outerHeight() + 48;
     $thisProcess.find('.process-step').height($(window).height() - offset);
+    $thisProcess.find('.process-step').removeClass('show');
+    $thisProcess.find('.process-step.step-1').addClass('show');
+    $thisProcess.find('.process-step .check-list .item').removeClass('active');
+    $thisProcess.find('.fields').html(inputField);
+    selectedApi = [];
   });
 
   $checkList.find('.item').click(function(){
@@ -157,12 +162,29 @@ function initProcess() {
   });
 }
 
-function triggerBuy() {
+function triggerOnUrl() {
   // console.log(window.location.hash);
-  var hash = window.location.hash;
+  var hash = window.location.hash,
+  pathname = window.location.pathname;
+
   if (hash == '#api-buy') {
     isApiBuy = true;
     $('#wallet-value .links.nav-links .link[data-tab="buy"]').trigger('click');
+  }
+
+  if (pathname == '/wallet/') {
+    if (hash == '#api') {
+      $('.iphone iframe').attr('src', '/wallet/wallet-app/#api');
+    }
+  }
+
+  if (pathname == '/wallet/wallet-app/') {
+    if (hash == '#api') {
+      $('#home-tab .feeds-tab-items .item').removeClass('active');
+      $('#home-tab .feeds-tab').removeClass('active');
+      $('#home-tab .feeds-tab-items .item[data-tab="#apps"]').addClass('active');
+      $('#apps').addClass('active');
+    }
   }
 }
 
