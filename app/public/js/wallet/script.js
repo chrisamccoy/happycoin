@@ -108,7 +108,7 @@ function initProcess() {
   $openProcess.click(function(){
     var data = $(this).data(),
     appData = appInfo[data.app],
-    $thisProcess = $('#'+data.process);
+    $thisProcess = $('#'+data.process),
     $thisApp = $thisProcess.find('.item-app');
 
     $thisProcess.height($(window).height()).show();
