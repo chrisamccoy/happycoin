@@ -161,6 +161,13 @@ function initProcess() {
     $processWin.hide();
     initloader({ message : message });
   });
+
+  $('#api-balance .buy .button').click(function(){
+    $processWin.hide();
+    $('#home-tab').hide();
+    $('#transaction-tab').show();
+    $('#wallet-value .nav-links .link[data-tab="buy"]').trigger('click');
+  });
 }
 
 function triggerOnUrl() {
@@ -168,10 +175,10 @@ function triggerOnUrl() {
   var hash = window.location.hash,
   pathname = window.location.pathname;
 
-  if (hash == '#api-buy') {
-    isApiBuy = true;
-    $('#wallet-value .links.nav-links .link[data-tab="buy"]').trigger('click');
-  }
+  // if (hash == '#api-buy') {
+  //   isApiBuy = true;
+  //   $('#wallet-value .links.nav-links .link[data-tab="buy"]').trigger('click');
+  // }
 
   if (pathname == '/wallet/') {
     if (hash == '#api') {
