@@ -9,6 +9,11 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/3', function(req, res, next) {
+  res.render('coming-soon', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
 router.get('/ref/:email', function(req, res, next) {
   res.cookie('ref_email' , req.params.email).redirect('/');
 });
