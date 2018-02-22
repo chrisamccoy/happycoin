@@ -150,11 +150,11 @@ function initProcess() {
 
   $('#api-process .proceed.publish').click(function(){
     var message = $(this).data().message,
-    $inventPro = $('#incentive-process');
+    $incentPro = $('#incentive-process');
     $processWin.hide();
-    offset = $inventPro.find('.item-app').outerHeight() + $inventPro.find('.process-head .header').outerHeight() + 48;
-    $inventPro.show();
-    $inventPro.find('.process-step').height($(window).height() - offset);
+    $incentPro.height($(window).height()).show();
+    offset = $incentPro.find('.item-app').outerHeight() + $incentPro.find('.process-head .header').outerHeight() + 48;
+    $incentPro.find('.process-step').height($(window).height() - offset);
     initloader({ message : message });
   });
 
