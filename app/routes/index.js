@@ -225,8 +225,29 @@ router.get('/tokengrant', function(req, res, next) {
 });
 
 /* ------------WALLET------------ */
+router.get('/wallet', function(req, res, next) {
+  var ua = req.header('user-agent');
+  if(/mobile/i.test(ua)) {
+    res.render('wallet/index', {
+      title: 'Storecoin',
+      name : 'Home', header : false,
+      meta: meta()
+    });
+  } else {
+    res.render('wallet/index-desktop', {
+      title: 'Storecoin',
+      name : 'Home',
+      meta: meta() 
+    });
+  }
+});
+
 router.get('/wallet/wallet-app', function(req, res, next) {
-  res.render('wallet/index', { title: 'Storecoin', name : 'Home', header : false, meta: meta() });
+  res.render('wallet/index', {
+    title: 'Storecoin',
+    name : 'Home', header : false,
+    meta: meta()
+  });
 });
 
 router.get('/wallet/wallet-app/header', function(req, res, next) {
@@ -245,9 +266,6 @@ router.get('/wallet/wallet-app/royalty', function(req, res, next) {
   res.render('wallet/royalty', { title: 'Storecoin', name : 'Home', header : true, meta: meta() });
 });
 
-router.get('/wallet', function(req, res, next) {
-  res.render('wallet/index-desktop', { title: 'Storecoin', name : 'Home', meta: meta() });
-});
 
 router.get('/wallet2', function(req, res, next) {
   res.render('wallet/index-2', { title: 'Storecoin', name : 'Home', meta: meta() });
