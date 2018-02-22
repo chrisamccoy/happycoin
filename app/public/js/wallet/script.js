@@ -165,7 +165,7 @@ function initProcess() {
   });
 
   $('#api-balance .buy .button').click(function(){
-    $processWin.hide();
+    // $processWin.hide();
     $('#home-tab').hide();
     $('#transaction-tab').show();
     $('#wallet-value .nav-links .link[data-tab="buy"]').trigger('click');
@@ -501,10 +501,17 @@ function initModal () {
     // if (isApiBuy) {
     //   window.location = '/wallet/wallet-app/api?bought='+buyAmount;
     // }
-    storecoinBal += buyAmount;
-    var scStr = storecoinBal.toString().split('.');
-    $('#wallet-value .storecoin-val .number').html(scStr[0]+'<span>.'+scStr[1]+'</span>');
+    updateBalance();
   });
+}
+
+function updateBalance() {
+  storecoinBal += buyAmount;
+  var scStr = storecoinBal.toString().split('.');
+  $('#wallet-value .storecoin-val .number').html(scStr[0]+'<span>.'+scStr[1]+'</span>');
+  $('#api-balance .logo-amount .amount').text(storecoinBal);
+  $('#api-budget-app-slider .amounts .end span').text(storecoinBal);
+  $('#api-budget-app-slider .amount-slider .slider').slider('option', 'max', storecoinBal);
 }
 
 function initloader(params) {
