@@ -1928,7 +1928,13 @@ button.small,
 }
 
 .process-window .process-step .input-field {
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #d3d3d378;
+}
+
+.process-window .process-step .input-field:last-child {
+  border: none;
 }
 
 .process-window .process-step .input-field input {

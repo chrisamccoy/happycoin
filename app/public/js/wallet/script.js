@@ -89,8 +89,7 @@ function loadCoinsValue() {
 function initProcess() {
   var $openProcess = $('.open-process'),
   $processWin = $('.process-window'),
-  $checkList = $processWin.find('.check-list');
-
+  $checkList = $processWin.find('.check-list'),
   appInfo = {
     'easy-schedule' : {
       img : '/images/wallet/calender-icon.png',
@@ -103,7 +102,8 @@ function initProcess() {
       meta : 'Social Media Analytics'
     }
   },
-  selectedApi = [];
+  selectedApi = [],
+  offset;
 
   $openProcess.click(function(){
     var data = $(this).data(),
@@ -115,12 +115,12 @@ function initProcess() {
     $thisApp.find('.image img').attr('src', appData.img);
     $thisApp.find('.title b').text(appData.head);
     $thisApp.find('.title .meta').text(appData.meta);
-    var offset = $thisApp.outerHeight() + $thisProcess.find('.process-head .header').outerHeight() + 48;
+    offset = $thisApp.outerHeight() + $thisProcess.find('.process-head .header').outerHeight() + 48;
     $thisProcess.find('.process-step').height($(window).height() - offset);
     $thisProcess.find('.process-step').removeClass('show');
     $thisProcess.find('.process-step.step-1').addClass('show');
     $thisProcess.find('.process-step .check-list .item').removeClass('active');
-    $thisProcess.find('.fields').html(inputField);
+    $thisProcess.find('.fields').html('');
     selectedApi = [];
   });
 
@@ -152,6 +152,7 @@ function initProcess() {
     var message = $(this).data().message;
     $processWin.hide();
     $('#incentive-process').show();
+    $('#incentive-process .process-step').height($(window).height() - offset);
     initloader({ message : message });
   });
 
