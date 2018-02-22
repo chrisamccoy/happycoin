@@ -149,10 +149,12 @@ function initProcess() {
   });
 
   $('#api-process .proceed.publish').click(function(){
-    var message = $(this).data().message;
+    var message = $(this).data().message,
+    $inventPro = $('#incentive-process');
     $processWin.hide();
-    $('#incentive-process').show();
-    $('#incentive-process .process-step').height($(window).height() - offset);
+    offset = $inventPro.find('.item-app').outerHeight() + $inventPro.find('.process-head .header').outerHeight() + 48;
+    $inventPro.show();
+    $inventPro.find('.process-step').height($(window).height() - offset);
     initloader({ message : message });
   });
 
@@ -496,9 +498,12 @@ function initModal () {
   $modal.find('.confirm-button').click(function(){
     $modal.modal('hide');
     initloader({ message : 'Loading...' });
-    if (isApiBuy) {
-      window.location = '/wallet/wallet-app/api?bought='+buyAmount;
-    }
+    // if (isApiBuy) {
+    //   window.location = '/wallet/wallet-app/api?bought='+buyAmount;
+    // }
+    storecoinBal += buyAmount;
+    var scStr = storecoinBal.toString().split('.');
+    $('#wallet-value .storecoin-val .number').html(scStr[0]+'<span>.'+scStr[1]+'</span>');
   });
 }
 
