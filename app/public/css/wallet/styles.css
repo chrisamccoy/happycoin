@@ -1662,7 +1662,7 @@ button.small,
 }
 
 /*---------------------------------*/
-#api-bugget-api .api-item {
+.api-item {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1671,36 +1671,36 @@ button.small,
   border-bottom: 1px solid #eaeaea;
 }
 
-#api-bugget-api .api-item .ui.dropdown {
+.api-item .ui.dropdown {
   width: 100%;
   margin-bottom: 1em;
   padding: 1.3em;
 }
 
-#api-bugget-api .api-item .ui.dropdown .item {
+.api-item .ui.dropdown .item {
   padding: 1em !important;
 }
 
-#api-bugget-api .api-item .selected-api {
+.api-item .selected-api {
   margin-bottom: 0.1em;
   color: mediumseagreen;
   width: 100%;
 }
 
-#api-bugget-api .api-item .button.small,
-#api-bugget-api .api-item button.small {
+.api-item .button.small,
+.api-item button.small {
   padding: 0px 4px;
   font-size: 0.7em;
 }
 
-#api-bugget-api .api-item section {
+.api-item section {
   flex: auto;
   padding: 0px;
   width: 100%;
   border-bottom: 0px;
 }
 
-#api-bugget-api .api-item section.storecoin-slider {
+.api-item section.storecoin-slider {
   margin-bottom: 1em;
 }
 
@@ -1711,7 +1711,7 @@ button.small,
 }*/
 
 #api-percent-global-slider .slider .ui-slider-range,
-#api-bugget-api .api-item section.percent-slider .slider .ui-slider-range {
+.api-item section.percent-slider .slider .ui-slider-range {
   background: #61bb71;
   border-color: #61bb71 !important;
 }
@@ -1721,12 +1721,12 @@ button.small,
 }*/
 
 #api-percent-global-slider .amount-slider,
-#api-bugget-api .api-item section.percent-slider .amount-slider {
+.api-item section.percent-slider .amount-slider {
   height: 65px;
 }
 
-#api-bugget-api .api-item section.percent-slider .amount-slider .conversion .exchange,
-#api-bugget-api .api-item section.percent-slider .amount-slider .conversion .dollar-val {
+.api-item section.percent-slider .amount-slider .conversion .exchange,
+.api-item section.percent-slider .amount-slider .conversion .dollar-val {
   display: none;
 }
 
@@ -1848,19 +1848,20 @@ button.small,
 .wallet-checkbox {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 0.5em;
+  /*margin-bottom: 0.5em;*/
 }
 
 .wallet-checkbox input[type="checkbox"] {
-  width: 30px;
+  width: auto;
   /*height: 30px;*/
   margin-right: 1em;
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
 .wallet-checkbox label {
   font-weight: 300;
   line-height: 1.4;
+  color: #565656;
 }
 
 /*---------------------------------*/
@@ -1874,12 +1875,27 @@ button.small,
   display: none;
 }
 
+
+.process-window .header {
+  font-size: 1em;
+  color: #565656;
+}
+
 .process-window .process-head .header {
   background: #2a2a2a;
   color: white;
   font-size: 1em;
   padding: 1em;
   margin:0px;
+  display: flex;
+  align-items: center;
+}
+
+.process-window .process-head .header .back {
+  color: white;
+  margin-right: 1em;
+  width: 30px;
+  text-align: center;
 }
 
 .process-window .process-step {
@@ -1901,12 +1917,14 @@ button.small,
 }
 
 .process-window .process-step .check-list .item {
+  font-family: Courier, "Courier New";
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.5em 0px;
   border-bottom: 1px solid #eaeaea;
   cursor: pointer;
+
 }
 
 .process-window .process-step .check-list .item:last-child {
@@ -1915,7 +1933,7 @@ button.small,
 }
 
 .process-window .process-step .check-list .item .name {
-  font-size: 1.1em;
+  font-size: 0.9em;
 }
 
 .process-window .process-step .check-list .item.active .name {
@@ -1962,4 +1980,29 @@ button.small,
   bottom: 0px;
   width: 100%;
   z-index: 10;
+}
+
+.process-window .summary-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.process-window .summary-item .stats .value {
+  color: black;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  margin-top: 0.2em;
+  font-size: 1.6em;
+}
+
+.process-window .summary-item .stats .value .sc-unit {
+  width: 40px;
+  line-height: 1;
+  margin-right: 0.5em;
+}
+
+.process-window .summary-item .stats .value .sc-val {
+  color: inherit;
 }

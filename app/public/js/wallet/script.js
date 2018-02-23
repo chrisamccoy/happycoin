@@ -34,7 +34,20 @@ coinKey = 'eth',
 isApiBuy = false,
 budgetVal = 44.38385,
 buyAmount = 0,
-storecoinBal = 139.470001;
+storecoinBal = 139.470001,
+appInfo = {
+  'easy-schedule' : {
+    img : '/images/wallet/calender-icon.png',
+    head : 'Easy Schedule',
+    meta : 'Project Management'
+  },
+  'smart-analytics' : {
+    img : '/images/wallet/social-media-logo-v2.png',
+    head : 'Smart Analytics',
+    meta : 'Social Media Analytics'
+  }
+},
+appKey;
 
 function loadCoinsValue() {
   var $selectCoinModal =  $('#select-coin-modal');
@@ -90,38 +103,17 @@ function initProcess() {
   var $openProcess = $('.open-process'),
   $processWin = $('.process-window'),
   $checkList = $processWin.find('.check-list'),
-  appInfo = {
-    'easy-schedule' : {
-      img : '/images/wallet/calender-icon.png',
-      head : 'Easy Schedule',
-      meta : 'Project Management'
-    },
-    'smart-analytics' : {
-      img : '/images/wallet/social-media-logo-v2.png',
-      head : 'Smart Analytics',
-      meta : 'Social Media Analytics'
-    }
-  },
-  selectedApi = [],
-  offset;
+  selectedApi = [];
 
   $openProcess.click(function(){
-    var data = $(this).data(),
-    appData = appInfo[data.app],
-    $thisProcess = $('#'+data.process),
-    $thisApp = $thisProcess.find('.item-app');
+    var data = $(this).data();
+    appKey = data.app ? data.app : appKey;
+    openProcess('#'+data.process, appKey);
 
-    $thisProcess.height($(window).height()).show();
-    $thisApp.find('.image img').attr('src', appData.img);
-    $thisApp.find('.title b').text(appData.head);
-    $thisApp.find('.title .meta').text(appData.meta);
-    offset = $thisApp.outerHeight() + $thisProcess.find('.process-head .header').outerHeight() + 48;
-    $thisProcess.find('.process-step').height($(window).height() - offset);
-    $thisProcess.find('.process-step').removeClass('show');
-    $thisProcess.find('.process-step.step-1').addClass('show');
-    $thisProcess.find('.process-step .check-list .item').removeClass('active');
-    $thisProcess.find('.fields').html('');
-    selectedApi = [];
+    if (data.step) {
+      $('#'+data.process+' .process-step').removeClass('show');
+      $('#'+data.process+' .process-step.'+data.step).addClass('show');
+    }
   });
 
   $checkList.find('.item').click(function(){
@@ -139,6 +131,10 @@ function initProcess() {
       inputField += '<div class="input-field"><label>'+api+'</label><input type="text" placeholder="Enter name here"></div>';
       $('#api-process .step-2 .fields').html(inputField);
     });
+
+    var $summaryVal = $('#summary-process .api-selected .stats .value');
+    $summaryVal.find('.gained').text(selectedApi.length);
+    $summaryVal.find('out-of').text($checkList.find('.item').length);
   });
 
   $processWin.find('.proceed.next').click(function(){
@@ -149,18 +145,14 @@ function initProcess() {
   });
 
   $('#api-process .proceed.publish').click(function(){
-    var message = $(this).data().message,
-    $incentPro = $('#incentive-process');
-    $processWin.hide();
-    $incentPro.height($(window).height()).show();
-    offset = $incentPro.find('.item-app').outerHeight() + $incentPro.find('.process-head .header').outerHeight() + 48;
-    $incentPro.find('.process-step').height($(window).height() - offset);
+    var message = $(this).data().message;
+    openProcess('#incentive-process', appKey);
     initloader({ message : message });
   });
 
   $('#incentive-process .proceed.publish').click(function(){
     var message = $(this).data().message;
-    $processWin.hide();
+    openProcess('#summary-process', appKey);
     initloader({ message : message });
   });
 
@@ -170,6 +162,27 @@ function initProcess() {
     $('#transaction-tab').show();
     $('#wallet-value .nav-links .link[data-tab="buy"]').trigger('click');
   });
+
+  $processWin.find('.process-head .header .back').click(function(){
+    $processWin.hide();
+  });
+}
+
+function openProcess(el, key) {
+  var $processWin = $('.process-window'),
+  $thisApp = $processWin.find('.item-app'),
+  appData = appInfo[key],
+  $thisPro = $(el);
+
+  $processWin.hide();
+  $thisPro.height($(window).height()).show();
+  $thisApp.find('.image img').attr('src', appData.img);
+  $thisApp.find('.title b').text(appData.head);
+  $thisApp.find('.title .meta').text(appData.meta);
+  offset = $thisPro.find('.item-app').outerHeight() + $thisPro.find('.process-head .header').outerHeight() + 48;
+  $thisPro.find('.process-step').removeClass('show');
+  $thisPro.find('.process-step.step-1').addClass('show');
+  $thisPro.find('.process-step').height($(window).height() - offset);
 }
 
 function triggerOnUrl() {
@@ -199,7 +212,7 @@ function triggerOnUrl() {
 }
 
 function initPercentSlider() {
-  var $tab = $('.royalty-container section.tab[data-tab]'),
+  var $tab = $('section.tab[data-tab]'),
   $checkbox = $tab.find('.wallet-checkbox input');
   $checkbox.change(function() {
       var $this = $(this),
@@ -299,7 +312,7 @@ function initApi(){
     }
     $('#api-balance .amount').text(storecoinBal);
     $('#api-budget-app-slider .amount-slider .end span').text(storecoinBal);
-    initSlider({ el : '#api-budget-app-slider', value : budgetVal, name : 'budget-slider', max : storecoinBal });
+    initSlider({ el : '#api-budget-app-slider', value : 0.00001, name : 'budget-slider', max : storecoinBal });
   }
 }
 
@@ -550,7 +563,7 @@ function initRangeSlider() {
   initSlider({ el : '#wallet-tabs .tab[data-tab="gift"]', value : 44.38385 });
   initSlider({ el : '#api-percent-global-slider', value : 0.0001, max : 99, name : 'global-percent-slider' });
   initSlider({ el : '#api-bugget-api .storecoin-slider', value : 0.00001, name : 'api-slider' });
-  initSlider({ el : '#api-bugget-api .percent-slider', value : 0.00001, max : 99 });
+  initSlider({ el : '#api-royalty .percent-slider', value : 0.00001, max : 99 });
   $('#api-bugget-api .amount-slider .amounts .end span').text(budgetVal);
 }
 
@@ -575,25 +588,30 @@ function initSlider(params) {
           var total = ui.value;
           $('#api-bugget-api .storecoin-slider .amount-slider .slider').not(this).each(function () {
               total += $(this).slider('value');
-          })
+          });
+          // console.log(total);
+          $('#summary-process .budget-spent .sc-val').text(numeral(total).format('0.000'));
+
           if (total > budgetVal) {
               return false;
           }
         }
 
         if (params.name == 'budget-slider') {
-          // console.log(value);
           budgetVal = ui.value;
+          // console.log(budgetVal);
 
           $('#api-bugget-api .amount-slider .slider').each(function () {
               $(this).slider('option','max', budgetVal);
           });
 
           $('#api-bugget-api').find('.end span').text(budgetVal);
+          $('#summary-process .budget-allocated .sc-val').text(numeral(budgetVal).format('0.000'));
         }
 
         if (params.name == 'global-percent-slider') {
-          $('#api-bugget-api .percent-slider .amount-slider .slider').slider('option', 'value', ui.value);
+          $('#api-royalty .percent-slider .amount-slider .slider').slider('option', 'value', ui.value);
+          $('#summary-process .dev-royalty .value').text(numeral(ui.value/100).format('0.0%'));
         }
       },
       change : function(ev, ui){
@@ -603,21 +621,25 @@ function initSlider(params) {
           $('#api-bugget-api .storecoin-slider .amount-slider .slider').not(this).each(function () {
               total += $(this).slider('value');
           });
+          // console.log(total);
+          $('#summary-process .budget-spent .sc-val').text(numeral(total).format('0.000'));
         }
 
         if (params.name == 'budget-slider') {
-          // console.log(value);
           budgetVal = ui.value;
+          // console.log(budgetVal);
 
           $('#api-bugget-api .amount-slider .slider').each(function () {
               $(this).slider('option','max', budgetVal);
           });
 
           $('#api-bugget-api').find('.end span').text(budgetVal);
+          $('#summary-process .budget-allocated .sc-val').text(numeral(budgetVal).format('0.000'));
         }
 
         if (params.name == 'global-percent-slider') {
-          $('#api-bugget-api .percent-slider .amount-slider .slider').slider('option', 'value', ui.value);
+          $('#api-royalty .percent-slider .amount-slider .slider').slider('option', 'value', ui.value);
+          $('#summary-process .dev-royalty .value').text(numeral(ui.value/100).format('0.0%'));
         }
       }
     });

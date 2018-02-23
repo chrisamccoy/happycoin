@@ -5886,7 +5886,7 @@ and (max-width : 335px) {
   top: 51px;
   width: 100%;
   z-index: 10;
-  background: #000000de;
+  background: rgba(0,0,0,0.9);
   color: white;
   /*border-bottom: 1px solid #e94b05;*/
   display: none;

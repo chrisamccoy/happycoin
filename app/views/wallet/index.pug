@@ -493,6 +493,8 @@ block content
               i.ion-record
             p.time Crossfit
       
+  //- processes
+  
   div#api-process.process-window
     div.process-head
       div.header Setup API Calls
@@ -508,39 +510,39 @@ block content
         div.head Choose API Calls
         div.check-list
           div.item
-            div.name User signs up
+            div.name User / invite
             div.check 
               i.ion-checkmark-circled
           div.item
-            div.name User successfully onboards
+            div.name User / signup
             div.check 
               i.ion-checkmark-circled
           div.item
-            div.name User invites a friend
+            div.name User / onboardingComplete
             div.check 
               i.ion-checkmark-circled
           div.item
-            div.name User invites a friend who onboards
+            div.name User / settings
             div.check 
               i.ion-checkmark-circled
           div.item
-            div.name User accepts 3 invites in a row
+            div.name Event / create
             div.check 
               i.ion-checkmark-circled
           div.item
-            div.name User creates a new project
+            div.name Event / edit
             div.check 
               i.ion-checkmark-circled
           div.item
-            div.name User creates an event
+            div.name Event / invite
             div.check 
               i.ion-checkmark-circled
           div.item
-            div.name User creates an event and schedules +3 people
+            div.name Event / inviteAccepted
             div.check 
               i.ion-checkmark-circled
           div.item
-            div.name User archives an event
+            div.name Event / archived
             div.check 
               i.ion-checkmark-circled
                 
@@ -778,63 +780,136 @@ block content
         div.header Set a Developer royalty all #💰-powered API's (%)
         include percent-slider
 
-      section#api-bugget-api
+      section#api-royalty
         //- div.header Set budget for API calls
-        div.header Set Paid API Calls
+        div.header Set Royalty for API Calls
         div.api-list
           div.api-item
             section.tab.no-padding.percent-slider(data-tab="none")
-              div.header Set a Developer royalty for this transaction (%)
+              .wallet-checkbox
+                input(type="checkbox" id="royalty-1")
+                label(for="royalty-1") User / invite
               include percent-slider
 
           div.api-item
             section.tab.no-padding.percent-slider(data-tab="none")
-              div.header Set a Developer royalty for this transaction (%)
+              .wallet-checkbox
+                input(type="checkbox" id="royalty-2")
+                label(for="royalty-2") User / signup
               include percent-slider
 
           div.api-item
             section.tab.no-padding.percent-slider(data-tab="none")
-              div.header Set a Developer royalty for this transaction (%)
+              .wallet-checkbox
+                input(type="checkbox" id="royalty-3")
+                label(for="royalty-3") User / onboardingComplete
               include percent-slider
 
           div.api-item
             section.tab.no-padding.percent-slider(data-tab="none")
-              div.header Set a Developer royalty for this transaction (%)
+              .wallet-checkbox
+                input(type="checkbox" id="royalty-4")
+                label(for="royalty-4") User / settings
               include percent-slider
 
           div.api-item
             section.tab.no-padding.percent-slider(data-tab="none")
-              div.header Set a Developer royalty for this transaction (%)
+              .wallet-checkbox
+                input(type="checkbox" id="royalty-5")
+                label(for="royalty-5") Event / create
               include percent-slider
 
           div.api-item
             section.tab.no-padding.percent-slider(data-tab="none")
-              div.header Set a Developer royalty for this transaction (%)
+              .wallet-checkbox
+                input(type="checkbox" id="royalty-6")
+                label(for="royalty-6") Event / edit
               include percent-slider
 
           div.api-item
             section.tab.no-padding.percent-slider(data-tab="none")
-              div.header Set a Developer royalty for this transaction (%)
+              .wallet-checkbox
+                input(type="checkbox" id="royalty-7")
+                label(for="royalty-7") Event / invite
               include percent-slider
 
           div.api-item
             section.tab.no-padding.percent-slider(data-tab="none")
-              div.header Set a Developer royalty for this transaction (%)
+              .wallet-checkbox
+                input(type="checkbox" id="royalty-8")
+                label(for="royalty-8") Event / inviteAccepted
               include percent-slider
 
           div.api-item
             section.tab.no-padding.percent-slider(data-tab="none")
-              div.header Set a Developer royalty for this transaction (%)
+              .wallet-checkbox
+                input(type="checkbox" id="royalty-9")
+                label(for="royalty-9") Event / archived
               include percent-slider
 
-          div.api-item
-            section.tab.no-padding.percent-slider(data-tab="none")
-              div.header Set a Developer royalty for this transaction (%)
-              include percent-slider
+          //- div.api-item
+          //-   section.tab.no-padding.percent-slider(data-tab="none")
+          //-     div.header Set a Developer royalty for this transaction (%)
+          //-     include percent-slider
             
         div.proceed.publish.wallet-button(data-message="Saving Settings")
           button Finish   
       
+  div#summary-process.process-window
+    div.process-head
+      div.header 
+        div.back
+          i.ion-chevron-left
+        span Easy Schedule
+        
+      section.item-app
+        .image
+          img(src='/images/wallet/calender-icon.png')
+        .title
+          div
+            b Easy Schedule
+          div.meta Project Management 
+          
+      section.summary-item.api-selected
+        div.stats 
+          div.head Total API Seleted
+          div.value 
+            span.gained 1
+            span.out-of /9
+        div.edit
+          div.button.small.icon.open-process(data-process="api-process")
+            i.ion-edit
+              
+      section.summary-item.budget-allocated
+        div.stats 
+          div.head Budget Allocated
+          div.value 
+            div.sc-unit
+              img(src="/images/wallet/storecoin-logo.png")
+            div.sc-val 0.0001
+        div.edit
+          div.button.small.icon.open-process(data-process="incentive-process")
+            i.ion-edit
+              
+      section.summary-item.budget-spent
+        div.stats 
+          div.head Budget Spent
+          div.value 
+            div.sc-unit
+              img(src="/images/wallet/storecoin-logo.png")
+            div.sc-val 0.0001
+        //- div.edit
+        //-   div.button.small.icon
+        //-     i.ion-edit
+              
+      section.summary-item.dev-royalty
+        div.stats 
+          div.head Developer Royalty
+          div.value 0.0001%
+        div.edit
+          div.button.small.icon.open-process(data-process="incentive-process", data-step="step-2")
+            i.ion-edit
+  
   div.confirm-transact.ui.small.modal(data-modal="buy-modal")
     div.content 
       div.modal-header 
