@@ -22,7 +22,7 @@ block content
       |  because forks are first-class citizens in the BlockFin consensus algorithm. Forks typically indicate disagreement in traditional blockchains and hence, block creation is globally serialized. So, forks throttle the throughput artificially. By embracing chain forks, BlockFin allows for parallel block assembly and sealing by multiple validator nodes resulting in substantial improvements in throughput.
     #auditable.intro-popup(style="display:none;") 
       b Auditable
-      |  because if you touch the blockchain, you leave your fingerprints. Every change made by everyone is auditable.
+      |  because all the operations on the blocks in the blockchain, such as adding transactions to the block and voting, counting, and sealing the blocks require that the nodes sign the relevant parts of the block with their secret. Thus, every operation leaves accessor's signature in the block, so every operation is automatically audited. Auditability improves security of the blockchain and resists long range and other types of attacks.
     
     div#second-token-sale
     - var top = true

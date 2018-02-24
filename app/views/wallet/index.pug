@@ -588,6 +588,11 @@ block content
         div.header Total budget for incentivized API calls
         include amount-slider
 
+      div.proceed.next.wallet-button(data-step="step-2")
+        button Next
+        
+    
+    div.process-step.step-2
       section#api-bugget-api
         //- div.header Set budget for API calls
         div.header Set Paid API Calls
@@ -771,11 +776,10 @@ block content
 
             section.tab.no-padding.storecoin-slider(data-tab="none")
               include amount-slider
-
-      div.proceed.next.wallet-button(data-step="step-2")
+      div.proceed.next.wallet-button(data-step="step-3")
         button Next
-        
-    div.process-step.step-2           
+    
+    div.process-step.step-3          
       section#api-percent-global-slider.tab(data-tab="none")
         div.header Set a Developer royalty all #💰-powered API's (%)
         include percent-slider

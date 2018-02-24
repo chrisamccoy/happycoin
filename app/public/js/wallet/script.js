@@ -39,12 +39,14 @@ appInfo = {
   'easy-schedule' : {
     img : '/images/wallet/calender-icon.png',
     head : 'Easy Schedule',
-    meta : 'Project Management'
+    meta : 'Project Management',
+    master : false
   },
   'smart-analytics' : {
     img : '/images/wallet/social-media-logo-v2.png',
     head : 'Smart Analytics',
-    meta : 'Social Media Analytics'
+    meta : 'Social Media Analytics',
+    master : false
   }
 },
 appKey;
@@ -108,7 +110,12 @@ function initProcess() {
   $openProcess.click(function(){
     var data = $(this).data();
     appKey = data.app ? data.app : appKey;
-    openProcess('#'+data.process, appKey);
+
+    if (appInfo[appKey].master) {
+      openProcess('#summary-process', appKey);
+    } else {
+      openProcess('#'+data.process, appKey);
+    }
 
     if (data.step) {
       $('#'+data.process+' .process-step').removeClass('show');
@@ -146,14 +153,28 @@ function initProcess() {
 
   $('#api-process .proceed.publish').click(function(){
     var message = $(this).data().message;
-    openProcess('#incentive-process', appKey);
-    initloader({ message : message });
+    // openProcess('#incentive-process', appKey);
+    initloader({
+      message : message,
+      call : {
+        callFunc : openProcess,
+        callParams : ['#incentive-process', appKey]
+      }
+    });
   });
 
   $('#incentive-process .proceed.publish').click(function(){
     var message = $(this).data().message;
-    openProcess('#summary-process', appKey);
-    initloader({ message : message });
+    initloader({
+      message : message,
+      call : {
+        callFunc : openProcess,
+        callParams : ['#summary-process', appKey]
+      }
+    });
+
+    appInfo[appKey].master = true;
+    // console.log(appInfo[appKey].master);
   });
 
   $('#api-balance .buy .button').click(function(){
@@ -169,6 +190,7 @@ function initProcess() {
 }
 
 function openProcess(el, key) {
+  // console.log(el, key);
   var $processWin = $('.process-window'),
   $thisApp = $processWin.find('.item-app'),
   appData = appInfo[key],
@@ -183,6 +205,21 @@ function openProcess(el, key) {
   $thisPro.find('.process-step').removeClass('show');
   $thisPro.find('.process-step.step-1').addClass('show');
   $thisPro.find('.process-step').height($(window).height() - offset);
+}
+
+function logslider(position, max) {
+  // position will be between 0 and 100
+  var minp = 0.000001;
+  var maxp = max;
+
+  // The result should be between 100 an 10000000
+  var minv = Math.log(100);
+  var maxv = Math.log(10000000);
+
+  // calculate adjustment factor
+  var scale = (maxv-minv) / (maxp-minp);
+
+  return Math.exp(minv + scale*(position-minp));
 }
 
 function triggerOnUrl() {
@@ -543,6 +580,11 @@ function initloader(params) {
     setTimeout(function(){
       closeAllTabs();
       $('.loader').height($(window).height()).transition('fade');
+      if (params && params.call) {
+        // console.log(params.call.callParams);
+        params.call.callFunc.apply(null, params.call.callParams);
+        // params.call.callFunc("#incentive-process", "easy-schedule");
+      }
     }, 2000);
   }, 2000);
 }
@@ -561,9 +603,9 @@ function initRangeSlider() {
   initSlider({ el : '#wallet-tabs .tab[data-tab="buy"]', value : 44.38385 });
   initSlider({ el : '#wallet-tabs .tab[data-tab="sell"]', value : 44.38385 });
   initSlider({ el : '#wallet-tabs .tab[data-tab="gift"]', value : 44.38385 });
-  initSlider({ el : '#api-percent-global-slider', value : 0.0001, max : 99, name : 'global-percent-slider' });
-  initSlider({ el : '#api-bugget-api .storecoin-slider', value : 0.00001, name : 'api-slider' });
-  initSlider({ el : '#api-royalty .percent-slider', value : 0.00001, max : 99 });
+  initSlider({ el : '#api-percent-global-slider', value : 0.000001, max : 99, name : 'global-percent-slider' });
+  initSlider({ el : '#api-bugget-api .storecoin-slider', value : 0.000001, name : 'api-slider' });
+  initSlider({ el : '#api-royalty .percent-slider', value : 0.000001, max : 99, name : 'royalty' });
   $('#api-bugget-api .amount-slider .amounts .end span').text(budgetVal);
 }
 
@@ -572,9 +614,9 @@ function initSlider(params) {
   if ($slider.length) {
     var slider = $slider.find(".amount-slider .slider").slider({
       range : 'min',
-      max: (params.max) ? params.max : 139.47001,
-      min : 0.00001,
-      step : 0.00001,
+      max: (params.max) ? params.max : 139.470001,
+      min : 0.000001,
+      step : 0.000001,
       value : params.value,
       create : function(ev, ui){
         sliderFunction($(this), 'create', params);
@@ -652,13 +694,14 @@ function initSlider(params) {
 
 function sliderFunction($this, eventName, params) {
   var value = $this.slider('value'),
+      max = $this.slider('option','max'),
       $parent = $this.parents('.tab'),
       thisHandlePos = $this.find('.ui-slider-handle').offset().left;
 
-  changeOnSlide(value, $parent, thisHandlePos);
+  changeOnSlide(value, max, $parent, thisHandlePos);
 }
 
-function changeOnSlide (value, $parent, handlePos) {
+function changeOnSlide (value, max, $parent, handlePos) {
   var $storeVal = $parent.find('.amount-slider .storecoin-val span.value'),
       tabName = $parent.data().tab,
       $modalStoreVal = $('.confirm-transact.ui.modal[data-modal="'+tabName+'-modal"] .modal-content .buy-amount .storecoin-val'),
@@ -684,7 +727,7 @@ function changeOnSlide (value, $parent, handlePos) {
     $unitSign.text(coinKey.toUpperCase()+' ');
     $dollarVal.text(numeral(value * amount).format('0,0.00'));
   } else {
-    if ($dollarVal) { $dollarVal.text(numeral(value * $dollarAmount).format('0,0.00')); }
+    if ($dollarVal) { $dollarVal.text(numeral(logslider(value, max)).format('0,0.00')); }
   }
 
   var $thisSection = $dollarVal.parents('section'),

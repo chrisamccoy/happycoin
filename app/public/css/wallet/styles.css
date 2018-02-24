@@ -148,10 +148,8 @@ select {
 }
 
 .slider .ui-slider-handle {
-  /*height: 15px;
-  width: 15px;*/
   border-radius: 50%;
-  margin-left: -0.4em;
+  margin-left: -0.5em;
   top: 0em;
   background: white;
   border: none;
