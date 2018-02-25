@@ -551,13 +551,15 @@ block content
     div.process-step.step-2
       section
         div.head Name you API Calls
-        div.fields
-          //- div.input-field
-          //-   label User sign up
-          //-   input(type="text", placeholder="Enter name here")
-          //- div.input-field
-          //-   label User successfully onboards
-          //-   input(type="text", placeholder="Enter name here")
+        form
+          div.fields
+            //- div.input-field
+            //-   label User sign up
+            //-   input(type="text", placeholder="Enter name here")
+            //- div.input-field
+            //-   label User successfully onboards
+            //-   input(type="text", placeholder="Enter name here")
+          input(type="submit", style="display:none;")
             
         div.proceed.publish.wallet-button(data-message="Sending API calls to the <br> Storecoin blockchain")
           button Publish API Calls
