@@ -1229,51 +1229,40 @@ input[type=number]::-webkit-outer-spin-button {
 @media only screen
 and (max-width : 550px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 3.3em !important;
+    font-size: 3.2em !important;
   }
 
   #hc-intro .hc-feature-lead {
-    font-size: 1.8em !important;
+    font-size: 1.7em !important;
   }
 }
 
 @media only screen
 and (max-width : 455px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 3.1em !important;
+    font-size: 3em !important;
   }
 
   #hc-intro .hc-feature-lead {
-    font-size: 1.6em !important;
+    font-size: 1.5em !important;
   }
 }
 
 @media only screen
 and (max-width : 410px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 2.7em !important;
+    font-size: 2.6em !important;
   }
 
   #hc-intro .hc-feature-lead {
-    font-size: 1.6em !important;
+    font-size: 1.5em !important;
   }
 }
 
 @media only screen
 and (max-width : 375px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 2.5em !important;
-  }
-
-  #hc-intro .hc-feature-lead {
-    font-size: 1.45em !important;
-  }
-}
-
-@media only screen
-and (max-width : 360px) {
-  #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 2.5em !important;
+    font-size: 2.4em !important;
   }
 
   #hc-intro .hc-feature-lead {
@@ -1282,20 +1271,9 @@ and (max-width : 360px) {
 }
 
 @media only screen
-and (max-width : 345px) {
+and (max-width : 360px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 2.5em !important;
-  }
-
-  #hc-intro .hc-feature-lead {
-    font-size: 1.35em !important;
-  }
-}
-
-@media only screen
-and (max-width : 335px) {
-  #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 2.3em !important;
+    font-size: 2.4em !important;
   }
 
   #hc-intro .hc-feature-lead {
@@ -1303,14 +1281,36 @@ and (max-width : 335px) {
   }
 }
 
-
-@media only screen and (max-width: 320px) {
+@media only screen
+and (max-width : 345px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 1.5em !important;
+    font-size: 2.4em !important;
   }
 
   #hc-intro .hc-feature-lead {
-    font-size: 0.98em !important;
+    font-size: 1.3em !important;
+  }
+}
+
+@media only screen
+and (max-width : 335px) {
+  #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
+    font-size: 2.2em !important;
+  }
+
+  #hc-intro .hc-feature-lead {
+    font-size: 1.2em !important;
+  }
+}
+
+
+@media only screen and (max-width: 320px) {
+  #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
+    font-size: 1.4em !important;
+  }
+
+  #hc-intro .hc-feature-lead {
+    font-size: 0.9em !important;
   }
 }
 
