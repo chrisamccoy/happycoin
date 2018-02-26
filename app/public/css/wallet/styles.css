@@ -1980,6 +1980,18 @@ button.small,
   z-index: 10;
 }
 
+.process-window .process-step .proceed.open-process {
+  display: none;
+}
+
+.process-window.edit-window .process-step .proceed {
+  display: none;
+}
+
+.process-window.edit-window .process-step .proceed.open-process {
+  display: block;
+}
+
 .process-window .summary-item {
   display: flex;
   align-items: center;

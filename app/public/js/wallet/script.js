@@ -76,13 +76,13 @@ function loadCoinsValue() {
         step : 0.00001,
         value : 44.38385,
         create : function(){
-          sliderFunction($(this), 'create', null);
+          sliderFunction($(this), 'create', {});
         },
         slide : function(){
-          sliderFunction($(this), 'slide', null);
+          sliderFunction($(this), 'slide', {});
         },
         change : function(){
-          sliderFunction($(this), 'change', null);
+          sliderFunction($(this), 'change', {});
         }
       });
 
@@ -92,7 +92,7 @@ function loadCoinsValue() {
 
       $("#trade-amount .amount-slider .slider").slider().bind({
         sliderchange : function (){
-          sliderFunction($(this), 'create', null);
+          sliderFunction($(this), 'create', {});
         }
       });
 
@@ -113,7 +113,11 @@ function initProcess() {
 
     if (appInfo[appKey].master && !$(this).parents('.edit').length) {
       openProcess('#summary-process', appKey);
+    } else if ($(this).parents('.edit').length) {
+      $('#'+data.process).addClass('edit-window');
+      openProcess('#'+data.process, appKey);
     } else {
+      $('#'+data.process).removeClass('edit-window');
       openProcess('#'+data.process, appKey);
     }
 
@@ -602,7 +606,7 @@ function initRangeSlider() {
 
 function logslider(position, max) {
   // position will be between 0 and 100
-  max = max ? max : null;
+  max = max ? max : 139.470001;
   // The result should be between 100 an 10000000
   if (position < 16) {
     var minp = 0;
@@ -642,7 +646,14 @@ function initSlider(params) {
         return sliderFunction($(this), 'slide', params);
       },
       change : function(ev, ui){
-        return sliderFunction($(this), 'change', params);
+        if (params.name == 'api-slider') {
+          var slider = sliderFunction($(this), 'change', params);
+          if(!slider) {
+            $(this).slider('option', 'value', ui.value - 1);
+          }
+        } else {
+          return sliderFunction($(this), 'change', params);
+        }
       }
     });
 
@@ -653,6 +664,7 @@ function initSlider(params) {
 }
 
 function sliderFunction($this, eventName, params) {
+  // console.log($this, params);
   var value = $this.slider('value'),
       max = $this.slider('option','max'),
       $parent = $this.parents('.tab'),
@@ -679,15 +691,15 @@ function changeOnSlide (value, $parent, handlePos, params, eventName) {
     $('#summary-process .budget-allocated .sc-val').text(value);
   } else if (params.name == 'api-slider' && eventName != 'create') {
     value = logslider(value, budgetVal);
-    var total = logslider(value, budgetVal);
-    value = numeral(value).format('0.000000')
-    $('#api-bugget-api .storecoin-slider .amount-slider .slider').not(this).each(function () {
+    var total = 0;
+    value = numeral(value).format('0.000000');
+    $('#api-bugget-api .storecoin-slider .amount-slider .slider').each(function () {
         total += logslider($(this).slider('value'), budgetVal);
     });
-    $('#summary-process .budget-spent .sc-val').text(numeral(total).format('0.000'));
-
-    if (total > budgetVal && eventName == 'slide') {
-        return false;
+    // $('#summary-process .budget-spent .sc-val').text(numeral(total).format('0.000'));
+    // console.log(total, budgetVal, eventName);
+    if (total > budgetVal) {
+      return false;
     }
   } else if (params.name == 'global-percent-slider' && eventName != 'create') {
     $('#api-royalty .percent-slider .amount-slider .slider').slider('option', 'value', value);
@@ -728,6 +740,8 @@ function changeOnSlide (value, $parent, handlePos, params, eventName) {
   } else {
     $conversion.css('left', paddingLeft );
   }
+
+  return true;
 }
 
 function bankSelect() {
