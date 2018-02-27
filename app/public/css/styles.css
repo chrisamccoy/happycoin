@@ -5440,7 +5440,7 @@ and (max-width : 335px) {
 }
 
 /*----------------------------------*/
-#storecoin-adoption {
+/*#storecoin-adoption {
   padding: 5em 0em 3em;
 }
 
@@ -5448,7 +5448,7 @@ and (max-width : 335px) {
   #storecoin-adoption {
     padding : 4em 0em 2em;
   }
-}
+}*/
 
 .tweets .tweet {
   display: flex;

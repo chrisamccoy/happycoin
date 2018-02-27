@@ -16,7 +16,7 @@ block content
 
     #dynamic.intro-popup(style="display:none;") 
       b Dynamic
-      |  because our crypto economics for block rewards, validation/consensus, throughput/scaling, and security are modeled after the dynamic nature of surge pricing in ride-sharing companies like Uber.
+      |  because our crypto economics or block rewards, consensus, throughput, and security are modeled after the dynamic nature of surge pricing in ride-sharing companies like Uber.
     #fork.intro-popup(style="display:none;")
       b Fork-tolerant
       |  because forks are first-class citizens in the BlockFin consensus algorithm. Forks typically indicate disagreement in traditional blockchains and hence, block creation is globally serialized. So, forks throttle the throughput artificially. By embracing chain forks, BlockFin allows for parallel block assembly and sealing by multiple validator nodes resulting in substantial improvements in throughput.
@@ -156,7 +156,9 @@ block content
     #blockfin.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title It starts with our BlockFin consensus algorithm
-        p.hc-feature-lead BlockFin is a Fork-Tolerant, Decentralized, and High Throughput Consensus Protocol invented by Storecoin.
+        p.hc-feature-lead BlockFin is a 
+          a.underline(data-featherlight="#fork") Fork-Tolerant
+          |  , Decentralized, and High Throughput Consensus Protocol invented by Storecoin.
         div.tweets
           div.tweet 
             blockquote.twitter-tweet(data-lang='en')
@@ -337,30 +339,30 @@ block content
           li Allow application developers to deliver crypto-powered free transactions for users, forever
 
     //- banner
-    #public-blockchain-works.hc-feature.over-rel.padding.orange.inverted(style="padding:2.5em;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title.inverted(style=" margin:0px !important;") How the Storecoin public blockchain works
+    //- #public-blockchain-works.hc-feature.over-rel.padding.orange.inverted(style="padding:2.5em;")
+    //-   .hc-chunk.hc-customize-text-wrapper
+    //-     h3.hc-feature-title.inverted(style=" margin:0px !important;") How the Storecoin public blockchain works
 
-    #payments.hc-feature.over-rel.padding.info-fullscreen(style="overflow:visible;")
-      .hc-chunk.hc-customize-text-wrapper
-        //- h3.hc-feature-title How Payments Are Free, Fast, and Scalable
-        p.hc-feature-lead How the Dynamic Proof of Stake consensus algorithm keeps transactions permanently free while perpetually funding blockchain security, engineering, and governance.
-        .mobile-image
-          div.click-message
-            div.message-container
-              i.ion-arrow-expand 
-              span Click to expand
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/blockchain-steps-1-4-v4.png")
-        #8-steps.see-more-reveal
-          .hc-image
-            img(src='/images/empty.png', data-src="/images/blockchain-8-steps-v4.png")
+    //- #payments.hc-feature.over-rel.padding.info-fullscreen(style="overflow:visible;")
+    //-   .hc-chunk.hc-customize-text-wrapper
+    //-     //- h3.hc-feature-title How Payments Are Free, Fast, and Scalable
+    //-     p.hc-feature-lead How the Dynamic Proof of Stake consensus algorithm keeps transactions permanently free while perpetually funding blockchain security, engineering, and governance.
+    //-     .mobile-image
+    //-       div.click-message
+    //-         div.message-container
+    //-           i.ion-arrow-expand 
+    //-           span Click to expand
+    //-     .hc-image
+    //-       img(src='/images/empty.png', data-src="/images/blockchain-steps-1-4-v4.png")
+    //-     #8-steps.see-more-reveal
+    //-       .hc-image
+    //-         img(src='/images/empty.png', data-src="/images/blockchain-8-steps-v4.png")
     //-
-    .hc-feature.over-rel.padding.inverted.orange(style="overflow:visible; padding: 0px;")
-      .hc-chunk.hc-customize-text-wrapper
-        div.link-container.hanging
-          a.link-text.see-more.green(data-link="#8-steps", data-margin="33,44", data-scroll="false", style="border: 3px solid;", data-inner="See 8 More Steps<i class=\"ion-ios-arrow-down\"></i>, See Less<i class=\"ion-ios-arrow-up\"></i>", data-back="true") See 8 More Steps
-            i.ion-ios-arrow-down
+    //- .hc-feature.over-rel.padding.inverted.orange(style="overflow:visible; padding: 0px;")
+    //-   .hc-chunk.hc-customize-text-wrapper
+    //-     div.link-container.hanging
+    //-       a.link-text.see-more.green(data-link="#8-steps", data-margin="33,44", data-scroll="false", style="border: 3px solid;", data-inner="See 8 More Steps<i class=\"ion-ios-arrow-down\"></i>, See Less<i class=\"ion-ios-arrow-up\"></i>", data-back="true") See 8 More Steps
+    //-         i.ion-ios-arrow-down
 
     //- banner
     #storecoin-adoption.hc-feature.over-rel.padding.orange.inverted
