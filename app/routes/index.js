@@ -278,7 +278,13 @@ router.get('/wallet2', function(req, res, next) {
 
 /* GET home page. */
 router.get('/api', function(req, res, next) {
-  res.render('developer-api', { title: 'Storecoin', meta: meta() });
+  // res.render('developer-api', { title: 'Storecoin', meta: meta() });
+  res.redirect('/wallet/#api');
+});
+
+/* GET home page. */
+router.get('/dev', function(req, res, next) {
+  res.redirect('/wallet/#dev');
 });
 
 /* GET home page. */

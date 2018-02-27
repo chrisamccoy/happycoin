@@ -1879,6 +1879,13 @@ button.small,
   color: #565656;
 }
 
+.process-window .header img {
+  width: 27px;
+  margin: 0px 2px;
+  line-height: 1;
+  vertical-align: text-top;
+}
+
 .process-window .process-head .header {
   background: #2a2a2a;
   color: white;

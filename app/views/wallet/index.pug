@@ -792,80 +792,19 @@ block content
     
     div.process-step.step-3          
       section#api-percent-global-slider.tab(data-tab="none")
-        div.header Set a Developer royalty all #💰-powered API's (%)
+        div.header
+          span Set a Developer royalty all 
+          img(src="/images/wallet/storecoin-logo.png", alt="#💰")
+          span  API's (%)
         include percent-slider
 
       section#api-royalty
         //- div.header Set budget for API calls
-        div.header Set Royalty for API Calls
+        div.header
+          span Set a custom Royalty for specific 
+          img(src="/images/wallet/storecoin-logo.png", alt="#💰")
+          span  API's (%) 
         div.api-list
-          div.api-item
-            section.tab.no-padding.percent-slider(data-tab="none")
-              .wallet-checkbox
-                input(type="checkbox" id="royalty-1")
-                label(for="royalty-1") User / invite
-              include percent-slider
-
-          div.api-item
-            section.tab.no-padding.percent-slider(data-tab="none")
-              .wallet-checkbox
-                input(type="checkbox" id="royalty-2")
-                label(for="royalty-2") User / signup
-              include percent-slider
-
-          div.api-item
-            section.tab.no-padding.percent-slider(data-tab="none")
-              .wallet-checkbox
-                input(type="checkbox" id="royalty-3")
-                label(for="royalty-3") User / onboardingComplete
-              include percent-slider
-
-          div.api-item
-            section.tab.no-padding.percent-slider(data-tab="none")
-              .wallet-checkbox
-                input(type="checkbox" id="royalty-4")
-                label(for="royalty-4") User / settings
-              include percent-slider
-
-          div.api-item
-            section.tab.no-padding.percent-slider(data-tab="none")
-              .wallet-checkbox
-                input(type="checkbox" id="royalty-5")
-                label(for="royalty-5") Event / create
-              include percent-slider
-
-          div.api-item
-            section.tab.no-padding.percent-slider(data-tab="none")
-              .wallet-checkbox
-                input(type="checkbox" id="royalty-6")
-                label(for="royalty-6") Event / edit
-              include percent-slider
-
-          div.api-item
-            section.tab.no-padding.percent-slider(data-tab="none")
-              .wallet-checkbox
-                input(type="checkbox" id="royalty-7")
-                label(for="royalty-7") Event / invite
-              include percent-slider
-
-          div.api-item
-            section.tab.no-padding.percent-slider(data-tab="none")
-              .wallet-checkbox
-                input(type="checkbox" id="royalty-8")
-                label(for="royalty-8") Event / inviteAccepted
-              include percent-slider
-
-          div.api-item
-            section.tab.no-padding.percent-slider(data-tab="none")
-              .wallet-checkbox
-                input(type="checkbox" id="royalty-9")
-                label(for="royalty-9") Event / archived
-              include percent-slider
-
-          //- div.api-item
-          //-   section.tab.no-padding.percent-slider(data-tab="none")
-          //-     div.header Set a Developer royalty for this transaction (%)
-          //-     include percent-slider
             
         div.proceed.publish.wallet-button(data-message="Saving Settings")
           button Finish 

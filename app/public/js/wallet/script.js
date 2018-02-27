@@ -40,13 +40,15 @@ appInfo = {
     img : '/images/wallet/calender-icon.png',
     head : 'Easy Schedule',
     meta : 'Project Management',
-    master : false
+    master : false,
+    selectedApi : []
   },
   'smart-analytics' : {
     img : '/images/wallet/social-media-logo-v2.png',
     head : 'Smart Analytics',
     meta : 'Social Media Analytics',
-    master : false
+    master : false,
+    selectedApi : []
   }
 },
 appKey;
@@ -105,7 +107,7 @@ function initProcess() {
   var $openProcess = $('.open-process'),
   $processWin = $('.process-window'),
   $checkList = $processWin.find('.check-list'),
-  selectedApi = [];
+  $checkItems = $checkList.find('.item');
 
   $openProcess.click(function(){
     var data = $(this).data();
@@ -127,25 +129,35 @@ function initProcess() {
     }
   });
 
-  $checkList.find('.item').click(function(){
+  $checkItems.click(function(){
     $(this).toggleClass('active');
-    var itemText = $(this).find('.name').text();
-    if (selectedApi.indexOf(itemText) < 0) {
-      selectedApi.push(itemText);
-    } else {
-      selectedApi.splice(selectedApi.indexOf(itemText), 1);
-    }
-    // console.log(selectedApi);
+    var selectedApi = [];
+    $checkItems.each(function(i){
+      if($(this).hasClass('active')) {
+        var itemText = $(this).find('.name').text();
+        selectedApi.push({ id : i, name : itemText, customName : null });
+      }
+    });
     var inputField = '';
     selectedApi.forEach(function(api){
-      // console.log(api);
-      inputField += '<div class="input-field"><label>'+api+'</label><input type="text" placeholder="Enter name here"></div>';
+      inputField += '<div class="input-field" data-id="'+api.id+'"><label>'+api.name+'</label><input type="text" placeholder="Enter name here"></div>';
       $('#api-process .step-2 .fields').html(inputField);
     });
 
     var $summaryVal = $('#summary-process .api-selected .stats .value');
     $summaryVal.find('.gained').text(selectedApi.length);
     $summaryVal.find('out-of').text($checkList.find('.item').length);
+    appInfo[appKey].selectedApi = selectedApi;
+  });
+
+  $processWin.on('input', 'input', function(){
+    var thisId = $(this).parents('.input-field').data().id,
+    value = $(this).val();
+    appInfo[appKey].selectedApi.forEach(function(api){
+      if (api.id == thisId) {
+        api.customName = value;
+      }
+    });
   });
 
   $processWin.find('.proceed.next').click(function(){
@@ -153,6 +165,37 @@ function initProcess() {
     $thisWindow = $(this).parents('.process-window');
     $thisWindow.find('.process-step').removeClass('show');
     $thisWindow.find('.process-step.'+stepName).addClass('show');
+  });
+
+  $('#api-process .step-2 .proceed').click(function(){
+    // console.log('published');
+    var menu = '';
+
+    appInfo[appKey].selectedApi.forEach(function(api){
+      menu += '<div class="item">'+(api.customName ? api.customName : api.name)+'</div>';
+      var percentSlider = ''+
+      '<div class="api-item">'+
+        '<section data-tab="none" class="tab no-padding percent-slider">'+
+          '<div class="title">'+(api.customName ? api.customName : api.name)+'</div>'+
+          '<div class="amount-slider">'+
+            '<div class="amounts">'+
+              '<p class="start">0.00001%</p>'+
+              '<p class="end">99%</p>'+
+            '</div>'+
+            '<div class="slider"></div>'+
+            '<div class="conversion">'+
+              '<p class="storecoin-val orange"><span class="value">33.83535</span><span>%</span></p><img src="/images/wallet/exchange-icon.png" style="display:none" class="exchange"/>'+
+              '<p style="display:none" class="dollar-val green"><span>$</span><span>29.95</span></p>'+
+            '</div>'+
+          '</div>'+
+        '</section>'+
+      '</div>';
+
+      $('#api-royalty .api-list').append(percentSlider);
+    });
+    initSlider({ el : '#api-percent-global-slider', value : 0, name : 'global-percent-slider' });
+    initSlider({ el : '#api-royalty .percent-slider', value : 0, name : 'royalty', max : 99 });
+    $('#incentive-process .ui.dropdown .menu').html(menu);
   });
 
   $('#api-process .proceed.publish').click(function(){
@@ -222,23 +265,17 @@ function triggerOnUrl() {
   var hash = window.location.hash,
   pathname = window.location.pathname;
 
-  // if (hash == '#api-buy') {
-  //   isApiBuy = true;
-  //   $('#wallet-value .links.nav-links .link[data-tab="buy"]').trigger('click');
-  // }
-
-  if (pathname == '/wallet/') {
-    if (hash == '#api') {
-      $('.iphone iframe').attr('src', '/wallet/wallet-app/#api');
-    }
-  }
-
-  if (pathname == '/wallet/wallet-app/') {
+  if (pathname == '/wallet/' || pathname == '/wallet/wallet-app/') {
     if (hash == '#api') {
       $('#home-tab .feeds-tab-items .item').removeClass('active');
       $('#home-tab .feeds-tab').removeClass('active');
       $('#home-tab .feeds-tab-items .item[data-tab="#apps"]').addClass('active');
       $('#apps').addClass('active');
+      $('.iphone iframe').attr('src', '/wallet/wallet-app/#api');
+    } else if (hash == '#dev') {
+      $('.iphone iframe').attr('src', '/wallet/wallet-app/#dev');
+      appKey = 'easy-schedule';
+      openProcess('#api-process', appKey);
     }
   }
 }
@@ -598,9 +635,7 @@ function initRangeSlider() {
   initSlider({ el : '#wallet-tabs .tab[data-tab="buy"]', value : 15 });
   initSlider({ el : '#wallet-tabs .tab[data-tab="sell"]', value : 15 });
   initSlider({ el : '#wallet-tabs .tab[data-tab="gift"]', value : 15 });
-  initSlider({ el : '#api-percent-global-slider', value : 0, name : 'global-percent-slider' });
   initSlider({ el : '#api-bugget-api .storecoin-slider', value : 0, name : 'api-slider' });
-  initSlider({ el : '#api-royalty .percent-slider', value : 0, name : 'royalty', max : 99 });
   $('#api-bugget-api .amount-slider .amounts .end span').text(budgetVal);
 }
 
@@ -704,7 +739,9 @@ function changeOnSlide (value, $parent, handlePos, params, eventName) {
   } else if (params.name == 'global-percent-slider' && eventName != 'create') {
     $('#api-royalty .percent-slider .amount-slider .slider').slider('option', 'value', value);
     $('#summary-process .dev-royalty .value').text(numeral(value/100).format('0.0%'));
-    value = numeral(logslider(value, 99)).format('0.000000');
+    value = value;
+  } else if (params.name == 'royalty') {
+    value = value;
   } else {
     value = numeral(logslider(value, max)).format('0.000000');
   }
