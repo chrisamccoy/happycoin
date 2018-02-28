@@ -51,6 +51,7 @@ appInfo = {
     selectedApi : []
   }
 },
+initBudgetSlider = false,
 appKey;
 
 function loadCoinsValue() {
@@ -192,6 +193,14 @@ function initProcess() {
       '</div>';
 
       $('#api-royalty .api-list').append(percentSlider);
+    });
+    $('#api-bugget-api .api-list .api-item').each(function(i){
+      var itemNum = i;
+      if (appInfo[appKey].selectedApi.length > itemNum ) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
     });
     initSlider({ el : '#api-percent-global-slider', value : 0, name : 'global-percent-slider' });
     initSlider({ el : '#api-royalty .percent-slider', value : 0, name : 'royalty', max : 99 });
@@ -372,16 +381,6 @@ function initApi(){
       $selectModal.modal('hide');
       $thisItem.find('.selected-api').text($(this).text());
     });
-
-    if (window.location.pathname == '/wallet/wallet-app/api') {
-      if (window.location.search) {
-        var q = parseFloat(window.location.search.substring(1).split('=')[1]);
-        storecoinBal += q;
-      }
-    }
-    $('#api-balance .amount').text(storecoinBal);
-    $('#api-budget-app-slider .amount-slider .end span').text(storecoinBal);
-    initSlider({ el : '#api-budget-app-slider', value : 0.00001, name : 'budget-slider', max : storecoinBal });
   }
 }
 
@@ -580,20 +579,20 @@ function initModal () {
   $modal.find('.confirm-button').click(function(){
     $modal.modal('hide');
     initloader({ message : 'Loading...' });
-    // if (isApiBuy) {
-    //   window.location = '/wallet/wallet-app/api?bought='+buyAmount;
-    // }
     updateBalance();
   });
 }
 
 function updateBalance() {
   storecoinBal += buyAmount;
-  var scStr = storecoinBal.toString().split('.');
+  // console.log(storecoinBal, buyAmount);
+  var scStr = numeral(storecoinBal).format('0.00000000').toString().split('.');
   $('#wallet-value .storecoin-val .number').html(scStr[0]+'<span>.'+scStr[1]+'</span>');
   $('#api-balance .logo-amount .amount').text(storecoinBal);
   $('#api-budget-app-slider .amounts .end span').text(storecoinBal);
-  $('#api-budget-app-slider .amount-slider .slider').slider('option', 'max', storecoinBal);
+  // if(initBudgetSlider) {
+  //   $('#api-budget-app-slider .amount-slider .slider').slider('option', 'max', storecoinBal);
+  // }
 }
 
 function initloader(params) {
@@ -636,7 +635,9 @@ function initRangeSlider() {
   initSlider({ el : '#wallet-tabs .tab[data-tab="sell"]', value : 15 });
   initSlider({ el : '#wallet-tabs .tab[data-tab="gift"]', value : 15 });
   initSlider({ el : '#api-bugget-api .storecoin-slider', value : 0, name : 'api-slider' });
+  initSlider({ el : '#api-budget-app-slider', name : 'budget-slider'});
   $('#api-bugget-api .amount-slider .amounts .end span').text(budgetVal);
+  initBudgetSlider = true;
 }
 
 function logslider(position, max) {
@@ -645,13 +646,13 @@ function logslider(position, max) {
   // The result should be between 100 an 10000000
   if (position < 16) {
     var minp = 0;
-    var maxp = 16;
-    var minv = Math.log(0.000001);
-    var maxv = Math.log(1);
+    var maxp = 15;
+    var minv = Math.log(0.00000001);
+    var maxv = Math.log(1.00000000);
   } else {
     var minp = 16;
     var maxp = 100;
-    var minv = Math.log(1);
+    var minv = Math.log(1.00000001);
     var maxv = Math.log(max);
   }
 
@@ -661,7 +662,9 @@ function logslider(position, max) {
   // calculate adjustment factor
   var scale = (maxv-minv) / (maxp-minp);
 
-  return Math.exp(minv + scale*(position-minp));
+  var exp = Math.exp(minv + scale*(position-minp));
+  exp = numeral(exp).format('0.00000000') == 'NaN' ? 0 : numeral(exp).format('0.00000000');
+  return parseFloat(numeral(exp).format('0.00000000'));
 }
 
 
@@ -719,20 +722,19 @@ function changeOnSlide (value, $parent, handlePos, params, eventName) {
       max = params.max ? params.max : null;
 
   if (params.name == 'budget-slider') {
-    value = logslider(value, max);
+    value = logslider(value, storecoinBal);
     budgetVal = value;
-    value = numeral(value).format('0.000000');
+    value = numeral(value).format('0.00000000');
     $('#api-bugget-api').find('.end span').text(value);
     $('#summary-process .budget-allocated .sc-val').text(value);
   } else if (params.name == 'api-slider' && eventName != 'create') {
     value = logslider(value, budgetVal);
     var total = 0;
-    value = numeral(value).format('0.000000');
+    value = numeral(value).format('0.00000000');
     $('#api-bugget-api .storecoin-slider .amount-slider .slider').each(function () {
+        // console.log(logslider($(this).slider('value'), budgetVal));
         total += logslider($(this).slider('value'), budgetVal);
     });
-    // $('#summary-process .budget-spent .sc-val').text(numeral(total).format('0.000'));
-    // console.log(total, budgetVal, eventName);
     if (total > budgetVal) {
       return false;
     }
@@ -743,15 +745,18 @@ function changeOnSlide (value, $parent, handlePos, params, eventName) {
   } else if (params.name == 'royalty') {
     value = value;
   } else {
-    value = numeral(logslider(value, max)).format('0.000000');
+    // console.log(logslider(value, max));
+    value = numeral(logslider(value, max)).format('0.00000000');
   }
 
   if ($storeVal) { $storeVal.text(value); }
-  buyAmount = value;
   if ($modalStoreVal) { $modalStoreVal.text(value); }
 
   if (tabName == 'gift') {
     giftItems.storeVal = value;
+  } else if (tabName == 'buy') {
+    buyAmount = parseFloat(value);
+    if ($dollarVal) { $dollarVal.text(numeral(value * $dollarAmount).format('0,0.00')); }
   } else if (tabName == 'trade') {
     var coinAmount = coinsVal[coinKey].USD, amount;
     if (coinAmount > $dollarAmount) {
