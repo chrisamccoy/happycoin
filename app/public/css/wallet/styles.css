@@ -1708,7 +1708,7 @@ button.small,
   border-radius: 7px;
 }*/
 
-#api-percent-global-slider .slider .ui-slider-range,
+.api-percent-global-slider .slider .ui-slider-range,
 .api-item section.percent-slider .slider .ui-slider-range {
   background: #61bb71;
   border-color: #61bb71 !important;
@@ -1718,7 +1718,7 @@ button.small,
   background-color: #f6f6f6;
 }*/
 
-#api-percent-global-slider .amount-slider,
+.api-percent-global-slider .amount-slider,
 .api-item section.percent-slider .amount-slider {
   height: 65px;
 }

@@ -607,7 +607,7 @@ block content
     div.process-step.step-2
       div.process-back.open-process(data-process="incentive-process", data-step="step-1") 
         i.ion-chevron-left 
-      
+      - var isPercentSlider = false
       include api-slider
       
       div.proceed.next.wallet-button(data-step="step-3")
@@ -618,15 +618,9 @@ block content
     div.process-step.step-3  
       div.process-back.open-process(data-process="incentive-process", data-step="step-2") 
         i.ion-chevron-left         
-      section#api-percent-global-slider.tab(data-tab="none")
-        div.header
-          span Set a Developer royalty for 
-          img(src="/images/wallet/storecoin-logo.png", alt="#💰")
-          span  API's (%)
-        div(style="font-size:0.7em; margin-bottom:0.5em;") Earn a % of each transaction
-        include percent-slider
+      include global-percent-slider
 
-      section#api-royalty
+      section.api-royalty
         //- div.header Set budget for API calls
         div.header Set a custom Royalty for specific API's (%)
         div.api-list
@@ -697,10 +691,9 @@ block content
         
     div.process-step.step-2
       include total-balance
-      section.api-budget-summary-slider.tab(data-tab="none")
-        //- div.header Total #💰 budget for incentivized API calls
-        div.header Total budget for incentivized API calls
-        include amount-slider
+      include total-budget
+      include global-percent-slider
+      - isPercentSlider = true
       include api-slider
       div.proceed.next.wallet-button(data-step="step-1")
         button Itemized View 

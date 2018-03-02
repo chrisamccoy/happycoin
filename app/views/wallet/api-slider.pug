@@ -1,183 +1,30 @@
-section.api-bugget-api
+section.api-bugget-api.api-royalty
   //- div.header Set budget for API calls
   div.header Set Paid API Calls
   div.api-list
-    div.api-item
-      div.selected-api
-      //- button.small.select-api SELECT API
-      .ui.selection.dropdown
-        input(type='hidden', name='gender')
-        .default.text Select API
-        i.dropdown.icon
-        .menu
-          .item User signs up
-          .item User successfully onboards
-          .item User invites a friend
-          .item User invites a friend who onboards
-          .item User accepts 3 invites in a row
-          .item User creates an event and schedules +3 people
+    - var n = 0
+    while n < 9
+      div.api-item
+        div.selected-api
+        //- button.small.select-api SELECT API
+        .ui.selection.dropdown
+          input(type='hidden', name='gender')
+          .default.text Select API
+          i.dropdown.icon
+          .menu
+            .item User signs up
+            .item User successfully onboards
+            .item User invites a friend
+            .item User invites a friend who onboards
+            .item User accepts 3 invites in a row
+            .item User creates an event and schedules +3 people
 
-      section.tab.no-padding.storecoin-slider(data-tab="none")
-        include amount-slider
-
-    div.api-item
-      div.selected-api
-      //- button.small.select-api SELECT API
-      .ui.selection.dropdown
-        input(type='hidden', name='gender')
-        .default.text Select API
-        i.dropdown.icon
-        .menu
-          .item User signs up
-          .item User successfully onboards
-          .item User invites a friend
-          .item User invites a friend who onboards
-          .item User accepts 3 invites in a row
-          .item User creates an event and schedules +3 people
-
-      section.tab.no-padding.storecoin-slider(data-tab="none")
-        include amount-slider
-
-    div.api-item
-      div.selected-api
-      //- button.small.select-api SELECT API
-      .ui.selection.dropdown
-        input(type='hidden', name='gender')
-        .default.text Select API
-        i.dropdown.icon
-        .menu
-          .item User signs up
-          .item User successfully onboards
-          .item User invites a friend
-          .item User invites a friend who onboards
-          .item User accepts 3 invites in a row
-          .item User creates an event and schedules +3 people
-
-      section.tab.no-padding.storecoin-slider(data-tab="none")
-        include amount-slider
-
-    div.api-item
-      div.selected-api
-      //- button.small.select-api SELECT API
-      .ui.selection.dropdown
-        input(type='hidden', name='gender')
-        .default.text Select API
-        i.dropdown.icon
-        .menu
-          .item User signs up
-          .item User successfully onboards
-          .item User invites a friend
-          .item User invites a friend who onboards
-          .item User accepts 3 invites in a row
-          .item User creates an event and schedules +3 people
-
-      section.tab.no-padding.storecoin-slider(data-tab="none")
-        include amount-slider
-
-    div.api-item
-      div.selected-api
-      //- button.small.select-api SELECT API
-      .ui.selection.dropdown
-        input(type='hidden', name='gender')
-        .default.text Select API
-        i.dropdown.icon
-        .menu
-          .item User signs up
-          .item User successfully onboards
-          .item User invites a friend
-          .item User invites a friend who onboards
-          .item User accepts 3 invites in a row
-          .item User creates an event and schedules +3 people
-
-      section.tab.no-padding.storecoin-slider(data-tab="none")
-        include amount-slider
-
-    div.api-item
-      div.selected-api
-      //- button.small.select-api SELECT API
-      .ui.selection.dropdown
-        input(type='hidden', name='gender')
-        .default.text Select API
-        i.dropdown.icon
-        .menu
-          .item User signs up
-          .item User successfully onboards
-          .item User invites a friend
-          .item User invites a friend who onboards
-          .item User accepts 3 invites in a row
-          .item User creates an event and schedules +3 people
-
-      section.tab.no-padding.storecoin-slider(data-tab="none")
-        include amount-slider
-
-    div.api-item
-      div.selected-api
-      //- button.small.select-api SELECT API
-      .ui.selection.dropdown
-        input(type='hidden', name='gender')
-        .default.text Select API
-        i.dropdown.icon
-        .menu
-          .item User signs up
-          .item User successfully onboards
-          .item User invites a friend
-          .item User invites a friend who onboards
-          .item User accepts 3 invites in a row
-          .item User creates an event and schedules +3 people
-
-      section.tab.no-padding.storecoin-slider(data-tab="none")
-        include amount-slider
-
-    div.api-item
-      div.selected-api
-      //- button.small.select-api SELECT API
-      .ui.selection.dropdown
-        input(type='hidden', name='gender')
-        .default.text Select API
-        i.dropdown.icon
-        .menu
-          .item User signs up
-          .item User successfully onboards
-          .item User invites a friend
-          .item User invites a friend who onboards
-          .item User accepts 3 invites in a row
-          .item User creates an event and schedules +3 people
-
-      section.tab.no-padding.storecoin-slider(data-tab="none")
-        include amount-slider
-
-    div.api-item
-      div.selected-api
-      //- button.small.select-api SELECT API
-      .ui.selection.dropdown
-        input(type='hidden', name='gender')
-        .default.text Select API
-        i.dropdown.icon
-        .menu
-          .item User signs up
-          .item User successfully onboards
-          .item User invites a friend
-          .item User invites a friend who onboards
-          .item User accepts 3 invites in a row
-          .item User creates an event and schedules +3 people
-
-      section.tab.no-padding.storecoin-slider(data-tab="none")
-        include amount-slider
-
-    div.api-item
-      div.selected-api
-      //- button.small.select-api SELECT API
-      .ui.selection.dropdown
-        input(type='hidden', name='gender')
-        .default.text Select API
-        i.dropdown.icon
-        .menu
-          .item User signs up
-          .item User successfully onboards
-          .item User invites a friend
-          .item User invites a friend who onboards
-          .item User accepts 3 invites in a row
-          .item User creates an event and schedules +3 people
-
-      section.tab.no-padding.storecoin-slider(data-tab="none")
-        include amount-slider
+        section.tab.no-padding.storecoin-slider(data-tab="none")
+          include amount-slider
+          
+        if isPercentSlider  
+          section.tab.no-padding.percent-slider(data-tab="none")
+            div.header Set a custom Royalty for specific API's (%)
+            include percent-slider
+    
+      - n++

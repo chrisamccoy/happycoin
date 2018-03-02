@@ -14,7 +14,7 @@ $(document).ready(function(){
   initApi();
   triggerOnUrl();
   initFeedsTab();
-  initPercentSlider();
+  // initPercentSlider();
   initRoyaltyTabs();
   initProcess();
 });
@@ -34,7 +34,6 @@ coinKey = 'eth',
 isApiBuy = false,
 budgetVal = 44.38385,
 buyAmount = 0,
-budgetPos = 0,
 storecoinBal = 139.470001,
 appInfo = {
   'easy-schedule' : {
@@ -42,17 +41,22 @@ appInfo = {
     head : 'Easy Schedule',
     meta : 'Project Management',
     master : false,
-    selectedApi : []
+    selectedApi : [],
+    budgetPos : 0,
+    percentPos : 0
   },
   'smart-analytics' : {
     img : '/images/wallet/social-media-logo-v2.png',
     head : 'Smart Analytics',
     meta : 'Social Media Analytics',
     master : false,
-    selectedApi : []
+    selectedApi : [],
+    budgetPos : 0,
+    percentPos : 0
   }
 },
 initBudgetSlider = false,
+initPercentSlider = false,
 appKey;
 
 function loadCoinsValue() {
@@ -193,19 +197,23 @@ function initProcess() {
         '</section>'+
       '</div>';
 
-      $('#api-royalty .api-list').append(percentSlider);
+      $('.api-royalty .api-list').append(percentSlider);
     });
-    $('.api-bugget-api .api-list .api-item').each(function(i){
-      var itemNum = i;
-      if (appInfo[appKey].selectedApi.length > itemNum ) {
-        $(this).show();
-      } else {
-        $(this).hide();
-      }
+    $('.api-bugget-api').each(function(){
+      $(this).find('.api-list .api-item').each(function(i){
+        var itemNum = i;
+        if (appInfo[appKey].selectedApi.length > itemNum ) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
     });
-    initSlider({ el : '#api-percent-global-slider', value : 0, name : 'global-percent-slider' });
-    initSlider({ el : '#api-royalty .percent-slider', value : 0, name : 'royalty', max : 99 });
-    $('#incentive-process .ui.dropdown .menu').html(menu);
+    initSlider({ el : '.api-percent-global-slider', value : 0, name : 'global-percent-slider' });
+    initSlider({ el : '.api-royalty .percent-slider', value : 0, name : 'royalty', max : 99 });
+    // initSlider({ el : '.api-bugget-api .percent-slider', value : 0, name : 'royalty', max : 99 });
+    $('.process-window .ui.dropdown .menu').html(menu);
+    initPercentSlider = true;
   });
 
   $('#api-process .proceed.publish').click(function(){
@@ -268,6 +276,16 @@ function openProcess(el, key) {
   $thisPro.find('.process-step').removeClass('show');
   $thisPro.find('.process-step.step-1').addClass('show');
   $thisPro.find('.process-step').height($(window).height() - offset);
+
+  updateProcess();
+}
+
+function updateProcess(){
+  $('.api-budget-app-slider .slider').slider('option', 'value', appInfo[appKey].budgetPos);
+  if(initPercentSlider) {
+    $('.api-percent-global-slider .slider').slider('option', 'value', appInfo[appKey].percentPos);
+  }
+  // console.log(appInfo[appKey].budgetPos);
 }
 
 function triggerOnUrl() {
@@ -290,23 +308,23 @@ function triggerOnUrl() {
   }
 }
 
-function initPercentSlider() {
-  var $tab = $('section.tab[data-tab]'),
-  $checkbox = $tab.find('.wallet-checkbox input');
-  $checkbox.change(function() {
-      var $this = $(this),
-      $amountSlider = $this.parents('.tab').find('.amount-slider'),
-      $thisSlider = $amountSlider.find('.slider');
-      // console.log($thisSlider);
-      if(this.checked) {
-        $amountSlider.addClass('disabled');
-        $thisSlider.slider('disable');
-      } else {
-        $thisSlider.slider('enable');
-        $amountSlider.removeClass('disabled');
-      }
-  });
-}
+// function initPercentSlider() {
+//   var $tab = $('section.tab[data-tab]'),
+//   $checkbox = $tab.find('.wallet-checkbox input');
+//   $checkbox.change(function() {
+//       var $this = $(this),
+//       $amountSlider = $this.parents('.tab').find('.amount-slider'),
+//       $thisSlider = $amountSlider.find('.slider');
+//       // console.log($thisSlider);
+//       if(this.checked) {
+//         $amountSlider.addClass('disabled');
+//         $thisSlider.slider('disable');
+//       } else {
+//         $thisSlider.slider('enable');
+//         $amountSlider.removeClass('disabled');
+//       }
+//   });
+// }
 
 function initRoyaltyTabs() {
   var lastScrollTop = 0;
@@ -746,7 +764,10 @@ function changeOnSlide ($this, value, $parent, handlePos, params, eventName) {
       max = params.max ? params.max : null;
 
   if (params.name == 'budget-slider') {
-    budgetPos = value;
+    if (appInfo[appKey]) {
+      appInfo[appKey].budgetPos = value;
+    }
+    // console.log(appInfo);
     value = logslider(value, storecoinBal);
     budgetVal = value;
     value = numeral(value).format('0.00000000');
@@ -764,11 +785,14 @@ function changeOnSlide ($this, value, $parent, handlePos, params, eventName) {
       return false;
     }
   } else if (params.name == 'global-percent-slider') {
-    if (eventName != 'create') {
-      $('#api-royalty .percent-slider .amount-slider .slider').slider('option', 'value', value);
-      $('#summary-process .dev-royalty .value').text(numeral(value/100).format('0.00')+'%');
+    if (appInfo[appKey]) {
+      appInfo[appKey].percentPos = value;
     }
-    value = numeral(pecentLogslider(value, 100)).format('0.00');
+    if (eventName != 'create') {
+      $('.api-royalty .percent-slider .amount-slider .slider').slider('option', 'value', value);
+      value = numeral(pecentLogslider(value, 100)).format('0.00');
+      $('#summary-process .dev-royalty .value').text(numeral(value).format('0.00')+'%');
+    }
   } else if (params.name == 'royalty') {
     value = numeral(pecentLogslider(value, 100)).format('0.00');
   } else {
