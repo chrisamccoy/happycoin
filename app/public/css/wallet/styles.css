@@ -1639,23 +1639,23 @@ button.small,
   background: #dcdcdc3d;
 }
 /*---------------------------------*/
-#api-balance {
+.total-balance {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-#api-balance .logo-amount {
+.total-balance .logo-amount {
   display: flex;
   align-items: center;
 }
 
-#api-balance .logo-amount .logo {
+.total-balance .logo-amount .logo {
   width: 35px;
   margin-right: 1em;
 }
 
-#api-balance .logo-amount .amount {
+.total-balance .logo-amount .amount {
   font-size: 20px;
 }
 
@@ -1901,6 +1901,7 @@ button.small,
   margin-right: 1em;
   width: 30px;
   text-align: center;
+  cursor: pointer;
 }
 
 .process-window .process-step {
@@ -1913,6 +1914,16 @@ button.small,
 
 .process-window .process-step.show {
   display: block;
+}
+
+.process-window .process-step .process-back {
+  position: absolute;
+  top: 0px;
+  padding: 1em 1.5em;
+  background: #2a2a2a;
+  text-align: center;
+  color: white;
+  cursor: pointer;
 }
 
 .process-window .process-step .head {

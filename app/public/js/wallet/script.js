@@ -34,6 +34,7 @@ coinKey = 'eth',
 isApiBuy = false,
 budgetVal = 44.38385,
 buyAmount = 0,
+budgetPos = 0,
 storecoinBal = 139.470001,
 appInfo = {
   'easy-schedule' : {
@@ -194,7 +195,7 @@ function initProcess() {
 
       $('#api-royalty .api-list').append(percentSlider);
     });
-    $('#api-bugget-api .api-list .api-item').each(function(i){
+    $('.api-bugget-api .api-list .api-item').each(function(i){
       var itemNum = i;
       if (appInfo[appKey].selectedApi.length > itemNum ) {
         $(this).show();
@@ -233,14 +234,14 @@ function initProcess() {
     // console.log(appInfo[appKey].master);
   });
 
-  $('#api-balance .buy .button').click(function(){
+  $('.total-balance .buy .button').click(function(){
     // $processWin.hide();
     $('#home-tab').hide();
     $('#transaction-tab').show();
     $('#wallet-value .nav-links .link[data-tab="buy"]').trigger('click');
   });
 
-  $processWin.find('.process-head .header .back').click(function(){
+  $processWin.find('.back, .process-back:not(.open-process)').click(function(){
     $processWin.hide();
   });
 
@@ -344,7 +345,7 @@ function initDatePicker(){
 }
 
 function initApi(){
-  var $api = $('#api-bugget-api');
+  var $api = $('.api-bugget-api');
   if($api.length){
     var $item = $api.find('.api-item'),
     $button = $item.find('.select-api'),
@@ -588,8 +589,8 @@ function updateBalance() {
   // console.log(storecoinBal, buyAmount);
   var scStr = numeral(storecoinBal).format('0.00000000').toString().split('.');
   $('#wallet-value .storecoin-val .number').html(scStr[0]+'<span>.'+scStr[1]+'</span>');
-  $('#api-balance .logo-amount .amount').text(storecoinBal);
-  $('#api-budget-app-slider .amounts .end span').text(storecoinBal);
+  $('.total-balance .logo-amount .amount').text(storecoinBal);
+  $('.api-budget-app-slider .amounts .end span').text(storecoinBal);
   // if(initBudgetSlider) {
   //   $('#api-budget-app-slider .amount-slider .slider').slider('option', 'max', storecoinBal);
   // }
@@ -634,9 +635,10 @@ function initRangeSlider() {
   initSlider({ el : '#wallet-tabs .tab[data-tab="buy"]', value : 15 });
   initSlider({ el : '#wallet-tabs .tab[data-tab="sell"]', value : 15 });
   initSlider({ el : '#wallet-tabs .tab[data-tab="gift"]', value : 15 });
-  initSlider({ el : '#api-bugget-api .storecoin-slider', value : 0, name : 'api-slider' });
-  initSlider({ el : '#api-budget-app-slider', name : 'budget-slider'});
-  $('#api-bugget-api .amount-slider .amounts .end span').text(budgetVal);
+  initSlider({ el : '.api-bugget-api .storecoin-slider', value : 0, name : 'api-slider' });
+  initSlider({ el : '.api-budget-app-slider', name : 'budget-slider'});
+  initSlider({ el : '.api-summary-app-slider', name : 'budget-slider'});
+  $('.api-bugget-api .amount-slider .amounts .end span').text(budgetVal);
   initBudgetSlider = true;
 }
 
@@ -656,15 +658,37 @@ function logslider(position, max) {
     var maxv = Math.log(max);
   }
 
-  // var minv = Math.log(0.000001);
-  // var maxv = Math.log(139.470001);
-
   // calculate adjustment factor
   var scale = (maxv-minv) / (maxp-minp);
 
   var exp = Math.exp(minv + scale*(position-minp));
   exp = numeral(exp).format('0.00000000') == 'NaN' ? 0 : numeral(exp).format('0.00000000');
   return parseFloat(numeral(exp).format('0.00000000'));
+}
+
+function pecentLogslider(position, max) {
+  // position will be between 0 and 100
+  max = max ? max : 139.470001;
+  // The result should be between 100 an 10000000
+  if (position < 51) {
+    var minp = 0;
+    var maxp = 50;
+    var minv = Math.log(0.01);
+    var maxv = Math.log(10);
+  } else {
+    var minp = 51;
+    var maxp = 100;
+    var minv = Math.log(10.01);
+    var maxv = Math.log(max);
+  }
+
+  // calculate adjustment factor
+  var scale = (maxv-minv) / (maxp-minp);
+
+  var exp = Math.exp(minv + scale*(position-minp));
+  // console.log(exp);
+  exp = numeral(exp).format('0.00') == 'NaN' ? 0 : numeral(exp).format('0.00');
+  return parseFloat(numeral(exp).format('0.00'));
 }
 
 
@@ -708,10 +732,10 @@ function sliderFunction($this, eventName, params) {
       $parent = $this.parents('.tab'),
       thisHandlePos = $this.find('.ui-slider-handle').offset().left;
 
-  return changeOnSlide(value, $parent, thisHandlePos, params, eventName);
+  return changeOnSlide($this,value, $parent, thisHandlePos, params, eventName);
 }
 
-function changeOnSlide (value, $parent, handlePos, params, eventName) {
+function changeOnSlide ($this, value, $parent, handlePos, params, eventName) {
   var $storeVal = $parent.find('.amount-slider .storecoin-val span.value'),
       tabName = $parent.data().tab,
       $modalStoreVal = $('.confirm-transact.ui.modal[data-modal="'+tabName+'-modal"] .modal-content .buy-amount .storecoin-val'),
@@ -722,28 +746,31 @@ function changeOnSlide (value, $parent, handlePos, params, eventName) {
       max = params.max ? params.max : null;
 
   if (params.name == 'budget-slider') {
+    budgetPos = value;
     value = logslider(value, storecoinBal);
     budgetVal = value;
     value = numeral(value).format('0.00000000');
-    $('#api-bugget-api').find('.end span').text(value);
+    $('.api-bugget-api').find('.end span').text(value);
     $('#summary-process .budget-allocated .sc-val').text(value);
   } else if (params.name == 'api-slider' && eventName != 'create') {
     value = logslider(value, budgetVal);
     var total = 0;
     value = numeral(value).format('0.00000000');
-    $('#api-bugget-api .storecoin-slider .amount-slider .slider').each(function () {
+    $('.api-bugget-api .storecoin-slider .amount-slider .slider').each(function () {
         // console.log(logslider($(this).slider('value'), budgetVal));
         total += logslider($(this).slider('value'), budgetVal);
     });
     if (total > budgetVal) {
       return false;
     }
-  } else if (params.name == 'global-percent-slider' && eventName != 'create') {
-    $('#api-royalty .percent-slider .amount-slider .slider').slider('option', 'value', value);
-    $('#summary-process .dev-royalty .value').text(numeral(value/100).format('0.0%'));
-    value = value;
+  } else if (params.name == 'global-percent-slider') {
+    if (eventName != 'create') {
+      $('#api-royalty .percent-slider .amount-slider .slider').slider('option', 'value', value);
+      $('#summary-process .dev-royalty .value').text(numeral(value/100).format('0.00')+'%');
+    }
+    value = numeral(pecentLogslider(value, 100)).format('0.00');
   } else if (params.name == 'royalty') {
-    value = value;
+    value = numeral(pecentLogslider(value, 100)).format('0.00');
   } else {
     // console.log(logslider(value, max));
     value = numeral(logslider(value, max)).format('0.00000000');
