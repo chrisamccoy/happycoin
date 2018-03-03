@@ -1669,6 +1669,13 @@ button.small,
   border-bottom: 1px solid #eaeaea;
 }
 
+.api-item .title {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
 .api-item .ui.dropdown {
   width: 100%;
   margin-bottom: 1em;

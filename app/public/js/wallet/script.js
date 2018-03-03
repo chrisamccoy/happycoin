@@ -285,6 +285,12 @@ function updateProcess(){
   if(initPercentSlider) {
     $('.api-percent-global-slider .slider').slider('option', 'value', appInfo[appKey].percentPos);
   }
+  $('#summary-process .api-list .api-item').each(function(i){
+    var api = appInfo[appKey].selectedApi[i];
+    if(api) {
+      $(this).find('.title').text(api.customName ? api.customName : api.name);
+    }
+  });
   // console.log(appInfo[appKey].budgetPos);
 }
 
