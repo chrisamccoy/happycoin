@@ -259,7 +259,7 @@ button.small,
     max-width: none;
   }*/
   section {
-    padding: 15px 10px;
+    padding: 15px 17px;
     border-bottom : 1px solid #eaeaea;
   }
 
@@ -1916,7 +1916,7 @@ button.small,
   height: calc(100vh - 143px);
   overflow-x: hidden;
   overflow-y: scroll;
-  padding-bottom: 3em;
+  padding-bottom: 60px;
 }
 
 .process-window .process-step.show {
@@ -2040,4 +2040,8 @@ button.small,
 
 .process-window .summary-item .stats .value .sc-val {
   color: inherit;
+}
+
+.process-window:not(#summary-process) .summary-item .edit {
+  display: none;
 }

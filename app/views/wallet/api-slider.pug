@@ -1,6 +1,6 @@
 section.api-bugget-api.api-royalty
   //- div.header Set budget for API calls
-  div.header Set Paid API Calls
+  div.header Choose the amount per API call
   div.api-list
     - var n = 0
     while n < 9
@@ -25,7 +25,7 @@ section.api-bugget-api.api-royalty
           
         if isPercentSlider  
           section.tab.no-padding.percent-slider(data-tab="none")
-            div.header Set a custom Royalty for specific API's (%)
+            div.header Set a custom Royalty for this API (%)
             include percent-slider
     
       - n++

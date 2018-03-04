@@ -512,7 +512,7 @@ block content
       div.process-back 
         i.ion-chevron-left 
       section
-        div.head Choose API Calls
+        div.head Choose API calls to incentivize with tokens
         div.check-list
           div.item
             div.name User / invite
@@ -555,7 +555,16 @@ block content
           button Next
         div.proceed.open-process.wallet-button
           button Save
-          
+      section.summary-item.api-selected
+        div.stats 
+          div.head Total API Seleted
+          div.value 
+            span.gained 0
+            span.out-of /9
+        div.edit
+          div.button.small.icon.open-process(data-process="api-process")
+            i.ion-edit
+                
     div.process-step.step-2
       div.process-back.open-process(data-process="api-process", data-step="step-1") 
         i.ion-chevron-left 
@@ -576,6 +585,16 @@ block content
         div.proceed.open-process.wallet-button
           button Save
   
+      section.summary-item.api-selected
+        div.stats 
+          div.head Total API Seleted
+          div.value 
+            span.gained 0
+            span.out-of /9
+        div.edit
+          div.button.small.icon.open-process(data-process="api-process")
+            i.ion-edit
+              
   div#incentive-process.process-window
     div.process-head
       div.header
@@ -597,6 +616,27 @@ block content
       include total-balance
           
       include total-budget
+      
+      section.summary-item.api-selected
+        div.stats 
+          div.head Total API Seleted
+          div.value 
+            span.gained 0
+            span.out-of /9
+        div.edit
+          div.button.small.icon.open-process(data-process="api-process")
+            i.ion-edit
+              
+      section.summary-item.budget-allocated
+        div.stats 
+          div.head Budget Allocated
+          div.value 
+            div.sc-unit
+              img(src="/images/wallet/storecoin-logo.png")
+            div.sc-val 0.0001
+        div.edit
+          div.button.small.icon.open-process(data-process="incentive-process")
+            i.ion-edit
 
       div.proceed.next.wallet-button(data-step="step-2")
         button Next
@@ -609,6 +649,35 @@ block content
         i.ion-chevron-left 
       - var isPercentSlider = false
       include api-slider
+      
+      section.summary-item.api-selected
+        div.stats 
+          div.head Total API Seleted
+          div.value 
+            span.gained 0
+            span.out-of /9
+        div.edit
+          div.button.small.icon.open-process(data-process="api-process")
+            i.ion-edit
+              
+      section.summary-item.budget-allocated
+        div.stats 
+          div.head Budget Allocated
+          div.value 
+            div.sc-unit
+              img(src="/images/wallet/storecoin-logo.png")
+            div.sc-val 0.0001
+        div.edit
+          div.button.small.icon.open-process(data-process="incentive-process")
+            i.ion-edit
+              
+      section.summary-item.dev-royalty
+        div.stats 
+          div.head Developer Royalty
+          div.value 0.0001%
+        div.edit
+          div.button.small.icon.open-process(data-process="incentive-process", data-step="step-3")
+            i.ion-edit
       
       div.proceed.next.wallet-button(data-step="step-3")
         button Next
@@ -624,6 +693,35 @@ block content
         //- div.header Set budget for API calls
         div.header Set a custom Royalty for specific API's (%)
         div.api-list
+          
+      section.summary-item.api-selected
+        div.stats 
+          div.head Total API Seleted
+          div.value 
+            span.gained 0
+            span.out-of /9
+        div.edit
+          div.button.small.icon.open-process(data-process="api-process")
+            i.ion-edit
+              
+      section.summary-item.budget-allocated
+        div.stats 
+          div.head Budget Allocated
+          div.value 
+            div.sc-unit
+              img(src="/images/wallet/storecoin-logo.png")
+            div.sc-val 0.0001
+        div.edit
+          div.button.small.icon.open-process(data-process="incentive-process")
+            i.ion-edit
+              
+      section.summary-item.dev-royalty
+        div.stats 
+          div.head Developer Royalty
+          div.value 0.0001%
+        div.edit
+          div.button.small.icon.open-process(data-process="incentive-process", data-step="step-3")
+            i.ion-edit
             
         div.proceed.publish.wallet-button(data-message="Saving Settings")
           button Finish 

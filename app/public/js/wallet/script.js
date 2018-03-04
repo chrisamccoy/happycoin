@@ -150,7 +150,7 @@ function initProcess() {
       $('#api-process .step-2 .fields').html(inputField);
     });
 
-    var $summaryVal = $('#summary-process .api-selected .stats .value');
+    var $summaryVal = $('.summary-item.api-selected .stats .value');
     $summaryVal.find('.gained').text(selectedApi.length);
     $summaryVal.find('out-of').text($checkList.find('.item').length);
     appInfo[appKey].selectedApi = selectedApi;
@@ -276,7 +276,8 @@ function openProcess(el, key) {
   $thisApp.find('.image img').attr('src', appData.img);
   $thisApp.find('.title b').text(appData.head);
   $thisApp.find('.title .meta').text(appData.meta);
-  offset = $thisPro.find('.item-app').outerHeight() + $thisPro.find('.process-head .header').outerHeight() + 48;
+  var paddingBottom = 60;
+  offset = $thisPro.find('.item-app').outerHeight() + $thisPro.find('.process-head .header').outerHeight() + paddingBottom;
   $thisPro.find('.process-step').removeClass('show');
   $thisPro.find('.process-step.step-1').addClass('show');
   $thisPro.find('.process-step').height($(window).height() - offset);
@@ -798,7 +799,7 @@ function changeOnSlide ($this, value, $parent, handlePos, params, eventName) {
     budgetVal = value;
     value = numeral(value).format('0.00000000');
     $('.api-bugget-api').find('.end span').text(value);
-    $('#summary-process .budget-allocated .sc-val').text(value);
+    $('.summary-item.budget-allocated .sc-val').text(value);
   } else if (params.name == 'api-slider' && eventName != 'create') {
     value = logslider(value, budgetVal);
     var total = 0;
@@ -817,7 +818,7 @@ function changeOnSlide ($this, value, $parent, handlePos, params, eventName) {
       }
       $('.api-royalty .percent-slider .amount-slider .slider').slider('option', 'value', value);
       value = numeral(pecentLogslider(value, 100)).format('0.00');
-      $('#summary-process .dev-royalty .value').text(numeral(value).format('0.00')+'%');
+      $('.summary-item.dev-royalty .value').text(numeral(value).format('0.00')+'%');
     }
   } else if (params.name == 'royalty') {
     value = numeral(pecentLogslider(value, 100)).format('0.00');
