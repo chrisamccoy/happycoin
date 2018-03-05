@@ -1883,7 +1883,8 @@ button.small,
 
 .process-window .header {
   font-size: 0.9em;
-  color: #565656;
+  /*color: #565656;*/
+  color: black;
 }
 
 .process-window .header img {
@@ -1935,8 +1936,9 @@ button.small,
 
 .process-window .process-step .head {
   font-weight: bold;
-  font-size: 1.1em;
-  margin-bottom: 1em;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  color:black;
 }
 
 .process-window .process-step .check-list .item {
@@ -2024,7 +2026,7 @@ button.small,
 }
 
 .process-window .summary-item .stats .value {
-  color: black;
+  color: grey;
   display: flex;
   align-items: center;
   line-height: 1;

@@ -691,13 +691,13 @@ function logslider(position, max) {
   // position will be between 0 and 100
   max = max ? max : 139.470001;
   // The result should be between 100 an 10000000
-  if (position < 16) {
+  if (position < 26) {
     var minp = 0;
-    var maxp = 15;
+    var maxp = 25;
     var minv = Math.log(0.00000001);
     var maxv = Math.log(1.00000000);
   } else {
-    var minp = 16;
+    var minp = 26;
     var maxp = 100;
     var minv = Math.log(1.00000001);
     var maxv = Math.log(max);
@@ -715,15 +715,15 @@ function pecentLogslider(position, max) {
   // position will be between 0 and 100
   max = max ? max : 139.470001;
   // The result should be between 100 an 10000000
-  if (position < 51) {
+  if (position < 26) {
     var minp = 0;
-    var maxp = 50;
+    var maxp = 25;
     var minv = Math.log(0.01);
-    var maxv = Math.log(10);
+    var maxv = Math.log(1);
   } else {
-    var minp = 51;
+    var minp = 26;
     var maxp = 100;
-    var minv = Math.log(10.01);
+    var minv = Math.log(1.01);
     var maxv = Math.log(max);
   }
 
@@ -816,7 +816,7 @@ function changeOnSlide ($this, value, $parent, handlePos, params, eventName) {
       if (appInfo[appKey]) {
         appInfo[appKey].percentPos = value;
       }
-      $('.api-royalty .percent-slider .amount-slider .slider').slider('option', 'value', value);
+      // $('.api-royalty .percent-slider .amount-slider .slider').slider('option', 'value', value);
       value = numeral(pecentLogslider(value, 100)).format('0.00');
       $('.summary-item.dev-royalty .value').text(numeral(value).format('0.00')+'%');
     }
