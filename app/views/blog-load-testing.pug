@@ -7,21 +7,18 @@ block blog-news
   p
     b Purpose
     
-  p This document explains the activities performed in Phase One load testing of the decentralized Storecoin consensus algorithm called Dynamic Proof of Stake (DyPoS). DyPoS is partially built on top of Tendermint. This is the first of a series of tests designed to measure the performance of DyPoS.
+  p This document explains the activities performed in Phase One load testing of the first version of the decentralized Storecoin consensus algorithm called Dynamic Proof of Stake (DyPoS). Version 1 of DyPoS is partially built on top of Tendermint and eventually will be replaced by BlockFin, Storecoin’s leaderless, fork-tolerant, high-throughput consensus protocol. Version 1 of DyPoS models various ways to improve consensus throughput, which is defined as the rate at which the validator nodes add transactions to the new block and successfully add the new block to the blockchain. These models help identify deficiencies in traditional approaches to consensus, so they can be better addressed in BlockFin. This is the first of a series of tests designed to measure the consensus throughput of DyPoS.
 
   p
     b About Storecoin
     
-  p Storecoin will be a public blockchain powering free, fast, and scalable payments using its new consensus protocol called Dynamic Proof of Stake (DyPoS).
+  p With its Dynamic, Fork-tolerant and Auditable Proof of Stake-based consensus protocol (DyPoS), Storecoin will secure free transactions, high throughput and a decentralized governance system with built-in checks and balances inspired by the U.S. Constitution.
   
-  p DyPoS is inspired by the supply and demand principles of Uber Surge Pricing 
-    span.italics (blockchain economics)
-    | , the checks and balances of the U.S. Constitution 
-    span.italics (blockchain governance)
-    | , and Power of Attorney 
-    span.italics (blockchain scaling).
-    
-  p Storecoin will power crypto-powered incentives and payments inside of apps.
+  p Also inspired by the supply and demand principles of Uber Surge Pricing 
+    span.italics  (blockchain economics)
+    |  and Power of Attorney 
+    span.italics  (blockchain scaling)
+    | , Storecoin will secure crypto-powered incentives and payments inside of apps.
   
   .hc-image
     img(src='/images/empty.png', data-src="/images/blog/blog-load-testing.png")
@@ -32,13 +29,14 @@ block blog-news
     b What we are trying to learn
   
   p In testing the Dynamic Proof of Stake consensus algorithm, we want to see how the software responds to processing multiple transactions of different sizes at different rates (transactions per second) consecutively on a P2P network consisting of four validator nodes. The validator nodes are configured geographically in different regions to mimic a real-world setup.
-  p These are the remaining tests planned.
+  
+  p The table below shows the plans for Tests 2 through 7.
   
   .hc-image
     img(src='/images/empty.png', data-src="/images/table-1.png")
   p.caption Table 1: Criteria and scenarios to load test the DyPoS consensus protocol.
     
-  p In Test №1, a total of 24 inquiries were performed over four nodes using six groups of transactions of varying number (5, 100, 1,000, 10,000, 100,000 and 1,000,000) and four transaction sizes (500 bytes, 1 kilobyte, 10 kilobytes and 100 kilobytes).
+  p In Test № 1, a total of 24 inquiries were performed over four nodes using six groups of transactions of varying number (5, 100, 1,000, 10,000, 100,000 and 1,000,000) and four transaction sizes (500 bytes, 1 kilobyte, 10 kilobytes and 100 kilobytes).
   
   h2.article-h3 Test Details and Results
   p
@@ -51,9 +49,6 @@ block blog-news
     | with 4 CPUs, 30.5GB memory, and a 80GB SSD drive.
 
   p The nodes were physically located in the following regions.
-  
-  //- p
-  //-   b Nodes : r3.xlarge instances
   
   ul
     li California
@@ -69,8 +64,8 @@ block blog-news
     b m4.2xlarge 
     | instance located in Canada.
     
-  //- p 
-  //-   b Type of Test Performed
+  p 
+    b Type of Test Performed
     
   p Load testing is the process of putting demand on a software system and measuring its response. The load test client used was TM-Bench while the transaction monitoring tool utilized was TM-Monitor.
 
@@ -129,7 +124,7 @@ block blog-news
 
   p Like the load test of transactions 500 bytes in size, optimal performance is between 100 and 1,000 transactions. Unlike the previous tests, system performance declines at a much faster rate as the number of transactions processed per second approaches 1,000.
 
-  p As the system processes more than 1,000 transaction more than 1 kilobyte in size, performance declines at a greater rate until the system starts timing out approaching 10,000 transactions, returning an error messages.
+  p As the system processes more than 1,000 transaction more than 1 kilobyte in size, performance declines at a greater rate until the system starts timing out approaching 10,000 transactions, returning error messages.
 
   p
     b Transaction Size: 10 KB
@@ -170,27 +165,36 @@ block blog-news
 
   p In this series of tests, the number of validators was held constant at 4. However, in future tests where the variable tested is the number of nodes processing transactions, it would be expected that changing the number of validators would have a similar effect as increasing the number of transactions and the size of transactions. Increasing the number of validators should slow the rate at which transactions are approved. As the number of nodes increases in future load tests, throughput can be expected to drop at a proportional rate.
   
+  p 
+    b Test 2 Completed
+  
+  p To build on the results of Test №1, users sent transactions to all four validator nodes to observe behavior when transactions are distributed among nodes. Whereas in Test №1, one node was allocated a large number of transactions and transactions large in size, Test № 2 did the same, but to four nodes rather than one.
+
+  p Consensus throughput was significantly improved, telling us that validators were under-utilized in the first test and real-world transaction sizes can be processed more easily.
+
+  p A detailed review of Test № 2 will be published soon.
+  
   p
     b Next Steps
 
   p With active software development ongoing, the following tests are planned for the DyPoS consensus protocol:
   
-  h2.article-h3 Test 2
-  p To build upon the results of Test №1, users will send transactions to all four validator nodes to observe behavior when transactions are distributed between nodes. Whereas in Test №1, one node was allocated a large number of transactions and transactions large in size, Test № 2 does the same but to four nodes rather than one.
+  //- h2.article-h3 Test 2
+  //- p To build upon the results of Test №1, users will send transactions to all four validator nodes to observe behavior when transactions are distributed between nodes. Whereas in Test №1, one node was allocated a large number of transactions and transactions large in size, Test № 2 does the same but to four nodes rather than one.
 
   h2.article-h3 Test 3
-  p In Test № 3, transaction rates and sizes are distributed between a minimum and a maximum range in order to mimic real world events. Node performance is measured as transactions of different sizes are sent at differing rates.
+  p In Test № 3, transaction rates and sizes will be distributed between a minimum and a maximum range in order to mimic real world events. Node performance is measured as transactions of different sizes are sent at differing rates.
 
   h2.article-h3 Test 4
-  p An extension of Test № 3, which is run over a predetermined length of time such as 48 hours or 1 week. The purpose of Test № 4 is to measure the network performance over an extended period of time focusing on system stability and consistency.
+  p An extension of Test № 3, Test № 4 will run over a predetermined length of time, such as 48 hours or 1 week. The purpose of Test № 4 is to measure the network performance over an extended period of time focusing on system stability and consistency.
 
   h2.article-h3 Test 5
   p In Test № 5, different scenarios will run with an increasing number of validator nodes ranging from 4, 8, 16, 32, 64, 128, to 256 nodes. This will measure the degree of decentralization, as additional nodes cause the blockchain to become more decentralized. The effect on the block creation time and the number of transactions processed is measured as validator nodes on the network increase.
 
-  p We expect that the throughput will drop to a point of failure as the number of validator nodes on the network increases. This test enables us to determine the number of validator nodes the system can support prior to failure.
+  p We expect that the consensus throughput will drop to a point of failure as the number of validator nodes on the network increases. This test enables us to determine the number of validator nodes the system can support prior to failure.
 
   h2.article-h3 Test 6
-  p In Test № 6, the validator “agents” are made to participate in consensus rounds to increase performance with a larger number of validators. With agents performing the consensus function, we expect the added throughput to be largely unaffected by the increased number of validators on the system.
+  p In Test № 6, the validator “agents” are made to participate in consensus rounds to increase performance with a larger number of validators. With agents performing the consensus function, we expect the added consensus throughput to be largely unaffected by the increased number of validators on the system.
 
   h2.article-h3 Test 7
   p In Test № 7, the objective is to determine if transaction data can persist off the blockchain while nodes cryptographically verify transactions included on the block. This approach is designed to minimize the size of the main blockchain by keeping only that data required to validate the entire chain.

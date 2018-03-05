@@ -45,7 +45,7 @@ var blogs = [
       desc: 'Testing the impact of varying numbers and sizes of transactions processed on a 4-node network running the Storecoin Dynamic Proof-of-Stake Consensus Algorithm (DyPoS).',
       img: 'https://storeco.in/images/blog/blog-load-testing.png',
       template: 'blog-load-testing',
-      readTime : '9 min read',
+      readTime : '10 min read',
       date : 'December 13, 2017'
   },
   {
