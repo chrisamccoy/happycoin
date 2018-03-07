@@ -508,9 +508,13 @@ block content
           div
             b Easy Schedule
           div.meta Project Management 
+                
     div.process-step.step-1.show
       div.process-back 
         i.ion-chevron-left 
+      
+      include process-window-summary
+      
       section
         div.head Choose API calls to incentivize with tokens
         div.check-list
@@ -551,23 +555,17 @@ block content
             div.check 
               i.ion-checkmark-circled
                 
-        div.proceed.next.wallet-button(data-step="step-2")
-          button Next
-        div.proceed.open-process.wallet-button
-          button Save
-      section.summary-item.api-selected
-        div.stats 
-          div.head Total API Seleted
-          div.value 
-            span.gained 0
-            span.out-of /9
-        div.edit
-          div.button.small.icon.open-process(data-process="api-process")
-            i.ion-edit
+      div.proceed.next.wallet-button(data-step="step-2")
+        button Next
+      div.proceed.open-process.wallet-button
+        button Save
                 
     div.process-step.step-2
       div.process-back.open-process(data-process="api-process", data-step="step-1") 
         i.ion-chevron-left 
+      
+      include process-window-summary        
+      
       section
         div.head Name you API Calls
         form
@@ -580,20 +578,10 @@ block content
             //-   input(type="text", placeholder="Enter name here")
           input(type="submit", style="display:none;")
             
-        div.proceed.publish.wallet-button(data-message="Sending API calls to the <br> Storecoin blockchain")
-          button Publish API Calls
-        div.proceed.open-process.wallet-button
-          button Save
-  
-      section.summary-item.api-selected
-        div.stats 
-          div.head Total API Seleted
-          div.value 
-            span.gained 0
-            span.out-of /9
-        div.edit
-          div.button.small.icon.open-process(data-process="api-process")
-            i.ion-edit
+      div.proceed.publish.wallet-button(data-message="Beaming your APIs up to the Storecoin public blockchain...", data-success="With zero fees, your app can award users storecoins for every incentivized action. You can even earn a royalty for each API call taken.", data-loaddelay="7000", data-successdelay="7000")
+        button Publish API Calls
+      div.proceed.open-process.wallet-button
+        button Save
               
   div#incentive-process.process-window
     div.process-head
@@ -608,35 +596,16 @@ block content
           div
             b Easy Schedule
           div.meta Project Management 
-          
+        
     div.process-step.step-1.show
       div.process-back.open-process(data-process="api-process", data-step="step-2") 
         i.ion-chevron-left 
       
+      include process-window-summary
+      
       include total-balance
           
       include total-budget
-      
-      section.summary-item.api-selected
-        div.stats 
-          div.head Total API Seleted
-          div.value 
-            span.gained 0
-            span.out-of /9
-        div.edit
-          div.button.small.icon.open-process(data-process="api-process")
-            i.ion-edit
-              
-      section.summary-item.budget-allocated
-        div.stats 
-          div.head Budget Allocated
-          div.value 
-            div.sc-unit
-              img(src="/images/wallet/storecoin-logo.png")
-            div.sc-val 0.0001
-        div.edit
-          div.button.small.icon.open-process(data-process="incentive-process")
-            i.ion-edit
 
       div.proceed.next.wallet-button(data-step="step-2")
         button Next
@@ -647,37 +616,11 @@ block content
     div.process-step.step-2
       div.process-back.open-process(data-process="incentive-process", data-step="step-1") 
         i.ion-chevron-left 
+      
+      include process-window-summary
+      
       - var isPercentSlider = false
       include api-slider
-      
-      section.summary-item.api-selected
-        div.stats 
-          div.head Total API Seleted
-          div.value 
-            span.gained 0
-            span.out-of /9
-        div.edit
-          div.button.small.icon.open-process(data-process="api-process")
-            i.ion-edit
-              
-      section.summary-item.budget-allocated
-        div.stats 
-          div.head Budget Allocated
-          div.value 
-            div.sc-unit
-              img(src="/images/wallet/storecoin-logo.png")
-            div.sc-val 0.0001
-        div.edit
-          div.button.small.icon.open-process(data-process="incentive-process")
-            i.ion-edit
-              
-      section.summary-item.dev-royalty
-        div.stats 
-          div.head Developer Royalty
-          div.value 0.0001%
-        div.edit
-          div.button.small.icon.open-process(data-process="incentive-process", data-step="step-3")
-            i.ion-edit
       
       div.proceed.next.wallet-button(data-step="step-3")
         button Next
@@ -687,47 +630,33 @@ block content
     div.process-step.step-3  
       div.process-back.open-process(data-process="incentive-process", data-step="step-2") 
         i.ion-chevron-left         
+      
+      include process-window-summary
+      
       include global-percent-slider
-
+      
+      div.proceed.next.wallet-button(data-step="step-4")
+        button Next
+      div.proceed.open-process.wallet-button
+        button Save
+    
+    
+    div.process-step.step-4
+      div.process-back.open-process(data-process="incentive-process", data-step="step-3") 
+        i.ion-chevron-left
+      
+      include process-window-summary
+           
       section.api-royalty
         //- div.header Set budget for API calls
         div.header Set a custom Royalty for specific API's (%)
         div.api-list
-          
-      section.summary-item.api-selected
-        div.stats 
-          div.head Total API Seleted
-          div.value 
-            span.gained 0
-            span.out-of /9
-        div.edit
-          div.button.small.icon.open-process(data-process="api-process")
-            i.ion-edit
-              
-      section.summary-item.budget-allocated
-        div.stats 
-          div.head Budget Allocated
-          div.value 
-            div.sc-unit
-              img(src="/images/wallet/storecoin-logo.png")
-            div.sc-val 0.0001
-        div.edit
-          div.button.small.icon.open-process(data-process="incentive-process")
-            i.ion-edit
-              
-      section.summary-item.dev-royalty
-        div.stats 
-          div.head Developer Royalty
-          div.value 0.0001%
-        div.edit
-          div.button.small.icon.open-process(data-process="incentive-process", data-step="step-3")
-            i.ion-edit
-            
-        div.proceed.publish.wallet-button(data-message="Saving Settings")
-          button Finish 
-        div.proceed.open-process.wallet-button
-          button Save  
       
+      div.proceed.publish.wallet-button(data-message="Saving Settings")
+        button Finish 
+      div.proceed.open-process.wallet-button
+        button Save 
+            
   div#summary-process.process-window
     div.process-head
       div.header 
@@ -742,7 +671,7 @@ block content
           div
             b Easy Schedule
           div.meta Project Management 
-          
+        
     div.process-step.step-1
       section.summary-item.api-selected
         div.stats 

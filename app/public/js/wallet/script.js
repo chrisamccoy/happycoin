@@ -57,6 +57,7 @@ appInfo = {
 },
 initBudgetSlider = false,
 initPercentSlider = false,
+processPadding = 60,
 appKey;
 
 function loadCoinsValue() {
@@ -171,6 +172,23 @@ function initProcess() {
     $thisWindow = $(this).parents('.process-window');
     $thisWindow.find('.process-step').removeClass('show');
     $thisWindow.find('.process-step.'+stepName).addClass('show');
+    var offset = $thisWindow.find('.process-head').outerHeight() + processPadding;
+    $thisWindow.find('.process-step').height($(window).height() - offset);
+  });
+
+  $('#api-process .step-1 .proceed').click(function(){
+    $('.process-summary').show();
+    $('.process-summary .api-selected').show();
+  });
+
+  $('#incentive-process .step-1 .proceed').click(function(){
+    $('.process-summary').show();
+    $('.process-summary .budget-allocated').show();
+  });
+
+  $('#incentive-process .step-3 .proceed').click(function(){
+    $('.process-summary').show();
+    $('.process-summary .dev-royalty').show();
   });
 
   $('#api-process .step-2 .proceed').click(function(){
@@ -178,10 +196,10 @@ function initProcess() {
   });
 
   $('#api-process .proceed.publish').click(function(){
-    var message = $(this).data().message;
+    var data = $(this).data();
     // openProcess('#incentive-process', appKey);
     initloader({
-      message : message,
+      data : data,
       call : {
         callFunc : openProcess,
         callParams : ['#incentive-process', appKey]
@@ -190,9 +208,9 @@ function initProcess() {
   });
 
   $('#incentive-process .proceed.publish').click(function(){
-    var message = $(this).data().message;
+    var data = $(this).data();
     initloader({
-      message : message,
+      data : data,
       call : {
         callFunc : openProcess,
         callParams : ['#summary-process', appKey]
@@ -276,10 +294,9 @@ function openProcess(el, key) {
   $thisApp.find('.image img').attr('src', appData.img);
   $thisApp.find('.title b').text(appData.head);
   $thisApp.find('.title .meta').text(appData.meta);
-  var paddingBottom = 60;
-  offset = $thisPro.find('.item-app').outerHeight() + $thisPro.find('.process-head .header').outerHeight() + paddingBottom;
   $thisPro.find('.process-step').removeClass('show');
   $thisPro.find('.process-step.step-1').addClass('show');
+  var offset = $thisPro.find('.process-head').outerHeight() + processPadding;
   $thisPro.find('.process-step').height($(window).height() - offset);
 
   updateProcess();
@@ -288,7 +305,7 @@ function openProcess(el, key) {
 function updateProcess(){
   $('.api-budget-app-slider .slider').slider('option', 'value', appInfo[appKey].budgetPos);
   if(initPercentSlider) {
-    console.log(appInfo[appKey].percentPos);
+    // console.log(appInfo[appKey].percentPos);
     $('.api-percent-global-slider .slider').slider('option', 'value', appInfo[appKey].percentPos);
   }
   $('#summary-process .api-list .api-item').each(function(i){
@@ -468,7 +485,7 @@ function sendGift () {
     $('#notification-window .notification-feeds').append(templateNot);
     $('.feeds').append(templateFeed);
     updateNotific('new');
-    initloader({ message : 'Loading...' });
+    initloader({data : { message : 'Loading...' }});
   });
 }
 
@@ -528,7 +545,7 @@ function initTabs (){
   $back.click(closeAllTabs);
 
   $tradeTab.find('.wallet-button').click(function(){
-    initloader({ message : 'Loading...' });
+    initloader({data : { message : 'Loading...' }});
   });
 
   $tradeTab.find('.buying .btn').click(function(){
@@ -624,7 +641,7 @@ function initModal () {
 
   $modal.find('.confirm-button').click(function(){
     $modal.modal('hide');
-    initloader({ message : 'Loading...' });
+    initloader({data : { message : 'Loading...' }});
     updateBalance();
   });
 }
@@ -642,15 +659,28 @@ function updateBalance() {
 }
 
 function initloader(params) {
-  // $('.loader .content.loading').removeClass('show');
-  // $('.loader .content.complete').addClass('show');
-  // $('.loader').height($(window).height()).transition('fade');
-  if (params) {
-    $('.loader .content.loading .text').html(params.message);
+  var loadDelay = 2000,
+  successDelay = 2000,
+  data = params.data;
+  if (data.message) {
+    $('.loader .content.loading .text').html(data.message);
+  }
+  if (data.success) {
+    $('.loader .content.complete .text').html(data.success);
+  } else {
+    $('.loader .content.complete .text').html('Complete');
+  }
+  if (data.loaddelay) {
+    loadDelay = data.loaddelay;
+  }
+  if (data.success) {
+    successDelay = data.successdelay;
   }
   $('.loader .content.loading').addClass('show');
   $('.loader .content.complete').removeClass('show');
   $('.loader').height($(window).height()).transition('fade');
+  // var count = 0;
+  // var interval = setInterval(function(){ console.log(count++) }, 1000);
   setTimeout(function(){
     $('.loader .content.loading').removeClass('show');
     $('.loader .content.complete').addClass('show');
@@ -662,8 +692,9 @@ function initloader(params) {
         params.call.callFunc.apply(null, params.call.callParams);
         // params.call.callFunc("#incentive-process", "easy-schedule");
       }
-    }, 2000);
-  }, 2000);
+      // clearInterval(interval);
+    }, successDelay);
+  }, loadDelay);
 }
 
 function closeAllTabs (){
@@ -834,7 +865,7 @@ function changeOnSlide ($this, value, $parent, handlePos, params, eventName) {
     giftItems.storeVal = value;
   } else if (tabName == 'buy') {
     buyAmount = parseFloat(value);
-    if ($dollarVal) { $dollarVal.text(numeral(value * $dollarAmount).format('0,0.00')); }
+    if ($dollarVal) { $dollarVal.text(numeral(value * $dollarAmount).format('0,0.00000')); }
   } else if (tabName == 'trade') {
     var coinAmount = coinsVal[coinKey].USD, amount;
     if (coinAmount > $dollarAmount) {
@@ -844,9 +875,9 @@ function changeOnSlide ($this, value, $parent, handlePos, params, eventName) {
     }
     // console.log(value * amount);
     $unitSign.text(coinKey.toUpperCase()+' ');
-    $dollarVal.text(numeral(value * amount).format('0,0.00'));
+    $dollarVal.text(numeral(value * amount).format('0,0.00000'));
   } else {
-    if ($dollarVal) { $dollarVal.text(numeral(value * $dollarAmount).format('0,0.00')); }
+    if ($dollarVal) { $dollarVal.text(numeral(value * $dollarAmount).format('0,0.00000')); }
   }
 
   var $thisSection = $dollarVal.parents('section'),
