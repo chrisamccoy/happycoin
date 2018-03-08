@@ -727,13 +727,13 @@ function logslider(position, max) {
   // position will be between 0 and 100
   max = max ? max : 139.470001;
   // The result should be between 100 an 10000000
-  if (position < 26) {
+  if (position < 6) {
     var minp = 0;
-    var maxp = 25;
+    var maxp = 5;
     var minv = Math.log(0.00000001);
     var maxv = Math.log(1.00000000);
   } else {
-    var minp = 26;
+    var minp = 6;
     var maxp = 100;
     var minv = Math.log(1.00000001);
     var maxv = Math.log(max);
@@ -743,7 +743,7 @@ function logslider(position, max) {
   var scale = (maxv-minv) / (maxp-minp);
 
   var exp = Math.exp(minv + scale*(position-minp));
-  console.log(exp);
+  // console.log(exp);
   exp = numeral(exp).format('0.00000000') == 'NaN' ? 0 : numeral(exp).format('0.00000000');
   return parseFloat(exp);
 }
@@ -769,8 +769,8 @@ function pecentLogslider(position, max) {
 
   var exp = Math.exp(minv + scale*(position-minp));
   // console.log(exp);
-  exp = numeral(exp).format('0.00') == 'NaN' ? 0 : numeral(exp).format('0.00');
-  return parseFloat(numeral(exp).format('0.00'));
+  exp = numeral(exp).format('0.000') == 'NaN' ? 0 : numeral(exp).format('0.000');
+  return parseFloat(numeral(exp).format('0.000'));
 }
 
 
@@ -854,11 +854,11 @@ function changeOnSlide ($this, value, $parent, handlePos, params, eventName) {
         appInfo[appKey].percentPos = value;
       }
       // $('.api-royalty .percent-slider .amount-slider .slider').slider('option', 'value', value);
-      value = numeral(pecentLogslider(value, 99)).format('0.00');
-      $('.summary-item.dev-royalty .value').text(numeral(value).format('0.00')+'%');
+      value = numeral(pecentLogslider(value, 99)).format('0.000');
+      $('.summary-item.dev-royalty .value').text(numeral(value).format('0.000')+'%');
     }
   } else if (params.name == 'royalty') {
-    value = numeral(pecentLogslider(value, 99)).format('0.00');
+    value = numeral(pecentLogslider(value, 99)).format('0.000');
   } else {
     // console.log(logslider(value, max));
     value = numeral(logslider(value, max)).format('0.00000000');

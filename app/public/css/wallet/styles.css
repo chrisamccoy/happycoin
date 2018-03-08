@@ -1483,6 +1483,11 @@ button.small,
   text-align: center;
 }
 
+.loader .loading-container .text p {
+  color: white;
+  margin-bottom: 0.7em;
+}
+
 /* Spinner Wave */
 .sp-wave {
   height: 50px;
