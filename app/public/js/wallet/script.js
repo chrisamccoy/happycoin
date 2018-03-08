@@ -57,7 +57,7 @@ appInfo = {
 },
 initBudgetSlider = false,
 initPercentSlider = false,
-processPadding = 60,
+processPadding = 64,
 appKey;
 
 function loadCoinsValue() {
@@ -243,10 +243,12 @@ function initProcessTwo() {
   // console.log('published');
   var menu = '';
 
-  appInfo[appKey].selectedApi.forEach(function(api){
+  appInfo[appKey].selectedApi.forEach(function(api, i){
     menu += '<div class="item">'+(api.customName ? api.customName : api.name)+'</div>';
-    var percentSlider = ''+
-    '<div class="api-item">'+
+    var itemNum = i,
+    isLastItem = (itemNum == appInfo[appKey].selectedApi.length - 1) ? ' last-child' : '',
+    percentSlider = ''+
+    '<div class="api-item'+isLastItem+'">'+
       '<section data-tab="none" class="tab no-padding percent-slider">'+
         '<div class="title">'+(api.customName ? api.customName : api.name)+'</div>'+
         '<div class="amount-slider">'+
@@ -270,6 +272,9 @@ function initProcessTwo() {
       var itemNum = i;
       if (appInfo[appKey].selectedApi.length > itemNum ) {
         $(this).show();
+        if (itemNum == appInfo[appKey].selectedApi.length - 1) {
+          $(this).addClass('last-child');
+        }
       } else {
         $(this).hide();
       }
@@ -738,8 +743,9 @@ function logslider(position, max) {
   var scale = (maxv-minv) / (maxp-minp);
 
   var exp = Math.exp(minv + scale*(position-minp));
+  console.log(exp);
   exp = numeral(exp).format('0.00000000') == 'NaN' ? 0 : numeral(exp).format('0.00000000');
-  return parseFloat(numeral(exp).format('0.00000000'));
+  return parseFloat(exp);
 }
 
 function pecentLogslider(position, max) {
@@ -848,11 +854,11 @@ function changeOnSlide ($this, value, $parent, handlePos, params, eventName) {
         appInfo[appKey].percentPos = value;
       }
       // $('.api-royalty .percent-slider .amount-slider .slider').slider('option', 'value', value);
-      value = numeral(pecentLogslider(value, 100)).format('0.00');
+      value = numeral(pecentLogslider(value, 99)).format('0.00');
       $('.summary-item.dev-royalty .value').text(numeral(value).format('0.00')+'%');
     }
   } else if (params.name == 'royalty') {
-    value = numeral(pecentLogslider(value, 100)).format('0.00');
+    value = numeral(pecentLogslider(value, 99)).format('0.00');
   } else {
     // console.log(logslider(value, max));
     value = numeral(logslider(value, max)).format('0.00000000');

@@ -87,6 +87,10 @@ select {
   border-radius: 0px;
 }
 
+form {
+  margin: 0px;
+}
+
 /*select:focus {
   border-color: #56b26b;
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 0 29 14" width="29"><path fill="#d1d1d1" d="M9.37727 3.625l5.08154 6.93523L19.54036 3.625"/></svg>') center right no-repeat;
@@ -231,6 +235,11 @@ button.small,
 
 .ui.dropdown {
   font-size: 14px;
+}
+
+.ui.dropdown .text:not(.default) {
+  color: black;
+  font-weight: bold;
 }
 
 .ui.dropdown .menu {
@@ -1454,7 +1463,8 @@ button.small,
 
 .loader .loading-container .content {
   /*height: 80px;*/
-  width: 210px;
+  /*width: 210px;*/
+  padding: 1em;
   border-radius: 2px;
   display: none;
   align-items: center;
@@ -1690,6 +1700,11 @@ button.small,
   flex-wrap: wrap;
   padding: 1em 0em;
   border-bottom: 1px solid #eaeaea;
+}
+
+.api-item.last-child {
+  padding-bottom: 0px;
+  border: none;
 }
 
 .api-item .title {
@@ -2012,6 +2027,7 @@ button.small,
 
 .process-window .process-step .input-field:last-child {
   border: none;
+  margin: 0px;
 }
 
 .process-window .process-step .input-field input {

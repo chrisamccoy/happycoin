@@ -513,8 +513,6 @@ block content
       div.process-back 
         i.ion-chevron-left 
       
-      include process-window-summary
-      
       section
         div.head Choose API calls to incentivize with tokens
         div.check-list
@@ -555,6 +553,8 @@ block content
             div.check 
               i.ion-checkmark-circled
                 
+      include process-window-summary
+                
       div.proceed.next.wallet-button(data-step="step-2")
         button Next
       div.proceed.open-process.wallet-button
@@ -562,9 +562,7 @@ block content
                 
     div.process-step.step-2
       div.process-back.open-process(data-process="api-process", data-step="step-1") 
-        i.ion-chevron-left 
-      
-      include process-window-summary        
+        i.ion-chevron-left        
       
       section
         div.head Name you API Calls
@@ -578,7 +576,9 @@ block content
             //-   input(type="text", placeholder="Enter name here")
           input(type="submit", style="display:none;")
             
-      div.proceed.publish.wallet-button(data-message="Beaming your APIs up to the Storecoin public blockchain...", data-success="With zero fees, your app can award users storecoins for every incentivized action. You can even earn a royalty for each API call taken.", data-loaddelay="7000", data-successdelay="7000")
+      include process-window-summary 
+            
+      div.proceed.publish.wallet-button(data-message="Beaming your APIs up to the Storecoin public blockchain...", data-success="With zero fees, your app can award users storecoins for every incentivized action. <br>You can even earn a royalty for each API call taken.", data-loaddelay="7000", data-successdelay="7000")
         button Publish API Calls
       div.proceed.open-process.wallet-button
         button Save
@@ -601,11 +601,11 @@ block content
       div.process-back.open-process(data-process="api-process", data-step="step-2") 
         i.ion-chevron-left 
       
-      include process-window-summary
-      
       include total-balance
           
       include total-budget
+      
+      include process-window-summary
 
       div.proceed.next.wallet-button(data-step="step-2")
         button Next
@@ -617,10 +617,10 @@ block content
       div.process-back.open-process(data-process="incentive-process", data-step="step-1") 
         i.ion-chevron-left 
       
-      include process-window-summary
-      
       - var isPercentSlider = false
       include api-slider
+      
+      include process-window-summary
       
       div.proceed.next.wallet-button(data-step="step-3")
         button Next
@@ -631,9 +631,9 @@ block content
       div.process-back.open-process(data-process="incentive-process", data-step="step-2") 
         i.ion-chevron-left         
       
-      include process-window-summary
-      
       include global-percent-slider
+      
+      include process-window-summary
       
       div.proceed.next.wallet-button(data-step="step-4")
         button Next
@@ -644,13 +644,13 @@ block content
     div.process-step.step-4
       div.process-back.open-process(data-process="incentive-process", data-step="step-3") 
         i.ion-chevron-left
-      
-      include process-window-summary
            
       section.api-royalty
         //- div.header Set budget for API calls
         div.header Set a custom Royalty for specific API's (%)
         div.api-list
+          
+      include process-window-summary
       
       div.proceed.publish.wallet-button(data-message="Saving Settings")
         button Finish 
@@ -675,7 +675,7 @@ block content
     div.process-step.step-1
       section.summary-item.api-selected
         div.stats 
-          div.head Total API Seleted
+          div.head APIs selected
           div.value 
             span.gained 1
             span.out-of /9
