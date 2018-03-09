@@ -13,6 +13,10 @@ block content
             circle.checkmark__circle(cx='26', cy='26', r='25', fill='none')
             path.checkmark__check(fill='none', d='M14.1 27.2l7.1 7.2 16.7-16.8')
         div.text Complete
+        button.button.next(style="display:none;") Next
+      .content.start
+        div.text You can even earn a royalty for each API call taken.
+        button.button.get-started Get Started
         
   div#home-tab
     section#wallet-value
@@ -514,7 +518,7 @@ block content
         i.ion-chevron-left 
       
       section
-        div.head Choose API calls to incentivize with tokens
+        div.head Choose the API Calls to be Incentivized
         div.check-list
           div.item
             div.name User / invite
@@ -578,7 +582,7 @@ block content
             
       include process-window-summary 
             
-      div.proceed.publish.wallet-button(data-message="Beaming your APIs up to the Storecoin public blockchain...", data-success="<p>With zero fees, your app can award users storecoins for every incentivized action.</p><p>You can even earn a royalty for each API call taken.</p>", data-loaddelay="7000", data-successdelay="7000")
+      div.proceed.publish.wallet-button(data-message="Beaming your APIs up to the Storecoin public blockchain...", data-success="<p>With zero fees, your app can award users storecoins for every incentivized action.</p>", data-loaddelay="7000", data-successdelay="7000", data-key="api-publish")
         button Publish API Calls
       div.proceed.open-process.wallet-button
         button Save
@@ -588,7 +592,7 @@ block content
       div.header
         div.back
           i.ion-chevron-left 
-        span Setup API Incentives
+        span Set-up Incentives
       section.item-app
         .image
           img(src='/images/wallet/calender-icon.png')
@@ -649,10 +653,13 @@ block content
         //- div.header Set budget for API calls
         div.header Set a custom Royalty for specific API's (%)
         div.api-list
-          
+      
+      - var disabled = true;    
+      include global-percent-slider
+      
       include process-window-summary
       
-      div.proceed.publish.wallet-button(data-message="Publishing your incentivized APIs and Developer Royalties to the Storecoin blockchain...")
+      div.proceed.publish.wallet-button(data-message="Publishing your incentivized API calls and your Developer royalties to the Storecoin public blockchain...", data-loaddelay="7000")
         button Finish 
       div.proceed.open-process.wallet-button
         button Save 

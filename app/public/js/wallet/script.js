@@ -189,6 +189,7 @@ function initProcess() {
   $('#incentive-process .step-3 .proceed').click(function(){
     $('.process-summary').show();
     $('.process-summary .dev-royalty').show();
+    updateProcess();
   });
 
   $('#api-process .step-2 .proceed').click(function(){
@@ -666,14 +667,16 @@ function updateBalance() {
 function initloader(params) {
   var loadDelay = 2000,
   successDelay = 2000,
-  data = params.data;
+  data = params.data,
+  $loader = $('.loader');
+
   if (data.message) {
-    $('.loader .content.loading .text').html(data.message);
+    $loader.find('.content.loading .text').html(data.message);
   }
   if (data.success) {
-    $('.loader .content.complete .text').html(data.success);
+    $loader.find('.content.complete .text').html(data.success);
   } else {
-    $('.loader .content.complete .text').html('Complete');
+    $loader.find('.content.complete .text').html('Complete');
   }
   if (data.loaddelay) {
     loadDelay = data.loaddelay;
@@ -681,25 +684,46 @@ function initloader(params) {
   if (data.success) {
     successDelay = data.successdelay;
   }
-  $('.loader .content.loading').addClass('show');
-  $('.loader .content.complete').removeClass('show');
-  $('.loader').height($(window).height()).transition('fade');
+  $loader.find('.content.loading').addClass('show');
+  $loader.find('.content.complete').removeClass('show');
+  $loader.find('.content.start').removeClass('show');
+  $loader.find('.content.complete button.next').hide();
+  $loader.height($(window).height()).transition('fade');
   // var count = 0;
   // var interval = setInterval(function(){ console.log(count++) }, 1000);
   setTimeout(function(){
-    $('.loader .content.loading').removeClass('show');
-    $('.loader .content.complete').addClass('show');
-    setTimeout(function(){
-      closeAllTabs();
-      $('.loader').height($(window).height()).transition('fade');
-      if (params && params.call) {
-        // console.log(params.call.callParams);
-        params.call.callFunc.apply(null, params.call.callParams);
-        // params.call.callFunc("#incentive-process", "easy-schedule");
-      }
-      // clearInterval(interval);
-    }, successDelay);
+    $loader.find('.content.loading').removeClass('show');
+    $loader.find('.content.complete').addClass('show');
+    if (data.key && data.key == 'api-publish') {
+      $loader.find('.content.complete button.next').show();
+    } else {
+      setTimeout(function(){
+        closeAllTabs();
+        $loader.height($(window).height()).transition('fade');
+        if (params && params.call) {
+          // console.log(params.call.callParams);
+          params.call.callFunc.apply(null, params.call.callParams);
+          // params.call.callFunc("#incentive-process", "easy-schedule");
+        }
+        // clearInterval(interval);
+      }, successDelay);
+    }
   }, loadDelay);
+
+  $loader.find('.content.complete button.next').click(function(){
+    $loader.find('.content.complete').removeClass('show');
+    $loader.find('.content.start').addClass('show');
+  });
+
+  $loader.find('.content.start button.get-started').click(function(){
+    closeAllTabs();
+    $loader.height($(window).height()).transition('fade');
+    if (params && params.call) {
+      // console.log(params.call.callParams);
+      params.call.callFunc.apply(null, params.call.callParams);
+      // params.call.callFunc("#incentive-process", "easy-schedule");
+    }
+  });
 }
 
 function closeAllTabs (){
@@ -853,7 +877,7 @@ function changeOnSlide ($this, value, $parent, handlePos, params, eventName) {
       if (appInfo[appKey]) {
         appInfo[appKey].percentPos = value;
       }
-      // $('.api-royalty .percent-slider .amount-slider .slider').slider('option', 'value', value);
+      $('.api-royalty .percent-slider .amount-slider .slider').slider('option', 'value', value);
       value = numeral(pecentLogslider(value, 99)).format('0.000');
       $('.summary-item.dev-royalty .value').text(numeral(value).format('0.000')+'%');
     }
