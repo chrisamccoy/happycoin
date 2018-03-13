@@ -59,6 +59,7 @@ appInfo = {
 initBudgetSlider = false,
 initPercentSlider = false,
 processPadding = 64,
+$dollarAmount = 35.58,
 appKey;
 
 function loadCoinsValue() {
@@ -118,7 +119,9 @@ function initSliderKeypad() {
   $keypad.click(function(){
     // console.log('keypad clicked');
     var $thisField = $(this).parents('.amount-slider').find('.input-field.amount-field');
-    $thisField.fadeIn();
+    $thisField.fadeIn('fast', function(){
+      $thisField.find('input').trigger('focus');
+    });
   });
 
   $sliders.find('.input-field.amount-field .enter').click(function(){
@@ -128,7 +131,15 @@ function initSliderKeypad() {
     if (value > 0 ) {
       var sliderVal = expslider(value, storecoinBal);
       $(this).parents('.amount-slider').find('.slider').slider('option', 'value', sliderVal);
+      $(this).parents('.amount-slider').find('.conversion .storecoin-val .value').text(value);
+      $(this).parents('.amount-slider').find('.conversion .dollar-val .value').text(numeral(value * $dollarAmount).format('0.00000000'));
     }
+  });
+
+  $sliders.find('.input-field.amount-field form.slider-form').submit(function(e){
+    e.preventDefault();
+    var $thisField = $(this).parents('.amount-field');
+    $thisField.find('.enter').trigger('click');
   });
 }
 
@@ -262,7 +273,7 @@ function initProcess() {
     $processWin.hide();
   });
 
-  $processWin.find('form').submit(function(e){
+  $processWin.find('form.api-form').submit(function(e){
     // console.log('submitted');
     e.preventDefault();
     $(this).parents('.process-step').find('.proceed').trigger('click');
@@ -903,7 +914,6 @@ function changeOnSlide ($this, value, $parent, handlePos, params, eventName) {
       $modalStoreVal = $('.confirm-transact.ui.modal[data-modal="'+tabName+'-modal"] .modal-content .buy-amount .storecoin-val'),
       $dollarVal = $parent.find('.dollar-val span:last-child'),
       $unitSign = $parent.find('.dollar-val span:first-child'),
-      $dollarAmount = 35.58,
       $conversion = $parent.find('.conversion'),
       max = params.max ? params.max : null;
 

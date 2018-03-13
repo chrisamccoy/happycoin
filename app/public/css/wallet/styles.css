@@ -836,13 +836,16 @@ button.small,
   position: absolute;
   width: calc(100% + 30px);
   padding: 0px 17px;
-  display: flex;
-  align-items: center;
   height: 100%;
-  background: #ffffffcf;
+  background: rgba(255, 255, 255, 0.85);
   top: 0px;
   left: -15px;
   z-index: 5;
+}
+
+.amount-slider .input-field.amount-field form {
+  display: flex;
+  align-items: center;
 }
 
 .amount-slider .input-field.amount-field .enter {
@@ -851,6 +854,9 @@ button.small,
   border-bottom: 1px solid black;
   line-height: 1;
   padding: 0px 0.3em 0px 0.1em;
+  min-width: auto;
+  border: none;
+  background: none;
 }
 
 .amount-slider.disabled {
