@@ -30,6 +30,26 @@ body {
   background-color: black;*/
 }
 
+table th {
+  text-align: center;
+  padding: 1em 0px;
+  font-weight: bold;
+  color: black;
+}
+
+table th,
+table td {
+  padding: 0.7em 0.5em;
+}
+
+table tbody tr td:not(:first-child) {
+  text-align: center;
+}
+
+table tbody td {
+  border: none;
+}
+
 .layout {
   /*max-width: 528px;*/
   height: 100%;
@@ -58,12 +78,13 @@ i {
   line-height: 1;
 }
 
-div, p , a {
+div, p {
   color:#767676;
 }
 
 a {
   cursor : pointer;
+  color: cornflowerblue;
 }
 
 section {
@@ -73,6 +94,11 @@ section {
 
 section .header:not(:first-child) {
   margin-top: 15px;
+}
+
+section.tab.disabled[data-tab] {
+  background-color: #f1f1f1;
+  opacity: 0.5;
 }
 
 input {
@@ -209,6 +235,11 @@ button, .button {
   text-transform: none;
   font-size: 0.9em;
   height: auto;
+}
+
+button:focus {
+  background-color: #66bb6b !important;
+  border-color: #66bb6b !important;
 }
 
 button.small,
@@ -801,6 +832,27 @@ button.small,
   height: 100px;
 }
 
+.amount-slider .input-field.amount-field {
+  position: absolute;
+  width: calc(100% + 30px);
+  padding: 0px 17px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background: #ffffffcf;
+  top: 0px;
+  left: -15px;
+  z-index: 5;
+}
+
+.amount-slider .input-field.amount-field .enter {
+  font-size: 1.8em;
+  color: black;
+  border-bottom: 1px solid black;
+  line-height: 1;
+  padding: 0px 0.3em 0px 0.1em;
+}
+
 .amount-slider.disabled {
   opacity: 0.7;
 }
@@ -845,6 +897,14 @@ button.small,
   display: inline-block;
   margin-top: 4px;
   text-align: right;
+  display: inline-flex;
+  align-items: center;
+}
+
+.amount-slider .conversion .edit-keypad {
+  cursor: pointer;
+  font-size: 1.5em;
+  padding: 0px 0.5em;
 }
 
 .amount-slider .conversion p {
@@ -2154,4 +2214,16 @@ button.small,
 .process-window .item-app .image {
   width: 45px;
   height : 45px;
+}
+
+/*-------------------------------------*/
+
+#api-confirm-modal .button-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#api-confirm-modal section {
+  padding : 10px 0px;
 }

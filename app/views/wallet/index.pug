@@ -15,7 +15,9 @@ block content
         div.text Complete
         button.button.next(style="display:none;") Next
       .content.start
-        div.text You can even earn a royalty for each API call taken.
+        div.text 
+          p As the Developer, you can even earn a royalty for each API call taken. 
+          p This is a new revenue stream.
         button.button.get-started Get Started
         
   div#home-tab
@@ -582,7 +584,7 @@ block content
             
       include process-window-summary 
             
-      div.proceed.publish.wallet-button(data-message="Beaming your APIs up to the Storecoin public blockchain...", data-success="<p>With zero fees, your app can award users storecoins for every incentivized action.</p>", data-loaddelay="7000", data-successdelay="7000", data-key="api-publish")
+      div.proceed.publish.wallet-button(data-message="Beaming your APIs up to the Storecoin public blockchain...", data-success="<p>Your app can now reward users storecoin tokens for every action/API incentivized.</p><p>There will never be fees.</p>", data-loaddelay="7000", data-successdelay="7000", data-key="api-publish")
         button Publish API Calls
       div.proceed.open-process.wallet-button
         button Save
@@ -867,3 +869,42 @@ block content
           a.item(data-img="/images/wallet/litecoin-logo.png", data-name="Litecoin", data-key="ltc")
             img(src="/images/wallet/litecoin-logo.png")
             p Litecoin
+            
+  div#api-confirm-modal.ui.small.modal
+    div.content
+      div.modal-header 
+        div.logo-title Confirm
+        div.close-modal
+          i.ion-android-close
+      div.modal-content
+        section
+          div.offer-text Based upon your budget $
+            b
+              span.budget-val 
+            | , your royalty % of 
+            b 
+              span.royalty-val
+            | , here's your offer:
+        section
+          table
+            thead
+              tr
+                th 
+                th Unit
+                th Per Day
+                th Total
+            tbody
+              tr
+                td Revenue
+                td 10
+                td 90
+                td 900
+              tr
+                td Royalty
+                td 25
+                td 20
+                td 500
+        section
+          div.button-group
+            a.close-modal Re-adjust
+            button.button.accept I Accept

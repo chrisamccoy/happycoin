@@ -17,6 +17,7 @@ $(document).ready(function(){
   // initPercentSlider();
   initRoyaltyTabs();
   initProcess();
+  initSliderKeypad();
 });
 var giftItems = {
   storeVal : null,
@@ -106,6 +107,27 @@ function loadCoinsValue() {
       });
 
       $('.slider').trigger('sliderchange');
+    }
+  });
+}
+
+function initSliderKeypad() {
+  var $sliders = $('.amount-slider'),
+  $keypad = $sliders.find('.edit-keypad');
+
+  $keypad.click(function(){
+    // console.log('keypad clicked');
+    var $thisField = $(this).parents('.amount-slider').find('.input-field.amount-field');
+    $thisField.fadeIn();
+  });
+
+  $sliders.find('.input-field.amount-field .enter').click(function(){
+    var $thisField = $(this).parents('.amount-field'),
+    value = $thisField.find('input').val();
+    $thisField.fadeOut();
+    if (value > 0 ) {
+      var sliderVal = expslider(value, storecoinBal);
+      $(this).parents('.amount-slider').find('.slider').slider('option', 'value', sliderVal);
     }
   });
 }
@@ -209,17 +231,24 @@ function initProcess() {
   });
 
   $('#incentive-process .proceed.publish').click(function(){
-    var data = $(this).data();
-    initloader({
-      data : data,
-      call : {
-        callFunc : openProcess,
-        callParams : ['#summary-process', appKey]
-      }
-    });
+    var $confirmModal = $('#api-confirm-modal');
+    $confirmModal.find('.budget-val').text(budgetVal);
+    $confirmModal.find('.royalty-val').text(appInfo[appKey].percentVal+'%');
+    $confirmModal.modal('show');
+    $confirmModal.find('button.accept').click(function(){
+      var data = $(this).data();
+      initloader({
+        data : data,
+        call : {
+          callFunc : openProcess,
+          callParams : ['#summary-process', appKey]
+        }
+      });
 
-    appInfo[appKey].master = true;
-    // console.log(appInfo[appKey].master);
+      appInfo[appKey].master = true;
+      $confirmModal.modal('hide');
+      // console.log(appInfo[appKey].master);
+    });
   });
 
   $('.total-balance .buy .button').click(function(){
@@ -772,19 +801,47 @@ function logslider(position, max) {
   return parseFloat(exp);
 }
 
+function expslider(value, max) {
+  // position will be between 0 and 100
+  max = max ? max : 139.470001;
+  // The result should be between 100 an 10000000
+  if (value < 1.00000001) {
+    var minp = 0;
+    var maxp = 5;
+    var minv = Math.log(0.00000001);
+    var maxv = Math.log(1.00000000);
+  } else {
+    var minp = 6;
+    var maxp = 100;
+    var minv = Math.log(1.00000001);
+    var maxv = Math.log(max);
+  }
+
+  // calculate adjustment factor
+  var scale = (maxv-minv) / (maxp-minp);
+  var log = (Math.log(value) - minv)/scale + minp;
+
+  return parseFloat(log);
+}
+
 function pecentLogslider(position, max) {
   // position will be between 0 and 100
   max = max ? max : 139.470001;
   // The result should be between 100 an 10000000
-  if (position < 26) {
+  if (position < 1) {
     var minp = 0;
+    var maxp = 0;
+    var minv = Math.log(0.000);
+    var maxv = Math.log(0.000);
+  } else if (position < 26) {
+    var minp = 1;
     var maxp = 25;
-    var minv = Math.log(0.01);
+    var minv = Math.log(0.001);
     var maxv = Math.log(1);
   } else {
     var minp = 26;
     var maxp = 100;
-    var minv = Math.log(1.01);
+    var minv = Math.log(1.001);
     var maxv = Math.log(max);
   }
 
@@ -792,7 +849,6 @@ function pecentLogslider(position, max) {
   var scale = (maxv-minv) / (maxp-minp);
 
   var exp = Math.exp(minv + scale*(position-minp));
-  // console.log(exp);
   exp = numeral(exp).format('0.000') == 'NaN' ? 0 : numeral(exp).format('0.000');
   return parseFloat(numeral(exp).format('0.000'));
 }
@@ -874,12 +930,11 @@ function changeOnSlide ($this, value, $parent, handlePos, params, eventName) {
     }
   } else if (params.name == 'global-percent-slider') {
     if (eventName != 'create') {
-      if (appInfo[appKey]) {
-        appInfo[appKey].percentPos = value;
-      }
+      appInfo[appKey].percentPos = value;
       $('.api-royalty .percent-slider .amount-slider .slider').slider('option', 'value', value);
       value = numeral(pecentLogslider(value, 99)).format('0.000');
       $('.summary-item.dev-royalty .value').text(numeral(value).format('0.000')+'%');
+      appInfo[appKey].percentVal = value;
     }
   } else if (params.name == 'royalty') {
     value = numeral(pecentLogslider(value, 99)).format('0.000');

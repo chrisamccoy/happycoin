@@ -6,10 +6,17 @@ div.amount-slider
       span 139.47001
   div.slider
   div.conversion
-    p.storecoin-val.orange
-      img(src="/images/wallet/orange-storecoin.png")
-      span.value 33.83535
-    img.exchange(src="/images/wallet/exchange-icon.png")
-    p.dollar-val.green
-      span $
-      span 29.95
+    div.values
+      p.storecoin-val.orange
+        img(src="/images/wallet/orange-storecoin.png")
+        span.value 33.83535
+      img.exchange(src="/images/wallet/exchange-icon.png")
+      p.dollar-val.green
+        span $
+        span 29.95
+    div.edit-keypad
+      i.ion-ios-keypad
+  div.input-field.amount-field(style="display:none;")
+    input(type="number", value="0")
+    a.enter
+      i.ion-ios-arrow-thin-right
