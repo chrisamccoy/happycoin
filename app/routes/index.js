@@ -1,7 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var meta = require('../helpers/meta')
-var getblog = require('../helpers/blogs')
+var meta = require('../helpers/meta');
+var getblog = require('../helpers/blogs');
+
+// USE
+router.use('/admin', require('./admin'));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -291,17 +294,5 @@ router.get('/dev', function(req, res, next) {
 router.get('/royalty', function(req, res, next) {
   res.render('developer-royalty', { title: 'Storecoin', meta: meta() });
 });
-
-// router.get('/wallet/buy', function(req, res, next) {
-//   res.render('wallet/buy', { title: 'Storecoin', name : 'Buy' });
-// });
-//
-// router.get('/wallet/sell', function(req, res, next) {
-//   res.render('wallet/sell', { title: 'Storecoin', name : 'Sell' });
-// });
-//
-// router.get('/wallet/gift', function(req, res, next) {
-//   res.render('wallet/gift', { title: 'Storecoin', name : 'Gift' });
-// });
 
 module.exports = router;

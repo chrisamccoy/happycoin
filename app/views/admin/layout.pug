@@ -1,0 +1,42 @@
+!='<!doctype html>'
+html
+  head
+    meta(charset='UTF-8')
+    title= title
+    meta(name='description', content='')
+    meta(name='author', content='')
+    meta(property='og:url', content='http://storeco.in')
+    meta(property='og:type', content='website')
+    meta(property='og:title', content='Storecoin')
+    meta(property='og:description', content='Storecoin	aims	to	be	a	public	blockchain	for	systems	governed	by	hierarchy,	privacy,	and	complex	revenue	sharing. These	include	franchises,	chain	stores,	sports	leagues, affiliate-based	organizations,	and	more. No	transaction	fees.	Ethereum	and	Bitcoin	compatible.	A	new	Proof	of	Stake	consensus	algorithm.', much='', does='', culture='', influence='', creative='', thinking?”='')
+    meta(property='og:image', content='http://storeco.in/images/logo-fb.png')
+
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', rel='stylesheet')
+    link(rel='stylesheet', href='/css/milligram.min.css')
+    link(rel='stylesheet', href='/css/dimmer.min.css')
+    link(rel='stylesheet', href='/css/transition.min.css')
+    link(rel='stylesheet', href='/css/modal.min.css')
+    link(rel='stylesheet', href='/css/admin/styles.css?v=1.00')
+
+    link(rel='icon', type='image/png', href='/images/favicon.png')
+
+    script(src='/js/jquery-3.2.1.min.js')
+    script(src='/js/lodash.js')
+    script(src='/js/numeral.js')
+    script(src='/js/dimmer.min.js')
+    script(src='/js/transition.min.js')
+    script(src='/js/modal.min.js')
+    script(src='/js/admin/script.js?v=1.00')
+
+  body
+    nav#admin-nav
+      div.nav-header
+        div.logo
+          img(src="/images/logo.png")
+        div.title Admin Panel
+      div.menu
+        a.item(href="/admin/orders") Orders
+          
+    block content

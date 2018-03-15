@@ -1,0 +1,117 @@
+extends layout
+
+block content
+  div#admin-content
+    div.content-wrapper
+      .loading
+        .sp.sp-wave
+        .text Loading...
+      div.orders-process
+        div.steps.step-1
+          h3.header Manage Orders
+          div.sc-row
+            h4 Pending Orders
+            button#generate-order(disabled="true") Generate
+          div#orders-table
+        div.steps.step-2
+          h3.header Orders Summary
+          div#orders-summary
+          
+  div#generate-modal.ui.small.modal
+    i.close.ion-close-round
+    div.content
+      div.orders
+      div.alert Would you like to proceed and generate orders?
+      div.modal-buttons
+        button.cancel.close No
+        button.accept Yes
+  
+  script#orders-table-tpl(type="text/template")
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Item</th>
+          <th class="qty">Quantity</th>
+          <th class="qty">Quantity in<br>Hand</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% _.each(orders, function(order){ %>
+          <tr data-id="<%= order.id %>">
+            <td><input type="checkbox"></td>
+            <td><i class="ion-plus-circled fold-reveal" data-fold="<%= order.id %>"></i></td>
+            <td><%= order.name %></td>
+            <td><%= order.email %></td>
+            <td><%= order.product.name %></td>
+            <td class="qty"><%= order.quantity %></td>
+            <td class="qty"><%= order.product.quantity %></td>
+          </tr>
+          <tr class="fold" id="<%= order.id %>">
+            <td colspan="7">
+              <div class="fold-wrapper">
+                <div class="info">
+                  <div class="head">Name</div>
+                  <%= order.name %>
+                </div>
+                <div class="info">
+                  <div class="head">Email</div>
+                  <%= order.email %>
+                </div>
+                <div class="info">
+                  <div class="head">Address</div><%= order.address %>, <%= order.city %>, <%= order.state %>, <%= order.country %>, <%= order.zipcode %>
+                </div>
+                <div class="info">
+                  <div class="head">Product</div><%= order.product.name %>
+                </div>
+                <div class="info">
+                  <div class="head">Quantity</div><%= order.quantity %>
+                </div>
+                <div class="info">
+                  <div class="head">SKU</div><%= order.product.sku %>
+                </div>
+              </div>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  
+  script#orders-summary-tpl(type="text/template")
+    <% _.each(data, function(item){ %>
+      <div class="item">
+        <div class="sc-row">
+          <div class="order-id">Order ID - <%= item.order_id %></div>
+          <div class="order-status <%= item.success ? 'success' : 'failed' %>"><%= item.success ? 'Success' : 'Failed' %></div>
+        </div>
+        <div class="details">
+          <div class="info">
+            <div class="head">Name</div>
+            <div class="value"><%= item.order_data.name %></div>
+          </div>
+          <div class="info">
+            <div class="head">Product</div>
+            <div class="value"><%= item.order_data.product.name %></div>
+          </div>
+          <div class="info">
+            <div class="head">Email</div>
+            <div class="value"><%= item.order_data.email %></div>
+          </div>
+          <div class="info">
+            <div class="head">Address</div>
+            <div class="value"><%= item.order_data.address %>, <%= item.order_data.city %>, <%= item.order_data.state %>, <%= item.order_data.country %>, <%= item.order_data.zipcode %></div>
+          </div>
+          <div class="info">
+            <div class="head">Quantity</div>
+            <div class="value"><%= item.order_data.quantity %></div>
+          </div>
+          <div class="info">
+            <div class="head">SKU</div>
+            <div class="value"><%= item.order_data.product.sku %></div>
+          </div>
+        </div>
+      </div>
+    <% }) %>
