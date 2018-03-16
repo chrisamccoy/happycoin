@@ -7,7 +7,14 @@ resData = null;
 
 $(document).ready(function(){
   loadData();
+  initMenu();
 });
+
+function initMenu() {
+  $('#admin-nav .open-menu').click(function(){
+    $('#admin-nav .menu').toggleClass('show');
+  });
+}
 
 function loadData() {
   $.getJSON('/admin/get-orders', function(result){

@@ -97,8 +97,8 @@ section .header:not(:first-child) {
 }
 
 section.tab.disabled[data-tab] {
-  background-color: #f1f1f1;
-  opacity: 0.5;
+  background-color: rgba(241, 241, 241, 0.34);
+  opacity: 1;
 }
 
 input {
@@ -871,10 +871,10 @@ button.small,
   z-index: 5;
 }
 
-.amount-slider.disabled .slider .ui-slider-range {
+/*.amount-slider.disabled .slider .ui-slider-range {
   background: rgba(42, 42, 42, 0.47);
   border-color: rgba(42, 42, 42, 0.47) !important;
-}
+}*/
 
 .amount-slider .amounts {
   display: flex;

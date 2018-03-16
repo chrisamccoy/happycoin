@@ -66,6 +66,12 @@ input[type='checkbox'], input[type='radio'] {
   justify-content: space-between;
 }
 
+@media only screen and (max-width: 700px)  {
+  td, th {
+    padding: 0em 0.5rem;
+  }
+}
+
 /* Loader */
 .loading {
   position: absolute;
@@ -184,6 +190,10 @@ input[type='checkbox'], input[type='radio'] {
   background-color: #f78348;
 }
 
+#admin-nav .nav-header .open-menu {
+  display: none;
+}
+
 #admin-nav .nav-header .logo img {
   width: 120px;
 }
@@ -206,6 +216,50 @@ input[type='checkbox'], input[type='radio'] {
   opacity: 0.7;
 }
 
+@media only screen and (max-width: 700px) {
+  #admin-nav {
+    width: 100%;
+    height: 65px;
+    z-index: 1;
+  }
+
+  #admin-nav .nav-header {
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+  }
+
+  #admin-nav .nav-header .logo img {
+    width: 55px;
+  }
+
+  #admin-nav .nav-header .title {
+    font-size: 1em;
+    margin-left: 1em;
+  }
+
+  #admin-nav .nav-header .open-menu {
+    display: block;
+    position: absolute;
+    right: 0px;
+    padding: 0.5em;
+    font-size: 2em;
+    cursor: pointer;
+  }
+
+  #admin-nav .menu {
+    background: #ea6c2b;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s linear;
+  }
+
+  #admin-nav .menu.show {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 /* Admin Content */
 #admin-content {
   padding-left: 300px;
@@ -224,6 +278,18 @@ input[type='checkbox'], input[type='radio'] {
   background-color: white;
 }
 
+@media only screen and (max-width: 700px) {
+  #admin-content {
+    padding-left: 0px;
+    padding-top: 75px;
+    overflow: hidden;
+  }
+
+  #admin-content .content-wrapper  {
+    padding: 0.5em;
+  }
+}
+
 /* Orders Table */
 #orders-table .qty {
   text-align: center;
@@ -236,7 +302,7 @@ input[type='checkbox'], input[type='radio'] {
   overflow: hidden;
   padding: 0px 1em;
   display: flex;
-  /*justify-content: space-between;*/
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -267,6 +333,28 @@ input[type='checkbox'], input[type='radio'] {
 
 #orders-table tbody i:hover {
   opacity: 0.7;
+}
+
+@media only screen and (max-width: 700px) {
+  #orders-table {
+    width: 100%;
+    overflow: scroll;
+    font-size: 0.9em;
+  }
+
+  #orders-table tbody tr.fold .fold-wrapper .info {
+    width: 49%;
+  }
+
+  #orders-table tbody tr.fold.show .fold-wrapper {
+    max-height: 255px;
+    transition: all 0.25s ease-in;
+    padding: 1em;
+  }
+
+  /*#orders-table .product {
+    width: 150px
+  }*/
 }
 
 /* Generate Modal */
@@ -331,6 +419,20 @@ input[type='checkbox'], input[type='radio'] {
 #orders-summary .item .details .info .head {
   font-size: 0.9em;
   font-weight: bold;
+}
+
+@media only screen and (max-width: 700px) {
+  #orders-summary .item {
+    padding: 0.7em;
+  }
+
+  #orders-summary .item .order-id::before {
+    left: -0.7em;
+  }
+
+  #orders-summary .item .details .info {
+    width: 100%;
+  }
 }
 
 /* Order Process */

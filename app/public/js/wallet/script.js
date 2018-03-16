@@ -242,24 +242,25 @@ function initProcess() {
   });
 
   $('#incentive-process .proceed.publish').click(function(){
-    var $confirmModal = $('#api-confirm-modal');
-    $confirmModal.find('.budget-val').text(budgetVal);
-    $confirmModal.find('.royalty-val').text(appInfo[appKey].percentVal+'%');
-    $confirmModal.modal('show');
-    $confirmModal.find('button.accept').click(function(){
-      var data = $(this).data();
-      initloader({
-        data : data,
-        call : {
-          callFunc : openProcess,
-          callParams : ['#summary-process', appKey]
-        }
-      });
-
-      appInfo[appKey].master = true;
-      $confirmModal.modal('hide');
-      // console.log(appInfo[appKey].master);
+    // var $confirmModal = $('#api-confirm-modal');
+    // $confirmModal.find('.budget-val').text(budgetVal);
+    // $confirmModal.find('.royalty-val').text(appInfo[appKey].percentVal+'%');
+    // $confirmModal.modal('show');
+    // $confirmModal.find('button.accept').click(function(){
+    //   var data = $(this).data();
+    //   $confirmModal.modal('hide');
+    //   // console.log(appInfo[appKey].master);
+    // });
+    var data = $(this).data();
+    initloader({
+      data : data,
+      call : {
+        callFunc : openProcess,
+        callParams : ['#summary-process', appKey]
+      }
     });
+
+    appInfo[appKey].master = true;
   });
 
   $('.total-balance .buy .button').click(function(){
@@ -755,7 +756,12 @@ function initloader(params) {
     $loader.find('.content.start').addClass('show');
   });
 
-  $loader.find('.content.start button.get-started').click(function(){
+  $loader.find('.content.start button.next-2').click(function(){
+    $loader.find('.content.start').removeClass('show');
+    $loader.find('.content.end').addClass('show');
+  });
+
+  $loader.find('.content.end button.get-started').click(function(){
     closeAllTabs();
     $loader.height($(window).height()).transition('fade');
     if (params && params.call) {
