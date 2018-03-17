@@ -5731,6 +5731,11 @@ and (max-width : 335px) {
 .blog-news p {
   font-size: 21px;
   margin-bottom: 1em;
+  word-wrap: break-word;
+}
+
+.blog-news p.underline {
+  border-bottom: 1px solid;
 }
 
 .blog-news p a {
@@ -5759,6 +5764,11 @@ and (max-width : 335px) {
 .blog-news ol,
 .blog-news .hc-image {
   margin-bottom: 1em;
+}
+
+.blog-news ul.nested, .blog-news ol.nested {
+  margin-left: 2em;
+  font-size: 1em;
 }
 
 .blog-share.fixed {

@@ -1,0 +1,343 @@
+extends blog-wrapper
+
+block blog-news
+
+  div.article-sub-title Testing the impact of varying numbers and sizes of transactions processed on a 8-node network running the Storecoin Dynamic Proof-of-Stake Consensus Algorithm (DyPoS).  Test #4 in a series of 7 tests.
+    
+  p
+    b Purpose
+    
+  p This document explains the activities performed in load testing of the first version of the Storecoin decentralized consensus algorithm called Dynamic Proof of Stake (DyPoS). Illustrated in Figure 1 below, version 1 of DyPoS is partially built on top of Tendermint, software that incorporates Byzantine fault tolerance in any distributed computing platform and uses its architecture to separate the DyPoS consensus engine from the rest of the application. Eventually, DyPoS will be replaced by BlockFin, Storecoin’s leaderless, fork-tolerant, high-throughput consensus protocol. 
+
+  p Version 1 of DyPoS models various ways to improve consensus throughput, which is defined as the rate at which the validator nodes add transactions to the new block and successfully add the new block to the blockchain. These models help identify deficiencies in traditional approaches to consensus, so they can be better addressed in BlockFin. 
+
+  p In Load Test #3, 500, 1,000, 2,000, 5,000, and 10,000  transactions were served  to four test nodes by four separate clients for a duration of 5 seconds. Transactions were broken down into four groups of sizes: 50-250 bytes; 251-500 bytes; 501-1,000 bytes; and 1,001-10,000 bytes, allocated in a 60:20:15:5 split. Within each group, the transaction sizes are randomized. 
+
+  p In Load Test #4, rather than 4 validators receiving transactions from 4 different clients, there are 8 validators receiving transactions from a combination of 4 and 8 clients.  Instead of one validator per location (servers located in California, Virginia, Ohio, and Oregon), there are now 2 validators per location. Each validator in a location is launched on its own machine and doesn’t share the hardware and other resources with the other validator.
+
+  p Whereas the focus in Load Test #3 was the consensus efficiency of DyPoS, Load Test #4 expands on that focus by confirming that consensus efficiency for DyPoS does not decrease with increased decentralization.
+
+  p
+    b About Storecoin
+    
+  p Storecoin is a new public blockchain powered by DyPoS. Our mission is to become the zero-fee, p2p payment infrastructure for the globe.
+  
+  p With its decentralized governance system with built-in checks and balances inspired by the U.S. Constitution, the supply and demand principles of Uber Surge Pricing
+    span.italics  (blockchain economics)
+    |  and Power of Attorney
+    span.italics  (blockchain scaling)
+    | , Storecoin will secure crypto-powered incentives and payments inside of apps.
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/blog-load-testing.png")
+  p.caption Figure 1 —  Illustration of the Storecoin underlying blockchain architecture. (Source: Tendermint)
+    
+  h2.article-h3 General Test Summary
+  p
+    b What we are trying to learn
+  
+  p As with Load Test #3, the purpose of this test is to measure the consensus efficiency of the DyPoS consensus protocol.  Rather than testing 4 validators, the use of 8 validators is tested herein.
+  
+  p There are two goals for Load Test #4.  The first goal is to test how DyPoS would behave in response to receiving a wide range of transactions (500, 1,000, 2,000, 5,000, and 10,000) of varying size (100, 500, 1,000, 5,000, and 10,000 bytes) to 8 validators.  Transactions are sent by 4 and 8 clients.  Validators are independently housed two to a region and geographically dispersed across the United States on computers in California, Virginia, Ohio, and Oregon.  
+  
+  p The second goal seeks to verify that the consensus efficiency for DyPoS does not suffer with greater decentralization.
+    
+  p
+    b Test Details
+    
+  p There are two parts to Load Test #4, Test #4a and Test #4b. Test #4a is broken down into two parts, part 1 and part 2.
+  
+  p Test #4a, part 1 uses 4 clients to send a number of transactions of differing sizes to 8 validators.    Whereas part 1 of test #4a uses 4 clients to send transactions to 8 validators, part 2 of test #4a uses 8 clients.
+  
+  p Test #4b uses the same randomized transactions as used in Load Test #3.  However, 4 and 8 clients send a number of transactions a range of sizes to 8 validators.  The transactions are arranged randomly and an allocation by percentage.
+
+  p
+    b Test #4a, part 1:
+  
+  p Part 1 is composed of a number of smaller tests, with  500, 1,000, 2,000, 5,000, and 10,000 transactions of 500, 1,000, 2,000, 5,000, and 10,000 bytes in size are sent from four clients to 8 validators, independently housed 2 to a region that are geographically distributed throughout the United States.  The computers housing the nodes are located in California, Virginia, Ohio, and Oregon.
+  
+  p Test #4a, part 1 is made up of 25 tests, with each test lasting a duration of 5 seconds.
+  
+  p
+    b Test #4a, part 2:
+    
+  p Rather than 4 clients sending a number of transactions in a range of sizes to 8 validators, part 2 uses 8 clients to send transactions. 
+  
+  p As with part 1, transactions numbering 500, 1,000, 2,000, 5,000, and 10,000 that are 100, 500, 1,000, 5,000, and 10,000 bytes in size are sent to 8 validators.   As in part 1, there are a total of 25 tests, each having a duration of 5 seconds.
+
+  p
+    b Test #4b:
+    
+  p Test #4b uses transactions of random sizes and allocated by percentage as shown in Table 1.
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/load-test-41-table1.png")
+  p.caption TABLE 1 - PERCENTAGE ALLOCATION AND TRANSACTION SIZES BY GROUP FOR TEST 4B
+  
+  p There are 500, 1,000, 2,000, 5,000, and 10,000 transactions sent by 4 and 8 clients.  Like Test #4a, Test #4b is made of a number of smaller transactions, 20 to be precise, and like test #4a, each test has a duration of 5 seconds.
+  
+  p Briefly, the testing process for both tests #4a and #4b was as follows:
+  
+  ol
+    li Each client generates 500, 1,000, 2,000, 5,000, or 10,000 transactions in sizes of 100, 500, 1,000, 5,000, or 10,000 bytes and sends them to the configured validator node. 
+    li Transactions are received concurrently by all 8 validator nodes.
+    li The elected proposer node proposes the new blocks with the transactions received by the 8 validators.
+    
+  p The transactions are sent in a duration of 5 seconds (T = 5).  
+  
+  p
+    b Environment and Tools
+  
+  p To load test the Storecoin consensus algorithm, a cluster containing four nodes was set up on an Amazon Web Services (AWS) Elastic Compute Cloud (EC2).
+  
+  p Each node is running a
+    b  r3.xlarge
+    |  instance with 4 CPUs, 30.5GB memory, and a 80GB SSD drive.
+    
+  p The nodes were physically located in the following regions.
+  
+  p
+    b Nodes : r3.xlarge instances
+  
+  ul
+    li California
+    li Virginia
+    li Ohio
+    li Oregon
+    
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/blog-load-testing-4-to-7.png")
+  p.caption Figure 3: Illustration of the Storecoin 8-node validator used in the load test of the DyPoS consensus algorithm.
+  
+  p The transactions were generated from 4 clients in a
+    b  m4.2xlarge
+    |  instance located in Canada.
+    
+  p
+    b Type of Test Performed
+    
+  p Load testing is the process of putting demand on a software system and measuring its response. The load test client used was TM-Bench while the transaction monitoring tool utilized was TM-Monitor.
+  
+  p TM-bench allows for benchmarking the performance with a specified burst rate, transaction rate and size. In this load test, the tm-bench test was used to create a series of burst transactions for both 4 and 8 clients.  Below is the command for 4 clients:
+
+  p ./tm-bench -T 5 -v -r 500* -c 4   54.67.122.49:46657,52.53.67.196:46657,34.227.97.184:46657,34.225.8.67:46657,18.217.98.51:46657,18.218.220.224:46657,34.209.158.158:46657,34.215.61.224:46657
+  
+  p * (r = 500, 1000, 2000, 5000, 10000)
+
+  p The above command creates 4 clients, each sending 500, 1,000, 2,000, 5,000, or 10,000 transactions spread out over 5 seconds.  This equates to approximately between 100 and 2,000 transactions per second to each of the validator nodes.
+
+  p At the end of the burst, a total of 16,000 to 320,000 transactions were sent through the test setup (500 to 10,000 transactions x 4 clients x 8 validator nodes).  In this test, each client sends a transaction to a different validator to distribute the transactions among them.  All 8 validator nodes participated in the test, as was done in Test 1.
+
+  p In test #4b, 8 clients were used to transactions to 8 validators.  The tm-bench command to send 8 transactions was as follows:
+
+  p ./tm-bench -T 5 -v -r 500* -c 8   54.67.122.49:46657,52.53.67.196:46657,34.227.97.184:46657,34.225.8.67:46657,18.217.98.51:46657,18.218.220.224:46657,34.209.158.158:46657,34.215.61.224:46657
+  
+  p * (r = 500, 1000, 2000, 5000, 10000)
+
+  p Using 8 clients to send transactions, approximately between 200 and 4,000 transactions per second were sent to 8 validators.  At the end of the burst, 32,000 to 640,000 transactions were attempted through the test set up (500 to 10,000 transactions x 8 clients x 8 validator nodes).  As with part 1 of this test, each client sends a transaction to a different validator to distribute the transactions among them.  
+
+  p The tm-bench command for both parts 1 and 2 is invoked once for each test of 500, 1,000, 2,000, 5,000, and 10,000 transactions. 
+  
+  p The data generated from each test included the average, standard deviation, and maximum for the block latency, blocks per second, and transactions per second.  These values are defined as:
+  
+  ul
+    li Block latency - The time it takes to create a new block with transactions included in it.
+    li Blocks per second (Blocks/sec) - The total number of blocks produced per second. Note that all 4 validators will be producing blocks based on round robin basis.
+    li Transactions per second (Txs/sec) - The total number of transactions processed per second and included in the respective blocks.
+    
+  p Over the 5 runs, the total incoming transactions for each test ranged from 3,200 transactions (16,000 total transactions / 5 seconds for 4-client test) to 128,000 (640,000 total transactions / 5 seconds for 8-client test) transactions per second.
+  
+  p
+    b Procedure
+    
+  p The 8-node load test housing 2 validators each in a region was run using the following procedure:
+  
+  ol
+    li In each inquiry, a specific transaction rate (say, 500 transactions/second) was selected. The transactions are sent from 4 clients in each test.
+    li The inquiry is run using the following sequence until the validator nodes are saturated.
+      ul.nested
+        li Client 1 (C1) sends ‘r’ transactions of specific size ‘s’ to Node 1 (N1) for the duration ‘T’
+        li Client 2 (C2) sends ‘r’ transactions of specific size ‘s’ to Node 2 (N2) for the duration ‘T’
+        li Client 3 (C3) sends ‘r’ transactions of specific size ‘s’ to Node 3 (N3) for the duration ‘T’
+        li Client 4 (C4) sends ‘r’ transactions of specific size ‘s’ to Node 4 (N4) for the duration ‘T’
+        li Clients C1-C4 repeat the same for Nodes N5-N8. Each client sends transactions to 2 validator nodes
+    li At the end of the inquiry, statistics for block latency, blocks per second, and transactions per second are collected.
+    li The inquiry is repeated for different combinations of transaction sizes and rates.
+    li The performance statistics are documented for each of the factors recorded.
+    
+  p This test had not only 4 clients sending transactions to 8 validators, 8 clients were also used.  The procedure for 8 clients was similar to that of 4 clients in steps 1, 3, 4, and 5.  The procedure for 8 clients was as follows:
+  
+  ol
+    li In each inquiry, a specific transaction rate (say, 500 transactions/second) was selected. The transactions are sent from 4 clients in each test.
+    li The inquiry is run using the following sequence until the validator nodes are saturated.
+      ul.nested
+        li Client 1 (C1) sends ‘r’ transactions of random size ‘s’ to Node 1 (N1) for the duration ‘T’
+        li Client 2 (C2) sends ‘r’ transactions of random size ‘s’ to Node 1 (N1) for the duration ‘T’
+        li Client 3 (C3) sends ‘r’ transactions of random size ‘s’ to Node 3 (N3) for the duration ‘T’
+        li Client 4 (C4) sends ‘r’ transactions of random size ‘s’ to Node 4 (N4) for the duration ‘T’
+        li Client 5 (C5) sends ‘r’ transactions of random size ‘s’ to Node 4 (N5) for the duration ‘T’
+        li Client 6 (C6) sends ‘r’ transactions of random size ‘s’ to Node 4 (N6) for the duration ‘T’
+        li Client 7 (C7) sends ‘r’ transactions of random size ‘s’ to Node 4 (N7) for the duration ‘T’
+        li Client 8 (C8) sends ‘r’ transactions of random size ‘s’ to Node 4 (N8) for the duration ‘T’
+    li At the end of the inquiry, statistics for block latency, blocks per second, and transactions per second are collected.
+    li The inquiry is repeated for different combinations of transaction rates.
+    li The performance statistics are documented for each of the factors recorded.
+    
+  p
+    b Results
+  
+  p The results for Load Test 4a, parts 1 and 2 along with 4B are below:
+  
+  p
+    b Test 4a, part 1
+  
+  p The transaction volume from 8 clients will be double of that coming from 4 clients. As an example, assume 4 clients are sending transactions of 500 bytes in size at a rate of 1,000 transactions.  They would be calculated as follows:
+  
+  p (4 clients x 500 bytes x 1,000 transactions x 8 validators) = 16,000,000 bytes and 32,000 transactions
+  
+  p Assuming 8 clients are sending transactions 500 bytes at a rate of 1,000 transactions, calculations would be as follows:
+  
+  p (8 clients x 500 bytes x 1,000 transactions x 8 validators) = 32,000,000 bytes and 64,000 transactions
+  
+  p The number of bytes and transactions processed doubles when the number of clients sending transactions is doubled. This holds true regardless of whether 8 clients and 4 clients are used or 60 and 30 clients are used.
+
+  p The run having the best throughput is 8-client test, Test 6, run E.  In this run, 8 clients sent 10,000 transactions of 100 bytes in size to 8 clients for a total of 640,000 transactions. In this run, the throughput was 159,790 transactions.
+
+  p Test results by run for 4 clients are below. There were 25 runs in part 1.  Failed runs are identified as such and shown in red in the Total Transactions and Test Results columns.
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/load-test-41-table3.png")
+  p.caption TABLE 3 - SUMMARY TEST RESULTS FOR TEST 4A, PART 1: CLIENTS 4, VALIDATORS 8, FIXED TRANSACTIONS
+  
+  p
+    b Test 4a, part 2
+  
+  p In part 2 of test 4a, 8 clients are used to send transactions of a fixed size to 8 validators rather than 4.  As in part 1, 500, 1,000, 2,000, 5,000, and 10,000 transactions are sent 100, 500, 1,000, 5,000, or 10,000 bytes in size with each run having a duration of 5 seconds.
+  
+  p Test results by run for 8 clients are contained below.  As with part 1, there are 25 runs processed in part 2.  Failed runs are identified with Total Transactions and Test Results colored in red.
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/load-test-41-table4.png")
+  p.caption TABLE 4 - SUMMARY OF TEST RESULTS FOR TEST 4A, PART 2:  CLIENTS 8, VALIDATORS 8, FIXED TRANSACTIONS
+  
+  p
+    b Test 4b
+  
+  p In test 4b, the same randomized transaction sizes are run as were run in Load Test #3.  Rather than 4 validators to receive transaction, 8 are used.  As with parts 1 and 2 of this test, both 4 clients and 8 clients are sent 500, 1,000, 2,000, 5,000, and 10,000 transactions.
+  
+  p The best performing test in test 4b was 8 clients sending 128,000 total transactions to 8 nodes.  For this run, the throughput was 16,052 transactions.   
+  
+  p Transactions in test 4b were run having the following percentage allocations:
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/load-test-41-table5.png")
+  p.caption TABLE 5 - GROUPING OF PERCENTAGE ALLOCATIONS FOR RANDOM AND PERCENTAGE ALLOCATION USED IN TEST 4B
+  
+  p When comparing results of runs between test 4a above and test 4b below, the throughput is lower in test 4b.  This is because with randomization, 20% of the transactions will be 251 bytes in size or greater, 15% of the transactions will be 501 bytes and greater, and 5% of the transactions will be 1,001 bytes and greater. As a result, transaction volumes were observed to be much higher in test 4b than in test 4a. As concluded in previous tests, the consensus efficiency is affected by the transaction volume.
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/load-test-41-table6.png")
+  p.caption TABLE 6 - TABLE OF TEST RESULTS FOR TEST 4B: 4 AND 8 CLIENTS, 8 VALIDATORS, WITH TRANSACTIONS ALLOCATED RANDOMLY  BY PERCENTAGE
+  
+  p A discussion of results for Load Test 4a, part 1, part 2, and part 4b are below.
+  
+  p
+    b Highlights
+    
+  p Load Test #4 is made up of two tests, Tests 4a and 4b. Test 4a is further broken down into parts 1 and 2. Test 4a, part 1 is made up of 25 runs, as is part 2 of test 4a, whereas test 4b consists of 20 runs. With parts a and b, 1 and 2 taken together Load Test #4 is made up of 70 runs.
+  
+  p In part 1 of test 4a, the run having the highest throughput was test 2, run D.  In this run, 4 clients sent 5,000 transactions 500 bytes in size to 8 validators.  The total transactions sent 160,000 transactions (4 clients x 5,000 transactions x 8 validators) while the transaction load was 80,000,000 bytes (4 clients x 5,000 transactions x 500 bytes x 8 validators).
+  
+  p In test 2, run D, the throughput was 40,034 transactions per second while the block latency was 45.47ms and the blocks per second processed was 20.5 blocks.  The run having the second highest throughput in part 1 of test 4a was test 3, run D with 38,316 transactions.  This particular run saw 160,000 total transactions sent from 4 clients to 8 validators.  However, the transaction load was 160,000,000 bytes (4 clients x 5,000 transactions x 1,000 bytes x 8 validators), double that of the run having the highest throughput in part 4a, test 1.
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/load-test-41-table7.png")
+  p.caption TABLE 8 -, TEST 2, RUN D, CLIENTS - 8, VALIDATORS 8, 5,000 TRANSACTIONS, 500 BYTES IN SIZE.  FIXED TRANSACTIONS
+  
+  p In part 2 of test 4a, test 6, run E had the highest throughput with 159,790 transactions.  In the most successful run of part 2, 10,000 transactions 100 bytes in size were sent by 8 clients to 8 validators.  In other words, a total of 640,000 transactions were sent to 8 clients in a burst lasting for a period of 5 seconds.  The total transaction load was 64,000,000 bytes.
+  
+  p Of the 640,000 total transactions sent, a throughput of 159,790 transactions per second.  The block latency for this was run 45.53ms while the blocks processed per second was 34.5
+
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/load-test-41-table8.png")
+  p.caption TABLE 8 -, TEST 6, RUN E, CLIENTS - 8, VALIDATORS 8, 10,000 TRANSACTIONS, 100 BYTES IN SIZE.  FIXED TRANSACTIONS
+  
+  p Part 1 of test 4a saw 4 clients send transactions to 8 validators.  In part 2, the number of clients sending transactions to 8 validators was doubled.  As a result, the total transactions sent and the transaction load was doubled in the runs making up part 2 of test 4a. 
+  
+  p Doubling the total transactions sent and transaction load for the same number of transactions having the same size would increase the amount of work needed to process the transactions within DyPoS.  As a result, we would expect that with an increasing load between parts 1 and 2 of test 4A, the runs in part 2 would show a decreasing throughput.  This was not the case, as some runs in part 2 had a higher throughput.
+  
+  p A secondary goal for Load Test 4 was to ensure that consensus efficiency does not suffer with increasing decentralization.  In other words, as decentralization increases with the addition of new actors (clients, validators, etc.,) to the Storecoin network, consensus efficiency should not decrease.
+    b  The results of Load Test 4 leads us to conclude that increasing decentralization did not affect throughput of DyPoS negatively.  In fact, both decentralization and throughput were improved in some cases with 8 clients over 4 clients having the same number of transactions of the same size.
+    
+  p Part b of Load Test 4 consisted of transactions sent randomly in set percentage allocations.  The run consisted of 8 clients sending 2,000 transactions to 8 clients in one burst lasting a period of five seconds.  The total transactions sent in this run 128,000.  The throughput in test 12, run C was 16,067 transactions while the block latency was 45.68 seconds.  The blocks processed per second was 51.25 blocks.
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/load-test-41-table9.png")
+  p.caption TABLE 9 -, TEST 12, RUN C, CLIENTS - 8, VALIDATORS 8, 2,000 TRANSACTIONS, RANDOMIZED ALLOCATION 
+  
+  p Test 12, run C, in which 2,000 random transaction sizes were sent, had a throughput of 16,067 transactions.  As a result, we can deduce that the transaction volume sent was bigger for the same number of transactions in runs sending randomized transactions (test 4b) over runs sending fixed transaction (test 4a) sizes.  This is indeed the case as every run making up test 4b had a percentage allocation in which 20% of all transactions in every run was greater than 501 bytes in size.
+  
+  p Between the transactions in tests 4a part 1, part 2, or test 4b, we expect the transactions to be processed by DyPoS to be closer to those in part 1 of test 4a.  In fact, we expect the vast majority of transactions to be less than 500 bytes in size.  With that said, of the runs completed in this test, runs with 4 clients having a transaction size of 500 bytes or less will be closer of what the Storecoin network can expect to see.
+    b  The run with the best throughput in Load Test 4 was 159,790 transactions.
+    
+  p To summarize, consensus efficiency is determined by the transaction volume. As long as the validator nodes were able to sustain handling incoming transactions, the transactions were added to the blockchain at higher rates without any failures. As the transaction rate increased, the likelihood of failure also increased. The validator nodes remained stable despite transaction failures.
+  
+  p
+    b Conclusion
+  
+  p In Load Test #4, it was demonstrated that the Storecoin DyPoS consensus algorithm could support sending a large number of transactions having a large transaction volume from 4 and 8 clients to 8 validators over multiple runs.  DyPoS was able to successfully receive 640,000 transactions and process those transactions received at a rate of 159,790 transactions per second was recorded.  This was the highest throughput recorded in Load Test #4.
+  p Additionally, increasing decentralization did not impact the consensus efficiency of DyPoS.  In fact, consensus efficiency and throughput increased in some cases with increasing decentralization.
+  
+  p
+    b Next Steps
+    
+  h2.article-h3 Test #5
+  p The purpose of Test #5 (test-8-node-burst-mode-random-distributed-tx-size) is to observe consensus efficiency using 8 validator nodes for a longer duration and to evaluate if a burst node results in a better throughput  Each test is run for 10 minutes with clients sending a predetermined number of transactions in short bursts. 
+  
+  h2.article-h3 Test #6 
+  p The purpose of Test # 6 (test-21-node-burst-mode-random-distributed-tx-size) is to increase the number of validation nodes to 21 from 8.
+  
+  h2.article-h3 Test #7
+  p The purpose of Test #7 (test-21-node-burst-mode-real-tx) is to measure the throughput with transaction overheads included in the throughput numbers.  In this test, real transactions will be used that need to be validated before they are included in a block.
+  
+  p 
+    b Definitions, Abbreviations AND Acronyms
+    
+  p 
+    b Block:
+    |  Blocks are files where data pertaining to a blockchain network are permanently recorded. A block records some or all of the most recent blockchain transactions that have not yet entered any prior blocks. Thus a block is like a page of a ledger or record book.
+  p 
+    b Blockchain:
+    |  A digital ledger in which transactions made in bitcoin or another cryptocurrency are recorded chronologically and publicly.
+  p 
+    b Block latency:
+    |  The time it takes to create a new block with transactions included.
+
+  p 
+    b Blocks per second (Blocks/sec):
+    |  The total number of blocks produced per second. Note that all 4 validators will be producing blocks based on a round robin basis.
+
+  p 
+    b Breakout Point:
+    |  The point or range of points where system performance is at its optimum.
+  p 
+    b Consensus Efficiency:
+    |  The rate at which participating validator nodes agree to a block.
+    
+  p 
+    b Latency:
+    |  Blockchains are designed to run on commodity machines that may be thousands of miles apart. Arriving at a common history of transaction order in this kind of asynchronous network is the classic distributed computing problem that distributed systems engineers deal with. The time lag between writing a packet onto the wire to receiving it on the other end could be on the order of milliseconds, seconds, minutes or even days. This is latency.
+  p 
+    b Node:
+    |  Node refers to a “full” client. A “full” client is one that owns the blockchain and that is sharing blocks and transaction across the network.
+  p 
+    b Transactions per second (Txs/sec):
+    |  The total transactions processed per second and included in the respective blocks.
+  
+  p 
+    b Detailed Test Results
+  
+  p If you would like to see the full detailed test results:
+  
+  p
+    a(href="https://docs.google.com/spreadsheets/d/12UJtRL1R7j0nNeuSHChC0EAKOMJcXCE1Xo0_HOQmFOg/edit?ts=5aa755e3#gid=0", target="_blank") Load Test #4 Detailed Test Results

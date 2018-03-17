@@ -1,5 +1,23 @@
 var blogs = [
   {
+      slug: 'load-testing-storecoins-dynamic-proof-of-stake-consensus-algorithm-with-21-validators-test-5-of-7',
+      title: 'Load Testing Storecoin’s Dynamic Proof-of-Stake Consensus Algorithm With 21 Validators: Test 5 of 7',
+      desc: 'Testing DyPoS by sending bursts of transactions from 2 clients to 21 validators',
+      img: 'https://storeco.in/images/blog/blog-load-testing-5-to-7.png',
+      template: 'blog-load-testing-5-to-7',
+      readTime : '10 min read',
+      date : 'March 17, 2018'
+  },
+  {
+      slug: 'load-testing-storecoins-dynamic-proof-of-stake-consensus-algorithm-test-4-of-7',
+      title: 'Load Testing Storecoin’s Dynamic Proof-of-Stake Consensus Algorithm: Test 4 of 7',
+      desc: 'Testing the impact of varying numbers and sizes of transactions processed on a 8-node network running the Storecoin Dynamic Proof-of-Stake Consensus Algorithm (DyPoS). Test #4 in a series of 7 tests.',
+      img: 'https://storeco.in/images/blog/blog-load-testing-4-to-7.png',
+      template: 'blog-load-testing-4-to-7',
+      readTime : '10 min read',
+      date : 'March 17, 2018'
+  },
+  {
       slug: 'software-engineer-accepts-role-of-technology-advisor-for-storecoin',
       title: 'Software Engineer Accepts Role of Technology Advisor for Storecoin',
       twtitle : 'Software Engineer (@devilscompiler) Accepts Role of Technology Advisor for Storecoin',
