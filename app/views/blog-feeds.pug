@@ -6,7 +6,7 @@
     each blog in blogs
       - var blogTitle = (blog.twtitle) ? blog.twtitle : blog.title;
       - var encodedTitle = encodeURI(blogTitle)
-      - var encodedUrl = encodeURI(url)
+      - var encodedUrl = encodeURI(url+'/'+blog.slug)
       div.card
         a(href=(blog.template) ? "/blog/"+blog.slug : blog.slug, target="_blank")
           div.post
@@ -16,10 +16,10 @@
         div.card-footer
           if blog.template
             div.blog-share.fixed
-              a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
+              a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+encodedUrl+"&via=storecointeam")
                 b
                   i.ion-social-twitter-outline
-              a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+              a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+encodedUrl+"&title="+encodedTitle)
                 b
                   i.ion-social-facebook-outline
           if blog.logo
