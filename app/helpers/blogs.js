@@ -1,12 +1,22 @@
 var blogs = [
   {
+      slug: 'load-testing-storecoins-dynamic-proof-of-stake-consensus-algorithm-for-burst-traffic',
+      title: 'Load Testing Storecoin’s Dynamic Proof-of-Stake Consensus Algorithm for Burst Traffic',
+      desc: 'Storecoin’s mission is to become zero-fee payment infrastructure for the global internet. The Dynamic Proof of Stake (DyPoS) consensus engine powering the Storecoin infrastructure is designed to process thousands of transactions per second. When transactions arrive continuously but at lower rates, the consensus engine is capable of handling the incoming transactions, but how does it behave when transactions come in bursts? When Storecoin is used as the payment platform by merchants and app developers, the transactions are likely to come in bursts from multiple sources. So, we need to characterize the behavior of the consensus engine under such circumstances.',
+      img: 'https://storeco.in/images/blog/blog-load-testing-4-to-7.png',
+      template: 'blog-load-testing-burst-traffic',
+      readTime : '10 min read',
+      date : 'March 19, 2018'
+  },
+  {
       slug: 'load-testing-storecoins-dynamic-proof-of-stake-consensus-algorithm-with-21-validators-test-5-of-7',
       title: 'Load Testing Storecoin’s Dynamic Proof-of-Stake Consensus Algorithm With 21 Validators: Test 5 of 7',
       desc: 'Testing DyPoS by sending bursts of transactions from 2 clients to 21 validators',
       img: 'https://storeco.in/images/blog/blog-load-testing-5-to-7.png',
       template: 'blog-load-testing-5-to-7',
       readTime : '10 min read',
-      date : 'March 17, 2018'
+      date : 'March 17, 2018',
+      hidden : true
   },
   {
       slug: 'load-testing-storecoins-dynamic-proof-of-stake-consensus-algorithm-test-4-of-7',
@@ -15,7 +25,8 @@ var blogs = [
       img: 'https://storeco.in/images/blog/blog-load-testing-4-to-7.png',
       template: 'blog-load-testing-4-to-7',
       readTime : '10 min read',
-      date : 'March 17, 2018'
+      date : 'March 17, 2018',
+      hidden : true
   },
   {
       slug: 'software-engineer-accepts-role-of-technology-advisor-for-storecoin',
