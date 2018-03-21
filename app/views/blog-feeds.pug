@@ -4,34 +4,25 @@
     h2.hc-feature-title Storecoin News
             
     each blog in blogs
-      - var blogTitle = (blog.twtitle) ? blog.twtitle : blog.title;
-      - var encodedTitle = encodeURI(blogTitle)
-      - var encodedUrl = encodeURI(url)
-      div.card
-        a(href=(blog.template) ? "/blog/"+blog.slug : blog.slug, target="_blank")
-          div.post
-            h3=blog.title
-            img(src='/images/empty.png', data-src=blog.img, style=(blog.maxwidth) ? 'max-width:'+blog.maxwidth+';': '')
-        hr(style="margin-top: 1rem; margin-bottom: 1.5rem;")
-        div.card-footer
-          if blog.template
-            div.blog-share.fixed
-              a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecointeam")
-                b
-                  i.ion-social-twitter-outline
-              a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
-                b
-                  i.ion-social-facebook-outline
-          if blog.logo
-            img(src='/images/empty.png', data-src=blog.logo)
-          p=blog.date
-    
-    //- div.card
-    //-   a(href="https://techcrunch.com/2017/08/20/yesterdays-plastics-are-todays-crypto-tokens/", target="_blank")
-    //-     div.post
-    //-       h3 Yesterday’s “Plastics” are Today’s Crypto Tokens
-    //-       img(src='/images/empty.png', data-src="/images/the-graduate.png")
-    //-     hr(style="margin-top: 1rem; margin-bottom: 1.5rem;")
-    //-     div.card-footer
-    //-       img(src='/images/empty.png', data-src="/images/tc-logo.svg")
-    //-       p August 21, 2017
+      if !blog.hidden
+        - var blogTitle = (blog.twtitle) ? blog.twtitle : blog.title;
+        - var encodedTitle = encodeURI(blogTitle)
+        - var encodedUrl = encodeURI(url+'/'+blog.slug)
+        div.card
+          a(href=(blog.template) ? "/blog/"+blog.slug : blog.slug, target="_blank")
+            div.post
+              h3=blog.title
+              img(src='/images/empty.png', data-src=blog.img, style=(blog.maxwidth) ? 'max-width:'+blog.maxwidth+';': '')
+          hr(style="margin-top: 1rem; margin-bottom: 1.5rem;")
+          div.card-footer
+            if blog.template
+              div.blog-share.fixed
+                a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+encodedUrl+"&via=storecointeam")
+                  b
+                    i.ion-social-twitter-outline
+                a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+encodedUrl+"&title="+encodedTitle)
+                  b
+                    i.ion-social-facebook-outline
+            if blog.logo
+              img(src='/images/empty.png', data-src=blog.logo)
+            p=blog.date

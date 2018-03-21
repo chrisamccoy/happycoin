@@ -728,6 +728,7 @@ function initloader(params) {
   $loader.find('.content.loading').addClass('show');
   $loader.find('.content.complete').removeClass('show');
   $loader.find('.content.start').removeClass('show');
+  $loader.find('.content.end').removeClass('show');
   $loader.find('.content.complete button.next').hide();
   $loader.height($(window).height()).transition('fade');
   // var count = 0;
