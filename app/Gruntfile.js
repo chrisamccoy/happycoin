@@ -70,6 +70,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // MINIFY JS
     uglify: {
       options: {
         mangle: false
@@ -81,6 +82,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // WATCH FILES
     watch: {
       grunt: { files: ['Gruntfile.js'] },
       concat: {
@@ -93,6 +95,14 @@ module.exports = function(grunt) {
           livereload: true
         }
       }
+    },
+
+    // GENERATE DOCS
+    docs: {
+      options: {
+        repo: 'git@github.com:StorecoinProject/docs.git',
+        repoDir: 'repos'
+      }
     }
 
   });
@@ -102,6 +112,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+
+  // Loading tasks
+  grunt.loadTasks('./scripts');
 
   // Task definition
   grunt.registerTask('dev', ['watch']);
