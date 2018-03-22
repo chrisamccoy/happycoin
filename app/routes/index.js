@@ -3,9 +3,6 @@ var router = express.Router();
 var meta = require('../helpers/meta');
 var getblog = require('../helpers/blogs');
 
-// USE
-router.use('/admin', require('./admin'));
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Storecoin', meta: meta() });

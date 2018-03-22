@@ -45,10 +45,12 @@ function initOrders() {
   }
 
   data.orders.forEach(function(order){
-    order.product = _.find(inventory, ['id', order.product_id]);
+    if (order.product_id) {
+      order.product = _.find(inventory, ['id', order.product_id]);
+    } 
   });
 
-  // console.log(data.orders);
+  console.log(data.orders);
 
   $loading.fadeOut('fast', function(){
     $('.orders-process .step-1').show();

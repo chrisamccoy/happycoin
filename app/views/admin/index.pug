@@ -46,9 +46,9 @@ block content
             <td><i class="ion-plus-circled fold-reveal" data-fold="<%= order.id %>"></i></td>
             <td><%= order.name %></td>
             <td><%= order.email %></td>
-            <td class="product"><%= order.product.name %></td>
+            <td class="product"><%= (order.product) ? order.product.name : 'N/A' %></td>
             <td class="qty"><%= order.quantity %></td>
-            <td class="qty"><%= order.product.quantity %></td>
+            <td class="qty"><%= (order.product) ? order.product.quantity : 'N/A' %></td>
           </tr>
           <tr class="fold" id="<%= order.id %>">
             <td colspan="7">
@@ -65,13 +65,13 @@ block content
                   <div class="head">Address</div><%= order.address %>, <%= order.city %>, <%= order.state %>, <%= order.country %>, <%= order.zipcode %>
                 </div>
                 <div class="info">
-                  <div class="head">Product</div><%= order.product.name %>
+                  <div class="head">Product</div><%= (order.product) ? order.product.name : 'N/A' %>
                 </div>
                 <div class="info">
                   <div class="head">Quantity</div><%= order.quantity %>
                 </div>
                 <div class="info">
-                  <div class="head">SKU</div><%= order.product.sku %>
+                  <div class="head">SKU</div><%= (order.product) ? order.product.sku : 'N/A' %>
                 </div>
               </div>
             </td>
