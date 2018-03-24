@@ -9,6 +9,7 @@ var Airtable = require('airtable');
 var index = require('./routes/index');
 var api = require('./routes/api');
 var admin = require('./routes/admin');
+var developers = require('./routes/developers');
 
 var app = express();
 
@@ -40,6 +41,7 @@ app.use(function(req, res, next){
 app.use('/', index);
 app.use('/api', api);
 app.use('/admin', admin);
+app.use('/developers', developers);
 
 // Configure AirTable
 Airtable.configure({
