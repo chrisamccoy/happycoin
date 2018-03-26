@@ -71,15 +71,41 @@ function copyAndConvert(grunt, dir) {
     // resolve();
 
     const md = new MarkdownIt(),
-          files = getFiles(dir);
+          files = getFiles(dir),
+          dirJson = [];
 
     files.forEach(function(file){
-      if (file.search('.md') > 0) {
-        const doc = readFile(file);
-        file = file.replace(dir, '');
-        createHtmlFile(file, md.render(doc))
-        resolve();
+      if (file.search('.git') < 0) {
+        if (file.search('.md') > 0) {
+          const doc = readFile(file);
+          file = file.replace(dir, '');
+          createHtmlFile(file, md.render(doc));
+          resolve();
+        } else {
+          file = file.replace(dir, '');
+        }
+
+        if (file.search('README.md') < 0) {
+          file = file.substring(1);
+          const item = {};
+          if (file.search('.md') > 0) {
+            file = file.replace('.md', '');
+            item[file] = { "is_dir" : false };
+          } else {
+            item[file] = { "is_dir" : true };
+          }
+          dirJson.push(item);
+        }
       }
+    });
+
+    // console.log(dirJson);
+
+    fs.writeFile("./views/developers/dir_strut.json", JSON.stringify(dirJson), (err) => {
+      if (err) {
+        console.error(err);
+        return;
+      };
     });
   });
 }
@@ -91,6 +117,7 @@ function getFiles (dir, files_){
         var name = dir + '/' + files[i];
         if (fs.statSync(name).isDirectory()){
             getFiles(name, files_);
+            files_.push(name);
         } else {
             files_.push(name);
         }
