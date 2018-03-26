@@ -5,6 +5,18 @@ block blog-news
   div.article-sub-title Storecoin’s mission is to become zero-fee payment infrastructure for the global internet. The Dynamic Proof of Stake (DyPoS) consensus engine powering the Storecoin infrastructure is designed to process thousands of transactions per second. When transactions arrive continuously but at lower rates, the consensus engine is capable of handling the incoming transactions, but how does it behave when transactions come in bursts? When Storecoin is used as the payment platform by merchants and app developers, the transactions are likely to come in bursts from multiple sources. So, we need to characterize the behavior of the consensus engine under such circumstances.
     
   p
+    b Highlights
+    
+  ul
+    li Storecoin's DyPoS consensus algorithm achieves high consensus efficiency of
+      b  159,790 transactions per second
+      |  when small transactions (100 bytes) are sent to the validator nodes in a large burst (10,000 transactions in the burst) by a large number of clients (8 clients).
+    li High consensus efficiency of
+      b  10,282 transactions per second
+      |  is observed with continuous bursts (50 bursts, 50 transactions in a burst) sent by a large number of clients (8 clients) to 21 validator nodes. This setup is typical in a real-world settings.
+    li The consensus efficiency drops as the transaction volume increases. So when the transaction or burst sizes are too large, the consensus efficiency decreases.
+  
+  p
     b Purpose
     
   p In this series of tests, we want to measure the performance and stability of the validator nodes forming the consensus engine when the transactions are sent in bursts from multiple clients. The performance of the consensus engine is measured as the number of transactions processed per second. This is also called as 
