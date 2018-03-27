@@ -63,7 +63,8 @@ button.hc-button {
   color: white;
 }
 
-button.hc-button:hover {
+button.hc-button:hover,
+button.hc-button[disabled] {
   opacity: 0.7;
 }
 
@@ -6055,5 +6056,10 @@ and (max-width : 335px) {
 
 /*------------------------------------*/
 #newsletter .hc-chunk {
+  max-width: 500px;
+}
+
+/*------------------------------------*/
+#admin-login .hc-chunk {
   max-width: 500px;
 }

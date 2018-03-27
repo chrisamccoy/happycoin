@@ -64,7 +64,17 @@ $(document).ready(function(){
   initIntroHeight(isMobile);
   initBlogShare();
   initFormSubscribe();
+  // initAdminLogin();
 });
+
+// function initAdminLogin() {
+//   var $login = $('#admin-login'),
+//   $username = $login.find('input[name="username"]'),
+//   $password = $login.find('input[name="password"]'),
+//   isDisabled = true;
+//
+//   $
+// }
 
 function initBlogShare (){
   var $blogNews = $('.blog-news');

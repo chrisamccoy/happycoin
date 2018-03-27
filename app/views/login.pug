@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  div#hc-content
+    #admin-login.hc-feature.over-rel.padding
+      .hc-chunk
+        h2.hc-feature-title Sign In
+        form(action='/login', method='post')
+          input.u-full-width(type="text", name="username", placeholder="Username")
+          input.u-full-width(type="password", name="password", placeholder="Password")
+          
+          button.hc-button.orange.full-width(type="submit") Submit
+
+    include email-widget
