@@ -46,7 +46,7 @@ app.use(session({
   resave: true,
   saveUninitialized: true,
   cookie: {
-    secure: app.get('env') === 'production' ? true : false,
+    secure: false, //app.get('env') === 'production' ? true : false,
     maxAge: 600000
   },
 }))
