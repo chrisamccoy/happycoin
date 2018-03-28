@@ -43,13 +43,17 @@ app.use(function(req, res, next) {
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({
   secret: 'keyboard blocks',
-  resave: false,
+  resave: true,
   saveUninitialized: true,
-  cookie: { secure: true }
+  cookie: {
+    secure: app.get('env') === 'production' ? true : false,
+    maxAge: 600000
+  },
 }))
 
 // /admin Pages require login
 function requireLogin(req, res, next) {
+  console.log(req.session);
   if (req.session.authenticated) {
     next(); // allow the next route to run
   } else {
