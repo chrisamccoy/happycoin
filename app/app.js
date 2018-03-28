@@ -53,7 +53,7 @@ app.use(session({
 
 // /admin Pages require login
 function requireLogin(req, res, next) {
-  console.log(req.session);
+  // console.log(req.session);
   if (req.session.authenticated) {
     next(); // allow the next route to run
   } else {

@@ -236,7 +236,7 @@ router.get('/login', function(req, res, next) {
 
 router.post('/login', function (req, res, next) {
   // you might like to do a database look-up or something more scalable here
-  if (req.body.username && req.body.username === 'user' && req.body.password && req.body.password === 'pass') {
+  if (req.body.username && req.body.username === 'admin' && req.body.password && req.body.password === 'St0r3C01n') {
     req.session.authenticated = true;
     res.redirect('/admin/orders');
   } else {

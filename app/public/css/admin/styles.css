@@ -72,6 +72,31 @@ input[type='checkbox'], input[type='radio'] {
   }
 }
 
+/* tabs */
+.sc-tabs .tabs {
+  margin-bottom: 1em;
+}
+
+.sc-tabs .tabs .item {
+  padding: 1em;
+  color: #5d6c76;
+  border-bottom: 2px solid white;
+}
+
+.sc-tabs .tabs .item.active {
+  border-bottom: 2px solid #f78348;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.sc-tabs .tab-body {
+  display: none;
+}
+
+.sc-tabs .tab-body.active {
+  display: block;
+}
+
 /* Loader */
 .loading {
   position: absolute;
@@ -438,4 +463,18 @@ input[type='checkbox'], input[type='radio'] {
 /* Order Process */
 .orders-process .steps {
   display: none;
+}
+
+/* Create Orders */
+#create-orders {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#create-orders input {
+  font-size : 1em;
+}
+
+#create-orders input::placeholder {
+  color: #a9abac;
 }

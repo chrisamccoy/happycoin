@@ -37,4 +37,18 @@ router.post('/submit-orders', function(req, res, next) {
   });
 });
 
+router.post('/create-order', function(req, res, next) {
+  var options = {
+    method: 'post',
+    body: req.body, // Javascript object
+    json: true, // Use,If you are sending JSON data
+    url: 'http://teamapi.storeco.in/create/order',
+  };
+  request(options, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.send(response.body); // Print the google web page.
+    }
+  });
+});
+
 module.exports = router;

@@ -9,10 +9,32 @@ block content
       div.orders-process
         div.steps.step-1
           h3.header Manage Orders
-          div.sc-row
-            h4 Pending Orders
-            button#generate-order(disabled="true") Generate
-          div#orders-table
+          div.sc-tabs
+            div.tabs
+              a.item.active(data-tab="pending-orders") Pending Orders
+              a.item(data-tab="create-orders") Create Orders
+              
+            div.tab-body.active(data-tab="pending-orders")
+              div.sc-row
+                button#generate-order(disabled="true", style="margin: 0px;") Generate
+              div#orders-table
+              
+            div.tab-body(data-tab="create-orders")
+              div#create-orders
+                h3 Create Orders
+                form
+                  input(type="email", name="email", placeholder="Email")
+                  input(type="text", name="name", placeholder="Name")
+                  input(type="text", name="address", placeholder="Address")
+                  input(type="text", name="city", placeholder="City")
+                  input(type="text", name="state", placeholder="State")
+                  input(type="text", name="zipcode", placeholder="Zipcode")
+                  input(type="text", name="country", placeholder="Country")
+                  input#autocomplete(type="text", placeholder="Select Product")
+                  input(type="text", name="product_id", placeholder="Product", hidden)
+                  input(type="number", name="quantity", placeholder="Quantity")
+                  button(type="submit") Submit
+            
         div.steps.step-2
           h3.header Orders Summary
           div#orders-summary
