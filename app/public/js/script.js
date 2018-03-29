@@ -64,17 +64,18 @@ $(document).ready(function(){
   initIntroHeight(isMobile);
   initBlogShare();
   initFormSubscribe();
-  // initAdminLogin();
+  initThirdTokenSale();
 });
 
-// function initAdminLogin() {
-//   var $login = $('#admin-login'),
-//   $username = $login.find('input[name="username"]'),
-//   $password = $login.find('input[name="password"]'),
-//   isDisabled = true;
-//
-//   $
-// }
+function initThirdTokenSale(){
+  $('#third-token-sale button').click(function(){
+    $('.token-widget-container').show();
+    $('.hc-email .email-widget').hide();
+    // $('#about-second-token-sale').hide();
+    $('.hc-email .steps-form').show();
+    $('.hc-email .email-steps.step-1').show();
+  });
+}
 
 function initBlogShare (){
   var $blogNews = $('.blog-news');
@@ -768,7 +769,7 @@ function emailSubscribe(isMobile) {
   var $emailSection = $('.hc-email'),
       $emailForm = $emailSection.find('.form'),
       $emailWidget = $emailSection.find('.email-widget'),
-      $subscribeBtn = $emailWidget.find('.button-primary[type="submit"]'),
+      $subscribeBtn = $emailWidget.find('.button-primary.init-token-sale-widget[type="submit"]'),
       $emailInput = $emailSection.find('input[type=email]'),
       $emailSteps = $emailSection.find('.email-steps'),
       $stepsform = $emailSection.find('.steps-form'),
@@ -1117,35 +1118,35 @@ function emailSubscribe(isMobile) {
 
 
   // TOKEN SALE BEFORE
-  // $subscribeBtn.click(function(){
-  //   var $thisEmailSect = $(this).parents('.hc-email');
-  //   var $thisForm = $(this).parents('.form');
-  //   var emailVal = $thisForm.find('input[type="email"]').val();
-  //
-  //   $thisForm.submit(function(e){
-  //     e.preventDefault();
-  //   });
-  //
-  //   if(emailVal){
-  //     $thisEmailSect.find('.email-steps.step-17 input[type="text"]').val(emailVal);
-  //     $thisEmailSect.find('.email-widget .form').hide();
-  //     $('#about-second-token-sale').hide();
-  //     // $thisEmailSect.find('.steps-form').show();
-  //     // $thisEmailSect.find('.email-steps.step-1').show();
-  //     $thisEmailSect.find('.success-message').show();
-  //     setTimeout(function(){
-  //       $(window).scrollTop($thisEmailSect.offset().top - ((isMobile) ? 77 : 100));
-  //     }, 300);
-  //     $.ajax({
-  //       type : 'GET',
-  //       url : preTokenSaleMailchimp,
-  //       // url : 'https://market.capitalstake.com',
-  //       data : $thisForm.serialize()
-  //     }).done(function(result){
-  //       // console.log(result);
-  //     });
-  //   }
-  // });
+  $subscribeBtn.click(function(){
+    var $thisEmailSect = $(this).parents('.hc-email');
+    var $thisForm = $(this).parents('.form');
+    var emailVal = $thisForm.find('input[type="email"]').val();
+
+    $thisForm.submit(function(e){
+      e.preventDefault();
+    });
+
+    if(emailVal){
+      $thisEmailSect.find('.email-steps.step-17 input[type="text"]').val(emailVal);
+      $thisEmailSect.find('.email-widget .form').hide();
+      $('#about-second-token-sale').hide();
+      $thisEmailSect.find('.steps-form').show();
+      $thisEmailSect.find('.email-steps.step-1').show();
+      // $thisEmailSect.find('.success-message').show();
+      setTimeout(function(){
+        $(window).scrollTop($thisEmailSect.offset().top - ((isMobile) ? 77 : 100));
+      }, 300);
+      $.ajax({
+        type : 'GET',
+        url : preTokenSaleMailchimp,
+        // url : 'https://market.capitalstake.com',
+        data : $thisForm.serialize()
+      }).done(function(result){
+        // console.log(result);
+      });
+    }
+  });
 
   if (getParameterByName('e')) {
     var $firstEmailWidgetSection = $('.hc-email').first(),

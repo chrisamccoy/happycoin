@@ -6074,3 +6074,8 @@ and (max-width : 335px) {
 #admin-login .hc-chunk {
   max-width: 500px;
 }
+
+/*------------------------------------*/
+.token-widget-container {
+  display: none;
+}

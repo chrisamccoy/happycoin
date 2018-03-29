@@ -3,7 +3,7 @@ extends layout
 block content
   div#hc-content
     div(style="margin-top:5em;")
-      .hc-feature.over-rel.padding.left-align
+      #third-token-sale.hc-feature.over-rel.padding.left-align
         .hc-chunk.hc-intro-text-wrapper
           h2.hc-feature-title Welcome to the Third, Invite-Only Token Sale for Storecoin
           ul(style='list-style:disc; margin-left: 1em;')
@@ -52,3 +52,6 @@ block content
           p.hc-feature-lead Our Third, Invite-Only Token Sale is subject to KYC (Know Your Customer) and AML (Anti-Money Laundering) checks, as well as some limitations on the number and type of investors per country. We will issue the tokens under relevant regulations for each authorized country. 
           p.hc-feature-lead Our aim for Storecoin is to achieve 100,000 wallets in the project before public launch. To accomplish, we’ll be inventing ways to incentivize our community to do work on behalf of the protocol in exchange for token Air-Drops (KYC/AML required). 
           button.hc-button.orange.padding Get Started
+
+    div.token-widget-container
+      include email-widget-v4
