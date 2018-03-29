@@ -63,6 +63,10 @@ button.hc-button {
   color: white;
 }
 
+button.hc-button.padding {
+  padding: 0 30px;
+}
+
 button.hc-button:hover,
 button.hc-button[disabled] {
   opacity: 0.7;
@@ -5716,9 +5720,16 @@ and (max-width : 335px) {
 }
 
 .blog-news .article-h2,
-.blog-news .article-h3 {
+.blog-news .article-h3,
+.blog-news .article-h4 {
   font-family: 'Aleo';
   font-weight: bold;
+}
+
+.blog-news .article-h4 {
+  color: #959595;
+  font-size: 2.6rem;
+  font-weight: lighter;
 }
 
 .blog-news .article-h2 {

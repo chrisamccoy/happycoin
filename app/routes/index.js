@@ -8,6 +8,11 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Storecoin', meta: meta() });
 });
 
+/* GET Tokensale 3 page. */
+router.get('/tokensale3', function(req, res, next) {
+  res.render('tokensale3', { title: 'Storecoin', meta: meta() });
+});
+
 /* GET home page. */
 router.get('/3', function(req, res, next) {
   res.render('coming-soon', { title: 'Storecoin', meta: meta() });
