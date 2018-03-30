@@ -1,6 +1,7 @@
 const fs = require('fs'),
       rimraf = require('rimraf'),
-      MarkdownIt = require('markdown-it');
+      MarkdownIt = require('markdown-it'),
+      fm = require('front-matter');
 
 function command(grunt, cmd, args) {
   return new Promise(resolve => {
@@ -75,9 +76,11 @@ function copyAndConvert(grunt, dir) {
           dirJson = [];
 
     files.forEach(function(file){
+      var info = null;
       if (file.search('.git') < 0) {
         if (file.search('.md') > 0) {
           const doc = readFile(file);
+          info = fm(doc);
           file = file.replace(dir, '');
           createHtmlFile(file, md.render(doc));
           resolve();
@@ -90,7 +93,13 @@ function copyAndConvert(grunt, dir) {
           const item = {};
           if (file.search('.md') > 0) {
             file = file.replace('.md', '');
-            item[file] = { "is_dir" : false };
+            if (info.attributes) {
+              if (info.attributes.title) {
+                item[file] = { "is_dir" : false, "title" : info.attributes.title };
+              }
+            } else {
+              item[file] = { "is_dir" : false, "title" : null };
+            }
           } else {
             item[file] = { "is_dir" : true };
           }
