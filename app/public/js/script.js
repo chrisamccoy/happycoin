@@ -69,11 +69,18 @@ $(document).ready(function(){
 
 function initThirdTokenSale(){
   $('#third-token-sale button').click(function(){
+    $(this).hide();
+    $('#third-token-sale').addClass('hide');
     $('.token-widget-container').show();
     $('.hc-email .email-widget').hide();
     // $('#about-second-token-sale').hide();
     $('.hc-email .steps-form').show();
     $('.hc-email .email-steps.step-1').show();
+  });
+
+  $('.token-widget-container .go-back').click(function(){
+    $(this).find('i').toggleClass('ion-chevron-up ion-chevron-down');
+    $('#third-token-sale').toggleClass('hide');
   });
 }
 

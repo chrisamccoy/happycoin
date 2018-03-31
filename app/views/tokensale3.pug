@@ -3,10 +3,10 @@ extends layout
 block content
   div#hc-content
     div(style="margin-top:5em;")
-      #third-token-sale.hc-feature.over-rel.padding.left-align
+      #third-token-sale.blog-news.hc-feature.over-rel.padding
         .hc-chunk.hc-intro-text-wrapper
-          h2.hc-feature-title Welcome to the Third, Invite-Only Token Sale for Storecoin
-          ul(style='list-style:disc; margin-left: 1em;')
+          h1.article-title Welcome to the Third, Invite-Only Token Sale for Storecoin
+          ul(style="margin-top: 1em;")
             li 
               b Hard Cap:
               |  $7,500,000
@@ -48,10 +48,12 @@ block content
               |  33% 
               br
               span(style="font-size:0.8em; font-weight:light;") (33% to incentivize network participation and protocol development, over a +thousand-year history)
-          p.hc-feature-lead Storecoin is a pre-launch public blockchain protocol therefore, for our Third-Invite Only Token Sale, we are treating Storecoin tokens as securities. This $7.5 Million Sale is aimed only at qualified investors in accordance with laws and regulations of each country that has been authorized to participate.
-          p.hc-feature-lead Our Third, Invite-Only Token Sale is subject to KYC (Know Your Customer) and AML (Anti-Money Laundering) checks, as well as some limitations on the number and type of investors per country. We will issue the tokens under relevant regulations for each authorized country. 
-          p.hc-feature-lead Our aim for Storecoin is to achieve 100,000 wallets in the project before public launch. To accomplish, we’ll be inventing ways to incentivize our community to do work on behalf of the protocol in exchange for token Air-Drops (KYC/AML required). 
+          p Storecoin is a pre-launch public blockchain protocol therefore, for our Third-Invite Only Token Sale, we are treating Storecoin tokens as securities. This $7.5 Million Sale is aimed only at qualified investors in accordance with laws and regulations of each country that has been authorized to participate.
+          p Our Third, Invite-Only Token Sale is subject to KYC (Know Your Customer) and AML (Anti-Money Laundering) checks, as well as some limitations on the number and type of investors per country. We will issue the tokens under relevant regulations for each authorized country. 
+          p Our aim for Storecoin is to achieve 100,000 wallets in the project before public launch. To accomplish, we’ll be inventing ways to incentivize our community to do work on behalf of the protocol in exchange for token Air-Drops (KYC/AML required). 
           button.hc-button.orange.padding Get Started
 
     div.token-widget-container
+      div.go-back
+        i.ion-chevron-up
       include email-widget-v4

@@ -5776,6 +5776,7 @@ and (max-width : 335px) {
 .blog-news ol,
 .blog-news .hc-image {
   margin-bottom: 1em;
+  font-size: 1.4em;
 }
 
 .blog-news ul.nested, .blog-news ol.nested {
@@ -6076,6 +6077,22 @@ and (max-width : 335px) {
 }
 
 /*------------------------------------*/
+#third-token-sale.hide {
+  display: none;
+}
+
 .token-widget-container {
   display: none;
+  background-color: white;
+}
+
+.token-widget-container .go-back {
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.token-widget-container .go-back i {
+  font-size: 2em;
+  cursor: pointer;
 }
