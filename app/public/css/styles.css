@@ -5779,6 +5779,11 @@ and (max-width : 335px) {
   font-size: 1.4em;
 }
 
+.blog-news ul {
+  list-style: disc;
+  margin-left: 1em;
+}
+
 .blog-news ul.nested, .blog-news ol.nested {
   margin-left: 2em;
   font-size: 1em;
