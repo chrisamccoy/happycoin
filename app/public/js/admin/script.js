@@ -144,7 +144,8 @@ function updateOrders(){
 function initOrdersTable() {
   var $table = $('#orders-table'),
   $foldReveal = $table.find('i.fold-reveal[data-fold]'),
-  $checkbox = $table.find('input[type="checkbox"]');
+  $checkbox = $table.find('tbody input[type="checkbox"]'),
+  $headCheckbox = $table.find('thead input[type="checkbox"]');
 
   $foldReveal.click(function(){
     var foldId = $(this).data().fold;
@@ -159,6 +160,7 @@ function initOrdersTable() {
       $parent.addClass('checked');
     } else {
       $parent.removeClass('checked');
+      $headCheckbox.prop({ checked : false });
     }
 
     if ($table.find('tr.checked').length > 0) {
@@ -166,6 +168,15 @@ function initOrdersTable() {
     } else {
       $('#generate-order').attr('disabled', true);
     }
+  });
+
+  $headCheckbox.change(function(){
+    if(this.checked){
+      $checkbox.prop({ checked : true });
+    } else {
+      $checkbox.prop({ checked : false });
+    }
+    $checkbox.trigger('change');
   });
 
   $('#generate-modal').modal({
