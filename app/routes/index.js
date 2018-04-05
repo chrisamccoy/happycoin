@@ -25,7 +25,7 @@ router.get('/consensuscompare', function(req, res, next) {
 
 /* GET consensus compare */
 router.get('/compare', function(req, res, next) {
-  res.redirect('https://docs.google.com/spreadsheets/d/1XEVSpnMD3rOuqhZj7KsDQalfd1i7c3zTkLEkpRaD_tU/edit?usp=sharing');
+  res.render('compare', { title: 'Storecoin', meta: meta() })
 });
 
 /* GET home page. */
