@@ -36,7 +36,10 @@ block content
                   button(type="submit") Submit
             
         div.steps.step-2
-          h3.header Orders List
+          h3.header 
+            a.go-back(style='margin-right: 0.5em;')
+              i.ion-arrow-left-c
+            | Orders List
           div#orders-list
           button.proceed Proceed
 
@@ -162,7 +165,7 @@ block content
           <tr data-id="<%= row.id %>">
             <th style="text-align:center;"><%= i + 1 %></th>
             <td><%= row.name %></td>
-            <td><%= (row.product) ? row.product.name : 'N/A' %></td>
+            <td><%= (row.product) ? row.product.name : '<span style="color: red;"><i class="ion-alert" style="margin-right:1em;"></i>No Product Found</span>' %></td>
             <td style="text-align:center;"><%= row.quantity %></td>
             <td><i class="ion-android-close"></i></td>
           </tr>

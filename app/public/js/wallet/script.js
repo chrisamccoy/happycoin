@@ -798,13 +798,13 @@ function logslider(position, max) {
   // position will be between 0 and 100
   max = max ? max : 139.470001;
   // The result should be between 100 an 10000000
-  if (position < 6) {
+  if (position < 26) {
     var minp = 0;
-    var maxp = 5;
+    var maxp = 25;
     var minv = Math.log(0.00000001);
     var maxv = Math.log(1.00000000);
   } else {
-    var minp = 6;
+    var minp = 26;
     var maxp = 100;
     var minv = Math.log(1.00000001);
     var maxv = Math.log(max);
@@ -825,11 +825,11 @@ function expslider(value, max) {
   // The result should be between 100 an 10000000
   if (value < 1.00000001) {
     var minp = 0;
-    var maxp = 5;
+    var maxp = 25;
     var minv = Math.log(0.00000001);
     var maxv = Math.log(1.00000000);
   } else {
-    var minp = 6;
+    var minp = 26;
     var maxp = 100;
     var minv = Math.log(1.00000001);
     var maxv = Math.log(max);

@@ -9,6 +9,7 @@ body {
 
 a {
   cursor: pointer;
+  color: #e6763c;
 }
 
 button, button[disabled]:hover {
@@ -485,5 +486,5 @@ input[type='checkbox'], input[type='radio'] {
 }
 
 #orders-list tr:hover {
-  background-color: rgba(226, 226, 226, 0.51); 
+  background-color: rgba(226, 226, 226, 0.51);
 }

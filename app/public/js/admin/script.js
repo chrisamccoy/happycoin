@@ -3,7 +3,8 @@ inventory = null,
 data = null,
 formData = [],
 $loading = null,
-resData = null;
+resData = null,
+$orderProcess = null;
 
 $(document).ready(function(){
   loadData();
@@ -145,7 +146,7 @@ function initOrdersTable() {
   var $table = $('#orders-table'),
   $foldReveal = $table.find('i.fold-reveal[data-fold]'),
   $checkbox = $table.find('tbody input[type="checkbox"]'),
-  $headCheckbox = $table.find('thead input[type="checkbox"]'),
+  $headCheckbox = $table.find('thead input[type="checkbox"]');
   $orderProcess = $('.orders-process');
 
   $foldReveal.click(function(){
@@ -180,37 +181,24 @@ function initOrdersTable() {
     $checkbox.trigger('change');
   });
 
-  // $('#generate-modal').modal({
-  //   observeChanges : true,
-  //   onShow : function(){
-  //     var checked = $table.find('tr.checked');
-  //     $(this).find('.orders').text('You have selected '+checked.length+' items.');
-  //     $table.find('tr.checked').each(function(){
-  //       var id = $(this).data().id;
-  //       var order = _.find(data.orders, ['id', id]);
-  //       delete order.product_id;
-  //       formData.push(order);
-  //     });
-  //   }
-  // });
-
   $('#generate-order').click(function(){
-    // $('#generate-modal').modal('show');
-    $loading.fadeIn('fast');
+    formData = [];
 
-    $orderProcess.find('.step-1').hide();
-    $orderProcess.find('.step-2').show();
+    $loading.fadeIn('fast', function(){
+      $orderProcess.find('.step-1').hide();
+      $orderProcess.find('.step-2').show();
 
-    var checked = $table.find('tr.checked');
-    $(this).find('.orders').text('You have selected '+checked.length+' items.');
-    $table.find('tr.checked').each(function(){
-      var id = $(this).data().id;
-      var order = _.find(data.orders, ['id', id]);
-      delete order.product_id;
-      formData.push(order);
+      var checked = $table.find('tr.checked');
+      $(this).find('.orders').text('You have selected '+checked.length+' items.');
+      $table.find('tr.checked').each(function(){
+        var id = $(this).data().id;
+        var order = _.find(data.orders, ['id', id]);
+        delete order.product_id;
+        formData.push(order);
+      });
+
+      initOrderList();
     });
-
-    initOrderList();
   });
 
   $orderProcess.find('.step-2 .proceed').click(function(){
@@ -232,6 +220,11 @@ function initOrdersTable() {
     });
   });
 
+  $orderProcess.find('.step-2 .go-back').click(function(){
+    $orderProcess.find('.step-2').hide();
+    $orderProcess.find('.step-1').show();
+  });
+
   $('.close').click(function(){
     $('.ui.modal').modal('hide');
   });
@@ -242,20 +235,30 @@ function initOrderList(){
     el : '#orders-list',
     data : { rows : formData }
   });
-  $loading.fadeOut('fast', function(){
+  $loading.fadeOut('slow', function(){
     var $list = $('#orders-list'),
     $del = $list.find('tr i.ion-android-close');
 
+    _.each(formData, function(d){
+      if (!d.product) {
+        // console.log('not found');
+        $orderProcess.find('.step-2 .proceed').attr('disabled', true);
+        return false;
+      }
+
+      $orderProcess.find('.step-2 .proceed').removeAttr('disabled');
+    });
+
     $del.click(function(){
-      $loading.fadeIn('fast');
       var $thisRow = $(this).parents('tr'),
       $thisId = $thisRow.data().id;
 
-      _.remove(formData, function(d) {
-        return d.id == $thisId;
+      $loading.fadeIn('fast', function(){
+        _.remove(formData, function(d) {
+          return d.id == $thisId;
+        });
+        initOrderList();
       });
-
-      initOrderList();
     });
   });
 }
