@@ -5,10 +5,32 @@ block content
     //- #hc-intro.hc-feature.over-rel.padding
     //-   .hc-chunk.hc-intro-text-wrapper
     //-     h2.hc-intro-large-lead(style='font-weight: bold; font-size: 2.7em; margin: 2em auto;') Token Sale FAQ
-
+    - var blogTitle = 'How Storecoin Compares to other P2P Protocols and Payments Platforms'
+    - var encodedTitle = encodeURI(blogTitle)
+    - var url = 'http://storeco.in/compare'
     .blog-news.hc-feature.over-rel.padding
       .hc-chunk
+        div.blog-share
+          a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecoin")
+            b
+              i.ion-social-twitter-outline
+          a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+            b
+              i.ion-social-facebook-outline
         h1.article-title How Storecoin Compares to other P2P Protocols and Payments Platforms
+        div.blog-share.fixed
+          a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecoin")
+            b
+              i.ion-social-twitter-outline
+          a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+            b
+              i.ion-social-facebook-outline
         iframe(src='https://docs.google.com/spreadsheets/d/e/2PACX-1vS9ye527UykBaltSI2DY_R_28cB_i4j0zlFLgXdj3r-3PAx05WmlY-YD24ZCVFrNjcyOCoWC8sLldnF/pubhtml?widget=true&headers=false' width="100%", style="height:100vh; margin-top: 2em;", frameBorder="0")
-      
+        div.blog-share.fixed
+          a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecoin")
+            b
+              i.ion-social-twitter-outline
+          a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+            b
+              i.ion-social-facebook-outline
     include email-widget

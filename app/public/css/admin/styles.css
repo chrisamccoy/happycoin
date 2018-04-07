@@ -478,3 +478,12 @@ input[type='checkbox'], input[type='radio'] {
 #create-orders input::placeholder {
   color: #a9abac;
 }
+
+/* Orders List */
+#orders-list tr i.ion-android-close {
+  cursor: pointer;
+}
+
+#orders-list tr:hover {
+  background-color: rgba(226, 226, 226, 0.51); 
+}

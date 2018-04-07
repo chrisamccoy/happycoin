@@ -25,7 +25,11 @@ router.get('/consensuscompare', function(req, res, next) {
 
 /* GET consensus compare */
 router.get('/compare', function(req, res, next) {
-  res.render('compare', { title: 'Storecoin', meta: meta() })
+  var mt = meta({
+    title : 'How Storecoin Compares to other P2P Protocols and Payments Platforms',
+    url : 'http://storeco.in/compare'
+  });
+  res.render('compare', { title: 'Storecoin', meta: meta });
 });
 
 /* GET home page. */

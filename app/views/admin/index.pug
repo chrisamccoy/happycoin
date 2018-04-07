@@ -36,71 +36,79 @@ block content
                   button(type="submit") Submit
             
         div.steps.step-2
+          h3.header Orders List
+          div#orders-list
+          button.proceed Proceed
+
+        div.steps.step-3
           h3.header Orders Summary
           div#orders-summary
-          
-  div#generate-modal.ui.small.modal
-    i.close.ion-close-round
-    div.content
-      div.orders
-      div.alert Would you like to proceed and generate orders?
-      div.modal-buttons
-        button.cancel.close No
-        button.accept Yes
+  //- div#generate-modal.ui.small.modal
+  //-   i.close.ion-close-round
+  //-   div.content
+  //-     div.orders
+  //-     div.alert Would you like to proceed and generate orders?
+  //-     div.modal-buttons
+  //-       button.cancel.close No
+  //-       button.accept Yes
   
   script#orders-table-tpl(type="text/template")
-    <table>
-      <thead>
-        <tr>
-          <th><input type="checkbox"></th>
-          <th></th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Item</th>
-          <th class="qty">Quantity</th>
-          <th class="qty">Quantity in<br>Hand</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% _.each(orders, function(order){ %>
-          <tr data-id="<%= order.id %>">
-            <td><input type="checkbox"></td>
-            <td><i class="ion-plus-circled fold-reveal" data-fold="<%= order.id %>"></i></td>
-            <td><%= order.name %></td>
-            <td><%= order.email %></td>
-            <td class="product"><%= (order.product) ? order.product.name : 'N/A' %></td>
-            <td class="qty"><%= order.quantity %></td>
-            <td class="qty"><%= (order.product) ? order.product.quantity : 'N/A' %></td>
+    <% if (!_.isEmpty(orders)) { %>
+      <table>
+        <thead>
+          <tr>
+            <th><input type="checkbox"></th>
+            <th></th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Item</th>
+            <th class="qty">Quantity</th>
+            <th class="qty">Quantity in<br>Hand</th>
           </tr>
-          <tr class="fold" id="<%= order.id %>">
-            <td colspan="7">
-              <div class="fold-wrapper">
-                <div class="info">
-                  <div class="head">Name</div>
-                  <%= order.name %>
+        </thead>
+        <tbody>
+          <% _.each(orders, function(order){ %>
+            <tr data-id="<%= order.id %>">
+              <td><input type="checkbox"></td>
+              <td><i class="ion-plus-circled fold-reveal" data-fold="<%= order.id %>"></i></td>
+              <td><%= order.name %></td>
+              <td><%= order.email %></td>
+              <td class="product"><%= (order.product) ? order.product.name : 'N/A' %></td>
+              <td class="qty"><%= order.quantity %></td>
+              <td class="qty"><%= (order.product) ? order.product.quantity : 'N/A' %></td>
+            </tr>
+            <tr class="fold" id="<%= order.id %>">
+              <td colspan="7">
+                <div class="fold-wrapper">
+                  <div class="info">
+                    <div class="head">Name</div>
+                    <%= order.name %>
+                  </div>
+                  <div class="info">
+                    <div class="head">Email</div>
+                    <%= order.email %>
+                  </div>
+                  <div class="info">
+                    <div class="head">Address</div><%= order.address %>, <%= order.city %>, <%= order.state %>, <%= order.country %>, <%= order.zipcode %>
+                  </div>
+                  <div class="info">
+                    <div class="head">Product</div><%= (order.product) ? order.product.name : 'N/A' %>
+                  </div>
+                  <div class="info">
+                    <div class="head">Quantity</div><%= order.quantity %>
+                  </div>
+                  <div class="info">
+                    <div class="head">SKU</div><%= (order.product) ? order.product.sku : 'N/A' %>
+                  </div>
                 </div>
-                <div class="info">
-                  <div class="head">Email</div>
-                  <%= order.email %>
-                </div>
-                <div class="info">
-                  <div class="head">Address</div><%= order.address %>, <%= order.city %>, <%= order.state %>, <%= order.country %>, <%= order.zipcode %>
-                </div>
-                <div class="info">
-                  <div class="head">Product</div><%= (order.product) ? order.product.name : 'N/A' %>
-                </div>
-                <div class="info">
-                  <div class="head">Quantity</div><%= order.quantity %>
-                </div>
-                <div class="info">
-                  <div class="head">SKU</div><%= (order.product) ? order.product.sku : 'N/A' %>
-                </div>
-              </div>
-            </td>
-          </tr>
-        <% }) %>
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <h2 style="margin-top: 1em;">No Orders Found</h2>
+    <% } %>
   
   script#orders-summary-tpl(type="text/template")
     <% _.each(data, function(item){ %>
@@ -137,3 +145,27 @@ block content
         </div>
       </div>
     <% }) %>
+
+  script#orders-list-tpl(type="text/template")
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align:center;">#</th>
+          <th>Name</th>
+          <th>Product Name</th>
+          <th style="text-align:center;">Quantity</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% _.each(rows, function(row, i){ %>
+          <tr data-id="<%= row.id %>">
+            <th style="text-align:center;"><%= i + 1 %></th>
+            <td><%= row.name %></td>
+            <td><%= (row.product) ? row.product.name : 'N/A' %></td>
+            <td style="text-align:center;"><%= row.quantity %></td>
+            <td><i class="ion-android-close"></i></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>

@@ -93,7 +93,7 @@ function initCreateOrders() {
       contentType: "application/json",
       complete: function(response){
         resData = response.responseJSON;
-        console.log(resData);
+        // console.log(resData);
         if (resData.success == 1) {
           $form.find("input").val("");
           updateOrders();
@@ -119,7 +119,7 @@ function initOrders() {
     }
   });
 
-  // console.log(data.orders);
+  // console.log(data);
 
   $loading.fadeOut('fast', function(){
     $('.orders-process .step-1').show();
@@ -145,7 +145,8 @@ function initOrdersTable() {
   var $table = $('#orders-table'),
   $foldReveal = $table.find('i.fold-reveal[data-fold]'),
   $checkbox = $table.find('tbody input[type="checkbox"]'),
-  $headCheckbox = $table.find('thead input[type="checkbox"]');
+  $headCheckbox = $table.find('thead input[type="checkbox"]'),
+  $orderProcess = $('.orders-process');
 
   $foldReveal.click(function(){
     var foldId = $(this).data().fold;
@@ -179,31 +180,45 @@ function initOrdersTable() {
     $checkbox.trigger('change');
   });
 
-  $('#generate-modal').modal({
-    observeChanges : true,
-    onShow : function(){
-      var checked = $table.find('tr.checked');
-      $(this).find('.orders').text('You have selected '+checked.length+' items.');
-      $table.find('tr.checked').each(function(){
-        var id = $(this).data().id;
-        var order = _.find(data.orders, ['id', id]);
-        delete order.product_id;
-        formData.push(order);
-      });
-    }
-  });
+  // $('#generate-modal').modal({
+  //   observeChanges : true,
+  //   onShow : function(){
+  //     var checked = $table.find('tr.checked');
+  //     $(this).find('.orders').text('You have selected '+checked.length+' items.');
+  //     $table.find('tr.checked').each(function(){
+  //       var id = $(this).data().id;
+  //       var order = _.find(data.orders, ['id', id]);
+  //       delete order.product_id;
+  //       formData.push(order);
+  //     });
+  //   }
+  // });
 
   $('#generate-order').click(function(){
-    $('#generate-modal').modal('show');
-  });
-
-  $('#generate-modal .accept').click(function(){
-    var $orderProcess = $('.orders-process');
-    $('#generate-modal').modal('hide');
+    // $('#generate-modal').modal('show');
     $loading.fadeIn('fast');
 
     $orderProcess.find('.step-1').hide();
     $orderProcess.find('.step-2').show();
+
+    var checked = $table.find('tr.checked');
+    $(this).find('.orders').text('You have selected '+checked.length+' items.');
+    $table.find('tr.checked').each(function(){
+      var id = $(this).data().id;
+      var order = _.find(data.orders, ['id', id]);
+      delete order.product_id;
+      formData.push(order);
+    });
+
+    initOrderList();
+  });
+
+  $orderProcess.find('.step-2 .proceed').click(function(){
+    $('#generate-modal').modal('hide');
+    $loading.fadeIn('fast');
+
+    $orderProcess.find('.step-2').hide();
+    $orderProcess.find('.step-3').show();
 
     $.ajax({
       url: '/admin/submit-orders',
@@ -222,7 +237,31 @@ function initOrdersTable() {
   });
 }
 
+function initOrderList(){
+  templateRender({
+    el : '#orders-list',
+    data : { rows : formData }
+  });
+  $loading.fadeOut('fast', function(){
+    var $list = $('#orders-list'),
+    $del = $list.find('tr i.ion-android-close');
+
+    $del.click(function(){
+      $loading.fadeIn('fast');
+      var $thisRow = $(this).parents('tr'),
+      $thisId = $thisRow.data().id;
+
+      _.remove(formData, function(d) {
+        return d.id == $thisId;
+      });
+
+      initOrderList();
+    });
+  });
+}
+
 function initOrderSummary(){
+  console.log(resData);
   $loading.fadeOut('fast', function(){
     templateRender({
       el : '#orders-summary',
