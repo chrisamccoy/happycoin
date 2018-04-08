@@ -69,13 +69,15 @@ $(document).ready(function(){
 
 function initThirdTokenSale(){
   $('#third-token-sale button').click(function(){
-    $(this).hide();
-    $('#third-token-sale').addClass('hide');
-    $('.token-widget-container').show();
-    $('.hc-email .email-widget').hide();
-    // $('#about-second-token-sale').hide();
-    $('.hc-email .steps-form').show();
-    $('.hc-email .email-steps.step-1').show();
+    $('html, body').animate({ scrollTop : 0 }, 400, function(){
+      $('#third-token-sale button').hide();
+      $('.hc-email .email-widget').hide();
+      $('#third-token-sale').addClass('hide');
+      $('.token-widget-container').show();
+      // $('#about-second-token-sale').hide();
+      $('.hc-email .steps-form').show();
+      $('.hc-email .email-steps.step-1').show();
+    });
   });
 
   $('.token-widget-container .go-back').click(function(){
