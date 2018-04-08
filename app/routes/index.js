@@ -14,6 +14,11 @@ router.get('/tokensale3', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/tenyears', function(req, res, next) {
+  res.render('coming-soon', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
 router.get('/3', function(req, res, next) {
   res.render('coming-soon', { title: 'Storecoin', meta: meta() });
 });
