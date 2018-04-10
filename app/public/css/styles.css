@@ -6122,4 +6122,10 @@ and (max-width : 335px) {
   #third-token-sale .hc-button {
     width: 100%;
   }
+
+  #accredited {
+    font-size: 1.1em;
+    overflow: scroll;
+    height: 90vh;
+  }
 }
