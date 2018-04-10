@@ -73,7 +73,7 @@ function copyAndConvert(grunt, dir) {
 
     const md = new MarkdownIt(),
           files = getFiles(dir),
-          dirJson = [];
+          dirJson = {};
 
     files.forEach(function(file){
       var info = null;
@@ -90,27 +90,26 @@ function copyAndConvert(grunt, dir) {
 
         if (file.search('README.md') < 0) {
           file = file.substring(1);
-          const item = {};
+          // const item = {};
           if (file.search('.md') > 0) {
             file = file.replace('.md', '');
             if (info.attributes) {
               if (info.attributes.title) {
-                item[file] = { "is_dir" : false, "title" : info.attributes.title };
+                dirJson[file] = { "is_dir" : false, "title" : info.attributes.title };
               }
             } else {
-              item[file] = { "is_dir" : false, "title" : null };
+              dirJson[file] = { "is_dir" : false, "title" : null };
             }
           } else {
-            item[file] = { "is_dir" : true };
+            dirJson[file] = { "is_dir" : true };
           }
-          dirJson.push(item);
         }
       }
     });
 
     // console.log(dirJson);
 
-    fs.writeFile("./views/developers/dir_strut.json", JSON.stringify(dirJson), (err) => {
+    fs.writeFile("./views/developers/directory.json", JSON.stringify(dirJson), (err) => {
       if (err) {
         console.error(err);
         return;
