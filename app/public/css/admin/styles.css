@@ -28,6 +28,10 @@ input[type='checkbox'], input[type='radio'] {
   cursor: pointer;
 }
 
+select {
+  font-size: 1em;
+}
+
 .ui.modal {
   font-size: 15px;
 }

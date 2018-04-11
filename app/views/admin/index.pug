@@ -23,16 +23,39 @@ block content
               div#create-orders
                 h3 Create Order
                 form
+                  label Email
                   input(type="email", name="email", placeholder="Email")
+                  
+                  label Name
                   input(type="text", name="name", placeholder="Name")
+                  
+                  label Address
                   input(type="text", name="address", placeholder="Address")
-                  input(type="text", name="city", placeholder="City")
+                    
+                  label Address Line 2
+                  input(type="text", name="address2", placeholder="Address Line 2")
+                  
+                  label Country
+                  select#country-select(name="country")
+                  //- input(type="text", name="country", placeholder="Country")
+                    
+                  label State
+                  select#state-select(style="display:none;")
                   input(type="text", name="state", placeholder="State")
+                  
+                  label City
+                  input(type="text", name="city", placeholder="City")
+                  
+                  label Zipcode
                   input(type="text", name="zipcode", placeholder="Zipcode")
-                  input(type="text", name="country", placeholder="Country")
-                  input#autocomplete(type="text", placeholder="Select Product")
+                  
+                  label Product
+                  select#product-select
                   input(type="text", name="product_id", placeholder="Product", hidden)
+                  
+                  label Quantity
                   input(type="number", name="quantity", placeholder="Quantity")
+                  
                   button(type="submit") Submit
             
         div.steps.step-2
@@ -172,3 +195,9 @@ block content
         <% }) %>
       </tbody>
     </table>
+
+  script#product-select-tpl(type="text/template")
+    <option value=""><%= select %></option>
+    <% _.each(rows, function(row){ %>
+      <option value="<%= row.id %>"><%= row.name %></option>
+    <% }) %>
