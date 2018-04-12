@@ -4121,7 +4121,7 @@ and (max-width : 335px) {
 }
 
 #hc-milestones .milestones .each-milestone {
-  max-width: 700px;
+  max-width: 800px;
   padding: 4em 0em;
   margin-top: -2px;
   width: 100%;
@@ -4181,7 +4181,7 @@ and (max-width : 335px) {
   border-bottom: 2px solid #cee3c0;
   border-bottom-left-radius: 70px;
   border-top-left-radius: 70px;
-  margin-right: 140px;
+  margin-right: 65px;
 }
 
 #hc-milestones .milestones .each-milestone.right {
@@ -4190,7 +4190,7 @@ and (max-width : 335px) {
   border-bottom: 2px solid #cee3c0;
   border-top-right-radius: 70px;
   border-bottom-right-radius: 70px;
-  margin-left: 140px;
+  margin-left: 65px;
 }
 
 #hc-milestones .milestones .each-milestone .wrapper {
@@ -4211,6 +4211,7 @@ and (max-width : 335px) {
 
 #hc-milestones .milestones .each-milestone .wrapper .list .item {
   display: flex;
+  margin-bottom: 0.5em;
 }
 
 #hc-milestones .milestones .each-milestone .wrapper .list .item .ion-record {
@@ -4219,24 +4220,92 @@ and (max-width : 335px) {
   color: #ec834d;
 }
 
-#hc-milestones .milestones .each-milestone.left .wrapper .list .item .ion-record {
+#hc-milestones .milestones .each-milestone .wrapper .list .item .ion-record {
   margin-right: 1em;
 }
 
-#hc-milestones .milestones .each-milestone.right .wrapper .list .item .ion-record {
+/* #hc-milestones .milestones .each-milestone.right .wrapper .list .item .ion-record {
   margin-left: 1em;
-}
+} */
 
-#hc-milestones .milestones .each-milestone.right .wrapper .list .item {
+/* #hc-milestones .milestones .each-milestone.right .wrapper .list .item {
   flex-direction: row-reverse;
 }
 
 #hc-milestones .milestones .each-milestone.right .wrapper .list .item span {
   text-align: right;
-}
+} */
 
 #hc-milestones .milestones .each-milestone.right .wrapper .head {
   text-align: right;
+}
+
+.pulse {
+  width: 100px;
+  height: 100px;
+  /* margin: 220px auto 0; */
+  position: absolute;
+  left: -50px;
+  top: calc(50% - 50px);
+}
+/* .pulse .phone {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8.5px;
+  height: 13px;
+  margin: -10.5px 0 0 -6.25px;
+  border: 2px solid black;
+  border-width: 4px 2px;
+  display: inline-block;
+  border-radius: 2.5px;
+  opacity: 0.87;
+  background: white;
+  z-index: 2;
+} */
+.pulse div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 4px solid #ec834e;
+  border-radius: 50%;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-iteration-count: infinite;
+  animation-duration: 3200ms;
+  opacity: 0;
+}
+.pulse div.one {
+  animation-name: pulse;
+}
+.pulse div.two {
+  animation-name: pulse;
+  animation-delay: 1000ms;
+}
+.pulse div.three {
+  animation-name: pulse;
+  animation-delay: 2000ms;
+}
+@keyframes pulse {
+  0% {
+    margin: -4px 0 0 -4px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  25% {
+    margin: -17px 0 0 -17px;
+    width: 26px;
+    height: 26px;
+    opacity: 1;
+    border-size: 4px;
+  }
+  100% {
+    margin: -51px 0 0 -51px;
+    width: 96px;
+    height: 96px;
+    opacity: 0;
+    border-size: 6px;
+  }
 }
 
 @media only screen and (max-width: 700px) {
