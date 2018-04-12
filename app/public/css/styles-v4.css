@@ -1,3 +1,5 @@
+/* Duplicated before recreating milestones  */
+
 @font-face {
  font-family: 'Aleo';
  font-style: normal;
@@ -4113,183 +4115,147 @@ and (max-width : 335px) {
 }
 
 /*------------------------------------*/
-#hc-milestones .milestones {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-#hc-milestones .milestones .each-milestone {
-  max-width: 700px;
-  padding: 4em 0em;
-  margin-top: -2px;
-  width: 100%;
-  position: relative;
-}
-
-#hc-milestones .milestones .each-milestone::after {
-  content: '';
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  top:calc(50% - 11px);
-  background-color: #ec834d;
-  position: absolute;
-}
-
-#hc-milestones .milestones .each-milestone.left::after {
-  left: calc(0px - 11px);
-}
-
-#hc-milestones .milestones .each-milestone.right::after {
-  right: calc(0px - 11px);
-}
-
-#hc-milestones .milestones .each-milestone.first {
-  padding-top: 1em;
-  border-top: none!important;
-  border-top-left-radius: 0px !important;
+#hc-milestones .year {
+  color: white;
+  text-align: center;
+  margin: 1em;
   margin-top: 0px;
 }
 
-#hc-milestones .milestones .each-milestone.first::before {
-  content: '';
-  position: absolute;
-  width: 2px;
-  height: 100%;
-  top: -100%;
-  left: -2px;
-  background-color: #cee3c0;
-}
-
-#hc-milestones .milestones .each-milestone.last::before {
-  position: absolute;
-  content: '';
-  bottom: calc(-100% - 2px);
-  left:-72px;
-  width: 70px;
-  height: 100%;
-  border-top: 2px solid #cee3c0;
-  border-left: 2px solid #cee3c0;
-  border-top-left-radius: 70px;
-}
-
-#hc-milestones .milestones .each-milestone.left {
-  border-top: 2px solid #cee3c0;
-  border-left: 2px solid #cee3c0;
-  border-bottom: 2px solid #cee3c0;
-  border-bottom-left-radius: 70px;
-  border-top-left-radius: 70px;
-  margin-right: 140px;
-}
-
-#hc-milestones .milestones .each-milestone.right {
-  border-top: 2px solid #cee3c0;
-  border-right: 2px solid #cee3c0;
-  border-bottom: 2px solid #cee3c0;
-  border-top-right-radius: 70px;
-  border-bottom-right-radius: 70px;
-  margin-left: 140px;
-}
-
-#hc-milestones .milestones .each-milestone .wrapper {
-  padding: 0px 4em;
-}
-
-#hc-milestones .milestones .each-milestone .wrapper .head {
-  font-size: 2em;
-  color: #cee3c0;
-  text-transform: uppercase;
-  margin-bottom: 0.5em;
-  letter-spacing: 5px;
-}
-
-#hc-milestones .milestones .each-milestone .wrapper .list {
-  font-size: 1.1em;
-}
-
-#hc-milestones .milestones .each-milestone .wrapper .list .item {
+#hc-milestones .month {
+  position: relative;
   display: flex;
+  margin: 1em;
 }
 
-#hc-milestones .milestones .each-milestone .wrapper .list .item .ion-record {
-  font-size: 0.1em;
-  margin-top: 0.7em;
-  color: #ec834d;
+#hc-milestones .month::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  display: block;
+  height: 1px;
+  background: white;
+  top: 20px;
+  z-index: 1;
 }
 
-#hc-milestones .milestones .each-milestone.left .wrapper .list .item .ion-record {
-  margin-right: 1em;
+#hc-milestones .month h3 {
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0 0.5em;
+  background: white;
+  z-index: 2;
 }
 
-#hc-milestones .milestones .each-milestone.right .wrapper .list .item .ion-record {
-  margin-left: 1em;
+#hc-milestones .milestones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-#hc-milestones .milestones .each-milestone.right .wrapper .list .item {
-  flex-direction: row-reverse;
+#hc-milestones .milestones .each-milestone {
+  background: white;
+  max-width: calc(50% - 2em - 4px);
+  width: 100%;
+  margin: 1em;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #f2f3f4;
+  box-shadow: 2px 2px 5px 0 rgba(46,61,73,.15);
 }
 
-#hc-milestones .milestones .each-milestone.right .wrapper .list .item span {
+#hc-milestones .milestones .icon-number {
+  display: flex;
+  padding: 0.5em 1em;
+}
+
+#hc-milestones .milestones .icon-number p {
+  width: 100%;
+  margin: 0px;
+  color:grey;
+  font-size: 2em;
+}
+
+#hc-milestones .milestones .icon-number .number {
+  text-align: left;
+  max-width: 45px;
+  color: #e97845;
+}
+
+#hc-milestones .milestones .icon-number .icon {
   text-align: right;
+  flex: auto;
+  color: grey;
 }
 
-#hc-milestones .milestones .each-milestone.right .wrapper .head {
-  text-align: right;
+#hc-milestones .milestones .icon-number .icon.green {
+  color: green;
+}
+
+#hc-milestones .milestones .achievements {
+  padding: 0.5em 1em;
+  text-align: left;
+}
+
+#hc-milestones .milestones .achievements .title {
+  font-size: 1.5em;
+  color: #b4b0b0;
+  margin-bottom: 0.5em;
+}
+
+#hc-milestones .each-month {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+#hc-milestones .each-year.green,
+#hc-milestones .each-year.green .month h3 {
+  background-color: #c6dfb7;
+}
+
+#hc-milestones .each-year.orange,
+#hc-milestones .each-year.orange .month h3 {
+  background-color: #e97844;
+}
+
+#hc-milestones .each-year.dark-green,
+#hc-milestones .each-year.dark-green .month h3 {
+  background-color: #8db378;
+}
+
+#hc-milestones .each-year.yellow,
+#hc-milestones .each-year.yellow .month h3 {
+  background-color: #fcc220;
+}
+
+#hc-milestones .each-year {
+  padding: 1em;
 }
 
 @media only screen and (max-width: 700px) {
-  #hc-milestones .hc-feature-lead {
-    max-width: 260px;
-  }
-
   #hc-milestones .milestones .each-milestone {
-    margin: 0px !important;
-    margin-left: 70px !important;
-    border: none !important;
-    border-left: 2px solid #cee3c0 !important;
-    border-radius: 0px !important;
-    padding: 2em 0em;
+    max-width: 100%;
+    margin: 0.5em 0;
   }
 
-  #hc-milestones .milestones .each-milestone .wrapper {
-    width: calc(100% - 1em - 40px) !important;
-    padding: 0px 0.5em !important;
+  #hc-milestones .milestones .icon-number p {
+    font-size: 1.5em;
   }
 
-  #hc-milestones .milestones .each-milestone .wrapper .head {
-    text-align: center!important;
+  #hc-milestones .milestones .achievements .title {
+    font-size: 1.2em;
   }
 
-  #hc-milestones .milestones .each-milestone .wrapper .list .item span {
-    text-align: left !important;
+  #hc-milestones .milestones .icon-number {
+    padding: 0.5em;
   }
 
-  #hc-milestones .milestones .each-milestone .wrapper .list .item {
-    flex-direction: row !important;
-  }
-
-  #hc-milestones .milestones .each-milestone::after {
-    top: 45px;
-    left: -11px !important;
-    right: none !important;
-  }
-
-  #hc-milestones .milestones .each-milestone.first::after {
-    top: 30px !important;
-  }
-
-  #hc-milestones .milestones .each-milestone .wrapper .list .item .ion-record {
-    margin-right: 1em!important;
-    margin-left: 0px!important;
-  }
-
-  #hc-milestones .milestones .each-milestone.last::before {
-    bottom: -100%;
-    left: -2px;
-    border-top: none;
-    border-top-left-radius: 0px;
+  #hc-milestones .milestones .achievements {
+    padding: 0.5em 0.7em;
   }
 }
 

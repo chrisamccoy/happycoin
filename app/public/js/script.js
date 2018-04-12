@@ -1691,9 +1691,9 @@ function getParameterByName(name, url) {
 }
 
 function fadeInContent () {
-  if ($('.each-milestone').length) {
+  if ($('#hc-milestones .each-milestone .wrapper').length) {
     window.sr = ScrollReveal();
-    sr.reveal('.each-milestone', {
+    sr.reveal('#hc-milestones .each-milestone .wrapper', {
       duration: 800, origin: 'bottom', distance : '40px', scale : 1
     });
     $(window).scroll(function(){
@@ -1701,7 +1701,7 @@ function fadeInContent () {
           introHeight = $('#intro-section').height();
       // console.log(scrollVal < introHeight);
       // console.log(window.sr);
-      sr.reveal('.each-milestone', {
+      sr.reveal('#hc-milestones .each-milestone .wrapper', {
         reset : false
       });
     });
