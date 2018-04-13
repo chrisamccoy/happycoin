@@ -83,6 +83,11 @@ router.get('/validate', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/blockfin', function(req, res, next) {
+  res.render('blockfin', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
 router.get('/dguard', function(req, res, next) {
   res.render('security-guard-app', { title: 'Storecoin', meta: meta() });
 });
