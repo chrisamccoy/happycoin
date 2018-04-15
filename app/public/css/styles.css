@@ -5837,6 +5837,10 @@ and (max-width : 335px) {
   word-wrap: break-word;
 }
 
+.blog-news iframe {
+  margin: 2em 0px;
+}
+
 .blog-news p.underline {
   border-bottom: 1px solid;
 }
