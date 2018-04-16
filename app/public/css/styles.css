@@ -5837,6 +5837,11 @@ and (max-width : 335px) {
   word-wrap: break-word;
 }
 
+.blog-news.disclaimer p {
+  font-size: 13px;
+  color:#666;
+}
+
 .blog-news iframe {
   margin: 2em 0px;
 }
