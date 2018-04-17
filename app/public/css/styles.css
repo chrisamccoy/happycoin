@@ -3563,6 +3563,19 @@ and (max-width : 335px) {
 #hc-footer a, #hc-footer p {
   color: white;
 }
+
+#hc-footer .disclaimer {
+  margin-top: 2em;
+}
+
+#hc-footer .disclaimer p {
+  font-size: 11px;
+  line-height: 1.1;
+}
+
+#hc-footer .disclaimer p:not(:last-child) {
+  margin-bottom: 5px;
+}
 /* #hc-footer  */
 
 @media only screen and (max-width: 700px) {
@@ -5838,7 +5851,7 @@ and (max-width : 335px) {
 }
 
 .blog-news.disclaimer p {
-  font-size: 13px;
+  font-size: 11px;
   color:#666;
 }
 
