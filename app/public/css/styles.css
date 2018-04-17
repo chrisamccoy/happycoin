@@ -3563,19 +3563,6 @@ and (max-width : 335px) {
 #hc-footer a, #hc-footer p {
   color: white;
 }
-
-#hc-footer .disclaimer {
-  margin-top: 2em;
-}
-
-#hc-footer .disclaimer p {
-  font-size: 11px;
-  line-height: 1.1;
-}
-
-#hc-footer .disclaimer p:not(:last-child) {
-  margin-bottom: 5px;
-}
 /* #hc-footer  */
 
 @media only screen and (max-width: 700px) {
@@ -6237,4 +6224,26 @@ and (max-width : 335px) {
     overflow: scroll;
     height: 90vh;
   }
+}
+
+/* --------------------------------- */
+#hc-disclaimer {
+  margin-top: 2em;
+  color: white;
+  padding: 1.4em 0px;
+  margin: 0px;
+  background: #525252;
+}
+
+#hc-disclaimer .container {
+  max-width: 1140px;
+}
+
+#hc-disclaimer p {
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+#hc-disclaimer p:not(:last-child) {
+  margin-bottom: 5px;
 }
