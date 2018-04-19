@@ -144,7 +144,7 @@ function initInviteSale() {
       $modal = $('#sale-invite-modal');
 
   $inviteSale.click(function(){
-    if (window.location.pathname === '/') {
+    if (window.location.host === 'storeco.in' && window.location.pathname === '/') {
       var id = $(this).data().id;
       var $tokenSale = ($(id).length) ? $(id) : $('#tokensale-bottom');
       if($tokenSale.length) {
