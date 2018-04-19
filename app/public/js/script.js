@@ -140,15 +140,27 @@ function initFullscreenImage (isMobile) {
 
 function initInviteSale() {
   var $navWrap = $('#hc-nav-wrapper'),
-      $inviteSale = $('.sale-invite');
+      $inviteSale = $('.sale-invite'),
+      $modal = $('#sale-invite-modal');
 
   $inviteSale.click(function(){
-    // console.log($(this).data().id);
-    var id = $(this).data().id;
-    var $tokenSale = ($(id).length) ? $(id) : $('#tokensale-bottom');
-    if($tokenSale.length) {
-      $('html, body').animate({ scrollTop : $tokenSale.offset().top - $navWrap.height() }, 600);
+    if (window.location.pathname === '/') {
+      var id = $(this).data().id;
+      var $tokenSale = ($(id).length) ? $(id) : $('#tokensale-bottom');
+      if($tokenSale.length) {
+        $('html, body').animate({ scrollTop : $tokenSale.offset().top - $navWrap.height() }, 600);
+      }
+    } else {
+      $modal.modal('show');
     }
+  });
+
+  $modal.find('i.ion-android-close').click(function(){
+    $modal.modal('hide');
+  });
+
+  $modal.find('form').submit(function(){
+    $modal.modal('hide');
   });
 }
 

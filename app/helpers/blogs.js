@@ -1,5 +1,14 @@
 var blogs = [
   {
+      slug: 'storecoin-software-development-protocol-inpired-by-impenetrable-fort-knox',
+      title: 'Storecoin Software Development Protocol Inspired by Impenetrable Fort Knox',
+      desc: 'Amazon Blockchain Strategy Group boosts efforts to secure code',
+      img: 'https://storeco.in/images/blog/fort-knox.jpeg',
+      template: 'blog-software-development-protocol',
+      readTime : '5 min read',
+      date : 'April 17, 2018'
+  },
+  {
       slug: 'storecoin-achieves-10,000-transactions-per-second-with-burst-traffic-and-21-validator-modes',
       title: 'Storecoin Achieves +10,000 Transactions-Per-Second with Burst Traffic and 21 Validator Nodes',
       desc: 'Storecoin’s mission is to become zero-fee payment infrastructure for the global internet. The Dynamic Proof of Stake (DyPoS) consensus engine powering the Storecoin infrastructure is designed to process thousands of transactions per second. When transactions arrive continuously but at lower rates, the consensus engine is capable of handling the incoming transactions, but how does it behave when transactions come in bursts? When Storecoin is used as the payment platform by merchants and app developers, the transactions are likely to come in bursts from multiple sources. So, we need to characterize the behavior of the consensus engine under such circumstances.',

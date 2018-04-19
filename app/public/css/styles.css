@@ -621,6 +621,23 @@ input[type=number]::-webkit-outer-spin-button {
   margin-bottom : 1em;
 }
 
+.ui.modal {
+  background: none;
+  position: relative;
+}
+
+.ui.modal>.content {
+  width: calc(100% - 3.0rem);
+}
+
+.ui.modal .ion-android-close {
+  position: absolute;
+  right: -25px;
+  top: -25px;
+  font-size: 3em;
+  color: white;
+}
+
 @media only screen and (max-width: 1024px)  {
   .desktop-image {
     display: none;
@@ -5850,7 +5867,8 @@ and (max-width : 335px) {
   border-bottom: 1px solid;
 }
 
-.blog-news p a {
+.blog-news p a,
+.blog-news li a {
   color: black;
   text-decoration: underline;
 }
@@ -5885,7 +5903,7 @@ and (max-width : 335px) {
 }
 
 .blog-news ul.nested, .blog-news ol.nested {
-  margin-left: 2em;
+  margin-left: 1em;
   font-size: 1em;
 }
 
@@ -6246,4 +6264,21 @@ and (max-width : 335px) {
 
 #hc-disclaimer p:not(:last-child) {
   margin-bottom: 5px;
+}
+
+/* --------------------------------- */
+#sale-invite-modal form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px;
+  font-size: 1.5em;
+}
+
+#sale-invite-modal form input {
+  margin: 0px;
+}
+
+#sale-invite-modal i.ion-android-close {
+  cursor: pointer;
 }
