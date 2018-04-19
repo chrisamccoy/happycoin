@@ -6282,3 +6282,31 @@ and (max-width : 335px) {
 #sale-invite-modal i.ion-android-close {
   cursor: pointer;
 }
+
+#sale-invite-modal form input[type="submit"] {
+  margin-left: 1em;
+}
+
+@media only screen and (max-width: 700px) {
+  #sale-invite-modal form {
+    flex-direction: column;
+  }
+
+  #sale-invite-modal form input {
+    margin: 0px;
+    width: 100%;
+  }
+
+  #sale-invite-modal form input[type="submit"] {
+    margin-left: 0px;
+  }
+
+  #sale-invite-modal form input[type="email"] {
+    margin-bottom: 0.5em;
+  }
+
+  #sale-invite-modal .ion-android-close {
+    right: 0px;
+    top: -30px;
+  }
+}
