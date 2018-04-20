@@ -29,11 +29,19 @@ app.use(function(req, res, next) {
   var host = req.headers.host;
 
   res.locals.URL = function(val) {
-    if (host.search('news.storeco.in') >= 0) {
-      return "https://storeco.in" + val;
-    }
+    var url = val,
+        subdomains = [
+          'news.storeco.in',
+          'tokensale3.storeco.in'
+        ];
 
-    return val;
+    subdomains.forEach(function(sd) {
+      if (host.search(sd) >= 0) {
+        url = "https://storeco.in" + val;
+      }
+    });
+
+    return url;
   };
 
   next();
