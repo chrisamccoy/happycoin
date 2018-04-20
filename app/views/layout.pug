@@ -20,8 +20,8 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1')
 
     link(rel='icon', type='image/png', href='/images/favicon.png')
-    link(rel='stylesheet', href='/assets/styles.css?v=1.55')
-    script(async, src='/assets/script.js?v=1.55')
+    link(rel='stylesheet', href='/assets/styles.css?v=1.56')
+    script(async, src='/assets/script.js?v=1.56')
 
   body
     - var className = ''
@@ -134,3 +134,8 @@ html
         form(action='https://storeco.us16.list-manage.com/subscribe/post?u=49990f91819fec5293c84bbe8&id=2aca88b02e', method='POST', target='_blank', novalidate='')
           input.u-full-width(type='email', name='EMAIL', placeholder='Enter your email address')
           input.button-primary(type='submit', value='SUBMIT')
+    
+    div#info-image-modal.ui.large.modal
+      i.ion-android-close
+      div.content
+        div.image-modal-container

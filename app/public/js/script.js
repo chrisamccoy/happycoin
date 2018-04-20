@@ -117,7 +117,28 @@ function initIntroHeight (isMobile) {
 function initFullscreenImage (isMobile) {
   var $infoFullScreen = $('.info-fullscreen'),
       $infoModal = $('#info-image-modal');
+
   $infoFullScreen.click(function(){
+    var html = $(this).html();
+    if (isMobile) {
+      $infoModal.find('.content .image-modal-container')
+                .css('width', 'auto')
+                .html('')
+                .append(html);
+    } else {
+      $infoModal.find('.content .image-modal-container').html('').append(html);
+    }
+    $infoModal.modal({
+      onShow : function(){
+        $(window).trigger('resize');
+      }
+    }).modal('show');
+    $infoModal.find('i.ion-android-close').click(function(){
+      $infoModal.modal('hide');
+    });
+  });
+
+  $('.blog-news .hc-image').click(function(){
     var html = $(this).html();
     if (isMobile) {
       $infoModal.find('.content .image-modal-container')

@@ -5869,8 +5869,8 @@ and (max-width : 335px) {
 
 .blog-news p a,
 .blog-news li a {
-  color: black;
-  text-decoration: underline;
+  color: #466333;
+  border-bottom: 1px solid;
 }
 
 .blog-news .caption {
@@ -6230,6 +6230,10 @@ and (max-width : 335px) {
 .token-widget-container .go-back i {
   font-size: 2em;
   cursor: pointer;
+}
+
+#accredited ul > li {
+  margin-bottom: 1em;
 }
 
 @media only screen and (max-width: 700px) {
