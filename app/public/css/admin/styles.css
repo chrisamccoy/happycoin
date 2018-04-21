@@ -1,0 +1,494 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  position : relative;
+  margin: 0px;
+}
+
+a {
+  cursor: pointer;
+  color: #e6763c;
+}
+
+button, button[disabled]:hover {
+  background-color: #66bb6b;
+  border-color: #66bb6b;
+}
+
+i {
+  line-height: 1;
+}
+
+input[type='checkbox'], input[type='radio'] {
+  display: inline;
+  margin: 0.5em;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+select {
+  font-size: 1em;
+}
+
+.ui.modal {
+  font-size: 15px;
+}
+
+.ui.modal .content {
+  font-size: 20px;
+}
+
+.ui.modal .modal-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 0.5em;
+  padding-top: 0.5em;
+  border-top: 1px solid #e2e2e2;
+}
+
+.ui.modal .modal-buttons .cancel {
+  background: none;
+  color: #5d6c76;
+  border: 1px solid;
+  margin-right: 1em;
+}
+
+.ui.modal .modal-buttons .cancel:hover {
+  opacity: 0.7;
+}
+
+.header {
+  border-bottom: 1px solid #e2e2e2;
+  padding-bottom: 0.5em;
+}
+
+.sc-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 700px)  {
+  td, th {
+    padding: 0em 0.5rem;
+  }
+}
+
+/* tabs */
+.sc-tabs .tabs {
+  margin-bottom: 1em;
+}
+
+.sc-tabs .tabs .item {
+  padding: 1em;
+  color: #5d6c76;
+  border-bottom: 2px solid white;
+}
+
+.sc-tabs .tabs .item.active {
+  border-bottom: 2px solid #f78348;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.sc-tabs .tab-body {
+  display: none;
+}
+
+.sc-tabs .tab-body.active {
+  display: block;
+}
+
+/* Loader */
+.loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading .sp-wave:before,
+.loading .sp-wave:after {
+  border-color: black;
+}
+
+.loading .sp-wave {
+  height: 40px;
+  width: 40px;
+  margin-right: 1em;
+}
+
+/* Spinner Wave */
+.sp-wave {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: relative;
+  opacity: 1;
+}
+
+.sp-wave:before, .sp-wave:after {
+  content: '';
+  border: 1px #ffffff solid;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+}
+
+.sp-wave:before {
+  transform: scale(1, 1);
+  opacity: 1;
+  -webkit-animation: spWaveBe 0.6s infinite linear;
+  animation: spWaveBe 0.6s infinite linear;
+}
+
+.sp-wave:after {
+  transform: scale(0, 0);
+  opacity: 0;
+  -webkit-animation: spWaveAf 0.6s infinite linear;
+  animation: spWaveAf 0.6s infinite linear;
+}
+
+@-webkit-keyframes spWaveAf {
+  from {
+    -webkit-transform: scale(0.5, 0.5);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+@keyframes spWaveAf {
+  from {
+    transform: scale(0.5, 0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes spWaveBe {
+  from {
+    -webkit-transform: scale(1, 1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes spWaveBe {
+  from {
+    -webkit-transform: scale(1, 1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
+}
+
+/* Admin Nav */
+#admin-nav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: #e6763c;
+  color: white;
+  height: 100%;
+  width: 300px;
+  text-align: center;
+}
+
+#admin-nav .nav-header {
+  padding: 1em;
+  background-color: #f78348;
+}
+
+#admin-nav .nav-header .open-menu {
+  display: none;
+}
+
+#admin-nav .nav-header .logo img {
+  width: 120px;
+}
+
+#admin-nav .nav-header .title {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+#admin-nav .menu .item {
+  text-align: left;
+  color: white;
+  font-weight: 400;
+  padding: 1em;
+  display: block;
+  border-bottom: 3px solid rgba(147, 50, 0, 0.19);
+}
+
+#admin-nav .menu .item:hover {
+  opacity: 0.7;
+}
+
+@media only screen and (max-width: 700px) {
+  #admin-nav {
+    width: 100%;
+    height: 65px;
+    z-index: 1;
+  }
+
+  #admin-nav .nav-header {
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+  }
+
+  #admin-nav .nav-header .logo img {
+    width: 55px;
+  }
+
+  #admin-nav .nav-header .title {
+    font-size: 1em;
+    margin-left: 1em;
+  }
+
+  #admin-nav .nav-header .open-menu {
+    display: block;
+    position: absolute;
+    right: 0px;
+    padding: 0.5em;
+    font-size: 2em;
+    cursor: pointer;
+  }
+
+  #admin-nav .menu {
+    background: #ea6c2b;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s linear;
+  }
+
+  #admin-nav .menu.show {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+/* Admin Content */
+#admin-content {
+  padding-left: 300px;
+  width: 100%;
+  padding-top: 3em;
+  background-color: rgba(128, 128, 128, 0.07);
+  min-height: 100%;
+}
+
+#admin-content .content-wrapper {
+  position: relative;
+  max-width: 1100px;
+  min-height: 500px;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: white;
+}
+
+@media only screen and (max-width: 700px) {
+  #admin-content {
+    padding-left: 0px;
+    padding-top: 75px;
+    overflow: hidden;
+  }
+
+  #admin-content .content-wrapper  {
+    padding: 0.5em;
+  }
+}
+
+/* Orders Table */
+#orders-table .qty {
+  text-align: center;
+}
+
+#orders-table tbody tr.fold .fold-wrapper {
+  background-color: #f6f6f6;
+  max-height: 0;
+  transition: all 0.15s ease-out;
+  overflow: hidden;
+  padding: 0px 1em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#orders-table tbody tr.fold .fold-wrapper .info {
+  width: 32%;
+  margin-bottom: 0.5em;
+}
+
+#orders-table tbody tr.fold .fold-wrapper .info .head {
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+#orders-table tbody tr.fold td {
+  padding: 0px;
+}
+
+#orders-table tbody tr.fold.show .fold-wrapper {
+  max-height: 170px;
+  transition: all 0.25s ease-in;
+  padding: 1em;
+}
+
+#orders-table tbody i {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+#orders-table tbody i:hover {
+  opacity: 0.7;
+}
+
+@media only screen and (max-width: 700px) {
+  #orders-table {
+    width: 100%;
+    overflow: scroll;
+    font-size: 0.9em;
+  }
+
+  #orders-table tbody tr.fold .fold-wrapper .info {
+    width: 49%;
+  }
+
+  #orders-table tbody tr.fold.show .fold-wrapper {
+    max-height: 255px;
+    transition: all 0.25s ease-in;
+    padding: 1em;
+  }
+
+  /*#orders-table .product {
+    width: 150px
+  }*/
+}
+
+/* Generate Modal */
+#generate-modal .orders {
+  font-weight: bold;
+}
+
+/* Orders Summary */
+#orders-summary .item {
+  margin : 0.5em 0px;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  padding: 1em 2em;
+}
+
+#orders-summary .item .order-id {
+  font-weight: 500;
+  position: relative;
+}
+
+#orders-summary .item .order-id::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: -2em;
+  width: 5px;
+  height: 100%;
+  background-color: #f78348;
+}
+
+#orders-summary .item .order-status {
+  padding: 0.2em 0.5em;
+  font-size: 0.9em;
+  color: white;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+#orders-summary .item .order-status.success {
+  background-color: #82dd58;
+}
+
+#orders-summary .item .order-status.failed {
+  background-color: #f84848;
+}
+
+#orders-summary .item .details {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  /*justify-content: space-between;*/
+  margin-top: 0.5em;
+  padding-top: 0.5em;
+  border-top: 1px solid #e2e2e2;
+}
+
+#orders-summary .item .details .info {
+  width: 32%;
+  margin-bottom: 0.5em;
+}
+
+#orders-summary .item .details .info .head {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 700px) {
+  #orders-summary .item {
+    padding: 0.7em;
+  }
+
+  #orders-summary .item .order-id::before {
+    left: -0.7em;
+  }
+
+  #orders-summary .item .details .info {
+    width: 100%;
+  }
+}
+
+/* Order Process */
+.orders-process .steps {
+  display: none;
+}
+
+/* Create Orders */
+#create-orders {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#create-orders input {
+  font-size : 1em;
+}
+
+#create-orders input::placeholder {
+  color: #a9abac;
+}
+
+/* Orders List */
+#orders-list tr i.ion-android-close {
+  cursor: pointer;
+}
+
+#orders-list tr:hover {
+  background-color: rgba(226, 226, 226, 0.51);
+}

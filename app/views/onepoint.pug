@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  div#hc-content
+    //- #hc-intro.hc-feature.over-rel.padding
+    //-   .hc-chunk.hc-intro-text-wrapper
+    //-     h2.hc-intro-large-lead(style='font-weight: bold; font-size: 2.7em; margin: 2em auto;') Token Sale FAQ
+
+    .blog-news.hc-feature.over-rel.padding.disclaimer(style="padding-top:0px;")
+      .hc-chunk(style="max-width:1140px;")
+        iframe(src='https://docs.google.com/spreadsheets/d/1htI50-mY-GjLPVrvE-CzXXI-7qOTTOi-KPxXEsL72uw/edit#gid=365005388' width="100%" style="height:800px;", frameBorder="0")
+          
+        p 
+          b DISCLAIMER
+          
+        p Storecoin's data is based upon research materially as described 
+          a(href="https://docs.google.com/spreadsheets/d/1htI50-mY-GjLPVrvE-CzXXI-7qOTTOi-KPxXEsL72uw/edit#gid=1387743860", target="_blank") here
+          | , and sourced 
+          a(href="https://docs.google.com/spreadsheets/d/1htI50-mY-GjLPVrvE-CzXXI-7qOTTOi-KPxXEsL72uw/edit#gid=231615512", target="_blank") here
+          | .
+
+        p Nothing herein is intended to be an offer to sell or solicitation of offer to buy, Storecoin tokens or rights to receive Storecoin tokens in the future. In the event that Storecoin conducts an offering of Storecoin tokens (or rights to receive Storecoin tokens in the future), Storecoin will do so in compliance with all applicable laws which may include the Securities Act of 1933 and the rules and regulations promulgated thereunder, as well as applicable state and foreign law. Any offering for sale to US Persons in a regulated transaction will be pursuant to a registration statement qualified by the Securities and Exchange Commission, or an applicable exemption from the registration requirements.
+      
+    include email-widget

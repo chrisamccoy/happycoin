@@ -5,19 +5,23 @@ html
     title= title
     meta(name='description', content='')
     meta(name='author', content='')
-    meta(property='og:url', content=meta.url)
-    meta(property='og:type', content=meta.type)
-    meta(property='og:title', content=meta.title)
-    meta(property='og:description', content=meta.desc)
-    meta(property='og:image', content=meta.image)
+    if meta
+      meta(property='og:url', content=meta.url)
+      meta(property='og:type', content=meta.type)
+      meta(property='og:title', content=meta.title)
+      meta(property='og:description', content=meta.desc)
+      meta(property='og:image', content=meta.image)
+      meta(name='twitter:card', content='summary_large_image')
+      meta(name='twitter:site', content='@storecoin')
+      meta(name='twitter:title', content=meta.title)
+      meta(name='twitter:description', content=meta.desc)
+      meta(name='twitter:image', content=meta.image_tw)
 
     meta(name='viewport', content='width=device-width, initial-scale=1')
 
-    link(href='//cdn-images.mailchimp.com/embedcode/classic-10_7.css', rel='stylesheet', type='text/css')
     link(rel='icon', type='image/png', href='/images/favicon.png')
-    link(rel='stylesheet', href='/assets/styles.css')
-    link(href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', rel='stylesheet')
-    script(src='/assets/script.js')
+    link(rel='stylesheet', href='/assets/styles.css?v=1.56')
+    script(async, src='/assets/script.js?v=1.56')
 
   body
     - var className = ''
@@ -28,10 +32,11 @@ html
       p.hc-intro-post
         //- a(href="https://medium.com/@team_27494/introducing-storecoin-8e15c21b4335", target="_blank") Read our introductory post
         //- span(style="padding:0 0.5em;") ·
-        a(href="https://techcrunch.com/2017/08/20/yesterdays-plastics-are-todays-crypto-tokens/", target="_blank")  See our latest in TechCrunch
+        //- a(href="http://t.me/storecoin", target="_blank")  Join our Telegram Super Group
+        a(href="https://techcrunch.com/2017/08/20/yesterdays-plastics-are-todays-crypto-tokens/", target="_blank")  Our Latest in TechCrunch
         span
           i.ion-record
-        a(href="/blog", target="_blank")  Read our blog
+        a(href=URL("/blog/storecoin-achieves-10,000-transactions-per-second-with-burst-traffic-and-21-validator-modes"), target="_blank")  Our latest Tech Prototype
       .container
         .row
           a.hc-branding.store-auth
@@ -39,22 +44,27 @@ html
               span 1,000,000,000
               span.away storecoins authorized
           .hc-branding.logo
-            a.hc-title(href='/')
+            a.hc-title(href=URL('/'))
           div.hc-branding.invite-dropdown
-            a.sale-invite(data-id="#tokensale") Receive a Token Sale invite
+            a.sale-invite(data-id="#tokensale") Receive a Round 3 Token Invite
             div.hc-menu-dropdown
               .ui.dropdown
                 i.ion-android-more-vertical
                 .left.menu
                   div.item 1,000,000,000 storecoins authorized
-                  a.item(href='/#six-engines') About DyPoS
-                  a.item(href='/team') Our Team
+                  a.item(href=URL('/#six-engines')) About DyPoS
+                  a.item(href=URL('/team')) Our Team
                   //- a.item(href='/examples') Use Cases
                   //- a.item(href='/secondtokensale') Second Token Sale
-                  a.item(href='/whitepaper') Our Whitepaper
-                  a.item(href='/community') Community
-                  a.item(href='/applytoforge', target="_blank") Become a Validator
-                  a.item(href='/dGuard', target="_blank") Become a dGuard
+                  a.item(href=URL('/whitepaper')) Our Whitepaper
+                  a.item(href=URL('/community')) Community
+                  a.item(href=URL('/validate')) Become a Validator
+                  a.item(href=URL('/masternode')) Host eAgent Master Nodes
+                  a.item(href=URL('/validate')) Become a dGuard
+                  a.item(href=URL('/govnode')) Run a Govnode
+                  a.item(href=URL('/info')) Jobs
+
+      include email-subscribe
 
     block content
 
@@ -62,57 +72,70 @@ html
       .hc-footer-chunk(style='padding: 3em 1em;')
         section.footer-light.row
           .three.columns
-            h3 Software
+            h3 Help Build Storecoin
             ul
               li
-                a(href='/whitepaper') Our Whitepaper
+                a(href=URL('/validate')) Become a Validator
               li
-                a(href='/cryptoeconomics') Our Cryptoeconomics
-              //- li
-              //-   a(href='/development') Product Roadmap
-              //- li
-              //-   a(href='/developer-api') Developer API
+                a(href=URL('/masternode')) Host eAgent Master Nodes
+              li
+                a(href=URL('/validate')) Become a dGuard
+              li
+                a(href=URL('/govnode')) Run a Govnode
+              li
+                a(href=URL('/careers')) Careers
+                
           .three.columns
             h3 About
             ul
               li
-                a(href='/milestones') Milestones
+                a(href="https://news.storeco.in/") News
               li
-                a(href='/blog') Our Blog
+                a(href=URL('/team')) Our Team
               li
-                a.sale-invite(data-id="#tokensale-bottom") Our Token Sale
-              //- li
-              //-   a(href='/firsttokensalefaq') Token Sale FAQ
-              li
-                a(href='http://twitter.com/storecointeam', target="_blank") Twitter
+                a(href=URL('/milestones')) Milestones
               li
                 a(href='https://github.com/StorecoinProject', target="_blank") Github
+              li
+                a(href=URL('/contact')) Contact Us
+                
           .three.columns
-            h3 Info
+            h3 Social
             ul
               li
-                a(href='/community') Join Community
+                a(href=URL('/community')) Subscribe to Email Updates
               li
-                a(href='/applytoforge', target="_blank") Become a Validator
+                a(href="http://t.me/storecoin", target="_blank") Join our Telegram Super Group
               li
-                a(href='/dGuard', target="_blank") Become a dGuard
+                a(href="http://t.me/storecointeam", target="_blank") Join our Telegram Announcement Channel
               li
-                a(href='/team') Our Team
-              li
-                a(href='/jobs') Jobs
-              li
-                a(href='/contact') Contact Us
+                a(href='http://twitter.com/storecoin', target="_blank") Twitter
+                
           .three.columns
-            img(src='/images/logo.png', style='width:100px; height: auto;')
+            img(src='/images/empty.png', data-src='/images/logo.png', style='width:100px; height: auto;')
             div
             p(style='font-size: 0.7em; padding: 0.5em 0;')
-              a(href='')
+              a(href=URL('/'))
                 strong Storecoin
               |  is a new public blockchain powered by Dynamic Proof of Stake (DyPoS).
         section.row
-          b(style='color: white;') © 2017 Storecoin, Inc
-          ul#menu-footer-menu.menu
-            //- li#menu-item-37.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-37
-            //-   a(href='https://www.stellar.org/privacy-policy/') Privacy Policy
-            li#menu-item-150.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-150
-              a(href='/terms') Terms of Service
+          b(style='color: white;') © 2018 Storecoin, Inc
+
+    section#hc-disclaimer
+      .container
+        p
+          b DISCLAIMER
+        p Nothing herein is intended to be an offer to sell or solicitation of offer to buy, Storecoin tokens or rights to receive Storecoin tokens in the future. In the event that Storecoin conducts an offering of Storecoin tokens (or rights to receive Storecoin tokens in the future), Storecoin will do so in compliance with all applicable laws which may include the Securities Act of 1933 and the rules and regulations promulgated thereunder, as well as applicable state and foreign law. Any offering for sale to US Persons in a regulated transaction will be pursuant to a registration statement qualified by the Securities and Exchange Commission, or an applicable exemption from the registration requirements.
+
+    div#sale-invite-modal.ui.small.modal
+      i.ion-android-close
+      div.content
+        h4(style="text-align:center;") Get invited to the third Token Event (KYC Required)
+        form(action='https://storeco.us16.list-manage.com/subscribe/post?u=49990f91819fec5293c84bbe8&id=2aca88b02e', method='POST', target='_blank', novalidate='')
+          input.u-full-width(type='email', name='EMAIL', placeholder='Enter your email address')
+          input.button-primary(type='submit', value='SUBMIT')
+    
+    div#info-image-modal.ui.large.modal
+      i.ion-android-close
+      div.content
+        div.image-modal-container

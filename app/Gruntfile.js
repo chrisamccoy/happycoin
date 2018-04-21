@@ -31,6 +31,7 @@ module.exports = function(grunt) {
           '<%= paths.js %>numeral.js',
           '<%= paths.js %>tippy.min.js',
           '<%= paths.js %>jquery.rwdImageMaps.min.js',
+          '<%= paths.js %>onload.js',
           '<%= paths.js %>script.js'
         ],
         dest: '<%= paths.assets %>script.js'
@@ -39,6 +40,7 @@ module.exports = function(grunt) {
       css: {
         src: [
           '<%= paths.css %>normalize.css',
+          '<%= paths.css %>ionicons.css',
           '<%= paths.css %>featherlight.css',
           '<%= paths.css %>skeleton.css',
           '<%= paths.css %>slick.css',
@@ -68,6 +70,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // MINIFY JS
     uglify: {
       options: {
         mangle: false
@@ -79,6 +82,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // WATCH FILES
     watch: {
       grunt: { files: ['Gruntfile.js'] },
       concat: {
@@ -91,6 +95,14 @@ module.exports = function(grunt) {
           livereload: true
         }
       }
+    },
+
+    // GENERATE DOCS
+    docs: {
+      options: {
+        repo: 'git@github.com:StorecoinProject/docs.git',
+        repoDir: 'repos'
+      }
     }
 
   });
@@ -100,6 +112,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+
+  // Loading tasks
+  grunt.loadTasks('./scripts');
 
   // Task definition
   grunt.registerTask('dev', ['watch']);

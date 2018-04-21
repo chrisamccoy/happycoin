@@ -1,0 +1,263 @@
+extends blog-wrapper
+
+block blog-news
+  
+  h4.article-h4 Storecoin moves blockchain closer to VISA network speeds while maintaining decentralization
+    
+  p
+    b Highlights
+    
+  ul
+    li Storecoin's DyPoS consensus algorithm achieves high consensus efficiency of
+      b  159,790 transactions per second
+      |  when small transactions (100 bytes) are sent to the validator nodes in a large burst (10,000 transactions in the burst) by a large number of clients (8 clients).
+    li High consensus efficiency of
+      b  10,282 transactions per second
+      |  is observed with continuous bursts (50 bursts, 50 transactions in a burst) sent by a large number of clients (8 clients) to 21 validator nodes. This setup is typical in a real-world settings.
+    li The consensus efficiency drops as the transaction volume increases. So when the transaction or burst sizes are too large, the consensus efficiency decreases.
+  
+  div.article-sub-title Storecoin’s mission is to become zero-fee, p2p, programmable payments infrastructure for the globe. The Dynamic Proof of Stake (DyPoS) consensus engine powering the Storecoin infrastructure is designed to process thousands of transactions per second. When transactions arrive continuously but at lower rates, the consensus engine is capable of handling the incoming transactions, but how does it behave when transactions come in bursts? When Storecoin is used as the payment platform by merchants and app developers, the transactions are likely to come in bursts from multiple sources. So, we need to characterize the behavior of the consensus engine under such circumstances.
+  
+  p
+    b Purpose
+    
+  p In this series of tests, we want to measure the performance and stability of the validator nodes forming the consensus engine when the transactions are sent in bursts from multiple clients. The performance of the consensus engine is measured as the number of transactions processed per second. This is also called as 
+    span.italics consensus efficiency.  
+
+  p In our previous tests, we used
+    b  4
+    |  validator nodes to measure the consensus efficiency. This is the absolute minimum number of nodes required to tolerate Byzantine failure of
+    b  1
+    |  node. Such a setup offers minimum decentralization. In this test, we also want to increase the decentralization and see its effect on consensus efficiency. 
+  
+  p Version
+    b  1
+    |  of DyPoS is partially built on top of 
+    a(href="https://tendermint.com/", target="_blank") Tendermint
+    | . The core consensus engine will be replaced eventually by BlockFin, Storecoin’s leaderless, fork-tolerant, high-throughput consensus protocol. Version
+    b  1
+    |  of DyPoS is used to model various transaction load patterns to better understand the behavior of the validator nodes. These models help identify deficiencies in traditional approaches to consensus, so they can be better addressed in BlockFin. In this series, we examine the behavior of validator nodes when bursts of transactions are sent from multiple clients.
+    
+  p Figure
+    b  1
+    |  shows Storecoin application architecture, which follows 
+    a(href="https://github.com/tendermint/abci", target="_blank") Tendermint's ABCI Protocol
+    | .
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/blog-load-testing.png")
+  p.caption Figure 1 — Illustration of Storecoin Application and DyPoS Interface
+  
+  p Since the purpose of the tests is to measure the consensus efficiency and stability of the validator nodes, the application logic is replaced with Tendermint’s
+    span.italics  tm-bench
+    |  benchmarking tool. This tool is customized to generate bursts of transactions of different sizes.
+  
+  p
+    b About Storecoin
+    
+  p With its Dynamic, Fork-tolerant, and Auditable Proof of Stake-based consensus protocol (DyPoS), Storecoin will secure free transactions, high throughput, and a decentralized governance system with built-in checks and balances inspired by the U.S. Constitution. Also inspired by the supply and demand principles of Uber Surge Pricing (blockchain economics) and Power of Attorney model (blockchain scaling), Storecoin will secure crypto-powered incentives and payments inside of apps.
+  
+  h2.article-h3 Test Summary - What We Are Trying to Learn
+  
+  p In this series of tests, we set up 8-node and 21-node test benches and measure the
+    span.italics  consensus efficiency
+    |  in each setup. The 21-node setup provides greater decentralization compared to all the previous tests performed. In typical blockchain deployments, the greater the decentralization, the worse the consensus efficiency will be. This is inevitable because large numbers of nodes result in increased peer-to-peer communication, thus affecting the consensus efficiency negatively. We want to verify that the resulting drop in consensus efficiency is acceptable and the efficiency doesn’t degrade to a level where it forces using fewer validator nodes. 
+  
+  p The following tests are performed in this series.
+  
+  p
+    b 4 clients, 8 validator nodes, fixed size transactions in multiple burst sizes
+    
+  p 4 clients generate transactions of fixed size and send them to all the 8 validator nodes. The transactions are of size
+    b  500
+    | ,
+    b  1,000
+    | ,
+    b  5,000
+    | , and
+    b  10,000
+    |  bytes in bursts of size
+    b  500
+    | ,
+    b  1,000
+    | ,
+    b  2,000
+    | ,
+    b  5,000
+    | , and
+    b  10,000 transactions per burst. Each burst lasts for 5 seconds. The test setup, results, and observations for all the tests with 8 validator nodes are captured in 
+    a(href="https://news.storeco.in/blog/load-testing-storecoins-dynamic-proof-of-stake-consensus-algorithm-test-4-of-7", target="_blank") this report
+    | . Figure 2 visualizes the test setup.
+    
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/blog-load-testing-4-to-7.png")
+  p.caption Figure 2 - Test setup with 8 validator nodes geographically distributed across U.S.
+  
+  p Table 1 below summarizes the test results.
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/load-test-41-table3.png")
+  p.caption Table 1 - 4 clients, 8 validator nodes, fixed size transactions
+  
+  p The best consensus efficiency of 
+    b  80,000 transactions per second
+    |  is obtained in test run 1.E. At higher transaction and burst sizes, the resulting transaction volume overwhelms the validator nodes, resulting in test failures. The test is characterized as
+    span.italics  Failed
+    |  if the validator nodes are unable to keep up with incoming transactions and stop accepting them. Note that the validator nodes continue to run the consensus rounds for the transactions that are already accepted and at no time did they stop producing new blocks.
+    
+  p Test runs 3.D and 5.C are interesting. While 1.E produced the best consensus efficiency, it used smaller transaction size of 100 bytes. 3.D produced consensus efficiency of
+    b  38,316 transactions per second
+    | , but with transactions of size
+    b  1,000
+    |  bytes and burst size of
+    b  5,000
+    | . So, while the consensus efficiency is much lower than in test run 1.E, the run 3.D demonstrates processing large transactions in a large burst size.
+    
+  p The test run 5.C shows the effect of very large transaction sizes. The consensus efficiency dropped to
+    b  512 transactions per second
+    | . This demonstrates that the DyPoS consensus engine favors small to midsize transactions in small to large burst sizes. The typical transaction size in Storecoin is less than
+    b  500
+    |  bytes, so this behavior doesn’t affect the use cases that Storecoin is designed for.
+    
+  p
+    b 8 clients, 8 validator nodes, fixed size transactions in multiple burst sizes
+  
+  p This test is similar to the test above, except 8 clients are used to generate transactions instead of 4. This test is intended to evenly saturate all 8 validator nodes, so they are not idling. The results are summarized in table 2 below.
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/load-test-41-table4.png")
+  p.caption Table 2 - 8 clients, 8 validator nodes, fixed size transactions
+  
+  p  Test run 6.E produced best consensus efficiency of
+    b  159,790 transactions per second
+    | . The consensus efficiency is nearly doubled in this case. This is because 8 clients are used to generate the transactions, so overall twice the total transactions are produced in this test. Test runs 8.D and 10.B are similar to test runs 3.D and 5.C in the previous test. 
+    
+  p
+    b 4 and 8 clients, 8 validator nodes, random size transactions in multiple burst sizes
+    
+  p In this test, random transaction sizes are used instead of fixed sizes used in the previous tests. The size distribution is done as shown in table 3 below. This test models real world settings where majority of transactions are of smaller sizes with a small percentage of medium and large size transactions.
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/load-test-41-table1.png")
+  p.caption Table 3 - Random transaction size distribution
+  
+  p The test results are described in table 4 below.
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/load-test-41-table6.png")
+  p.caption Table 4 - 4 and 8 clients, 8 validator nodes, fixed size transactions
+  
+  p With 4 clients sending random sized transactions, the best consensus efficiency of
+    b  7,987 transactions per second
+    |  is observed in test run 13.C. Notice the sharp drop in consensus efficiency. The drop is explained with the same reason as for test runs 3.D and 8.D with fixed size transactions. Since we are using transactions of random sizes, overall size of the burst is larger than that with the fixed size transactions. This results in lower consensus efficiency.
+    
+  p With 8 clients sending random sized transactions, the best consensus efficiency of
+    b  16,067 transactions per second
+    |  is observed in test run 12.C. Notice that the consensus efficiency is nearly doubled because the validator nodes are being used to their capacity.
+
+  p Random size transactions result in a decreased consensus efficiency because the overall transaction volume is much higher than the fixed size transactions. 
+  
+  p
+    b 2 clients, 21 validators 50 bursts, 500 txs/burst, random transaction sizes, 30 second pause between bursts
+    
+  p In this series of tests with 21 validator nodes, our goal is twofold:
+  
+  ol
+    li Measure the consensus efficiency with a greater decentralization and verify if the resulting drop in performance is acceptable for the practical use cases Storecoin is designed for
+    li Characterize the behavior of validator nodes when
+      span.italics  multiple
+      |  bursts of transactions are sent from the clients, resulting in a continuous load on the consensus engine
+
+  p The test setup, results, and observations for all the tests with 21 validator nodes are captured in 
+    a(href="https://news.storeco.in/blog/load-testing-storecoins-dynamic-proof-of-stake-consensus-algorithm-with-21-validators-test-5-of-7", target="_blank") this report
+    | . Figure 3 visualizes the test setup.
+    
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/blog-load-testing-5-to-7.png")
+  p.caption Figure 3 - Test setup with 21 validator nodes geographically distributed across U.S.
+  
+  p In this test, 2 clients generate random sized transactions with 500 transactions in a burst. Each burst lasts for 5 seconds as before. Each client sends 50 bursts with a 30 second pause between them. The consensus efficiency is measured per burst as before. The resulting list for 50 bursts is 
+    a(href="https://drive.google.com/file/d/1iD9lVyJH9jtC4sUKHCjZjgdYY_C3ZXwU/view", target="_blank") as follows
+    | .
+    
+  p The consensus efficiency ranges from a low of
+    b  4,750
+    |  to a high of
+    b  7,759
+    |  transactions per second. We theorize two reasons for the wide range in the consensus efficiency numbers.
+    
+  ol
+    li Transaction sizes - Since each burst generates transactions of random sizes independently, the transaction volume (transaction size * burst size) varies from burst to burst. The higher the transaction volume, the lower the consensus efficiency will be.
+    li Transaction accumulation - As validators receive continuous bursts of transactions from clients, the transactions accumulate because of the limited amount of time to process them. As a result, the consensus efficiency varies depending on the amount of accumulation of transactions awaiting processing between bursts.
+    
+  p The second claim above on transaction accumulation must be verified because depending on the size of accumulation, the consensus efficiency can increase or decrease. This claim is verified in the next test.
+  
+  p
+    b 2 clients, 21 validators 50 bursts, 500 txs/burst, random transaction sizes, 120 second pause between bursts
+  
+  p In this test, the pause between the bursts is increased to 120 seconds, so the validator nodes have sufficient time to cool off. This should minimize transaction accumulation between the bursts. The test results are listed 
+    a(href="https://drive.google.com/file/d/15gKpc96hpDwnRoV3ubxmH0IAHiXWtYGG/view", target="_blank") here
+    | .
+
+  p The consensus efficiency ranges from a low
+    b  2,348
+    |  transactions per second to a high
+    b  2,654
+    |  transactions per second. 
+
+  p In other words, the consensus efficiency dropped with a longer pause between the bursts. This is because the longer pauses result in under-utilizing the validator nodes. This observation brings up an important characteristics of Storecoin DyPoS consensus engine. If the validator nodes are under-utilized or overwhelmed with transactions, the consensus efficiency drops. If, on the other hand, they are utilized to their capacity, the consensus efficiency would be at its peak. This leads us to the next test.
+  
+  p 
+    b 8 clients, 21 validators 50 bursts, 50 txs/burst, random transaction sizes, 30 second pause between bursts
+
+  p This test is designed to verify the claim that the consensus efficiency peaks when validator nodes are loaded just right. In this test
+    b  8
+    |  clients are used to generate transactions instead of
+    b  2
+    |  in the previous tests. The burst size is reduced to
+    b  50
+    |  transactions per burst instead of
+    b  500
+    |  transactions. This results in smaller bursts arriving concurrently from a larger number of clients. The validator nodes get a continuous supply of transactions without overwhelming them and at the same time ensuring better utilization of them. The test results are available 
+    a(href="https://drive.google.com/file/d/1WljDwSGBPybZPAomn_6iaS3FHBZ9O9q5/view", target="_blank") here
+    | . 
+
+  p The consensus efficiency ranges from a low of
+    b  5,592
+    |  transactions per second to a high
+    b  10,282
+    |  transactions per second. 
+
+  p This is a significant improvement compared to the consensus efficiencies observed in previous tests with 2 clients. The improved efficiency is due to optimal utilization of the validator nodes. It is also important to note that the consensus engine handles concurrent bursts from multiple clients without affecting the consensus efficiency.
+  
+  p
+    b Conclusion
+  
+  p In this series of tests we learned about the behavior of validator nodes with increased decentralization and continuous bursts of transactions. In typical blockchain deployments, greater decentralization severely affects consensus efficiency, resulting in centralized deployments. The tests performed here verified that Storecoin DyPoS is not affected by centralization. While consensus efficiency with 21-node setup did drop from the 8-node setup where transactions were sent in a single burst, the drop in consensus efficiency is respectable because multiple bursts of transactions are processed by a larger number of validator nodes.
+
+  p In the test with large bursts of transactions, consensus efficiency was observed ranging from a low of
+   b  4,750
+   |  to a high of
+   b  7.759
+   |  transactions per second. In the test with smaller bursts of transactions but with greater concurrency, consensus efficiency was observed ranging from a low of
+   b  5,592
+   |  to a high of
+   b  10,282
+   |  transactions per second.
+
+  p We are also able to characterize the behavior of the validator nodes when they are overwhelmed. The 8-node setup helped us model the failure cases resulting in low consensus efficiency or nodes refusing to accept incoming transactions.
+
+  p With initial testing of DyPoS complete, the behavior of validator nodes is now understood under a variety of load conditions. This behavior can be summarized as follows:
+  
+  ul
+    li The consensus efficiency is related to transaction volume, but the relationship is not constant across different loads. Up to a threshold, consensus efficiency is directly proportional to transaction volume. This is the threshold at which the validator nodes are utilized to their full capacity. Once this threshold is breached, the consensus efficiency is inversely proportional to transaction volume.
+    li The validator nodes are well behaved with large concurrency (a larger number of clients sending transactions concurrently) and small burst sizes. This is typically the case in real world settings. Transactions trickle down in smaller bursts from a large number of clients with occasional bursts involving a large number of transactions.
+    li Validator nodes never crashed or created incomplete blocks in any of the tests. When their transactional capacity is reached, incoming transactions are rejected. Such events are categorized as a “failure” for testing purposes.
+    li Greater decentralization is practically achievable without sacrificing the performance.
+
+
+
+
+
+    
+  

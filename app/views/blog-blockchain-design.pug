@@ -1,0 +1,116 @@
+extends blog-wrapper
+
+block blog-news 
+  div.tweets
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | New video: I explain Directed Acyclic Graphs and review 
+          a(href='https://twitter.com/hashtag/IOTA?src=hash&ref_src=twsrc%5Etfw') #IOTA
+          | , 
+          a(href='https://twitter.com/hashtag/Byteball?src=hash&ref_src=twsrc%5Etfw') #Byteball
+          |  and the SPECTRE protocol. 
+          a(href='https://t.co/GAIyUvxh8C') https://t.co/GAIyUvxh8C
+        | — Jackson Palmer (@ummjackson) 
+        a(href='https://twitter.com/ummjackson/status/953290146224390146?ref_src=twsrc%5Etfw') January 16, 2018
+
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | Great explainer Jackson. A few thoughts:
+          br
+          br
+          | 1/ IOTA is an example of claiming to use a really good technology (DAG) but then introduce a "coordinator" node so all transactions must pass through it making it *fully* centralized.
+        | — Chris McCoy (@chrisamccoy) 
+        a(href='https://twitter.com/chrisamccoy/status/954060331499884544?ref_src=twsrc%5Etfw') January 18, 2018
+
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 2/ They claim they will remove the "coordinator" node later this year but it is *probably* not going to happe if the system is not built that way from scratch. We'll see.
+        | — Chris McCoy (@chrisamccoy) 
+        a(href='https://twitter.com/chrisamccoy/status/954060611251556353?ref_src=twsrc%5Etfw') January 18, 2018
+    
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 3/ In Byteball, similarly, 12 entities validate the transactions and they don't change and it is the same set ;)
+          br
+          br
+          | DAG is more complex to manage because it is a graph structure of unlimited depth and breadth, but it does allow for parallel block creation etc.
+        | — Chris McCoy (@chrisamccoy) 
+        a(href='https://twitter.com/chrisamccoy/status/954060817858727937?ref_src=twsrc%5Etfw') January 18, 2018
+    
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 4/ At the moment, anything that people-of-crypto, are not familiar with, especially with respect to how the blockchain is formed, it's viewed with suspicion.
+          br
+          br
+          | At 
+          a(href='https://twitter.com/StorecoinTeam?ref_src=twsrc%5Etfw') @StorecoinTeam
+          | , we are keeping the blockchain structure intact while still allowing for multiple block creation.
+        | — Chris McCoy (@chrisamccoy) 
+        a(href='https://twitter.com/chrisamccoy/status/954062518246354947?ref_src=twsrc%5Etfw') January 18, 2018
+    
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 5/ DAG is like a tree structure with the constraint that it is unidirectional (top to bottom) and the branch cannot fold to parent (hence Acyclic.) Because it is tree, each vertex (node) can be a "block" and hence it allows creation of multiple blocks.
+        | — Chris McCoy (@chrisamccoy) 
+        a(href='https://twitter.com/chrisamccoy/status/954062832764641280?ref_src=twsrc%5Etfw') January 18, 2018
+    
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 6/ Our public blockchain design at 
+          a(href='https://twitter.com/StorecoinTeam?ref_src=twsrc%5Etfw') @StorecoinTeam
+          |  uses a traditional structure where the chain is exactly that -- one block having a link to the previous, so they are connected and you can traverse the chain all the way to genesis block. 
+          br
+          br
+          | So, we are nothing like DAG.
+        | — Chris McCoy (@chrisamccoy) 
+        a(href='https://twitter.com/chrisamccoy/status/954063389998927876?ref_src=twsrc%5Etfw') January 18, 2018
+    
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 7/ Our design allows for the creation of multiple blocks by using pipelining. This is the classical 'Henry Ford" model that Rag (CTO) and I have been building distributed software with since 2012.
+        | — Chris McCoy (@chrisamccoy) 
+        a(href='https://twitter.com/chrisamccoy/status/954063967793700864?ref_src=twsrc%5Etfw') January 18, 2018
+    
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 8/ How It Works: While new, unfinished, unfinalized blocks are being built, the subsequent steps in the pipeline "harden" the chain by validating the transactions, pre-voting, pre-commiting,  and dSecurity nodes "sealing" the blocks.
+        | — Chris McCoy (@chrisamccoy) 
+        a(href='https://twitter.com/chrisamccoy/status/954064217920983046?ref_src=twsrc%5Etfw') January 18, 2018
+    
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 9/ This parallel processing allows for increased throughput.
+          br
+          br
+          | We are not reinventing the wheel like DAG but we are designing differently to improve throughput.
+          br
+          br
+          | There's a reason v2 public blockchains have major scaling challenges today.
+        | — Chris McCoy (@chrisamccoy) 
+        a(href='https://twitter.com/chrisamccoy/status/954064760177418241?ref_src=twsrc%5Etfw') January 18, 2018
+      
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 10/ You can learn more about our ongoing technical research & development for 
+          a(href='https://twitter.com/StorecoinTeam?ref_src=twsrc%5Etfw') @StorecoinTeam
+          |  here: 
+          a(href='https://t.co/iyWxkoGDpD') https://t.co/iyWxkoGDpD
+          br
+          br
+          | As always, would love your input.
+          br
+          br
+          | Our Phase 2 technical write-up is coming in February.
+        | — Chris McCoy (@chrisamccoy) 
+        a(href='https://twitter.com/chrisamccoy/status/954065260662706176?ref_src=twsrc%5Etfw') January 18, 2018

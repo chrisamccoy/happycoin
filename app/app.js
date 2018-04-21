@@ -4,8 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 
 var index = require('./routes/index');
+var admin = require('./routes/admin');
+var developers = require('./routes/developers');
 
 var app = express();
 
@@ -21,7 +24,62 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Modification incase of news.storeco.in
+app.use(function(req, res, next) {
+  var host = req.headers.host;
+
+  res.locals.URL = function(val) {
+    var url = val,
+        subdomains = [
+          'news.storeco.in',
+          'tokensale3.storeco.in'
+        ];
+
+    subdomains.forEach(function(sd) {
+      if (host.search(sd) >= 0) {
+        url = "https://storeco.in" + val;
+      }
+    });
+
+    return url;
+  };
+
+  next();
+});
+
+// Sessions
+app.set('trust proxy', 1) // trust first proxy
+app.use(session({
+  secret: 'keyboard blocks',
+  resave: true,
+  saveUninitialized: true,
+  cookie: {
+    secure: false, //app.get('env') === 'production' ? true : false,
+    maxAge: 600000
+  },
+}))
+
+// /admin Pages require login
+function requireLogin(req, res, next) {
+  // console.log(req.session);
+  if (req.session.authenticated) {
+    next(); // allow the next route to run
+  } else {
+    // require the user to log in
+    res.redirect("/login"); // or render a form, etc.
+  }
+}
+
+app.all("/admin/*", requireLogin, function(req, res, next) {
+  next(); // if the middleware allowed us to get here,
+          // just move on to the next route handler
+});
+
+// Assign all routes
 app.use('/', index);
+app.use('/admin', admin);
+app.use('/developers', developers);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next){

@@ -1,14 +1,24 @@
-div(id=top ? 'tokensale' : 'tokensale-bottom')
+div.form-subscribe(id=top ? 'tokensale' : 'tokensale-bottom')            
   .hc-feature.over-rel.padding.hc-email(style="overflow:visible;")
     .email-widget
       //- p.hc-email-invite
       //-   b Our invite-only First Token Sale is now complete!
-      h4(style="margin:0px;") Get invited to our Second Token Sale
-      form.row.form
+      h4(style="margin:0px;") Get invited to the third Token Event (KYC Required)
+        //- a.orange-color(href="https://twitter.com/StorecoinTeam/status/948466693776457728", target="_blank", style="text-decoration:underline;") is now complete
+      //- div.sub-head Enter your email to subscribe to information about our next, invite-only token sale
+      //- TOKEN SALE BEFORE
+      //- form.row.form
+      //-   .eight.columns
+      //-     input.u-full-width(type='email', name='email', placeholder='Enter your email address')
+      //-   .four.columns
+      //-     input.button-primary(type='submit', value='SIGN UP')
+
+      //- EMAIL SUBMIT
+      form.row.form(action='https://storeco.us16.list-manage.com/subscribe/post?u=49990f91819fec5293c84bbe8&id=2aca88b02e', method='POST', target='_blank', novalidate='')
         .eight.columns
-          input.u-full-width(type='email', name='email', placeholder='Enter your email address')
+          input.u-full-width(type='email', name='EMAIL', placeholder='Enter your email address')
         .four.columns
-          input.button-primary(type='submit', value='Get Started')
+          input.button-primary(type='submit', value='SUBMIT')
       //- p(style="text-align:left; max-width: 960px;") Invites to our Second Token Sale will be sent December 2017
       if top
         .link-container
@@ -176,42 +186,42 @@ div(id=top ? 'tokensale' : 'tokensale-bottom')
           div.engines
             div.engine
               .front
-                img(src="/images/dynamic-transactions-v2.png")
+                img(src='/images/empty.png', data-src="/images/dynamic-transactions-v2.png")
                 div.title Dynamic (free) Transactions
               .back
-                img(src="/images/dynamic-transactions-v2.png")
+                img(src='/images/empty.png', data-src="/images/dynamic-transactions-v2.png")
             div.engine.right
               .front
-                img(src="/images/dynamic-validation-v2.png")
+                img(src='/images/empty.png', data-src="/images/dynamic-validation-v2.png")
                 div.title Dynamic Validation
               .back
-                img(src="/images/dynamic-validation-v2.png")
+                img(src='/images/empty.png', data-src="/images/dynamic-validation-v2.png")
           div.engines
             div.engine
               .front
-                img(src="/images/dynamic-rewards-v2.png")
+                img(src='/images/empty.png', data-src="/images/dynamic-rewards-v2.png")
                 div.title Dynamic Block Rewards
               .back
-                img(src="/images/dynamic-rewards-v2.png")
+                img(src='/images/empty.png', data-src="/images/dynamic-rewards-v2.png")
             div.engine.right
               .front
-                img(src="/images/dynamic-security-v2.png")
+                img(src='/images/empty.png', data-src="/images/dynamic-security-v2.png")
                 div.title Dynamic Security
               .back
-                img(src="/images/dynamic-security-v2.png")
+                img(src='/images/empty.png', data-src="/images/dynamic-security-v2.png")
           div.engines
             div.engine
               .front
-                img(src="/images/dynamic-scaling-v2.png")
+                img(src='/images/empty.png', data-src="/images/dynamic-scaling-v2.png")
                 div.title Dynamic Scaling
               .back
-                img(src="/images/dynamic-scaling-v2.png")
+                img(src='/images/empty.png', data-src="/images/dynamic-scaling-v2.png")
             div.engine
               .front
-                img(src="/images/dynamic-governance-v2.png")
+                img(src='/images/empty.png', data-src="/images/dynamic-governance-v2.png")
                 div.title Dynamic Governance
               .back
-                img(src="/images/dynamic-governance-v2.png")
+                img(src='/images/empty.png', data-src="/images/dynamic-governance-v2.png")
         hr
         .button-group
           button.button-back.button-primary(data-step='step-3')
@@ -309,9 +319,9 @@ div(id=top ? 'tokensale' : 'tokensale-bottom')
         div.info-fullscreen
           h3(style="margin-bottom: 0.5em;")
             b Storecoin vs. Other Public Blockchains
-          p What it would cost to buy 1 one-hundredth of a percent (1 basis point) of all tokens minted in the first 10 years for major public (see footnotes for price assumptions).
+          p What it would cost to buy 1 one-hundredth of a percent (1 basis point) of all tokens minted in the first 10 years for major public blockchains (see footnotes for price assumptions).
           .hc-image
-            img(src="/images/comparison-chart-v4.png", style="width:80%;")
+            img(src='/images/empty.png', data-src="/images/comparison-chart-v4.png", style="width:80%;")
         .link-container(style="margin-top:1em;")
           a.link-text.see-more(data-link='.zcash-text', data-margin="0,0", data-scroll="false", style="margin:0px; font-size: 0.9em !important;")
             | See More

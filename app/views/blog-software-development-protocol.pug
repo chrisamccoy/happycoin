@@ -1,0 +1,122 @@
+extends blog-wrapper
+
+block blog-news
+  
+  h4.article-h4 Amazon Blockchain Strategy Group boosts efforts to secure code
+    
+  p
+    b Highlights
+    
+  ul
+    li Storecoin subscribes to the philosophy of secure by design.
+    li Protection of the entire system is built into the infrastructure, processes, development and testing, as well as the consensus protocol.
+    li Storecoin has identified three primary areas that must be secured:
+      ol.nested
+        li Public blockchain
+        li Wallet and governance infrastructure
+        li Development process and environment
+        
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/fort-knox.jpeg")
+  p.caption The U.S. stores its gold bullion reserve at Fort Knox, an Army base in Kentucky. (Source: Fort Knox Archive)
+  
+  p
+    b Introduction
+  
+  p Public blockchains using a decentralized workforce to build open-source software have to address a wide range of security concerns. Storecoin is creating software and a cutting-edge organization around security.
+
+  p This document is 
+    b Part 1
+    |  of Storecoin’s discussion of its approach to securing the blockchain and its supporting infrastructure. It is codenamed Fort Knox after the famous fortified vault in Kentucky.
+
+  p Like some of the largest cryptocurrency organizations in the world, Storecoin works with the Amazon Blockchain Strategy Group to secure its code base and CI/CD environment (and more).
+  
+  p
+    b Secure by Design
+  
+  p For a cryptocurrency network, security cannot be an afterthought where you add something later. The protocol, infrastructure, processes, development, and testing must be built around security. Security built into the consensus protocol is commonly understood. End-to-end security built into an open development environment, not so much. Secure by design involves the following traits.
+  
+  ul
+    li 
+      b Security levels and end-to-end auditability —
+      |  The system should have multiple, well-defined security levels so the components and processes in the system can be assigned appropriate security levels. There should not any component or process with an undefined security level. Every access to the component or process and every operation performed must be auditable and the audits must be maintained through the life of the system.
+    li 
+      b Role-based access control —
+      |  The security levels and audits must be accompanied by a role-based access control to the components and processes in the system. There shouldn’t be an access without an explicit role associated with it.
+    li 
+      b Continuous monitoring, alerting and notifications —
+      |  The access control patterns must generate appropriate alerts continuously. Alerts should also have well-defined actions, so they can be executed when they are generated. The actions can be as simple as notifications — call, text, email responsible people — or as dramatic as freezing or killing the system.
+    li 
+      b Continuous test —
+      |  The system should have built-in attacks for all possible attacks that it can defend, so it can defend them continuously. This is the only way we can be confident that the system can resist real attacks. So all documented vulnerabilities are built into the system and they are exploited continuously to test the system’s defense.
+      
+  p
+    b Secure System Design
+  
+  p 
+    b Wallet, governance and other services:
+    |  The Storecoin wallet, governance infrastructure, and other related services are hosted on Storecoin. Services are hosted on Amazon Web Service with a multi-datacenter, multi-VPC design, shown in 
+    b Figure 1
+    | , below.
+    
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/sample-deployment.png")
+  p.caption Figure 1 — A sample deployment diagram hosting Storecoin services
+  
+  p The following measures are taken to secure these services.
+  ul    
+    li 
+      b Virtual Private Clouds (VPC) —
+      |  Services are deployed in their own VPC, segregated from other services. Shared access is not permitted. This design allows for VPC specific role definition, access control, and prevents unnecessary access from one service to another.
+    li 
+      b Role-based access control —
+      |  All access to hosted services such as production updates, bug fixes, access to logs and underlying data stores, etc. are controlled by specific roles. These roles are confined to the underlying VPC. As a result, roles granted to one service cannot be used with another service.  
+      br
+      | If a person must access multiple services, they will need explicit roles granted for those services.
+    li 
+      b No public access for hosted services —
+      |  Hosted services and their infrastructure pieces are inaccessible from the public Internet. Access is by well-defined APIs that have secure access terminated at the load balancer. As a result, direct attacks are possible on these services.
+    li 
+      b No direct developer access to hosted services —
+      |  The developers cannot SSH (secure-shell access) directly into any of the services from their development machines. They will need to gain access from a bastion host that includes enabled role-based access. Such a setup prevents access to the secure services from a compromised development machine.
+    li 
+      b Dynamic shared secrets —
+      |  Password protected and single master secret key access is not utilized because of ease of compromise. Rather, access is channeled through a secure key management infrastructure implementing Shamir’s secret sharing 
+      a(href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing", target="_blank") (https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing)
+      | . This scheme splits the master key into N parts and M of N (for example, 3 of 5) parts are required to gain access to the system. Depending on the role, this can be “1 of 2”, “2 of 3”, “3 of 5”, or similar access control. For the system to work, the required number of people holding the necessary key parts must come together to open the vault preventing a single person from inadvertently performing catastrophic operations.
+    li 
+      b Continuous auditing and monitoring —
+      |  As discussed previously, access is monitored so appropriate alerting can be used when needed.
+      
+  p
+    b Conclusion
+  
+  p 
+    span.italics Secure by design
+    |  principle models the security in the design rather than in implementation or as an afterthought. Trust is distributed so a single person or entity cannot be the weakest link in the system. Security is a multi-tiered system and all components and processes are explicitly assigned appropriate security levels. As a result, all access is monitored and audited.
+
+  p The blockchain networks are vulnerable to various types of attacks. Storecoin models its network with built-in attacks so the system can defend itself continuously, preventing ‘surprises’ when real attacks are mounted.
+  
+  p
+    b Coming in Part 2
+  p Details on Secure System Design for the public blockchain as well as the development process and environment.
+  
+  p 
+    b More Reading
+  
+  p To learn more about some of the largest security failures, hacks and breaches in history, affecting companies like Yahoo, eBay and Equifax:
+
+  p 
+    a(href="https://www.csoonline.com/article/2130877/data-breach/the-biggest-data-breaches-of-the-21st-century.html", target="_blank") https://www.csoonline.com/article/2130877/data-breach/the-biggest-data-breaches-of-the-21st-century.html
+
+  p See more about hacks of blockchain-related technology companies such as the Mt. Gox exchange, 
+    a(href="https://en.wikipedia.org/wiki/Mt._Gox", target="_blank") https://en.wikipedia.org/wiki/Mt._Gox
+    |  and Italian coin exchange BitGrail, 
+    a(href="https://techcrunch.com/2018/02/12/bitgrail-hack-nano/", target="_blank") https://techcrunch.com/2018/02/12/bitgrail-hack-nano/
+
+
+
+
+
+    
+  

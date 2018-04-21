@@ -3,241 +3,262 @@ extends layout
 block content
   div#hc-content
 
-    #hc-milestones.hc-feature.over-rel(style="margin-top:3em; padding-bottom:0px;")
-      h2.hc-feature-title Milestones
-      div.each-year.green
-        h3.year 2017
-        div.each-month
-          div.month
-            h3 May
-          div.milestones
-            div.each-milestone
-              div.icon-number
-                p.number #1
-                p.icon.green
-                  i.ion-checkmark 
-              div.achievements
-                p.title Blockchain	Architect	added
-            div.each-milestone
-              div.icon-number
-                p.number #2
-                p.icon.green
-                  i.ion-checkmark.green 
-              div.achievements
-                p.title Early engineering team added
-            div.each-milestone
-              div.icon-number
-                p.number #3
-                p.icon.green
-                  i.ion-checkmark.green 
-              div.achievements
-                p.title R&D begins
-            div.each-milestone
-              div.icon-number
-                p.number #4
-                p.icon.green
-                  i.ion-checkmark.green 
-              div.achievements
-                p.title Green Paper is started
-            div.each-milestone
-              div.icon-number
-                p.number #5
-                p.icon.green
-                  i.ion-checkmark.green 
-              div.achievements
-                p.title Amazon funds Storecoin R&D with	AWS	credits
-        
-        div.each-month
-          div.month
-            h3 August
-          div.milestones
-            div.each-milestone
-              div.icon-number
-                p.number #6
-                p.icon.green
-                  i.ion-checkmark 
-              div.achievements
-                p.title Viable testing network set-up
-            div.each-milestone
-              div.icon-number
-                p.number #7
-                p.icon.green
-                  i.ion-checkmark.green 
-              div.achievements
-                p.title Storecoin Green Paper is released
-            div.each-milestone
-              div.icon-number
-                p.number #8
-                p.icon.green
-                  i.ion-android-time.green 
-              div.achievements
-                p.title Cryptoeconomics v0.1 released
-            div.each-milestone
-              div.icon-number
-                p.number #9
-                p.icon.green
-                  i.ion-checkmark.green 
-              div.achievements
-                p.title Whitepaper writing begins
-            div.each-milestone
-              div.icon-number
-                p.number #10
-                p.icon.green
-                  i.ion-android-time.green 
-              div.achievements
-                p.title Extensive scalability testing
-            div.each-milestone
-              div.icon-number
-                p.number #11
-                p.icon.green
-                  i.ion-checkmark.green 
-              div.achievements
-                p.title Extensive security testing
-            div.each-milestone
-              div.icon-number
-                p.number #12
-                p.icon.green
-                  i.ion-checkmark.green 
-              div.achievements
-                p.title Storecoin	governance	and	Token	Sales	are	aligned with	the	SEC’s	July	guidance
-        
-        div.each-month
-          div.month
-            h3 December 2017
-          div.milestones
-            div.each-milestone
-              div.icon-number
-                p.number #13
-                p.icon
+    #hc-milestones.hc-feature.over-rel.inverted(style="margin-top:3em;")
+      .hc-chunk.hc-intro-text-wrapper
+        h2.hc-feature-title Milestones
+        p.hc-feature-lead A running log of key milestones for Storecoin to-date
+        div.milestones
+          div.each-milestone.left.first
+            div.pulse
+            div.wrapper
+              div.head April 2018
+              div.list
+                div.item 
+                  i.ion-record
+                  span Storecoin Offers 
+                    a.underline(href="/blog/open-source-proposal-has-potential-to-raise-tendermints-consensus-throughput", target="_blank") Open-Source Proposal
+                    |  with Potential to Raise Tendermint’s Consensus Throughput
+                div.item 
+                  i.ion-record
+                  span 
+                    a.underline(href="/blog/storecoin-software-development-protocol-inpired-by-impenetrable-fort-knox", target="_blank") Project Fort Knox
+                    | : Storecoin takes major steps to secure its code base with the help of the Amazon Blockchain Strategy Group 
+                div.item 
+                  i.ion-record
+                  span BlockFin -- the fork tolerant, auditable, leaderless, high throughput, and decentralized consensus protocol invented by Storecoin -- becomes 
+                    a.underline(href="https://twitter.com/storecoin/status/983519876265394176", target="_blank") patent pending
+                div.item 
+                  i.ion-record
+                  span Storecoin releases its Treasury Plan showing how tokens will be allocated to public sales (33%), incentivizing the growth of the network (33%), and to the team -- across a 1,000+ year time horizon
+                div.item 
+                  i.ion-record
+                  span Storecoin submits an open source 
+                    a.underline(href="https://github.com/tendermint/tendermint/issues/1426", target="_blank") improvement proposal
+                    |  for improving the decentralization and throughput of Tendermint --  the consensus mechanism for the Cosmos project and the Tendermint Foundation
+                div.item 
+                  i.ion-record
+                  span Storecoin releases its 
+                    a.underline(href="https://twitter.com/storecoin/status/984223655826620417", target="_blank") 8-year roadmap
+                    |  detailing how the public protocol can evolve from from apps, to smart contracts, to the cash register and beyond 
+                div.item 
+                  i.ion-record
+                  span Early plans for the Storecoin 
+                    a.underline(href="https://twitter.com/storecoin/status/978450559991668736", target="_blank") Ecosystem Fund
+                    |  begin
+                div.item 
+                  i.ion-record
+                  span Long-term custodianship of token-based Treasury is put into place
+                div.item 
+                  i.ion-record
+                  span The v3 spec for a Governance with United States-inspired Checks and Balances is released
+                div.item 
+                  i.ion-record
+                  span Storecoin grows its team to 14+ 
+            
+          div.each-milestone.right
+            div.wrapper
+              div.head March 2018
+              div.list
+                div.item
+                  i.ion-record 
+                  span Storecoin achieves  
+                    a.underline(href="https://twitter.com/chrisamccoy/status/980140504548429825", target="_blank") 10,000+ Transactions Per Second
+                    |  in a 21-validator node set-up and 159,000+ TPS in an 8-node set-up
+                div.item
+                  i.ion-record 
+                  span Storecoin releases its 
+                    a.underline(href="https://twitter.com/storecoin/status/963511294941790208", target="_blank") technical white paper for Blockfin
+                    |  to its internal team of technologists and advisors
+                div.item
+                  i.ion-record 
+                  span Storecoin publishes a visual presentation on BlockFin, to be used for future public presentations
+                div.item
+                  i.ion-record 
+                  span Storecoin’s legal team builds a KYC/AML and Global Securities Law-compliant plan to grow the project to +21,000 wallets before public launch
+                div.item
+                  i.ion-record 
+                  span Storecoin builds a method to mail 
+                    a.underline(href="https://twitter.com/storecoin/status/979925258751717376", target="_blank") T-shirts
+                    |  to thousands of Community members around the globe -- using a third party warehouse and API calls!
+                div.item
+                  i.ion-record 
+                  span Early plans for acquiring money transmitter licenses in the United States begin
+                div.item
+                  i.ion-record 
+                  span Storecoin releases a v2 spec for its decentralized Security Guard network                    
+            
+          div.each-milestone.left
+            div.wrapper
+              div.head February 2018
+              div.list
+                div.item
+                  i.ion-record 
+                  span Research for Storecoin’s Governance reaches version 2 for internal peer review
+                div.item
+                  i.ion-record 
+                  span 
+                    a.underline(href="https://twitter.com/storecoin/status/979180386969243653", target="_blank") Govnodes
+                    | , a new type of decentralized worker to host the votes and communication for Governance, go into product development
+                div.item
+                  i.ion-record 
+                  span Storecoin releases a v1 spec for Level 2 scaling through Masternodes (encrypted agents)
                   
-              div.achievements
-                p.title Storecoin Test Network is launched
-            div.each-milestone
-              div.icon-number
-                p.number #14
-                p.icon
+          div.each-milestone.right
+            div.wrapper
+              div.head January 2018
+              div.list
+                div.item
+                  i.ion-record
+                  span 
+                    a.underline(href="https://twitter.com/storecoin/status/951662643181371397", target="_blank") Michael Arrington and XRP Capital
+                    | , Ari Nazir and Neural Capital, Anthony Pompliano and Full Tilt Capital, plus 200 others close out Storecoin’s 
+                    a.underline(href="https://twitter.com/storecoin/status/948318741648916480", target="_blank") second, invite-only token sale
+                div.item
+                  i.ion-record
+                  span Working with Amazon’s Blockchain Strategy Group, Storecoin begins securing its code base, private keys, and more with Project Fort Knox
+                div.item
+                  i.ion-record
+                  span Storecoin 
+                    a.underline(href="http://t.me/storecoin", target="-blank") launches
+                    |  its public Telegram Super Group
+                div.item
+                  i.ion-record
+                  span Creator Chris McCoy introduces Storecoin to the 
+                    a.underline(href="https://news.storeco.in/blog/chris-mccoy-introduces-storecoin-at-worlds-1st-crypto-finance-conf", target="_blank") Crypto Finance Conference
+                    |  in St. Moritz, Switzerland.
+                div.item
+                  i.ion-record
+                  span 
+                    a.underline(href="https://twitter.com/footpr1nt/status/890698524572000256", target="_blank") Footprint
+                    |  -- the operating company that started Storecoin -- re-focuses to becoming the *ConsenSys for Storecoin*; the search for a CEO begins
+                div.item
+                  i.ion-record
+                  span Storecoin adds two new executives and grows its team overall by 4 new members, including  Noah Ruderman, Stephen McKeon and Nathaniel Lubin as advisors for 
+                    a.underline(href="https://news.storeco.in/blog/software-engineer-accepts-role-of-technology-advisor-for-storecoin", target="_blank") technology
+                    | , 
+                    a.underline(href="https://news.storeco.in/blog/finance-professor-stephen-mckeon-joins-storecoin-as-economics-advisor", target="_blank") economics
+                    |  and 
+                    a.underline(href="https://news.storeco.in/blog/nate-lubin-president-obamas-director-of-digital-strategy-joins-storecoin-as-communications") communications
+                    | , respectively.
+
+          div.each-milestone.left
+            div.wrapper
+              div.head December 2017
+              div.list
+                div.item
+                  i.ion-record 
+                  span Economic R&D evolves the project from solving blockchain for franchise and chain stores into solving the problem of p2p, zero-fee, programmable payments
+                div.item
+                  i.ion-record
+                  span First results of 
+                    a.underline(href="https://news.storeco.in/blog/load-testing-storecoins-dynamic-proof-of-stake-consensus-algorithm-test-1-of-7") DyPoS
+                    |  are released.
+                div.item
+                  i.ion-record 
+                  span Internal peer review begins for BlockFin, Storecoin’s consensus algorithm
+                div.item
+                  i.ion-record 
+                  span Plans begin to transition Storecoin, Inc. into a non-profit foundation
+
+          div.each-milestone.right
+            div.wrapper
+              div.head November 2017
+              div.list
+                div.item
+                  i.ion-record 
+                  span The v2 spec for a 
+                    a.underline(href="https://twitter.com/storecoin/status/953687762280026112", target="_blank") Governance
+                    |  with United States-inspired Checks and Balances launches
+                div.item
+                  i.ion-record
+                  span Storecoin adds 
+                    a.underline(href="https://news.storeco.in/blog/digital-innovator-mark-ramberg-to-advise-storecoin-on-platforms-and-api", target="_blank") advisor
+                    |  on security, platforms and digital delivery systems.
+                div.item
+                  i.ion-record
+                  span Storecoin welcomes Mark Ramberg as 
+                    a.underline(href="https://news.storeco.in/blog/digital-innovator-mark-ramberg-to-advise-storecoin-on-platforms-and-api", target="_blank") advisor
+                    |  on security, platforms and digital delivery systems.
+
+          div.each-milestone.left
+            div.wrapper
+              div.head October 2017
+              div.list
+                div.item
+                  i.ion-record 
+                  span The v1 spec for a Governance with United States-inspired Checks and Balances launches
+                dinv.item
+                  i.ion-record
+                  span Storecoin hires 
+                    a.underline(href="https://news.storeco.in/blog/storecoin-hires-rajiv-patel-of-fenwick-west-to-file-blockchain-patents", target="_blank") patent attorney
+                    |  Rajiv Patel.
+    
+          div.each-milestone.right
+            div.wrapper
+              div.head September 2017
+              div.list
+                div.item
+                  i.ion-record 
+                  span The v1 economic and project spec for a Decentralized Security Guard network (dGuards) on Storecoin launches
                   
-              div.achievements
-                p.title v0.1 Storecoin Whitepaper released
-            div.each-milestone
-              div.icon-number
-                p.number #15
-                p.icon
+          div.each-milestone.left
+            div.wrapper
+              div.head August 2017
+              div.list
+                div.item
+                  i.ion-record 
+                  span 
+                    a.underline(href="https://news.storeco.in/blog/virtual-currency-leader-ari-paul-joins-storecoin-as-strategic-advisor", target="_blank") Ari Paul
+                    |  joins as a strategic advisor   
+                div.item
+                  i.ion-record 
+                  span BlockTower Capital joins as an investor   
+                div.item
+                  i.ion-record 
+                  span The first, invite-only token sale completes with 20 partners 
                   
-              div.achievements
-                p.title v1 Cryptoeconomics released
-            div.each-milestone
-              div.icon-number
-                p.number #16
-                p.icon
+          div.each-milestone.right
+            div.wrapper
+              div.head July 2017
+              div.list
+                div.item
+                  i.ion-record 
+                  span Storecoin applies its 
+                    a.underline(href="https://twitter.com/storecoin/status/959176336194637826", target="_blank") Dynamic Block Rewards model
+                    |  to Security and has a massive research breakthrough on the potential of inflationary rewards incentivizing decentralized workers to not only process a blockchain but also to secure
                   
-              div.achievements
-                p.title Core Blockchain Developers added
-            div.each-milestone
-              div.icon-number
-                p.number #17
-                p.icon
+          div.each-milestone.left
+            div.wrapper
+              div.head June 2017
+              div.list
+                div.item
+                  i.ion-record 
+                  span Storecoin builds the 
+                    a.underline(href="https://news.storeco.in/blog/storecoin-update-august-2017", target="_blank") economic model for Dynamic Block Rewards
+                    |  -- or Uber Surge Pricing for Block Rewards
+                div.item
+                  i.ion-record 
+                  span The scope of the 
+                    a.underline(href="https://news.storeco.in/blog/introducing-storecoin", target="_blank") project begins to expand
+                    |  past franchise and chain stores
+    
+          div.each-milestone.right.last
+            div.wrapper
+              div.head May 2017
+              div.list
+                div.item
+                  i.ion-record
+                  span Storecoin is formed as a blockchain for franchise and chain stores using DyPoS
+                div.item
+                  i.ion-record
+                  span Research for BlockFin, our consensus algorithm, begins
+                div.item
+                  i.ion-record
+                  span The economic principles of Uber Surge Pricing are introduced for inflation-based block rewards
+                div.item
+                  i.ion-record
+                  span 
+                    a.underline(href="https://news.storeco.in/blog/why-storecoin-is-inventing-dynamic-proof-of-stake-dypos", target="_blank") Dynamic Proof of Stake (DyPoS)
+                    |  -- our protocol that encompasses economics, governance, and security with consensus -- is invented
                   
-              div.achievements
-                p.title Auction-based	Second	Token	Sale	launches
-            div.each-milestone
-              div.icon-number
-                p.number #18
-                p.icon
-                  
-              div.achievements
-                p.title Storecoin Alliance Network launched
-      
-      div.each-year.orange
-        h3.year 2018
-        div.each-month
-          div.month
-            h3 2018+
-          div.milestones
-            div.each-milestone
-              div.icon-number
-                p.number #19
-                p.icon
-                  
-              div.achievements
-                p.title v1 Storecoin Whitepaper released 
-            div.each-milestone
-              div.icon-number
-                p.number #20
-                p.icon
-                  
-              div.achievements
-                p.title Storecoin Proof of Concept #1 released 
-            div.each-milestone
-              div.icon-number
-                p.number #21
-                p.icon
-                  
-              div.achievements
-                p.title Storecoin v0.1 Developer API released 
-            div.each-milestone
-              div.icon-number
-                p.number #22
-                p.icon
-                  
-              div.achievements
-                p.title Storecoin Roadmap Announced 
-            div.each-milestone
-              div.icon-number
-                p.number #23
-                p.icon
-                  
-              div.achievements
-                p.title Open Source Development begins 
-            div.each-milestone
-              div.icon-number
-                p.number #24
-                p.icon
-                  
-              div.achievements
-                p.title Storecoin	Token	gets	issued	to	the	wallet	of	all	Token Buyers 
-                
-      div.each-year.yellow
-        h3.year 2019
-        div.each-month
-          div.month
-            h3 2019+
-          div.milestones
-            div.each-milestone
-              div.icon-number
-                p.number #25
-                p.icon
-                  
-              div.achievements
-                p.title Storecoin Proof of Concept #2 released 
-            div.each-milestone
-              div.icon-number
-                p.number #26
-                p.icon
-                  
-              div.achievements
-                p.title Public Network v0.1 launches 
-            div.each-milestone
-              div.icon-number
-                p.number #27
-                p.icon
-                  
-              div.achievements
-                p.title Storecoin Wallet launches 
-            div.each-milestone
-              div.icon-number
-                p.number #28
-                p.icon
-                  
-              div.achievements
-                p.title Storecoin Alliance grows to 10+ partners 
-            div.each-milestone
-              div.icon-number
-                p.number #29
-                p.icon
-                  
-              div.achievements
-                p.title Storecoin Foundation launched 
-                   
-                       
     include email-widget

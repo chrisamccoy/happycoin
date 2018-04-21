@@ -1,10 +1,40 @@
 var express = require('express');
 var router = express.Router();
-var meta = require('../helpers/meta')
+var meta = require('../helpers/meta');
+var getblog = require('../helpers/blogs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET Tokensale 3 page. */
+router.get('/tokensale3', function(req, res, next) {
+  res.render('tokensale3', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
+router.get('/tenyears', function(req, res, next) {
+  res.render('coming-soon', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
+router.get('/3', function(req, res, next) {
+  res.render('coming-soon', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET consensus compare */
+router.get('/consensuscompare', function(req, res, next) {
+  res.redirect('https://docs.google.com/spreadsheets/d/1XEVSpnMD3rOuqhZj7KsDQalfd1i7c3zTkLEkpRaD_tU/edit?usp=sharing');
+});
+
+/* GET consensus compare */
+router.get('/compare', function(req, res, next) {
+  var mt = meta({
+    title : 'How Storecoin Compares to other P2P Protocols and Payments Platforms',
+    url : 'http://storeco.in/compare'
+  });
+  res.render('compare', { title: 'Storecoin', meta: meta });
 });
 
 /* GET home page. */
@@ -24,7 +54,12 @@ router.get('/development', function(req, res, next) {
 
 /* GET home page. */
 router.get('/community', function(req, res, next) {
-  res.render('community', { title: 'Storecoin', meta: meta() });
+  res.redirect('/newsletter');
+});
+
+/* GET home page. */
+router.get('/newsletter', function(req, res, next) {
+  res.render('newsletter', { title: 'Storecoin', meta: meta() });
 });
 
 /* GET home page. */
@@ -43,8 +78,13 @@ router.get('/secondtokensale', function(req, res, next) {
 });
 
 /* GET home page. */
-router.get('/applytoforge', function(req, res, next) {
+router.get('/validate', function(req, res, next) {
   res.render('apply-forge', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
+router.get('/blockfin', function(req, res, next) {
+  res.render('blockfin', { title: 'Storecoin', meta: meta() });
 });
 
 /* GET home page. */
@@ -53,23 +93,99 @@ router.get('/dguard', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/onepoint', function(req, res, next) {
+  res.render('onepoint', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
+router.get('/communityfund', function(req, res, next) {
+  var email = req.query.email ? req.query.email : '',
+      source = "https://docs.google.com/forms/d/e/1FAIpQLSfBH4E1zWjYW6Jud9KNv2P8B0SqPLiu6FXtGcVGFHeT8r6T0A/viewform?usp=pp_url&entry.83776163=" + email;
+
+  res.render('community-fund', {
+    title: 'Storecoin',
+    meta: meta(),
+    iframe: source,
+  });
+});
+
+router.get('/cfc18', function(req, res, next) {
+  res.render('cfc18', {
+    title: 'Storecoin',
+    meta: meta()
+  });
+});
+
+/* GET home page. */
 router.get('/firsttokensalefaq', function(req, res, next) {
   res.render('token-faq', { title: 'Storecoin', meta: meta() });
 });
 
 /* GET home page. */
-router.get('/blog', function(req, res, next) {
-  res.render('blog', { title: 'Storecoin', meta: meta() });
+router.get('/url', function(req, res, next) {
+  res.render('url', { title: 'Storecoin', meta: meta() });
 });
 
 /* GET home page. */
-router.get('/blog/load-testing-storecoins-dynamic-proof-of-stake-consensus-algorithm-test-1-of-7', function(req, res, next) {
-  res.render('blog-load-testing', { title: 'Storecoin', meta: meta() });
+router.get('/blog', function(req, res, next) {
+  var blogs = getblog();
+  res.render('blog', {
+    title: 'Storecoin', meta: meta(), blogs : blogs,
+    url : req.protocol + '://' + req.get('host') + req.originalUrl
+   });
+  // res.redirect('https://news.storeco.in/');
+});
+
+/* GET home page. */
+router.get('/blog/:slug', function(req, res, next) {
+  var bg = getblog(req.params.slug);
+
+  if (!bg) {
+    res.render('notfound', { url: req.url, meta: null });
+    return;
+  }
+
+  var mt = meta({
+    title: bg.title,
+    twtitle : (bg.twtitle) ? bg.twtitle : false,
+    desc: bg.desc,
+    image: bg.img,
+    image_tw: bg.img,
+    url: req.protocol + '://' + req.get('host') + req.originalUrl,
+    timeStamp : bg.date+' . '+bg.readTime
+  });
+
+  res.render(bg.template, { title: (bg.twtitle) ? bg.twtitle : bg.title, meta: mt });
 });
 
 /* GET home page. */
 router.get('/cryptoeconomics', function(req, res, next) {
   res.render('crypto-economics', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
+router.get('/developer', function(req, res, next) {
+  res.render('developer', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
+router.get('/govnode', function(req, res, next) {
+  res.render('govnode', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
+router.get('/masternode', function(req, res, next) {
+  res.render('masternode', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
+router.get('/careers', function(req, res, next) {
+  res.render('careers', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
+router.get('/peltzinternational', function(req, res, next) {
+  res.render('peltzinternational', { title: 'Storecoin', meta: meta() });
 });
 
 /* GET home page. */
@@ -85,11 +201,6 @@ router.get('/coming-soon', function(req, res, next) {
 /* GET home page. */
 router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Storecoin', meta: meta() });
-});
-
-/* GET home page. */
-router.get('/api', function(req, res, next) {
-  res.render('developer-api', { title: 'Storecoin', meta: meta() });
 });
 
 /* GET home page. */
@@ -152,9 +263,50 @@ router.get('/tokengrant', function(req, res, next) {
   res.render('token-grant', { title: 'Storecoin', meta: meta() });
 });
 
+/* GET login page */
+router.get('/login', function(req, res, next) {
+  res.render('login', { title: 'Storecoin', meta: meta() });
+});
+
+router.post('/login', function (req, res, next) {
+  // you might like to do a database look-up or something more scalable here
+  if (req.body.username && req.body.username === 'admin' && req.body.password && req.body.password === 'St0r3C01n') {
+    req.session.authenticated = true;
+    res.redirect('/admin/orders');
+  } else {
+    res.redirect('/login');
+  }
+});
+
+router.get('/logout', function (req, res, next) {
+  delete req.session.authenticated;
+  res.redirect('/');
+});
+
 /* ------------WALLET------------ */
+router.get('/wallet', function(req, res, next) {
+  var ua = req.header('user-agent');
+  if(/mobile/i.test(ua)) {
+    res.render('wallet/index', {
+      title: 'Storecoin',
+      name : 'Home', header : false,
+      meta: meta()
+    });
+  } else {
+    res.render('wallet/index-desktop', {
+      title: 'Storecoin',
+      name : 'Home',
+      meta: meta()
+    });
+  }
+});
+
 router.get('/wallet/wallet-app', function(req, res, next) {
-  res.render('wallet/index', { title: 'Storecoin', name : 'Home', header : false, meta: meta() });
+  res.render('wallet/index', {
+    title: 'Storecoin',
+    name : 'Home', header : false,
+    meta: meta()
+  });
 });
 
 router.get('/wallet/wallet-app/header', function(req, res, next) {
@@ -165,24 +317,33 @@ router.get('/wallet/wallet-app/api', function(req, res, next) {
   res.render('wallet/api', { title: 'Storecoin', name : 'Home', header : true, meta: meta() });
 });
 
-router.get('/wallet', function(req, res, next) {
-  res.render('wallet/index-desktop', { title: 'Storecoin', name : 'Home', meta: meta() });
+router.get('/api-m', function(req, res, next) {
+  res.render('wallet/api', { title: 'Storecoin', name : 'Home', header : true, meta: meta() });
 });
+
+router.get('/wallet/wallet-app/royalty', function(req, res, next) {
+  res.render('wallet/royalty', { title: 'Storecoin', name : 'Home', header : true, meta: meta() });
+});
+
 
 router.get('/wallet2', function(req, res, next) {
   res.render('wallet/index-2', { title: 'Storecoin', name : 'Home', meta: meta() });
 });
 
-// router.get('/wallet/buy', function(req, res, next) {
-//   res.render('wallet/buy', { title: 'Storecoin', name : 'Buy' });
-// });
-//
-// router.get('/wallet/sell', function(req, res, next) {
-//   res.render('wallet/sell', { title: 'Storecoin', name : 'Sell' });
-// });
-//
-// router.get('/wallet/gift', function(req, res, next) {
-//   res.render('wallet/gift', { title: 'Storecoin', name : 'Gift' });
-// });
+/* GET home page. */
+router.get('/api', function(req, res, next) {
+  // res.render('developer-api', { title: 'Storecoin', meta: meta() });
+  res.redirect('/wallet/#api');
+});
+
+/* GET home page. */
+router.get('/dev', function(req, res, next) {
+  res.redirect('/wallet/#dev');
+});
+
+/* GET home page. */
+router.get('/royalty', function(req, res, next) {
+  res.render('developer-royalty', { title: 'Storecoin', meta: meta() });
+});
 
 module.exports = router;

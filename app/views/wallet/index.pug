@@ -13,6 +13,17 @@ block content
             circle.checkmark__circle(cx='26', cy='26', r='25', fill='none')
             path.checkmark__check(fill='none', d='M14.1 27.2l7.1 7.2 16.7-16.8')
         div.text Complete
+        button.button.next(style="display:none;") Next
+      .content.start
+        div.text 
+          p As the Developer, you can even earn a royalty for each API call taken. 
+          p This is a new revenue stream.
+        button.button.next-2 Next
+      .content.end
+        div.text 
+          p There will never be fees when sending or receiving storecoin tokens. 
+        button.button.get-started Get Started
+        
   div#home-tab
     section#wallet-value
       div.wallet-container
@@ -23,15 +34,20 @@ block content
           a.link(href="javascript:;", data-tab="gift") Gift
         div.value
           div.storecoin-val 
-            p.number 5
-              span .13434
+            p.number 139
+              span .47001
             p.unit
               img(src="/images/wallet/white-storecoin.png")
               | storecoin
           div.est-val Estimated Value:  
             span.green $183.68
+      
+    div.feeds-tab-items
+      div.item.active(data-tab="#price") Price
+      div.item(data-tab="#txns") Txns
+      div.item(data-tab="#apps") Apps
           
-    div.graph-feeds    
+    div#price.feeds-tab.active.graph-feeds    
       section#wallet-price-span
         p Storecoin Price
         select.ui.fluid.selection.dropdown
@@ -49,8 +65,12 @@ block content
           div.change
             i.ion-android-arrow-up.green
             | $15.25 (74.03%)
-        div.graph
-          //- svg(width="900", height="200")
+        div.graph-container  
+          div.graph
+            //- svg(width="900", height="200")
+          div.loading
+            div.sp.sp-wave
+            div.text Loading...
       
       div.feeds
         section.wallet-feed
@@ -133,7 +153,116 @@ block content
         .content
           div.sp.sp-wave
           div.text Loading...
-          
+    
+    div#txns.feeds-tab.graph-feeds
+      div.feeds
+        section.wallet-feed
+          img.image(src="/images/wallet/user-1.png")
+          div.description
+            div.name-val
+              p.name Antone Johnson
+              p.status RECEIVED
+              p.value.green 1.35353
+            div.download-time
+              img.icon(src="/images/wallet/received-icon.png")
+              div.dot 
+                i.ion-record
+              p.time Today, 12:08 PM
+        section.wallet-feed
+          img.image(src="/images/wallet/rag-kidiyoor.png")
+          div.description
+            div.name-val
+              p.name Rag Kidiyoor
+              p.status SPENT
+              p.value.red 8.34316
+            div.download-time
+              img.icon(src="/images/wallet/spent-icon.png")
+              div.dot 
+                i.ion-record
+              p.time Today, 12:08 PM
+        section.wallet-feed
+          img.image(src="/images/wallet/jay-pal.jpeg")
+          div.description
+            div.name-val
+              p.name Jay Pal
+              p.status RECEIVED
+              p.value.green 2.79185
+            div.download-time
+              img.icon(src="/images/wallet/received-icon.png")
+              div.dot 
+                i.ion-record
+              p.time Today, 12:08 PM
+        section.wallet-feed
+          img.image(src="/images/wallet/jason-varner.png")
+          div.description
+            div.name-val
+              p.name Jason Varner
+              p.status EARNED
+              p.value.green 6.41732
+            div.download-time
+              img.icon(src="/images/wallet/earn-icon.png")
+              div.dot 
+                i.ion-record
+              p.time Today, 12:08 PM
+        section.wallet-feed
+          img.image(src="/images/wallet/user-1.png")
+          div.description
+            div.name-val
+              p.name Antone Johnson
+              p.status SOLD
+              p.value.red 1.58536
+            div.download-time
+              img.icon(src="/images/wallet/sell-icon.png")
+              div.dot 
+                i.ion-record
+              p.time Today, 12:08 PM
+        section.wallet-feed.gift-feed
+          img.image(src="/images/wallet/user-3.png")
+          div.description
+            div.name-val 
+              p.name Chris McCoy
+              p.status GIFTED
+              p.value.green 0.83853
+            div.transaction
+              a.blue Christina Hayes
+              |  gifted you storecoin:
+            div.message Enjoyed that post on applied cryptography!
+            div.download-time
+              img.icon(src="/images/wallet/gift-icon.png")
+              div.dot 
+                i.ion-record
+              p.time just now
+      div.page-loading
+        .content
+          div.sp.sp-wave
+          div.text Loading...
+        
+    div#apps.feeds-tab
+      section.item-app
+        .image
+          img(src='/images/wallet/calender-icon.png')
+        .title
+          div
+            b Easy Schedule
+          div.meta Project Management 
+        div.button.small.icon.open-process(data-process="api-process", data-app="easy-schedule")
+          i.ion-gear-a
+          //- .right.menu
+          //-   a.item.open-process(data-process="incentive-process", data-app="easy-schedule") Set Incentives
+          //-   a.item.open-process(data-process="api-process", data-app="easy-schedule") Send API calls to Storecoin
+      section.item-app
+        .image
+          img(src='/images/wallet/social-media-logo-v2.png')
+        .title
+          div
+            b Smart Analytics
+          div.meta Social Media Analytics 
+        div.button.small.icon.open-process(data-process="api-process", data-app="smart-analytics")
+          i.ion-gear-a    
+          //- .right.menu
+          //-   a.item.open-process(data-process="incentive-process", data-app="smart-analytics") Set Incentives
+          //-   a.item.open-process(data-process="api-process", data-app="smart-analytics") Send API calls to Storecoin
+            
   div#transaction-tab
     include sub-nav
     
@@ -374,6 +503,241 @@ block content
               i.ion-record
             p.time Crossfit
       
+  //- processes
+  
+  div#api-process.process-window
+    div.process-head
+      div.header
+        div.back
+          i.ion-chevron-left 
+        span Setup API Calls
+      section.item-app
+        .image
+          img(src='/images/wallet/calender-icon.png')
+        .title
+          div
+            b Easy Schedule
+          div.meta Project Management 
+                
+    div.process-step.step-1.show
+      div.process-back 
+        i.ion-chevron-left 
+      
+      section
+        div.head Choose the API Calls to be Incentivized
+        div.check-list
+          div.item
+            div.name User / invite
+            div.check 
+              i.ion-checkmark-circled
+          div.item
+            div.name User / signup
+            div.check 
+              i.ion-checkmark-circled
+          div.item
+            div.name User / onboardingComplete
+            div.check 
+              i.ion-checkmark-circled
+          div.item
+            div.name User / settings
+            div.check 
+              i.ion-checkmark-circled
+          div.item
+            div.name Event / create
+            div.check 
+              i.ion-checkmark-circled
+          div.item
+            div.name Event / edit
+            div.check 
+              i.ion-checkmark-circled
+          div.item
+            div.name Event / invite
+            div.check 
+              i.ion-checkmark-circled
+          div.item
+            div.name Event / inviteAccepted
+            div.check 
+              i.ion-checkmark-circled
+          div.item
+            div.name Event / archived
+            div.check 
+              i.ion-checkmark-circled
+                
+      include process-window-summary
+                
+      div.proceed.next.wallet-button(data-step="step-2")
+        button Next
+      div.proceed.open-process.wallet-button
+        button Save
+                
+    div.process-step.step-2
+      div.process-back.open-process(data-process="api-process", data-step="step-1") 
+        i.ion-chevron-left        
+      
+      section
+        div.head Name you API Calls
+        form.api-form
+          div.fields
+            //- div.input-field
+            //-   label User sign up
+            //-   input(type="text", placeholder="Enter name here")
+            //- div.input-field
+            //-   label User successfully onboards
+            //-   input(type="text", placeholder="Enter name here")
+          input(type="submit", style="display:none;")
+            
+      include process-window-summary 
+            
+      div.proceed.publish.wallet-button(data-message="Beaming your APIs up to the Storecoin public blockchain...", data-success="<p>Your app can now reward users storecoins each time they take an incentivized API.</p>", data-loaddelay="7000", data-successdelay="7000", data-key="api-publish")
+        button Publish API Calls
+      div.proceed.open-process.wallet-button
+        button Save
+              
+  div#incentive-process.process-window
+    div.process-head
+      div.header
+        div.back
+          i.ion-chevron-left 
+        span Set-up Incentives
+      section.item-app
+        .image
+          img(src='/images/wallet/calender-icon.png')
+        .title
+          div
+            b Easy Schedule
+          div.meta Project Management 
+        
+    div.process-step.step-1.show
+      div.process-back.open-process(data-process="api-process", data-step="step-2") 
+        i.ion-chevron-left 
+      
+      include total-balance
+          
+      include total-budget
+      
+      include process-window-summary
+
+      div.proceed.next.wallet-button(data-step="step-2")
+        button Next
+      div.proceed.open-process.wallet-button
+        button Save
+        
+    
+    div.process-step.step-2
+      div.process-back.open-process(data-process="incentive-process", data-step="step-1") 
+        i.ion-chevron-left 
+      
+      - var isPercentSlider = false
+      include api-slider
+      
+      include process-window-summary
+      
+      div.proceed.next.wallet-button(data-step="step-3")
+        button Next
+      div.proceed.open-process.wallet-button
+        button Save
+    
+    div.process-step.step-3  
+      div.process-back.open-process(data-process="incentive-process", data-step="step-2") 
+        i.ion-chevron-left         
+      
+      include global-percent-slider
+      
+      include process-window-summary
+      
+      div.proceed.next.wallet-button(data-step="step-4")
+        button Next
+      div.proceed.open-process.wallet-button
+        button Save
+    
+    
+    div.process-step.step-4
+      div.process-back.open-process(data-process="incentive-process", data-step="step-3") 
+        i.ion-chevron-left
+           
+      section.api-royalty
+        //- div.header Set budget for API calls
+        div.header Set a custom Royalty for specific API's (%)
+        div.api-list
+      
+      - var disabled = true;    
+      include global-percent-slider
+      
+      include process-window-summary
+      
+      div.proceed.publish.wallet-button(data-message="Publishing your incentivized API calls and your Developer royalties to the Storecoin public blockchain...", data-loaddelay="7000")
+        button Finish 
+      div.proceed.open-process.wallet-button
+        button Save 
+            
+  div#summary-process.process-window
+    div.process-head
+      div.header 
+        div.back
+          i.ion-chevron-left
+        span Easy Schedule
+        
+      section.item-app
+        .image
+          img(src='/images/wallet/calender-icon.png')
+        .title
+          div
+            b Easy Schedule
+          div.meta Project Management 
+        
+    div.process-step.step-1
+      section.summary-item.api-selected
+        div.stats 
+          div.head APIs selected
+          div.value 
+            span.gained 1
+            span.out-of /9
+        div.edit
+          div.button.small.icon.open-process(data-process="api-process")
+            i.ion-edit
+              
+      section.summary-item.budget-allocated
+        div.stats 
+          div.head Budget Allocated
+          div.value 
+            div.sc-unit
+              img(src="/images/wallet/storecoin-logo.png")
+            div.sc-val 0.0001
+        div.edit
+          div.button.small.icon.open-process(data-process="incentive-process")
+            i.ion-edit
+              
+      section.summary-item.budget-spent
+        div.stats 
+          div.head Budget Spent
+          div.value 
+            div.sc-unit
+              img(src="/images/wallet/storecoin-logo.png")
+            div.sc-val 0.015
+        //- div.edit
+        //-   div.button.small.icon
+        //-     i.ion-edit
+              
+      section.summary-item.dev-royalty
+        div.stats 
+          div.head Developer Royalty
+          div.value 0.0001%
+        div.edit
+          div.button.small.icon.open-process(data-process="incentive-process", data-step="step-3")
+            i.ion-edit
+
+      div.proceed.next.wallet-button(data-step="step-2")
+        button Dashboard View 
+        
+    div.process-step.step-2
+      include total-balance
+      include total-budget
+      include global-percent-slider
+      - isPercentSlider = true
+      include api-slider
+      div.proceed.next.wallet-button(data-step="step-1")
+        button Itemized View 
+  
   div.confirm-transact.ui.small.modal(data-modal="buy-modal")
     div.content 
       div.modal-header 
@@ -509,3 +873,42 @@ block content
           a.item(data-img="/images/wallet/litecoin-logo.png", data-name="Litecoin", data-key="ltc")
             img(src="/images/wallet/litecoin-logo.png")
             p Litecoin
+            
+  div#api-confirm-modal.ui.small.modal
+    div.content
+      div.modal-header 
+        div.logo-title Confirm
+        div.close-modal
+          i.ion-android-close
+      div.modal-content
+        section
+          div.offer-text Based upon your budget $
+            b
+              span.budget-val 
+            | , your royalty % of 
+            b 
+              span.royalty-val
+            | , here's your offer:
+        section
+          table
+            thead
+              tr
+                th 
+                th Unit
+                th Per Day
+                th Total
+            tbody
+              tr
+                td Revenue
+                td 10
+                td 90
+                td 900
+              tr
+                td Royalty
+                td 25
+                td 20
+                td 500
+        section
+          div.button-group
+            a.close-modal Re-adjust
+            button.button.accept I Accept

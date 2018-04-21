@@ -1,0 +1,203 @@
+extends layout
+
+block content
+  div#admin-content
+    div.content-wrapper
+      .loading
+        .sp.sp-wave
+        .text Loading...
+      div.orders-process
+        div.steps.step-1
+          h3.header Manage Orders
+          div.sc-tabs
+            div.tabs
+              a.item.active(data-tab="pending-orders") Pending Orders
+              a.item(data-tab="create-orders") Create Orders
+              
+            div.tab-body.active(data-tab="pending-orders")
+              div.sc-row
+                button#generate-order(disabled="true", style="margin: 0px;") Generate
+              div#orders-table
+              
+            div.tab-body(data-tab="create-orders")
+              div#create-orders
+                h3 Create Order
+                form
+                  label Email
+                  input(type="email", name="email", placeholder="Email")
+                  
+                  label Name
+                  input(type="text", name="name", placeholder="Name")
+                  
+                  label Address
+                  input(type="text", name="address", placeholder="Address")
+                    
+                  label Address Line 2
+                  input(type="text", name="address2", placeholder="Address Line 2")
+                  
+                  label Country
+                  select#country-select(name="country")
+                  //- input(type="text", name="country", placeholder="Country")
+                    
+                  label State
+                  select#state-select(style="display:none;")
+                  input(type="text", name="state", placeholder="State")
+                  
+                  label City
+                  input(type="text", name="city", placeholder="City")
+                  
+                  label Zipcode
+                  input(type="text", name="zipcode", placeholder="Zipcode")
+                  
+                  label Product
+                  select#product-select
+                  input(type="text", name="product_id", placeholder="Product", hidden)
+                  
+                  label Quantity
+                  input(type="number", name="quantity", placeholder="Quantity")
+                  
+                  button(type="submit") Submit
+            
+        div.steps.step-2
+          h3.header 
+            a.go-back(style='margin-right: 0.5em;')
+              i.ion-arrow-left-c
+            | Orders List
+          div#orders-list
+          button.proceed Proceed
+
+        div.steps.step-3
+          h3.header Orders Summary
+          div#orders-summary
+  //- div#generate-modal.ui.small.modal
+  //-   i.close.ion-close-round
+  //-   div.content
+  //-     div.orders
+  //-     div.alert Would you like to proceed and generate orders?
+  //-     div.modal-buttons
+  //-       button.cancel.close No
+  //-       button.accept Yes
+  
+  script#orders-table-tpl(type="text/template")
+    <% if (!_.isEmpty(orders)) { %>
+      <table>
+        <thead>
+          <tr>
+            <th><input type="checkbox"></th>
+            <th></th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Item</th>
+            <th class="qty">Quantity</th>
+            <th class="qty">Quantity in<br>Hand</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% _.each(orders, function(order){ %>
+            <tr data-id="<%= order.id %>">
+              <td><input type="checkbox"></td>
+              <td><i class="ion-plus-circled fold-reveal" data-fold="<%= order.id %>"></i></td>
+              <td><%= order.name %></td>
+              <td><%= order.email %></td>
+              <td class="product"><%= (order.product) ? order.product.name : 'N/A' %></td>
+              <td class="qty"><%= order.quantity %></td>
+              <td class="qty"><%= (order.product) ? order.product.quantity : 'N/A' %></td>
+            </tr>
+            <tr class="fold" id="<%= order.id %>">
+              <td colspan="7">
+                <div class="fold-wrapper">
+                  <div class="info">
+                    <div class="head">Name</div>
+                    <%= order.name %>
+                  </div>
+                  <div class="info">
+                    <div class="head">Email</div>
+                    <%= order.email %>
+                  </div>
+                  <div class="info">
+                    <div class="head">Address</div><%= order.address %>, <%= order.city %>, <%= order.state %>, <%= order.country %>, <%= order.zipcode %>
+                  </div>
+                  <div class="info">
+                    <div class="head">Product</div><%= (order.product) ? order.product.name : 'N/A' %>
+                  </div>
+                  <div class="info">
+                    <div class="head">Quantity</div><%= order.quantity %>
+                  </div>
+                  <div class="info">
+                    <div class="head">SKU</div><%= (order.product) ? order.product.sku : 'N/A' %>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <h2 style="margin-top: 1em;">No Orders Found</h2>
+    <% } %>
+  
+  script#orders-summary-tpl(type="text/template")
+    <% _.each(data, function(item){ %>
+      <div class="item">
+        <div class="sc-row">
+          <div class="order-id">Order ID - <%= item.order_id %></div>
+          <div class="order-status <%= item.success ? 'success' : 'failed' %>"><%= item.success ? 'Success' : 'Failed' %></div>
+        </div>
+        <div class="details">
+          <div class="info">
+            <div class="head">Name</div>
+            <div class="value"><%= item.order_data.name %></div>
+          </div>
+          <div class="info">
+            <div class="head">Product</div>
+            <div class="value"><%= item.order_data.product.name %></div>
+          </div>
+          <div class="info">
+            <div class="head">Email</div>
+            <div class="value"><%= item.order_data.email %></div>
+          </div>
+          <div class="info">
+            <div class="head">Address</div>
+            <div class="value"><%= item.order_data.address %>, <%= item.order_data.city %>, <%= item.order_data.state %>, <%= item.order_data.country %>, <%= item.order_data.zipcode %></div>
+          </div>
+          <div class="info">
+            <div class="head">Quantity</div>
+            <div class="value"><%= item.order_data.quantity %></div>
+          </div>
+          <div class="info">
+            <div class="head">SKU</div>
+            <div class="value"><%= item.order_data.product.sku %></div>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+
+  script#orders-list-tpl(type="text/template")
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align:center;">#</th>
+          <th>Name</th>
+          <th>Product Name</th>
+          <th style="text-align:center;">Quantity</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% _.each(rows, function(row, i){ %>
+          <tr data-id="<%= row.id %>">
+            <th style="text-align:center;"><%= i + 1 %></th>
+            <td><%= row.name %></td>
+            <td><%= (row.product) ? row.product.name : '<span style="color: red;"><i class="ion-alert" style="margin-right:1em;"></i>No Product Found</span>' %></td>
+            <td style="text-align:center;"><%= row.quantity %></td>
+            <td><i class="ion-android-close"></i></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+
+  script#product-select-tpl(type="text/template")
+    <option value=""><%= select %></option>
+    <% _.each(rows, function(row){ %>
+      <option value="<%= row.id %>"><%= row.name %></option>
+    <% }) %>

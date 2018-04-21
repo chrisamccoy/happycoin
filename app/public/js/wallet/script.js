@@ -11,6 +11,13 @@ $(document).ready(function(){
   initDatePicker();
   loadCoinsValue();
   initPaginate();
+  initApi();
+  triggerOnUrl();
+  initFeedsTab();
+  // initPercentSlider();
+  initRoyaltyTabs();
+  initProcess();
+  initSliderKeypad();
 });
 var giftItems = {
   storeVal : null,
@@ -24,7 +31,36 @@ coinsVal = {
   xrp : null,
   ltc : null
 },
-coinKey = 'eth';
+coinKey = 'eth',
+isApiBuy = false,
+budgetVal = 44.38385,
+buyAmount = 0,
+storecoinBal = 139.470001,
+appInfo = {
+  'easy-schedule' : {
+    img : '/images/wallet/calender-icon.png',
+    head : 'Easy Schedule',
+    meta : 'Project Management',
+    master : false,
+    selectedApi : [],
+    budgetPos : 0,
+    percentPos : 0
+  },
+  'smart-analytics' : {
+    img : '/images/wallet/social-media-logo-v2.png',
+    head : 'Smart Analytics',
+    meta : 'Social Media Analytics',
+    master : false,
+    selectedApi : [],
+    budgetPos : 0,
+    percentPos : 0
+  }
+},
+initBudgetSlider = false,
+initPercentSlider = false,
+processPadding = 64,
+$dollarAmount = 35.58,
+appKey;
 
 function loadCoinsValue() {
   var $selectCoinModal =  $('#select-coin-modal');
@@ -51,13 +87,13 @@ function loadCoinsValue() {
         step : 0.00001,
         value : 44.38385,
         create : function(){
-          sliderFunction($(this), 'create');
+          sliderFunction($(this), 'create', {});
         },
         slide : function(){
-          sliderFunction($(this), 'slide');
+          sliderFunction($(this), 'slide', {});
         },
         change : function(){
-          sliderFunction($(this), 'change');
+          sliderFunction($(this), 'change', {});
         }
       });
 
@@ -67,7 +103,7 @@ function loadCoinsValue() {
 
       $("#trade-amount .amount-slider .slider").slider().bind({
         sliderchange : function (){
-          sliderFunction($(this), 'create');
+          sliderFunction($(this), 'create', {});
         }
       });
 
@@ -76,11 +112,386 @@ function loadCoinsValue() {
   });
 }
 
+function initSliderKeypad() {
+  var $sliders = $('.amount-slider'),
+  $keypad = $sliders.find('.edit-keypad');
+
+  $keypad.click(function(){
+    // console.log('keypad clicked');
+    var $thisField = $(this).parents('.amount-slider').find('.input-field.amount-field');
+    $thisField.fadeIn('fast', function(){
+      $thisField.find('input').trigger('focus');
+    });
+  });
+
+  $sliders.find('.input-field.amount-field .enter').click(function(){
+    var $thisField = $(this).parents('.amount-field'),
+    value = $thisField.find('input').val();
+    $thisField.fadeOut();
+    if (value > 0 ) {
+      var sliderVal = expslider(value, storecoinBal);
+      $(this).parents('.amount-slider').find('.slider').slider('option', 'value', sliderVal);
+      $(this).parents('.amount-slider').find('.conversion .storecoin-val .value').text(value);
+      $(this).parents('.amount-slider').find('.conversion .dollar-val .value').text(numeral(value * $dollarAmount).format('0.00000000'));
+    }
+  });
+
+  $sliders.find('.input-field.amount-field form.slider-form').submit(function(e){
+    e.preventDefault();
+    var $thisField = $(this).parents('.amount-field');
+    $thisField.find('.enter').trigger('click');
+  });
+}
+
+function initProcess() {
+  var $openProcess = $('.open-process'),
+  $processWin = $('.process-window'),
+  $checkList = $processWin.find('.check-list'),
+  $checkItems = $checkList.find('.item');
+
+  $openProcess.click(function(){
+    var data = $(this).data();
+    appKey = data.app ? data.app : appKey;
+
+    if (appInfo[appKey].master && !$(this).parents('.edit').length) {
+      openProcess('#summary-process', appKey);
+    } else if ($(this).parents('.edit').length) {
+      $('#'+data.process).addClass('edit-window');
+      openProcess('#'+data.process, appKey);
+    } else {
+      $('#'+data.process).removeClass('edit-window');
+      openProcess('#'+data.process, appKey);
+    }
+
+    if (data.step) {
+      $('#'+data.process+' .process-step').removeClass('show');
+      $('#'+data.process+' .process-step.'+data.step).addClass('show');
+    }
+  });
+
+  $checkItems.click(function(){
+    $(this).toggleClass('active');
+    var selectedApi = [];
+    $checkItems.each(function(i){
+      if($(this).hasClass('active')) {
+        var itemText = $(this).find('.name').text();
+        selectedApi.push({ id : i, name : itemText, customName : null });
+      }
+    });
+    var inputField = '';
+    selectedApi.forEach(function(api){
+      inputField += '<div class="input-field" data-id="'+api.id+'"><label>'+api.name+'</label><input type="text" placeholder="Enter name here"></div>';
+      $('#api-process .step-2 .fields').html(inputField);
+    });
+
+    var $summaryVal = $('.summary-item.api-selected .stats .value');
+    $summaryVal.find('.gained').text(selectedApi.length);
+    $summaryVal.find('out-of').text($checkList.find('.item').length);
+    appInfo[appKey].selectedApi = selectedApi;
+  });
+
+  $processWin.on('input', 'input', function(){
+    var thisId = $(this).parents('.input-field').data().id,
+    value = $(this).val();
+    appInfo[appKey].selectedApi.forEach(function(api){
+      if (api.id == thisId) {
+        api.customName = value;
+      }
+    });
+  });
+
+  $processWin.find('.proceed.next').click(function(){
+    var stepName = $(this).data().step,
+    $thisWindow = $(this).parents('.process-window');
+    $thisWindow.find('.process-step').removeClass('show');
+    $thisWindow.find('.process-step.'+stepName).addClass('show');
+    var offset = $thisWindow.find('.process-head').outerHeight() + processPadding;
+    $thisWindow.find('.process-step').height($(window).height() - offset);
+  });
+
+  $('#api-process .step-1 .proceed').click(function(){
+    $('.process-summary').show();
+    $('.process-summary .api-selected').show();
+  });
+
+  $('#incentive-process .step-1 .proceed').click(function(){
+    $('.process-summary').show();
+    $('.process-summary .budget-allocated').show();
+  });
+
+  $('#incentive-process .step-3 .proceed').click(function(){
+    $('.process-summary').show();
+    $('.process-summary .dev-royalty').show();
+    updateProcess();
+  });
+
+  $('#api-process .step-2 .proceed').click(function(){
+    initProcessTwo();
+  });
+
+  $('#api-process .proceed.publish').click(function(){
+    var data = $(this).data();
+    // openProcess('#incentive-process', appKey);
+    initloader({
+      data : data,
+      call : {
+        callFunc : openProcess,
+        callParams : ['#incentive-process', appKey]
+      }
+    });
+  });
+
+  $('#incentive-process .proceed.publish').click(function(){
+    // var $confirmModal = $('#api-confirm-modal');
+    // $confirmModal.find('.budget-val').text(budgetVal);
+    // $confirmModal.find('.royalty-val').text(appInfo[appKey].percentVal+'%');
+    // $confirmModal.modal('show');
+    // $confirmModal.find('button.accept').click(function(){
+    //   var data = $(this).data();
+    //   $confirmModal.modal('hide');
+    //   // console.log(appInfo[appKey].master);
+    // });
+    var data = $(this).data();
+    initloader({
+      data : data,
+      call : {
+        callFunc : openProcess,
+        callParams : ['#summary-process', appKey]
+      }
+    });
+
+    appInfo[appKey].master = true;
+  });
+
+  $('.total-balance .buy .button').click(function(){
+    // $processWin.hide();
+    $('#home-tab').hide();
+    $('#transaction-tab').show();
+    $('#wallet-value .nav-links .link[data-tab="buy"]').trigger('click');
+  });
+
+  $processWin.find('.back, .process-back:not(.open-process)').click(function(){
+    $processWin.hide();
+  });
+
+  $processWin.find('form.api-form').submit(function(e){
+    // console.log('submitted');
+    e.preventDefault();
+    $(this).parents('.process-step').find('.proceed').trigger('click');
+  });
+}
+
+function initProcessTwo() {
+  // console.log('published');
+  var menu = '';
+
+  appInfo[appKey].selectedApi.forEach(function(api, i){
+    menu += '<div class="item">'+(api.customName ? api.customName : api.name)+'</div>';
+    var itemNum = i,
+    isLastItem = (itemNum == appInfo[appKey].selectedApi.length - 1) ? ' last-child' : '',
+    percentSlider = ''+
+    '<div class="api-item'+isLastItem+'">'+
+      '<section data-tab="none" class="tab no-padding percent-slider">'+
+        '<div class="title">'+(api.customName ? api.customName : api.name)+'</div>'+
+        '<div class="amount-slider">'+
+          '<div class="amounts">'+
+            '<p class="start">0.00001%</p>'+
+            '<p class="end">99%</p>'+
+          '</div>'+
+          '<div class="slider"></div>'+
+          '<div class="conversion">'+
+            '<p class="storecoin-val orange"><span class="value">33.83535</span><span>%</span></p><img src="/images/wallet/exchange-icon.png" style="display:none" class="exchange"/>'+
+            '<p style="display:none" class="dollar-val green"><span>$</span><span>29.95</span></p>'+
+          '</div>'+
+        '</div>'+
+      '</section>'+
+    '</div>';
+
+    $('.api-royalty .api-list').append(percentSlider);
+  });
+  $('.api-bugget-api').each(function(){
+    $(this).find('.api-list .api-item').each(function(i){
+      var itemNum = i;
+      if (appInfo[appKey].selectedApi.length > itemNum ) {
+        $(this).show();
+        if (itemNum == appInfo[appKey].selectedApi.length - 1) {
+          $(this).addClass('last-child');
+        }
+      } else {
+        $(this).hide();
+      }
+    });
+  });
+  initSlider({ el : '.api-percent-global-slider', value : 0, name : 'global-percent-slider' });
+  initSlider({ el : '.api-royalty .percent-slider', value : 0, name : 'royalty', max : 99 });
+  // initSlider({ el : '.api-bugget-api .percent-slider', value : 0, name : 'royalty', max : 99 });
+  $('.process-window .ui.dropdown .menu').html(menu);
+  initPercentSlider = true;
+}
+
+function openProcess(el, key) {
+  // console.log(el, key);
+  var $processWin = $('.process-window'),
+  $thisApp = $processWin.find('.item-app'),
+  appData = appInfo[key],
+  $thisPro = $(el);
+
+  $processWin.hide();
+  $thisPro.height($(window).height()).show();
+  $thisApp.find('.image img').attr('src', appData.img);
+  $thisApp.find('.title b').text(appData.head);
+  $thisApp.find('.title .meta').text(appData.meta);
+  $thisPro.find('.process-step').removeClass('show');
+  $thisPro.find('.process-step.step-1').addClass('show');
+  var offset = $thisPro.find('.process-head').outerHeight() + processPadding;
+  $thisPro.find('.process-step').height($(window).height() - offset);
+
+  updateProcess();
+}
+
+function updateProcess(){
+  $('.api-budget-app-slider .slider').slider('option', 'value', appInfo[appKey].budgetPos);
+  if(initPercentSlider) {
+    // console.log(appInfo[appKey].percentPos);
+    $('.api-percent-global-slider .slider').slider('option', 'value', appInfo[appKey].percentPos);
+  }
+  $('#summary-process .api-list .api-item').each(function(i){
+    var api = appInfo[appKey].selectedApi[i];
+    if(api) {
+      $(this).find('.title').text(api.customName ? api.customName : api.name);
+    }
+  });
+  // console.log(appInfo[appKey]);
+}
+
+function triggerOnUrl() {
+  // console.log(window.location.hash);
+  var hash = window.location.hash,
+  pathname = window.location.pathname;
+
+  if (pathname == '/wallet/' || pathname == '/wallet/wallet-app/') {
+    if (hash == '#api') {
+      $('#home-tab .feeds-tab-items .item').removeClass('active');
+      $('#home-tab .feeds-tab').removeClass('active');
+      $('#home-tab .feeds-tab-items .item[data-tab="#apps"]').addClass('active');
+      $('#apps').addClass('active');
+      $('.iphone iframe').attr('src', '/wallet/wallet-app/#api');
+    } else if (hash == '#dev') {
+      $('.iphone iframe').attr('src', '/wallet/wallet-app/#dev');
+      appKey = 'easy-schedule';
+      appInfo[appKey] = {
+        budgetPos : 56,
+        head : "Easy Schedule",
+        img : "/images/wallet/calender-icon.png",
+        master : true,
+        meta : "Project Management",
+        percentPos : 75,
+        selectedApi : [
+          {id: 0, name: "User / invite", customName: null},
+          {id: 1, name: "User / signup", customName: null}
+        ]
+      };
+      initProcessTwo();
+      openProcess('#summary-process', appKey);
+      $('#summary-process .step-1').removeClass('show');
+      $('#summary-process .step-2').addClass('show');
+    }
+  }
+}
+
+// function initPercentSlider() {
+//   var $tab = $('section.tab[data-tab]'),
+//   $checkbox = $tab.find('.wallet-checkbox input');
+//   $checkbox.change(function() {
+//       var $this = $(this),
+//       $amountSlider = $this.parents('.tab').find('.amount-slider'),
+//       $thisSlider = $amountSlider.find('.slider');
+//       // console.log($thisSlider);
+//       if(this.checked) {
+//         $amountSlider.addClass('disabled');
+//         $thisSlider.slider('disable');
+//       } else {
+//         $thisSlider.slider('enable');
+//         $amountSlider.removeClass('disabled');
+//       }
+//   });
+// }
+
+function initRoyaltyTabs() {
+  var lastScrollTop = 0;
+  $('.royalty-tabs .feeds-tab').scroll(function(event){
+     var st = $(this).scrollTop();
+     if (st > lastScrollTop){
+        $('.royalty-tabs .feeds-tab-items').addClass('top');
+        //  $('.royalty-tabs .feeds-tab-items').slideUp();
+     } else {
+        // upscroll code
+        $('.royalty-tabs .feeds-tab-items').removeClass('top');
+     }
+     lastScrollTop = st;
+  });
+}
+
+function initFeedsTab() {
+  var $tabs = $('.feeds-tab-items'),
+  $items = $tabs.find('.item');
+
+  $items.click(function(){
+    $items.removeClass('active');
+    $('.feeds-tab').removeClass('active');
+    $(this).addClass('active');
+
+    var $tab = $($(this).data().tab);
+    $tab.addClass('active');
+  });
+}
+
 function initDatePicker(){
   $('#date-picker input').pickadate({
     format: 'd mmm, yyyy'
   });
   $('#time-picker input').pickatime();
+}
+
+function initApi(){
+  var $api = $('.api-bugget-api');
+  if($api.length){
+    var $item = $api.find('.api-item'),
+    $button = $item.find('.select-api'),
+    $selectModal = $('#select-api-modal'),
+    $modalItem = $selectModal.find('.item'),
+    $itemName = $modalItem.find('.name'),
+    $itemIcon = $itemName.find('i'),
+    $subListItem = $modalItem.find('.sub-list li'),
+    timeout = null,
+    $thisItem = null;
+
+    $button.click(function(){
+      $(this).text('Edit');
+      $thisItem = $(this).parents('.api-item');
+      $selectModal.modal('show');
+    });
+
+    $itemName.click(function(){
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+      var $this = $(this);
+      $itemName.not($this).find('i').removeClass('ion-chevron-up').addClass('ion-chevron-down');
+      $this.find('i').toggleClass('ion-chevron-down ion-chevron-up');
+      $itemName.not($this).parents('.item').removeClass('active');
+      $this.parents('.item').toggleClass('active');
+
+      timeout = setTimeout(function(){
+        $selectModal.modal('refresh');
+      }, 1000);
+    });
+
+    $subListItem.click(function(){
+      $selectModal.modal('hide');
+      $thisItem.find('.selected-api').text($(this).text());
+    });
+  }
 }
 
 function sendGift () {
@@ -121,7 +532,7 @@ function sendGift () {
     $('#notification-window .notification-feeds').append(templateNot);
     $('.feeds').append(templateFeed);
     updateNotific('new');
-    initloader();
+    initloader({data : { message : 'Loading...' }});
   });
 }
 
@@ -180,7 +591,9 @@ function initTabs (){
 
   $back.click(closeAllTabs);
 
-  $tradeTab.find('.wallet-button').click(initloader);
+  $tradeTab.find('.wallet-button').click(function(){
+    initloader({data : { message : 'Loading...' }});
+  });
 
   $tradeTab.find('.buying .btn').click(function(){
     $(this).addClass('active');
@@ -220,7 +633,7 @@ function initTabs (){
 
       var $currentTab = $walletTabs.find('.tab[data-tab="'+tabName+'"]');
       // var offset = (($walletNav.length > 0) ? $walletNav.height() : 0)  + $subNav.height() + 74;
-      var offset = $subNav.height() + 74;
+      var offset = $subNav.height() + 63;
       // console.log($currentTab.find('.wallet-button').height());
       $currentTab.addClass('active');
       $currentTab.find('.content').css('height' , ($(window).height() - offset)+'px');
@@ -275,26 +688,89 @@ function initModal () {
 
   $modal.find('.confirm-button').click(function(){
     $modal.modal('hide');
-    initloader();
+    initloader({data : { message : 'Loading...' }});
+    updateBalance();
   });
 }
 
-function initloader() {
-  // $('.loader .content.loading').removeClass('show');
-  // $('.loader .content.complete').addClass('show');
-  // $('.loader').height($(window).height()).transition('fade');
+function updateBalance() {
+  storecoinBal += buyAmount;
+  // console.log(storecoinBal, buyAmount);
+  var scStr = numeral(storecoinBal).format('0.00000000').toString().split('.');
+  $('#wallet-value .storecoin-val .number').html(scStr[0]+'<span>.'+scStr[1]+'</span>');
+  $('.total-balance .logo-amount .amount').text(storecoinBal);
+  $('.api-budget-app-slider .amounts .end span').text(storecoinBal);
+  // if(initBudgetSlider) {
+  //   $('#api-budget-app-slider .amount-slider .slider').slider('option', 'max', storecoinBal);
+  // }
+}
 
-  $('.loader .content.loading').addClass('show');
-  $('.loader .content.complete').removeClass('show');
-  $('.loader').height($(window).height()).transition('fade');
+function initloader(params) {
+  var loadDelay = 2000,
+  successDelay = 2000,
+  data = params.data,
+  $loader = $('.loader');
+
+  if (data.message) {
+    $loader.find('.content.loading .text').html(data.message);
+  }
+  if (data.success) {
+    $loader.find('.content.complete .text').html(data.success);
+  } else {
+    $loader.find('.content.complete .text').html('Complete');
+  }
+  if (data.loaddelay) {
+    loadDelay = data.loaddelay;
+  }
+  if (data.success) {
+    successDelay = data.successdelay;
+  }
+  $loader.find('.content.loading').addClass('show');
+  $loader.find('.content.complete').removeClass('show');
+  $loader.find('.content.start').removeClass('show');
+  $loader.find('.content.end').removeClass('show');
+  $loader.find('.content.complete button.next').hide();
+  $loader.height($(window).height()).transition('fade');
+  // var count = 0;
+  // var interval = setInterval(function(){ console.log(count++) }, 1000);
   setTimeout(function(){
-    $('.loader .content.loading').removeClass('show');
-    $('.loader .content.complete').addClass('show');
-    setTimeout(function(){
-      closeAllTabs();
-      $('.loader').height($(window).height()).transition('fade');
-    }, 2000);
-  }, 2000);
+    $loader.find('.content.loading').removeClass('show');
+    $loader.find('.content.complete').addClass('show');
+    if (data.key && data.key == 'api-publish') {
+      $loader.find('.content.complete button.next').show();
+    } else {
+      setTimeout(function(){
+        closeAllTabs();
+        $loader.height($(window).height()).transition('fade');
+        if (params && params.call) {
+          // console.log(params.call.callParams);
+          params.call.callFunc.apply(null, params.call.callParams);
+          // params.call.callFunc("#incentive-process", "easy-schedule");
+        }
+        // clearInterval(interval);
+      }, successDelay);
+    }
+  }, loadDelay);
+
+  $loader.find('.content.complete button.next').click(function(){
+    $loader.find('.content.complete').removeClass('show');
+    $loader.find('.content.start').addClass('show');
+  });
+
+  $loader.find('.content.start button.next-2').click(function(){
+    $loader.find('.content.start').removeClass('show');
+    $loader.find('.content.end').addClass('show');
+  });
+
+  $loader.find('.content.end button.get-started').click(function(){
+    closeAllTabs();
+    $loader.height($(window).height()).transition('fade');
+    if (params && params.call) {
+      // console.log(params.call.callParams);
+      params.call.callFunc.apply(null, params.call.callParams);
+      // params.call.callFunc("#incentive-process", "easy-schedule");
+    }
+  });
 }
 
 function closeAllTabs (){
@@ -308,72 +784,190 @@ function closeAllTabs (){
 }
 
 function initRangeSlider() {
-  var $sliders = $('#wallet-amount, #api-budget-app-slider, #api-bugget-api');
-  var slider = $sliders.find(".amount-slider .slider").slider({
-    range : 'min',
-    max: 139.47001,
-    min : 0.00001,
-    step : 0.00001,
-    value : 44.38385,
-    create : function(){
-      sliderFunction($(this), 'create');
-    },
-    slide : function(){
-      sliderFunction($(this), 'slide');
-    },
-    change : function(){
-      sliderFunction($(this), 'change');
-    }
-  });
-
-  $sliders.find(".amount-slider .slider").append(
-    '<div class="slider-rail"></div>'
-  );
-
-  // $("#wallet-amount .amount-slider .slider").slider().bind({
-  //   sliderchange : function (){
-  //     sliderFunction($(this), 'create');
-  //   }
-  // });
-  //
-  // $(".slider").trigger('sliderchange');
+  initSlider({ el : '#wallet-tabs .tab[data-tab="buy"]', value : 15 });
+  initSlider({ el : '#wallet-tabs .tab[data-tab="sell"]', value : 15 });
+  initSlider({ el : '#wallet-tabs .tab[data-tab="gift"]', value : 15 });
+  initSlider({ el : '.api-bugget-api .storecoin-slider', value : 0, name : 'api-slider' });
+  initSlider({ el : '.api-budget-app-slider', name : 'budget-slider'});
+  initSlider({ el : '.api-summary-app-slider', name : 'budget-slider'});
+  $('.api-bugget-api .amount-slider .amounts .end span').text(budgetVal);
+  initBudgetSlider = true;
 }
 
-function sliderFunction($this, eventName) {
+function logslider(position, max) {
+  // position will be between 0 and 100
+  max = max ? max : 139.470001;
+  // The result should be between 100 an 10000000
+  if (position < 26) {
+    var minp = 0;
+    var maxp = 25;
+    var minv = Math.log(0.00000001);
+    var maxv = Math.log(1.00000000);
+  } else {
+    var minp = 26;
+    var maxp = 100;
+    var minv = Math.log(1.00000001);
+    var maxv = Math.log(max);
+  }
+
+  // calculate adjustment factor
+  var scale = (maxv-minv) / (maxp-minp);
+
+  var exp = Math.exp(minv + scale*(position-minp));
+  // console.log(exp);
+  exp = numeral(exp).format('0.00000000') == 'NaN' ? 0 : numeral(exp).format('0.00000000');
+  return parseFloat(exp);
+}
+
+function expslider(value, max) {
+  // position will be between 0 and 100
+  max = max ? max : 139.470001;
+  // The result should be between 100 an 10000000
+  if (value < 1.00000001) {
+    var minp = 0;
+    var maxp = 25;
+    var minv = Math.log(0.00000001);
+    var maxv = Math.log(1.00000000);
+  } else {
+    var minp = 26;
+    var maxp = 100;
+    var minv = Math.log(1.00000001);
+    var maxv = Math.log(max);
+  }
+
+  // calculate adjustment factor
+  var scale = (maxv-minv) / (maxp-minp);
+  var log = (Math.log(value) - minv)/scale + minp;
+
+  return parseFloat(log);
+}
+
+function pecentLogslider(position, max) {
+  // position will be between 0 and 100
+  max = max ? max : 139.470001;
+  // The result should be between 100 an 10000000
+  if (position < 1) {
+    var minp = 0;
+    var maxp = 0;
+    var minv = Math.log(0.000);
+    var maxv = Math.log(0.000);
+  } else if (position < 26) {
+    var minp = 1;
+    var maxp = 25;
+    var minv = Math.log(0.001);
+    var maxv = Math.log(1);
+  } else {
+    var minp = 26;
+    var maxp = 100;
+    var minv = Math.log(1.001);
+    var maxv = Math.log(max);
+  }
+
+  // calculate adjustment factor
+  var scale = (maxv-minv) / (maxp-minp);
+
+  var exp = Math.exp(minv + scale*(position-minp));
+  exp = numeral(exp).format('0.000') == 'NaN' ? 0 : numeral(exp).format('0.000');
+  return parseFloat(numeral(exp).format('0.000'));
+}
+
+
+function initSlider(params) {
+  var $slider = $(params.el);
+  if ($slider.length) {
+    var slider = $slider.find(".amount-slider .slider").slider({
+      range : 'min',
+      max: 100,
+      min : 0,
+      step : 1,
+      value : params.value,
+      create : function(ev, ui){
+        return sliderFunction($(this), 'create', params);
+      },
+      slide : function(ev, ui){
+        return sliderFunction($(this), 'slide', params);
+      },
+      change : function(ev, ui){
+        if (params.name == 'api-slider') {
+          var slider = sliderFunction($(this), 'change', params);
+          if(!slider) {
+            $(this).slider('option', 'value', ui.value - 1);
+          }
+        } else {
+          return sliderFunction($(this), 'change', params);
+        }
+      }
+    });
+
+    $slider.find(".amount-slider .slider").append(
+      '<div class="slider-rail"></div>'
+    );
+  }
+}
+
+function sliderFunction($this, eventName, params) {
+  // console.log($this, params);
   var value = $this.slider('value'),
+      max = $this.slider('option','max'),
       $parent = $this.parents('.tab'),
       thisHandlePos = $this.find('.ui-slider-handle').offset().left;
 
-  changeOnSlide(value, $parent, thisHandlePos);
+  return changeOnSlide($this,value, $parent, thisHandlePos, params, eventName);
 }
 
-function bankSelect() {
-  var $dropdown = $('#wallet-pay-method .ui.dropdown'),
-      $modalBankInfo = $('.confirm-transact.ui.modal .content .modal-content .pay-info .bank-info');
-
-  $dropdown.dropdown({
-    onChange : function (value) {
-      $modalBankInfo.text(value);
-    },
-  });
-
-  $dropdown.dropdown('set selected', 'Wells Fargo - Bank ******2089');
-}
-
-function changeOnSlide (value, $parent, handlePos) {
-  var $storeVal = $parent.find('.amount-slider .storecoin-val span'),
+function changeOnSlide ($this, value, $parent, handlePos, params, eventName) {
+  var $storeVal = $parent.find('.amount-slider .storecoin-val span.value'),
       tabName = $parent.data().tab,
       $modalStoreVal = $('.confirm-transact.ui.modal[data-modal="'+tabName+'-modal"] .modal-content .buy-amount .storecoin-val'),
       $dollarVal = $parent.find('.dollar-val span:last-child'),
       $unitSign = $parent.find('.dollar-val span:first-child'),
-      $dollarAmount = 35.58,
-      $conversion = $parent.find('.conversion');
+      $conversion = $parent.find('.conversion'),
+      max = params.max ? params.max : null;
+
+  if (params.name == 'budget-slider') {
+    if (appInfo[appKey]) {
+      appInfo[appKey].budgetPos = value;
+    }
+    // console.log(appInfo);
+    value = logslider(value, storecoinBal);
+    budgetVal = value;
+    value = numeral(value).format('0.00000000');
+    $('.api-bugget-api').find('.end span').text(value);
+    $('.summary-item.budget-allocated .sc-val').text(value);
+  } else if (params.name == 'api-slider' && eventName != 'create') {
+    value = logslider(value, budgetVal);
+    var total = 0;
+    value = numeral(value).format('0.00000000');
+    $('.api-bugget-api .storecoin-slider .amount-slider .slider').each(function () {
+        // console.log(logslider($(this).slider('value'), budgetVal));
+        total += logslider($(this).slider('value'), budgetVal);
+    });
+    if (total > budgetVal) {
+      return false;
+    }
+  } else if (params.name == 'global-percent-slider') {
+    if (eventName != 'create') {
+      appInfo[appKey].percentPos = value;
+      $('.api-royalty .percent-slider .amount-slider .slider').slider('option', 'value', value);
+      value = numeral(pecentLogslider(value, 99)).format('0.000');
+      $('.summary-item.dev-royalty .value').text(numeral(value).format('0.000')+'%');
+      appInfo[appKey].percentVal = value;
+    }
+  } else if (params.name == 'royalty') {
+    value = numeral(pecentLogslider(value, 99)).format('0.000');
+  } else {
+    // console.log(logslider(value, max));
+    value = numeral(logslider(value, max)).format('0.00000000');
+  }
 
   if ($storeVal) { $storeVal.text(value); }
   if ($modalStoreVal) { $modalStoreVal.text(value); }
 
   if (tabName == 'gift') {
     giftItems.storeVal = value;
+  } else if (tabName == 'buy') {
+    buyAmount = parseFloat(value);
+    if ($dollarVal) { $dollarVal.text(numeral(value * $dollarAmount).format('0,0.00000')); }
   } else if (tabName == 'trade') {
     var coinAmount = coinsVal[coinKey].USD, amount;
     if (coinAmount > $dollarAmount) {
@@ -383,9 +977,9 @@ function changeOnSlide (value, $parent, handlePos) {
     }
     // console.log(value * amount);
     $unitSign.text(coinKey.toUpperCase()+' ');
-    $dollarVal.text(numeral(value * amount).format('0,0.00'));
+    $dollarVal.text(numeral(value * amount).format('0,0.00000'));
   } else {
-    if ($dollarVal) { $dollarVal.text(numeral(value * $dollarAmount).format('0,0.00')); }
+    if ($dollarVal) { $dollarVal.text(numeral(value * $dollarAmount).format('0,0.00000')); }
   }
 
   var $thisSection = $dollarVal.parents('section'),
@@ -399,6 +993,21 @@ function changeOnSlide (value, $parent, handlePos) {
   } else {
     $conversion.css('left', paddingLeft );
   }
+
+  return true;
+}
+
+function bankSelect() {
+  var $dropdown = $('#wallet-pay-method .ui.dropdown'),
+      $modalBankInfo = $('.confirm-transact.ui.modal .content .modal-content .pay-info .bank-info');
+
+  $dropdown.dropdown({
+    onChange : function (value) {
+      $modalBankInfo.text(value);
+    },
+  });
+
+  $dropdown.dropdown('set selected', 'Wells Fargo - Bank ******2089');
 }
 
 function loadChartData() {
@@ -429,159 +1038,163 @@ function loadChartData() {
 }
 
 function drawLineChart(data) {
-  $("#wallet-graph .graph").html('');
-  if ($("#wallet-graph .graph").length) {
-    var svg = d3.select("#wallet-graph .graph").append('svg');
-        svg.attr("width", $('#wallet-graph .graph').width());
-        svg.attr("height", 200);
-    var margin = {top: 20, right: 0, bottom: 20, left: 30},
-        margin2 = {top: 0, right: 20, bottom: 30, left: 40},
-        width = +svg.attr("width") - margin.left - margin.right,
-        height = +svg.attr("height") - margin.top - margin.bottom,
-        height2 = +svg.attr("height") - margin2.top - margin2.bottom;
+  $("#wallet-graph .loading").fadeIn();
+  setTimeout(function(){
+    $("#wallet-graph .loading").fadeOut();
+    $("#wallet-graph .graph").html('');
+    if ($("#wallet-graph .graph").length) {
+      var svg = d3.select("#wallet-graph .graph").append('svg');
+          svg.attr("width", $('#wallet-graph .graph').width());
+          svg.attr("height", 170);
+      var margin = {top: 20, right: 0, bottom: 20, left: 30},
+          margin2 = {top: 0, right: 20, bottom: 30, left: 40},
+          width = +svg.attr("width") - margin.left - margin.right,
+          height = +svg.attr("height") - margin.top - margin.bottom,
+          height2 = +svg.attr("height") - margin2.top - margin2.bottom;
 
-    // var parseDate = d3.timeParse("%m/%d/%y");
-    var parseDate = d3.utcParse("%Y-%m-%dT%H:%M:%S%Z");
+      // var parseDate = d3.timeParse("%m/%d/%y");
+      var parseDate = d3.utcParse("%Y-%m-%dT%H:%M:%S%Z");
 
-    var x = d3.scaleTime().range([0, width]),
-        x2 = d3.scaleTime().range([0, width]),
-        y = d3.scaleLinear().range([height, 0]),
-        y2 = d3.scaleLinear().range([height2, 0]);
+      var x = d3.scaleTime().range([0, width]),
+          x2 = d3.scaleTime().range([0, width]),
+          y = d3.scaleLinear().range([height, 0]),
+          y2 = d3.scaleLinear().range([height2, 0]);
 
-    var xAxis = d3.axisBottom(x).ticks(4),
-        xAxis2 = d3.axisBottom(x2),
-        yAxis = d3.axisLeft(y).ticks(3).tickFormat(function(d){return numeral(d).format('$(0,0a)');});
+      var xAxis = d3.axisBottom(x).ticks(4),
+          xAxis2 = d3.axisBottom(x2),
+          yAxis = d3.axisLeft(y).ticks(3).tickFormat(function(d){return numeral(d).format('$(0,0a)');});
 
-    var brush = d3.brushX()
-        .extent([[0, 0], [width, height2]])
-        .on("brush end", brushed);
+      var brush = d3.brushX()
+          .extent([[0, 0], [width, height2]])
+          .on("brush end", brushed);
 
-    var zoom = d3.zoom()
-        .scaleExtent([1, 30])
-        .translateExtent([[0, 0], [width, height]])
-        .extent([[0, 0], [width, height]])
-        .on("zoom", zoomed);
+      var zoom = d3.zoom()
+          .scaleExtent([1, 30])
+          .translateExtent([[0, 0], [width, height]])
+          .extent([[0, 0], [width, height]])
+          .on("zoom", zoomed);
 
-    var area = d3.area()
-        .x(function(d) { return x(d.time); })
-        .y0(height)
-        .y1(function(d) { return y(d.price); });
+      var area = d3.area()
+          .x(function(d) { return x(d.time); })
+          .y0(height)
+          .y1(function(d) { return y(d.price); });
 
-    var area2 = d3.area()
-        .x(function(d) { return x2(d.time); })
-        .y0(height2)
-        .y1(function(d) { return y2(d.price); });
+      var area2 = d3.area()
+          .x(function(d) { return x2(d.time); })
+          .y0(height2)
+          .y1(function(d) { return y2(d.price); });
 
-    svg.append("defs").append("clipPath")
-        .attr("id", "clip")
-        .append("rect")
-        .attr("width", width)
-        .attr("height", height);
+      svg.append("defs").append("clipPath")
+          .attr("id", "clip")
+          .append("rect")
+          .attr("width", width)
+          .attr("height", height);
 
-    var focus = svg.append("g")
-        .attr("class", "focus")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      var focus = svg.append("g")
+          .attr("class", "focus")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    var context = svg.append("g")
-        .attr("class", "context")
-        .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
+      var context = svg.append("g")
+          .attr("class", "context")
+          .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
 
-    var min = d3.min(data, function(d) { return d.price; });
-    var max = d3.max(data, function(d) { return d.price; });
-    var random = d3.scaleLinear().range([5, 36]).domain([min, max]);
+      var min = d3.min(data, function(d) { return d.price; });
+      var max = d3.max(data, function(d) { return d.price; });
+      var random = d3.scaleLinear().range([5, 36]).domain([min, max]);
 
-    // format the data
-    data.forEach(function(d) {
-        d.time = parseDate(d.time);
-        d.price = random(+d.price);
-    });
+      // format the data
+      data.forEach(function(d) {
+          d.time = parseDate(d.time);
+          d.price = random(+d.price);
+      });
 
-    // Scale the range of the data
-    // x.domain(d3.extent(data, function(d) {
-    //   return d[0];
-    // })).range([0, width - margin.left - margin.right]);
-    //
-    // xAxis.scale(x).orient('bottom').tickPadding(5);
-    x.domain(d3.extent(data, function(d) { return d.time; }));
-    y.domain(d3.extent(data, function(d) { return d.price; }));
+      // Scale the range of the data
+      // x.domain(d3.extent(data, function(d) {
+      //   return d[0];
+      // })).range([0, width - margin.left - margin.right]);
+      //
+      // xAxis.scale(x).orient('bottom').tickPadding(5);
+      x.domain(d3.extent(data, function(d) { return d.time; }));
+      y.domain(d3.extent(data, function(d) { return d.price; }));
 
-    // x.domain(d3.extent(data, function(d) { return d.time; }));
-    // y.domain([0, d3.max(data, function(d) { return d.price; })]);
-    x2.domain(x.domain());
-    y2.domain(y.domain());
+      // x.domain(d3.extent(data, function(d) { return d.time; }));
+      // y.domain([0, d3.max(data, function(d) { return d.price; })]);
+      x2.domain(x.domain());
+      y2.domain(y.domain());
 
-    focus.append("path")
-        .datum(data)
-        .attr("class", "area")
-        .attr("d", area);
+      focus.append("path")
+          .datum(data)
+          .attr("class", "area")
+          .attr("d", area);
 
-    focus.append("g")
-        .attr("class", "axis axis--x")
-        .attr("transform", "translate(0," + height + ")")
-        .call(xAxis);
+      focus.append("g")
+          .attr("class", "axis axis--x")
+          .attr("transform", "translate(0," + height + ")")
+          .call(xAxis);
 
-    focus.append("g")
-        .attr("class", "axis axis--y")
-        .call(yAxis);
+      focus.append("g")
+          .attr("class", "axis axis--y")
+          .call(yAxis);
 
-    context.append("path")
-        .datum(data)
-        .attr("class", "area")
-        .attr("d", area2);
+      context.append("path")
+          .datum(data)
+          .attr("class", "area")
+          .attr("d", area2);
 
-    context.append("g")
-        .attr("class", "axis axis--x")
-        .attr("transform", "translate(0," + height2 + ")")
-        .call(xAxis2);
+      context.append("g")
+          .attr("class", "axis axis--x")
+          .attr("transform", "translate(0," + height2 + ")")
+          .call(xAxis2);
 
-    context.append("g")
-        .attr("class", "brush")
-        .call(brush)
-        .call(brush.move, x.range());
+      context.append("g")
+          .attr("class", "brush")
+          .call(brush)
+          .call(brush.move, x.range());
 
-    // svg.append("rect")
-    //     .attr("class", "zoom")
-    //     .attr("width", width)
-    //     .attr("height", height)
-    //     .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-    //     .call(zoom)
-    //     .call(zoom.transform, d3.zoomIdentity.translate( -1 * (width * 5), 0).scale(6))
-    svg.append("rect")
-        .attr("class", "zoom")
-        .attr("width", width)
-        .attr("height", height)
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-        .call(zoom);
+      // svg.append("rect")
+      //     .attr("class", "zoom")
+      //     .attr("width", width)
+      //     .attr("height", height)
+      //     .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+      //     .call(zoom)
+      //     .call(zoom.transform, d3.zoomIdentity.translate( -1 * (width * 5), 0).scale(6))
+      svg.append("rect")
+          .attr("class", "zoom")
+          .attr("width", width)
+          .attr("height", height)
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+          .call(zoom);
 
 
-    function brushed() {
-      if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
-      var s = d3.event.selection || x2.range();
-      x.domain(s.map(x2.invert, x2));
-      focus.select(".area").attr("d", area);
-      focus.select(".axis--x").call(xAxis);
-      svg.select(".zoom").call(zoom.transform, d3.zoomIdentity
-          .scale(width / (s[1] - s[0]))
-          .translate(-s[0], 0));
-    }
-
-    function zoomed() {
-      if(d3.event) {
-        if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return; // ignore zoom-by-brush
-        var t = d3.event.transform;
-        x.domain(t.rescaleX(x2).domain());
+      function brushed() {
+        if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
+        var s = d3.event.selection || x2.range();
+        x.domain(s.map(x2.invert, x2));
         focus.select(".area").attr("d", area);
         focus.select(".axis--x").call(xAxis);
-        context.select(".brush").call(brush.move, x.range().map(t.invertX, t));
+        svg.select(".zoom").call(zoom.transform, d3.zoomIdentity
+            .scale(width / (s[1] - s[0]))
+            .translate(-s[0], 0));
+      }
+
+      function zoomed() {
+        if(d3.event) {
+          if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return; // ignore zoom-by-brush
+          var t = d3.event.transform;
+          x.domain(t.rescaleX(x2).domain());
+          focus.select(".area").attr("d", area);
+          focus.select(".axis--x").call(xAxis);
+          context.select(".brush").call(brush.move, x.range().map(t.invertX, t));
+        }
+      }
+
+      function type(d) {
+        d.time = parseDate(d.time);
+        d.price = +d.price;
+        return d;
       }
     }
-
-    function type(d) {
-      d.time = parseDate(d.time);
-      d.price = +d.price;
-      return d;
-    }
-  }
+  }, 2000);
 }
 
 function initPaginate() {

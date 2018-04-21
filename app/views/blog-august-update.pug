@@ -1,0 +1,128 @@
+extends blog-wrapper
+
+block blog-news 
+  p 
+    b Summary:
+    |  This Storecoin August 2017 research update touches on our research and development for the Storecoin Green Paper, our Dynamic Proof of Stake consensus algorithm, other Proof of Stake algorithms such as EOS and Ethereum’s upcoming Casper, historical ETH/BTC correlations regarding transactions per second vs. price, the general economics of blockchains, our first invite-only token generation event and the next steps for Storecoin.
+
+  p After two months of research, writing, design and code, we finished the 
+    a(href="https://storeco.in", target="_blank") Storecoin Green Paper
+    | .
+    
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/blog-aug-update-1.png")
+      
+  p We wrote 
+    a(href="https://medium.com/@storecoin/introducing-storecoin-8e15c21b4335", target="_blank") our introductory post
+    |  on Medium, explaining the genesis story behind Storecoin and where it is headed.
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/blog-aug-update-2.png")
+      
+  p We also finished the high level design of our Dynamic Proof of Stake consensus algorithm — or DyPoS. We think of it as Uber surge pricing for offering validator rewards on a Proof of Stake-powered public blockchain.
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/blog-aug-update-3.png")
+      
+  p On the research front, we started by evaluating various Byzantine fault tolerant algorithms and how they work to provide decentralized consensus. After reviewing the white papers and other documentation from the biggest players, we believe that Tendermint has the best-in-class general flow for block production. We primarily focused on the economics of each, and how the economics adjust over time with changes to the dynamics of the network, validators and users. Further, we researched the new Ethereum proof-of–stake (PoS) build “Casper”, as well as EOS. These blockchain systems will be fully PoS in the near future, moving from proof-of-work, which tends to be much more resource intensive.
+
+  p Casper, by Ethereum, is attempting to be an at-scale public Byzantine fault tolerate consensus environment where anyone can purchase a certain amount of ETH (Ethereum’s currency) in order to secure the network (The maximum number of validators sits at approximately 8,000 by way of 80 shards and 100 validators per shard). The rationale is that as more people “bet” on the right block with diminishing odds, the right block is supposed to become validated and verified. By this method, users will pay fees and stakers will receive rewards for securing blocks based on their staking size.
+
+  p EOS takes a slightly different approach: developers buy EOS tokens to gain network capacity. The more tokens you purchase, the more capacity you receive. Conversely, you may give up the capacity to retrieve your stake. EOS transactions will be free thanks to inflation paid to validators each block. This is known as Delegated Proof-of-Stake as they have a pre-set number of validators, 21 in total, that are voted on from the inception of the network These delegates can be replaced, giving them some more skin in the game.
+  
+  p This research led to the economic basis for Storecoin, which, to summarize, is:
+  
+  ol(style="list-style: disc inside;")
+    li Free transactions for users
+    li Quick block turnaround times
+    li Healthy economic incentive to validators (stakers)
+    li Sustainable cash flow to the network
+    li Controlled inflation to pay for transactions
+    li Dynamic block rewards
+    
+  p At Storecoin, we understand that the most important objective is getting many users to transact on the network and having a blockchain that can accomplish this quickly at scale. This alone will drive prices higher and keep the network effect moving in the right direction. Of course, inflation will affect price, but with proper planning and controls, the network will be able to meet market demands.
+
+  p Our first analysis was to research if there was a correlation between transactions per second and price, either with BTC or ETH. The short answer was, yes there is a moderate to strong correlation. A few periods of uncertainty such as the Mt. Gox and Silk Road issues resulted in a short disconnect during 2014, but outside of that time period there is a strong connection between the valuation price of the two cryptocurrencies and the volume of transactions being performed.
+
+  p Here are the daily charts and correlation coefficients for Bitcoin and Ethereum:
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/blog-aug-update-4.png")
+  
+  p.caption Historically, Bitcoin has a 73% correlation between transactions per second and token price.
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/blog-aug-update-5.png", style="max-width:635px;")
+      
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/blog-aug-update-6.png")
+      
+  p.caption Historically, Ethereum has a 95% correlation between transactions per second and token price.
+  
+  p 
+    span.highlight ​​Research shows that the simple economics of supply and demand apply in the cryptocurrency world. The more popular a blockchain becomes in its early stages, the more value is assigned to each coin.
+
+  p 
+    span.highlight Our next step was building a Dynamic Proof-of-Stake logic to correspond to that outcome. For reference, this is similar to Uber’s surge pricing model. The general theory behind how it works is that when the number of riders looking for an Uber outweighs the number of drivers available (within a specific area) the price will go up for riders.
+  
+  p Two things are supposed to happen as a result of the price going up. It should reduce the quantity demanded (fewer people willing to pay a higher price for a ride) and raise the supply (more drivers want to come drive when their pay is higher). As a result of those two effects, Uber minimizes wait times for its riders and maximizes incentive for drivers.
+
+  p
+   span.highlight For Storecoin, it means matching supply (validator power) and demand (number of transactions per second) efficiently at a high level. In general, the slower the block times are at the start, the higher the reward incentive must be for validators to get involved. We do this in a way that targets our annual inflation goals (which start at less than 5% and slowly decrease each year after).
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/blog-aug-update-7.png")
+      
+  p 
+    span.highlight In summary, we made significant progress on Storecoin and our Dynamic Proof of Stake consensus algorithm, which can be described as free transactions through a blockchain, paid for with a maximum of 5% inflation per year, spread out across 365 days, using a similar algorithm as Uber surge pricing.
+
+  p Finally, in late August, our creator, Chris McCoy, traveled to Buenos Aires to visit with our blockchain engineering team, 
+    a(href="https://www.coinfabrik.com/", target="_blank") CoinFabrik
+    | .
+
+  p For two days, they worked through critical business and engineering items and came away with a go-forth plan for the next phases of Storecoin research and development.
+
+  p While staying in downtown Buenos Aires, Chris enjoyed the incredible BBQ and the Malbec offered up by the city.
+  
+  p A few hours before landing in Buenos Aires, TechCrunch 
+    a(href="https://techcrunch.com/2017/08/20/yesterdays-plastics-are-todays-crypto-tokens/", target="_blank") published Chris’ thoughts on the future of tokenization
+    | .
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/blog-aug-update-8.png")
+      
+  p While on the trip, Chris engaged in conversation from the Twitter crowd, specifically Finance Twitter, led by Bloomberg Business.
+
+  p The TechCrunch piece was picked up by the popular aggregator MediaRedef.   
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/blog-aug-update-9.png", style="max-width: 764px;") 
+      
+  p Chris is now working on a follow-up piece to respond to questions from the Twitter finance crowd. He’ll team up with University of Oregon Professor Stephen McKeon who wrote 
+    a(href="https://hackernoon.com/traditional-asset-tokenization-b8a59585a7e0?source=user_profile---------2----------------", target="_blank") these thoughts
+    |  around tokenizing real-life assets.
+
+  p On the legal front, Storecoin retained the services of 
+    a(href="https://twitter.com/antonejohnson", target="_blank") Antone Johnson
+    |  and 
+    a(href="http://bottomlinelawgroup.com/", target="_blank") Bottom Line Law Group
+    |  to help with SEC compliance, legal documentation for token generation events, and token grants to various Storecoin Team members.
+
+  p For its first invite-only token generation round, the Storecoin team’s goal is to fund 3 percent of its treasury.
+
+  p On the engineering front, the team will begin security and load testing for our unique Dynamic Proof of Stake consensus algorithm.
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/blog-aug-update-10.png") 
+    
+  p We expect our September update to be much about that.
+
+  p In the meantime, 
+    a(href="http://twitter.com/storecointeam", target="_blank") follow us on Twitter
+    |  and 
+    a(href="https://medium.com/@storecoin", target="_blank") subscribe to our blog
+    |  on Medium.
+
+  p Onward,
+
+  p Storecoin Team

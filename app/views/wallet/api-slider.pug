@@ -1,0 +1,31 @@
+section.api-bugget-api.api-royalty
+  //- div.header Set budget for API calls
+  div.header Choose the token amounts to incentivize each API call
+  div.api-list
+    - var n = 0
+    while n < 9
+      div.api-item
+        if isPercentSlider
+          div.title
+        else 
+          div.ui.selection.dropdown
+            input(type='hidden', name='gender')
+            .default.text Select API
+            i.dropdown.icon
+            .menu
+              .item User signs up
+              .item User successfully onboards
+              .item User invites a friend
+              .item User invites a friend who onboards
+              .item User accepts 3 invites in a row
+              .item User creates an event and schedules +3 people
+
+        section.tab.no-padding.storecoin-slider(data-tab="none")
+          include amount-slider
+          
+        if isPercentSlider  
+          section.tab.no-padding.percent-slider(data-tab="none")
+            div.header Set a custom Royalty for this API (%)
+            include percent-slider
+    
+      - n++

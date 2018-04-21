@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  div#hc-content
+    //- #hc-intro.hc-feature.over-rel.padding
+    //-   .hc-chunk.hc-intro-text-wrapper
+    //-     h2.hc-intro-large-lead(style='font-weight: bold; font-size: 2.7em; margin: 2em auto;') Blog
+    - var blogTitle = (meta.twtitle) ? meta.twtitle : meta.title;
+    - var encodedTitle = encodeURI(blogTitle)
+    - var url = meta.url
+    - var encodedUrl = encodeURI(url)
+    div(style="margin-top:5em;")
+      .blog-news.hc-feature.over-rel.padding
+        .hc-chunk.hc-customize-text-wrapper
+          div.blog-share
+            a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecoin")
+              b
+                i.ion-social-twitter-outline
+            a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+              b
+                i.ion-social-facebook-outline
+          p.time-stamp=meta.timeStamp
+          h1.article-title=meta.title
+          div.blog-share.fixed
+            a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecoin")
+              b
+                i.ion-social-twitter-outline
+            a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+              b
+                i.ion-social-facebook-outline
+          
+          block blog-news
+          
+          div.blog-share.fixed
+            div.share Share:
+            a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecoin")
+              b
+                i.ion-social-twitter-outline
+            a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+              b
+                i.ion-social-facebook-outline
+          
+    include email-widget

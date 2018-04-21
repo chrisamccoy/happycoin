@@ -8,16 +8,15 @@ $(document).ready(function(){
   // alert($(window).width());
   $('img[usemap]').rwdImageMaps();
   initDropdown();
-  scrollCheck();
   whyTextToggle();
   renderRadio();
-  scrollCheck();
   cardFlip();
   stratDist(isMobile);
+  scrollCheck(isMobile);
 
   // on scroll
   $(window).scroll(function(){
-    scrollCheck();
+    scrollCheck(isMobile);
   });
 
   $('#hc-nav-wrapper .menu-toggle').click(function (){
@@ -44,8 +43,10 @@ $(document).ready(function(){
   // toggleIncentive();
   emailSubscribe(isMobile);
   initSlider();
-  initLogoSlider('#hc-partners-slider');
-  initLogoSlider('#hc-buyers-slider');
+  initLogoSlider('#hc-partners-slider', 3);
+  initLogoSlider('#hc-buyers-slider', 3);
+  initLogoSlider('#wallet-slider', 4);
+  // initLogoSlider('#dev-eco-slider', 3);
   initProblemSlider();
   toggleStatusText();
   initTimer();
@@ -61,12 +62,54 @@ $(document).ready(function(){
   initInviteSale();
   initFullscreenImage(isMobile);
   initIntroHeight(isMobile);
+  initBlogShare();
+  initFormSubscribe();
+  initThirdTokenSale();
 });
 
+function initThirdTokenSale(){
+  $('#third-token-sale button').click(function(){
+    $('html, body').animate({ scrollTop : 0 }, 400, function(){
+      $('#third-token-sale button').hide();
+      $('.hc-email .email-widget').hide();
+      $('#third-token-sale').addClass('hide');
+      $('.token-widget-container').show();
+      // $('#about-second-token-sale').hide();
+      $('.hc-email .steps-form').show();
+      $('.hc-email .email-steps.step-1').show();
+    });
+  });
+
+  $('.token-widget-container .go-back').click(function(){
+    $(this).find('i').toggleClass('ion-chevron-up ion-chevron-down');
+    $('#third-token-sale').toggleClass('hide');
+  });
+}
+
+function initBlogShare (){
+  var $blogNews = $('.blog-news');
+
+  if($blogNews.length) {
+    var $blogHead = $blogNews.find('.article-title'),
+        $blogShare = $blogNews.find('.blog-share');
+
+    $(window).scroll(function(){
+      var scrollVal  = $(window).scrollTop(),
+          offset = $blogHead.offset().top - 100,
+          height = $blogNews.height();
+      // console.log(scrollVal, height - 200);
+      if (scrollVal > offset && scrollVal < height - 300) {
+        $blogShare.not('.fixed').fadeIn();
+      } else {
+        $blogShare.not('.fixed').fadeOut();
+      }
+    });
+  }
+}
+
 function initIntroHeight (isMobile) {
-  // changes for token sale complete or in going
-  var introHeight = $(window).height() - ((isMobile) ? 232 : 271);
-  // var introHeight = $(window).height() - ((isMobile) ? 262 : 292);
+  // var introHeight = $(window).height() - ((isMobile) ? 232 : 271);
+  var introHeight = $(window).height() - $('#hc-nav-wrapper').height() - $('#tokensale').height();
   // console.log(introHeight);
   $('#hc-intro').height(introHeight);
 }
@@ -74,7 +117,28 @@ function initIntroHeight (isMobile) {
 function initFullscreenImage (isMobile) {
   var $infoFullScreen = $('.info-fullscreen'),
       $infoModal = $('#info-image-modal');
+
   $infoFullScreen.click(function(){
+    var html = $(this).html();
+    if (isMobile) {
+      $infoModal.find('.content .image-modal-container')
+                .css('width', 'auto')
+                .html('')
+                .append(html);
+    } else {
+      $infoModal.find('.content .image-modal-container').html('').append(html);
+    }
+    $infoModal.modal({
+      onShow : function(){
+        $(window).trigger('resize');
+      }
+    }).modal('show');
+    $infoModal.find('i.ion-android-close').click(function(){
+      $infoModal.modal('hide');
+    });
+  });
+
+  $('.blog-news .hc-image').click(function(){
     var html = $(this).html();
     if (isMobile) {
       $infoModal.find('.content .image-modal-container')
@@ -97,39 +161,55 @@ function initFullscreenImage (isMobile) {
 
 function initInviteSale() {
   var $navWrap = $('#hc-nav-wrapper'),
-      $inviteSale = $('.sale-invite');
+      $inviteSale = $('.sale-invite'),
+      $modal = $('#sale-invite-modal');
 
   $inviteSale.click(function(){
-    // console.log($(this).data().id);
-    var $tokenSale = $($(this).data().id);
-    if($tokenSale.length) {
-      $('html, body').animate({ scrollTop : $tokenSale.offset().top - $navWrap.height() }, 600);
+    if (window.location.host === 'storeco.in' && window.location.pathname === '/') {
+      var id = $(this).data().id;
+      var $tokenSale = ($(id).length) ? $(id) : $('#tokensale-bottom');
+      if($tokenSale.length) {
+        $('html, body').animate({ scrollTop : $tokenSale.offset().top - $navWrap.height() }, 600);
+      }
+    } else {
+      $modal.modal('show');
     }
+  });
+
+  $modal.find('i.ion-android-close').click(function(){
+    $modal.modal('hide');
+  });
+
+  $modal.find('form').submit(function(){
+    $modal.modal('hide');
   });
 }
 
 function initCoinFlip () {
-  var $coinCont = $('#business-case'),
-      height = $coinCont.height(),
-      $coin = $coinCont.find('.coin'),
-      offset = $coinCont.offset().top - 200,
-      flipping = false;
+  var $coinCont = $('#business-case');
 
-  $(window).scroll(function(){
-    var scrollVal  = $(window).scrollTop();
-    if (scrollVal > offset) {
-      if(!flipping) {
-        $coin.addClass('flip');
-        setTimeout(function(){
-          $coin.removeClass('flip');
-        }, 2000);
-        flipping = true;
+  if ($coinCont.length) {
+    var height = $coinCont.height(),
+        $coin = $coinCont.find('.coin'),
+        offset = $coinCont.offset().top - 200,
+        flipping = false;
+
+    $(window).scroll(function(){
+      var scrollVal  = $(window).scrollTop();
+      if (scrollVal > offset) {
+        if(!flipping) {
+          $coin.addClass('flip');
+          setTimeout(function(){
+            $coin.removeClass('flip');
+          }, 2000);
+          flipping = true;
+        }
+      } else {
+        $coin.removeClass('flip');
+        flipping = false;
       }
-    } else {
-      $coin.removeClass('flip');
-      flipping = false;
-    }
-  });
+    });
+  }
 }
 
 
@@ -168,22 +248,24 @@ function initProblemReveal(isMobile){
 }
 
 function initLightBulb () {
-  var $ourVision = $('#our-vision'),
-      $bulbOff = $ourVision.find('.bulb-off'),
-      $bulbGlow = $ourVision.find('.bulb-glow'),
-      offset = $ourVision.find('.hc-image').offset().top + ($ourVision.find('.hc-image').height() / 2);
+  var $ourVision = $('#our-vision');
 
-  $(window).scroll(function(){
-    var scrollVal  = $(window).scrollTop() + $(window).height();
-    if (scrollVal > offset) {
-      $bulbGlow.fadeIn();
-      $ourVision.addClass('active');
-    } else {
-      $bulbGlow.hide();
-      $ourVision.removeClass('active');
-    }
-  });
+  if ($ourVision.length) {
+    var $bulbOff = $ourVision.find('.bulb-off'),
+        $bulbGlow = $ourVision.find('.bulb-glow');
 
+    $(window).scroll(function(){
+      var scrollVal  = $(window).scrollTop() + $(window).height(),
+          offset = $ourVision.find('.hc-image').offset().top + ($ourVision.find('.hc-image').height() / 2);
+      if (scrollVal > offset) {
+        $bulbGlow.fadeIn();
+        $ourVision.addClass('active');
+      } else {
+        $bulbGlow.hide();
+        $ourVision.removeClass('active');
+      }
+    });
+  }
 }
 
 // function initLearnMore (isMobile) {
@@ -259,14 +341,49 @@ function imgCoords(isMobile) {
   });
 }
 
-function scrollCheck(){
+function scrollCheck(isMobile){
   var scrollVal = $(window).scrollTop(),
-      $navSection = $('#hc-nav-wrapper');
-  if (scrollVal > 50) {
-    $navSection.addClass('scrolling');
+      $navSection = $('#hc-nav-wrapper'),
+      $emailSubscribe = $('#email-subscribe'),
+      pathname = window.location.pathname,
+      paths = ['/communityfund', '/cfc18'];
+
+  // console.log(paths.indexOf(pathname));
+
+  if (paths.indexOf(pathname) < 0) {
+    if (scrollVal > 50) {
+      $navSection.addClass('scrolling');
+    } else {
+      $navSection.removeClass('scrolling');
+    }
+
+    if (scrollVal > 60) {
+      $emailSubscribe.fadeIn();
+    } else {
+      $emailSubscribe.fadeOut(100);
+    }
   } else {
-    $navSection.removeClass('scrolling');
+    $navSection.addClass('scrolling');
+    $('#hc-content').css('margin-top', (isMobile) ? '46px' : '50px');
   }
+
+  $emailSubscribe.find('.close').click(function(){
+    $(this).parents('#email-subscribe').remove();
+  });
+
+  $emailSubscribe.find('.reveal').click(function(){
+    $emailSubscribe.find('.mobile-reveal').addClass('show');
+    $(this).fadeOut();
+  });
+}
+
+function initFormSubscribe () {
+  var $form = $('.form-subscribe'),
+      $button = $form.find('button[type="submit"]');
+
+  $form.find('form').on('submit', function(){
+    $form.addClass('hidden');
+  });
 }
 
 function cardFlip() {
@@ -694,7 +811,7 @@ function emailSubscribe(isMobile) {
   var $emailSection = $('.hc-email'),
       $emailForm = $emailSection.find('.form'),
       $emailWidget = $emailSection.find('.email-widget'),
-      $subscribeBtn = $emailWidget.find('.button-primary[type="submit"]'),
+      $subscribeBtn = $emailWidget.find('.button-primary.init-token-sale-widget[type="submit"]'),
       $emailInput = $emailSection.find('input[type=email]'),
       $emailSteps = $emailSection.find('.email-steps'),
       $stepsform = $emailSection.find('.steps-form'),
@@ -1041,6 +1158,8 @@ function emailSubscribe(isMobile) {
     });
   });
 
+
+  // TOKEN SALE BEFORE
   $subscribeBtn.click(function(){
     var $thisEmailSect = $(this).parents('.hc-email');
     var $thisForm = $(this).parents('.form');
@@ -1052,7 +1171,7 @@ function emailSubscribe(isMobile) {
 
     if(emailVal){
       // changes for token sale complete or in going
-      
+
       // $thisEmailSect.find('.email-steps.step-17 input[type="text"]').val(emailVal);
       // $thisEmailSect.find('.email-widget .form').hide();
       // $('#about-second-token-sale').hide();
@@ -1065,6 +1184,7 @@ function emailSubscribe(isMobile) {
       $('#about-second-token-sale').hide();
       $thisEmailSect.find('.steps-form').show();
       $thisEmailSect.find('.email-steps.step-1').show();
+      // $thisEmailSect.find('.success-message').show();
       setTimeout(function(){
         $(window).scrollTop($thisEmailSect.offset().top - ((isMobile) ? 77 : 100));
       }, 300);
@@ -1377,15 +1497,15 @@ function initSticky() {
   sticky.update();
 }
 
-function initLogoSlider(id) {
+function initLogoSlider(id, slides) {
   var $sliderEl = $(id);
 
   if ($sliderEl.length > 0 ) {
 
     $sliderEl.slick({
       lazyLoad: 'ondemand',
-      slidesToShow: 3,
-      slidesToScroll: 3,
+      slidesToShow: slides,
+      slidesToScroll: slides,
       arrows : true,
       responsive: [
         {
@@ -1577,10 +1697,12 @@ function initTimer () {
 
 function hasUrl () {
   // console.log(window.location.hash);
-  var hash = window.location.hash;
-  if (hash) {
-    $(window).scrollTop($(hash).offset().top - 100);
-  }
+  var timeout = setTimeout(function () {
+    var hash = window.location.hash;
+    if (hash) {
+      $(window).scrollTop($(hash).offset().top - 100);
+    }
+  }, 2000);
 }
 
 function maxcount(t) {
@@ -1611,9 +1733,9 @@ function getParameterByName(name, url) {
 }
 
 function fadeInContent () {
-  if ($('.each-milestone').length) {
+  if ($('#hc-milestones .each-milestone .wrapper').length) {
     window.sr = ScrollReveal();
-    sr.reveal('.each-milestone', {
+    sr.reveal('#hc-milestones .each-milestone .wrapper', {
       duration: 800, origin: 'bottom', distance : '40px', scale : 1
     });
     $(window).scroll(function(){
@@ -1621,7 +1743,7 @@ function fadeInContent () {
           introHeight = $('#intro-section').height();
       // console.log(scrollVal < introHeight);
       // console.log(window.sr);
-      sr.reveal('.each-milestone', {
+      sr.reveal('#hc-milestones .each-milestone .wrapper', {
         reset : false
       });
     });

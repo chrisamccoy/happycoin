@@ -1,87 +1,318 @@
 extends layout-api
 
 block content
-  
+
   div.api-container
-    section#api-header
+    section.item-app
       div.image
-        img(src="/images/wallet/asana-logo.jpg")
+        img(src="/images/wallet/calender-icon.png")
+        //- i.ion-calendar(style="font-size:1.8em;")
       div.title
-        div 
-          b Asana
-        div Project Management
+        div
+          b Easy Schedule
+        div.meta Project Management
     section#api-balance
       div.balance
         div Storecoin Balance:
         div.logo-amount
           img.logo(src="/images/wallet/storecoin-logo.png")
-          div.amount.green 5.13434
+          div.amount.green 139.470001
       div.buy
-        button.small Buy
+        a(href="/wallet/wallet-app/#api-buy").button.small Buy
+
     section#api-budget-app-slider.tab(data-tab="none")
-      div.header Budget for your app
+      //- div.header Total #💰 budget for incentivized API calls
+      div.header Total budget for incentivized API calls
       include amount-slider
+
+    section#api-percent-global-slider.tab(data-tab="none")
+      div.header Set a Developer royalty all #💰-powered API's (%)
+      include percent-slider
+
     section#api-bugget-api
       //- div.header Set budget for API calls
       div.header Set Paid API Calls
       div.api-list
         div.api-item
-          select.ui.fluid.selection.dropdown
-            option(value='api') API
-            option(value='api') API
-          section.tab.no-padding(data-tab="none")
+          div.selected-api
+          //- button.small.select-api SELECT API
+          .ui.selection.dropdown
+            input(type='hidden', name='gender')
+            .default.text Select API
+            i.dropdown.icon
+            .menu
+              .item User signs up
+              .item User successfully onboards
+              .item User invites a friend
+              .item User invites a friend who onboards
+              .item User accepts 3 invites in a row
+              .item User creates an event and schedules +3 people
+
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+
+          section.tab.no-padding.percent-slider(data-tab="none")
+            div.header Set a Developer royalty for this transaction (%)
+            include percent-slider
+
         div.api-item
-          select.ui.fluid.selection.dropdown
-            option(value='api') API
-            option(value='api') API
-          section.tab.no-padding(data-tab="none")
+          div.selected-api
+          //- button.small.select-api SELECT API
+          .ui.selection.dropdown
+            input(type='hidden', name='gender')
+            .default.text Select API
+            i.dropdown.icon
+            .menu
+              .item User signs up
+              .item User successfully onboards
+              .item User invites a friend
+              .item User invites a friend who onboards
+              .item User accepts 3 invites in a row
+              .item User creates an event and schedules +3 people
+
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+
+          section.tab.no-padding.percent-slider(data-tab="none")
+            div.header Set a Developer royalty for this transaction (%)
+            include percent-slider
+
         div.api-item
-          select.ui.fluid.selection.dropdown
-            option(value='api') API
-            option(value='api') API
-          section.tab.no-padding(data-tab="none")
+          div.selected-api
+          //- button.small.select-api SELECT API
+          .ui.selection.dropdown
+            input(type='hidden', name='gender')
+            .default.text Select API
+            i.dropdown.icon
+            .menu
+              .item User signs up
+              .item User successfully onboards
+              .item User invites a friend
+              .item User invites a friend who onboards
+              .item User accepts 3 invites in a row
+              .item User creates an event and schedules +3 people
+
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+
+          section.tab.no-padding.percent-slider(data-tab="none")
+            div.header Set a Developer royalty for this transaction (%)
+            include percent-slider
+
         div.api-item
-          select.ui.fluid.selection.dropdown
-            option(value='api') API
-            option(value='api') API
-          section.tab.no-padding(data-tab="none")
+          div.selected-api
+          //- button.small.select-api SELECT API
+          .ui.selection.dropdown
+            input(type='hidden', name='gender')
+            .default.text Select API
+            i.dropdown.icon
+            .menu
+              .item User signs up
+              .item User successfully onboards
+              .item User invites a friend
+              .item User invites a friend who onboards
+              .item User accepts 3 invites in a row
+              .item User creates an event and schedules +3 people
+
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+
+          section.tab.no-padding.percent-slider(data-tab="none")
+            div.header Set a Developer royalty for this transaction (%)
+            include percent-slider
+
         div.api-item
-          select.ui.fluid.selection.dropdown
-            option(value='api') API
-            option(value='api') API
-          section.tab.no-padding(data-tab="none")
+          div.selected-api
+          //- button.small.select-api SELECT API
+          .ui.selection.dropdown
+            input(type='hidden', name='gender')
+            .default.text Select API
+            i.dropdown.icon
+            .menu
+              .item User signs up
+              .item User successfully onboards
+              .item User invites a friend
+              .item User invites a friend who onboards
+              .item User accepts 3 invites in a row
+              .item User creates an event and schedules +3 people
+
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+
+          section.tab.no-padding.percent-slider(data-tab="none")
+            div.header Set a Developer royalty for this transaction (%)
+            include percent-slider
+
         div.api-item
-          select.ui.fluid.selection.dropdown
-            option(value='api') API
-            option(value='api') API
-          section.tab.no-padding(data-tab="none")
+          div.selected-api
+          //- button.small.select-api SELECT API
+          .ui.selection.dropdown
+            input(type='hidden', name='gender')
+            .default.text Select API
+            i.dropdown.icon
+            .menu
+              .item User signs up
+              .item User successfully onboards
+              .item User invites a friend
+              .item User invites a friend who onboards
+              .item User accepts 3 invites in a row
+              .item User creates an event and schedules +3 people
+
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+
+          section.tab.no-padding.percent-slider(data-tab="none")
+            div.header Set a Developer royalty for this transaction (%)
+            include percent-slider
+
         div.api-item
-          select.ui.fluid.selection.dropdown
-            option(value='api') API
-            option(value='api') API
-          section.tab.no-padding(data-tab="none")
+          div.selected-api
+          //- button.small.select-api SELECT API
+          .ui.selection.dropdown
+            input(type='hidden', name='gender')
+            .default.text Select API
+            i.dropdown.icon
+            .menu
+              .item User signs up
+              .item User successfully onboards
+              .item User invites a friend
+              .item User invites a friend who onboards
+              .item User accepts 3 invites in a row
+              .item User creates an event and schedules +3 people
+
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+
+          section.tab.no-padding.percent-slider(data-tab="none")
+            div.header Set a Developer royalty for this transaction (%)
+            include percent-slider
+
         div.api-item
-          select.ui.fluid.selection.dropdown
-            option(value='api') API
-            option(value='api') API
-          section.tab.no-padding(data-tab="none")
+          div.selected-api
+          //- button.small.select-api SELECT API
+          .ui.selection.dropdown
+            input(type='hidden', name='gender')
+            .default.text Select API
+            i.dropdown.icon
+            .menu
+              .item User signs up
+              .item User successfully onboards
+              .item User invites a friend
+              .item User invites a friend who onboards
+              .item User accepts 3 invites in a row
+              .item User creates an event and schedules +3 people
+
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+
+          section.tab.no-padding.percent-slider(data-tab="none")
+            div.header Set a Developer royalty for this transaction (%)
+            include percent-slider
+
         div.api-item
-          select.ui.fluid.selection.dropdown
-            option(value='api') API
-            option(value='api') API
-          section.tab.no-padding(data-tab="none")
+          div.selected-api
+          //- button.small.select-api SELECT API
+          .ui.selection.dropdown
+            input(type='hidden', name='gender')
+            .default.text Select API
+            i.dropdown.icon
+            .menu
+              .item User signs up
+              .item User successfully onboards
+              .item User invites a friend
+              .item User invites a friend who onboards
+              .item User accepts 3 invites in a row
+              .item User creates an event and schedules +3 people
+
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+
+          section.tab.no-padding.percent-slider(data-tab="none")
+            div.header Set a Developer royalty for this transaction (%)
+            include percent-slider
+
         div.api-item
-          select.ui.fluid.selection.dropdown
-            option(value='api') API
-            option(value='api') API
-          section.tab.no-padding(data-tab="none")
+          div.selected-api
+          //- button.small.select-api SELECT API
+          .ui.selection.dropdown
+            input(type='hidden', name='gender')
+            .default.text Select API
+            i.dropdown.icon
+            .menu
+              .item User signs up
+              .item User successfully onboards
+              .item User invites a friend
+              .item User invites a friend who onboards
+              .item User accepts 3 invites in a row
+              .item User creates an event and schedules +3 people
+
+          section.tab.no-padding.storecoin-slider(data-tab="none")
             include amount-slider
+
+          section.tab.no-padding.percent-slider(data-tab="none")
+            div.header Set a Developer royalty for this transaction (%)
+            include percent-slider
+
+
+  div#select-api-modal.ui.small.modal
+    div.content
+      div.modal-header
+        div.logo-title Select API
+        div.close-modal
+          i.ion-android-close
+      div.modal-content
+        section.list
+          div.item
+            div.name TASKS
+              i.ion-chevron-down
+            div.sub-list
+              ul
+                li Task actions
+                li Task fields
+                li Task assignee & followers
+                li Task dependencies
+                li Task comments & attachments
+                li Subtasks
+                li Celebration Creatures
+
+          div.item
+            div.name PROJECTS
+              i.ion-chevron-down
+            div.sub-list
+              ul
+                li Understanding projects
+                li Project actions
+                li Project Owner & members
+                li Project progress
+                li Sections
+                li Asana-created templates
+
+          div.item
+            div.name CONVERATIONS
+              i.ion-chevron-down
+            div.sub-list
+              ul
+                li Understanding conversations
+                li Team Conversations
+                li Project Conversations
+                li Conversations & email
+
+          div.item
+            div.name ORGANIZATIONS & TEAMS
+              i.ion-chevron-down
+            div.sub-list
+              ul
+                li Managing an Organization
+                li Creating Organizations
+                li Team basics
+                li Managing a team
+                li Team calendars & conversations
+
+          div.item
+            div.name WORKSPACES
+              i.ion-chevron-down
+            div.sub-list
+              ul
+                li Understanding Workspaces
+                li Creating & managing Workspaces
+                li Workspace Members & Limited Access Members
