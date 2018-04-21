@@ -1,8 +1,17 @@
 var blogs = [
   {
+      slug: 'open-source-proposal-has-potential-to-raise-tendermints-consensus-throughput',
+      title: 'Open-Source Proposal has Potential to Raise Tendermint’s Consensus Throughput',
+      desc: 'Storecoin’s idea would improve software’s ability to run consensus with constant time, even when many validators participate in the process',
+      img: 'https://storeco.in/images/blog/blog-open-source-protocol.png',
+      template: 'blog-open-source-protocol',
+      readTime : '4 min read',
+      date : 'April 21, 2018'
+  },
+  {
       slug: 'storecoin-software-development-protocol-inpired-by-impenetrable-fort-knox',
       title: 'Storecoin Software Development Protocol Inspired by Impenetrable Fort Knox',
-      desc: 'Amazon Blockchain Strategy Group boosts efforts to secure code',
+      desc: 'Project Fort Knox: Storecoin takes major steps to secure its code base with the help of the Amazon Blockchain Strategy Group',
       img: 'https://storeco.in/images/blog/fort-knox.jpeg',
       template: 'blog-software-development-protocol',
       readTime : '5 min read',

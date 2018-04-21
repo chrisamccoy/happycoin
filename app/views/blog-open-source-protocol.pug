@@ -1,0 +1,82 @@
+extends blog-wrapper
+
+block blog-news
+  
+  h4.article-h4 Storecoin’s idea would improve software’s ability to run consensus with constant time, even when many validators participate in the process
+    
+  p
+    b Highlights
+    
+  ul
+    li Storecoin opens an issue with Tendermint on GitHub, suggesting an improvement to “minimize peer-to-peer communication overload.”
+    .hc-image
+      img(src='/images/empty.png', data-src="/images/blog/blog-open-source-protocol-image-1.png")
+    p.caption Image 1 — Submission of Project Basil by Storecoin on GitHub.
+    li Novel idea results in throughput unaffected by the size of the network.
+    li Proposal eliminates replication of a “holding area” for transactions on each individual peer’s system.
+    li Shared transaction repository solves problem of peer-to-peer communication and opens the possibility of parallel consensus rounds by multiple block producers.
+        
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/blog-open-source-proposal.png")
+  p.caption Figure 1 — The outcome of the Project Basil proposal. Transactions are taken from a shared mempool.
+  
+  p
+    b Background
+  
+  p While Storecoin’s engineering team worked on developing BlockFin, its dynamic, fork-tolerant, and auditable consensus algorithm, early versions of the Dynamic Proof of Stake (DyPoS) protocol were built and tested on top of Tendermint.
+
+  p Open-source software, Tendermint core implements the blockchain consensus engine, which ensures that the same transactions are recorded on every machine in the same order. However, when a large number of machines are involved in the consensus, Tendermint is unable to handle the burden, making it unsuitable for large deployments with thousands of peers, a situation that Storecoin expects to encounter when it achieves its mission of becoming zero-fee payment infrastructure for users around the globe.
+  
+  p
+    b Project Basil
+  
+  p After studying its research results, Storecoin was able to proposed an open-source idea, called 
+    a(href="https://github.com/StorecoinProject/Basil", target="_blank") Project Basil
+    | , to ensure that throughput is not affected by the size of the network.
+  
+  p Specifically, Storecoin proposes two enhancements to Tendermint core:
+  
+  ol
+    li Eliminate the need for relaying the incoming transactions to other peers by devising a shared mempool that guarantees total order of transactions
+    li Use the shared mempool to build the new block during consensus round
+      
+  p Since peer-to-peer communication is eliminated by this proposal, the consensus throughput remains unaffected by the number of peers.
+
+  p Tendermint is designed so that validators pick transactions from a storage area called a mempool. Each validator has a mempool. The elected block proposer takes the transactions from its local mempool to build the new block and proposes the new block for voting.
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/blog-open-source-protocol-image-2.png")
+  p.caption Figure 2— Traditional interaction between Tendermint core and its associated ABCI app.
+  
+  p The proposer needs to grab a list of validated transactions to propose the new block for voting. Since transaction validation is offloaded to the ABCI app, maintaining the list of validated transactions can be too, calling for a 
+    b  shared
+    |  mempool with the following properties.
+    
+  ol
+    li Transaction order must be guaranteed as multiple peers submit validated transactions to the shared mempool
+    li It must be secure, so the peers can trust the entries in the shared mempool during consensus rounds
+    li The entries in the shared mempool must be consistent, so it offers the same view to all the peers
+    li The shared mempool must have high availability because the progress of consensus rounds depends on it
+  
+  p The creation of a shared mempool means that the peers:
+  
+  ol
+    li don’t add the transaction to their local mempool, but use SequenceTx() to store the 
+      span.italics  signed
+      |  transaction in the shared mempool
+    li don’t relay it to other peers
+    
+  p Since the transactions are ordered in the shared mempool, multiple block producers can propose multiple blocks for voting. The prevote and pre-commit phases of multiple proposed blocks can be pipelined, so the voting happens in parallel. Only the commit phase needs to be serial, so the block proposed by the current block producer is committed first, followed by the block proposed by the next producer, and so on.
+  
+  .hc-image
+    img(src='/images/empty.png', data-src="/images/blog/blog-open-source-protocol-image-3.png")
+  p.caption Figure 3 — Validators take signed transactions from a shared mempool.
+  
+  p Maintaining a shared mempool of ordered transactions eliminates the need for relaying the incoming transactions to all the peers. This approach adds 3 APIs to the ABCI interface and offloads the consistency and availability responsibilities to the ABCI app. This should not be perceived as a weakness, because the Tendermint core is not a standalone consensus engine and is always used in association with an ABCI app.
+
+
+
+
+
+    
+  
