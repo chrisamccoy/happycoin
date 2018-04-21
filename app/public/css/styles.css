@@ -29,7 +29,7 @@
 }*/
 
 #hc-content {
-  margin-top: 120px;
+  margin-top: 110px;
 }
 
 body {
@@ -654,7 +654,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 @media only screen and (max-width: 700px) {
   #hc-content {
-    margin-top: 82px;
+    margin-top: 78px;
   }
 
   .hc-email .email-widget .sub-head {
@@ -1264,10 +1264,9 @@ and (max-width : 550px) {
   }
 }
 
-@media only screen
-and (max-width : 455px) {
+@media only screen and (max-width : 455px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 2.6em !important;
+    font-size: 2em !important;
   }
 
   #hc-intro .hc-feature-lead {
@@ -1278,18 +1277,7 @@ and (max-width : 455px) {
 @media only screen
 and (max-width : 410px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 2.4em !important;
-  }
-
-  #hc-intro .hc-feature-lead {
-    font-size: 1.5em !important;
-  }
-}
-
-@media only screen
-and (max-width : 375px) {
-  #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 2.2em !important;
+    font-size: 1.8em !important;
   }
 
   #hc-intro .hc-feature-lead {
@@ -1298,13 +1286,24 @@ and (max-width : 375px) {
 }
 
 @media only screen
-and (max-width : 360px) {
+and (max-width : 375px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 2em !important;
+    font-size: 1.8em !important;
   }
 
   #hc-intro .hc-feature-lead {
-    font-size: 1.3em !important;
+    font-size: 1.2em !important;
+  }
+}
+
+@media only screen
+and (max-width : 360px) {
+  #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
+    font-size: 1.8em !important;
+  }
+
+  #hc-intro .hc-feature-lead {
+    font-size: 1.2em !important;
   }
 }
 
