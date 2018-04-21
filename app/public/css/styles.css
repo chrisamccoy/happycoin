@@ -777,7 +777,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #hc-nav-wrapper .hc-intro-post span {
   font-size: 0.1em;
-  padding: 1em;
+  padding: 0.5em;
 }
 
 #hc-nav-wrapper.v2 .hc-intro-post {
