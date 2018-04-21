@@ -4249,7 +4249,7 @@ and (max-width : 335px) {
 
 #hc-milestones .milestones .each-milestone .wrapper .list .item {
   display: flex;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.8em;
 }
 
 #hc-milestones .milestones .each-milestone .wrapper .list .item .ion-record {
@@ -5856,6 +5856,24 @@ and (max-width : 335px) {
   font-style: italic;
   font-size: 21px;
   margin-bottom: 1em;
+}
+
+.blog-news .back-to-news {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+.blog-news .back-to-news i {
+  margin-right: 0.5em;
+  font-size: 1.7em;
+}
+
+.blog-news .back-to-news a {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  display: flex;
+  align-items: center;
 }
 
 .blog-news .article-h2,

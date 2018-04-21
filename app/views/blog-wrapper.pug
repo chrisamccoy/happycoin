@@ -12,6 +12,11 @@ block content
     div(style="margin-top:5em;")
       .blog-news.hc-feature.over-rel.padding
         .hc-chunk.hc-customize-text-wrapper
+          div.back-to-news
+            a(href="http://news.storeco.in") 
+              i.ion-chevron-left
+              span Back to News
+              
           div.blog-share
             a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecoin")
               b
@@ -39,5 +44,10 @@ block content
             a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
               b
                 i.ion-social-facebook-outline
+                  
+          div.back-to-news
+            a(href="http://news.storeco.in") 
+              i.ion-chevron-left
+              span Back to News
           
     include email-widget
