@@ -109,7 +109,7 @@ function initBlogShare (){
 
 function initIntroHeight (isMobile) {
   // var introHeight = $(window).height() - ((isMobile) ? 232 : 271);
-  var introHeight = $(window).height() - $('#hc-nav-wrapper').height() - $('#tokensale').height();
+  var introHeight = $(window).height() - $('#hc-nav-wrapper').height() - $('#second-token-sale').height();
   // console.log(introHeight);
   $('#hc-intro').height(introHeight);
 }

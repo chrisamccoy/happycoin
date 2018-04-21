@@ -1055,7 +1055,7 @@ input[type=number]::-webkit-outer-spin-button {
 #hc-intro {
   height: calc(100vh - 271px);
   background: #2a2a2a;
-  background-image: url(../images/map-bg.png);
+  background-image: url(../images/intro-bg.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 90%;
@@ -1092,9 +1092,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-  font-size: 3.5em;
+  font-size: 3.1em;
   text-align: center;
-  line-height: 1;
 }
 
 #hc-intro .hc-intro-text-wrapper .hc-intro-small-lead {
@@ -1255,7 +1254,7 @@ input[type=number]::-webkit-outer-spin-button {
 @media only screen
 and (max-width : 550px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 3.2em !important;
+    font-size: 2.8em !important;
   }
 
   #hc-intro .hc-feature-lead {
@@ -1266,7 +1265,7 @@ and (max-width : 550px) {
 @media only screen
 and (max-width : 455px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 3em !important;
+    font-size: 2.6em !important;
   }
 
   #hc-intro .hc-feature-lead {
@@ -1277,7 +1276,7 @@ and (max-width : 455px) {
 @media only screen
 and (max-width : 410px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 2.6em !important;
+    font-size: 2.4em !important;
   }
 
   #hc-intro .hc-feature-lead {
@@ -1288,7 +1287,7 @@ and (max-width : 410px) {
 @media only screen
 and (max-width : 375px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 2.4em !important;
+    font-size: 2.2em !important;
   }
 
   #hc-intro .hc-feature-lead {
@@ -1299,7 +1298,7 @@ and (max-width : 375px) {
 @media only screen
 and (max-width : 360px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 2.4em !important;
+    font-size: 2em !important;
   }
 
   #hc-intro .hc-feature-lead {
@@ -1310,7 +1309,7 @@ and (max-width : 360px) {
 @media only screen
 and (max-width : 345px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 2.4em !important;
+    font-size: 1.8em !important;
   }
 
   #hc-intro .hc-feature-lead {
@@ -1321,7 +1320,7 @@ and (max-width : 345px) {
 @media only screen
 and (max-width : 335px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 2.2em !important;
+    font-size: 1.6em !important;
   }
 
   #hc-intro .hc-feature-lead {
@@ -1332,7 +1331,7 @@ and (max-width : 335px) {
 
 @media only screen and (max-width: 320px) {
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
-    font-size: 1.4em !important;
+    font-size: 1.2em !important;
   }
 
   #hc-intro .hc-feature-lead {
@@ -5530,6 +5529,11 @@ and (max-width : 335px) {
   line-height: 1.4;
 }
 
+#our-mission .hc-feature-lead.note {
+  font-size: 1.5em;
+  margin: 0px;
+}
+
 @media only screen and (max-width: 700px) {
   #our-mission .hc-feature-title {
     font-size: 3em;
@@ -5538,6 +5542,11 @@ and (max-width : 335px) {
 
   #our-mission .hc-feature-lead {
     font-size: 1.5em;
+  }
+
+  #our-mission .hc-feature-lead.note {
+    font-size: 1em;
+    margin: 0px;
   }
 }
 
@@ -6312,5 +6321,20 @@ and (max-width : 335px) {
   #sale-invite-modal .ion-android-close {
     right: 0px;
     top: -30px;
+  }
+}
+
+/* --------------------------------- */
+#note {
+  padding: 0px;
+}
+
+#note .hc-feature-lead {
+  margin: 0.5em 0px;
+}
+
+@media only screen and (max-width: 700px) {
+  #note .hc-feature-lead {
+    font-size: 0.8em;
   }
 }

@@ -4,15 +4,10 @@ block content
   div#hc-content
     #hc-intro.hc-feature.over-rel.padding
       .hc-chunk.hc-intro-text-wrapper
-        h2.hc-intro-large-lead(style="margin-bottom:0px;")
-          b Storecoin is a new public blockchain.
-        h2.hc-feature-lead(style="margin-bottom:0px;") With its 
-          a.lite-green.underline(data-featherlight="#dynamic") Dynamic
-          | , 
-          a.lite-green.underline(data-featherlight="#fork") Fork-tolerant
-          | , and 
-          a.lite-green.underline(data-featherlight="#auditable") Auditable
-          |  Proof of Stake-based consensus protocol (DyPoS), Storecoin will secure free transactions, high-throughput, and a decentralized governance system with built-in checks and balances inspired by the United States Constitution.
+        h2.hc-intro-large-lead
+          b Storecoin is a zero-fee, high throughput, and decentralized cryptocurrency with a Governance inspired by the U.S. Constitution.
+        
+        p.hc-feature-lead The Storecoin blockchain is secured by Dynamic Proof of Stake (DyPos).
 
     #dynamic.intro-popup(style="display:none;") 
       b Dynamic
@@ -25,8 +20,20 @@ block content
       |  because all the operations on the blocks in the blockchain, such as adding transactions to the block and voting, counting, and sealing the blocks require that the nodes sign the relevant parts of the block with their secret. Thus, every operation leaves accessor's signature in the block, so every operation is automatically audited. Auditability improves security of the blockchain and resists long range and other types of attacks.
     
     div#second-token-sale
-    - var top = true
-    include email-widget
+      #note.hc-feature.over-rel.padding.inverted
+        .hc-chunk.hc-customize-text-wrapper
+          p.hc-feature-lead 
+            b Note:
+            |  Storecoin is a new public blockchain, not an ERC20 token
+            
+      - var top = true
+      include email-widget
+      
+    #our-mission.hc-feature.over-rel.padding.orange.inverted
+      .hc-chunk.hc-customize-text-wrapper
+        h3.hc-feature-title.inverted Our Vision
+        p.hc-feature-lead(style="max-width: 700px;") To become zero-fee, programmable payments infrastructure for the globe.
+        p.hc-feature-lead.note (a general compute, zero-free payments platform)
 
     include storecoin-comparison-table
 
