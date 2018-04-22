@@ -23,6 +23,11 @@ router.get('/3', function(req, res, next) {
   res.render('coming-soon', { title: 'Storecoin', meta: meta() });
 });
 
+/* GET home page. */
+router.get('/research', function(req, res, next) {
+  res.render('research', { title: 'Storecoin', meta: meta() });
+});
+
 /* GET consensus compare */
 router.get('/consensuscompare', function(req, res, next) {
   res.redirect('https://docs.google.com/spreadsheets/d/1XEVSpnMD3rOuqhZj7KsDQalfd1i7c3zTkLEkpRaD_tU/edit?usp=sharing');
