@@ -1,10 +1,18 @@
 #email-subscribe.form-subscribe
   div.sub-container
-    div.message Get the latest news on Storecoin delivered to your inbox
+    //- div.message Get the latest news on Storecoin delivered to your inbox
+    div.message Stay updated on the project 
     div.mobile-reveal
       form.form(action='https://storeco.us16.list-manage.com/subscribe/post?u=49990f91819fec5293c84bbe8&id=2aca88b02e', method='POST', target='_blank', novalidate='')
         input(type="email", placeholder="Your Email", name="EMAIL")
         button(type="submit") Submit
+      div.social
+        div Also, connect on:
+        div.links
+          a(href="http://twitter.com/storecoin", target="_blank")
+            i.ion-social-twitter-outline
+          a(href="http://t.me/storecoin", target="_blank")
+            i.ion-paper-airplane
       div.close.icon-btn
         i.ion-android-close
     div.reveal.icon-btn
