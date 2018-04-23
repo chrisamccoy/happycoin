@@ -588,7 +588,7 @@ block content
             
       include process-window-summary 
             
-      div.proceed.publish.wallet-button(data-message="Beaming your APIs up to the Storecoin public blockchain...", data-success="<p>Your app can now reward users storecoins each time they take an incentivized API.</p>", data-loaddelay="7000", data-successdelay="7000", data-key="api-publish")
+      div.proceed.publish.wallet-button(data-message="Beaming your APIs up to the Storecoin public blockchain...", data-success="<p>Your app can now reward users storecoins each time they take an incentivized API.</p>", data-loaddelay="5000", data-successdelay="5000", data-key="api-publish")
         button Publish API Calls
       div.proceed.open-process.wallet-button
         button Save
@@ -657,7 +657,9 @@ block content
            
       section.api-royalty
         //- div.header Set budget for API calls
-        div.header Set a custom Royalty for specific API's (%)
+        div.header Set a custom Royalty for individual 
+          img(src="/images/wallet/storecoin-logo.png", alt="#💰")
+          span payments (%)
         div.api-list
       
       - var disabled = true;    
