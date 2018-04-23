@@ -24,6 +24,16 @@ router.get('/3', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/code', function(req, res, next) {
+  res.render('coming-soon', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
+router.get('/tee', function(req, res, next) {
+  res.render('coming-soon', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
 router.get('/research', function(req, res, next) {
   res.render('research', { title: 'Storecoin', meta: meta() });
 });
