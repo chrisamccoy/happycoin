@@ -6459,7 +6459,6 @@ and (max-width : 335px) {
 
 #research .researches .item .title {
   margin: 0px;
-  font-size: 1.2em;
 }
 
 #research .researches .item .row {
@@ -6469,7 +6468,8 @@ and (max-width : 335px) {
 }
 
 #research .researches .item .thumbnail {
-  width: 70px;
+  min-width: 70px;
+  max-width: 70px;
   margin-right: 0.5em;
   height: 90px;
   background: white;
@@ -6480,6 +6480,10 @@ and (max-width : 335px) {
 
 #research .researches .item .thumbnail img  {
   width: 100%;
+}
+
+#research .researches .item .links {
+  margin-top: 0.5em;
 }
 
 #research .researches .item .links a {
