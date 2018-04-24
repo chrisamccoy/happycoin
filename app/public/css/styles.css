@@ -6463,15 +6463,15 @@ and (max-width : 335px) {
 
 #research .researches .item .row {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   margin-top: 0.5em;
 }
 
 #research .researches .item .thumbnail {
-  min-width: 70px;
-  max-width: 70px;
+  min-width: 105px;
+  max-width: 105px;
   margin-right: 0.5em;
-  height: 90px;
+  height: 140px;
   background: white;
   display: flex;
   align-items: center;
@@ -6488,9 +6488,12 @@ and (max-width : 335px) {
 
 #research .researches .item .links a {
   display: inline-block;
-  font-size: 0.8em;
   border-bottom: 1px solid;
   padding-bottom: 0px;
+}
+
+#research .researches .item .links .link:not(:last-child) {
+  margin-bottom: 0.5em;
 }
 
 @media only screen and (max-width: 700px) {
