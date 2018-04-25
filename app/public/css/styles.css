@@ -6507,3 +6507,47 @@ and (max-width : 335px) {
 /* #research .researches .item .links .link:not(:last-child) {
   margin-bottom: 0.2em;
 } */
+
+/* engineering */
+#engineering .roadmap .item {
+  display: flex;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+#engineering .roadmap .item .bullet,
+#engineering .roadmap .item .period {
+  margin-right: 1em;
+}
+
+#engineering .roadmap .item .period {
+  flex: none;
+}
+
+#engineering .roadmap .item .bullet .ion-record {
+  color: #e97844;
+}
+
+#engineering .roadmap .item .bullet .ion-checkmark {
+  color: green;
+}
+
+#engineering .roadmap .item .text {
+  color: #5e5e5e;
+}
+
+@media only screen and (max-width: 700px) {
+  #engineering .roadmap .item .bullet,
+  #engineering .roadmap .item .period {
+    margin-right: 0.5em;
+  }
+
+  #engineering .roadmap .item {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #engineering .roadmap .item .text {
+    width: 100%;
+  }
+}
