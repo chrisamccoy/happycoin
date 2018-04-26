@@ -3,7 +3,7 @@ extends layout
 block content
   div#hc-content
     div(style="margin-top:5em;")
-      #third-token-sale.blog-news.hc-feature.over-rel.padding(style="padding-bottom: 0px;")
+      #third-token-sale.blog-news.hc-feature.over-rel.padding
         .hc-chunk.hc-intro-text-wrapper
           h1.article-title Welcome to the
             span(style="color:#c2c2c2;")  pre-sale
@@ -17,7 +17,7 @@ block content
               b Price Per Token:
               |  $0.069
             li 
-              b Network Value for STORE:
+              b Fully Diluted Network Value:
               |  $69 Million
             li
               b Funds Accepted: 
@@ -62,7 +62,7 @@ block content
               b # Wallets in the First Two Sales:
               |  220
             li 
-              b # of Storecoin Tokens Authorized:
+              b # of STORE Authorized:
               |  1 Billion
             li 
               b % to be sold to the public in up to 6 milestone-based sales:
@@ -73,14 +73,16 @@ block content
           p Storecoin is a pre-launch public blockchain protocol therefore, for our Third-Invite Only Token Sale, we are treating Storecoin tokens as securities. Purchasers in this $2,070,000 Token Sale must be 
             a(data-featherlight="#accredited") accredited investors
             |  under U.S. law and comply with laws and regulations of their respective countries.
+
+      include token-sale-buyers
+      
+      .blog-news.hc-feature.over-rel.padding(style="padding-bottom: 0px;")
+        .hc-chunk.hc-intro-text-wrapper
           .hc-image.info-fullscreen
             img(src='/images/empty.png', data-src="/images/basis-point-v2.png")
           p.caption(style="margin-bottom:0px;text-align:right;") *View data at 
             a(href="http://storeco.in/onepoint", target="_blank") http://storeco.in/onepoint 
           p.caption(style="text-align:right;") *Storecoin may have up to six, milestone-based token sales
-
-    //- div.token-widget-container.hc-feature.over-rel.padding
-    include token-sale-buyers
     
     div.hc-feature.over-rel.padding
       .hc-chunk.hc-intro-text-wrapper

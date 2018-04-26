@@ -6542,12 +6542,12 @@ and (max-width : 335px) {
     margin-right: 0.5em;
   }
 
-  #engineering .roadmap .item {
+  /* #engineering .roadmap .item {
     flex-wrap: wrap;
     justify-content: center;
   }
 
   #engineering .roadmap .item .text {
     width: 100%;
-  }
+  } */
 }
