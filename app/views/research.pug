@@ -2,89 +2,119 @@ extends layout
 
 block content
   div#hc-content
-    div(style="margin-top:5em;")
-      #research.hc-feature.over-rel.padding
-        .hc-chunk.hc-intro-text-wrapper
-          h3.hc-feature-title Storecoin Research
-          p.hc-feature-lead Original research from the Storecoin Team
-          div.researches
-            div.item
-              div.row
-                div.thumbnail
-                  img(src='/images/empty.png', data-src="/images/blockfin-thumb-3.png")
-                div
-                  p.title
-                    b Blockfin 
-                    |  — A Public Overview
-                  div.links
-                    div.link 
-                      a.underline(href="/media/blockfin-public-summary.pdf", target="_blank") Download
-                    div.link
-                      a.underline(href="http://storeco.in/blockfin", target="_blank") View Online
-                      
-            div.item
-              div.row
-                div.thumbnail
-                  img(src='/images/empty.png', data-src="/images/blockfin-thumb.png")
-                div
-                  p.title
-                    b Blockfin
-                    |  — Technical Whitepaper
-                  div.links
-                    div.link 
-                      a.underline(href="mailto:research@storeco.in?Subject=Requesting%20Access%20to%20the%20Blockfin%20Technical%20White%20Paper&body=Requesting%20access%20to%20Blockfin%20%E2%80%94%20Technical%20Whitepaper", target="_blank") Request Access
-                      
-            div.item
-              div.row
-                div.thumbnail
-                  img(src='/images/empty.png', data-src="/images/blockfin-thumb-2.png")
-                div
-                  p.title
-                    b Blockfin
-                    |  — Technical Presentation
-                  div.links
-                    div.link 
-                      a.underline(href="mailto:research@storeco.in?Subject=Requesting%20Access%20to%20the%20Blockfin%20Technical%20White%20Paper&body=Requesting%20access%20to%20Blockfin%20%E2%80%94%20Technical%20Presentation", target="_blank") Request Access
-                      
-            div.item
-              div.row
-                div.thumbnail
-                  img(src='/images/empty.png', data-src="/images/march-2018-load-test.png")
-                div 
-                  p.title
-                    b March 2018 Load Test Results
-                    |  — Storecoin Achieves +10,000 Transactions-Per-Second with Burst Traffic and 21 Validator Nodes using Tendermint
-                  div.links
-                    div.link 
-                      a.underline(href="/media/storecoin-achieves-+10,000-transactions-per-second-with-burst-traffic-and-21-validator-nodes.pdf", target="_blank") Download
-                    div.link
-                      a.underline(href="https://news.storeco.in/blog/storecoin-achieves-10,000-transactions-per-second-with-burst-traffic-and-21-validator-modes", target="_blank") View Online
-                      
-            div.item
-              div.row
-                div.thumbnail
-                  img(src='/images/empty.png', data-src="/images/blog/blog-load-testing-5-to-7.png")
-                div
-                  p.title
-                    b Basil
-                    |  — An open-source proposal for improving the throughput of Tendermint
-                    span(style="font-size: 8px; vertical-align: super;") TM
-                  div.links
-                    div.link 
-                      a.underline(href="/media/storecoin-achieves-+10,000-transactions-per-second-with-burst-traffic-and-21-validator-nodes.pdf", target="_blank") Download
-                    div.link
-                      a.underline(href="https://github.com/StorecoinProject/Basil/blob/master/README.md", target="_blank") View Online
-                      
-            div.item
-              div.row
-                div.thumbnail
-                  img(src='/images/empty.png', data-src="/images/research-thumb-1.png")
-                div
-                  p.title
-                    b Pomelo Paper
-                    |  — The pre-whitepaper overview of the Storecoin project
-                  div.links
-                    div.link 
-                      a.underline(href="", target="_blank") Download
-                    div.link
-                      a.underline(href="http://storeco.in/", target="_blank") View Online
+    - var blogTitle = 'Storecoin Research'
+    - var encodedTitle = encodeURI(blogTitle)
+    - var url = 'http://storeco.in/research'
+    #research.blog-news.hc-feature.over-rel.padding
+      .hc-chunk(style="max-width:1140px;")
+        div.blog-share
+          a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecoin")
+            b
+              i.ion-social-twitter-outline
+          a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+            b
+              i.ion-social-facebook-outline
+        
+        h1.article-title(style="text-align: center;") Storecoin Research
+        
+        div.blog-share.fixed(style="justify-content: center;")
+          a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecoin")
+            b
+              i.ion-social-twitter-outline
+          a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+            b
+              i.ion-social-facebook-outline
+                
+        h4.article-h4(style="text-align: center;") Original research from the Storecoin Team
+        
+        div.researches
+          div.item
+            div.row
+              div.thumbnail
+                img(src='/images/empty.png', data-src="/images/blockfin-thumb-3.png")
+              div
+                p.title
+                  b Blockfin 
+                  |  — A Public Overview
+                div.links
+                  div.link 
+                    a.underline(href="/media/blockfin-public-summary.pdf", target="_blank") Download
+                  div.link
+                    a.underline(href="http://storeco.in/blockfin", target="_blank") View Online
+                    
+          div.item
+            div.row
+              div.thumbnail
+                img(src='/images/empty.png', data-src="/images/blockfin-thumb.png")
+              div
+                p.title
+                  b Blockfin
+                  |  — Technical Whitepaper
+                div.links
+                  div.link 
+                    a.underline(href="mailto:research@storeco.in?Subject=Requesting%20Access%20to%20the%20Blockfin%20Technical%20White%20Paper&body=Requesting%20access%20to%20Blockfin%20%E2%80%94%20Technical%20Whitepaper", target="_blank") Request Access
+                    
+          div.item
+            div.row
+              div.thumbnail
+                img(src='/images/empty.png', data-src="/images/blockfin-thumb-2.png")
+              div
+                p.title
+                  b Blockfin
+                  |  — Technical Presentation
+                div.links
+                  div.link 
+                    a.underline(href="mailto:research@storeco.in?Subject=Requesting%20Access%20to%20the%20Blockfin%20Technical%20White%20Paper&body=Requesting%20access%20to%20Blockfin%20%E2%80%94%20Technical%20Presentation", target="_blank") Request Access
+                    
+          div.item
+            div.row
+              div.thumbnail
+                img(src='/images/empty.png', data-src="/images/march-2018-load-test.png")
+              div 
+                p.title
+                  b March 2018 Load Test Results
+                  |  — Storecoin Achieves +10,000 Transactions-Per-Second with Burst Traffic and 21 Validator Nodes using Tendermint
+                div.links
+                  div.link 
+                    a.underline(href="/media/storecoin-achieves-+10,000-transactions-per-second-with-burst-traffic-and-21-validator-nodes.pdf", target="_blank") Download
+                  div.link
+                    a.underline(href="https://news.storeco.in/blog/storecoin-achieves-10,000-transactions-per-second-with-burst-traffic-and-21-validator-modes", target="_blank") View Online
+                    
+          div.item
+            div.row
+              div.thumbnail
+                img(src='/images/empty.png', data-src="/images/blog/blog-load-testing-5-to-7.png")
+              div
+                p.title
+                  b Basil
+                  |  — An open-source proposal for improving the throughput of Tendermint
+                  span(style="font-size: 8px; vertical-align: super;") TM
+                div.links
+                  div.link 
+                    a.underline(href="/media/storecoin-achieves-+10,000-transactions-per-second-with-burst-traffic-and-21-validator-nodes.pdf", target="_blank") Download
+                  div.link
+                    a.underline(href="https://github.com/StorecoinProject/Basil/blob/master/README.md", target="_blank") View Online
+                    
+          div.item
+            div.row
+              div.thumbnail
+                img(src='/images/empty.png', data-src="/images/research-thumb-1.png")
+              div
+                p.title
+                  b Pomelo Paper
+                  |  — The pre-whitepaper overview of the Storecoin project
+                div.links
+                  div.link 
+                    a.underline(href="", target="_blank") Download
+                  div.link
+                    a.underline(href="http://storeco.in/", target="_blank") View Online
+        
+        div.blog-share.fixed(style="justify-content: center;")
+          a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecoin")
+            b
+              i.ion-social-twitter-outline
+          a(target="_blank", href="https://www.facebook.com/sharer/sharer.php?u="+url+"&title="+encodedTitle)
+            b
+              i.ion-social-facebook-outline
+                
+    include email-widget

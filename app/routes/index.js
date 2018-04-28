@@ -40,7 +40,14 @@ router.get('/tee', function(req, res, next) {
 
 /* GET home page. */
 router.get('/research', function(req, res, next) {
-  res.render('research', { title: 'Storecoin', meta: meta() });
+  var mt = meta({
+    title : 'Storecoin Research',
+    url : 'http://storeco.in/research',
+    desc: 'Original research from the Storecoin Team',
+    image: 'http://storeco.in/images/logo-research.png',
+    image_tw: 'http://storeco.in/images/logo-research.png'
+  });
+  res.render('research', { title: 'Storecoin', meta: mt });
 });
 
 /* GET consensus compare */

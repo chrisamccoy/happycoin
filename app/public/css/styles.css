@@ -6459,6 +6459,7 @@ and (max-width : 335px) {
 
 #research .researches .item .title {
   margin: 0px;
+  font-size: 1.1em;
 }
 
 #research .researches .item .row {
