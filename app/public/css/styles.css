@@ -6454,7 +6454,7 @@ and (max-width : 335px) {
 
 #research .researches .item {
   width: calc(33.33% - 1em);
-  padding: 1em 1em 1em 0em;
+  padding: 2em 1em 2em 0em;
 }
 
 #research .researches .item .title {
