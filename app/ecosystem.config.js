@@ -5,14 +5,13 @@ module.exports = {
    */
   apps : [
 
-    // Storecoin Production (master)
+    // Storecoin Orange (master)
     {
-      name      : 'storecoin',
+      name      : 'st-orange',
       script    : './bin/storecoin',
-      cwd       : '/srv/happycoin/app',
-      instances : 'max',
-      exec_mode : 'cluster',
+      cwd       : '/srv/st-orange/app',
       env: {
+        PORT:     3015,
         NODE_ENV: 'production'
       }
     }
