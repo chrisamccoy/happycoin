@@ -2591,6 +2591,13 @@ and (max-width : 335px) {
   margin: 0.7em 0em;
 }
 
+#team .others {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  margin-top: 2em;
+  background-color: #bdd2b0;
+}
+
 #team .hc-team-lead {
   font-size: 1.3em;
   text-align: center;
@@ -6894,16 +6901,71 @@ and (max-width : 335px) {
 
 @media only screen and (max-width: 700px) {
   #storecoin-roadmap .row {
-    margin-top: 2em;
+    margin-top: 5em;
     flex-direction: column;
+    position: relative;
+  }
+
+  #storecoin-roadmap .row::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: white;
+    top: -1px;
+    left: 15px;
   }
 
   #storecoin-roadmap .row .roadmap-lists {
     padding: 0px;
+    padding-left: 3em;
+    position: relative;
+    margin-bottom: 3em;
   }
 
-  #storecoin-roadmap .row .roadmap-lists:not(:last-child) {
-    margin-bottom: 2em;
+  #storecoin-roadmap .row .roadmap-lists::before,
+  #storecoin-roadmap .row .roadmap-lists:nth-child(4)::after {
+    position: absolute;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    top: -50px;
+    left: -8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+  }
+
+  #storecoin-roadmap .row .roadmap-lists:nth-child(1)::before {
+    content: '2017';
+  }
+
+  #storecoin-roadmap .row .roadmap-lists:nth-child(2)::before {
+    content: '2';
+  }
+
+  #storecoin-roadmap .row .roadmap-lists:nth-child(3)::before {
+    content: '4';
+  }
+
+  #storecoin-roadmap .row .roadmap-lists:nth-child(4)::before {
+    content: '6';
+  }
+
+  #storecoin-roadmap .row .roadmap-lists:nth-child(4)::after {
+    content: '8+';
+    bottom: -48px;
+    top: auto;
+  }
+
+  /* #storecoin-roadmap .row .roadmap-lists:not(:last-child) {
+    margin-bottom: 4em;
+  } */
+
+  #storecoin-roadmap .roadmap-years {
+    display: none;
   }
 }
 
@@ -7095,6 +7157,12 @@ and (max-width : 335px) {
   margin-top: 1em;
 }
 
+@media only screen and (max-width: 700px) {
+  #storecoin-ecosystem .row {
+    display: block;
+  }
+}
+
 /* -------------------------- */
 #engage-with-us .row {
   display: flex;
@@ -7130,5 +7198,16 @@ and (max-width : 335px) {
 
   #engage-with-us .row .item {
     margin: 1em 0;
+  }
+}
+
+/* -------------------------- */
+#dapps-vs-capps p.hc-feature-lead {
+  max-width: 530px; font-size: 2em;
+}
+
+@media only screen and (max-width: 700px) {
+  #dapps-vs-capps p.hc-feature-lead {
+    font-size: 1.2em;
   }
 }
