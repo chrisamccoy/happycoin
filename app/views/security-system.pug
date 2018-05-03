@@ -1,0 +1,42 @@
+#security-system.security-system-lite.hc-feature.over-rel.padding(style="border-bottom: 2px dashed grey;")
+  .hc-chunk.hc-customize-text-wrapper
+    h3.hc-feature-title.title-icon
+      img.icon(src='/images/empty.png', data-src="/images/red-caution.png", align="top")
+      | The Storecoin Threat Level System
+    p.hc-feature-lead The Storecoin Threat Level System powers real-time market prices for the Six Engines of DyPoS. The System threat level algorithmically updates as transaction volumes rise and fall. As threat levels rise, the cost of spam and attacks rise too.
+    //- p(style="text-align:center; margin: 1em;")
+    //-   span(style="border: 1px solid #65954c; border-radius: 7px; padding: 0.3em 0.5em;") Click to learn about our crypto economics
+    div.row
+      div.hazard-boxes
+        - var secVals = ['5,000 storecoins', '5,000 storecoins', '50 storecoins', '500 storecoins', '5,000 edisons', '5%', '50', '1,000 edisons', '90%'];
+        - var secTemplate = function(secVals) { return '<ul><li>Stake Required For new Validators: <span class="orange-color">'+secVals[0]+'</span></li><li>Stake Required For new eAgents: <span class="orange-color">'+secVals[1]+'</span></li><li>Stake Required For new dGuards: <span class="orange-color">'+secVals[2]+'</span></li><li>Stake Required For new Govnodes: <span class="orange-color">'+secVals[2]+'</span></li><li>Security Bond to Send Txn: <span class="orange-color">'+secVals[4]+'</span></li><li>Interest Paid on Security Bond: <span class="orange-color">'+secVals[5]+'</span></li><li># of Security Guards Needed: <span class="orange-color">'+secVals[6]+'</span></li><li>Cost to File a Ticket: <span class="orange-color">'+secVals[7]+'</span></li><li>Stake or Bond Earned by Guard: <span class="orange-color">'+secVals[8]+'</span></li></ul>';};
+        - var boxTitle = secTemplate(secVals);
+        div.box.red(title=boxTitle)
+          h3 Severe
+          p The network is under attack (DDoS, spam), a large volumes of incoming transactions, the number of validators online dropped below BFT threshold, and validator misbehavior is observed by dGuards during consensus
+        - secVals = ['2,500 storecoins', '800 storecoins', '100 storecoins', '400 storecoins', '2,500 edisons', '4%', '40', '750 edisons', '80%'];
+        - boxTitle = secTemplate(secVals);
+        div.box.skin(title=boxTitle)
+          h3 High
+          p The nodes are reporting imminent attack (DDoS, spam), transaction volume is unusually large, number of validators online is nearing BFT threshold, and consensus rounds slow down due to disagreements
+        - secVals = ['1,500 storecoins', '600 storecoins', '200 storecoins', '300 storecoins', '1,000 edisons', '3%', '30', '500 edisons', '70%'];
+        - boxTitle = secTemplate(secVals);
+        div.box.yellow(title=boxTitle)
+          h3 Elevated
+          p Signs of attack (elevated number of invalid transactions), not all validators are currently online, and consensus rounds are repeated due to disagreements
+        - secVals = ['1,000 storecoins', '400 storecoins', '500 storecoins', '200 storecoins', '500 edisons', '2%', '20', '250 edisons', '60%'];
+        - boxTitle = secTemplate(secVals);
+        div.box.blue(title=boxTitle)
+          h3 Guarded
+          p Unusual number of transactions and not all validators are currently online
+        - secVals = ['500 storecoins', '200 storecoins', '1,000 storecoins', '100 storecoins', '250 edisons', '1%', '10', '100 edisons', '50%'];
+        - boxTitle = secTemplate(secVals);
+        div.box.green(title=boxTitle)
+          h3 Low
+          p No known threats
+      div.text
+        h3.hc-feature-title The Cost of Cheating > Ever Winning
+        p.hc-feature-lead Storecoin’s BlockFin consensus protocol is Byzantine Fault Tolerant (BFT) and implements slashing (confiscating or burning the deposit) as a punitive measure for misbehaving entities in the system. As the Threat Levels increase, so do the prices for getting caught attacking the network or deviating from protocol. These dynamic Threat Levels ensure that the cost of getting caught will be greater than winning. 
+
+        h3.hc-feature-title dGuards “find the rats” for Storecoin
+        p.hc-feature-lead Storecoin’s decentralized security guards (dGuards) patrol the network continuously and mitigate the chances of attackers winning. If dGuards reach consensus on an attack, they are rewarded with 100% of the burnt stake or burnt stake for all bad actors and/or transactions. Storecoin’s Security Branch makes the final determination on tickets filed by dGuards before punitive measures are taken.

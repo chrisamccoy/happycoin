@@ -1,0 +1,46 @@
+#storecoin-transaction.hc-feature.over-rel.padding
+  .hc-chunk.hc-customize-text-wrapper
+    h3.hc-feature-title Life of a Storecoin Transaction with BlockFin
+    p.hc-feature-lead Key patents are being secured to protect against a malicious hard fork outside of Governance. Storecoin’s technology will otherwise be open-sourced to the public
+    div.life-list
+      div.item
+        p 
+          span #1
+          img(src='/images/empty.png', data-src='/images/alice.png')
+          |  Alice installs Storecoin wallet and generates a secret key
+          img(src='/images/empty.png', data-src='/images/ico-key-orange.png')
+          |  and public
+          img(src='/images/empty.png', data-src='/images/lock-red.png')
+          |  key pair for her
+
+      div.item
+        p #2 Alice looks up Bob
+          img(src='/images/empty.png', data-src='/images/bob.png')
+          |  using Bob’s public key
+          img(src='/images/empty.png', data-src='/images/lock-blue.png')
+          |  . Alice wants to send 10 STORE* tokens to Bob
+      
+      div.item
+        p #3 Alice creates a transaction for 10 STORE tokens and signs it with her private key
+        .hc-image(style="justify-content: flex-start;")
+          img(src='/images/empty.png', data-src='/images/alice-check.png', style="max-width: 400px;")
+              
+      div.item
+        p #4 Alice submits the transaction to Storecoin’s decentralized network of validators
+        .hc-image
+          img(src='/images/empty.png', data-src='/images/life-step4.png')
+          
+      div.item
+        p #5 The receiving validator queues the transaction into the next available free block along with transactions received by other validator nodes
+        .hc-image(style="justify-content: flex-end;")
+          img(src='/images/empty.png', data-src='/images/life-step5.png', style="max-width: 800px;")
+          
+      div.item
+        p #6 When the block gets full with transactions, the validators approve it with a 3-phase validation process. In each phase the validators sign the block with their approval
+        .hc-image(style="justify-content: flex-end;")
+          img(src='/images/empty.png', data-src='/images/life-step6.png', style="max-width: 800px;")
+          
+      div.item
+        p #7 Alice’s account is debited with 10 STORE tokens and credited to Bob’s account
+        .hc-image
+          img(src='/images/empty.png', data-src='/images/life-step7.png')
