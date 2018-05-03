@@ -3804,9 +3804,13 @@ and (max-width : 335px) {
   }
 
   .hc-feature .hc-feature-title {
-    font-size: 2.2em;
-    /* padding: 0 1em; */
-    margin: 0em 0 1em !important;
+    font-size: 2em;
+    margin: 0 0 1em;
+  }
+
+  .hc-feature.banner .hc-feature-title {
+    font-size: 2em;
+    margin: 0;
   }
 
   #hc-footer .columns h3 {
@@ -5086,8 +5090,12 @@ and (max-width : 335px) {
 }
 
 @media only screen and (max-width: 1024px) {
+  .security-system-lite .row {
+    flex-direction: column;
+  }
+
   .security-system-lite .hazard-boxes .box {
-    height: 55px;
+    height: auto;
   }
 
   .security-system-lite .hazard-boxes .box h3 {
@@ -5098,12 +5106,12 @@ and (max-width : 335px) {
     font-size: 1em;
   }
 
-  #dypos-modal .security-system-lite .hazard-boxes .box h3 {
-    font-size: 2em;
-  }
-
   #dypos-modal .security-system-lite .hazard-boxes .box p {
     font-size: 1.5em;
+  }
+
+  .security-system-lite .text {
+    margin: 2em 1em 0;
   }
 }
 
@@ -5334,10 +5342,18 @@ and (max-width : 335px) {
   /*border: 1px solid #FF9900;*/
 }
 
+#business-case .companies-table {
+  margin: 0 4em;
+}
+
 #business-case .companies-table .row .logos .logos-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+#business-case .companies-table .row .logos .logos-row.bottom {
+  margin-top: 6px;
 }
 
 #business-case .companies-table .row {
@@ -5351,15 +5367,18 @@ and (max-width : 335px) {
 
 #business-case .companies-table .row .head {
   background-color: #cee3c0;
-  padding: 0.5em;
-  font-size: 1.2em;
-  height: 94px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   color: black;
   width: 240px;
+  font-size: 1.2em;
+  line-height: 1.3;
   text-align: center;
+}
+
+#business-case .companies-table .row .head > .text {
+  padding: 0 0.5em;
 }
 
 #business-case .companies-table .row .logos .logos-row .logo {
@@ -5367,6 +5386,7 @@ and (max-width : 335px) {
 }
 
 #business-case .companies-table .row .logos .logos-row .logo img {
+  display: block;
   width: 100%;
 }
 
@@ -5404,25 +5424,34 @@ and (max-width : 335px) {
 } */
 
 @media only screen and (max-width: 700px) {
+  #business-case .companies-table {
+    margin: 0 0.5em;
+  }
+
   #business-case .companies-table .row {
     flex-direction: column;
   }
 
   #business-case .companies-table .row .head {
-    width: calc(100% - 1em);
-    height: auto;
-    margin-bottom: 0.5em;
+    width: 100%;
+    padding: 0.5em 0;
   }
 
   #business-case .companies-table .row .logos .logos-row {
     flex-wrap : wrap;
   }
 
+  #business-case .companies-table .row .logos .logos-row.bottom {
+    margin-top: 0;
+  }
+
   #business-case .companies-table .row .logos .logos-row .logo {
-    margin-left: 0px;
-    width: 49%;
+    margin-left: 0;
+    width: 24%;
+    margin-top: 6px;
   }
 }
+
 /*---------------------------------*/
 #dev-eco .logo-wrapper {
   display: flex;
@@ -6772,6 +6801,7 @@ and (max-width : 335px) {
 @media only screen and (max-width: 700px) {
   #major-milestones .milestones {
     font-size: 1.2em;
+    margin-top: 1em;
   }
 }
 
@@ -6906,14 +6936,17 @@ and (max-width : 335px) {
   margin-top: 1em;
 }
 
-#storecoin-transaction .item p {
-  display: flex;
-  align-items: flex-start;
+#storecoin-transaction .item p img {
+  height: 1.3em;
+  margin: -0.3em 0 0;
+  vertical-align: middle;
+  display: inline-block;
 }
 
-#storecoin-transaction .item p img {
-  height: 30px;
-  margin: 0px 0.3em;
+@media only screen and (max-width: 600px)  {
+  #storecoin-transaction .item {
+    font-size: 1.1em;
+  }
 }
 
 /* -------------------------- */
@@ -7010,6 +7043,16 @@ and (max-width : 335px) {
   background-color: #9bc184;
 }
 
+@media only screen and (max-width: 700px) {
+  #dynamic-inflation .row {
+    flex-direction: column;
+  }
+
+  #dynamic-inflation .row .inflation-table {
+    width: 320px;
+  }
+}
+
 /* -------------------------- */
 #governance-principles .list {
   font-size: 1.4em;
@@ -7022,8 +7065,8 @@ and (max-width : 335px) {
 }
 
 #governance-principles .list .item span {
-  width: 30px;
   font-weight: bold;
+  padding-right: 1em;
 }
 
 /* -------------------------- */
