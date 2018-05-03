@@ -6979,6 +6979,14 @@ and (max-width : 335px) {
   margin: 0 auto;
 }
 
+@media only screen and (max-width: 700px) {
+  #worker-types .expected {
+    display: none;
+  }
+}
+
+
+
 /* -------------------------- */
 #dynamic-inflation .row {
   display: flex;
@@ -7094,7 +7102,7 @@ and (max-width : 335px) {
 }
 
 #engage-with-us .row .item {
-  margin: 0px 1em;
+  margin: 0 1em;
 }
 
 #engage-with-us .row .item .hc-image {
@@ -7108,4 +7116,19 @@ and (max-width : 335px) {
 #engage-with-us .row .item .hc-image img {
   width: auto;
   height: 70%;
+}
+
+@media only screen and (max-width: 700px) {
+  #engage-with-us .row {
+    flex-direction: column;
+  }
+
+  #engage-with-us .row .item .hc-image {
+    height: 140px;
+    width: 200px;
+  }
+
+  #engage-with-us .row .item {
+    margin: 1em 0;
+  }
 }
