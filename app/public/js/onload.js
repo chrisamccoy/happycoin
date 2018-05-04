@@ -4,6 +4,41 @@ function deferLoad() {
   deferImages();
   deferThirdParty();
   deferIframes();
+
+  setTimeout(function() {
+    deferSections();
+  }, 500);
+}
+
+function deferSections() {
+  var $el = $(window.location.hash);
+
+  if ($el.length === 1) {
+    var $sec = $el.parents('section');
+    if ($sec.length >= 1) {
+      $sec.addClass('expanded');
+    }
+  }
+
+  $('section').each(function() {
+    if (!$(this).hasClass('expanded')) {
+      $(this).hide();
+    } else {
+      $(this).prev('.section-heading').addClass('expand');
+    }
+  });
+
+  $('.section-heading').click(function() {
+    if ($(this).hasClass('expand')) {
+      $(this).removeClass('expand');
+      $(this).next('section').hide();
+    } else {
+      $(this).addClass('expand');
+      $(this).next('section').show();
+    }
+  });
+
+  hasUrl();
 }
 
 function deferImages() {

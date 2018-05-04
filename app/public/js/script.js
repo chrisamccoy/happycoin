@@ -50,7 +50,7 @@ $(document).ready(function(){
   initProblemSlider();
   toggleStatusText();
   initTimer();
-  hasUrl();
+  //hasUrl();
   fadeInContent();
   // imgCoords(isMobile);
   initTippy(isMobile);

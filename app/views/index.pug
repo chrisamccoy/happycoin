@@ -122,347 +122,381 @@ block content
 
     include app-types
 
-    .hc-feature.over-rel.padding.pink.banner(style="padding:2em;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title(style="margin:0px;") About Dynamic Proof of Stake (DyPoS)
+    .hc-feature.over-rel.padding.pink.section-heading
+      .row
+        h3 About Dynamic Proof of Stake (DyPoS)
+        div.icon
+          i.ion-chevron-down
+          i.ion-chevron-up
 
-    #blockfin.hc-feature.over-rel.padding.lite
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title It starts with BlockFin, our consensus algorithm
-        p.hc-feature-lead BlockFin is the patent-pending, high-throughput, and decentralized consensus algorithm invented and being built by the Storecoin Team.
-        div.tweets
-          div.tweet
-            blockquote.twitter-tweet(data-lang='en')
-              p(lang='en', dir='ltr')
-                | Here's a look at our first technical research paper at
-                a(href='https://twitter.com/StorecoinTeam?ref_src=twsrc%5Etfw') @StorecoinTeam
-                | .  This details our consensus algorithm currently code named "BlockFin".
-                br
-                br
-                | We'll release to the public before our final token event, in 2019.
-                a(href='https://t.co/TYGGg4qPQ9') pic.twitter.com/TYGGg4qPQ9
-              | — Storecoin (@StorecoinTeam)
-              a(href='https://twitter.com/StorecoinTeam/status/963511294941790208?ref_src=twsrc%5Etfw') February 13, 2018
+    section
+      #blockfin.hc-feature.over-rel.padding.lite
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title It starts with BlockFin, our consensus algorithm
+          p.hc-feature-lead BlockFin is the patent-pending, high-throughput, and decentralized consensus algorithm invented and being built by the Storecoin Team.
+          div.tweets
+            div.tweet
+              blockquote.twitter-tweet(data-lang='en')
+                p(lang='en', dir='ltr')
+                  | Here's a look at our first technical research paper at
+                  a(href='https://twitter.com/StorecoinTeam?ref_src=twsrc%5Etfw') @StorecoinTeam
+                  | .  This details our consensus algorithm currently code named "BlockFin".
+                  br
+                  br
+                  | We'll release to the public before our final token event, in 2019.
+                  a(href='https://t.co/TYGGg4qPQ9') pic.twitter.com/TYGGg4qPQ9
+                | — Storecoin (@StorecoinTeam)
+                a(href='https://twitter.com/StorecoinTeam/status/963511294941790208?ref_src=twsrc%5Etfw') February 13, 2018
 
-    include blockfin-principles
+      include blockfin-principles
 
-    include transaction-blockfin
+      include transaction-blockfin
 
-    .hc-feature.over-rel.padding.inverted(style="padding:2em;")
-      .hc-chunk.hc-customize-text-wrapper
-        p.hc-feature-lead(style=" margin:0px !important;") Learn more about BlockFin at
-          = ' '
-          a.underline(href="http://storeco.in/blockfin", target="_blank") http://storeco.in/blockfin
+      .hc-feature.over-rel.padding.inverted(style="padding:2em;")
+        .hc-chunk.hc-customize-text-wrapper
+          p.hc-feature-lead(style=" margin:0px !important;") Learn more about BlockFin at
+            = ' '
+            a.underline(href="http://storeco.in/blockfin", target="_blank") http://storeco.in/blockfin
 
-    include worker-types
+      include worker-types
 
-    include six-engines
+      include six-engines
 
-    include dypos-algorithm
+      include dypos-algorithm
 
-    .hc-feature.over-rel.padding.pink.banner(style="padding:2em;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title(style="margin:0px;") The economics of DyPoS
+    .hc-feature.over-rel.padding.pink.section-heading
+      .row
+        h3 The economics of DyPoS
+        div.icon
+          i.ion-chevron-down
+          i.ion-chevron-up
 
-    #free-transactions.hc-feature.over-rel.padding.info-fullscreen
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title How Zero-Fee Transactions are Financed
-        p.hc-feature-lead Transactions are free for users and developers because they’re paid for with inflationary rewards capped at 6% per year. Award amounts are dynamic, based upon the total amount of staking amongst the decentralized workforce.
-        .mobile-image
-          div.click-message
-            div.message-container
-              i.ion-arrow-expand
-              span Click to expand
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/how-financed.png", style="max-width: 900px;")
+    section
 
-    #staking-incentives.hc-feature.over-rel.padding.info-fullscreen.lite
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title Staking incentivizes for decentralization and on-chain security
-        .mobile-image
-          div.click-message
-            div.message-container
-              i.ion-arrow-expand
-              span Click to expand
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/slope-staking.png", style="max-width: 900px;")
-
-    #rewards-allocated.hc-feature.over-rel.padding.info-fullscreen
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title How Dynamic Block Rewards are Allocated
-        p.hc-feature-lead Decentralized Workers earn up to 6% inflationary block rewards to perform work and supply compute for the blockchain. Rewards are determined by the amount of staking from dWorkers. 80% of the block rewards are paid to process and scale the blockchain; 20% is shared between security, governance, processing power, and core blockchain operations
-        .mobile-image
-          div.click-message
-            div.message-container
-              i.ion-arrow-expand
-              span Click to expand
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/blocks-allocated.png", style="max-width: 900px;")
-
-
-    include dynamic-inflation
-
-    #payments-incentives.hc-feature.over-rel.padding.info-fullscreen
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title Interest payments incentivize for blockchain performance
-        .mobile-image
-          div.click-message
-            div.message-container
-              i.ion-arrow-expand
-              span Click to expand
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/slope-proc-perf.png", style="max-width: 900px;")
-
-    .hc-feature.over-rel.padding.inverted.banner(style="padding:2em;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title(style="margin:0px;") All DyPoS economics will release in the
-          = ' '
-          img(src='/images/empty.png', data-src="/images/icon-darkbg.png", style="height: 1em;")
-          |  Economics Paper
-
-    #payments-incentives.hc-feature.over-rel.padding.info-fullscreen.lite
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title On-chain security and decentralization create value
-        .mobile-image
-          div.click-message
-            div.message-container
-              i.ion-arrow-expand
-              span Click to expand
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/slope-net-value.png", style="max-width: 900px;")
-
-    .hc-feature.over-rel.padding.pink.banner(style="padding:2em;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title(style="margin:0px;") How DyPoS is secured
-
-    include network-effects
-
-    include security-system
-
-    #dGuard-secure.hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title How Dynamic Security Works
-          span.orange-color(style="font-size:0.8em; margin-left:0.5em") (with dGuards)
-        p.hc-feature-lead Decentralized Security Guards, or dGuards, secure the protocol by running full nodes to monitor all transactions and dWorker activity. They're rewarded with 100% of the burnt stake or bond from found "bad" actors.
-        .mobile-image
-          div.click-message
-            div.message-container
-              i.ion-arrow-expand
-              span Click to expand
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/how-dyn-sec-works.png", style="max-width:900px;")
-
-    #transactions-secure.hc-feature.over-rel.padding.info-fullscreen
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title How Zero Fee Transactions are Secured With Bonds
-        p.hc-feature-lead To prevent Storecoin from a DDoS attack or from the blockchain being flooded with spammy transactions, Storecoin adds a refundable – with interest! – security bond to each transaction.
-        .mobile-image
-          div.click-message
-            div.message-container
-              i.ion-arrow-expand
-              span Click to expand
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/how-zft-secure.png", style="max-width:900px;")
-
-    .hc-feature.over-rel.padding.inverted.banner(style="padding:2em;")
-      .hc-chunk.hc-customize-text-wrapper
-        p.hc-feature-lead(style="margin:0px;") View Storecoin’s Live Engineering Roadmap at
-          = ' '
-          a.underline(href="http://storeco.in/engineering", target="_blank") http://storeco.in/engineering
-
-    .hc-feature.over-rel.padding.pink.banner(style="padding:2em;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title(style="margin:0px;") Why Governance matters
-
-    #governance-helped.hc-feature.over-rel.padding.info-fullscreen
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title Governance helped trade and commerce shape the world
-        p.hc-feature-lead Simply, Governance is a rules engine that enforces contracts and laws which in return injects trust into markets that require trust – markets like trade and commerce. History has shown us that as trust increases, the amount of trade and commerce increases too.
-        .mobile-image
-          div.click-message
-            div.message-container
-              i.ion-arrow-expand
-              span Click to expand
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/slope-comm-trade.png", style="max-width: 900px;")
-
-    #trusted-governance.hc-feature.over-rel.padding.inverted
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title(style="max-width: 560px; margin: 0 auto;") Public Blockchains Need a Trusted and Enforceable Governance
-        p.hc-feature-lead For today’s public blockchains to move past prototypes and low usage dApps – to where entities trust a decentralized blockchain enough to process $10 Million+ of utility-based daily transaction volume in – blockchains need an enforceable rules engine that has no centralization of power, that key network participants trust, and that is censorship resistant.
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/li-law.png", style="max-width: 100px;")
-        p.hc-feature-lead To shape the future of trade and commerce, public blockchains need a trusted Governance.
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/li-court.png", style="max-width: 200px;")
-        p.hc-feature-lead Storecoin’s solution is a decentralized Governance where there is no centralization of power and all Changes are enforceable. Consensus on Change is reached by four separate branches that check and balance each other on protocol-level, key people, and monetary policy decisions.
-
-    include governance-principles
-
-    #governance-compares.hc-feature.over-rel.padding.info-fullscreen
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title How Storecoin’s Governance compares
-        .mobile-image
-          div.click-message
-            div.message-container
-              i.ion-arrow-expand
-              span Click to expand
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/how-gov-compares.png", style="max-width: 900px;")
-
-    .hc-feature.over-rel.padding.pink.banner(style="padding:2em;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title(style="margin:0px;") How a checks and balances Governance works
-
-    #governance-branches.hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title The Four Branches of Storecoin Governance
-        p.hc-feature-lead Governance is inspired by the checks and balances of the United States Constitution. Storecoin’s Governance ensures that a) there is no centralization of power for protocol-level changes, b) security matters most, and c) monetary policy requires Governance approval (there is no Fed).
-        .mobile-image
-          div.click-message
-            div.message-container
-              i.ion-arrow-expand
-              span Click to expand
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/4branches-gov.png", style="max-width: 900px;")
-
-    #governance-hired.hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title How Governance is Hired
-          span(style="font-size:0.8em; color: grey; margin-left:0.2em;") (and fired)
-        p.hc-feature-lead For the first four years – until 5/27/2021 – the Storecoin organization has executive power over the blockchain. After, Governance will decide all changes to features, people, and monetary policy.
-        .mobile-image
-          div.click-message
-            div.message-container
-              i.ion-arrow-expand
-              span Click to expand
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/how-gov-hired.png", style="max-width: 900px;")
-
-    #token-owner.hc-feature.over-rel.padding.info-fullscreen
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title How Every Storecoin Token Owner Can Create Change
-        div.sub-text.italics.color-red (Democracy)
-        .mobile-image
-          div.click-message
-            div.message-container
-              i.ion-arrow-expand
-              span Click to expand
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/how-token-owner-crate.png", style="max-width: 900px;")
-
-    .hc-feature.over-rel.padding.inverted.banner(style="padding:2em;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title(style="margin:0px;") Storecoin’s Constitution will release in its Governance Paper
-
-    .hc-feature.over-rel.padding.pink.banner(style="padding:2em;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title(style="margin:0px;") How a censorship resistant Governance works
-
-    #governance-look.hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title How Governance Would Look
-          span(style="font-weight: 300;")  – if not censorship resistant
-        p.hc-feature-lead The centralized way, using an app hosted by a centralized entity
-        .mobile-image
-          div.click-message
-            div.message-container
-              i.ion-arrow-expand
-              span Click to expand
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/how-gov-look.png", style="max-width: 900px;")
-
-    #censorship-resistent.hc-feature.over-rel.padding.info-fullscreen
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title How a Censorship Resistant Storecoin Governance Works
-        p.hc-feature-lead The decentralized way with a dApp hosted by Govnodes worldwide
-        .mobile-image
-          div.click-message
-            div.message-container
-              i.ion-arrow-expand
-              span Click to expand
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/how-cenres-gov-work.png", style="max-width: 900px;")
-        p.footer-text(style="text-align: right; max-width: 900px; margin: 1em auto 0;") *Inspired by Angelo Milan’s work
-
-    .hc-feature.over-rel.padding.pink.banner(style="padding:2em;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title(style="margin:0px;") How Storecoin incentivizes adoption
-
-    #storecoin-grows.hc-feature.over-rel.padding.lite.info-fullscreen
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title The Storecoin Ecosystem Fund
-        p.hc-feature-lead Storecoin’s Ecosystem Fund will make equity-based investments into application-based companies that may be early Storecoin developers. From Storecoin’s 33% Incentivization Pool, developers will also be awarded storecoins to kickstart their development. Once Storecoin drives revenue, engagement, or growth, they’ll likely buy additional tokens to amplify Storecoin’s impact.
-        .mobile-image
-          div.click-message
-            div.message-container
-              i.ion-arrow-expand
-              span Click to expand
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/api-background.png", style="max-width: 900px;")
-
-    #trust-in-stores.hc-feature.over-rel.padding.info-fullscreen
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title How trust in STORE grows STORE into new environments
-        p.hc-feature-lead (into new design spaces)
-        .mobile-image
-          div.click-message
-            div.message-container
-              i.ion-arrow-expand
-              span Click to expand
-        .hc-image
-          img(src='/images/empty.png', data-src="/images/slope-trust.png", style="max-width: 900px;")
-
-    include network-effects-trust
-
-    include distribution-strategy
-
-    include how-wallet-works
-
-    .hc-feature.over-rel.padding.inverted.banner(style="padding:2em;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title(style="margin:0px;")
-         img(src='/images/empty.png', data-src="/images/icon-darkbg.png", style="height: 1em;")
-         = ' '
-         | Wallet is business-model-as-a-service for Developers
-
-    #storecoin-scales.hc-feature.over-rel.padding.inverted.orange
-     .hc-chunk.hc-customize-text-wrapper
-       h3.hc-feature-title How Storecoin Scales Globally
-       p.hc-feature-lead Storecoin will require Know Your Customer (KYC) and Anti-Money Laundering (AML) checks for all decentralized workers.
-       p.hc-feature-lead
-        b Why?
-        |  Because governments around the world won't trade their finance and banking laws for the innovation potential of p2p payments.
-       p.hc-feature-lead(style="margin-bottom:0px;") With KYC/AML data for its decentralized workers, Storecoin software nodes will be regulatory-compliant on a country-by-country-basis giving the Storecoin blockchain a unique advantage to being embedded in traditional banking and financial infrastructure around the world.
-
-    #global-compliance.hc-feature.over-rel.padding.info-fullscreen
-     .hc-chunk.hc-customize-text-wrapper
-       h3.hc-feature-title How global KYC/AML compliance grows adoption
-       .mobile-image
-         div.click-message
-           div.message-container
-             i.ion-arrow-expand
-             span Click to expand
-       .hc-image
-         img(src='/images/empty.png', data-src="/images/slope-adoption.png", style="max-width: 900px;")
-
-    #storecoin-ecosystem.hc-feature.over-rel.padding.lite
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title The Storecoin Developer Ecosystem
-        p.hc-feature-lead A coalition of organizations that have entered into long-term relationships with Storecoin as its exclusive cryptocurrency to be integrated into enterprise and consumer-facing apps.
-        .row
+      #free-transactions.hc-feature.over-rel.padding.info-fullscreen
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title How Zero-Fee Transactions are Financed
+          p.hc-feature-lead Transactions are free for users and developers because they’re paid for with inflationary rewards capped at 6% per year. Award amounts are dynamic, based upon the total amount of staking amongst the decentralized workforce.
+          .mobile-image
+            div.click-message
+              div.message-container
+                i.ion-arrow-expand
+                span Click to expand
           .hc-image
-            img(src='/images/empty.png', data-src="/images/alphamining.png")
-            p A PoW Blockchain Mining Operation & Test Network
-          .hc-image
-            img(src='/images/empty.png', data-src="/images/blockview.png")
-            p SQL for Blockchains
+            img(src='/images/empty.png', data-src="/images/how-financed.png", style="max-width: 900px;")
 
-    include our-partners
+      #staking-incentives.hc-feature.over-rel.padding.info-fullscreen.lite
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title Staking incentivizes for decentralization and on-chain security
+          .mobile-image
+            div.click-message
+              div.message-container
+                i.ion-arrow-expand
+                span Click to expand
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/slope-staking.png", style="max-width: 900px;")
+
+      #rewards-allocated.hc-feature.over-rel.padding.info-fullscreen
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title How Dynamic Block Rewards are Allocated
+          p.hc-feature-lead Decentralized Workers earn up to 6% inflationary block rewards to perform work and supply compute for the blockchain. Rewards are determined by the amount of staking from dWorkers. 80% of the block rewards are paid to process and scale the blockchain; 20% is shared between security, governance, processing power, and core blockchain operations
+          .mobile-image
+            div.click-message
+              div.message-container
+                i.ion-arrow-expand
+                span Click to expand
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/blocks-allocated.png", style="max-width: 900px;")
+
+
+      include dynamic-inflation
+
+      #payments-incentives.hc-feature.over-rel.padding.info-fullscreen
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title Interest payments incentivize for blockchain performance
+          .mobile-image
+            div.click-message
+              div.message-container
+                i.ion-arrow-expand
+                span Click to expand
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/slope-proc-perf.png", style="max-width: 900px;")
+
+      .hc-feature.over-rel.padding.inverted.banner(style="padding:2em;")
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title(style="margin:0px;") All DyPoS economics will release in the
+            = ' '
+            img(src='/images/empty.png', data-src="/images/icon-darkbg.png", style="height: 1em;")
+            |  Economics Paper
+
+      #payments-incentives.hc-feature.over-rel.padding.info-fullscreen.lite
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title On-chain security and decentralization create value
+          .mobile-image
+            div.click-message
+              div.message-container
+                i.ion-arrow-expand
+                span Click to expand
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/slope-net-value.png", style="max-width: 900px;")
+
+    .hc-feature.over-rel.padding.pink.section-heading
+      .row
+        h3 How DyPoS is secured
+        div.icon
+          i.ion-chevron-down
+          i.ion-chevron-up
+
+    section
+
+      include network-effects
+
+      include security-system
+
+      #dGuard-secure.hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title How Dynamic Security Works
+            span.orange-color(style="font-size:0.8em; margin-left:0.5em") (with dGuards)
+          p.hc-feature-lead Decentralized Security Guards, or dGuards, secure the protocol by running full nodes to monitor all transactions and dWorker activity. They're rewarded with 100% of the burnt stake or bond from found "bad" actors.
+          .mobile-image
+            div.click-message
+              div.message-container
+                i.ion-arrow-expand
+                span Click to expand
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/how-dyn-sec-works.png", style="max-width:900px;")
+
+      #transactions-secure.hc-feature.over-rel.padding.info-fullscreen
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title How Zero Fee Transactions are Secured With Bonds
+          p.hc-feature-lead To prevent Storecoin from a DDoS attack or from the blockchain being flooded with spammy transactions, Storecoin adds a refundable – with interest! – security bond to each transaction.
+          .mobile-image
+            div.click-message
+              div.message-container
+                i.ion-arrow-expand
+                span Click to expand
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/how-zft-secure.png", style="max-width:900px;")
+
+      .hc-feature.over-rel.padding.inverted.banner(style="padding:2em;")
+        .hc-chunk.hc-customize-text-wrapper
+          p.hc-feature-lead(style="margin:0px;") View Storecoin’s Live Engineering Roadmap at
+            = ' '
+            a.underline(href="http://storeco.in/engineering", target="_blank") http://storeco.in/engineering
+
+    .hc-feature.over-rel.padding.pink.section-heading
+      .row
+        h3 Why Governance matters
+        div.icon
+          i.ion-chevron-down
+          i.ion-chevron-up
+
+    section
+
+      #governance-helped.hc-feature.over-rel.padding.info-fullscreen
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title Governance helped trade and commerce shape the world
+          p.hc-feature-lead Simply, Governance is a rules engine that enforces contracts and laws which in return injects trust into markets that require trust – markets like trade and commerce. History has shown us that as trust increases, the amount of trade and commerce increases too.
+          .mobile-image
+            div.click-message
+              div.message-container
+                i.ion-arrow-expand
+                span Click to expand
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/slope-comm-trade.png", style="max-width: 900px;")
+
+      #trusted-governance.hc-feature.over-rel.padding.inverted
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title(style="max-width: 560px; margin: 0 auto;") Public Blockchains Need a Trusted and Enforceable Governance
+          p.hc-feature-lead For today’s public blockchains to move past prototypes and low usage dApps – to where entities trust a decentralized blockchain enough to process $10 Million+ of utility-based daily transaction volume in – blockchains need an enforceable rules engine that has no centralization of power, that key network participants trust, and that is censorship resistant.
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/li-law.png", style="max-width: 100px;")
+          p.hc-feature-lead To shape the future of trade and commerce, public blockchains need a trusted Governance.
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/li-court.png", style="max-width: 200px;")
+          p.hc-feature-lead Storecoin’s solution is a decentralized Governance where there is no centralization of power and all Changes are enforceable. Consensus on Change is reached by four separate branches that check and balance each other on protocol-level, key people, and monetary policy decisions.
+
+      include governance-principles
+
+      #governance-compares.hc-feature.over-rel.padding.info-fullscreen
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title How Storecoin’s Governance compares
+          .mobile-image
+            div.click-message
+              div.message-container
+                i.ion-arrow-expand
+                span Click to expand
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/how-gov-compares.png", style="max-width: 900px;")
+
+    .hc-feature.over-rel.padding.pink.section-heading
+      .row
+        h3 How a checks and balances Governance works
+        div.icon
+          i.ion-chevron-down
+          i.ion-chevron-up
+
+    section
+
+      #governance-branches.hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title The Four Branches of Storecoin Governance
+          p.hc-feature-lead Governance is inspired by the checks and balances of the United States Constitution. Storecoin’s Governance ensures that a) there is no centralization of power for protocol-level changes, b) security matters most, and c) monetary policy requires Governance approval (there is no Fed).
+          .mobile-image
+            div.click-message
+              div.message-container
+                i.ion-arrow-expand
+                span Click to expand
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/4branches-gov.png", style="max-width: 900px;")
+
+      #governance-hired.hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title How Governance is Hired
+            span(style="font-size:0.8em; color: grey; margin-left:0.2em;") (and fired)
+          p.hc-feature-lead For the first four years – until 5/27/2021 – the Storecoin organization has executive power over the blockchain. After, Governance will decide all changes to features, people, and monetary policy.
+          .mobile-image
+            div.click-message
+              div.message-container
+                i.ion-arrow-expand
+                span Click to expand
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/how-gov-hired.png", style="max-width: 900px;")
+
+      #token-owner.hc-feature.over-rel.padding.info-fullscreen
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title How Every Storecoin Token Owner Can Create Change
+          div.sub-text.italics.color-red (Democracy)
+          .mobile-image
+            div.click-message
+              div.message-container
+                i.ion-arrow-expand
+                span Click to expand
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/how-token-owner-crate.png", style="max-width: 900px;")
+
+      .hc-feature.over-rel.padding.inverted.banner(style="padding:2em;")
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title(style="margin:0px;") Storecoin’s Constitution will release in its Governance Paper
+
+    .hc-feature.over-rel.padding.pink.section-heading
+      .row
+        h3 How a censorship resistant Governance works
+        div.icon
+          i.ion-chevron-down
+          i.ion-chevron-up
+
+    section
+
+      #governance-look.hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title How Governance Would Look
+            span(style="font-weight: 300;")  – if not censorship resistant
+          p.hc-feature-lead The centralized way, using an app hosted by a centralized entity
+          .mobile-image
+            div.click-message
+              div.message-container
+                i.ion-arrow-expand
+                span Click to expand
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/how-gov-look.png", style="max-width: 900px;")
+
+      #censorship-resistent.hc-feature.over-rel.padding.info-fullscreen
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title How a Censorship Resistant Storecoin Governance Works
+          p.hc-feature-lead The decentralized way with a dApp hosted by Govnodes worldwide
+          .mobile-image
+            div.click-message
+              div.message-container
+                i.ion-arrow-expand
+                span Click to expand
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/how-cenres-gov-work.png", style="max-width: 900px;")
+          p.footer-text(style="text-align: right; max-width: 900px; margin: 1em auto 0;") *Inspired by Angelo Milan’s work
+
+    .hc-feature.over-rel.padding.pink.section-heading
+      .row
+        h3 How Storecoin incentivizes adoption
+        div.icon
+          i.ion-chevron-down
+          i.ion-chevron-up
+
+    section
+
+      #storecoin-grows.hc-feature.over-rel.padding.lite.info-fullscreen
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title The Storecoin Ecosystem Fund
+          p.hc-feature-lead Storecoin’s Ecosystem Fund will make equity-based investments into application-based companies that may be early Storecoin developers. From Storecoin’s 33% Incentivization Pool, developers will also be awarded storecoins to kickstart their development. Once Storecoin drives revenue, engagement, or growth, they’ll likely buy additional tokens to amplify Storecoin’s impact.
+          .mobile-image
+            div.click-message
+              div.message-container
+                i.ion-arrow-expand
+                span Click to expand
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/api-background.png", style="max-width: 900px;")
+
+      #trust-in-stores.hc-feature.over-rel.padding.info-fullscreen
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title How trust in STORE grows STORE into new environments
+          p.hc-feature-lead (into new design spaces)
+          .mobile-image
+            div.click-message
+              div.message-container
+                i.ion-arrow-expand
+                span Click to expand
+          .hc-image
+            img(src='/images/empty.png', data-src="/images/slope-trust.png", style="max-width: 900px;")
+
+      include network-effects-trust
+
+      include distribution-strategy
+
+      include how-wallet-works
+
+      .hc-feature.over-rel.padding.inverted.banner(style="padding:2em;")
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title(style="margin:0px;")
+           img(src='/images/empty.png', data-src="/images/icon-darkbg.png", style="height: 1em;")
+           = ' '
+           | Wallet is business-model-as-a-service for Developers
+
+      #storecoin-scales.hc-feature.over-rel.padding.inverted.orange
+       .hc-chunk.hc-customize-text-wrapper
+         h3.hc-feature-title How Storecoin Scales Globally
+         p.hc-feature-lead Storecoin will require Know Your Customer (KYC) and Anti-Money Laundering (AML) checks for all decentralized workers.
+         p.hc-feature-lead
+          b Why?
+          |  Because governments around the world won't trade their finance and banking laws for the innovation potential of p2p payments.
+         p.hc-feature-lead(style="margin-bottom:0px;") With KYC/AML data for its decentralized workers, Storecoin software nodes will be regulatory-compliant on a country-by-country-basis giving the Storecoin blockchain a unique advantage to being embedded in traditional banking and financial infrastructure around the world.
+
+      #global-compliance.hc-feature.over-rel.padding.info-fullscreen
+       .hc-chunk.hc-customize-text-wrapper
+         h3.hc-feature-title How global KYC/AML compliance grows adoption
+         .mobile-image
+           div.click-message
+             div.message-container
+               i.ion-arrow-expand
+               span Click to expand
+         .hc-image
+           img(src='/images/empty.png', data-src="/images/slope-adoption.png", style="max-width: 900px;")
+
+      #storecoin-ecosystem.hc-feature.over-rel.padding.lite
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title The Storecoin Developer Ecosystem
+          p.hc-feature-lead A coalition of organizations that have entered into long-term relationships with Storecoin as its exclusive cryptocurrency to be integrated into enterprise and consumer-facing apps.
+          .row
+            .hc-image
+              img(src='/images/empty.png', data-src="/images/alphamining.png")
+              p A PoW Blockchain Mining Operation & Test Network
+            .hc-image
+              img(src='/images/empty.png', data-src="/images/blockview.png")
+              p SQL for Blockchains
+
+      include our-partners
 
     .hc-feature.over-rel.padding.pink.banner(style="padding:2em;")
       .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title(style="margin:0px;") How to help Storecoin grow
+        h3.hc-feature-title(style="margin:0") How to help Storecoin grow
 
     include project-schedule
 
