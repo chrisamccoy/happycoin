@@ -289,7 +289,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .hc-feature .footer-text {
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
 
 .hc-feature .button-container .button, .hc-feature .button-container a {
@@ -683,6 +683,10 @@ input[type=number]::-webkit-outer-spin-button {
   .token-sale-text p {
     font-size: 0.8em;
     padding: 0px 1em;
+  }
+
+  .hc-feature .footer-text {
+    font-size: 0.7em;
   }
 }
 
@@ -1843,6 +1847,15 @@ and (max-width : 335px) {
 @media only screen and (max-width: 1024px) {
   #project-schedule .container {
     width: 100%;
+  }
+
+  #distribution-plan .token-dist .see-schedule {
+    margin-top: 0.5em;
+    display: inline-block;
+  }
+
+  #distribution-plan .token-dist .nine.columns {
+    text-align: center;
   }
 }
 
@@ -4888,7 +4901,7 @@ and (max-width : 335px) {
 }
 
 .image-map-modal {
-  margin-top: 1em;
+  margin-top: 2em;
   padding: 0.5em;
 }
 
@@ -4904,9 +4917,7 @@ and (max-width : 335px) {
 
 .featherlight-content .featherlight-close {
   background: none !important;
-  color:white !important;
-  /*right: 30px;
-  top: 30px;*/
+  color:#c3c0c0 !important;
 }
 
 #dypos-algorithm .hc-image {
@@ -4931,6 +4942,11 @@ and (max-width : 335px) {
   #dypos-algorithm .hc-image .logo {
     width: 50px;
     right: 0px;
+  }
+
+  .featherlight-content .featherlight-close {
+    right: 15px;
+    top: 15px;
   }
 }
 
