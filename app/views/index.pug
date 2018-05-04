@@ -24,7 +24,9 @@ block content
         .hc-chunk.hc-customize-text-wrapper
           p.hc-feature-lead
             b Note:
-            |  Storecoin is a public blockchain, not an ERC20 token
+            |  Storecoin is a public blockchain, not an ERC20 token.
+            br
+            | STORE will be a hybrid Currency and Platform token.
 
       - var top = true
       include email-widget
@@ -95,6 +97,8 @@ block content
     #our-vision.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted Our Vision for Zero-Fee, Crypto-Powered Apps
+          = ' '
+          span.note (cApps)
         p.hc-feature-lead In 1879, Thomas Edison brought commercial light bulbs to the world. These light bulbs eventually changed how we work, how we play, and how we communicate
         div.hc-image
           img.bulb-off(src='/images/empty.png', data-src="/images/bulb-glow.png")
@@ -106,9 +110,10 @@ block content
 
     #dapps-vs-capps.hc-feature.over-rel.padding.inverted.orange
       .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title dApps vs. cApps?
-        p.hc-feature-lead In a dApp, the p2p protocol token is used to power transactions and/or compute in the smart contract layer.
-        p.hc-feature-lead(style="margin-bottom: 0px;") In a cApp, the p2p protocol token is used inside of the centralized application as a medium of exchange.
+        h3.hc-feature-title dApps vs. cApps
+        p.hc-feature-lead In a dApp, the p2p platform token is used to power transactions and/or compute in the smart contract layer.
+        p.hc-feature-lead In a cApp, the p2p payment token is used inside of a centralized application as a medium of exchange.
+        p.hc-feature-lead(style="margin-bottom: 0px;") As the Storecoin blockchain proves it can decentralize, scale, secure, and govern p2p transactions, STORE will evolve from a payment token into a hybrid payment and platform token.
 
     #storecoin-fits-in.hc-feature.over-rel.padding.lite
       .hc-chunk.hc-customize-text-wrapper
@@ -147,6 +152,8 @@ block content
                   a(href='https://t.co/TYGGg4qPQ9') pic.twitter.com/TYGGg4qPQ9
                 | — Storecoin (@StorecoinTeam)
                 a(href='https://twitter.com/StorecoinTeam/status/963511294941790208?ref_src=twsrc%5Etfw') February 13, 2018
+
+      include why-fork-tolerance
 
       include blockfin-principles
 

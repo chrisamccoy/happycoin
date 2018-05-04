@@ -354,7 +354,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .hc-feature .hc-feature-lead {
-  font-size: 1.8em;
+  font-size: 1.7em;
   text-align: center;
   margin: 1em auto;
 }
@@ -576,6 +576,11 @@ input[type=number]::-webkit-outer-spin-button {
 
 .hc-feature .hc-feature-title {
   font-size: 2em;
+}
+
+.hc-feature .hc-feature-title .note {
+  font-size: 0.8em;
+  color: #777;
 }
 
 /*.hc-feature .hc-feature-title.title-icon {
@@ -1540,8 +1545,8 @@ and (max-width : 335px) {
 }
 
 #distribution-plan .note {
-  color: #666;
-  font-size: 1em;
+  color: #333;
+  font-size: 1.2em;
   margin: 1em 0.5em;
 }
 
@@ -7086,7 +7091,8 @@ and (max-width : 335px) {
 
 /* -------------------------- */
 #dapps-vs-capps p.hc-feature-lead {
-  max-width: 530px; font-size: 2em;
+  max-width: 800px;
+  font-size: 2em;
 }
 
 @media only screen and (max-width: 700px) {
