@@ -249,6 +249,14 @@ input[type=number]::-webkit-outer-spin-button {
   color:#456332;
 }
 
+.token-sale-text {
+  padding:0 0 1em !important;
+}
+
+.token-sale-text p {
+  text-align:center; max-width: 960px; font-style:italic;
+}
+
 .button-primary.large-button:hover {
   background: #5a9637;
   border-color:#5a9637;
@@ -278,6 +286,10 @@ input[type=number]::-webkit-outer-spin-button {
   margin:2em 0px 0px;
   display: flex;
   align-items: center;
+}
+
+.hc-feature .footer-text {
+  font-size: 0.7em;
 }
 
 .hc-feature .button-container .button, .hc-feature .button-container a {
@@ -666,6 +678,11 @@ input[type=number]::-webkit-outer-spin-button {
 
   .hc-feature ul {
     margin-left:1em;
+  }
+
+  .token-sale-text p {
+    font-size: 0.8em;
+    padding: 0px 1em;
   }
 }
 
@@ -1523,6 +1540,11 @@ and (max-width : 335px) {
   margin: 1em 0.5em;
 }
 
+#distribution-plan .note i.ion-record {
+  font-size: 8px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
 
 #distribution-plan .highlight {
   text-align: center;
@@ -4979,6 +5001,11 @@ and (max-width : 335px) {
   font-size: 1.7em;
 }
 
+#our-vision .footer-text {
+  opacity: 0.6;
+  text-align: center;
+}
+
 @media only screen and (max-width: 700px) {
   #our-vision .hc-image img {
     width: 40%;
@@ -5554,6 +5581,7 @@ and (max-width : 335px) {
 .table-container {
   width: 100%;
   overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 .table-container .caption {
@@ -5577,6 +5605,10 @@ and (max-width : 335px) {
   font-style: italic;
   line-height: 1.5;
   margin-bottom: 0.5em;
+}
+
+.table-container table .note a {
+  color: #e97844;
 }
 
 .table-container table tbody {
@@ -5653,7 +5685,15 @@ and (max-width : 335px) {
   }
 
   .table-container table {
-    width: 450px;
+    width: 500px;
+  }
+
+  .table-container table thead tr th:nth-child(3) {
+    width: 110px;
+  }
+
+  .table-container table thead tr th:last-child {
+    width: 120px;
   }
 
   .table-container table tbody tr {
@@ -5662,7 +5702,7 @@ and (max-width : 335px) {
 
   .table-container table th,
   .table-container table tbody {
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
 
   .table-container table th, .table-container table td {
@@ -5690,6 +5730,10 @@ and (max-width : 335px) {
 
   .table-container {
     margin-bottom: 2em;
+  }
+
+  .table-container table thead th span {
+    font-size: 0.6em;
   }
 }
 
@@ -5835,7 +5879,7 @@ and (max-width : 335px) {
 
 .incentives.mobile {
   display: none;
-  margin-bottom: 3em;
+  margin-bottom: 1em;
 }
 
 .incentives .logo {
