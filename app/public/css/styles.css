@@ -7048,6 +7048,12 @@ and (max-width : 335px) {
   padding-right: 1em;
 }
 
+@media only screen and (max-width: 700px) {
+  #governance-principles .list {
+    font-size: 1.1em;
+  }
+}
+
 /* -------------------------- */
 #storecoin-ecosystem .row {
   display: flex;
