@@ -9,9 +9,9 @@ function deferLoad() {
     initLogoSlider('#hc-partners-slider', 3);
     initLogoSlider('#hc-buyers-slider', 3);
     initLogoSlider('#wallet-slider', 4);
-    
+
     deferSections();
-  }, 500);
+  }, 1000);
 }
 
 function deferSections() {
