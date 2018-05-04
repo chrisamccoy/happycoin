@@ -4996,44 +4996,44 @@ and (max-width : 335px) {
 
 /*--------------------------------------*/
 
-#our-vision {
+#our-vision-zero-fee {
   background-color: rgb(226, 236, 241);
 }
 
-#our-vision.active {
+#our-vision-zero-fee.active {
   background-color: white;
   transition: background-color 1000ms;
 }
 
-#our-vision .hc-image {
+#our-vision-zero-fee .hc-image {
   position: relative;
 }
 
-#our-vision .hc-image img {
+#our-vision-zero-fee .hc-image img {
   width: 20%;
 }
 
-#our-vision .hc-image .bulb-glow {
+#our-vision-zero-fee .hc-image .bulb-glow {
   position: absolute;
   top: 0px;
   left: 40%;
 }
 
-#our-vision .hc-feature-lead:last-child {
+#our-vision-zero-fee .hc-feature-lead:last-child {
   font-size: 1.7em;
 }
 
-#our-vision .footer-text {
+#our-vision-zero-fee .footer-text {
   opacity: 0.6;
   text-align: center;
 }
 
 @media only screen and (max-width: 700px) {
-  #our-vision .hc-image img {
+  #our-vision-zero-fee .hc-image img {
     width: 40%;
     left: auto !important;
   }
-  #our-vision .hc-feature-lead:last-child {
+  #our-vision-zero-fee .hc-feature-lead:last-child {
     font-size: 1.2em;
   }
 }
@@ -5813,31 +5813,37 @@ and (max-width : 335px) {
 }
 
 /*----------------------------------*/
+#our-vision .hc-feature-title,
 #our-mission .hc-feature-title {
   font-size: 4em;
   line-height: 1;
 }
 
+#our-vision .hc-feature-lead,
 #our-mission .hc-feature-lead {
   font-size: 2.5em;
   line-height: 1.4;
 }
 
+#our-vision .hc-feature-lead.note,
 #our-mission .hc-feature-lead.note {
   font-size: 1.5em;
   margin: 0px;
 }
 
 @media only screen and (max-width: 700px) {
+  #our-vision .hc-feature-title,
   #our-mission .hc-feature-title {
     font-size: 3em;
     margin-bottom: 0.5em !important;
   }
 
+  #our-vision .hc-feature-lead,
   #our-mission .hc-feature-lead {
     font-size: 1.5em;
   }
 
+  #our-vision .hc-feature-lead.note,
   #our-mission .hc-feature-lead.note {
     font-size: 1em;
     margin: 0px;
@@ -6854,7 +6860,7 @@ and (max-width : 335px) {
 
 /* -------------------------- */
 #blockfin-principles .principles-list {
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
 #blockfin-principles .principles-list .item .head {
