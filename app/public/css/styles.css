@@ -331,6 +331,10 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 7px;
 }
 
+.hc-feature .hc-image {
+  padding: 2em 0px;
+}
+
 .hc-email .email-widget .link-container {
   margin-top: 1em;
 }
@@ -5324,7 +5328,7 @@ and (max-width : 335px) {
 
 /*---------------------------------------*/
 #business-case .coin {
-  margin: 0 auto;
+  margin: 3em auto;
   /*background: #FFDE00;*/
   background-image: url(/images/storecoin-currency.png);
   background-size: cover;
