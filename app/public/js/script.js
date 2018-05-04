@@ -248,7 +248,7 @@ function initProblemReveal(isMobile){
 }
 
 function initLightBulb () {
-  var $ourVision = $('#our-vision');
+  var $ourVision = $('#our-vision-zero-fee');
 
   if ($ourVision.length) {
     var $bulbOff = $ourVision.find('.bulb-off'),
