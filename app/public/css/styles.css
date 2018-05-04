@@ -6658,6 +6658,10 @@ and (max-width : 335px) {
   margin-bottom: 1em;
 }
 
+#major-milestones .milestones .month .head {
+  margin-bottom: 0.5em;
+}
+
 #major-milestones .milestones .month .item {
   margin-bottom: 0.5em;
 }
