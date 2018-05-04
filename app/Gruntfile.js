@@ -32,6 +32,7 @@ module.exports = function(grunt) {
           '<%= paths.js %>tippy.min.js',
           '<%= paths.js %>jquery.rwdImageMaps.min.js',
           '<%= paths.js %>onload.js',
+          '<%= paths.js %>copy-links.js',
           '<%= paths.js %>script.js'
         ],
         dest: '<%= paths.assets %>script.js'

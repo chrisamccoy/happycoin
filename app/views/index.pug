@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  div#hc-content
+  div#hc-content.home-page
     #hc-intro.hc-feature.over-rel.padding
       .hc-chunk.hc-intro-text-wrapper
         h2.hc-intro-large-lead
@@ -146,7 +146,7 @@ block content
 
     include blockfin-principles
 
-    include storecoin-transaction
+    include transaction-blockfin
 
     .hc-feature.over-rel.padding.inverted(style="padding:2em;")
       .hc-chunk.hc-customize-text-wrapper
@@ -617,7 +617,7 @@ block content
     //-   .hc-chunk.hc-customize-text-wrapper
     //-     h3.hc-feature-title.inverted(style=" margin:0px !important;") How to get involved
 
-    #validate.hc-feature.over-rel.padding.inverted.orange(style="padding-left: 0px; padding-right:0px;")
+    #validate.hc-feature.over-rel.padding.inverted.orange
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Help Validate the future Storecoin Blockchain
         .hc-image
@@ -626,7 +626,7 @@ block content
           = ' '
           a.underline(href="http://storeco.in/validate", target="_blank") http://storeco.in/validate
 
-    #security-guard.hc-feature.over-rel.padding(style="padding-left: 0px; padding-right:0px;")
+    #security-guard.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Become a dGuard to keep Storecoin secure
         .hc-image
@@ -635,7 +635,7 @@ block content
           = ' '
           a.underline(href="http://storeco.in/dguard", target="_blank") http://storeco.in/dguard
 
-    #host-eagent.hc-feature.over-rel.padding.lite(style="padding-left: 0px; padding-right:0px;")
+    #host-eagent.hc-feature.over-rel.padding.lite
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Host eAgent Masternodes to scale Storecoin
         .hc-image
@@ -644,7 +644,7 @@ block content
           = ' '
           a.underline(href="http://storeco.in/masternode", target="_blank") http://storeco.in/masternode
 
-    #run-govnode.hc-feature.over-rel.padding.inverted.inverted(style="padding-left: 0px; padding-right:0px;")
+    #run-govnode.hc-feature.over-rel.padding.inverted.inverted
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Run a Govnode on your phone to host Governance
         .hc-image

@@ -1,0 +1,204 @@
+/*
+ HTML BASED NETWORK EFFECTS STYLES
+*/
+
+.incentives {
+  max-width: 900px;
+  margin: auto;
+  margin-top: 2em;
+  position: relative;
+  z-index: 1;
+}
+
+.incentives.mobile {
+  display: none;
+  margin-bottom: 1em;
+}
+
+.incentives .logo {
+  width: 60%;
+}
+
+.incentives .rails-wrapper {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.incentives .rails-wrapper .rails {
+  margin: 1.5em 0px;
+  width: 100%;
+  height: calc(100% - 3em);
+  background: url(../images/network-effect-arrows.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.incentives .columns {
+  min-height: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.incentives .row.top .columns,
+.incentives .row.bottom .columns {
+  min-height: 100px;
+}
+
+.incentives .row.middle .columns {
+  min-height: 380px;
+}
+
+.incentives .columns.vertical {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.incentives .columns .incentive {
+  background: #c7dfb8;
+  font-size: 1.5em;
+  padding: 0.5em;
+  border-radius: 10px;
+  color: #456332;
+  cursor: pointer;
+  transition: all .2s ease-in;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.incentives .columns .incentive.reveal {
+  z-index: 2;
+}
+
+.incentives .columns .incentive:hover {
+  transition: all .2s ease-in;
+  transform: scale(1.05);
+}
+
+.incentives .columns .incentive .title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.incentives .columns .incentive .title p {
+  font-size: 0.9em;
+  margin: auto 0px;
+}
+
+#network-effects-trust .incentives .columns .incentive .title p {
+  font-size: 0.8em;
+  margin: auto 0px;
+  text-align: left;
+  line-height: 1.2;
+}
+
+#network-effects-trust .incentives .columns .incentive .title span.orange-color {
+  width: 30px;
+  margin-right: 0.2em;
+}
+
+#network-effects-trust .incentives .columns .incentive img {
+  width: 15px;
+  margin: 0 0.3em;
+}
+
+.incentives .columns .incentive .desc {
+  font-size: 0.55em;
+  display: none;
+  position: absolute;
+  background: #c7dfb8;
+  width: calc(100% - 1em);
+  left: 0em;
+  padding: 0.5em;
+  text-align: left;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 12px 15px 20px 0 rgba(46,61,73,.15);
+}
+
+.incentives .columns .incentive.reveal .desc {
+  display: block;
+}
+
+.incentives .columns .incentive img {
+  width: 40px;
+  margin-right: 0.1em;
+}
+
+.incentives .arrow-flow {
+  display: none;
+}
+
+.incentives .row.bottom .columns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media only screen and (max-width: 700px) {
+  .incentives.mobile {
+    display: block;
+  }
+
+  .incentives.desktop {
+    display: none;
+  }
+
+  .incentives .rails-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: calc(100% - 1em);
+    padding: 0px;
+    z-index: -1;
+  }
+
+  .incentives .rails-wrapper .rails {
+    display: none;
+  }
+
+  .incentives .columns.vertical .incentive:nth-child(3) {
+    margin : 0px;
+  }
+
+  .incentives .columns {
+    min-height: inherit !important;
+    flex-direction: column;
+  }
+
+  .incentives .arrow-flow {
+    display: block;
+  }
+
+  .incentives .arrow-flow {
+    width : 50%;
+  }
+
+  .logo-wrapper {
+    display: none !important;
+  }
+
+  .incentives .columns.vertical .incentive:last-child {
+    margin: 0px;
+  }
+
+  .incentives .columns .incentive {
+    width: 90%;
+  }
+
+  .incentives .columns .incentive.reveal {
+    transform: scale(1);
+  }
+
+  .incentives .columns .incentive .desc {
+    position: inherit;
+    box-shadow: none;
+  }
+}
