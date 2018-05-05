@@ -1,15 +1,14 @@
 window.onload = deferLoad;
 
+var sliderInit = false;
+
 function deferLoad() {
   deferImages();
   deferThirdParty();
   deferIframes();
 
   setTimeout(function() {
-    initLogoSlider('#hc-partners-slider', 3);
     initLogoSlider('#hc-buyers-slider', 3);
-    initLogoSlider('#wallet-slider', 4);
-
     deferSections();
   }, 1000);
 }
@@ -25,10 +24,11 @@ function deferSections() {
   }
 
   $('section').each(function() {
-    if (!$(this).hasClass('expanded')) {
-      $(this).hide();
-    } else {
+    if ($(this).hasClass('expanded')) {
       $(this).prev('.section-heading').addClass('expand');
+      checkForSliders($(this));
+    } else {
+      $(this).hide();
     }
   });
 
@@ -39,10 +39,26 @@ function deferSections() {
     } else {
       $(this).addClass('expand');
       $(this).next('section').show();
+      checkForSliders($(this).next('section'));
     }
   });
 
   hasUrl();
+}
+
+function checkForSliders($el) {
+  if (sliderInit) {
+    return;
+  }
+
+  if ($el.find('#wallet-slider').length === 0) {
+    console.log('Not found!');
+    return;
+  }
+
+  sliderInit = true;
+  initLogoSlider('#hc-partners-slider', 3);
+  initLogoSlider('#wallet-slider', 4);
 }
 
 function deferImages() {
