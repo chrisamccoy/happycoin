@@ -676,8 +676,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 .ui.modal .ion-android-close {
   position: absolute;
-  right: -25px;
-  top: -25px;
+  right: 0px;
+  top: 0px;
   font-size: 3em;
   color: white;
 }
@@ -5026,6 +5026,7 @@ and (max-width : 335px) {
 
 #our-vision-zero-fee .hc-image {
   position: relative;
+  padding: 0px;
 }
 
 #our-vision-zero-fee .hc-image img {
@@ -5160,8 +5161,13 @@ and (max-width : 335px) {
   font-size: 1em;
 }
 
-#dypos-modal .security-system-lite .hazard-boxes .box p {
-  font-size: 2em;
+#dypos-modal .slide {
+  background: white;
+  padding: 1em 4em;
+}
+
+#dypos-modal .slide p {
+  font-size: 1.3em;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -5179,10 +5185,6 @@ and (max-width : 335px) {
 
   .security-system-lite .hazard-boxes .box p {
     font-size: 1em;
-  }
-
-  #dypos-modal .security-system-lite .hazard-boxes .box p {
-    font-size: 1.5em;
   }
 
   .security-system-lite .text {
@@ -5210,7 +5212,7 @@ and (max-width : 335px) {
   display: flex;
   align-items: center;
   height: 100%;
-  background: none;
+  background: white;
 }
 
 .engine-modal .engine-slider .hc-image img {
@@ -7143,7 +7145,7 @@ and (max-width : 335px) {
   position: absolute;
   right: 0.5em;
   bottom: -1em;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.22);
   color: #fff;
   border-radius: 23px;
   height: 46px;
@@ -7188,12 +7190,12 @@ and (max-width : 335px) {
 
 @media only screen and (max-width: 700px)  {
   .copy-link-wrapper {
-    height: 32px;
+    height: 50px;
   }
 
   .copy-link {
     right: -0.5em;
-    bottom: -1.5em;
+    bottom: -0.5em;
   }
 }
 
