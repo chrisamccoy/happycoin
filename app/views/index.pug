@@ -34,7 +34,7 @@ block content
     #our-vision.hc-feature.over-rel.padding.orange.inverted
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted Our Vision
-        p.hc-feature-lead(style="max-width: 700px;") To become zero-fee, programmable payments infrastructure for the globe.
+        p.hc-feature-lead(style="max-width: 700px; margin-bottom: 0px;") To become zero-fee, programmable payments infrastructure for the globe.
         //- p.hc-feature-lead.note (a general compute, zero-free payments platform)
 
     include token-sale-buyers
@@ -50,7 +50,7 @@ block content
     #our-mission.hc-feature.over-rel.padding.orange.inverted
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted Our Mission
-        p.hc-feature-lead(style="max-width: 700px;") To become a zero-fee, programmable cryptocurrency that can compete with VISA-like networks and beyond
+        p.hc-feature-lead(style="max-width: 700px; margin-bottom: 0px;") To become a zero-fee, programmable cryptocurrency that can compete with VISA-like networks and beyond
         //- p.hc-feature-lead.note (a general compute, zero-free payments platform)
 
     #storecoin-vs-global-markets.hc-feature.over-rel.padding.info-fullscreen
@@ -67,7 +67,7 @@ block content
 
     include major-milestones
 
-    .hc-feature.over-rel.padding.inverted(style="padding:2em;")
+    .hc-feature.over-rel.padding.inverted.banner
       .hc-chunk.hc-customize-text-wrapper
         p.hc-feature-lead(style=" margin:0px !important;") See many more milestones at
           = ' '
@@ -84,12 +84,16 @@ block content
         .hc-image(style="padding-bottom: 0px;")
           img(src='/images/empty.png', data-src="/images/1000-year-supply.png")
 
-    .hc-feature.over-rel.padding.pink.banner(style="padding:2em;")
+    #pomelo-paper.hc-feature.over-rel.padding.pink.banner
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title This is Our Pomelo Paper
         p.tag-line (Our Whitepaper will release once we're finished with research and development)
+        div.row
+          a.underline(href="https://dl.dropbox.com/s/dn6ac38td3gwssy/Storecoin_PomeloPaper_v37.pdf", target="_blank") Download the Full Paper
+          i.ion-record
+          a.underline(href="https://dl.dropbox.com/s/r8mh73vodrzzck2/Storecoin_Summary_v6.pdf", target="_blank") Download the Summary
 
-    .hc-feature.over-rel.padding.inverted.highlight(style="padding:2em;")
+    .hc-feature.over-rel.padding.inverted.banner
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title(style="margin:0px;") Our first design space:
           span(style="color:rgb(199, 223, 184);")  crypto-powered apps
@@ -509,7 +513,7 @@ block content
             .hc-image(style="padding-bottom: 0px;")
               img(src='/images/empty.png', data-src="/images/alphamining.png")
               p A PoW Blockchain Mining Operation & Test Network
-            .hc-image(style="padding-bottom: 0px;")
+            .hc-image(style="padding-bottom: 0px; max-width: 260px;")
               img(src='/images/empty.png', data-src="/images/blockview.png")
               p SQL for Blockchains
 
@@ -518,7 +522,7 @@ block content
           h3.hc-feature-title The Storecoin Ecosystem Fund
           p.hc-feature-lead Storecoin’s Ecosystem Fund will make equity-based investments into application-based companies that may be early Storecoin developers. From Storecoin’s 33% Incentivization Pool, developers will also be awarded STORE tokens to kickstart their
            = ' '
-           img(src="/images/empty.png", data-src="/images/storecoin-logo.png", style="margin-left:0px; height: 1em;")
+           img(src="/images/empty.png", data-src="/images/storecoin-logo.png", style="margin-left:0px; height: 1em; vertical-align: text-top;")
            |  Wallet networks. Storecoin can also airdrop tokens into the Wallets of users from its ecosystem funded companies, further growing the use of STORE.
           .hc-image
             img(src="/images/ecosystem-fund.png", style="max-width:900px;")
