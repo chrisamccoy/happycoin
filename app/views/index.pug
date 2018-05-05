@@ -126,6 +126,10 @@ block content
             img(src='/images/empty.png', data-src='/images/crypto-quadrants.png')
 
     include app-types
+    
+    .hc-feature.over-rel.padding.inverted(style="padding:2em;")
+      .hc-chunk.hc-customize-text-wrapper
+        p.hc-feature-lead(style="margin:0px;") Click each section to learn more about Storecoin
 
     .hc-feature.over-rel.padding.pink.section-heading
       .row
@@ -438,7 +442,7 @@ block content
           i.ion-chevron-down
           i.ion-chevron-up
 
-    section
+    section.expanded
 
       #storecoin-grows.hc-feature.over-rel.padding.lite.info-fullscreen
         .hc-chunk.hc-customize-text-wrapper
@@ -509,17 +513,15 @@ block content
               img(src='/images/empty.png', data-src="/images/blockview.png")
               p SQL for Blockchains
 
-      //- #ecosystem-fund.hc-feature.over-rel.padding.lite
-      //-   .hc-chunk.hc-customize-text-wrapper
-      //-     h3.hc-feature-title The Storecoin Ecosystem Fund
-      //-     p.hc-feature-lead A coalition of organizations that have entered into long-term relationships with Storecoin as its exclusive cryptocurrency to be integrated into enterprise and consumer-facing apps.
-      //-     .row
-      //-       .hc-image
-      //-         img(src='/images/empty.png', data-src="/images/alphamining.png")
-      //-         p A PoW Blockchain Mining Operation & Test Network
-      //-       .hc-image
-      //-         img(src='/images/empty.png', data-src="/images/blockview.png")
-      //-         p SQL for Blockchains
+      #ecosystem-fund.hc-feature.over-rel.padding.lite
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title The Storecoin Ecosystem Fund
+          p.hc-feature-lead Storecoin’s Ecosystem Fund will make equity-based investments into application-based companies that may be early Storecoin developers. From Storecoin’s 33% Incentivization Pool, developers will also be awarded STORE tokens to kickstart their
+           = ' '
+           img(src="/images/empty.png", data-src="/images/storecoin-logo.png", style="margin-left:0px; height: 1em;")
+           |  Wallet networks. Storecoin can also airdrop tokens into the Wallets of users from its ecosystem funded companies, further growing the use of STORE.
+          .hc-image
+            img(src="/images/ecosystem-fund.png", style="max-width:900px;")
 
       include our-partners
 
@@ -566,7 +568,7 @@ block content
        .hc-image
          img(src='/images/empty.png', data-src="/images/logo.png", style="max-width: 150px;")
        p.hc-feature-lead(style="margin-bottom: 0px;")
-        a.underline(href="http://storeco.in/developer") http://storeco.in/developer
+        a.underline(href="/developer") http://storeco.in/developer
 
     #contribute-code.hc-feature.over-rel.padding
      .hc-chunk.hc-customize-text-wrapper
@@ -574,7 +576,15 @@ block content
        .hc-image
          img(src='/images/empty.png', data-src="/images/li-code.png", style="max-width: 150px;")
        p.hc-feature-lead(style="margin-bottom: 0px;")
-        a.underline(href="http://storeco.in/code") http://storeco.in/code
+        a.underline(href="/code") http://storeco.in/code
+
+    #research-paper.hc-feature.over-rel.inverted.padding
+     .hc-chunk.hc-customize-text-wrapper
+       h3.hc-feature-title Peer Review upcoming Papers
+       .hc-image
+         img(src='/images/empty.png', data-src="/images/active-search.png", style="max-width: 150px;")
+       p.hc-feature-lead(style="margin-bottom: 0px;")
+        a.underline(href="/review") http://storeco.in/review
 
     //- include our-latest
     //-

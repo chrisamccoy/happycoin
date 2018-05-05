@@ -33,6 +33,10 @@ router.get('/code', function(req, res, next) {
   res.render('coming-soon', { title: 'Storecoin', meta: meta() });
 });
 
+router.get('/review', function(req, res, next) {
+  res.render('coming-soon', { title: 'Storecoin', meta: meta() });
+});
+
 /* GET home page. */
 router.get('/tee', function(req, res, next) {
   res.render('coming-soon', { title: 'Storecoin', meta: meta() });

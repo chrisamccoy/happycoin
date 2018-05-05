@@ -43,9 +43,9 @@ $(document).ready(function(){
   // toggleIncentive();
   emailSubscribe(isMobile);
   initSlider();
-  initLogoSlider('#hc-partners-slider', 3);
-  initLogoSlider('#hc-buyers-slider', 3);
-  initLogoSlider('#wallet-slider', 4);
+  //initLogoSlider('#hc-partners-slider', 3);
+  //initLogoSlider('#hc-buyers-slider', 3);
+  //initLogoSlider('#wallet-slider', 4);
   // initLogoSlider('#dev-eco-slider', 3);
   initProblemSlider();
   toggleStatusText();
@@ -309,7 +309,7 @@ function initTippy(isMobile) {
   });
 
   if (isMobile) {
-    tippy('#comparison-table td',{
+    tippy('#comparison-table td .see-more',{
       // trigger : 'click',
       animation: 'scale',
       arrow: true,
