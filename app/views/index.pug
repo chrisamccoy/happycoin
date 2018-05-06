@@ -30,14 +30,14 @@ block content
 
       - var top = true
       include email-widget
+      
+    include token-sale-buyers
 
     #our-vision.hc-feature.over-rel.padding.orange.inverted
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted Our Vision
         p.hc-feature-lead(style="max-width: 700px; margin-bottom: 0px;") To become zero-fee, programmable payments infrastructure for the globe.
         //- p.hc-feature-lead.note (a general compute, zero-free payments platform)
-
-    include token-sale-buyers
 
     include people-saying
 
@@ -537,9 +537,12 @@ block content
 
       include our-partners
 
-    .hc-feature.over-rel.padding.pink.banner(style="padding:2em;")
-      .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title(style="margin:0") How to help Storecoin grow
+    //- .hc-feature.over-rel.padding.pink.banner(style="padding:2em;")
+    //-   .hc-chunk.hc-customize-text-wrapper
+    //-     h3.hc-feature-title(style="margin:0") How to help Storecoin grow
+    .hc-feature.over-rel.padding.pink.section-heading(style="padding:2em 1em;")
+      .row
+        h3 How to help Storecoin grow
 
     include project-schedule
 
@@ -744,7 +747,7 @@ block content
           img(src='/images/empty.png', data-src="/images/govnode-icon.png", style="max-width:200px;width:100%;background: white;border-radius: 15px;padding: 1em;")
         p.hc-feature-lead(style=" margin-bottom:0px !important;") Apply at
           = ' '
-          a.underline(href="http://storeco.in/govenode", target="_blank") http://storeco.in/govenode
+          a.underline(href="http://storeco.in/govnode", target="_blank") http://storeco.in/govnode
 
     - top = false
     include email-widget

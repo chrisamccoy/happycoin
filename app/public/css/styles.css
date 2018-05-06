@@ -7385,7 +7385,8 @@ and (max-width : 335px) {
   }
 
   #pomelo-paper .row {
-    flex-direction: column;
+    font-size: 0.7em;
+    flex-wrap: wrap;
   }
 }
 
