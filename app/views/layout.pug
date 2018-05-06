@@ -20,8 +20,8 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1')
 
     link(rel='icon', type='image/png', href='/images/favicon.png')
-    link(rel='stylesheet', href='/assets/styles.css?v=2.33')
-    script(async, src='/assets/script.js?v=2.33')
+    link(rel='stylesheet', href='/assets/styles.css?v=2.34')
+    script(async, src='/assets/script.js?v=2.34')
 
   body
     - var className = ''
@@ -75,9 +75,15 @@ html
             h3 Help Build Storecoin
             ul
               li
+                a(href=URL('/developer')) Build your app on Storecoin
+              li
+                a(href=URL('/code')) Contribute Code
+              li
+                a(href=URL('/review')) Peer Review upcoming Research
+              li
                 a(href=URL('/validate')) Become a Validator
               li
-                a(href=URL('/masternode')) Host eAgent Master Nodes
+                a(href=URL('/masternode')) Host an eAgent Masternode
               li
                 a(href=URL('/validate')) Become a dGuard
               li
@@ -95,6 +101,8 @@ html
               li
                 a(href=URL('/milestones')) Milestones
               li
+                a(href=URL('/engineering')) Engineering Roadmap
+              li
                 a(href=URL('/research')) Our Research
               li
                 a(href='https://github.com/StorecoinProject', target="_blank") Github
@@ -105,7 +113,11 @@ html
             h3 Social
             ul
               li
+                a(href=URL('/tee')) Earn a Storecoin Team
+              li
                 a(href=URL('/community')) Subscribe to Email Updates
+              li
+                a(href=URL('/devnotes')) Subscribe to DevNotes
               li
                 a(href="http://t.me/storecoin", target="_blank") Join our Telegram Super Group
               li

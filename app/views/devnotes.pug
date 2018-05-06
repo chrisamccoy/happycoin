@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  div#hc-content
+    #newsletter.hc-feature.over-rel.padding
+      .hc-chunk
+        h2.hc-feature-title Subscribe to DevNotes
+        form(action='https://storeco.us16.list-manage.com/subscribe/post?u=49990f91819fec5293c84bbe8&amp;id=8d2249248b', method='post', target='_blank', novalidate='')
+          input.u-full-width(type="email", name="EMAIL", placeholder="Email")
+          input.u-full-width(type="text", name="FNAME", placeholder="First Name")
+          input.u-full-width(type="text", name="LNAME", placeholder="Last Name")
+          input.u-full-width(type="text", name="TWITTER", placeholder="Twitter Handle")
+          input.u-full-width(type="text", name="GITHUB", placeholder="Github Profile")
+          
+          button.hc-button.orange.full-width(type="submit") Submit
+        div.social
+          p Also, connect with Storecoin:
+          div.links
+            a(href="http://twitter.com/storecoin", target="_blank")
+              i.ion-social-twitter-outline
+            a(href="http://t.me/storecoin", target="_blank")
+              i.ion-paper-airplane
+
+    include email-widget

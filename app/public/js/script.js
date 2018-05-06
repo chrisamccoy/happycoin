@@ -56,6 +56,7 @@ $(document).ready(function(){
   initTippy(isMobile);
   // initLearnMore(isMobile);
   initLightBulb();
+  initFireGlow();
   initProblemReveal(isMobile);
   // yAxisWidth();
   initCoinFlip();
@@ -263,6 +264,27 @@ function initLightBulb () {
       } else {
         $bulbGlow.hide();
         $ourVision.removeClass('active');
+      }
+    });
+  }
+}
+
+function initFireGlow () {
+  var $tolerance = $('#why-fork-tolerance-matters');
+
+  if ($tolerance.length) {
+    var $fireOff = $tolerance.find('.fire-off'),
+        $fireOn = $tolerance.find('.fire-on');
+
+    $(window).scroll(function(){
+      var scrollVal  = $(window).scrollTop() + $(window).height(),
+          offset = $tolerance.find('.hc-image').offset().top + ($tolerance.find('.hc-image').height() / 2);
+      if (scrollVal > offset) {
+        $fireOn.fadeIn();
+        $tolerance.addClass('active');
+      } else {
+        $fireOn.hide();
+        $tolerance.removeClass('active');
       }
     });
   }

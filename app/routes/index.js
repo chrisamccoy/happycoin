@@ -89,6 +89,11 @@ router.get('/community', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/devnotes', function(req, res, next) {
+  res.render('devnotes', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
 router.get('/newsletter', function(req, res, next) {
   res.render('newsletter', { title: 'Storecoin', meta: meta() });
 });

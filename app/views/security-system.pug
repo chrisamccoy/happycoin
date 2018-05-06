@@ -11,27 +11,27 @@
         - var secVals = ['5,000 storecoins', '5,000 storecoins', '50 storecoins', '500 storecoins', '5,000 edisons', '5%', '50', '1,000 edisons', '90%'];
         - var secTemplate = function(secVals) { return '<ul><li>Stake Required For new Validators: <span class="orange-color">'+secVals[0]+'</span></li><li>Stake Required For new eAgents: <span class="orange-color">'+secVals[1]+'</span></li><li>Stake Required For new dGuards: <span class="orange-color">'+secVals[2]+'</span></li><li>Stake Required For new Govnodes: <span class="orange-color">'+secVals[2]+'</span></li><li>Security Bond to Send Txn: <span class="orange-color">'+secVals[4]+'</span></li><li>Interest Paid on Security Bond: <span class="orange-color">'+secVals[5]+'</span></li><li># of Security Guards Needed: <span class="orange-color">'+secVals[6]+'</span></li><li>Cost to File a Ticket: <span class="orange-color">'+secVals[7]+'</span></li><li>Stake or Bond Earned by Guard: <span class="orange-color">'+secVals[8]+'</span></li></ul>';};
         - var boxTitle = secTemplate(secVals);
-        div.box.red(title=boxTitle)
+        div.box.red
           h3 Severe
           p The network is under attack (DDoS, spam), a large volumes of incoming transactions, the number of validators online dropped below BFT threshold, and validator misbehavior is observed by dGuards during consensus
         - secVals = ['2,500 storecoins', '800 storecoins', '100 storecoins', '400 storecoins', '2,500 edisons', '4%', '40', '750 edisons', '80%'];
         - boxTitle = secTemplate(secVals);
-        div.box.skin(title=boxTitle)
+        div.box.skin
           h3 High
           p The nodes are reporting imminent attack (DDoS, spam), transaction volume is unusually large, number of validators online is nearing BFT threshold, and consensus rounds slow down due to disagreements
         - secVals = ['1,500 storecoins', '600 storecoins', '200 storecoins', '300 storecoins', '1,000 edisons', '3%', '30', '500 edisons', '70%'];
         - boxTitle = secTemplate(secVals);
-        div.box.yellow(title=boxTitle)
+        div.box.yellow
           h3 Elevated
           p Signs of attack (elevated number of invalid transactions), not all validators are currently online, and consensus rounds are repeated due to disagreements
         - secVals = ['1,000 storecoins', '400 storecoins', '500 storecoins', '200 storecoins', '500 edisons', '2%', '20', '250 edisons', '60%'];
         - boxTitle = secTemplate(secVals);
-        div.box.blue(title=boxTitle)
+        div.box.blue
           h3 Guarded
           p Unusual number of transactions and not all validators are currently online
         - secVals = ['500 storecoins', '200 storecoins', '1,000 storecoins', '100 storecoins', '250 edisons', '1%', '10', '100 edisons', '50%'];
         - boxTitle = secTemplate(secVals);
-        div.box.green(title=boxTitle)
+        div.box.green
           h3 Low
           p No known threats
       div.text

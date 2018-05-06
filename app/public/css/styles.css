@@ -843,7 +843,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #hc-nav-wrapper .hc-intro-post span {
   font-size: 0.1em;
-  padding: 0.5em;
+  padding: 1em;
 }
 
 #hc-nav-wrapper.v2 .hc-intro-post {
@@ -5363,7 +5363,7 @@ and (max-width : 335px) {
 }
 
 /*---------------------------------------*/
-#business-case .coin {
+#zero-fee-case .coin {
   margin: 3em auto;
   /*background: #FFDE00;*/
   background-image: url(/images/storecoin-currency.png);
@@ -5376,7 +5376,7 @@ and (max-width : 335px) {
   -webkit-transform-style: preserve-3d;
 }
 
-#business-case .coin.flip {
+#zero-fee-case .coin.flip {
   animation: spin 2s linear infinite;
 }
 
@@ -5388,7 +5388,7 @@ and (max-width : 335px) {
     transform: rotateY(360deg);
   }
 }
-#business-case .coin:before {
+#zero-fee-case .coin:before {
   /*background-color: #ffc013;*/
   background-color: #caa14b;
   position: absolute;
@@ -5398,7 +5398,7 @@ and (max-width : 335px) {
   width: 200px;
   -webkit-transform: translateZ(-15px);
 }
-#business-case .coin:after {
+#zero-fee-case .coin:after {
   /*background-color: #ffc013;*/
   background-color: #caa14b;
   content: '';
@@ -5413,7 +5413,7 @@ and (max-width : 335px) {
   -webkit-transform-origin: 100% 50%;
 }
 
-#business-case .tails {
+#zero-fee-case .tails {
   /*background-color: #ffc013;*/
   background-color: #caa14b;
   /*background-image: url(/images/storecoin-currency.png);
@@ -5428,7 +5428,7 @@ and (max-width : 335px) {
   /*border: 1px solid #FF9900;*/
 }
 
-#business-case .heads {
+#zero-fee-case .heads {
   /*background-color: #FFDE00;*/
   background-image: url(/images/storecoin-currency.png);
   background-size: auto 100%;
@@ -5443,30 +5443,30 @@ and (max-width : 335px) {
   /*border: 1px solid #FF9900;*/
 }
 
-#business-case .companies-table {
+#zero-fee-case .companies-table {
   margin: 0 4em;
 }
 
-#business-case .companies-table .row .logos .logos-row {
+#zero-fee-case .companies-table .row .logos .logos-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-#business-case .companies-table .row .logos .logos-row.bottom {
+#zero-fee-case .companies-table .row .logos .logos-row.bottom {
   margin-top: 6px;
 }
 
-#business-case .companies-table .row {
+#zero-fee-case .companies-table .row {
   display: flex;
   justify-content: space-between;
 }
 
-#business-case .companies-table .row:not(:last-child) {
+#zero-fee-case .companies-table .row:not(:last-child) {
   margin-bottom: 1em;
 }
 
-#business-case .companies-table .row .head {
+#zero-fee-case .companies-table .row .head {
   background-color: #cee3c0;
   display: flex;
   justify-content: center;
@@ -5478,102 +5478,102 @@ and (max-width : 335px) {
   text-align: center;
 }
 
-#business-case .companies-table .row .head > .text {
+#zero-fee-case .companies-table .row .head > .text {
   padding: 0 0.5em;
 }
 
-#business-case .companies-table .row .logos .logos-row .logo {
+#zero-fee-case .companies-table .row .logos .logos-row .logo {
   margin-left: 7px;
 }
 
-#business-case .companies-table .row .logos .logos-row .logo img {
+#zero-fee-case .companies-table .row .logos .logos-row .logo img {
   display: block;
   width: 100%;
 }
 
-#business-case .table-container.table-1 {
+#zero-fee-case .table-container.table-1 {
   margin: 2em 0px 0px;
 }
 
-#business-case .table-container.table-1 table tbody {
+#zero-fee-case .table-container.table-1 table tbody {
   font-size: 1em;
 }
 
-#business-case .table-container.table-1 table tr {
+#zero-fee-case .table-container.table-1 table tr {
   height: 80px;
   line-height: 1.3;
 }
 
-#business-case .table-container.table-1 table tr:first-child td {
+#zero-fee-case .table-container.table-1 table tr:first-child td {
   text-align: left;
 }
 
-#business-case .table-container.table-1 table tr td {
+#zero-fee-case .table-container.table-1 table tr td {
   text-align: center;
 }
 
-#business-case .table-container.table-1 table tr td:not(:first-child) {
+#zero-fee-case .table-container.table-1 table tr td:not(:first-child) {
   width: 17%;
 }
 
-#business-case .table-container.table-1 table tr td {
+#zero-fee-case .table-container.table-1 table tr td {
   font-size: 1em;
 }
 
-/* #business-case .table-container.table-1 table tr td img {
+/* #zero-fee-case .table-container.table-1 table tr td img {
   width: 30px;
 } */
 
 @media only screen and (max-width: 700px) {
-  #business-case .companies-table {
+  #zero-fee-case .companies-table {
     margin: 0 0.5em;
   }
 
-  #business-case .companies-table .row {
+  #zero-fee-case .companies-table .row {
     flex-direction: column;
   }
 
-  #business-case .companies-table .row .head {
+  #zero-fee-case .companies-table .row .head {
     width: 100%;
     padding: 0.5em 0;
   }
 
-  #business-case .companies-table .row .logos .logos-row {
+  #zero-fee-case .companies-table .row .logos .logos-row {
     flex-wrap : wrap;
   }
 
-  #business-case .companies-table .row .logos .logos-row.bottom {
+  #zero-fee-case .companies-table .row .logos .logos-row.bottom {
     margin-top: 0;
   }
 
-  #business-case .companies-table .row .logos .logos-row .logo {
+  #zero-fee-case .companies-table .row .logos .logos-row .logo {
     margin-left: 0;
     width: 24%;
     margin-top: 6px;
   }
 
-  #business-case .table-container.table-1 {
+  #zero-fee-case .table-container.table-1 {
     overflow: hidden;
   }
 
-  #business-case .table-container.table-1 table {
+  #zero-fee-case .table-container.table-1 table {
     width: 100%;
   }
 
-  #business-case .table-container.table-1 table tbody {
+  #zero-fee-case .table-container.table-1 table tbody {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
   }
 
-  #business-case .table-container.table-1 table tbody tr {
+  #zero-fee-case .table-container.table-1 table tbody tr {
     height: auto;
     width: 50% !important;
     display: flex;
     flex-direction: column;
   }
 
-  #business-case .table-container.table-1 table tbody tr td {
+  #zero-fee-case .table-container.table-1 table tbody tr td {
     display: flex;
     min-height: 60px;
     font-size: 1em;
@@ -5582,7 +5582,7 @@ and (max-width : 335px) {
     justify-content: center;
   }
 
-  #business-case .table-container.table-1 table td div.name-icon {
+  #zero-fee-case .table-container.table-1 table td div.name-icon {
     width: 100%;
   }
 }
@@ -6714,6 +6714,19 @@ and (max-width : 335px) {
   margin-bottom: 1em;
 }
 
+#engineering .roadmap .item.highlight {
+  background: #ec834e;
+  padding: 1em;
+  color: white;
+  margin: 0px -1em 1em;
+  box-shadow: 5px 5px 2px #ec834e3b
+}
+
+#engineering .roadmap .item.highlight .text,
+#engineering .roadmap .item.highlight .bullet .ion-record {
+  color: white;
+}
+
 #engineering .roadmap .item .bullet,
 #engineering .roadmap .item .period {
   margin-right: 1em;
@@ -7374,4 +7387,24 @@ and (max-width : 335px) {
   #pomelo-paper .row {
     flex-direction: column;
   }
+}
+
+/* #why-fork-tolerance-matters */
+#why-fork-tolerance-matters .standard-oil {
+  position: relative;
+  padding: 0px;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+#why-fork-tolerance-matters .standard-oil img {
+  width: 100%;
+}
+
+#why-fork-tolerance-matters .standard-oil .fire-on {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
 }
