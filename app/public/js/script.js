@@ -39,26 +39,16 @@ $(document).ready(function(){
   renderCircles();
   renderCards();
   toggleCardTasks();
-  // toggleAppsDesc();
-  // toggleIncentive();
   emailSubscribe(isMobile);
   initSlider();
-  //initLogoSlider('#hc-partners-slider', 3);
-  //initLogoSlider('#hc-buyers-slider', 3);
-  //initLogoSlider('#wallet-slider', 4);
-  // initLogoSlider('#dev-eco-slider', 3);
   initProblemSlider();
   toggleStatusText();
   initTimer();
-  //hasUrl();
   fadeInContent();
-  // imgCoords(isMobile);
   initTippy(isMobile);
-  // initLearnMore(isMobile);
   initLightBulb();
   initFireGlow();
   initProblemReveal(isMobile);
-  // yAxisWidth();
   initCoinFlip();
   initInviteSale();
   initFullscreenImage(isMobile);
@@ -67,6 +57,15 @@ $(document).ready(function(){
   initFormSubscribe();
   initThirdTokenSale();
 });
+
+function initDropdown() {
+  var $menu = $('#hc-nav-wrapper .hc-branding.invite-dropdown .hc-menu-dropdown'),
+      $nav = $menu.find('.nav-menu');
+
+  $menu.click(function(){
+    $nav.toggleClass('show');
+  });
+}
 
 function initThirdTokenSale(){
   $('#third-token-sale button').click(function(){
@@ -305,10 +304,6 @@ function initFireGlow () {
 //     $('html, body').animate({ scrollTop : offset }, 600);
 //   });
 // }
-
-function initDropdown () {
-  $('.ui.dropdown').dropdown();
-}
 
 function initTippy(isMobile) {
   // $('map[name="image-map"] area').click(function(){
