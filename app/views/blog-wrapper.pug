@@ -17,6 +17,11 @@ block content
               i.ion-chevron-left
               span Back to News
               
+          .copy-link-wrapper.top
+            .copy-link(data-link=url)
+              .copy-link-text Copy Link
+              i.copy-link-icon.ion-link
+              
           div.blog-share
             a(target="_blank", href="https://twitter.com/intent/tweet?text="+encodedTitle+"&url="+url+"&via=storecoin")
               b
@@ -50,4 +55,9 @@ block content
               i.ion-chevron-left
               span Back to News
           
+          .copy-link-wrapper.bottom
+            .copy-link(data-link=url)
+              .copy-link-text Copy Link
+              i.copy-link-icon.ion-link
+                
     include email-widget

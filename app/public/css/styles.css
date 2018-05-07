@@ -331,10 +331,6 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 7px;
 }
 
-.hc-feature .hc-image {
-  padding: 2em 0px;
-}
-
 .hc-email .email-widget .link-container {
   margin-top: 1em;
 }
@@ -5443,6 +5439,10 @@ and (max-width : 335px) {
   /*border: 1px solid #FF9900;*/
 }
 
+#zero-fee-case .hc-image {
+  padding: 2em 0px;
+}
+
 #zero-fee-case .companies-table {
   margin: 0 4em;
 }
@@ -6200,6 +6200,18 @@ and (max-width : 335px) {
   border-top: 2px solid #7b7373;
 }
 
+.blog-news .copy-link-wrapper.top {
+  position: absolute;
+  top: 3em;
+  right: 0px;
+}
+
+.blog-news .copy-link-wrapper.bottom {
+  position: absolute;
+  bottom: 3em;
+  right: 0px;
+}
+
 @media only screen and (max-width: 700px) {
   .blog-news .article-title {
     font-size: 2em;
@@ -6243,6 +6255,14 @@ and (max-width : 335px) {
   .blog-news ul,
   .blog-news ol {
     font-size: 1.2em;
+  }
+
+  .blog-news .copy-link-wrapper.top {
+    top: 1em;
+  }
+
+  .blog-news .copy-link-wrapper.bottom {
+    bottom: 3em;
   }
 }
 
@@ -7319,6 +7339,10 @@ and (max-width : 335px) {
 
 .section-heading .icon .ion-chevron-up {
   display: none;
+}
+
+.section-heading.expand {
+  background-color: #dba38c;
 }
 
 .section-heading.expand .icon .ion-chevron-up {

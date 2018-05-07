@@ -67,7 +67,7 @@
   }
 
   $(document).ready(function() {
-    if ($('.home-page').length == 0) {
+    if ($('.home-page').length == 0 && $('.blog-news').length == 0) {
       return;
     }
 
