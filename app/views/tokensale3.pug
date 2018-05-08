@@ -18,10 +18,10 @@ block content
               |  $0.0999
             li 
               b Fully Diluted Network Value: 
-              |  $99 Million
+              |  $99 MM
             li
               b Funds Accepted: 
-              |  ETH, BTC, USD Wire Transfer
+              |  ETH, BTC, USD Wire
             li 
               b Pre-Sale Ends:
               |  Once Hard Cap is reached or July 30th, 2018
@@ -39,7 +39,9 @@ block content
               |  Yes
             li
               b Can my country participate?
-              |  Investors located in most countries can participate, provided they meet the standards of a U.S. accredited investor
+              |  Investors located in most countries can participate, provided they meet 
+              = ' '
+              a.underline(data-featherlight="#accredited") the standards of a U.S. accredited investor
             li
               b Does total total cryptocurrency ownership count for being accredited (including ICO tokens still not yet released by the teams)?
               |  Yes
@@ -71,6 +73,7 @@ block content
 
       include token-sale-buyers
       
+      - var tokensale = true
       include people-saying
       
       .blog-news.hc-feature.over-rel.padding(style="padding-bottom: 0px;")
@@ -83,14 +86,18 @@ block content
     
     #pomelo-paper.hc-feature.over-rel.padding.pink.banner
       .hc-chunk.hc-customize-text-wrapper
-        p.hc-feature-lead(style="margin-top: 0px;") Download the latest Pomelo Paper and Summary
-        //- p.tag-line (Our Whitepaper will release once we're finished with research and development)
-        div.row
-          a.underline(href="/media/storecoin-pomelo-paper.pdf", target="_blank") Download the Full Pomelo Paper
-          i.ion-record
-          a.underline(href="/media/storecoin-summary.pdf", target="_blank") Download the Summary
-          i.ion-record
-          a.underline(href="/research", target="_blank") See All Research
+        p.hc-feature-lead(style="margin-top: 0px;") Download the latest pre-whitepaper
+
+        div.row.tokensale-3
+          div.item
+            i.ion-record
+            a.underline(href="/media/storecoin-pomelo-paper.pdf", target="_blank") Download the Full Pomelo Paper
+          div.item
+            i.ion-record
+            a.underline(href="/media/storecoin-summary.pdf", target="_blank") Download the Summary
+          div.item
+            i.ion-record
+            a.underline(href="/research", target="_blank") See All Research
     
     div.hc-feature.over-rel.padding
       .hc-chunk.hc-intro-text-wrapper

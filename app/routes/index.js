@@ -322,17 +322,20 @@ router.get('/logout', function (req, res, next) {
 /* ------------WALLET------------ */
 router.get('/wallet', function(req, res, next) {
   var ua = req.header('user-agent');
+  var mt = meta();
+
+  mt.url = 'http://storeco.in/wallet'
   if(/mobile/i.test(ua)) {
     res.render('wallet/index', {
       title: 'Storecoin',
       name : 'Home', header : false,
-      meta: meta()
+      meta: mt
     });
   } else {
     res.render('wallet/index-desktop', {
       title: 'Storecoin',
       name : 'Home',
-      meta: meta()
+      meta: mt
     });
   }
 });

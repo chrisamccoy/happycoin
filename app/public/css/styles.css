@@ -7461,6 +7461,10 @@ and (max-width : 335px) {
   margin: 0px 2em;
 }
 
+#pomelo-paper .row.tokensale-3 .item:first-child .ion-record {
+  display: none;
+}
+
 @media only screen and (max-width: 700px) {
   #pomelo-paper {
     padding: 2em 1em;
@@ -7473,6 +7477,22 @@ and (max-width : 335px) {
   #pomelo-paper .row {
     font-size: 0.7em;
     flex-wrap: wrap;
+  }
+
+  #pomelo-paper .row.tokensale-3 {
+    font-size: 1em;
+  }
+
+  #pomelo-paper .row.tokensale-3 .item:first-child .ion-record {
+    display: inline;
+  }
+
+  #pomelo-paper .row.tokensale-3 .item {
+    width: 100%;
+  }
+
+  #pomelo-paper .row.tokensale-3 .item:not(:last-child) {
+    margin-bottom: 0.5em;
   }
 }
 

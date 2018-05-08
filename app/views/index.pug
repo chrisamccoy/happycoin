@@ -55,14 +55,14 @@ block content
         p.hc-feature-lead(style="max-width: 700px; margin-bottom: 0px;") To become a zero-fee, programmable cryptocurrency that can compete with VISA-like networks and beyond
         //- p.hc-feature-lead.note (a general compute, zero-free payments platform)
 
-    #storecoin-vs-global-markets.hc-feature.over-rel.padding.info-fullscreen
+    #storecoin-vs-global-markets.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         .mobile-image
           div.click-message
             div.message-container
               i.ion-arrow-expand
               span Click to expand
-        .hc-image
+        .hc-image.info-fullscreen
           img(src='/images/empty.png', data-src="/images/storecoin-vs-global-tm-v2.png", style="max-width: 900px;")
 
     include business-case
@@ -193,54 +193,58 @@ block content
 
     section
 
-      #free-transactions.hc-feature.over-rel.padding.info-fullscreen
+      #free-transactions.hc-feature.over-rel.padding
         .hc-chunk.hc-customize-text-wrapper
-          h3.hc-feature-title How Zero-Fee Transactions are Financed
-          p.hc-feature-lead Transactions are free for users and developers because they’re paid for with inflationary rewards capped at 6% per year. Award amounts are dynamic, based upon the total amount of staking amongst the decentralized workforce.
-          .mobile-image
-            div.click-message
-              div.message-container
-                i.ion-arrow-expand
-                span Click to expand
-          .hc-image(style="padding-bottom: 0px;")
-            img(src='/images/empty.png', data-src="/images/how-financed.png", style="max-width: 900px;")
+          div.info-fullscreen
+            h3.hc-feature-title How Zero-Fee Transactions are Financed
+            p.hc-feature-lead Transactions are free for users and developers because they’re paid for with inflationary rewards capped at 6% per year. Award amounts are dynamic, based upon the total amount of staking amongst the decentralized workforce.
+            .mobile-image
+              div.click-message
+                div.message-container
+                  i.ion-arrow-expand
+                  span Click to expand
+            .hc-image(style="padding-bottom: 0px;")
+              img(src='/images/empty.png', data-src="/images/how-financed.png", style="max-width: 900px;")
 
-      #staking-incentives.hc-feature.over-rel.padding.info-fullscreen.lite
+      #staking-incentives.hc-feature.over-rel.padding.lite
         .hc-chunk.hc-customize-text-wrapper
-          h3.hc-feature-title Staking incentivizes for decentralization and on-chain security
-          .mobile-image
-            div.click-message
-              div.message-container
-                i.ion-arrow-expand
-                span Click to expand
-          .hc-image(style="padding-bottom: 0px;")
-            img(src='/images/empty.png', data-src="/images/slope-staking.png", style="max-width: 900px;")
+          div.info-fullscreen
+            h3.hc-feature-title Staking incentivizes for decentralization and on-chain security
+            .mobile-image
+              div.click-message
+                div.message-container
+                  i.ion-arrow-expand
+                  span Click to expand
+            .hc-image(style="padding-bottom: 0px;")
+              img(src='/images/empty.png', data-src="/images/slope-staking.png", style="max-width: 900px;")
 
-      #rewards-allocated.hc-feature.over-rel.padding.info-fullscreen
+      #rewards-allocated.hc-feature.over-rel.padding
         .hc-chunk.hc-customize-text-wrapper
-          h3.hc-feature-title How Dynamic Block Rewards are Allocated
-          p.hc-feature-lead Decentralized Workers earn up to 6% inflationary block rewards to perform work and supply compute for the blockchain. Rewards are determined by the amount of staking from dWorkers. 80% of the block rewards are paid to process and scale the blockchain; 20% is shared between security, governance, processing power, and core blockchain operations
-          .mobile-image
-            div.click-message
-              div.message-container
-                i.ion-arrow-expand
-                span Click to expand
-          .hc-image(style="padding-bottom: 0px;")
-            img(src='/images/empty.png', data-src="/images/blocks-allocated.png", style="max-width: 900px;")
+          div.info-fullscreen
+            h3.hc-feature-title How Dynamic Block Rewards are Allocated
+            p.hc-feature-lead Decentralized Workers earn up to 6% inflationary block rewards to perform work and supply compute for the blockchain. Rewards are determined by the amount of staking from dWorkers. 80% of the block rewards are paid to process and scale the blockchain; 20% is shared between security, governance, processing power, and core blockchain operations
+            .mobile-image
+              div.click-message
+                div.message-container
+                  i.ion-arrow-expand
+                  span Click to expand
+            .hc-image(style="padding-bottom: 0px;")
+              img(src='/images/empty.png', data-src="/images/blocks-allocated.png", style="max-width: 900px;")
 
 
       include dynamic-inflation
 
-      #payments-incentives.hc-feature.over-rel.padding.info-fullscreen
+      #payments-incentives.hc-feature.over-rel.padding
         .hc-chunk.hc-customize-text-wrapper
-          h3.hc-feature-title Interest payments incentivize for blockchain performance
-          .mobile-image
-            div.click-message
-              div.message-container
-                i.ion-arrow-expand
-                span Click to expand
-          .hc-image(style="padding-bottom: 0px;")
-            img(src='/images/empty.png', data-src="/images/slope-proc-perf.png", style="max-width: 900px;")
+          div.info-fullscreen
+            h3.hc-feature-title Interest payments incentivize for blockchain performance
+            .mobile-image
+              div.click-message
+                div.message-container
+                  i.ion-arrow-expand
+                  span Click to expand
+            .hc-image(style="padding-bottom: 0px;")
+              img(src='/images/empty.png', data-src="/images/slope-proc-perf.png", style="max-width: 900px;")
 
       .hc-feature.over-rel.padding.inverted.banner(style="padding:2em;")
         .hc-chunk.hc-customize-text-wrapper
@@ -277,30 +281,32 @@ block content
 
       include security-system
 
-      #dGuard-secure.hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
+      #dGuard-secure.hc-feature.over-rel.padding(style="border-bottom: 2px dashed grey;")
         .hc-chunk.hc-customize-text-wrapper
-          h3.hc-feature-title How Dynamic Security Works
-            span.orange-color(style="font-size:0.8em; margin-left:0.5em") (with dGuards)
-          p.hc-feature-lead Decentralized Security Guards, or dGuards, secure the protocol by running full nodes to monitor all transactions and dWorker activity. They're rewarded with 100% of the burnt stake or bond from found "bad" actors.
-          .mobile-image
-            div.click-message
-              div.message-container
-                i.ion-arrow-expand
-                span Click to expand
-          .hc-image(style="padding-bottom: 0px;")
-            img(src='/images/empty.png', data-src="/images/how-dyn-sec-works-v2.png", style="max-width:900px;")
+          div.info-fullscreen
+            h3.hc-feature-title How Dynamic Security Works
+              span.orange-color(style="font-size:0.8em; margin-left:0.5em") (with dGuards)
+            p.hc-feature-lead Decentralized Security Guards, or dGuards, secure the protocol by running full nodes to monitor all transactions and dWorker activity. They're rewarded with 100% of the burnt stake or bond from found "bad" actors.
+            .mobile-image
+              div.click-message
+                div.message-container
+                  i.ion-arrow-expand
+                  span Click to expand
+            .hc-image(style="padding-bottom: 0px;")
+              img(src='/images/empty.png', data-src="/images/how-dyn-sec-works-v2.png", style="max-width:900px;")
 
-      #transactions-secure.hc-feature.over-rel.padding.info-fullscreen
+      #transactions-secure.hc-feature.over-rel.padding
         .hc-chunk.hc-customize-text-wrapper
-          h3.hc-feature-title How Zero Fee Transactions are Secured With Bonds
-          p.hc-feature-lead To prevent Storecoin from a DDoS attack or from the blockchain being flooded with spammy transactions, Storecoin adds a refundable – with interest! – security bond to each transaction.
-          .mobile-image
-            div.click-message
-              div.message-container
-                i.ion-arrow-expand
-                span Click to expand
-          .hc-image(style="padding-bottom: 0px;")
-            img(src='/images/empty.png', data-src="/images/how-zft-secure.png", style="max-width:900px;")
+          div.info-fullscreen
+            h3.hc-feature-title How Zero Fee Transactions are Secured With Bonds
+            p.hc-feature-lead To prevent Storecoin from a DDoS attack or from the blockchain being flooded with spammy transactions, Storecoin adds a refundable – with interest! – security bond to each transaction.
+            .mobile-image
+              div.click-message
+                div.message-container
+                  i.ion-arrow-expand
+                  span Click to expand
+            .hc-image(style="padding-bottom: 0px;")
+              img(src='/images/empty.png', data-src="/images/how-zft-secure.png", style="max-width:900px;")
 
       .hc-feature.over-rel.padding.inverted.banner(style="padding:2em;")
         .hc-chunk.hc-customize-text-wrapper
@@ -317,17 +323,18 @@ block content
 
     section
 
-      #governance-helped.hc-feature.over-rel.padding.info-fullscreen
+      #governance-helped.hc-feature.over-rel.padding
         .hc-chunk.hc-customize-text-wrapper
-          h3.hc-feature-title Governance helped trade and commerce shape the world
-          p.hc-feature-lead Simply, Governance is a rules engine that enforces contracts and laws which in return injects trust into markets that require trust – markets like trade and commerce. History has shown us that as trust increases, the amount of trade and commerce increases too.
-          .mobile-image
-            div.click-message
-              div.message-container
-                i.ion-arrow-expand
-                span Click to expand
-          .hc-image(style="padding-bottom: 0px;")
-            img(src='/images/empty.png', data-src="/images/slope-comm-trade.png", style="max-width: 900px;")
+          div.info-fullscreen
+            h3.hc-feature-title Governance helped trade and commerce shape the world
+            p.hc-feature-lead Simply, Governance is a rules engine that enforces contracts and laws which in return injects trust into markets that require trust – markets like trade and commerce. History has shown us that as trust increases, the amount of trade and commerce increases too.
+            .mobile-image
+              div.click-message
+                div.message-container
+                  i.ion-arrow-expand
+                  span Click to expand
+            .hc-image(style="padding-bottom: 0px;")
+              img(src='/images/empty.png', data-src="/images/slope-comm-trade.png", style="max-width: 900px;")
 
       #trusted-governance.hc-feature.over-rel.padding.inverted
         .hc-chunk.hc-customize-text-wrapper
@@ -363,30 +370,32 @@ block content
 
     section
 
-      #governance-branches.hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
+      #governance-branches.hc-feature.over-rel.padding(style="border-bottom: 2px dashed grey;")
         .hc-chunk.hc-customize-text-wrapper
-          h3.hc-feature-title The Four Branches of Storecoin Governance
-          p.hc-feature-lead Governance is inspired by the checks and balances of the United States Constitution. Storecoin’s Governance ensures that a) there is no centralization of power for protocol-level changes, b) security matters most, and c) monetary policy requires Governance approval (there is no Fed).
-          .mobile-image
-            div.click-message
-              div.message-container
-                i.ion-arrow-expand
-                span Click to expand
-          .hc-image(style="padding-bottom: 0px;")
-            img(src='/images/empty.png', data-src="/images/4branches-gov.png", style="max-width: 900px;")
+          div.info-fullscreen
+            h3.hc-feature-title The Four Branches of Storecoin Governance
+            p.hc-feature-lead Governance is inspired by the checks and balances of the United States Constitution. Storecoin’s Governance ensures that a) there is no centralization of power for protocol-level changes, b) security matters most, and c) monetary policy requires Governance approval (there is no Fed).
+            .mobile-image
+              div.click-message
+                div.message-container
+                  i.ion-arrow-expand
+                  span Click to expand
+            .hc-image(style="padding-bottom: 0px;")
+              img(src='/images/empty.png', data-src="/images/4branches-gov.png", style="max-width: 900px;")
 
-      #governance-hired.hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
+      #governance-hired.hc-feature.over-rel.padding(style="border-bottom: 2px dashed grey;")
         .hc-chunk.hc-customize-text-wrapper
-          h3.hc-feature-title How Governance is Hired
-            span(style="font-size:0.8em; color: grey; margin-left:0.2em;") (and fired)
-          p.hc-feature-lead For the first four years – until 5/27/2021 – the Storecoin organization has executive power over the blockchain. After this launch date, Governance will vote on all protocol-level, key people, and monetary policy decisions.
-          .mobile-image
-            div.click-message
-              div.message-container
-                i.ion-arrow-expand
-                span Click to expand
-          .hc-image(style="padding-bottom: 0px;")
-            img(src='/images/empty.png', data-src="/images/how-gov-hired-v2.png", style="max-width: 900px;")
+          div.info-fullscreen
+            h3.hc-feature-title How Governance is Hired
+              span(style="font-size:0.8em; color: grey; margin-left:0.2em;") (and fired)
+            p.hc-feature-lead For the first four years – until 5/27/2021 – the Storecoin organization has executive power over the blockchain. After this launch date, Governance will vote on all protocol-level, key people, and monetary policy decisions.
+            .mobile-image
+              div.click-message
+                div.message-container
+                  i.ion-arrow-expand
+                  span Click to expand
+            .hc-image(style="padding-bottom: 0px;")
+              img(src='/images/empty.png', data-src="/images/how-gov-hired-v2.png", style="max-width: 900px;")
 
       .hc-feature.over-rel.padding.inverted.highlight(style="padding:2em;")
         .hc-chunk.hc-customize-text-wrapper
@@ -395,17 +404,18 @@ block content
             img(src='/images/empty.png', data-src="/images/icon-darkbg.png", style="height: 1em;")
             |  Governance enables any issue to reach finality with consensus
 
-      #token-owner.hc-feature.over-rel.padding.info-fullscreen
+      #token-owner.hc-feature.over-rel.padding
         .hc-chunk.hc-customize-text-wrapper
-          h3.hc-feature-title How Every Storecoin Token Owner Can Create Change
-          div.sub-text.italics.color-red (Democracy)
-          .mobile-image
-            div.click-message
-              div.message-container
-                i.ion-arrow-expand
-                span Click to expand
-          .hc-image(style="padding-bottom: 0px;")
-            img(src='/images/empty.png', data-src="/images/how-token-owner-crate-v2.png", style="max-width: 900px;")
+          div.info-fullscreen
+            h3.hc-feature-title How Every Storecoin Token Owner Can Create Change
+            div.sub-text.italics.color-red (Democracy)
+            .mobile-image
+              div.click-message
+                div.message-container
+                  i.ion-arrow-expand
+                  span Click to expand
+            .hc-image(style="padding-bottom: 0px;")
+              img(src='/images/empty.png', data-src="/images/how-token-owner-crate-v2.png", style="max-width: 900px;")
 
       .hc-feature.over-rel.padding.inverted.highlight(style="padding:2em;")
         .hc-chunk.hc-customize-text-wrapper
@@ -423,31 +433,33 @@ block content
 
     section
 
-      #governance-look.hc-feature.over-rel.padding.info-fullscreen(style="border-bottom: 2px dashed grey;")
+      #governance-look.hc-feature.over-rel.padding(style="border-bottom: 2px dashed grey;")
         .hc-chunk.hc-customize-text-wrapper
-          h3.hc-feature-title How Governance Would Look
-            span(style="font-weight: 300;")  – if not censorship resistant
-          p.hc-feature-lead The centralized way, using an app hosted by a centralized entity
-          .mobile-image
-            div.click-message
-              div.message-container
-                i.ion-arrow-expand
-                span Click to expand
-          .hc-image(style="padding-bottom: 0px;")
-            img(src='/images/empty.png', data-src="/images/how-gov-look.png", style="max-width: 900px;")
+          div.info-fullscreen
+            h3.hc-feature-title How Governance Would Look
+              span(style="font-weight: 300;")  – if not censorship resistant
+            p.hc-feature-lead The centralized way, using an app hosted by a centralized entity
+            .mobile-image
+              div.click-message
+                div.message-container
+                  i.ion-arrow-expand
+                  span Click to expand
+            .hc-image(style="padding-bottom: 0px;")
+              img(src='/images/empty.png', data-src="/images/how-gov-look.png", style="max-width: 900px;")
 
-      #censorship-resistent.hc-feature.over-rel.padding.info-fullscreen
+      #censorship-resistent.hc-feature.over-rel.padding
         .hc-chunk.hc-customize-text-wrapper
-          h3.hc-feature-title How a Censorship Resistant Storecoin Governance Works
-          p.hc-feature-lead The decentralized way with a dApp hosted by Govnodes worldwide
-          .mobile-image
-            div.click-message
-              div.message-container
-                i.ion-arrow-expand
-                span Click to expand
-          .hc-image(style="padding-bottom: 0px;")
-            img(src='/images/empty.png', data-src="/images/how-cenres-gov-work.png", style="max-width: 900px;")
-          p.footer-text(style="text-align: right; max-width: 900px; margin: 1em auto 0;") *Inspired by Angelo Milan’s work
+          div.info-fullscreen
+            h3.hc-feature-title How a Censorship Resistant Storecoin Governance Works
+            p.hc-feature-lead The decentralized way with a dApp hosted by Govnodes worldwide
+            .mobile-image
+              div.click-message
+                div.message-container
+                  i.ion-arrow-expand
+                  span Click to expand
+            .hc-image(style="padding-bottom: 0px;")
+              img(src='/images/empty.png', data-src="/images/how-cenres-gov-work.png", style="max-width: 900px;")
+            p.footer-text(style="text-align: right; max-width: 900px; margin: 1em auto 0;") *Inspired by Angelo Milan’s work
 
     .hc-feature.over-rel.padding.pink.section-heading
       .row
@@ -470,17 +482,18 @@ block content
       //-     .hc-image(style="padding-bottom: 0px;")
       //-       img(src='/images/empty.png', data-src="/images/api-background.png", style="max-width: 900px;")
 
-      #trust-in-stores.hc-feature.over-rel.padding.info-fullscreen
+      #trust-in-stores.hc-feature.over-rel.padding
         .hc-chunk.hc-customize-text-wrapper
-          h3.hc-feature-title(style="margin-bottom: 0px;") How trust in STORE grows STORE into new environments
-          p.hc-feature-lead(style="margin-top: 0px;") (into new design spaces)
-          .mobile-image
-            div.click-message
-              div.message-container
-                i.ion-arrow-expand
-                span Click to expand
-          .hc-image(style="padding-bottom: 0px;")
-            img(src='/images/empty.png', data-src="/images/slope-trust.png", style="max-width: 900px;")
+          div.info-fullscreen
+            h3.hc-feature-title(style="margin-bottom: 0px;") How trust in STORE grows STORE into new environments
+            p.hc-feature-lead(style="margin-top: 0px;") (into new design spaces)
+            .mobile-image
+              div.click-message
+                div.message-container
+                  i.ion-arrow-expand
+                  span Click to expand
+            .hc-image(style="padding-bottom: 0px;")
+              img(src='/images/empty.png', data-src="/images/slope-trust.png", style="max-width: 900px;")
 
       include network-effects-trust
 
@@ -504,16 +517,17 @@ block content
           |  Because governments around the world won't trade their finance and banking laws for the innovation potential of p2p payments.
          p.hc-feature-lead(style="margin-bottom:0px;") With KYC/AML data for its decentralized workers, Storecoin software nodes will be regulatory-compliant on a country-by-country-basis giving the Storecoin blockchain a unique advantage to being embedded in traditional banking and financial infrastructure around the world.
 
-      #global-compliance.hc-feature.over-rel.padding.info-fullscreen
+      #global-compliance.hc-feature.over-rel.padding
        .hc-chunk.hc-customize-text-wrapper
-         h3.hc-feature-title How global KYC/AML compliance grows adoption
-         .mobile-image
-           div.click-message
-             div.message-container
-               i.ion-arrow-expand
-               span Click to expand
-         .hc-image(style="padding-bottom: 0px;")
-           img(src='/images/empty.png', data-src="/images/slope-adoption.png", style="max-width: 900px;")
+         div.info-fullscreen
+           h3.hc-feature-title How global KYC/AML compliance grows adoption
+           .mobile-image
+             div.click-message
+               div.message-container
+                 i.ion-arrow-expand
+                 span Click to expand
+           .hc-image(style="padding-bottom: 0px;")
+             img(src='/images/empty.png', data-src="/images/slope-adoption.png", style="max-width: 900px;")
 
       #storecoin-ecosystem.hc-feature.over-rel.padding.inverted
         .hc-chunk.hc-customize-text-wrapper
