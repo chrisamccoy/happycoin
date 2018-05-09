@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Modification incase of news.storeco.in
+// Modification incase of news or other subdomains
 app.use(function(req, res, next) {
   var host = req.headers.host;
 
@@ -32,7 +32,12 @@ app.use(function(req, res, next) {
     var url = val,
         subdomains = [
           'news.storeco.in',
-          'tokensale3.storeco.in'
+          'tokensale3.storeco.in',
+          'tokensale69.storeco.in',
+          'tokensale99.storeco.in',
+          'tokensale129.storeco.in',
+          'tokensale149.storeco.in',
+          'tokensale199.storeco.in'
         ];
 
     subdomains.forEach(function(sd) {

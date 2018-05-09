@@ -18,6 +18,32 @@ router.get('/tokensale3', function(req, res, next) {
   res.render('tokensale3', { title: 'Storecoin', meta: meta() });
 });
 
+/* GET tokensale69 page. */
+router.get('/tokensale69', function(req, res, next) {
+  res.render('tokensale3', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET tokensale99 page. */
+router.get('/tokensale99', function(req, res, next) {
+  res.render('tokensale3', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET tokensale129 page. */
+router.get('/tokensale129', function(req, res, next) {
+  res.render('tokensale3', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET tokensale149 page. */
+router.get('/tokensale149', function(req, res, next) {
+  res.render('tokensale3', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET tokensale199 page. */
+router.get('/tokensale199', function(req, res, next) {
+  res.render('tokensale3', { title: 'Storecoin', meta: meta() });
+});
+
+
 /* GET home page. */
 router.get('/tenyears', function(req, res, next) {
   res.render('coming-soon', { title: 'Storecoin', meta: meta() });
