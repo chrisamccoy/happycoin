@@ -5,120 +5,113 @@
     p.hc-feature-lead Dynamic Proof of Stake is made up of six interdependent engines.
 
     p.hc-feature-lead Each engine is based on similar dynamic supply and demand principles as Uber Surge Pricing. 
-      //- a.underline.open-modal.orange-color(data-modal="#dypos-modal", data-goto="0") 
-      //-   b Storecoin Security System.
-
-    //- p.hc-feature-lead Governance in DyPoS is inspired by the checks and balances of the U.S. Constitution. Govnodes – a new type of Worker – ensures that Governance is decentralized.
-    
-    //- div.click-message
-    //-   div.message-container
-    //-     span Click a Card to Learn More
       
-    div.desktop-image      
-      div.engines
-        div.engine
-          .front
-            img(src='/images/empty.png', data-src="/images/dynamic-transactions-v2.png")
-            div.title Dynamic (Zero Fee) Transactions
-          .back
-            h5 Dynamic (Zero Fee) Transactions
-            p Transactions are free forever for users, developers, and merchants. This removes the friction and complexity associated with transaction fees. The cost of transaction processing is paid for by annual, dynamic inflation capped at 6%. To ensure security of the network however, a small security bond is required with each transaction, which is returned to the sender, once the transaction is deemed to be legitimate and not a spam or DDoS attack.
-            //- a.engine-learn-more.open-modal(data-modal="#dypos-modal", data-goto="4") Learn More
-        div.engine.right
-          .front
-            img(src='/images/empty.png', data-src="/images/lc-connected.png")
-            div.title Dynamic Validation (BlockFin algorithm)
-          .back
-            h5 Dynamic Validation (BlockFin algorithm)
-            p A leaderless, parallel block assembly and validation process ensures continuous transaction finalization, which results in high throughput. BlockFin is the only true decentralized consensus algorithm because of its leader/delegation-free consensus engine.  Validators share block rewards proportional to their work done in the block validation process. This means every validator earns a reward for every block they help process. This is a breakthrough in the economics of consensus algorithms
-            //- a.engine-learn-more.open-modal(data-modal="#dypos-modal", data-goto="6") Learn More
-      div.engines
-        div.engine
-          .front
-            img(src='/images/empty.png', data-src="/images/dynamic-rewards-v2.png")
-            div.title Dynamic Block Rewards
-          .back
-            h5 Dynamic Block Rewards
-            p Dynamic, yearly token inflation capped at 6% pays out block rewards to four type of decentralized workers: Validators, Masternodes, dGuards, and Govnodes. Block rewards are determined by the percentage of staking amongst the decentralized workforce. For example if 51% of the circulating token supply is staked by dWorkers, inflationary rewards will be 5%. Rewards are paid out as follows: 80% to process consensus and to scale the blockchain; 20% for on-chain security, on-chain governance, and off-chain blockchain operations – forever.
-            //- a.engine-learn-more.open-modal(data-modal="#dypos-modal", data-goto="8") Learn More
-        div.engine.right
-          .front
-            img(src='/images/empty.png', data-src="/images/dynamic-security-v2.png")
-            div.title Dynamic Security
-          .back
-            h5 Dynamic Security
-            p Decentralized Security Guards (dGuards) secure the protocol by running full nodes to monitor all transactions and dWorker activity. They're rewarded with 100% of the burnt stake of bond from the "bad" actors. Also, a Threat Level System determines the prices for all network activity, making the cost of attacking the network increasingly greater as the Threat Levels increase. Finally, security bonds are required to be sent with each transaction. This mitigates transaction spam and DDoS attacks.
-            //- a.engine-learn-more.open-modal(data-modal="#dypos-modal", data-goto="0") Learn More
-      div.engines
-        div.engine
-          .front
-            img(src='/images/empty.png', data-src="/images/dynamic-scaling-v2.png")
-            div.title Scaling with eAgents (Level 2 scaling)
-          .back
-            h5 Scaling with eAgents (Level 2 scaling)
-            p As the number of validators increases the block validation process slows down. In order to scale the transaction throughput and make block validation instant with unlimited validator participation, Storecoin introduces a special type of worker called, encrypted agent or eAgent. eAgents validate blocks on behalf of their configured validators. Hundreds of eAgents are run alongside each other in secure containers called Masternodes thus alleviating the need for expensive network calls. So, the blocks are assembled and validated in constant time independent of the number of validators participating in the network. This brings scaling and decentralization, which are typically at the two opposite ends, together.
-            //- a.engine-learn-more.open-modal(data-modal="#dypos-modal", data-goto="10") Learn More
-        div.engine
-          .front
-            img(src='/images/empty.png', data-src="/images/dynamic-governance-v2.png")
-            div.title Governance with Checks and Balances
-          .back
-            h5 Governance with Checks and Balances
-            p Storecoin Governance is inspired by the checks and balances of the United States Constitution. Governance ensures that a) there is no centralization of power for protocol-level changes, b) security matters most, and c) monetary policy requires Governance approval so there is no Fed-like system. For the first four years, Storecoin will have executive power over the blockchain. After four years, Governance will decide all changes. Governance itself will be censorship resistant as the voting and messaging powering the checks and balances-based Governance will be hosted in a dApp by Govnodes around the world.
-            //- a.engine-learn-more.open-modal(data-modal="#dypos-modal", data-goto="12") Learn More
-    div.mobile-image
-      div.engines
-        div.engine.open-modal(data-modal="#dypos-modal", data-goto="0")
-          .front
-            img(src='/images/empty.png', data-src="/images/dynamic-transactions-v2.png")
-            div.title Dynamic (Zero Fee) Transactions
-          .back
-            h5 Dynamic (Zero Fee) Transactions
-            p Transactions are free forever for users, developers, and merchants. This removes the friction and complexity associated with transaction fees. The cost of transaction processing is paid for by annual, dynamic inflation capped at 6%. To ensure security of the network however, a small security bond is required with each transaction, which is returned to the sender, once the transaction is deemed to be legitimate and not a spam or DDoS attack.
-            //- a.engine-learn-more.open-modal(data-modal="#dypos-modal") Learn More
-        div.engine.right.open-modal(data-modal="#dypos-modal", data-goto="1")
-          .front
-            img(src='/images/empty.png', data-src="/images/lc-connected.png")
-            div.title Dynamic Validation (BlockFin algorithm)
-          .back
-            h5 Dynamic Validation (BlockFin algorithm)
-            p A leaderless, parallel block assembly and validation process ensures continuous transaction finalization, which results in high throughput. BlockFin is the only true decentralized consensus algorithm because of its leader/delegation-free consensus engine.  Validators share block rewards proportional to their work done in the block validation process. This means every validator earns a reward for every block they help process. This is a breakthrough in the economics of consensus algorithms.
-            //- p An unlimited number of Validators can participate in the consensus. This leader-less consensus is comparable to community consensus versus competitive consensus, which maximizes decentralization and rewards all Work proportional to Effort. Also, each Validator has an eAgent that functions within a Master Node network for high throughput.
-            //- a.engine-learn-more.open-modal(data-modal="#dypos-modal") Learn More
-      div.engines
-        div.engine.open-modal(data-modal="#dypos-modal", data-goto="2")
-          .front
-            img(src='/images/empty.png', data-src="/images/dynamic-rewards-v2.png")
-            div.title Dynamic Block Rewards
-          .back
-            h5 Dynamic Block Rewards
-            p Dynamic, yearly token inflation capped at 6% pays out block rewards to four type of decentralized workers: Validators, Masternodes, dGuards, and Govnodes. Block rewards are determined by the percentage of staking amongst the decentralized workforce. For example if 51% of the circulating token supply is staked by dWorkers, inflationary rewards will be 5%. Rewards are paid out as follows: 80% to process consensus and to scale the blockchain; 20% for on-chain security, on-chain governance, and off-chain blockchain operations – forever.
-            //- a.engine-learn-more.open-modal(data-modal="#dypos-modal") Learn More
-        div.engine.right.open-modal(data-modal="#dypos-modal", data-goto="3")
-          .front
-            img(src='/images/empty.png', data-src="/images/dynamic-security-v2.png")
-            div.title Dynamic Security
-          .back
-            h5 Dynamic Security
-            p Decentralized Security Guards (dGuards) secure the protocol by running full nodes to monitor all transactions and dWorker activity. They're rewarded with 100% of the burnt stake of bond from the "bad" actors. Also, a Threat Level System determines the prices for all network activity, making the cost of attacking the network increasingly greater as the Threat Levels increase. Finally, security bonds are required to be sent with each transaction. This mitigates transaction spam and DDoS attacks.
-            //- a.engine-learn-more Learn More
-      div.engines
-        div.engine.open-modal(data-modal="#dypos-modal", data-goto="4")
-          .front
-            img(src='/images/empty.png', data-src="/images/dynamic-scaling-v2.png")
-            div.title Scaling with eAgents (Level 2 scaling)
-          .back
-            h5 Scaling with eAgents (Level 2 scaling)
-            p As the number of validators increases the block validation process slows down. In order to scale the transaction throughput and make block validation instant with unlimited validator participation, Storecoin introduces a special type of worker called, encrypted agent or eAgent. eAgents validate blocks on behalf of their configured validators. Hundreds of eAgents are run alongside each other in secure containers called Masternodes thus alleviating the need for expensive network calls. So, the blocks are assembled and validated in constant time independent of the number of validators participating in the network. This brings scaling and decentralization, which are typically at the two opposite ends, together.
-            //- a.engine-learn-more.open-modal(data-modal="#dypos-modal") Learn More
-        div.engine.open-modal(data-modal="#dypos-modal", data-goto="5")
-          .front
-            img(src='/images/empty.png', data-src="/images/dynamic-governance-v2.png")
-            div.title Governance with Checks and Balances
-          .back
-            h5 Governance with Checks and Balances
-            p Storecoin Governance is inspired by the checks and balances of the United States Constitution. Governance ensures that a) there is no centralization of power for protocol-level changes, b) security matters most, and c) monetary policy requires Governance approval so there is no Fed-like system. For the first four years, Storecoin will have executive power over the blockchain. After four years, Governance will decide all changes. Governance itself will be censorship resistant as the voting and messaging powering the checks and balances-based Governance will be hosted in a dApp by Govnodes around the world.
-            //- a.engine-learn-more.open-modal(data-modal="#dypos-modal") Learn More
+    div.engine-container
+      div.desktop-image      
+        div.engines
+          div.engine
+            .front
+              img(src='/images/empty.png', data-src="/images/dynamic-transactions-v2.png")
+              div.title Dynamic (Zero Fee) Transactions
+            .back
+              h5 Dynamic (Zero Fee) Transactions
+              p Transactions are free forever for users, developers, and merchants. This removes the friction and complexity associated with transaction fees. The cost of transaction processing is paid for by annual, dynamic inflation capped at 6%. To ensure security of the network however, a small security bond is required with each transaction, which is returned to the sender, once the transaction is deemed to be legitimate and not a spam or DDoS attack.
+              //- a.engine-learn-more.open-modal(data-modal="#dypos-modal", data-goto="4") Learn More
+          div.engine.right
+            .front
+              img(src='/images/empty.png', data-src="/images/lc-connected.png")
+              div.title Dynamic Validation (BlockFin algorithm)
+            .back
+              h5 Dynamic Validation (BlockFin algorithm)
+              p A leaderless, parallel block assembly and validation process ensures continuous transaction finalization, which results in high throughput. BlockFin is the only true decentralized consensus algorithm because of its leader/delegation-free consensus engine.  Validators share block rewards proportional to their work done in the block validation process. This means every validator earns a reward for every block they help process. This is a breakthrough in the economics of consensus algorithms
+              //- a.engine-learn-more.open-modal(data-modal="#dypos-modal", data-goto="6") Learn More
+        div.engines
+          div.engine
+            .front
+              img(src='/images/empty.png', data-src="/images/dynamic-rewards-v2.png")
+              div.title Dynamic Block Rewards
+            .back
+              h5 Dynamic Block Rewards
+              p Dynamic, yearly token inflation capped at 6% pays out block rewards to four type of decentralized workers: Validators, Masternodes, dGuards, and Govnodes. Block rewards are determined by the percentage of staking amongst the decentralized workforce. For example if 51% of the circulating token supply is staked by dWorkers, inflationary rewards will be 5%. Rewards are paid out as follows: 80% to process consensus and to scale the blockchain; 20% for on-chain security, on-chain governance, and off-chain blockchain operations – forever.
+              //- a.engine-learn-more.open-modal(data-modal="#dypos-modal", data-goto="8") Learn More
+          div.engine.right
+            .front
+              img(src='/images/empty.png', data-src="/images/dynamic-security-v2.png")
+              div.title Dynamic Security
+            .back
+              h5 Dynamic Security
+              p Decentralized Security Guards (dGuards) secure the protocol by running full nodes to monitor all transactions and dWorker activity. They're rewarded with 100% of the burnt stake of bond from the "bad" actors. Also, a Threat Level System determines the prices for all network activity, making the cost of attacking the network increasingly greater as the Threat Levels increase. Finally, security bonds are required to be sent with each transaction. This mitigates transaction spam and DDoS attacks.
+              //- a.engine-learn-more.open-modal(data-modal="#dypos-modal", data-goto="0") Learn More
+        div.engines
+          div.engine
+            .front
+              img(src='/images/empty.png', data-src="/images/dynamic-scaling-v2.png")
+              div.title Scaling with eAgents (Level 2 scaling)
+            .back
+              h5 Scaling with eAgents (Level 2 scaling)
+              p As the number of validators increases the block validation process slows down. In order to scale the transaction throughput and make block validation instant with unlimited validator participation, Storecoin introduces a special type of worker called, encrypted agent or eAgent. eAgents validate blocks on behalf of their configured validators. Hundreds of eAgents are run alongside each other in secure containers called Masternodes thus alleviating the need for expensive network calls. So, the blocks are assembled and validated in constant time independent of the number of validators participating in the network. This brings scaling and decentralization, which are typically at the two opposite ends, together.
+              //- a.engine-learn-more.open-modal(data-modal="#dypos-modal", data-goto="10") Learn More
+          div.engine
+            .front
+              img(src='/images/empty.png', data-src="/images/dynamic-governance-v2.png")
+              div.title Governance with Checks and Balances
+            .back
+              h5 Governance with Checks and Balances
+              p Storecoin Governance is inspired by the checks and balances of the United States Constitution. Governance ensures that a) there is no centralization of power for protocol-level changes, b) security matters most, and c) monetary policy requires Governance approval so there is no Fed-like system. For the first four years, Storecoin will have executive power over the blockchain. After four years, Governance will decide all changes. Governance itself will be censorship resistant as the voting and messaging powering the checks and balances-based Governance will be hosted in a dApp by Govnodes around the world.
+              //- a.engine-learn-more.open-modal(data-modal="#dypos-modal", data-goto="12") Learn More
+      div.mobile-image
+        div.engines
+          div.engine.open-modal(data-modal="#dypos-modal", data-goto="0")
+            .front
+              img(src='/images/empty.png', data-src="/images/dynamic-transactions-v2.png")
+              div.title Dynamic (Zero Fee) Transactions
+            .back
+              h5 Dynamic (Zero Fee) Transactions
+              p Transactions are free forever for users, developers, and merchants. This removes the friction and complexity associated with transaction fees. The cost of transaction processing is paid for by annual, dynamic inflation capped at 6%. To ensure security of the network however, a small security bond is required with each transaction, which is returned to the sender, once the transaction is deemed to be legitimate and not a spam or DDoS attack.
+              //- a.engine-learn-more.open-modal(data-modal="#dypos-modal") Learn More
+          div.engine.right.open-modal(data-modal="#dypos-modal", data-goto="1")
+            .front
+              img(src='/images/empty.png', data-src="/images/lc-connected.png")
+              div.title Dynamic Validation (BlockFin algorithm)
+            .back
+              h5 Dynamic Validation (BlockFin algorithm)
+              p A leaderless, parallel block assembly and validation process ensures continuous transaction finalization, which results in high throughput. BlockFin is the only true decentralized consensus algorithm because of its leader/delegation-free consensus engine.  Validators share block rewards proportional to their work done in the block validation process. This means every validator earns a reward for every block they help process. This is a breakthrough in the economics of consensus algorithms.
+              //- p An unlimited number of Validators can participate in the consensus. This leader-less consensus is comparable to community consensus versus competitive consensus, which maximizes decentralization and rewards all Work proportional to Effort. Also, each Validator has an eAgent that functions within a Master Node network for high throughput.
+              //- a.engine-learn-more.open-modal(data-modal="#dypos-modal") Learn More
+        div.engines
+          div.engine.open-modal(data-modal="#dypos-modal", data-goto="2")
+            .front
+              img(src='/images/empty.png', data-src="/images/dynamic-rewards-v2.png")
+              div.title Dynamic Block Rewards
+            .back
+              h5 Dynamic Block Rewards
+              p Dynamic, yearly token inflation capped at 6% pays out block rewards to four type of decentralized workers: Validators, Masternodes, dGuards, and Govnodes. Block rewards are determined by the percentage of staking amongst the decentralized workforce. For example if 51% of the circulating token supply is staked by dWorkers, inflationary rewards will be 5%. Rewards are paid out as follows: 80% to process consensus and to scale the blockchain; 20% for on-chain security, on-chain governance, and off-chain blockchain operations – forever.
+              //- a.engine-learn-more.open-modal(data-modal="#dypos-modal") Learn More
+          div.engine.right.open-modal(data-modal="#dypos-modal", data-goto="3")
+            .front
+              img(src='/images/empty.png', data-src="/images/dynamic-security-v2.png")
+              div.title Dynamic Security
+            .back
+              h5 Dynamic Security
+              p Decentralized Security Guards (dGuards) secure the protocol by running full nodes to monitor all transactions and dWorker activity. They're rewarded with 100% of the burnt stake of bond from the "bad" actors. Also, a Threat Level System determines the prices for all network activity, making the cost of attacking the network increasingly greater as the Threat Levels increase. Finally, security bonds are required to be sent with each transaction. This mitigates transaction spam and DDoS attacks.
+              //- a.engine-learn-more Learn More
+        div.engines
+          div.engine.open-modal(data-modal="#dypos-modal", data-goto="4")
+            .front
+              img(src='/images/empty.png', data-src="/images/dynamic-scaling-v2.png")
+              div.title Scaling with eAgents (Level 2 scaling)
+            .back
+              h5 Scaling with eAgents (Level 2 scaling)
+              p As the number of validators increases the block validation process slows down. In order to scale the transaction throughput and make block validation instant with unlimited validator participation, Storecoin introduces a special type of worker called, encrypted agent or eAgent. eAgents validate blocks on behalf of their configured validators. Hundreds of eAgents are run alongside each other in secure containers called Masternodes thus alleviating the need for expensive network calls. So, the blocks are assembled and validated in constant time independent of the number of validators participating in the network. This brings scaling and decentralization, which are typically at the two opposite ends, together.
+              //- a.engine-learn-more.open-modal(data-modal="#dypos-modal") Learn More
+          div.engine.open-modal(data-modal="#dypos-modal", data-goto="5")
+            .front
+              img(src='/images/empty.png', data-src="/images/dynamic-governance-v2.png")
+              div.title Governance with Checks and Balances
+            .back
+              h5 Governance with Checks and Balances
+              p Storecoin Governance is inspired by the checks and balances of the United States Constitution. Governance ensures that a) there is no centralization of power for protocol-level changes, b) security matters most, and c) monetary policy requires Governance approval so there is no Fed-like system. For the first four years, Storecoin will have executive power over the blockchain. After four years, Governance will decide all changes. Governance itself will be censorship resistant as the voting and messaging powering the checks and balances-based Governance will be hosted in a dApp by Govnodes around the world.
+              //- a.engine-learn-more.open-modal(data-modal="#dypos-modal") Learn More
 
   div.engine-modals            
     div#dypos-modal.engine-modal.ui.modal
