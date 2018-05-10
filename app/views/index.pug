@@ -546,7 +546,7 @@ block content
           h3.hc-feature-title The Storecoin Ecosystem Fund
           p.hc-feature-lead Storecoin’s Ecosystem Fund will make equity-based investments into application-based companies that may be early Storecoin developers. From Storecoin’s 33% Incentivization Pool, developers will also be awarded STORE tokens to kickstart their
            = ' '
-           img(src="/images/empty.png", data-src="/images/storecoin-logo.png", style="margin-left: 0px; height: 22px; vertical-align: baseline;")
+           img(src="/images/empty.png", data-src="/images/storecoin-logo.png")
            |  Wallet networks. Storecoin can also airdrop tokens into the Wallets of users from its ecosystem funded companies, further growing the use of STORE.
           .hc-image
             img(src="/images/ecosystem-fund.png", style="max-width:900px;")
@@ -565,9 +565,13 @@ block content
     #help-grow.hc-feature.over-rel.padding.pink.inverted.module
      .hc-chunk.hc-customize-text-wrapper
        h3.hc-feature-title Help grow the Storecoin Community, Earn a (Pomelo) Tee
-       .hc-image
-         img(src='/images/empty.png', data-src="/images/pomelo-tee.png", style="max-width: 500px;")
-       p.hc-feature-lead(style="margin-bottom: 0px;") Start at
+       .desktop-image
+         .hc-image
+           img(src='/images/empty.png', data-src="/images/pomelo-tee.png", style="max-width: 500px;")
+       .mobile-image
+         .hc-image
+           img(src='/images/empty.png', data-src="/images/pomelo-tee-mobile.png", style="max-width: 500px;")
+       p.hc-feature-lead Start at
         = ' '
         a.underline(href="http://storeco.in/tee") http://storeco.in/tee
 
@@ -578,19 +582,19 @@ block content
          div.item
            .hc-image
              img(src='/images/empty.png', data-src="/images/twitter-2.png", style="max-width: 250px;")
-           p.hc-feature-lead(style="margin-bottom: 0px;")
+           p.hc-feature-lead
             a.underline(href="http://twitter.com/storecoin") http://twitter.com/storecoin
 
          div.item
           .hc-image
             img(src='/images/empty.png', data-src="/images/telegram.png", style="max-width: 250px;")
-          p.hc-feature-lead(style="margin-bottom: 0px;")
+          p.hc-feature-lead
            a.underline(href="http://t.me/storecoin") http://t.me/storecoin
 
          div.item
            .hc-image
              img(src='/images/empty.png', data-src="/images/email.png", style="max-width: 250px;")
-           p.hc-feature-lead(style="margin-bottom: 0px;")
+           p.hc-feature-lead
             a.underline(href="http://storeco.in/community") http://storeco.in/community
 
     #build-app.hc-feature.over-rel.padding.lite.module
@@ -598,7 +602,7 @@ block content
        h3.hc-feature-title Build your app on top of Storecoin
        .hc-image
          img(src='/images/empty.png', data-src="/images/logo.png", style="max-width: 150px;")
-       p.hc-feature-lead(style="margin-bottom: 0px;")
+       p.hc-feature-lead
         a.underline(href="/developer") http://storeco.in/developer
 
     #contribute-code.hc-feature.over-rel.padding.module
@@ -606,7 +610,7 @@ block content
        h3.hc-feature-title Contribute Code to Storecoin 
        .hc-image
          img(src='/images/empty.png', data-src="/images/li-code.png", style="max-width: 150px;")
-       p.hc-feature-lead(style="margin-bottom: 0px;")
+       p.hc-feature-lead
         a.underline(href="/code") http://storeco.in/code
 
     #dev-notes.hc-feature.over-rel.padding.lite.module
@@ -614,7 +618,7 @@ block content
        h3.hc-feature-title Subcribe to Engineering Notes
        .hc-image
          img(src='/images/empty.png', data-src="/images/devnotes.png", style="max-width: 150px;")
-       p.hc-feature-lead(style="margin-bottom: 0px;")
+       p.hc-feature-lead
         a.underline(href="/devnotes") http://storeco.in/devnotes
 
     #research-paper.hc-feature.over-rel.inverted.padding.module
@@ -622,7 +626,7 @@ block content
        h3.hc-feature-title Peer Review upcoming Research
        .hc-image
          img(src='/images/empty.png', data-src="/images/active-search.png", style="max-width: 150px;")
-       p.hc-feature-lead(style="margin-bottom: 0px;")
+       p.hc-feature-lead
         a.underline(href="/review") http://storeco.in/review
 
     //-
@@ -733,7 +737,7 @@ block content
         h3.hc-feature-title Help Validate the future Storecoin Blockchain
         .hc-image
           img(src='/images/empty.png', data-src="/images/validate-icon.png", style="max-width:200px;width:100%;background: white;border-radius: 15px;padding: 0px 1em;")
-        p.hc-feature-lead(style=" margin-bottom:0px !important;") Apply at
+        p.hc-feature-lead Apply at
           = ' '
           a.underline(href="http://storeco.in/validate", target="_blank") http://storeco.in/validate
 
@@ -741,8 +745,8 @@ block content
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Become a dGuard to keep Storecoin secure
         .hc-image
-          img(src='/images/empty.png', data-src="/images/dguard-icon.png", style="max-width:200px; width:100%;")
-        p.hc-feature-lead(style=" margin-bottom:0px !important; color:#5d794c;") Apply at
+          img(src='/images/empty.png', data-src="/images/dguard-icon-v2.png", style="max-width:200px; width:100%;")
+        p.hc-feature-lead(style="color:#5d794c;") Apply at
           = ' '
           a.underline(href="http://storeco.in/dguard", target="_blank") http://storeco.in/dguard
 
@@ -750,8 +754,8 @@ block content
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title Host eAgent Masternodes to scale Storecoin
         .hc-image
-          img(src='/images/empty.png', data-src="/images/eagent-icon.png", style="max-width:200px; width:100%;")
-        p.hc-feature-lead(style=" margin-bottom:0px !important; color:#5d794c;") Apply at
+          img(src='/images/empty.png', data-src="/images/eagent-icon-v2.png", style="max-width:200px; width:100%;")
+        p.hc-feature-lead(style="color:#5d794c;") Apply at
           = ' '
           a.underline(href="http://storeco.in/masternode", target="_blank") http://storeco.in/masternode
 
@@ -760,7 +764,7 @@ block content
         h3.hc-feature-title Run a Govnode on your phone to host Governance
         .hc-image
           img(src='/images/empty.png', data-src="/images/govnode-icon.png", style="max-width:200px;width:100%;background: white;border-radius: 15px;padding: 1em;")
-        p.hc-feature-lead(style=" margin-bottom:0px !important;") Apply at
+        p.hc-feature-lead Apply at
           = ' '
           a.underline(href="http://storeco.in/govnode", target="_blank") http://storeco.in/govnode
 

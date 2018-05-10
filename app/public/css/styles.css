@@ -733,6 +733,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media only screen and (max-width: 700px) {
+  .hc-feature.module p.hc-feature-lead {
+    margin-bottom: 0px;
+  }
+
+  .hc-feature.module .hc-image {
+    padding: 0.5em 0px;
+  }
+
   .hc-feature.inverted.banner {
     padding: 1em;
   }
@@ -1956,7 +1964,7 @@ and (max-width : 335px) {
 
 #project-schedule .timeline .year .items .item .box .content li i {
   font-size: 1em;
-  color:green;
+  color:#5d794c;
   margin-right: 0.5em;
 }
 
@@ -2070,7 +2078,11 @@ and (max-width : 335px) {
   }
 
   #project-schedule .timeline .year {
-    margin-top: 2rem;
+    margin-top: 4rem;
+  }
+
+  #project-schedule .timeline .year.extend {
+    margin-top: 5rem;
   }
 
   #project-schedule .timeline .year .full-date {
@@ -2088,7 +2100,7 @@ and (max-width : 335px) {
     -webkit-flex-basis: 100%;
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
-    margin: 3.6rem 0!important;
+    margin: 5rem 0!important;
   }
 
   #project-schedule .timeline .year .items .item .date {
@@ -2127,6 +2139,16 @@ and (max-width : 335px) {
   #project-schedule .timeline .year .items .item .date:before,
   #project-schedule .timeline .year .items .item:before {
     display: none;
+  }
+
+  #project-schedule .timeline .year .items .inverted.item .box .note {
+    position: absolute;
+    bottom: -1.7em;
+    left: 1em;
+    z-index: 2;
+    color: #333;
+    font-size: 0.9em;
+    background: rgb(199, 223, 184);
   }
 }
 /*--------------------------*/
@@ -6449,10 +6471,19 @@ and (max-width : 335px) {
   width: 95%;
 }
 
+#wallet-slider .slick-next,
+#wallet-slider .slick-prev {
+  top: calc(50% + 18px);
+}
+
 @media only screen and (max-width: 700px) {
   #wallet-slider .slide img {
     width: auto;
     height: 460px;
+  }
+
+  #wallet-slider .slick-track {
+    padding-bottom: 0px;
   }
 }
 
@@ -6931,7 +6962,7 @@ and (max-width : 335px) {
 }
 
 #engineering .roadmap .item .bullet .ion-checkmark {
-  color: green;
+  color: #5d794c;
 }
 
 #engineering .roadmap .item .text {
@@ -6980,7 +7011,7 @@ and (max-width : 335px) {
 }
 
 #major-milestones .milestones .month .item .text .ion-checkmark {
-  color: green;
+  color: #5d794c;
   margin-right: 0.5em;
   width: 20px;
   display: inline-block;
@@ -7436,6 +7467,10 @@ and (max-width : 335px) {
   #storecoin-ecosystem .hc-image img {
       width: 70%;
   }
+
+  #storecoin-ecosystem .hc-image {
+    margin: 1.5em auto 0px;
+  }
 }
 
 /* -------------------------- */
@@ -7472,7 +7507,11 @@ and (max-width : 335px) {
   }
 
   #engage-with-us .row .item {
-    margin: 1em 0;
+    margin: 1.4em 0;
+  }
+
+  #engage-with-us .row .item:last-child {
+    margin-bottom: 0px;
   }
 }
 
@@ -7753,4 +7792,11 @@ and (max-width : 335px) {
   #trusted-governance p.hc-feature-lead:last-child {
     margin-bottom: 0px;
   }
+}
+
+/* ecosystem-fund */
+#ecosystem-fund p.hc-feature-lead img {
+  margin-left: 0px;
+  height: 0.8em;
+  vertical-align: baseline;
 }
