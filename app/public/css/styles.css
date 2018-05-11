@@ -6846,11 +6846,11 @@ and (max-width : 335px) {
 
 /* --------------------------------- */
 #note {
-  padding: 1em 0px;
+  padding: 0.8em 0px;
 }
 
 #note .hc-feature-lead {
-  margin: 0.3em 0;
+  margin: 0;
   font-size: 1.3em;
 }
 

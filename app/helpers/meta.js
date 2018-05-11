@@ -1,5 +1,5 @@
 var data = {
-    url: 'http://storeco.in',
+    url: 'https://storeco.in',
     type: 'website',
     title: 'Storecoin',
     desc: 'Storecoin is a zero-fee, high throughput, and decentralized cryptocurrency with a Governance inspired by the U.S. Constitution.',
