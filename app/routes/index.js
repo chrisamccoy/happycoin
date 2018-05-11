@@ -69,6 +69,11 @@ router.get('/tee', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/messagenode', function(req, res, next) {
+  res.render('coming-soon', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
 router.get('/research', function(req, res, next) {
   var mt = meta({
     title : 'Storecoin Research',
