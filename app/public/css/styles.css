@@ -7286,8 +7286,10 @@ and (max-width : 335px) {
 
 #worker-types-timeline .row .text {
   position: absolute;
-  left: -100px;
+  left: -70px;
   font-weight: bold;
+  transform: rotate(-90deg);
+  line-height: 1;
 }
 
 #worker-types-timeline .row .item {
@@ -7297,11 +7299,11 @@ and (max-width : 335px) {
 }
 
 #worker-types-timeline .row .item:nth-child(2) {
-  width: 21%;
+  width: 17%;
 }
 
 #worker-types-timeline .row .item:nth-child(3) {
-  width: 23%;
+  width: 24%;
 }
 
 #worker-types-timeline .row .item:nth-child(4) {
@@ -7309,7 +7311,11 @@ and (max-width : 335px) {
 }
 
 #worker-types-timeline .row .item:nth-child(5) {
-  width: 19%;
+  width: 24%;
+}
+
+#worker-types-timeline .row .item:nth-child(6) {
+  width: 15%;
 }
 
 #worker-types-timeline .row .item span {

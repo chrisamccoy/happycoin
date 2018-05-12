@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var meta = require('../helpers/meta');
 var getblog = require('../helpers/blogs');
+var getTokenSale = require('../helpers/tokensales');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -15,32 +16,37 @@ router.get('/engineering', function(req, res, next) {
 
 /* GET Tokensale 3 page. */
 router.get('/tokensale3', function(req, res, next) {
-  res.render('tokensale3', { title: 'Storecoin', meta: meta() });
+  res.render('tokensale3', { title: 'Storecoin', meta: meta(), sale: getTokenSale('tokensale3') });
 });
 
 /* GET tokensale69 page. */
 router.get('/tokensale69', function(req, res, next) {
-  res.render('tokensale3', { title: 'Storecoin', meta: meta() });
+  res.render('tokensale3', { title: 'Storecoin', meta: meta(), sale: getTokenSale('tokensale69') });
 });
 
 /* GET tokensale99 page. */
 router.get('/tokensale99', function(req, res, next) {
-  res.render('tokensale3', { title: 'Storecoin', meta: meta() });
+  res.render('tokensale3', { title: 'Storecoin', meta: meta(), sale: getTokenSale('tokensale99') });
 });
 
 /* GET tokensale129 page. */
 router.get('/tokensale129', function(req, res, next) {
-  res.render('tokensale3', { title: 'Storecoin', meta: meta() });
+  res.render('tokensale3', { title: 'Storecoin', meta: meta(), sale: getTokenSale('tokensale129') });
 });
 
 /* GET tokensale149 page. */
 router.get('/tokensale149', function(req, res, next) {
-  res.render('tokensale3', { title: 'Storecoin', meta: meta() });
+  res.render('tokensale3', { title: 'Storecoin', meta: meta(), sale: getTokenSale('tokensale149') });
 });
 
 /* GET tokensale199 page. */
 router.get('/tokensale199', function(req, res, next) {
-  res.render('tokensale3', { title: 'Storecoin', meta: meta() });
+  res.render('tokensale3', { title: 'Storecoin', meta: meta(), sale: getTokenSale('tokensale199') });
+});
+
+/* GET tokensale249 page. */
+router.get('/tokensale249', function(req, res, next) {
+  res.render('tokensale3', { title: 'Storecoin', meta: meta(), sale: getTokenSale('tokensale249') });
 });
 
 

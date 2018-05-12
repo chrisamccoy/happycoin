@@ -7,33 +7,42 @@ block content
         .hc-chunk.hc-intro-text-wrapper
           h1.article-title Welcome to the
             span(style="color:#c2c2c2;")  pre-sale
-            |  of the Third, Invite-Only Token Sale for Storecoin (STORE)
+            |  of the
+            = ' ' 
+            span=sale.name
+            | , Invite-Only Token Sale for Storecoin (STORE)
           
           ul(style="margin-top: 1em;")
             li 
               b Hard Cap:
-              |  $2,997,000
+              = ' '
+              span=sale.hard_cap
             li 
               b Price Per Token:
               |  $0.0999
             li 
               b Fully Diluted Network Value: 
-              |  $99 MM
+              = ' '
+              span=sale.network_value
             li
               b Funds Accepted: 
               |  ETH, BTC, USD Wire
             li 
               b Pre-Sale Ends:
-              |  Once Hard Cap is reached or July 30th, 2018
+              = ' '
+              span=sale.pre_sale_ends
             li 
               b % of Treasury To Be Sold:
-              |  3%
+              = ' '
+              span=sale.treasury_percent
             li 
               b Minimum Investment:
-              |  $10,000
+              = ' '
+              span=sale.min_invest
             li 
               b Maximum Investment:
-              |  $990,000 (equals 1% of Treasury)
+              = ' '
+              span=sale.max_invest
             li 
               b KYC and AML-checks-required:
               |  Yes
@@ -66,7 +75,10 @@ block content
               br
               span(style="font-size:0.8em; font-weight:light;") (1% to cover cost of all token sales, 33% will be sold to fund Treasury before the protocol launches)
                 
-          p Storecoin is a pre-launch public blockchain protocol therefore, for our Third-Invite Only Token Sale, we are treating Storecoin tokens as securities. Purchasers in this $2,997,000 Token Sale must be
+          p Storecoin is a pre-launch public blockchain protocol therefore, for our Third-Invite Only Token Sale, we are treating Storecoin tokens as securities. Purchasers in this 
+            = ' '
+            span=sale.hard_cap
+            |  Token Sale must be
             = ' '
             a(data-featherlight="#accredited") accredited investors
             |  under U.S. law and comply with laws and regulations of their respective countries.
@@ -79,7 +91,7 @@ block content
       .blog-news.hc-feature.over-rel.padding(style="padding-bottom: 0px;")
         .hc-chunk.hc-intro-text-wrapper
           .hc-image.info-fullscreen(style="padding:0px;")
-            img(src='/images/empty.png', data-src="/images/basis-point-v4.png")
+            img(src='/images/empty.png', data-src=sale.basis_point_img)
           p.caption(style="margin-bottom:0px;text-align:right;") *View data at 
             a(href="http://storeco.in/onepoint", target="_blank") http://storeco.in/onepoint 
           p.caption(style="text-align:right;") *Storecoin may have up to six, milestone-based token sales
