@@ -10,13 +10,13 @@ var tokenSales = {
     name: 'Third'
   },
   tokensale69 : {
-    basis_point_img : '/images/basis-point-v4.png',
-    network_value: '$99 MM',
-    hard_cap: '$2,997,000',
-    treasury_percent: '3%',
-    pre_sale_ends: 'Once Hard Cap is reached or July 30th, 2018',
-    min_invest: '$10,000',
-    max_invest: '$990,000 (equals 1% of Treasury)',
+    basis_point_img : '/images/basis-point-69.png',
+    network_value: '$69 MM',
+    hard_cap: '$349,500',
+    treasury_percent: '0.5% (5 Million tokens)',
+    pre_sale_ends: 'Once the Hard Cap is reached',
+    min_invest: '$25,000',
+    max_invest: '$200,000',
     name: '69th'
   },
   tokensale99 : {
