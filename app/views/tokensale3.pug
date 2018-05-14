@@ -19,7 +19,8 @@ block content
               span=sale.hard_cap
             li 
               b Price Per Token:
-              |  $0.0999
+              = ' '
+              span=sale.price_per_token
             li 
               b Fully Diluted Network Value: 
               = ' '
@@ -109,14 +110,14 @@ block content
             a.underline(href="/media/storecoin-summary.pdf", target="_blank") Download the Summary
           div.item
             i.ion-record
-            a.underline(href="/research", target="_blank") See All Research
+            a.underline(href="/milestones", target="_blank") See All Milestones
     
     div.hc-feature.over-rel.padding
       .hc-chunk.hc-intro-text-wrapper
-        //- div.go-back
-        //-   i.ion-chevron-up
-        //- include email-widget-v4
-        iframe(src="https://docs.google.com/forms/d/e/1FAIpQLSc-5f6mYF03UunANCakrjyhurCE1v_GP2BEgWAjRjKMJrWBNg/viewform?embedded=true", width="100%", style="height:700px;", frameBorder="0")
+        if sale.embed
+          iframe(src="https://docs.google.com/forms/d/e/1FAIpQLSc-5f6mYF03UunANCakrjyhurCE1v_GP2BEgWAjRjKMJrWBNg/viewform?embedded=true", width="100%", style="height:700px;", frameBorder="0")
+        else
+          div.hc-feature-lead Coming Shortly
     
     #accredited.intro-popup(style="display:none; text-align:left;")
       p An accredited investor includes:

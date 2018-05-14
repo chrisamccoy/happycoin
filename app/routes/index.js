@@ -71,7 +71,7 @@ router.get('/review', function(req, res, next) {
 
 /* GET home page. */
 router.get('/tee', function(req, res, next) {
-  res.render('coming-soon', { title: 'Storecoin', meta: meta() });
+  res.render('tee', { title: 'Storecoin', meta: meta() });
 });
 
 /* GET home page. */
