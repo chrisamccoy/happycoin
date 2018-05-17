@@ -5134,6 +5134,10 @@ and (max-width : 335px) {
   right: 175px;
 }
 
+#dypos-algorithm .desktop-image {
+  max-width:550px;
+}
+
 @media only screen and (max-width: 1024px) {
   .featherlight-content {
     width: 100% !important;
@@ -7805,4 +7809,42 @@ and (max-width : 335px) {
   margin-left: 0px;
   height: 0.8em;
   vertical-align: baseline;
+}
+
+
+/* (1440x900) WXGA+ Display */
+@media  screen and (max-width: 1440px) {
+   body {
+     font-size: 1.3em;
+   }
+
+   #hc-content {
+     margin-top: 104px;
+   }
+
+   #hc-nav-wrapper .hc-title {
+     top: 42px;
+   }
+
+   .engine {
+     min-height: 185px;
+   }
+
+   #dypos-algorithm .desktop-image {
+     max-width:400px;
+   }
+
+   .hc-image.section-image img {
+     max-width: 630px !important;
+   }
+
+   #distribution-strategy .desktop-image {
+     max-width: 650px;
+     margin: 0 auto;
+   }
+
+   #wallet-slider {
+     max-width: 780px;
+     margin: 0 auto;
+   }
 }
