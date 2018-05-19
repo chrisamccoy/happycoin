@@ -700,6 +700,43 @@ input[type=number]::-webkit-outer-spin-button {
   color: white;
 }
 
+/* (1440x900) WXGA+ Display */
+@media  screen and (max-width: 1440px) {
+   body {
+     font-size: 1.3em;
+   }
+
+   #hc-content {
+     margin-top: 104px;
+   }
+
+   #hc-nav-wrapper .hc-title {
+     top: 42px;
+   }
+
+   .engine {
+     min-height: 185px;
+   }
+
+   #dypos-algorithm .desktop-image {
+     max-width:400px;
+   }
+
+   .hc-image.section-image img {
+     max-width: 630px !important;
+   }
+
+   #distribution-strategy .desktop-image {
+     max-width: 650px;
+     margin: 0 auto;
+   }
+
+   #wallet-slider {
+     max-width: 780px;
+     margin: 0 auto;
+   }
+}
+
 @media only screen and (max-width: 1024px)  {
   .desktop-image {
     display: none;
@@ -977,7 +1014,8 @@ input[type=number]::-webkit-outer-spin-button {
   position: absolute;
   left: 0px;
   width: 100%;
-  top: 110px;
+  top: 104px;
+  border-top: 1px solid #d67549;
   display: none;
 }
 
@@ -1183,7 +1221,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   #hc-nav-wrapper.scrolling .hc-branding.invite-dropdown .hc-menu-dropdown .nav-menu {
-    top: 46px;
+    top: 45px;
   }
 
   #hc-nav-wrapper .hc-branding.invite-dropdown .hc-menu-dropdown .nav-menu .hc-footer {
@@ -6151,7 +6189,7 @@ and (max-width : 335px) {
 }
 
 @media only screen and (max-width: 700px) {
-  .tweets .tweet {
+  .tweets .tweet:last-child {
     margin-bottom: 0px;
   }
 }
@@ -6604,7 +6642,7 @@ and (max-width : 335px) {
 
 @media only screen and (max-width: 700px) {
   #email-subscribe {
-    top: 46px;
+    top: 45px;
   }
 
   #email-subscribe .sub-container {
@@ -6686,6 +6724,7 @@ and (max-width : 335px) {
     left: calc(50% - 15px);
     background: #212121;
     border: 0px;
+    z-index: -1;
   }
 }
 
@@ -7809,42 +7848,4 @@ and (max-width : 335px) {
   margin-left: 0px;
   height: 0.8em;
   vertical-align: baseline;
-}
-
-
-/* (1440x900) WXGA+ Display */
-@media  screen and (max-width: 1440px) {
-   body {
-     font-size: 1.3em;
-   }
-
-   #hc-content {
-     margin-top: 104px;
-   }
-
-   #hc-nav-wrapper .hc-title {
-     top: 42px;
-   }
-
-   .engine {
-     min-height: 185px;
-   }
-
-   #dypos-algorithm .desktop-image {
-     max-width:400px;
-   }
-
-   .hc-image.section-image img {
-     max-width: 630px !important;
-   }
-
-   #distribution-strategy .desktop-image {
-     max-width: 650px;
-     margin: 0 auto;
-   }
-
-   #wallet-slider {
-     max-width: 780px;
-     margin: 0 auto;
-   }
 }
