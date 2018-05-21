@@ -7176,6 +7176,13 @@ and (max-width : 335px) {
   margin-top: 2em;
 }
 
+/* (1440x900) WXGA+ Display */
+@media  screen and (max-width: 1440px) {
+  #storecoin-roadmap .row {
+    margin-top: 11em;
+  }
+}
+
 @media only screen and (max-width: 700px) {
   #storecoin-roadmap .row {
     margin-top: 5em;

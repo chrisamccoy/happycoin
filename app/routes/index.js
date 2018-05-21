@@ -157,7 +157,8 @@ router.get('/validate', function(req, res, next) {
 
 /* GET home page. */
 router.get('/blockfin', function(req, res, next) {
-  res.render('blockfin', { title: 'Storecoin', meta: meta() });
+  // res.render('blockfin', { title: 'Storecoin', meta: meta() });
+  res.render('coming-soon', { title: 'Storecoin', meta: meta() });
 });
 
 /* GET home page. */
