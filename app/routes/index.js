@@ -167,30 +167,45 @@ router.get('/validate', function(req, res, next) {
 // });
 
 router.get("/blockfin", function(req, res, next){
+  var auth = req.headers['authorization'];  // auth is in base64(username:password)  so we need to decode the base64
+  console.log("Authorization Header is: ", auth);
 
-  // Grab the "Authorization" header.
-  var auth = req.get("authorization");
+  if(!auth) {     // No Authorization header was passed in so it's the first time the browser hit us
+    // Sending a 401 will require authentication, we need to send the 'WWW-Authenticate' to tell them the sort of authentication to use
+    // Basic auth is quite literally the easiest and least secure, it simply gives back  base64( username + ":" + password ) from the browser
+    res.statusCode = 401;
+    res.setHeader('WWW-Authenticate', 'Basic realm="Secure Area"');
 
-  // On the first request, the "Authorization" header won't exist, so we'll set a Response
-  // header that prompts the browser to ask for a username and password.
-  if (!auth) {
-    res.set("WWW-Authenticate", "Basic realm=\"Authorization Required\"");
-    // If the user cancels the dialog, or enters the password wrong too many times,
-    // show the Access Restricted error message.
-    return res.status(401).send("Authorization Required");
-  } else {
-    // If the user enters a username and password, the browser re-requests the route
-    // and includes a Base64 string of those credentials.
-    var credentials = new Buffer(auth.split(" ").pop(), "base64").toString("ascii").split(":");
-    if (credentials[0] === "storecoin" && credentials[1] === "forktolerant") {
-      // The username and password are correct, so the user is authorized.
-      return res.render('blockfin', { title: 'Storecoin', meta: meta() });
-    } else {
-      // The user typed in the username or password wrong.
-      return res.status(404).send("Access Denied (incorrect credentials)");
-    }
+    res.end('<html><body>Need some creds son</body></html>');
   }
 
+  else if(auth) {    // The Authorization was passed in so now we validate it
+    var tmp = auth.split(' ');   // Split on a space, the original auth looks like  "Basic Y2hhcmxlczoxMjM0NQ==" and we need the 2nd part
+
+    var buf = new Buffer(tmp[1], 'base64'); // create a buffer and tell it the data coming in is base64
+    var plain_auth = buf.toString();        // read it back out as a string
+
+    console.log("Decoded Authorization ", plain_auth);
+
+    // At this point plain_auth = "username:password"
+
+    var creds = plain_auth.split(':');      // split on a ':'
+    var username = creds[0];
+    var password = creds[1];
+
+    if((username == 'storecoin') && (password == 'forktolerant')) {   // Is the username/password correct?
+      res.statusCode = 200;  // OK
+      return res.render('blockfin', { title: 'Storecoin', meta: meta() });
+    }
+    else {
+      res.statusCode = 401; // Force them to retry authentication
+      res.setHeader('WWW-Authenticate', 'Basic realm="Secure Area"');
+
+      // res.statusCode = 403;   // or alternatively just reject them altogether with a 403 Forbidden
+
+      res.end('<html><body>You shall not pass</body></html>');
+    }
+  }
 });
 
 /* GET home page. */
