@@ -4,7 +4,8 @@ data = null,
 formData = [],
 $loading = null,
 resData = null,
-$orderProcess = null;
+$orderProcess = null,
+submitted = null;
 
 $(document).ready(function(){
   loadData();
@@ -44,10 +45,15 @@ function loadData() {
     inventory = result;
     loaded();
   });
+
+  $.getJSON('/admin/get-submitted-orders', function(result){
+    submitted = result;
+    loaded();
+  });
 }
 
 function loaded() {
-  if (orders == null || inventory == null ) {
+  if (orders == null || inventory == null || submitted == null ) {
     return false;
   }
   console.log('Orders Loaded');
@@ -178,12 +184,17 @@ function updateOrders(){
 }
 
 function loadSubmittedOrders(){
-  $.getJSON('/admin/get-submitted-orders', function(result){
-    var submitted = result;
-    templateRender({
-      el : '#submitted-orders-list',
-      data : { rows : submitted }
-    });
+  submitted.forEach(function(each){
+    var product_id = each.product_id;
+    var product = _.find(inventory, ['id', product_id]);
+    each.product = product;
+  });
+
+  console.log(submitted);
+
+  templateRender({
+    el : '#submitted-orders-list',
+    data : { rows : submitted }
   });
 }
 

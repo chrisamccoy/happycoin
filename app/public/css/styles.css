@@ -4237,9 +4237,29 @@ and (max-width : 335px) {
   padding: 0px;
 }
 
+#hc-medium-blog .blog-subscribe {
+  text-align:center;
+}
+
+#hc-medium-blog .blog-subscribe div {
+  padding: 1em;
+  border-radius: 10px;
+  background-color: rgba(233, 120, 68, 0.22);
+  display: inline-block;
+  margin-bottom: 2.5em;
+}
+
+#hc-medium-blog .hc-feature-title {
+  margin-bottom: 0.2em;
+}
+
 @media only screen and (max-width: 700px) {
   #hc-medium-blog .card .post img {
     width: 100%;
+  }
+
+  #hc-medium-blog .blog-subscribe {
+    font-size: 0.8em;
   }
 }
 

@@ -1,8 +1,12 @@
 #hc-medium-blog.hc-feature.over-rel.padding
   .hc-chunk
 
-    a.underline(href="/community", target="_blank", style="font-size:1.5em; display:block; text-align:center; margin:1em 0px;") Subscribe
     h2.hc-feature-title Storecoin News
+    div.blog-subscribe
+      div
+        a.underline(href="/community", target="_blank") Subscribe
+        = ' '
+        | for updates and articles delivered right into your inbox
             
     each blog in blogs
       if !blog.hidden
