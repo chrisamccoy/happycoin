@@ -13,6 +13,7 @@ block content
             div.tabs
               a.item.active(data-tab="pending-orders") Pending Orders
               a.item(data-tab="create-orders") Create Orders
+              a.item(data-tab="submitted-orders") Submitted Orders
               
             div.tab-body.active(data-tab="pending-orders")
               div.sc-row
@@ -57,6 +58,10 @@ block content
                   input(type="number", name="quantity", placeholder="Quantity")
                   
                   button(type="submit") Submit
+            
+            div.tab-body(data-tab="submitted-orders")
+              div#submitted-orders-list
+                h2(style="margin-top: 1em;") No Orders Found
             
         div.steps.step-2
           h3.header 
@@ -191,6 +196,28 @@ block content
             <td><%= (row.product) ? row.product.name : '<span style="color: red;"><i class="ion-alert" style="margin-right:1em;"></i>No Product Found</span>' %></td>
             <td style="text-align:center;"><%= row.quantity %></td>
             <td><i class="ion-android-close"></i></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    
+  script#submitted-orders-list-tpl(type="text/template")
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align:center;">#</th>
+          <th>Name</th>
+          <th>Order ID</th>
+          <th style="text-align:center;">Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% _.each(rows, function(row, i){ %>
+          <tr data-id="<%= row.id %>">
+            <th style="text-align:center;"><%= i + 1 %></th>
+            <td><%= row.name %></td>
+            <td><%= row.order_id %></td>
+            <td style="text-align:center;"><%= row.quantity %></td>
           </tr>
         <% }) %>
       </tbody>

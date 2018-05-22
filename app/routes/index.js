@@ -75,6 +75,11 @@ router.get('/tee', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/kyc', function(req, res, next) {
+  res.render('kyc', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
 router.get('/messagenode', function(req, res, next) {
   res.render('coming-soon', { title: 'Storecoin', meta: meta() });
 });
@@ -156,9 +161,36 @@ router.get('/validate', function(req, res, next) {
 });
 
 /* GET home page. */
-router.get('/blockfin', function(req, res, next) {
-  // res.render('blockfin', { title: 'Storecoin', meta: meta() });
-  res.render('coming-soon', { title: 'Storecoin', meta: meta() });
+// router.get('/blockfin', function(req, res, next) {
+//   // res.render('blockfin', { title: 'Storecoin', meta: meta() });
+//   res.render('coming-soon', { title: 'Storecoin', meta: meta() });
+// });
+
+router.get("/blockfin", function(req, res, next){
+
+  // Grab the "Authorization" header.
+  var auth = req.get("authorization");
+
+  // On the first request, the "Authorization" header won't exist, so we'll set a Response
+  // header that prompts the browser to ask for a username and password.
+  if (!auth) {
+    res.set("WWW-Authenticate", "Basic realm=\"Authorization Required\"");
+    // If the user cancels the dialog, or enters the password wrong too many times,
+    // show the Access Restricted error message.
+    return res.status(401).send("Authorization Required");
+  } else {
+    // If the user enters a username and password, the browser re-requests the route
+    // and includes a Base64 string of those credentials.
+    var credentials = new Buffer(auth.split(" ").pop(), "base64").toString("ascii").split(":");
+    if (credentials[0] === "storecoin" && credentials[1] === "forktolerant") {
+      // The username and password are correct, so the user is authorized.
+      return res.render('blockfin', { title: 'Storecoin', meta: meta() });
+    } else {
+      // The user typed in the username or password wrong.
+      return res.status(404).send("Access Denied (incorrect credentials)");
+    }
+  }
+
 });
 
 /* GET home page. */

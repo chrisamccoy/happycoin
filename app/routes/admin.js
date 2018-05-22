@@ -23,6 +23,14 @@ router.get('/get-inventory', function(req, res, next) {
   });
 });
 
+router.get('/get-submitted-orders', function(req, res, next) {
+  request('http://teamapi.storeco.in/fetch/orders/submitted', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.send(response.body); // Print the google web page.
+    }
+  });
+});
+
 router.post('/submit-orders', function(req, res, next) {
   var options = {
     method: 'post',
