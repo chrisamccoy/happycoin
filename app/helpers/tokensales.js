@@ -9,7 +9,10 @@ var tokenSales = {
     min_invest: '$10,000',
     max_invest: '$990,000 (equals 1% of Treasury)',
     name: 'Third',
-    embed: true
+    embed: {
+      src : 'https://docs.google.com/forms/d/e/1FAIpQLSc-5f6mYF03UunANCakrjyhurCE1v_GP2BEgWAjRjKMJrWBNg/viewform?embedded=true',
+      height : 'height:700px;'
+    }
   },
   tokensale69 : {
     basis_point_img : '/images/basis-point-69.png',
@@ -21,7 +24,10 @@ var tokenSales = {
     min_invest: '$10,000',
     max_invest: '$200,000',
     name: 'Third',
-    embed: false
+    embed: {
+      src : 'https://docs.google.com/forms/d/e/1FAIpQLSeC-Yj2ivtqx9_xExZCcbfL0gfuhV0CSV0DCBEw4_Suozm5Xw/viewform?embedded=true',
+      height : 'height:1000px;'
+    }
   },
   tokensale99 : {
     basis_point_img : '/images/basis-point-99.png',
@@ -33,7 +39,10 @@ var tokenSales = {
     min_invest: '$10,000',
     max_invest: '$333,000',
     name: 'Third',
-    embed: false
+    embed: {
+      src : 'https://docs.google.com/forms/d/e/1FAIpQLSdm9IL0_WWBwspv-R2YWm5BN8qHlvtMHH6GeN9jnw7Ja07dGg/viewform?embedded=true',
+      height : 'height:1000px;'
+    }
   },
   tokensale129 : {
     basis_point_img : '/images/basis-point-129.png',
@@ -45,7 +54,10 @@ var tokenSales = {
     min_invest: '$10,000',
     max_invest: '$1,290,000 (1% of Treasury)',
     name: 'Third',
-    embed: false
+    embed: {
+      src : 'https://docs.google.com/forms/d/e/1FAIpQLSfTQVckq56L59ri-177o8rbLzW7450zGv1Fj5WUpko50KqmxA/viewform?embedded=true',
+      height : 'height:1000px;'
+    }
   },
   tokensale149 : {
     basis_point_img : '/images/basis-point-149.png',

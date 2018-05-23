@@ -6816,19 +6816,17 @@ and (max-width : 335px) {
   cursor: pointer;
 }
 
-#accredited ul > li {
-  margin-bottom: 1em;
+#accredited ol {
+  font-size: 1.7em;
+}
+
+#accredited ol ul {
+  font-size: 1em;
 }
 
 @media only screen and (max-width: 700px) {
   #third-token-sale .hc-button {
     width: 100%;
-  }
-
-  #accredited {
-    font-size: 1.1em;
-    overflow: scroll;
-    height: 90vh;
   }
 }
 

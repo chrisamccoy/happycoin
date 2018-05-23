@@ -51,13 +51,13 @@ block content
               b Can my country participate?
               |  Investors located in most countries can participate, provided they meet 
               = ' '
-              a.underline(data-featherlight="#accredited") the standards of a U.S. accredited investor
+              a.underline(href="/accredited", target="_blank") the standards of a U.S. accredited investor
             li
               b Does total total cryptocurrency ownership count for being accredited (including ICO tokens still not yet released by the teams)?
               |  Yes
             li
               b Definition of being accredited: 
-              a.underline(data-featherlight="#accredited") See here
+              a.underline(href="/accredited", target="_blank") See here
             li 
               b Investors will receive Tokens in their Storecoin Wallets:
               |  Before the start of 2020 or when the protocol launches -- whatever comes first
@@ -81,7 +81,7 @@ block content
             span=sale.hard_cap
             |  Token Sale must be
             = ' '
-            a(data-featherlight="#accredited") accredited investors
+            a(href="/accredited", target="_blank") accredited investors
             |  under U.S. law and comply with laws and regulations of their respective countries.
 
       include token-sale-buyers
@@ -115,7 +115,7 @@ block content
     div.hc-feature.over-rel.padding
       .hc-chunk.hc-intro-text-wrapper
         if sale.embed
-          iframe(src="https://docs.google.com/forms/d/e/1FAIpQLSc-5f6mYF03UunANCakrjyhurCE1v_GP2BEgWAjRjKMJrWBNg/viewform?embedded=true", width="100%", style="height:700px;", frameBorder="0")
+          iframe(src=sale.embed.src, width="100%", style=sale.embed.height, frameBorder="0")
         else
           div.hc-feature-lead Coming Shortly
     

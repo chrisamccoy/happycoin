@@ -39,6 +39,10 @@ router.get('/tokensale149', function(req, res, next) {
   res.render('tokensale3', { title: 'Storecoin', meta: meta(), sale: getTokenSale('tokensale149') });
 });
 
+router.get('/tsale', function(req, res, next) {
+  res.render('tokensale3', { title: 'Storecoin', meta: meta(), sale: getTokenSale('tokensale149') });
+});
+
 /* GET tokensale199 page. */
 router.get('/tokensale199', function(req, res, next) {
   res.render('tokensale3', { title: 'Storecoin', meta: meta(), sale: getTokenSale('tokensale199') });
@@ -53,6 +57,15 @@ router.get('/tokensale249', function(req, res, next) {
 /* GET home page. */
 router.get('/tenyears', function(req, res, next) {
   res.render('coming-soon', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
+router.get('/airdrop', function(req, res, next) {
+  res.render('poc-form', { title: 'Storecoin', meta: meta() });
+});
+/* GET home page. */
+router.get('/tokensale', function(req, res, next) {
+  res.render('poc-form', { title: 'Storecoin', meta: meta() });
 });
 
 /* GET home page. */
@@ -128,6 +141,11 @@ router.get('/development', function(req, res, next) {
 /* GET home page. */
 router.get('/community', function(req, res, next) {
   res.redirect('/newsletter');
+});
+
+/* GET home page. */
+router.get('/accredited', function(req, res, next) {
+  res.render('accredited', { title: 'Storecoin', meta: meta() });
 });
 
 /* GET home page. */
