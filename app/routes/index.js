@@ -63,6 +63,12 @@ router.get('/tenyears', function(req, res, next) {
 router.get('/airdrop', function(req, res, next) {
   res.render('poc-form', { title: 'Storecoin', meta: meta() });
 });
+
+/* GET home page. */
+router.get('/tee', function(req, res, next) {
+  res.render('poc-form', { title: 'Storecoin', meta: meta() });
+});
+
 /* GET home page. */
 router.get('/tokensale', function(req, res, next) {
   res.render('poc-form', { title: 'Storecoin', meta: meta() });
@@ -80,11 +86,6 @@ router.get('/code', function(req, res, next) {
 
 router.get('/review', function(req, res, next) {
   res.render('coming-soon', { title: 'Storecoin', meta: meta() });
-});
-
-/* GET home page. */
-router.get('/tee', function(req, res, next) {
-  res.render('tee', { title: 'Storecoin', meta: meta() });
 });
 
 /* GET home page. */

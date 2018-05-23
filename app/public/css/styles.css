@@ -4237,11 +4237,11 @@ and (max-width : 335px) {
   padding: 0px;
 }
 
-#hc-medium-blog .blog-subscribe {
+.blog-subscribe {
   text-align:center;
 }
 
-#hc-medium-blog .blog-subscribe div {
+.blog-subscribe div {
   padding: 1em;
   border-radius: 10px;
   background-color: rgba(233, 120, 68, 0.22);
@@ -4258,8 +4258,8 @@ and (max-width : 335px) {
     width: 100%;
   }
 
-  #hc-medium-blog .blog-subscribe {
-    font-size: 0.8em;
+  .blog-subscribe {
+    font-size: 0.9em;
   }
 }
 
