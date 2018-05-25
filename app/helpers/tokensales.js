@@ -69,7 +69,10 @@ var tokenSales = {
     min_invest: '$10,000',
     max_invest: '$1,490,000 (1% of Treasury)',
     name: 'Third',
-    embed: false
+    embed: {
+      src : 'https://docs.google.com/forms/d/e/1FAIpQLScrnAduobtFUtXW9ikrHhQVUwTBiDcydaJJJo5xQILG8Wl8hA/viewform?embedded=true',
+      height : 'height:1000px;'
+    }
   },
   tokensale199 : {
     basis_point_img : '/images/basis-point-199.png',
