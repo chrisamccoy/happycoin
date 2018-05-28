@@ -1,5 +1,14 @@
 var blogs = [
   {
+      slug: 'storecoin-begins-testing-on-blockFins-feed-follow-design',
+      title: 'Storecoin Begins Testing on BlockFin’s ‘Feed & Follow’ Design',
+      desc: 'Goal is to overcome latency, up-time issues in global network',
+      img: 'https://storeco.in/images/blog/blog-storecoin-begins-testing.png',
+      template: 'blog-storecoin-begins-testing',
+      readTime : '4 min read',
+      date : 'May 27, 2018'
+  },
+  {
       slug: 'open-source-proposal-has-potential-to-raise-tendermints-consensus-throughput',
       title: 'Open-Source Proposal has Potential to Raise Tendermint’s Consensus Throughput',
       desc: 'Storecoin’s idea would improve software’s ability to run consensus with constant time, even when many validators participate in the process',

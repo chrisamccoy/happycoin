@@ -57,6 +57,11 @@ function loaded() {
     return false;
   }
   console.log('Orders Loaded');
+  // console.log({
+  //   orders : orders,
+  //   inventory : inventory,
+  //   submitted : submitted
+  // });
   initOrders();
   initCreateOrders();
   loadSubmittedOrders();
@@ -80,7 +85,14 @@ function initCreateOrders() {
 
   templateRender({
     el : '#product-select',
-    data : { rows : inventory, select : 'Product Select' }
+    data : { rows : inventory, select : 'Product Select' },
+    tpl : '#product-select-tpl'
+  });
+
+  templateRender({
+    el : '#product-select-2',
+    data : { rows : inventory, select : 'Product Select' },
+    tpl : '#product-select-tpl'
   });
 
   templateRender({
@@ -97,7 +109,11 @@ function initCreateOrders() {
 
   // $("#product-select").prop("selectedIndex", -1);
   $('#product-select').on('change', function() {
-    $('input[name="product_id"]').val(this.value);
+    $('input[name="item1"]').val(this.value);
+  });
+
+  $('#product-select-2').on('change', function() {
+    $('input[name="item2"]').val(this.value);
   });
 
   $('#country-select').on('change', function() {
@@ -123,10 +139,21 @@ function initCreateOrders() {
         submitData = {};
 
     formData.forEach(function(item){
-      submitData[item.name] = (item.name == 'quantity') ? parseInt(item.value) : item.value;
+      if (item.name == 'quantity1') {
+        submitData[item.name] = (item.value) ? parseInt(item.value) : null;
+      } else if (item.name == 'quantity2') {
+        submitData[item.name] = (item.value) ? parseInt(item.value) : null;
+      } else if (item.name == 'item2') {
+        if (item.value == null) {
+          submitData[item.name] = null;
+          submitData['quantity2'] = null;
+        } else {
+          submitData[item.name] = item.value;
+        }
+      } else {
+        submitData[item.name] = item.value;
+      }
     });
-
-    // console.log(formData);
 
     $.ajax({
       url: '/admin/create-order',
@@ -151,17 +178,22 @@ function initOrders() {
   var $content = $('#admin-content');
   $loading = $content.find('.loading');
 
+  // console.log(orders);
+
   data = {
     orders : orders
   }
 
   data.orders.forEach(function(order){
-    if (order.product_id) {
-      order.product = _.find(inventory, ['id', order.product_id]);
+    if (order.item1 != null) {
+      order.item1 = _.find(inventory, ['id', order.item1]);
+    }
+    if (order.item2 != null) {
+      order.item2 = _.find(inventory, ['id', order.item2]);
     }
   });
 
-  // console.log(data);
+  console.log(data);
 
   $loading.fadeOut('fast', function(){
     $('.orders-process .step-1').show();
@@ -185,9 +217,10 @@ function updateOrders(){
 
 function loadSubmittedOrders(){
   submitted.forEach(function(each){
-    var product_id = each.product_id;
-    var product = _.find(inventory, ['id', product_id]);
-    each.product = product;
+    var product1 = _.find(inventory, ['id', each.item1]);
+    var product2 = _.find(inventory, ['id', each.item2]);
+    each.product1 = product1;
+    each.product2 = product2;
   });
 
   console.log(submitted);
@@ -264,6 +297,8 @@ function initOrdersTable() {
     $orderProcess.find('.step-2').hide();
     $orderProcess.find('.step-3').show();
 
+    console.log(JSON.stringify(formData));
+
     $.ajax({
       url: '/admin/submit-orders',
       type: "POST",
@@ -296,7 +331,7 @@ function initOrderList(){
     $del = $list.find('tr i.ion-android-close');
 
     _.each(formData, function(d){
-      if (!d.product) {
+      if (!d.item1) {
         // console.log('not found');
         $orderProcess.find('.step-2 .proceed').attr('disabled', true);
         return false;

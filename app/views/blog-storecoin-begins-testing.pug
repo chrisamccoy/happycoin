@@ -1,0 +1,165 @@
+extends blog-wrapper
+
+block blog-news 
+  p
+    b Highlights
+
+  p BlockFin Consensus Engine consists of a two-tier peer-to-peer network
+
+  p Only nodes with proof of stake and KYC/AML verification are recognized by the network
+
+  p Validators participate in the transaction and block validation process and Messagenodes provide storage and bandwidth services.
+
+  p Nodes use the familiar “follow” model to get the information they need during the transaction and block validation process
+
+  p The design can be compared with the function of a social media network
+  
+  div.tweets
+    div.tweet
+      blockquote.twitter-tweet(data-lang='en')
+        p(lang='en', dir='ltr')
+          | We started testing a version of BlockFin peer-to-peer (p2p) core built using "feeds" and "follow" model of data replication. The design motivation is discussed here -- 
+          a(href='https://t.co/f909yXjEld') https://t.co/f909yXjEld
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1000136002940223488?ref_src=twsrc%5Etfw') May 25, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | BlockFin, 
+          a(href='https://twitter.com/storecoin?ref_src=twsrc%5Etfw') @storecoin
+          | 's Dynamic Proof-of-Stake (DyPoS) consensus engine consists of 2 cooperating p2p networks. One is a larger network of validators and second, smaller network of Messagenodes.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1000136003607130113?ref_src=twsrc%5Etfw') May 25, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | The validators, as the name suggests, validate transactions and blocks and the Messagenodes provide storage and bandwidth services to validators. But how do you bring *trust* between the participating nodes?
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1000136004404047872?ref_src=twsrc%5Etfw') May 25, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | We want something like, "trust, but double-check" model where cryptographic signatures bring *trust* so a *signed* message can be verified by anyone, but how do we double check that a message is relayed correctly?
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1000136005146427392?ref_src=twsrc%5Etfw') May 25, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | In the "feeds" and "follow" model, each node creates its messages as its own private "feed" and let other nodes "follow" the feed. For example, Messagenodes follow validators for transactions received by them.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1000136006069301249?ref_src=twsrc%5Etfw') May 25, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | When Messagenodes in turn follow each other, the transactions are replicated among them. Messagenodes cannot censor, alter, or perform any malicious activities because validators will be watching over them.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1000136007038087168?ref_src=twsrc%5Etfw') May 25, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | So, unless a majority of nodes collude to breach the BFT threshold, the network is secure without incurring the overhead of traditional blockchains with O(n**2) complexity.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1000136007751118848?ref_src=twsrc%5Etfw') May 25, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | The "feeds" and "follow" model works best in asynchronous environments where network connectivity and quality cannot be guaranteed. This is the exact setup 
+          a(href='https://twitter.com/storecoin?ref_src=twsrc%5Etfw') @storecoin
+          |  envisions for its public blockchain.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1000136008703324161?ref_src=twsrc%5Etfw') May 25, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | In a globally distributed network, the latency and up-time cannot be guaranteed. So, BlockFin cannot make any timing assumptions.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1000136011320455169?ref_src=twsrc%5Etfw') May 25, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | For example, we cannot say that a block will be produced every N seconds because that makes BlockFin fully *synchronous*. That in turn results in eventual centralization. Why?
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1000136012004130816?ref_src=twsrc%5Etfw') May 25, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | Strong timing assumptions eventually force a leader or delegate selection because you can guarantee connectivity or latency only when the number of participants is small.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1000136012742381568?ref_src=twsrc%5Etfw') May 25, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | So nodes with poor up-time or latency will eventually be ignored/down-voted by others resulting in possible centralization. In BlockFin, nodes make progress asynchronously.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1000136013442793472?ref_src=twsrc%5Etfw') May 25, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | So, BlockFin favors "C"onsistency over "A"vailability. Availability is addressed via economic rewards where *all* participating validators and Messagenodes earn a portion of the block reward for the blocks they helped validate.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1000136014134788096?ref_src=twsrc%5Etfw') May 25, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | Stronger consistency is important because, remember, blockchains are supposed to be *immutable*? A weaker consistency makes immutability meaningless.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1000136014847868928?ref_src=twsrc%5Etfw') May 25, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | Now, back to the testing. In the next few weeks, our goal is to test the "feeds" and "follow" model in a network consisting of 220 validators and 44 Messagenodes. These nodes are globally distributed around the world.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1000136015565094917?ref_src=twsrc%5Etfw') May 25, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | We want to measure the performance characteristics of the model to ensure that the a) desire for stronger consistency is achieved and b) network makes progress in unreliable environments.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1000136016366206976?ref_src=twsrc%5Etfw') May 25, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | The "feeds" and "follow" model is built using 
+          a(href='https://t.co/GviCF2wnyd') https://t.co/GviCF2wnyd
+          | . SSBC's focus on decentralization matches 
+          a(href='https://twitter.com/storecoin?ref_src=twsrc%5Etfw') @storecoin
+          | 's so we want to evaluate it to see how far we can go with it.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1000136017796481024?ref_src=twsrc%5Etfw') May 25, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | In the event of network partitions, our desire is for individual nodes to continue to make *local* progress and *eventually* converge their work with the larger network without sacrificing consistency.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1000136018635382784?ref_src=twsrc%5Etfw') May 25, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | So, any reliance on one or more nodes for *entire* blockchain is undesirable, because the *continuity* of the chain after the partition depends on the *views* of the connected nodes.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1000136019461652480?ref_src=twsrc%5Etfw') May 25, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation="none", data-lang="en")
+        p(lang="en", dir="ltr")
+          | So, we want to experiment if a global distribution of a large number of nodes provides better security in the event of network partition. We'll update our findings here after the test.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href="https://twitter.com/StorecoinDev/status/1000136020170424320?ref_src=twsrc%5Etfw") May 25, 2018
