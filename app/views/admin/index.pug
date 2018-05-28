@@ -54,12 +54,12 @@ block content
                   select#product-select
                   input(type="text", name="item1", placeholder="Product 1", hidden)
                   
+                  label Quantity 1
+                  input(type="number", name="quantity1", placeholder="Quantity")
+                  
                   label Product 2
                   select#product-select-2
                   input(type="text", name="item2", placeholder="Product 2", hidden)
-                  
-                  label Quantity 1
-                  input(type="number", name="quantity1", placeholder="Quantity")
                   
                   label Quantity 2
                   input(type="number", name="quantity2", placeholder="Quantity")
@@ -117,10 +117,7 @@ block content
                     <%= order.email %>
                   </div>
                   <div class="info">
-                    <div class="head">Address</div><%= order.address %>, <%= order.city %>, <%= order.state %>, <%= order.country %>, <%= order.zipcode %>
-                  </div>
-                  <div class="info">
-                    <div class="head">Address 2</div><%= order.address2 %>
+                    <div class="head">Address</div><%= order.address1 %> <%= (order.address2) ? ' '+order.address2 : '' %>, <%= order.city %>, <%= order.state %>, <%= order.country %>, <%= order.zipcode %>
                   </div>
                   <div class="info">
                     <div class="head">Product 1</div><%= (order.item1) ? order.item1.name +' x '+ order.quantity1 : 'N/A' %>
@@ -164,7 +161,7 @@ block content
           </div>
           <div class="info">
             <div class="head">Address</div>
-            <div class="value"><%= item.order_data.address %>, <%= item.order_data.city %>, <%= item.order_data.state %>, <%= item.order_data.country %>, <%= item.order_data.zipcode %></div>
+            <div class="value"><%= item.order_data.address1 %><%= (item.order_data.address2) ? ' '+item.order_data.address2 : '' %>, <%= item.order_data.city %>, <%= item.order_data.state %>, <%= item.order_data.country %>, <%= item.order_data.zipcode %></div>
           </div>
         </div>
       </div>
@@ -211,7 +208,7 @@ block content
           <tr data-id="<%= row.id %>">
             <th style="text-align:center;"><%= i + 1 %></th>
             <td><%= row.name %></td>
-            <td><%= row.addres1+', '+row.city+', '+row.state+', '+row.country %></td>
+            <td><%= row.address1 %><%= (row.address2) ? ' '+row.address2 : '' %><%= ', '+row.city+', '+row.state+', '+row.country %></td>
             <td><%= row.order_id %></td>
             <td><%= (row.product1) ? row.product1.name+' x '+row.quantity1  : '-' %></td>
             <td><%= (row.product2) ? row.product2.name+' x '+row.quantity2  : '-' %></td>

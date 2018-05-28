@@ -297,8 +297,6 @@ function initOrdersTable() {
     $orderProcess.find('.step-2').hide();
     $orderProcess.find('.step-3').show();
 
-    console.log(JSON.stringify(formData));
-
     $.ajax({
       url: '/admin/submit-orders',
       type: "POST",
