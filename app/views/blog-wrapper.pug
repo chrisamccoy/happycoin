@@ -7,6 +7,7 @@ block content
     //-     h2.hc-intro-large-lead(style='font-weight: bold; font-size: 2.7em; margin: 2em auto;') Blog
     - var blogTitle = (meta.twtitle) ? meta.twtitle : meta.title;
     - var encodedTitle = encodeURI(blogTitle)
+    - encodedTitle = encodedTitle.replace(/#/g, '%23').replace(/&/g, '%26')
     - var url = meta.url
     - var encodedUrl = encodeURI(url)
     div(style="margin-top:5em;")

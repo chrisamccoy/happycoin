@@ -70,6 +70,8 @@ function initDropdown() {
 }
 
 function initThirdTokenSale(){
+  var $tokenSale = $('#third-token-sale');
+
   $('#third-token-sale button').click(function(){
     $('html, body').animate({ scrollTop : 0 }, 400, function(){
       $('#third-token-sale button').hide();
@@ -80,6 +82,10 @@ function initThirdTokenSale(){
       $('.hc-email .steps-form').show();
       $('.hc-email .email-steps.step-1').show();
     });
+  });
+
+  $tokenSale.find('.jump-to-buy').click(function(){
+    $('html, body').animate({ scrollTop : $('#hc-content iframe').offset().top - 100}, 600);
   });
 
   $('.token-widget-container .go-back').click(function(){

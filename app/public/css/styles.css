@@ -6800,6 +6800,12 @@ and (max-width : 335px) {
   display: block;
 }
 
+#third-token-sale .jump-to-buy i {
+  font-size: 0.8em;
+  font-weight: 300;
+  margin-left: 0.5em;
+}
+
 .token-widget-container {
   display: none;
   background-color: white;
