@@ -12,6 +12,7 @@
       if !blog.hidden
         - var blogTitle = (blog.twtitle) ? blog.twtitle : blog.title;
         - var encodedTitle = encodeURI(blogTitle)
+        - encodedTitle = encodedTitle.replace(/#/g, '%23').replace(/&/g, '%26')
         - var encodedUrl = encodeURI(url+'/'+blog.slug)
         div.card
           a(href=(blog.template) ? "/blog/"+blog.slug : blog.slug, target="_blank")
