@@ -270,7 +270,7 @@ function initOrdersTable() {
     $checkbox.trigger('change');
   });
 
-  $('#generate-order').click(function(){
+  $('#generate-order').unbind().click(function(){
     formData = [];
 
     $loading.fadeIn('fast', function(){
