@@ -164,7 +164,8 @@ function initCreateOrders() {
         resData = response.responseJSON;
         // console.log(resData);
         if (resData.success == 1) {
-          $form.find("input").val("");
+          // $form.find("input").val("");
+          $form[0].reset();
           updateOrders();
         } else {
           $loading.fadeOut('fast');
