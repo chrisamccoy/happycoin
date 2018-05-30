@@ -290,7 +290,7 @@ function initOrdersTable() {
     });
   });
 
-  $orderProcess.find('.step-2 .proceed').click(function(){
+  $orderProcess.find('.step-2 .proceed').unbind().click(function(){
     $('#generate-modal').modal('hide');
     $loading.fadeIn('fast');
 
