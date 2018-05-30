@@ -70,6 +70,11 @@ router.get('/tee', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/protocoltest', function(req, res, next) {
+  res.render('protocol-test', { title: 'Storecoin', meta: meta() });
+});
+
+/* GET home page. */
 router.get('/tokensale', function(req, res, next) {
   res.render('poc-form', { title: 'Storecoin', meta: meta() });
 });
