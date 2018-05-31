@@ -61,12 +61,14 @@ router.get('/tenyears', function(req, res, next) {
 
 /* GET home page. */
 router.get('/airdrop', function(req, res, next) {
-  res.render('poc-form', { title: 'Storecoin', meta: meta() });
+  // res.render('poc-form', { title: 'Storecoin', meta: meta() });
+  res.redirect('https://docs.google.com/forms/d/e/1FAIpQLSem3e0msywn0ZQyCU5ZW8zcmovLbTiH5sqXOR-6SqSK0ishDg/viewform');
 });
 
 /* GET home page. */
 router.get('/tee', function(req, res, next) {
-  res.render('poc-form', { title: 'Storecoin', meta: meta() });
+  // res.render('poc-form', { title: 'Storecoin', meta: meta() });
+  res.redirect('https://docs.google.com/forms/d/e/1FAIpQLSem3e0msywn0ZQyCU5ZW8zcmovLbTiH5sqXOR-6SqSK0ishDg/viewform');
 });
 
 /* GET home page. */
@@ -146,7 +148,7 @@ router.get('/development', function(req, res, next) {
 
 /* GET home page. */
 router.get('/community', function(req, res, next) {
-  res.redirect('/newsletter');
+  res.redirect('https://docs.google.com/forms/d/e/1FAIpQLSem3e0msywn0ZQyCU5ZW8zcmovLbTiH5sqXOR-6SqSK0ishDg/viewform');
 });
 
 /* GET home page. */
@@ -160,7 +162,7 @@ router.get('/devnotes', function(req, res, next) {
 });
 
 /* GET home page. */
-router.get('/newsletter', function(req, res, next) {
+router.get('/subscribe', function(req, res, next) {
   res.render('newsletter', { title: 'Storecoin', meta: meta() });
 });
 
