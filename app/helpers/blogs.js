@@ -1,5 +1,14 @@
 var blogs = [
   {
+      slug: 'what-is-storecoin',
+      title: 'What is Storecoin?',
+      desc: 'A zero-fee, high throughput, and decentralized cryptocurrency with a Governance inspired by the U.S. Constitution. The Storecoin blockchain is secured by DyPoS.',
+      img: 'https://storeco.in/images/logo-fb.png',
+      template: 'blog-what-is-storecoin',
+      readTime : '4 min read',
+      date : 'June 4, 2018'
+  },
+  {
       slug: 'storecoin-begins-testing-on-blockFins-feed-follow-design',
       title: 'Storecoin Begins Testing on BlockFin’s ‘Feed & Follow’ Design',
       desc: 'Goal is to overcome latency, up-time issues in global network',
