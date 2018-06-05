@@ -12,6 +12,7 @@ script#review-form-tpl(type="text/template")
           <div class="fields">
             <div class="field">
               <label>Name</label>
+              <input type="text" name="form_id" value="<%= data.id %>" hidden>
               <input type="text" name="name" value="<%= data['Your name'] %>">
             </div>
             <div class="field">
