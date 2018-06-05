@@ -17,6 +17,11 @@ button, button[disabled]:hover {
   border-color: #66bb6b;
 }
 
+button.orange {
+  background-color: #f78348;
+  border-color: #f78348;
+}
+
 i {
   line-height: 1;
 }
@@ -53,7 +58,7 @@ select {
   background: none;
   color: #5d6c76;
   border: 1px solid;
-  margin-right: 1em;
+  margin-left: 1em;
 }
 
 .ui.modal .modal-buttons .cancel:hover {
@@ -491,4 +496,56 @@ select {
 
 #orders-list tr:hover {
   background-color: rgba(226, 226, 226, 0.51);
+}
+
+/* review form */
+#review-form .sc-row {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 1em;
+}
+
+#review-form .form,
+#review-form .form-info {
+  width: 49%;
+}
+
+#review-form .form .fields {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#review-form .form .fields .field {
+  width: 49%;
+}
+
+#review-form .form .fields .field.qty {
+  width: 100px;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.4em;
+}
+
+#review-form .form .fields .field select {
+  font-size: 0.7em;
+}
+
+#review-form .form .fields .field.qty label {
+  margin-right: 0.6em;
+}
+
+#review-form .form .fields .field.qty input {
+  margin: 0px;
+}
+
+#review-form .form-info table {
+  font-size: 0.7em;
+  padding: 0px 0.5em;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+}
+
+#review-form .form-info table th {
+  width: 60%;
 }

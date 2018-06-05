@@ -1,0 +1,97 @@
+script#review-form-tpl(type="text/template")
+  <div class="content">
+    <div class="loading" style="display:none;">
+      <div class="sp sp-wave"></div>
+      <div class="text">Loading...</div>
+    </div>
+    <div class="header"><b>Review Form - <%= data.id %></b></div>
+    <div class="sc-row">
+      <div class="form">
+        <h3>Order Form</h3>
+        <form>
+          <div class="fields">
+            <div class="field">
+              <label>Name</label>
+              <input type="text" name="name" value="<%= data['Your name'] %>">
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <input type="email" name="email" value="<%= data['Email Address'] %>">
+            </div>
+          </div>
+          <div class="fields">
+            <div class="field">
+              <label>Address #1</label>
+              <input type="text" name="address" value="<%= data.Address %>">
+            </div>
+            <div class="field">
+              <label>Address #2</label>
+              <input type="text" name="address2" value="<%= data['Address line 2'] %>">
+            </div>
+          </div>
+          <div class="fields">
+            <div class="field">
+              <label>Country</label>
+              <input type="text" name="country" value="<%= data['Country'] %>">
+            </div>
+            <div class="field">
+              <label>State</label>
+              <input type="text" name="state" value="<%= data['State/Region/Other'] %>">
+            </div>
+          </div>
+          <div class="fields">
+            <div class="field">
+              <label>City</label>
+              <input type="text" name="city" value="<%= data['City'] %>">
+            </div>
+            <div class="field">
+              <label>Zipcode</label>
+              <input type="text" name="zipcode" value="<%= data['Zipcode/Postal Code/Other'] %>">
+            </div>
+          </div>
+          <div class="fields">
+            <div class="field">
+              <label>Item 1</label>
+              <select id="review-product-select"></select>
+              <input type="text" name="item1" hidden>
+            </div>
+            <div class="field qty">
+              <label>QTY</label>
+              <input type="number" name="quantity1">
+            </div>
+          </div>
+          <div class="fields">
+            <div class="field">
+              <label>Item 1</label>
+              <select id="review-product-select-2"></select>
+              <input type="text" name="item2" hidden>
+            </div>
+            <div class="field qty">
+              <label>QTY</label>
+              <input type="number" name="quantity2">
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="form-info">
+        <h3>Form Information</h3>
+        <table>
+          <tbody>
+            <% for (var row in data) { %>
+              <tr>
+                <th><%= row %></th>
+                <td><%= data[row] %></td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="modal-buttons">
+      <button class="create-order">Create Order</button>
+      <button class="cancel">Cancel</button>
+    </div>
+  </div>
+  
+div#review-form.ui.modal

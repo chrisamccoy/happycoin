@@ -5,7 +5,11 @@ formData = [],
 $loading = null,
 resData = null,
 $orderProcess = null,
-submitted = null;
+submitted = null,
+poc = null;
+
+var country_list = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Cape Verde","Cayman Islands","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cruise Ship","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyz Republic","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania","Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Namibia","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Satellite","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","St. Lucia","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia","Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe"];
+var us_states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
 
 $(document).ready(function(){
   loadData();
@@ -50,10 +54,16 @@ function loadData() {
     submitted = result;
     loaded();
   });
+
+  $.getJSON('/admin/poc-forms', function(result){
+    poc = result;
+    // console.log(poc);
+    loaded();
+  });
 }
 
 function loaded() {
-  if (orders == null || inventory == null || submitted == null ) {
+  if (orders == null || inventory == null || submitted == null || poc == null ) {
     return false;
   }
   console.log('Orders Loaded');
@@ -65,13 +75,140 @@ function loaded() {
   initOrders();
   initCreateOrders();
   loadSubmittedOrders();
+  initPocForms();
+}
+
+function initPocForms() {
+  templateRender({
+    el : '#poc-table',
+    data : { rows : poc }
+  });
+
+  $('#review-form').modal();
+
+  $('#poc-table .review').unbind().click(function(){
+    var data = $(this).data();
+    initReviewForm(data.id);
+  });
+}
+
+function initReviewForm (id) {
+  var reviewOrder = _.find(poc, ['id', id]);
+
+  templateRender({
+    el : '#review-form',
+    data : { data : reviewOrder }
+  });
+
+  templateRender({
+    el : '#review-product-select',
+    data : { rows : inventory, select : 'Product Select' },
+    tpl : '#product-select-tpl'
+  });
+
+  templateRender({
+    el : '#review-product-select-2',
+    data : { rows : inventory, select : 'Product Select' },
+    tpl : '#product-select-tpl'
+  });
+  //
+  // templateRender({
+  //   el : '#review-country-select',
+  //   data : { rows : country_list, select : 'Country Select' },
+  //   tpl : '#product-select-tpl'
+  // });
+  //
+  // templateRender({
+  //   el : '#review-state-select',
+  //   data : { rows : us_states, select : 'State Select' },
+  //   tpl : '#product-select-tpl'
+  // });
+  //
+  
+  $('#review-product-select').on('change', function() {
+    $('input[name="item1"]').val(this.value);
+  });
+
+  $('#review-product-select-2').on('change', function() {
+    $('input[name="item2"]').val(this.value);
+  });
+  //
+  // $('#review-country-select').on('change', function() {
+  //   $('#review-form input[name="state"]').val('');
+  //   if (this.value == 'United States') {
+  //     $('#review-state-select').show();
+  //     $('#review-form input[name="state"]').attr('hidden', true);
+  //   } else {
+  //     $('#review-state-select').hide();
+  //     $('#review-form input[name="state"]').removeAttr('hidden');
+  //   }
+  // });
+  //
+  // $('#review-state-select').on('change', function() {
+  //   $('#review-form input[name="state"]').val(this.value);
+  // });
+
+  $('#review-form').modal('show');
+
+  $('#review-form .cancel').unbind().click(function(){
+    $('#review-form').modal('hide');
+  });
+
+  var $form = $('#review-form form');
+  var $loader = $('#review-form .loading');
+
+  $form.unbind().submit(function(e){
+    $loader.fadeIn();
+    e.preventDefault();
+    var formData = $form.serializeArray(),
+        submitData = {};
+
+    formData.forEach(function(item){
+      if (item.name == 'quantity1') {
+        submitData[item.name] = (item.value) ? parseInt(item.value) : null;
+      } else if (item.name == 'quantity2') {
+        submitData[item.name] = (item.value) ? parseInt(item.value) : null;
+      } else if (item.name == 'item2') {
+        if (item.value == null) {
+          submitData[item.name] = null;
+          submitData['quantity2'] = null;
+        } else {
+          submitData[item.name] = item.value;
+        }
+      } else {
+        submitData[item.name] = item.value;
+      }
+    });
+
+    $.ajax({
+      url: '/admin/create-order',
+      type: "POST",
+      data: JSON.stringify(submitData),
+      contentType: "application/json",
+      complete: function(response){
+        resData = response.responseJSON;
+        // console.log(resData);
+        if (resData.success == 1) {
+          // $form.find("input").val("");
+          // $form[0].reset();
+          updateOrders();
+          $('#review-form').modal('hide');
+        } else {
+          $loader.fadeOut('fast');
+        }
+      }
+    });
+  });
+
+  $('#review-form .modal-buttons .create-order').unbind().click(function(){
+    console.log($form);
+    $form.submit();
+  });
 }
 
 function initCreateOrders() {
   var $createOrder = $('#create-orders');
   $form = $createOrder.find('form');
-  var country_list = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Cape Verde","Cayman Islands","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cruise Ship","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyz Republic","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania","Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Namibia","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Satellite","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","St. Lucia","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia","Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe"];
-  var us_states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
 
   country_list = $.map(country_list, function(value){
     return { id : value, name : value }
@@ -117,18 +254,18 @@ function initCreateOrders() {
   });
 
   $('#country-select').on('change', function() {
-    $('input[name="state"]').val('');
+    $('#create-orders input[name="state"]').val('');
     if (this.value == 'United States') {
       $('#state-select').show();
-      $('input[name="state"]').attr('hidden', true);
+      $('#create-orders input[name="state"]').attr('hidden', true);
     } else {
       $('#state-select').hide();
-      $('input[name="state"]').removeAttr('hidden');
+      $('#create-orders input[name="state"]').removeAttr('hidden');
     }
   });
 
   $('#state-select').on('change', function() {
-    $('input[name="state"]').val(this.value);
+    $('#create-orders input[name="state"]').val(this.value);
   });
 
 
@@ -194,7 +331,7 @@ function initOrders() {
     }
   });
 
-  console.log(data);
+  // console.log(data);
 
   $loading.fadeOut('fast', function(){
     $('.orders-process .step-1').show();
@@ -224,7 +361,7 @@ function loadSubmittedOrders(){
     each.product2 = product2;
   });
 
-  console.log(submitted);
+  // console.log(submitted);
 
   templateRender({
     el : '#submitted-orders-list',
@@ -314,10 +451,6 @@ function initOrdersTable() {
     $orderProcess.find('.step-2').hide();
     $orderProcess.find('.step-1').show();
   });
-
-  $('.close').click(function(){
-    $('.ui.modal').modal('hide');
-  });
 }
 
 function initOrderList(){
@@ -354,7 +487,7 @@ function initOrderList(){
 }
 
 function initOrderSummary(){
-  console.log(resData);
+  // console.log(resData);
   $loading.fadeOut('fast', function(){
     templateRender({
       el : '#orders-summary',
