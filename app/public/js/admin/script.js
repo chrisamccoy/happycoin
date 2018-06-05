@@ -124,7 +124,7 @@ function initReviewForm (id) {
   //   tpl : '#product-select-tpl'
   // });
   //
-  
+
   $('#review-product-select').on('change', function() {
     $('input[name="item1"]').val(this.value);
   });
@@ -191,8 +191,8 @@ function initReviewForm (id) {
         if (resData.success == 1) {
           // $form.find("input").val("");
           // $form[0].reset();
-          updateOrders();
           $('#review-form').modal('hide');
+          $('#poc-table table tr[data-id='+id+']').remove();
         } else {
           $loader.fadeOut('fast');
         }
@@ -201,7 +201,6 @@ function initReviewForm (id) {
   });
 
   $('#review-form .modal-buttons .create-order').unbind().click(function(){
-    console.log($form);
     $form.submit();
   });
 }

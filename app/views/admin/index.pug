@@ -239,7 +239,7 @@ block content
       </thead>
       <tbody>
         <% _.each(rows, function(row){ %>
-          <tr>
+          <tr data-id="<%= row.id %>">
             <td><%= row.id %></td>
             <td><%= row['Timestamp'] %></td>
             <td><%= row['Email Address'] %></td>
