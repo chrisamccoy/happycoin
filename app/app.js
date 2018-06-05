@@ -60,7 +60,7 @@ app.use(session({
   saveUninitialized: true,
   cookie: {
     secure: false, //app.get('env') === 'production' ? true : false,
-    maxAge: 600000
+    maxAge: 365 * 24 * 60 * 60 * 1000
   },
 }))
 
