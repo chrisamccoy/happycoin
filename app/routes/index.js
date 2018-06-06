@@ -62,13 +62,18 @@ router.get('/tenyears', function(req, res, next) {
 /* GET home page. */
 router.get('/airdrop', function(req, res, next) {
   // res.render('poc-form', { title: 'Storecoin', meta: meta() });
-  res.redirect('https://docs.google.com/forms/d/e/1FAIpQLSem3e0msywn0ZQyCU5ZW8zcmovLbTiH5sqXOR-6SqSK0ishDg/viewform');
+  res.redirect('https://docs.google.com/forms/d/e/1FAIpQLSf5O8BRHTXUq0HMDm8b6jukERRAOsUCG5_seeePqdSaki897A/viewform');
 });
 
 /* GET home page. */
 router.get('/tee', function(req, res, next) {
   // res.render('poc-form', { title: 'Storecoin', meta: meta() });
-  res.redirect('https://docs.google.com/forms/d/e/1FAIpQLSem3e0msywn0ZQyCU5ZW8zcmovLbTiH5sqXOR-6SqSK0ishDg/viewform');
+  res.redirect('https://docs.google.com/forms/d/e/1FAIpQLSf5O8BRHTXUq0HMDm8b6jukERRAOsUCG5_seeePqdSaki897A/viewform');
+});
+
+/* GET home page. */
+router.get('/community', function(req, res, next) {
+  res.redirect('https://docs.google.com/forms/d/e/1FAIpQLSf5O8BRHTXUq0HMDm8b6jukERRAOsUCG5_seeePqdSaki897A/viewform');
 });
 
 /* GET home page. */
@@ -144,11 +149,6 @@ router.get('/whitepaper', function(req, res, next) {
 /* GET home page. */
 router.get('/development', function(req, res, next) {
   res.render('development', { title: 'Storecoin', meta: meta() });
-});
-
-/* GET home page. */
-router.get('/community', function(req, res, next) {
-  res.redirect('https://docs.google.com/forms/d/e/1FAIpQLSem3e0msywn0ZQyCU5ZW8zcmovLbTiH5sqXOR-6SqSK0ishDg/viewform');
 });
 
 /* GET home page. */
