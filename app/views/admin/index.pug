@@ -54,16 +54,16 @@ block content
                   label Zipcode
                   input(type="text", name="zipcode", placeholder="Zipcode")
                   
-                  label Product 1
+                  label Item 1
                   select#product-select
-                  input(type="text", name="item1", placeholder="Product 1", hidden)
+                  input(type="text", name="item1", placeholder="Item 1", hidden)
                   
                   label Quantity 1
                   input(type="number", name="quantity1", placeholder="Quantity")
                   
-                  label Product 2
+                  label Item 2
                   select#product-select-2
-                  input(type="text", name="item2", placeholder="Product 2", hidden)
+                  input(type="text", name="item2", placeholder="Item 2", hidden)
                   
                   label Quantity 2
                   input(type="number", name="quantity2", placeholder="Quantity")
@@ -152,11 +152,11 @@ block content
             <div class="value"><%= item.order_data.name %></div>
           </div>
           <div class="info">
-            <div class="head">Product 1</div>
+            <div class="head">Item 1</div>
             <div class="value"><%= (item.order_data.item1) ? item.order_data.item1.name + ' x ' + item.order_data.quantity1 : 'N/A' %></div>
           </div>
           <div class="info">
-            <div class="head">Product 2</div>
+            <div class="head">Item 2</div>
             <div class="value"><%= (item.order_data.item2) ? item.order_data.item2.name + ' x ' + item.order_data.quantity2 : 'N/A' %></div>
           </div>
           <div class="info">
@@ -177,8 +177,8 @@ block content
         <tr>
           <th style="text-align:center;">#</th>
           <th>Name</th>
-          <th>Product 1</th>
-          <th>Product 2</th>
+          <th>Item 1</th>
+          <th>Item 2</th>
           <th></th>
         </tr>
       </thead>
@@ -187,8 +187,8 @@ block content
           <tr data-id="<%= row.id %>">
             <th style="text-align:center;"><%= i + 1 %></th>
             <td><%= row.name %></td>
-            <td><%= (row.item1) ? row.item1.name + ' x ' + row.quantity1 : '<span style="color: red;"><i class="ion-alert" style="margin-right:1em;"></i>No Product Found</span>' %></td>
-            <td><%= (row.item2) ? row.item2.name + ' x ' + row.quantity2 : '<span style="color: red;"><i class="ion-alert" style="margin-right:1em;"></i>No Product Found</span>' %></td>
+            <td><%= (row.item1) ? row.item1.name + ' x ' + row.quantity1 : '<span style="color: red;"><i class="ion-alert" style="margin-right:1em;"></i>N/A</span>' %></td>
+            <td><%= (row.item2) ? row.item2.name + ' x ' + row.quantity2 : '<span style="color: red;"><i class="ion-alert" style="margin-right:1em;"></i>N/A</span>' %></td>
             <td><i class="ion-android-close"></i></td>
           </tr>
         <% }) %>
@@ -203,8 +203,8 @@ block content
           <th>Name</th>
           <th>Address</th>
           <th>Order ID</th>
-          <th>Product 1</th>
-          <th>Product 2</th>
+          <th>Item 1</th>
+          <th>Item 2</th>
         </tr>
       </thead>
       <tbody>
