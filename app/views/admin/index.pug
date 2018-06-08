@@ -226,27 +226,5 @@ block content
     <% _.each(rows, function(row){ %>
       <option value="<%= row.id %>"><%= row.name %></option>
     <% }) %>
-    
-  script#poc-table-tpl(type="text/template")
-    <table>
-      <thead>
-        <tr>
-          <th>Airtable ID</th>
-          <th>Time</th>
-          <th>Email</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% _.each(rows, function(row){ %>
-          <tr data-id="<%= row.id %>">
-            <td><%= row.id %></td>
-            <td><%= row['Timestamp'] %></td>
-            <td><%= row['Email Address'] %></td>
-            <td><button class="orange review" data-id="<%= row.id %>">Review</button></td>
-          </tr>
-        <% }) %>
-      </tbody>
-    </table>
   
   include review-form

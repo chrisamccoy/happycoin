@@ -39,6 +39,15 @@ router.get('/poc-forms', function(req, res, next) {
   });
 });
 
+router.get('/poc-forms/remove/:id', function(req, res, next) {
+  var id = req.params.id;
+  request('http://teamapi.storeco.in/remove/poc-form/'+id, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.send(response.body); // Print the google web page.
+    }
+  });
+});
+
 router.post('/submit-orders', function(req, res, next) {
   var options = {
     method: 'post',

@@ -1,3 +1,31 @@
+script#poc-table-tpl(type="text/template")
+  <table>
+    <thead>
+      <tr>
+        <th>Airtable ID</th>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Time</th>
+        <th>Email</th>
+        <th>Action</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% _.each(rows, function(row){ %>
+        <tr data-id="<%= row.id %>">
+          <td><%= row.id %></td>
+          <td><%= row['Your name'] %></td>
+          <td><%= row['Country'] %></td>
+          <td><%= row['Timestamp'] %></td>
+          <td><%= row['Email Address'] %></td>
+          <td><button class="orange review" data-id="<%= row.id %>">Review</button></td>
+          <td><button class="red remove" data-id="<%= row.id %>">Remove</button></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  
 script#review-form-tpl(type="text/template")
   <div class="content">
     <div class="loading" style="display:none;">
@@ -63,7 +91,7 @@ script#review-form-tpl(type="text/template")
           </div>
           <div class="fields">
             <div class="field">
-              <label>Item 1</label>
+              <label>Item 2</label>
               <select id="review-product-select-2"></select>
               <input type="text" name="item2" hidden>
             </div>

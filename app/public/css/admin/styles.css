@@ -22,6 +22,11 @@ button.orange {
   border-color: #f78348;
 }
 
+button.red {
+  background-color: #ec3f3f;
+  border-color: #ec3f3f;
+}
+
 i {
   line-height: 1;
 }
@@ -548,4 +553,9 @@ select {
 
 #review-form .form-info table th {
   width: 60%;
+}
+
+/* poc table */
+#poc-table button {
+  padding: 0 1em;
 }

@@ -90,6 +90,14 @@ function initPocForms() {
     var data = $(this).data();
     initReviewForm(data.id);
   });
+
+  $('#poc-table .remove').unbind().click(function(){
+    var $this = $(this);
+    var data = $(this).data();
+    $.getJSON('/admin/poc-forms/remove/'+data.id, function(result){
+      $this.parents('tr').remove();
+    });
+  });
 }
 
 function initReviewForm (id) {
@@ -163,13 +171,15 @@ function initReviewForm (id) {
     var formData = $form.serializeArray(),
         submitData = {};
 
+    console.log(formData);
+
     formData.forEach(function(item){
       if (item.name == 'quantity1') {
         submitData[item.name] = (item.value) ? parseInt(item.value) : null;
       } else if (item.name == 'quantity2') {
         submitData[item.name] = (item.value) ? parseInt(item.value) : null;
       } else if (item.name == 'item2') {
-        if (item.value == null) {
+        if (item.value) {
           submitData[item.name] = null;
           submitData['quantity2'] = null;
         } else {
