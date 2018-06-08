@@ -1763,6 +1763,14 @@ function fadeInContent () {
         reset : false
       });
     });
+
+    $('#hc-milestones .each-milestone').each(function(i){
+      if (i % 2 == 0) {
+        $(this).addClass('left');
+      } else {
+        $(this).addClass('right');
+      }
+    });
   }
 }
 
