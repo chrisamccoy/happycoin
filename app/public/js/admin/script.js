@@ -101,7 +101,9 @@ function initPocForms() {
 }
 
 function initReviewForm (id) {
-  var reviewOrder = _.find(poc, ['id', id]);
+  var reviewOrder = _.find(poc, ['id', id]),
+  $reviewForm = $('#review-form');
+  console.log(reviewOrder);
 
   templateRender({
     el : '#review-form',
@@ -119,47 +121,30 @@ function initReviewForm (id) {
     data : { rows : inventory, select : 'Product Select' },
     tpl : '#product-select-tpl'
   });
-  //
-  // templateRender({
-  //   el : '#review-country-select',
-  //   data : { rows : country_list, select : 'Country Select' },
-  //   tpl : '#product-select-tpl'
-  // });
-  //
-  // templateRender({
-  //   el : '#review-state-select',
-  //   data : { rows : us_states, select : 'State Select' },
-  //   tpl : '#product-select-tpl'
-  // });
-  //
 
   $('#review-product-select').on('change', function() {
-    $('input[name="item1"]').val(this.value);
+    $reviewForm.find('input[name="item1"]').val(this.value);
   });
 
   $('#review-product-select-2').on('change', function() {
-    $('input[name="item2"]').val(this.value);
+    $reviewForm.find('input[name="item2"]').val(this.value);
   });
-  //
-  // $('#review-country-select').on('change', function() {
-  //   $('#review-form input[name="state"]').val('');
-  //   if (this.value == 'United States') {
-  //     $('#review-state-select').show();
-  //     $('#review-form input[name="state"]').attr('hidden', true);
-  //   } else {
-  //     $('#review-state-select').hide();
-  //     $('#review-form input[name="state"]').removeAttr('hidden');
-  //   }
-  // });
-  //
-  // $('#review-state-select').on('change', function() {
-  //   $('#review-form input[name="state"]').val(this.value);
-  // });
 
-  $('#review-form').modal('show');
+  // ​document.getElementById('review-product-select').value = 'Storecoin Unisex Shirt - XS';​​​​​​​​​​
+  var item1 = _.find(inventory, ['name', 'Storecoin Unisex Shirt - '+reviewOrder["What's Your T-Shirt Size?"]]);
+  $('#review-product-select').val(item1.id);
+  $reviewForm.find('input[name="item1"]').val(item1.id);
 
-  $('#review-form .cancel').unbind().click(function(){
-    $('#review-form').modal('hide');
+  if (reviewOrder['Would you like two tee-shirts instead of one?'] == 'Yes') {
+    var item2 = _.find(inventory, ['name', 'Storecoin Unisex Shirt - '+reviewOrder["Tee-shirt size for your second tee-shirt?"]]);
+    $('#review-product-select-2').val(item2.id);
+    $reviewForm.find('input[name="item2"]').val(item2.id);
+  }
+
+  $reviewForm.modal('show');
+
+  $reviewForm.find('.cancel').unbind().click(function(){
+    $reviewForm.modal('hide');
   });
 
   var $form = $('#review-form form');
