@@ -103,7 +103,7 @@ function initPocForms() {
 function initReviewForm (id) {
   var reviewOrder = _.find(poc, ['id', id]),
   $reviewForm = $('#review-form');
-  console.log(reviewOrder);
+  // console.log(reviewOrder);
 
   templateRender({
     el : '#review-form',
@@ -132,15 +132,20 @@ function initReviewForm (id) {
 
   // ​document.getElementById('review-product-select').value = 'Storecoin Unisex Shirt - XS';​​​​​​​​​​
   var item1 = _.find(inventory, ['name', 'Storecoin Unisex Shirt - '+reviewOrder["What's Your T-Shirt Size?"]]);
-  $('#review-product-select').val(item1.id);
-  $reviewForm.find('input[name="item1"]').val(item1.id);
-  $reviewForm.find('input[name="quantity1"]').val(1);
+
+  if (item1) {
+    $('#review-product-select').val(item1.id);
+    $reviewForm.find('input[name="item1"]').val(item1.id);
+    $reviewForm.find('input[name="quantity1"]').val(1);
+  }
 
   if (reviewOrder['Would you like two tee-shirts instead of one?'] == 'Yes') {
     var item2 = _.find(inventory, ['name', 'Storecoin Unisex Shirt - '+reviewOrder["Tee-shirt size for your second tee-shirt?"]]);
-    $('#review-product-select-2').val(item2.id);
-    $reviewForm.find('input[name="item2"]').val(item2.id);
-    $reviewForm.find('input[name="quantity2"]').val(1);
+    if (item2) {
+      $('#review-product-select-2').val(item2.id);
+      $reviewForm.find('input[name="item2"]').val(item2.id);
+      $reviewForm.find('input[name="quantity2"]').val(1);
+    }
   }
 
   $reviewForm.modal('show');
