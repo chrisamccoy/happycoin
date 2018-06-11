@@ -7880,3 +7880,124 @@ and (max-width : 335px) {
   height: 0.8em;
   vertical-align: baseline;
 }
+
+/* kyc register */
+.kyc-register {
+  background-color: white;
+}
+
+.kyc-register form {
+  margin: 0px;
+}
+
+.kyc-register .row {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 3em 0px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.kyc-register .row .column {
+  width: 50%;
+}
+
+.kyc-register .row .column p {
+  font-size: 1.3em;
+  margin-bottom: 1em;
+}
+
+.kyc-register .tab-body {
+  display: none;
+}
+
+.kyc-register .tab-body.active {
+  display: block;
+}
+
+.kyc-register .row .column.register {
+  padding: 2em;
+  border-radius: 15px;
+  border: 1px solid #e2e2e2;
+  font-size: 1.2em;
+}
+
+.kyc-register .row .column.register .forgot {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.kyc-register .row .column.register .tabs {
+  margin-bottom: 2em;
+}
+
+.kyc-register .row .column.register .tabs .item {
+  font-size: 1.2em;
+  margin-right: 1em;
+  color: grey;
+  border-radius: 1px solid white;
+}
+
+.kyc-register .row .column.register .tabs .item.active {
+  border-bottom: 1px solid #ed844c;
+}
+
+.kyc-register .row .column.register .field {
+  margin-bottom: 1.5em;
+}
+
+.kyc-register .row .column.register .field.checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.kyc-register .row .column.register .field.checkbox input {
+  width: 30px;
+  margin: 0px;
+}
+
+.kyc-register .row .column.register .field.checkbox label {
+  width: calc(100% - 30px);
+  margin: 0px;
+  font-size: 0.9em;
+}
+
+.kyc-register .row .column.register .field input {
+  border-radius: none;
+  border:none;
+  border-bottom: 1px solid #e2e2e2;
+  padding-left: 0px;
+  width: 100%;
+}
+
+.kyc-register .row .column.register button {
+  width: 100%;
+}
+
+.kyc-register .row .column.register .g-recaptcha {
+  width: 100%;
+  margin: 0 auto 1.5em;
+}
+
+@media only screen and (max-width: 700px) {
+  .kyc-register .row {
+    display: block;
+    padding: 3em 1em;
+  }
+
+  .kyc-register .row .column {
+    width: 100%;
+  }
+
+  .kyc-register .row .column h5 {
+    font-size: 1.8em;
+  }
+
+  .kyc-register .row .column.register {
+    padding: 1.2em 0.5em;
+  }
+
+  .kyc-register .row .column.register .g-recaptcha {
+    width: 100%;
+  }
+}

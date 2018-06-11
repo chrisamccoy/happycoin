@@ -58,6 +58,7 @@ $(document).ready(function(){
   initThirdTokenSale();
   twitterWidgets();
   iframes();
+  initTabs('.kyc-register .register');
 });
 
 function initDropdown() {
@@ -1805,4 +1806,20 @@ function iframes() {
       iframes[i].setAttribute('src',iframes[i].getAttribute('data-src'));
     }
   }
+}
+
+function initTabs(el) {
+  var $el = $(el),
+  $tabs = $el.children('.tabs'),
+  $item = $tabs.children('.item');
+
+  $item.click(function(){
+    var tabName = $(this).data().tab;
+    if(!$(this).hasClass('active')){
+      $item.removeClass('active');
+      $(this).addClass('active');
+      $el.children('.tab-body').removeClass('active');
+      $el.children('.tab-body[data-tab="'+tabName+'"]').addClass('active');
+    }
+  });
 }

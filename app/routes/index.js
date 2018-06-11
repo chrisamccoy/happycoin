@@ -101,11 +101,6 @@ router.get('/review', function(req, res, next) {
 });
 
 /* GET home page. */
-router.get('/kyc', function(req, res, next) {
-  res.render('kyc', { title: 'Storecoin', meta: meta() });
-});
-
-/* GET home page. */
 router.get('/messagenode', function(req, res, next) {
   res.render('coming-soon', { title: 'Storecoin', meta: meta() });
 });

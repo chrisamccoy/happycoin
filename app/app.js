@@ -8,6 +8,7 @@ var session = require('express-session');
 
 var index = require('./routes/index');
 var admin = require('./routes/admin');
+var kyc = require('./routes/kyc');
 var developers = require('./routes/developers');
 
 var app = express();
@@ -83,6 +84,7 @@ app.all("/admin/*", requireLogin, function(req, res, next) {
 // Assign all routes
 app.use('/', index);
 app.use('/admin', admin);
+app.use('/kyc', kyc);
 app.use('/developers', developers);
 
 

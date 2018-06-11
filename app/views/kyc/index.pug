@@ -1,0 +1,57 @@
+extends ../layout
+
+block content
+  div#hc-content.kyc-register
+    div.row
+      div.column
+        h5 Registration for the Storecoin's
+          br 
+          |  KYC/AML Process
+        p Storecoin requires contributors to its fundraiser to complete this KYC/AML process in order to access their recommended allocations in its proposed genesis block.
+        p After an account is registered, the contributor must complete an identity verification process. After a contributor’s identity is verified, that contributor will receive an activation code corresponding to a given public key hash. This activation code will be required in order to access the corresponding public key hash’s allocation in the genesis block.
+        p 
+          b This KYC/AML process will be available post-launch. It does not need to be completed prior to the betanet launch.
+
+        p Thank you,
+          br 
+          | Storecoin
+      div.column.register
+        div.tabs
+          a.item.active(data-tab="register") REGISTER
+          a.item(data-tab="signin") SIGN IN
+        
+        div.tab-body.active(data-tab="register")
+          form
+            div.field
+              input(type="email", placeholder="Email")
+            div.field
+              input(type="password", placeholder="Password")
+            div.field
+              input(type="password", placeholder="Password Confirmation")
+            div.field.checkbox
+              input(type="checkbox")
+              label Check here to indicate that you have read and agree to the Storecoin's Privacy Policy.
+            div.field.checkbox
+              input(type="checkbox")
+              label Check here to indicate that you have read and agree to the Storecoin's Terms and Conditions.
+            div.field.checkbox
+              input(type="checkbox")
+              label Select to receive a newsletter about Tezos.
+              
+            div.g-recaptcha(data-sitekey='6Le_VF4UAAAAAOm3c4Q0qXqkiHIJvezSI9ivGFQd')
+            
+            button.hc-button.orange Register
+            
+          
+        div.tab-body(data-tab="signin")
+          form
+            div.field
+              input(type="email", placeholder="Email")
+            div.field
+              input(type="password", placeholder="Password")
+              
+          button.hc-button.orange Sign in
+          
+          div.forgot Forgot your password?
+            = ' '
+            a Recover it.
