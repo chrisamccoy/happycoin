@@ -19,6 +19,8 @@ script#poc-table-tpl(type="text/template")
             <td><%= row['Your name'] %></td>
           <% } else if (row['Your first name']) { %>
             <td><%= row['Your first name'] %><%= (row['Your last name']) ? ' '+row['Your last name'] : '' %></td>
+          <% } else { %>
+            <td></td>
           <% } %>
           <td><%= row['Country'] %></td>
           <td><%= row['Timestamp'] %></td>
