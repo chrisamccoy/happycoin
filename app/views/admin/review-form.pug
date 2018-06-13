@@ -47,7 +47,13 @@ script#review-form-tpl(type="text/template")
             <div class="field">
               <label>Name</label>
               <input type="text" name="form_id" value="<%= data.id %>" hidden>
-              <input type="text" name="name" value="<%= data['Your name'] %>">
+              <% if (data['Your name']) { %>
+                <input type="text" name="name" value="<%= data['Your name'] %>">
+              <% } else if (data['Your first name']) { %>
+                <input type="text" name="name" value="<%= data['Your first name'] %><%= (data['Your last name']) ? ' '+data['Your last name'] : '' %>">
+              <% } else { %>
+                <input type="text" name="name" value="">
+              <% } %>
             </div>
             <div class="field">
               <label>Email</label>
