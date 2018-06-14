@@ -10132,12 +10132,60 @@ function initKycRegister() {
   initTabs('.kyc-register .register');
   if (window.location.pathname == '/kyc') {
     kycFormReg();
+    kycSignIn();
   }
 }
 
 function kycFormReg () {
   var $kyc = $('.kyc-register'),
   $form = $kyc.find('form.register'),
+  $pass = $form.find('input[name="password"]'),
+  $confirm = $form.find('input[name="confirm"]'),
+  $button = $form.find('button');
+
+  $form.submit(function(e){
+    e.preventDefault();
+    var formData = $form.serializeArray(),
+    submitData = {};
+
+    formData.forEach(function(item){
+      submitData[item.name] = item.value;
+    });
+
+    $.ajax({
+      url: '/kyc/register',
+      type: "POST",
+      data: JSON.stringify(submitData),
+      contentType: "application/json",
+      complete: function(response){
+        resData = response.responseJSON;
+        if (resData.success == 1) {
+          location.reload();
+        }
+      }
+    });
+  });
+
+  $confirm.on('change keyup', function(){
+    if ($pass.val().length > 0 && $(this).val() == $pass.val()) {
+      $button.removeAttr('disabled');
+    } else {
+      $button.attr('disabled', 'disabled');
+    }
+  });
+
+  $pass.on('change keyup', function(){
+    if ($confirm.val().length > 0 && $(this).val() == $confirm.val()) {
+      $button.removeAttr('disabled');
+    } else {
+      $button.attr('disabled', 'disabled');
+    }
+  });
+}
+
+function kycSignIn () {
+  var $kyc = $('.kyc-register'),
+  $form = $kyc.find('form.sign-in'),
   $pass = $form.find('input[name="password"]'),
   $confirm = $form.find('input[name="confirm"]'),
   $button = $form.find('button');

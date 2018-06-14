@@ -21,7 +21,7 @@ router.post('/register', function(req, res, next) {
     if (!error && response.statusCode == 200) {
       res.send(response.body); // Print the google web page.
       req.session.user = response.body.applicant;
-      console.log('session', req.session.user);
+      res.send();
     }
   });
 });
