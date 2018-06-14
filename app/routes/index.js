@@ -197,7 +197,7 @@ router.get("/blockfin", function(req, res, next){
     res.statusCode = 401;
     res.setHeader('WWW-Authenticate', 'Basic realm="Secure Area"');
 
-    res.end('<html><body>Need some creds son</body></html>');
+    res.end('<html><body>This page is protected. Refresh the page enter crendentials.</body></html>');
   }
 
   else if(auth) {    // The Authorization was passed in so now we validate it

@@ -1908,39 +1908,43 @@ function kycPage() {
     //referrer: "http://localhost:3000"
   };
 
-  $.ajax({
-    url: '/kyc/get-token',
-    type: "POST",
-    data: JSON.stringify(data),
-    contentType: "application/json",
-    dataType: "json",
-    complete: function(response) {
-      var json = response.responseJSON;
-      if (json.success !== 1) {
-        return;
-      }
+  var url = 'https://s3-eu-west-1.amazonaws.com/onfido-assets-production/web-sdk-releases/2.4.1/onfido.min.js';
 
-      Onfido.init({
-        useModal: false,
-        token: json.token,
-        containerId: 'onfido-mount',
-        onComplete: function(data) {
-          // callback for when everything is complete
-          console.log("everything is complete")
-        },
-        steps: [
-          {
-            type: 'welcome',
-            options: {
-              title: 'Verify your Identity',
-              description: 'We will need to verify your identity. It will only take a couple of minutes.'
-            }
+  $.getScript(url, function() {
+    $.ajax({
+      url: '/kyc/get-token',
+      type: "POST",
+      data: JSON.stringify(data),
+      contentType: "application/json",
+      dataType: "json",
+      complete: function(response) {
+        var json = response.responseJSON;
+        if (json.success !== 1) {
+          return;
+        }
+
+        Onfido.init({
+          useModal: false,
+          token: json.token,
+          containerId: 'onfido-mount',
+          onComplete: function(data) {
+            // callback for when everything is complete
+            console.log("everything is complete")
           },
-          'document',
-          'face',
-          'complete'
-        ]
-      });
-    }
+          steps: [
+            {
+              type: 'welcome',
+              options: {
+                title: 'Verify your Identity',
+                description: 'We will need to verify your identity. It will only take a couple of minutes.'
+              }
+            },
+            'document',
+            'face',
+            'complete'
+          ]
+        });
+      }
+    });
   });
 }

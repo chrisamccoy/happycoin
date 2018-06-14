@@ -17,10 +17,10 @@ block content
           | Storecoin
       div.column.register
         div.tabs
-          a.item.active(data-tab="register") REGISTER
-          a.item(data-tab="signin") SIGN IN
+          a.item.active(data-tab="signin") LOGIN
+          a.item(data-tab="register") REGISTER
 
-        div.tab-body.active(data-tab="register")
+        div.tab-body(data-tab="register")
           form.register(action="/kyc/register", method="POST")
             div.field
               input(type="text", placeholder="First Name", name="first_name")
@@ -47,7 +47,7 @@ block content
             button.hc-button.orange(type="submit", disabled) Register
 
 
-        div.tab-body(data-tab="signin")
+        div.tab-body.active(data-tab="signin")
           form.sign-in(action="/kyc/login", method="POST")
             div.field
               input(type="email", placeholder="Email", name="email")
