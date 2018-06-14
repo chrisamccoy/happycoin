@@ -7891,7 +7891,7 @@ and (max-width : 335px) {
 }
 
 .kyc-register .row {
-  max-width: 950px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 3em 0px;
   display: flex;
@@ -7939,7 +7939,9 @@ and (max-width : 335px) {
 }
 
 .kyc-register .row .column.register .tabs .item.active {
-  border-bottom: 1px solid #ed844c;
+  border-bottom: 3px solid #ed844c;
+  font-weight: bold;
+  color: #333;
 }
 
 .kyc-register .row .column.register .field {
@@ -7979,6 +7981,18 @@ and (max-width : 335px) {
   margin: 0 auto 1.5em;
 }
 
+.kyc-page {
+  background-color: white;
+}
+
+.kyc-page .row {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3em 0px;
+  display: flex;
+  align-items: flex-start;
+}
+
 @media only screen and (max-width: 700px) {
   .kyc-register .row {
     display: block;
@@ -8000,4 +8014,9 @@ and (max-width : 335px) {
   .kyc-register .row .column.register .g-recaptcha {
     width: 100%;
   }
+}
+
+.onfido-sdk-ui-Modal-inner {
+  width: 100% !important;
+  max-width: 100% !important;
 }

@@ -58,7 +58,7 @@ $(document).ready(function(){
   initThirdTokenSale();
   twitterWidgets();
   iframes();
-  initKycRegister();
+  initKyc();
 });
 
 function initDropdown() {
@@ -1825,36 +1825,14 @@ function initTabs(el) {
 }
 
 
-function initKycRegister() {
-  initTabs('.kyc-register .register');
+function initKyc() {
   if (window.location.pathname == '/kyc') {
-    kycFormReg();
-    kycSignIn();
-
-    if ($('#onfido-mount').length > 0) {
-      var data = {"applicant_id": $('#onfido-mount').data().id, "referrer": "https://storeco.in/kyc"};
-      data = JSON.stringify(data);
-      $.ajax({
-        url: '/kyc/get-token',
-        type: "POST",
-        data: data,
-        contentType: "application/json",
-        complete: function(response){
-          resData = response.responseJSON;
-          console.log(resData);
-          if (resData.success == 1) {
-            Onfido.init({
-              token: 'your-jwt-token',
-              buttonId: 'onfido-button',
-              containerId: 'onfido-mount',
-              onComplete: function() {
-                console.log("everything is complete")
-                // tell your backend service that it can create the check
-              }
-            })
-          }
-        }
-      });
+    if ($('.kyc-page').length) {
+      kycPage();
+    } else if ($('.kyc-register').length) {
+      initTabs('.kyc-register .register');
+      kycFormReg();
+      kycSignIn();
     }
   }
 }
@@ -1867,26 +1845,11 @@ function kycFormReg () {
   $button = $form.find('button');
 
   $form.submit(function(e){
-    e.preventDefault();
-    var formData = $form.serializeArray(),
-    submitData = {};
+    if ($button.is(":disabled")) {
+      return false;
+    }
 
-    formData.forEach(function(item){
-      submitData[item.name] = item.value;
-    });
-
-    $.ajax({
-      url: '/kyc/register',
-      type: "POST",
-      data: JSON.stringify(submitData),
-      contentType: "application/json",
-      complete: function(response){
-        resData = response.responseJSON;
-        if (resData.success == 1) {
-          location.reload();
-        }
-      }
-    });
+    return true;
   });
 
   $confirm.on('change keyup', function(){
@@ -1914,26 +1877,11 @@ function kycSignIn () {
   $button = $form.find('button');
 
   $form.submit(function(e){
-    e.preventDefault();
-    var formData = $form.serializeArray(),
-    submitData = {};
+    if ($button.is(":disabled")) {
+      return false;
+    }
 
-    formData.forEach(function(item){
-      submitData[item.name] = item.value;
-    });
-
-    $.ajax({
-      url: '/kyc/signin',
-      type: "POST",
-      data: JSON.stringify(submitData),
-      contentType: "application/json",
-      complete: function(response){
-        resData = response.responseJSON;
-        if (resData.success == 1) {
-          location.reload();
-        }
-      }
-    });
+    return true;
   });
 
   $pass.on('change keyup', function(){
@@ -1949,6 +1897,50 @@ function kycSignIn () {
       $button.removeAttr('disabled');
     } else {
       $button.attr('disabled', 'disabled');
+    }
+  });
+}
+
+function kycPage() {
+  var data = {
+    applicant_id: $('.kyc-onfido').attr('data-id'),
+    referrer: "https://storeco.in/kyc"
+    //referrer: "http://localhost:3000"
+  };
+
+  $.ajax({
+    url: '/kyc/get-token',
+    type: "POST",
+    data: JSON.stringify(data),
+    contentType: "application/json",
+    dataType: "json",
+    complete: function(response) {
+      var json = response.responseJSON;
+      if (json.success !== 1) {
+        return;
+      }
+
+      Onfido.init({
+        useModal: false,
+        token: json.token,
+        containerId: 'onfido-mount',
+        onComplete: function(data) {
+          // callback for when everything is complete
+          console.log("everything is complete")
+        },
+        steps: [
+          {
+            type: 'welcome',
+            options: {
+              title: 'Verify your Identity',
+              description: 'We will need to verify your identity. It will only take a couple of minutes.'
+            }
+          },
+          'document',
+          'face',
+          'complete'
+        ]
+      });
     }
   });
 }
