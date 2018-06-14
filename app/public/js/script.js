@@ -1829,6 +1829,33 @@ function initKycRegister() {
   initTabs('.kyc-register .register');
   if (window.location.pathname == '/kyc') {
     kycFormReg();
+    kycSignIn();
+
+    if ($('#onfido-mount').length > 0) {
+      var data = {"applicant_id": $('#onfido-mount').data().id, "referrer": "https://storeco.in/kyc"};
+      data = JSON.stringify(data);
+      $.ajax({
+        url: '/kyc/get-token',
+        type: "POST",
+        data: data,
+        contentType: "application/json",
+        complete: function(response){
+          resData = response.responseJSON;
+          console.log(resData);
+          if (resData.success == 1) {
+            Onfido.init({
+              token: 'your-jwt-token',
+              buttonId: 'onfido-button',
+              containerId: 'onfido-mount',
+              onComplete: function() {
+                console.log("everything is complete")
+                // tell your backend service that it can create the check
+              }
+            })
+          }
+        }
+      });
+    }
   }
 }
 
@@ -1872,6 +1899,53 @@ function kycFormReg () {
 
   $pass.on('change keyup', function(){
     if ($confirm.val().length > 0 && $(this).val() == $confirm.val()) {
+      $button.removeAttr('disabled');
+    } else {
+      $button.attr('disabled', 'disabled');
+    }
+  });
+}
+
+function kycSignIn () {
+  var $kyc = $('.kyc-register'),
+  $form = $kyc.find('form.sign-in'),
+  $pass = $form.find('input[name="password"]'),
+  $email = $form.find('input[name="email"]'),
+  $button = $form.find('button');
+
+  $form.submit(function(e){
+    e.preventDefault();
+    var formData = $form.serializeArray(),
+    submitData = {};
+
+    formData.forEach(function(item){
+      submitData[item.name] = item.value;
+    });
+
+    $.ajax({
+      url: '/kyc/signin',
+      type: "POST",
+      data: JSON.stringify(submitData),
+      contentType: "application/json",
+      complete: function(response){
+        resData = response.responseJSON;
+        if (resData.success == 1) {
+          location.reload();
+        }
+      }
+    });
+  });
+
+  $pass.on('change keyup', function(){
+    if ($pass.val().length > 0 && $email.val().length > 0) {
+      $button.removeAttr('disabled');
+    } else {
+      $button.attr('disabled', 'disabled');
+    }
+  });
+
+  $email.on('change keyup', function(){
+    if ($pass.val().length > 0 && $email.val().length > 0) {
       $button.removeAttr('disabled');
     } else {
       $button.attr('disabled', 'disabled');
