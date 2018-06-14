@@ -21,26 +21,30 @@ block content
           a.item(data-tab="signin") SIGN IN
         
         div.tab-body.active(data-tab="register")
-          form
+          form.register
             div.field
-              input(type="email", placeholder="Email")
+              input(type="text", placeholder="First Name", name="first_name")
             div.field
-              input(type="password", placeholder="Password")
+              input(type="text", placeholder="Last Name", name="last_name")
             div.field
-              input(type="password", placeholder="Password Confirmation")
-            div.field.checkbox
+              input(type="email", placeholder="Email", name="email")
+            div.field
+              input(type="password", placeholder="Password", name="password")
+            div.field
+              input(type="password", placeholder="Password Confirmation", name="confirm")
+            //- div.field.checkbox
               input(type="checkbox")
               label Check here to indicate that you have read and agree to the Storecoin's Privacy Policy.
-            div.field.checkbox
+            //- div.field.checkbox
               input(type="checkbox")
               label Check here to indicate that you have read and agree to the Storecoin's Terms and Conditions.
-            div.field.checkbox
+            //- div.field.checkbox
               input(type="checkbox")
               label Select to receive a newsletter about Tezos.
               
             div.g-recaptcha(data-sitekey='6Le_VF4UAAAAAOm3c4Q0qXqkiHIJvezSI9ivGFQd')
             
-            button.hc-button.orange Register
+            button.hc-button.orange(disabled) Register
             
           
         div.tab-body(data-tab="signin")
