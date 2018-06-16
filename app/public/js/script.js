@@ -1878,7 +1878,7 @@ function kycPage() {
     referrer: window.location.href
   };
 
-  var url = 'https://s3-eu-west-1.amazonaws.com/onfido-assets-production/web-sdk-releases/2.4.1/onfido.min.js';
+  var url = '/assets/onfido.min.js';
 
   $.getScript(url, function() {
     $.ajax({
@@ -1906,7 +1906,7 @@ function kycPage() {
               type: 'welcome',
               options: {
                 title: 'Verify your Identity',
-                descriptions: 'We will need to verify your identity. It will only take a couple of minutes.'
+                descriptions: ['We will need to verify your identity. It will only take a couple of minutes.']
               }
             },
             'document',
