@@ -3,6 +3,10 @@ var request = require('request');
 var meta = require('../helpers/meta');
 var router = express.Router();
 
+router.get('/', function(req, res, next) {
+  res.render('kyc/login', { title: 'Storecoin | KYC', meta : meta()});
+});
+
 /* GET users listing. */
 router.get('/:app_id', function(req, res, next) {
   var id = req.params.app_id;

@@ -7989,6 +7989,10 @@ and (max-width : 335px) {
   background-color: white;
 }
 
+.kyc-page p {
+  font-size: 1.2em;
+}
+
 .kyc-page > .row:first-child {
   padding-top: 3em !important;
 }
@@ -8006,6 +8010,16 @@ and (max-width : 335px) {
   .kyc-register .row {
     display: block;
     padding: 3em 1em;
+    flex-direction: column;
+  }
+
+  .kyc-page .row {
+    padding: 0 1em;
+    flex-direction: column;
+  }
+
+  .kyc-page .row > .column {
+    margin-left: 0;
   }
 
   .kyc-register .row .column {
