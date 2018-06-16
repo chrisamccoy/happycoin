@@ -16,46 +16,15 @@ block content
           br
           | Storecoin
       div.column.register
-        div.tabs
-          a.item.active(data-tab="signin") LOGIN
-          a.item(data-tab="register") REGISTER
+        form.register(action="/kyc/register", method="POST")
+          h5 Enter Your Information
+          div.field
+            input(type="text", placeholder="First Name", name="first_name")
+          div.field
+            input(type="text", placeholder="Last Name", name="last_name")
+          div.field
+            input(type="email", placeholder="Email", name="email")
 
-        div.tab-body(data-tab="register")
-          form.register(action="/kyc/register", method="POST")
-            div.field
-              input(type="text", placeholder="First Name", name="first_name")
-            div.field
-              input(type="text", placeholder="Last Name", name="last_name")
-            div.field
-              input(type="email", placeholder="Email", name="email")
-            div.field
-              input(type="password", placeholder="Password", name="password")
-            div.field
-              input(type="password", placeholder="Password Confirmation", name="confirm")
-            //- div.field.checkbox
-              input(type="checkbox")
-              label Check here to indicate that you have read and agree to the Storecoin's Privacy Policy.
-            //- div.field.checkbox
-              input(type="checkbox")
-              label Check here to indicate that you have read and agree to the Storecoin's Terms and Conditions.
-            //- div.field.checkbox
-              input(type="checkbox")
-              label Select to receive a newsletter about Tezos.
-
-            div.g-recaptcha(data-sitekey='6Le_VF4UAAAAAOm3c4Q0qXqkiHIJvezSI9ivGFQd')
-
-            button.hc-button.orange(type="submit", disabled) Register
-
-
-        div.tab-body.active(data-tab="signin")
-          form.sign-in(action="/kyc/login", method="POST")
-            div.field
-              input(type="email", placeholder="Email", name="email")
-            div.field
-              input(type="password", placeholder="Password", name="password")
-
-            button.hc-button.orange(type="submit", disabled) Sign in
-
-          div.forgot Forgot your password?
-            = ' '
-            a Recover it.
+          button.hc-button.orange(type="submit") Submit
+        
+        h5.success(style="text-align:center; display: none; text-align: center; margin: 0px; background-color: #dcecdc; padding: 1em; border-radius: 7px;") Thank you! We’ve sent you an email with KYC process link.

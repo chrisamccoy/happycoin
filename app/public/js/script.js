@@ -1830,9 +1830,7 @@ function initKyc() {
     if ($('.kyc-page').length) {
       kycPage();
     } else if ($('.kyc-register').length) {
-      initTabs('.kyc-register .register');
       kycFormReg();
-      kycSignIn();
     }
   }
 }
@@ -1840,64 +1838,37 @@ function initKyc() {
 function kycFormReg () {
   var $kyc = $('.kyc-register'),
   $form = $kyc.find('form.register'),
-  $pass = $form.find('input[name="password"]'),
-  $confirm = $form.find('input[name="confirm"]'),
   $button = $form.find('button');
 
   $form.submit(function(e){
+    e.preventDefault();
     if ($button.is(":disabled")) {
       return false;
     }
 
-    return true;
-  });
+    var formData = $form.serializeArray(),
+        submitData = {};
 
-  $confirm.on('change keyup', function(){
-    if ($pass.val().length > 0 && $(this).val() == $pass.val()) {
-      $button.removeAttr('disabled');
-    } else {
-      $button.attr('disabled', 'disabled');
-    }
-  });
+    formData.forEach(function(item){
+      submitData[item.name] = item.value;
+    });
 
-  $pass.on('change keyup', function(){
-    if ($confirm.val().length > 0 && $(this).val() == $confirm.val()) {
-      $button.removeAttr('disabled');
-    } else {
-      $button.attr('disabled', 'disabled');
-    }
-  });
-}
+    submitData['send_email'] = 'true';
 
-function kycSignIn () {
-  var $kyc = $('.kyc-register'),
-  $form = $kyc.find('form.sign-in'),
-  $pass = $form.find('input[name="password"]'),
-  $email = $form.find('input[name="email"]'),
-  $button = $form.find('button');
-
-  $form.submit(function(e){
-    if ($button.is(":disabled")) {
-      return false;
-    }
-
-    return true;
-  });
-
-  $pass.on('change keyup', function(){
-    if ($pass.val().length > 0 && $email.val().length > 0) {
-      $button.removeAttr('disabled');
-    } else {
-      $button.attr('disabled', 'disabled');
-    }
-  });
-
-  $email.on('change keyup', function(){
-    if ($pass.val().length > 0 && $email.val().length > 0) {
-      $button.removeAttr('disabled');
-    } else {
-      $button.attr('disabled', 'disabled');
-    }
+    $.ajax({
+      url: '/kyc/register',
+      type: "POST",
+      data: JSON.stringify(submitData),
+      contentType: "application/json",
+      complete: function(response){
+        var resData = response.responseJSON;
+        // console.log(resData);
+        if (resData.success == 1) {
+          $form.hide();
+          $kyc.find('.success').show();
+        }
+      }
+    });
   });
 }
 

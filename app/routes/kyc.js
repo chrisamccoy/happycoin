@@ -43,11 +43,7 @@ router.post('/register', function(req, res, next) {
 
   request(options, function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      if (response.body.success === 1) {
-        req.session.user = response.body.applicant;
-      }
-
-      res.redirect('/kyc');
+      res.send(response.body); // Print the google web page.
     }
   });
 });
