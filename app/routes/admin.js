@@ -7,8 +7,21 @@ router.get('/orders', function(req, res, next) {
   res.render('admin/index', { title: 'Storecoin | Admin' });
 });
 
+/* GET users listing. */
+router.get('/applicants', function(req, res, next) {
+  res.render('admin/applicants', { title: 'Storecoin | Admin' });
+});
+
 router.get('/get-orders', function(req, res, next) {
   request('http://teamapi.storeco.in/fetch/orders', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.send(response.body); // Print the google web page.
+    }
+  });
+});
+
+router.get('/get-applicants', function(req, res, next) {
+  request('http://teamapi.storeco.in/applicant/fetch', function (error, response, body) {
     if (!error && response.statusCode == 200) {
       res.send(response.body); // Print the google web page.
     }
@@ -69,6 +82,21 @@ router.post('/create-order', function(req, res, next) {
     json: true, // Use,If you are sending JSON data
     url: 'http://teamapi.storeco.in/create/order',
   };
+  request(options, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.send(response.body); // Print the google web page.
+    }
+  });
+});
+
+router.post('/create-applicant', function(req, res, next) {
+  var options = {
+    method: 'post',
+    body: req.body, // Javascript object
+    json: true, // Use,If you are sending JSON data
+    url: 'http://teamapi.storeco.in/applicant/new',
+  };
+
   request(options, function (error, response, body) {
     if (!error && response.statusCode == 200) {
       res.send(response.body); // Print the google web page.

@@ -1,0 +1,62 @@
+extends layout
+
+block content
+  div#admin-content
+    div.content-wrapper
+      .loading
+        .sp.sp-wave
+        .text Loading...
+      div.applicants-process
+        div.steps.step-1
+          h3.header Manage Applicants
+          div.sc-tabs
+            div.tabs
+              a.item.active(data-tab="applicants") Applicants
+              a.item(data-tab="create-applicant") Create Applicant
+              
+            div.tab-body.active(data-tab="applicants")
+              div#applicants-table
+              
+            div.tab-body(data-tab="create-applicant")
+              div#create-applicant
+                h3 Create Applicant
+                form(style="max-width: 500px; margin: 0 auto;")
+                  div.error(style="background-color: #ffe1e1; padding: 0.5em; border-radius: 8px; color: red; margin-bottom: 1em; display:none;")
+                  label First Name
+                  input(type="text", name="first_name", placeholder="First Name")
+                  
+                  label Last Name
+                  input(type="text", name="last_name", placeholder="Last Name")
+                  
+                  label Email
+                  input(type="email", name="email", placeholder="Email")
+                  
+                  button(type="submit") Submit
+
+  script#applicants-table-tpl(type="text/template")
+    <% if (!_.isEmpty(rows)) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Applicant ID</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% _.each(rows, function(app){ %>
+            <tr data-id="<%= app.id %>">
+              <td><%= app.first_name %></td>
+              <td><%= app.last_name %></td>
+              <td><%= app.email %></td>
+              <td><%= app.applicant_id %></td>
+              <td><button class="orange copy-url" data-url="<%= app.url %>">Copy URL</button></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <h2 style="margin-top: 1em;">No Applicants Found</h2>
+    <% } %>
