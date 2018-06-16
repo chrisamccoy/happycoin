@@ -8,18 +8,17 @@ block content
           = ' '
           =user.first_name
           = '!'
+      div.column
+        div.status.orange
+          | Status:
+          = ' '
+          span.value NOT STARTED
 
     div.row
       div.column
         hr(style="margin: 0 auto 1em")
 
     div.row
-      div.column
-        p Storecoin requires contributors to its fundraiser to complete this KYC/AML process in order to access their recommended allocations in its proposed genesis block.
-        p!='&nbsp;'
-        p After your’s identity is verified, you will receive an activation code corresponding to a given public key hash. This activation code will be required in order to access the corresponding public key hash’s allocation in the genesis block.
-        p!='&nbsp;'
-
       div.column
         div.kyc-onfido(data-id=user.applicant_id)
           div#onfido-mount(style="max-width:800px; margin:0 auto;")

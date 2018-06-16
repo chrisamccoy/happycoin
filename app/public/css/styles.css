@@ -8006,6 +8006,19 @@ and (max-width : 335px) {
   align-items: flex-start;
 }
 
+.kyc-page .status {
+  background: #666;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.2em;
+  float: right;
+  padding: 0.2em 0.5em;
+}
+
+.kyc-page .status.orange {
+  background: #e2a261;
+}
+
 @media only screen and (max-width: 700px) {
   .kyc-register .row {
     display: block;
