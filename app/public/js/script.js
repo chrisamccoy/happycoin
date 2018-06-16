@@ -1826,7 +1826,7 @@ function initTabs(el) {
 
 
 function initKyc() {
-  if (window.location.pathname == '/kyc') {
+  if (window.location.pathname.includes('/kyc')) {
     if ($('.kyc-page').length) {
       kycPage();
     } else if ($('.kyc-register').length) {
@@ -1909,6 +1909,8 @@ function kycPage() {
   };
 
   var url = 'https://s3-eu-west-1.amazonaws.com/onfido-assets-production/web-sdk-releases/2.4.1/onfido.min.js';
+
+  console.log(url);
 
   $.getScript(url, function() {
     $.ajax({

@@ -4,12 +4,24 @@ var meta = require('../helpers/meta');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  if (req.session.user) {
-    res.render('kyc/index', { title: 'Storecoin | KYC', user : req.session.user , meta : meta()});
-  } else {
-    res.render('kyc/login', { title: 'Storecoin | KYC', meta : meta()});
-  }
+router.get('/:app_id', function(req, res, next) {
+  var id = req.params.app_id;
+  var applicant_id = new Buffer(id, 'base64').toString('ascii');
+
+  request('http://teamapi.storeco.in/applicant/get/'+applicant_id, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      var applicant = JSON.parse(response.body).applicant;
+      // console.log(applicant);
+      res.render('kyc/index', { title: 'Storecoin | KYC', user : applicant , meta : meta()});
+      // res.send(response.body); // Print the google web page.
+    }
+  });
+
+  // if (req.session.user) {
+  //   res.render('kyc/index', { title: 'Storecoin | KYC', user : req.session.user , meta : meta()});
+  // } else {
+  //   res.render('kyc/login', { title: 'Storecoin | KYC', meta : meta()});
+  // }
 });
 
 router.get('/logout', function(req, res, next) {
