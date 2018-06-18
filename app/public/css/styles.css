@@ -7900,6 +7900,7 @@ and (max-width : 335px) {
   padding: 3em 0px;
   display: flex;
   align-items: flex-start;
+  justify-content: center;
 }
 
 .kyc-register .row .column {
@@ -7919,8 +7920,8 @@ and (max-width : 335px) {
   display: block;
 }
 
-.kyc-register .row .column.register {
-  padding: 2em;
+.kyc-register .row .column.register form {
+  padding: 1em;
   border-radius: 15px;
   border: 1px solid #e2e2e2;
   font-size: 1.2em;
@@ -7968,12 +7969,17 @@ and (max-width : 335px) {
   font-size: 0.9em;
 }
 
-.kyc-register .row .column.register .field input {
+.kyc-register .row .column.register .field input,
+.kyc-register .row .column.register .field textarea {
   border-radius: none;
   border:none;
   border-bottom: 1px solid #e2e2e2;
   padding-left: 0px;
   width: 100%;
+}
+
+.kyc-register .row .column.register .field textarea {
+  min-height: auto;
 }
 
 .kyc-register .row .column.register button {
@@ -8022,7 +8028,7 @@ and (max-width : 335px) {
 @media only screen and (max-width: 700px) {
   .kyc-register .row {
     display: block;
-    padding: 3em 1em;
+    padding: 0.5em;
     flex-direction: column;
   }
 
@@ -8037,10 +8043,6 @@ and (max-width : 335px) {
 
   .kyc-register .row .column {
     width: 100%;
-  }
-
-  .kyc-register .row .column h5 {
-    font-size: 1.8em;
   }
 
   .kyc-register .row .column.register {

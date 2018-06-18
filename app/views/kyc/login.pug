@@ -3,19 +3,8 @@ extends ../layout
 block content
   div#hc-content.kyc-register
     div.row
-      div.column
-        h5 Registration for the Storecoin's
-          br
-          |  KYC/AML Process
-        p Storecoin requires contributors to its fundraiser to complete this KYC/AML process in order to access their recommended allocations in its proposed genesis block.
-        p After an account is registered, the contributor must complete an identity verification process. After a contributor’s identity is verified, that contributor will receive an activation code corresponding to a given public key hash. This activation code will be required in order to access the corresponding public key hash’s allocation in the genesis block.
-        p
-          b This KYC/AML process will be available post-launch. It does not need to be completed prior to the betanet launch.
-
-        p Thank you,
-          br
-          | Storecoin
       div.column.register
+        h4(style="text-align: center; margin-top:1em;") KYC/AML Check for Storecoin
         form.register(action="/kyc/register", method="POST")
           h5 Enter Your Information
           div.field
@@ -23,7 +12,9 @@ block content
           div.field
             input(type="text", placeholder="Last Name", name="last_name")
           div.field
-            input(type="email", placeholder="Email", name="email")
+            textarea(placeholder="Reason for KYC/AML", name="reason", maxlength="100", rows="1", cols="100")
+          div.field
+            input(type="email", placeholder="Email used for Storecoin communication", name="email")
 
           button.hc-button.orange(type="submit") Submit
         
