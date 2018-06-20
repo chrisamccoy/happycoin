@@ -1842,6 +1842,7 @@ function kycFormReg () {
 
   $form.submit(function(e){
     e.preventDefault();
+    $form.find('.loading').addClass('show');
     if ($button.is(":disabled")) {
       return false;
     }
@@ -1862,7 +1863,7 @@ function kycFormReg () {
       contentType: "application/json",
       complete: function(response){
         var resData = response.responseJSON;
-        // console.log(resData);
+        $form.find('.loading').removeClass('show');
         if (resData.success == 1) {
           $form.hide();
           $kyc.find('.success').show();

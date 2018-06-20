@@ -6,6 +6,9 @@ block content
       div.column.register
         h4(style="text-align: center; margin-top:1em;") KYC/AML Check for Storecoin
         form.register(action="/kyc/register", method="POST")
+          .loading
+            .sp.sp-wave
+            .text Loading...
           h5 Enter Your Information
           div.field
             input(type="text", placeholder="First Name", name="first_name")
