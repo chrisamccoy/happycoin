@@ -15,6 +15,7 @@ block content
               a.item(data-tab="pending-orders") Pending Orders
               a.item(data-tab="create-orders") Create Orders
               a.item(data-tab="submitted-orders") Submitted Orders
+              a.item(data-tab="inventory") Inventory
               
             div.tab-body.active(data-tab="poc-forms")
               div#poc-table
@@ -74,6 +75,9 @@ block content
               div#submitted-orders-list
                 h2(style="margin-top: 1em;") No Orders Found
             
+            div.tab-body(data-tab="inventory")
+              div#inventory-list
+              
         div.steps.step-2
           h3.header 
             a.go-back(style='margin-right: 0.5em;')
@@ -216,6 +220,28 @@ block content
             <td><%= row.order_id %></td>
             <td><%= (row.product1) ? row.product1.name+' x '+row.quantity1  : '-' %></td>
             <td><%= (row.product2) ? row.product2.name+' x '+row.quantity2  : '-' %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    
+  script#inventory-list-tpl(type="text/template")
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align:center;">#</th>
+          <th>Name</th>
+          <th>SKU</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% _.each(rows, function(row, i){ %>
+          <tr data-id="<%= row.id %>">
+            <th style="text-align:center;"><%= i + 1 %></th>
+            <td><%= row.name %></td>
+            <td><%= row.sku %></td>
+            <td><%= row.quantity %></td>
           </tr>
         <% }) %>
       </tbody>

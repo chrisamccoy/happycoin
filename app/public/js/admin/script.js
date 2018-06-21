@@ -84,11 +84,19 @@ function loaded() {
         initCreateOrders();
         loadSubmittedOrders();
         initPocForms();
+        initInventory();
         break;
     case '/admin/applicants':
         initApplicants();
         break;
   }
+}
+
+function initInventory () {
+  templateRender({
+    el : '#inventory-list',
+    data : { rows : inventory }
+  });
 }
 
 function initApplicants () {
