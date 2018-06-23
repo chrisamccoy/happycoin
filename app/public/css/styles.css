@@ -5912,6 +5912,7 @@ and (max-width : 335px) {
 /*---------------------------------*/
 .table-container {
   width: 100%;
+  font-size: 1.2em;
 }
 
 .table-container .caption {
@@ -5932,10 +5933,12 @@ and (max-width : 335px) {
 .table-container table .note {
   display: block;
   font-size: .7em;
-  line-height: 1.2;
-  font-family: Helvetica, sans-serif;
+  line-height: 1.5;
+  font-weight: 300;
+  /* font-family: Helvetica, sans-serif; */
   color: #444;
   margin-bottom: 0.8em;
+  font-style: italic;
 }
 
 .table-container table .note.no-wrap {
@@ -6002,6 +6005,7 @@ and (max-width : 335px) {
   font-weight: 300;
   font-size: .9em;
   opacity: .7;
+  font-style: italic;
 }
 
 .table-container table .see-more {
@@ -6206,6 +6210,36 @@ and (max-width : 335px) {
 
 .tweets .tweet {
   margin-bottom: 1em;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.tweets .tweet.snippet {
+  margin: 1em auto;
+  background-color: white;
+  border-radius: 3px;
+  padding: 1em;
+  max-width: calc(500px - 2em);
+}
+
+.tweets .tweet.snippet .title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: calc(100% - 1em);
+  padding: 0px 0.5em;
+}
+
+.tweets .tweet.snippet .title p {
+  margin: 0px;
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+.tweets .tweet.snippet .title img {
+  border-radius: 50%;
+  margin-right: 1em;
+  width: 50px;
 }
 
 #people-saying .hc-feature-title {
@@ -6215,6 +6249,10 @@ and (max-width : 335px) {
 @media only screen and (max-width: 700px) {
   .tweets .tweet:last-child {
     margin-bottom: 0px;
+  }
+
+  .tweets .tweet.snippet .title p {
+    font-size: 1em;
   }
 }
 
@@ -7424,7 +7462,23 @@ and (max-width : 335px) {
 }
 
 #dynamic-inflation .row .inflation-table {
+  position: relative;
   width: 400px;
+}
+
+#dynamic-inflation .row .inflation-table .coming-soon {
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  width: 100%;
+  height: calc(100% - 40px);
+  background: #eae8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: bold;
 }
 
 #dynamic-inflation .row .inflation-table table {
