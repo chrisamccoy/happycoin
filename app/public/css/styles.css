@@ -6209,13 +6209,11 @@ and (max-width : 335px) {
 }
 
 .tweets .tweet {
-  margin-bottom: 1em;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 0 auto 1em;
 }
 
 .tweets .tweet.snippet {
-  margin: 1em auto;
   background-color: white;
   border-radius: 3px;
   padding: 1em;
