@@ -15,22 +15,26 @@ router.get('/:app_id', function(req, res, next) {
   request('http://teamapi.storeco.in/applicant/get/'+applicant_id, function (error, response, body) {
     if (!error && response.statusCode == 200) {
       var applicant = JSON.parse(response.body).applicant;
-      // console.log(applicant);
       res.render('kyc/index', { title: 'Storecoin | KYC', user : applicant , meta : meta()});
-      // res.send(response.body); // Print the google web page.
     }
   });
-
-  // if (req.session.user) {
-  //   res.render('kyc/index', { title: 'Storecoin | KYC', user : req.session.user , meta : meta()});
-  // } else {
-  //   res.render('kyc/login', { title: 'Storecoin | KYC', meta : meta()});
-  // }
 });
 
 router.get('/logout', function(req, res, next) {
   req.session.user = null;
   res.redirect('/kyc');
+});
+
+router.get('/complete/:app_id', function(req, res, next) {
+  request('http://teamapi.storeco.in/applicant/create-check/' + req.params.app_id, function (error, response, body) {
+    var result = JSON.parse(response.body);
+    console.log(result);
+
+    res.send({
+      success: result.success,
+      message: result.message
+    });
+  });
 });
 
 router.post('/register', function(req, res, next) {
