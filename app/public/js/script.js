@@ -1900,7 +1900,8 @@ function kycPage() {
           containerId: 'onfido-mount',
           onComplete: function(data) {
             // callback for when everything is complete
-            console.log("everything is complete")
+            $.get('/kyc/complete/' + data.applicant_id);
+            console.log("onComplete");
           },
           steps: [
             {
