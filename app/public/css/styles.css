@@ -5912,7 +5912,7 @@ and (max-width : 335px) {
 /*---------------------------------*/
 .table-container {
   width: 100%;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 .table-container .caption {
@@ -5961,7 +5961,7 @@ and (max-width : 335px) {
 .table-container table th,
 .table-container table td {
   border: 0px;
-  padding: 12px 12px;
+  padding: 12px 9px;
 }
 
 .table-container table thead th:nth-child(4),
