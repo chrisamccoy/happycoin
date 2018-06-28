@@ -118,7 +118,8 @@ function initBlogShare (){
 
 function initIntroHeight (isMobile) {
   // var introHeight = $(window).height() - ((isMobile) ? 232 : 271);
-  var introHeight = $(window).height() - $('#hc-nav-wrapper').outerHeight() - $('#second-token-sale .form-subscribe').outerHeight() - $('#second-token-sale #note').outerHeight();
+  // var introHeight = $(window).height() - $('#hc-nav-wrapper').outerHeight() - $('#second-token-sale .form-subscribe').outerHeight() - $('#second-token-sale #note').outerHeight();
+  var introHeight = $(window).height() - $('#hc-nav-wrapper').outerHeight() - $('#second-token-sale .form-subscribe').outerHeight();
   // console.log(introHeight);
   $('#hc-intro').height(introHeight);
 }
@@ -195,16 +196,16 @@ function initInviteSale() {
 }
 
 function initCoinFlip () {
-  var $coinCont = $('#business-case');
+  var $coins = $('.coin');
 
-  if ($coinCont.length) {
-    var height = $coinCont.height(),
-        $coin = $coinCont.find('.coin'),
-        offset = $coinCont.offset().top - 200,
-        flipping = false;
-
+  $coins.each(function(i){
+    var $coin = $(this),
+    $coinCont = $coin.parents('.coin-wrapper'),
+    offset = $coinCont.offset().top - (500 * ( i + 1)),
+    flipping = false;
     $(window).scroll(function(){
       var scrollVal  = $(window).scrollTop();
+      console.log(i, flipping, scrollVal, offset);
       if (scrollVal > offset) {
         if(!flipping) {
           $coin.addClass('flip');
@@ -218,7 +219,7 @@ function initCoinFlip () {
         flipping = false;
       }
     });
-  }
+  });
 }
 
 

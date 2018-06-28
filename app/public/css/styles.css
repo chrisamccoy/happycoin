@@ -1032,7 +1032,7 @@ input[type=number]::-webkit-outer-spin-button {
 #hc-nav-wrapper .hc-title {
   position: absolute;
   display: block;
-  background-image: url(../images/logo.png);
+  background-image: url(../images/logo-v1.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -5431,6 +5431,7 @@ and (max-width : 335px) {
 
   .security-system-lite .text {
     margin: 2em 1em 0;
+    font-size: 0.85em;
   }
 }
 
@@ -5573,7 +5574,7 @@ and (max-width : 335px) {
 
 /*----------------------------------*/
 #app-types .hc-chunk,
-#market-case .hc-chunk {
+#about-storecoin .hc-chunk {
   background-image: url(/images/coin-network.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -5581,7 +5582,7 @@ and (max-width : 335px) {
 }
 
 /*---------------------------------------*/
-#zero-fee-case .coin {
+.coin-wrapper .coin {
   margin: 4em auto;
   /*background: #FFDE00;*/
   background-image: url(/images/storecoin-currency.png);
@@ -5594,7 +5595,7 @@ and (max-width : 335px) {
   -webkit-transform-style: preserve-3d;
 }
 
-#zero-fee-case .coin.flip {
+.coin-wrapper .coin.flip {
   animation: spin 2s linear infinite;
 }
 
@@ -5606,7 +5607,7 @@ and (max-width : 335px) {
     transform: rotateY(360deg);
   }
 }
-#zero-fee-case .coin:before {
+.coin-wrapper .coin:before {
   /*background-color: #ffc013;*/
   background-color: #caa14b;
   position: absolute;
@@ -5616,7 +5617,7 @@ and (max-width : 335px) {
   width: 200px;
   -webkit-transform: translateZ(-15px);
 }
-#zero-fee-case .coin:after {
+.coin-wrapper .coin:after {
   /*background-color: #ffc013;*/
   background-color: #caa14b;
   content: '';
@@ -5631,7 +5632,7 @@ and (max-width : 335px) {
   -webkit-transform-origin: 100% 50%;
 }
 
-#zero-fee-case .tails {
+.coin-wrapper .tails {
   /*background-color: #ffc013;*/
   background-color: #caa14b;
   /*background-image: url(/images/storecoin-currency.png);
@@ -5646,7 +5647,7 @@ and (max-width : 335px) {
   /*border: 1px solid #FF9900;*/
 }
 
-#zero-fee-case .heads {
+.coin-wrapper .heads {
   /*background-color: #FFDE00;*/
   background-image: url(/images/storecoin-currency.png);
   background-size: auto 100%;
@@ -7543,6 +7544,12 @@ and (max-width : 335px) {
 
   #dynamic-inflation .row .inflation-table {
     width: 100%;
+    margin-bottom: 1.5em;
+  }
+
+  #dynamic-inflation .row .details {
+    margin-left: 0px;
+    font-size: 1em;
   }
 }
 
@@ -8225,5 +8232,20 @@ and (max-width : 335px) {
   to {
     -webkit-transform: scale(1.5, 1.5);
     opacity: 0;
+  }
+}
+
+/* inflation */
+#inflation {
+  font-size: 1.5em;
+}
+
+#inflation .hc-chunk {
+  max-width: 640px;
+}
+
+@media only screen and (max-width: 700px) {
+  #inflation {
+    font-size: 1.3em;
   }
 }
