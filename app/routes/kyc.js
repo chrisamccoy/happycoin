@@ -47,9 +47,14 @@ router.post('/register', function(req, res, next) {
 
   request(options, function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      res.send(response.body); // Print the google web page.
+      res.send(response.body);
     }
   });
+});
+
+router.post('/webhook', function(req, res, next) {
+  console.log(req.body);
+  res.send({ success: 1 });
 });
 
 router.post('/login', function(req, res, next) {
@@ -86,13 +91,5 @@ router.post('/get-token', function(req, res, next) {
     }
   });
 });
-
-// router.get('/gen-token', function(req, res, next) {
-//   request('http://teamapi.storeco.in/applicant/token', function (error, response, body) {
-//     if (!error && response.statusCode == 200) {
-//       res.send(response.body); // Print the google web page.
-//     }
-//   });
-// });
 
 module.exports = router;
