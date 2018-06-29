@@ -1766,7 +1766,7 @@ and (max-width : 335px) {
   background-color: rgb(199, 223, 184);
   color: #222222;
   font-weight: bold;
-  width: 160px;
+  width: 70px;
   margin: 0 auto;
 }
 
@@ -1790,7 +1790,6 @@ and (max-width : 335px) {
   margin-top :-50px;
   font-size: 1.5em;
   text-align: center;
-  background: #c7dfb8;
   font-weight: bold;
   /* color: #222222; */
 }
@@ -2016,11 +2015,17 @@ and (max-width : 335px) {
   color: #333;
 }
 
-@media only screen and (max-width: 1024px) {
+#project-schedule .container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* @media only screen and (max-width: 1024px) {
   #project-schedule .container {
     width: 100%;
   }
-}
+} */
 
 @media only screen and (max-width: 700px) {
   /*#project-schedule .container {
@@ -2125,6 +2130,7 @@ and (max-width : 335px) {
 
   #project-schedule .timeline .year .full-date {
     font-size: 1em;
+    background: #c7dfb8;
   }
 
   #project-schedule .timeline .year .items .item.left,
