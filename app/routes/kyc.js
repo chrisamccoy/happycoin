@@ -25,8 +25,12 @@ router.get('/logout', function(req, res, next) {
   res.redirect('/kyc');
 });
 
-router.get('/complete/:app_id', function(req, res, next) {
-  request('http://teamapi.storeco.in/applicant/create-check/' + req.params.app_id, function (error, response, body) {
+router.get('/complete/:id/:app_id', function(req, res, next) {
+  var url = 'http://teamapi.storeco.in/applicant/create-check/' +
+              req.params.id + '/' +
+              req.params.app_id;
+
+  request(url, function (error, response, body) {
     var result = JSON.parse(response.body);
     console.log(result);
 
