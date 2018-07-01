@@ -1876,7 +1876,8 @@ function kycFormReg () {
 
 function kycPage() {
   var data = {
-    applicant_id: $('.kyc-onfido').attr('data-id'),
+    id: $('.kyc-onfido').attr('data-id'),
+    applicant_id: $('.kyc-onfido').attr('data-applicant-id'),
     referrer: window.location.href
   };
 
@@ -1901,8 +1902,8 @@ function kycPage() {
           containerId: 'onfido-mount',
           onComplete: function(data) {
             // callback for when everything is complete
-            $.get('/kyc/complete/' + data.applicant_id);
-            console.log("onComplete");
+            $.get('/kyc/complete/' + data.id + '/' + data.applicant_id);
+            console.log("Application complete");
           },
           steps: [
             {

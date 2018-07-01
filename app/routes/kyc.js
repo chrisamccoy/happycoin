@@ -53,8 +53,20 @@ router.post('/register', function(req, res, next) {
 });
 
 router.post('/webhook', function(req, res, next) {
-  console.log(req.body);
-  res.send({ success: 1 });
+  var options = {
+    method: 'post',
+    body: req.body, // Javascript object
+    json: true, // Use,If you are sending JSON data
+    url: 'http://teamapi.storeco.in/applicant/webhook',
+  };
+
+  request(options, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.send({ success: 1 });
+    } else {
+      res.send({ success: 0 });
+    }
+  });
 });
 
 router.post('/login', function(req, res, next) {
