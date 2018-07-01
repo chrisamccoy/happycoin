@@ -1900,10 +1900,10 @@ function kycPage() {
           useModal: false,
           token: json.token,
           containerId: 'onfido-mount',
-          onComplete: function(data) {
-            // callback for when everything is complete
+          onComplete: function(res) {
             $.get('/kyc/complete/' + data.id + '/' + data.applicant_id);
             console.log("Application complete");
+            console.log(res);
           },
           steps: [
             {
