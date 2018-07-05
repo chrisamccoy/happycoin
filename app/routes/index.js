@@ -6,57 +6,57 @@ var getTokenSale = require('../helpers/tokensales');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Storecoin', meta: meta({ title: 'Storecoin' }) });
+  res.render('index', { title: 'Storecoin', meta: meta({ title: 'Storecoin', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/engineering', function(req, res, next) {
-  res.render('engineering', { title: 'Engineering', meta: meta({ title: 'Engineering' }) });
+  res.render('engineering', { title: 'Engineering', meta: meta({ title: 'Engineering', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET Tokensale 3 page. */
 router.get('/tokensale3', function(req, res, next) {
-  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale' }), sale: getTokenSale('tokensale3') });
+  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }), sale: getTokenSale('tokensale3') });
 });
 
 /* GET tokensale69 page. */
 router.get('/tokensale69', function(req, res, next) {
-  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale' }), sale: getTokenSale('tokensale69') });
+  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }), sale: getTokenSale('tokensale69') });
 });
 
 /* GET tokensale99 page. */
 router.get('/tokensale99', function(req, res, next) {
-  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale' }), sale: getTokenSale('tokensale99') });
+  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }), sale: getTokenSale('tokensale99') });
 });
 
 /* GET tokensale129 page. */
 router.get('/tokensale129', function(req, res, next) {
-  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale' }), sale: getTokenSale('tokensale129') });
+  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }), sale: getTokenSale('tokensale129') });
 });
 
 /* GET tokensale149 page. */
 router.get('/tokensale149', function(req, res, next) {
-  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale' }), sale: getTokenSale('tokensale149') });
+  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }), sale: getTokenSale('tokensale149') });
 });
 
 router.get('/tsale', function(req, res, next) {
-  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale' }), sale: getTokenSale('tokensale149') });
+  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }), sale: getTokenSale('tokensale149') });
 });
 
 /* GET tokensale199 page. */
 router.get('/tokensale199', function(req, res, next) {
-  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale' }), sale: getTokenSale('tokensale199') });
+  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }), sale: getTokenSale('tokensale199') });
 });
 
 /* GET tokensale249 page. */
 router.get('/tokensale249', function(req, res, next) {
-  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale' }), sale: getTokenSale('tokensale249') });
+  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }), sale: getTokenSale('tokensale249') });
 });
 
 
 /* GET home page. */
 router.get('/tenyears', function(req, res, next) {
-  res.render('coming-soon', { title: 'Ten Years', meta: meta({ title: 'Ten Years' }) });
+  res.render('coming-soon', { title: 'Ten Years', meta: meta({ title: 'Ten Years', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
@@ -78,12 +78,12 @@ router.get('/community', function(req, res, next) {
 
 /* GET home page. */
 router.get('/protocoltest', function(req, res, next) {
-  res.render('protocol-test', { title: 'Protocol Test', meta: meta({ title: 'Protocol Test' }) });
+  res.render('protocol-test', { title: 'Protocol Test', meta: meta({ title: 'Protocol Test', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/tokensale', function(req, res, next) {
-  res.render('poc-form', { title: 'Storecoin', meta: meta({ title: 'Token Sale' }) });
+  res.render('poc-form', { title: 'Storecoin', meta: meta({ title: 'Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
@@ -93,16 +93,16 @@ router.get('/3', function(req, res, next) {
 
 /* GET home page. */
 router.get('/code', function(req, res, next) {
-  res.render('coming-soon', { title: 'Storecoin', meta: meta({ title: 'Code' }) });
+  res.render('coming-soon', { title: 'Storecoin', meta: meta({ title: 'Code', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 router.get('/review', function(req, res, next) {
-  res.render('coming-soon', { title: 'Storecoin', meta: meta({ title: 'Review' }) });
+  res.render('coming-soon', { title: 'Storecoin', meta: meta({ title: 'Review', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/messagenode', function(req, res, next) {
-  res.render('coming-soon', { title: 'Storecoin', meta: meta({ title: 'Messagenode' }) });
+  res.render('coming-soon', { title: 'Storecoin', meta: meta({ title: 'Messagenode', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
@@ -138,47 +138,47 @@ router.get('/ref/:email', function(req, res, next) {
 
 /* GET home page. */
 router.get('/whitepaper', function(req, res, next) {
-  res.render('whitepaper', { title: 'Storecoin', meta: meta({ title: 'Whitepaper' }) });
+  res.render('whitepaper', { title: 'Storecoin', meta: meta({ title: 'Whitepaper', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/development', function(req, res, next) {
-  res.render('development', { title: 'Storecoin', meta: meta({ title: 'Development' }) });
+  res.render('development', { title: 'Storecoin', meta: meta({ title: 'Development', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/accredited', function(req, res, next) {
-  res.render('accredited', { title: 'Storecoin', meta: meta({ title: 'Accredited' }) });
+  res.render('accredited', { title: 'Storecoin', meta: meta({ title: 'Accredited', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/devnotes', function(req, res, next) {
-  res.render('devnotes', { title: 'Storecoin', meta: meta({ title: 'Dev Notes' }) });
+  res.render('devnotes', { title: 'Storecoin', meta: meta({ title: 'Dev Notes', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/subscribe', function(req, res, next) {
-  res.render('newsletter', { title: 'Storecoin', meta: meta({ title: 'Subscribe' }) });
+  res.render('newsletter', { title: 'Storecoin', meta: meta({ title: 'Subscribe', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/milestones', function(req, res, next) {
-  res.render('milestones', { title: 'Storecoin', meta: meta({ title: 'Milestones' }) });
+  res.render('milestones', { title: 'Storecoin', meta: meta({ title: 'Milestones', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/firsttokensale', function(req, res, next) {
-  res.render('firstico', { title: 'Storecoin', meta: meta({ title: 'First Token Sale' }) });
+  res.render('firstico', { title: 'Storecoin', meta: meta({ title: 'First Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/secondtokensale', function(req, res, next) {
-  res.render('second-token-sale', { title: 'Storecoin', meta: meta({ title: 'Second Token Sale' }) });
+  res.render('second-token-sale', { title: 'Storecoin', meta: meta({ title: 'Second Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/validate', function(req, res, next) {
-  res.render('apply-forge', { title: 'Storecoin', meta: meta({ title: 'Validate' }) });
+  res.render('apply-forge', { title: 'Storecoin', meta: meta({ title: 'Validate', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
@@ -216,7 +216,7 @@ router.get("/blockfin", function(req, res, next){
 
     if((username == 'storecoin') && (password == 'forktolerant')) {   // Is the username/password correct?
       res.statusCode = 200;  // OK
-      return res.render('blockfin', { title: 'Storecoin', meta: meta({ title: 'Blockfin' }) });
+      return res.render('blockfin', { title: 'Storecoin', meta: meta({ title: 'Blockfin', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
     }
     else {
       res.statusCode = 401; // Force them to retry authentication
@@ -231,12 +231,12 @@ router.get("/blockfin", function(req, res, next){
 
 /* GET home page. */
 router.get('/dguard', function(req, res, next) {
-  res.render('security-guard-app', { title: 'Storecoin', meta: meta({ title: 'dGuard' }) });
+  res.render('security-guard-app', { title: 'Storecoin', meta: meta({ title: 'dGuard', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/onepoint', function(req, res, next) {
-  res.render('onepoint', { title: 'Storecoin', meta: meta({ title: 'Onepoint' }) });
+  res.render('onepoint', { title: 'Storecoin', meta: meta({ title: 'Onepoint', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
@@ -246,7 +246,7 @@ router.get('/communityfund', function(req, res, next) {
 
   res.render('community-fund', {
     title: 'Community Fund',
-    meta: meta(),
+    meta: meta({ title: 'Community Fund', url: req.protocol + '://' + req.get('host') + req.originalUrl }),
     iframe: source,
   });
 });
@@ -254,25 +254,25 @@ router.get('/communityfund', function(req, res, next) {
 router.get('/cfc18', function(req, res, next) {
   res.render('cfc18', {
     title: 'CFC18',
-    meta: meta()
+    meta: meta({ title: 'CFC18', url: req.protocol + '://' + req.get('host') + req.originalUrl })
   });
 });
 
 /* GET home page. */
 router.get('/firsttokensalefaq', function(req, res, next) {
-  res.render('token-faq', { title: 'Storecoin', meta: meta({ title: 'First Token Sale FAQ' }) });
+  res.render('token-faq', { title: 'Storecoin', meta: meta({ title: 'First Token Sale FAQ', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/url', function(req, res, next) {
-  res.render('url', { title: 'Storecoin', meta: meta({ title: 'URL' }) });
+  res.render('url', { title: 'Storecoin', meta: meta({ title: 'URL', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/blog', function(req, res, next) {
   var blogs = getblog();
   res.render('blog', {
-    title: 'Storecoin', meta: meta({ title: 'News' }), blogs : blogs,
+    title: 'Storecoin', meta: meta({ title: 'News', url: req.protocol + '://' + req.get('host') + req.originalUrl }), blogs : blogs,
     url : req.protocol + '://' + req.get('host') + req.originalUrl
    });
   // res.redirect('https://news.storeco.in/');
@@ -302,112 +302,112 @@ router.get('/blog/:slug', function(req, res, next) {
 
 /* GET home page. */
 router.get('/cryptoeconomics', function(req, res, next) {
-  res.render('crypto-economics', { title: 'Storecoin', meta: meta({ title: 'Crypto Economics' }) });
+  res.render('crypto-economics', { title: 'Storecoin', meta: meta({ title: 'Crypto Economics', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/developer', function(req, res, next) {
-  res.render('developer', { title: 'Storecoin', meta: meta({ title: 'Developer' }) });
+  res.render('developer', { title: 'Storecoin', meta: meta({ title: 'Developer', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/govnode', function(req, res, next) {
-  res.render('govnode', { title: 'Storecoin', meta: meta({ title: 'Govnode' }) });
+  res.render('govnode', { title: 'Storecoin', meta: meta({ title: 'Govnode', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/masternode', function(req, res, next) {
-  res.render('masternode', { title: 'Storecoin', meta: meta({ title: 'Masternode' }) });
+  res.render('masternode', { title: 'Storecoin', meta: meta({ title: 'Masternode', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/careers', function(req, res, next) {
-  res.render('careers', { title: 'Storecoin', meta: meta({ title: 'Careers' }) });
+  res.render('careers', { title: 'Storecoin', meta: meta({ title: 'Careers', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/peltzinternational', function(req, res, next) {
-  res.render('peltzinternational', { title: 'Storecoin', meta: meta({ title: 'Peltz International' }) });
+  res.render('peltzinternational', { title: 'Storecoin', meta: meta({ title: 'Peltz International', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/about', function(req, res, next) {
-  res.render('about', { title: 'Storecoin', meta: meta({ title: 'About' }) });
+  res.render('about', { title: 'Storecoin', meta: meta({ title: 'About', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/coming-soon', function(req, res, next) {
-  res.render('coming-soon', { title: 'Storecoin', meta: meta({ title: 'Coming Soon' }) });
+  res.render('coming-soon', { title: 'Storecoin', meta: meta({ title: 'Coming Soon', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/contact', function(req, res, next) {
-  res.render('contact', { title: 'Storecoin', meta: meta({ title: 'Contact' }) });
+  res.render('contact', { title: 'Storecoin', meta: meta({ title: 'Contact', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/examples', function(req, res, next) {
-  res.render('examples', { title: 'Storecoin', meta: meta({ title: 'Examples' }) });
+  res.render('examples', { title: 'Storecoin', meta: meta({ title: 'Examples', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/faq', function(req, res, next) {
-  res.render('faq', { title: 'Storecoin', meta: meta({ title: 'FAQ' }) });
+  res.render('faq', { title: 'Storecoin', meta: meta({ title: 'FAQ', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/jointeam', function(req, res, next) {
-  res.render('join-team', { title: 'Storecoin', meta: meta({ title: 'Join Team' }) });
+  res.render('join-team', { title: 'Storecoin', meta: meta({ title: 'Join Team', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/jobs', function(req, res, next) {
-  res.render('jobs', { title: 'Storecoin', meta: meta({ title: 'Jobs' }) });
+  res.render('jobs', { title: 'Storecoin', meta: meta({ title: 'Jobs', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/press', function(req, res, next) {
-  res.render('press', { title: 'Storecoin', meta: meta({ title: 'Press' }) });
+  res.render('press', { title: 'Storecoin', meta: meta({ title: 'Press', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/roadmap', function(req, res, next) {
-  res.render('roadmap-temp', { title: 'Storecoin', meta: meta({ title: 'Roadmap' }) });
+  res.render('roadmap-temp', { title: 'Storecoin', meta: meta({ title: 'Roadmap', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/roadmap2', function(req, res, next) {
-  res.render('roadmap', { title: 'Storecoin', meta: meta({ title: 'Roadmap' }) });
+  res.render('roadmap', { title: 'Storecoin', meta: meta({ title: 'Roadmap', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/storecoin-blockchain', function(req, res, next) {
-  res.render('storecoin-blockchain', { title: 'Storecoin', meta: meta({ title: 'Storecoin Blockchain' }) });
+  res.render('storecoin-blockchain', { title: 'Storecoin', meta: meta({ title: 'Storecoin Blockchain', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/subscribe', function(req, res, next) {
-  res.render('subscribe', { title: 'Storecoin', meta: meta({ title: 'Subscribe' }) });
+  res.render('subscribe', { title: 'Storecoin', meta: meta({ title: 'Subscribe', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/team', function(req, res, next) {
-  res.render('team', { title: 'Storecoin', meta: meta({ title: 'Team' }) });
+  res.render('team', { title: 'Storecoin', meta: meta({ title: 'Team', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/terms', function(req, res, next) {
-  res.render('terms', { title: 'Storecoin', meta: meta({ title: 'Terms' }) });
+  res.render('terms', { title: 'Storecoin', meta: meta({ title: 'Terms', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */
 router.get('/tokengrant', function(req, res, next) {
-  res.render('token-grant', { title: 'Storecoin', meta: meta({ title: 'Token Grant' }) });
+  res.render('token-grant', { title: 'Storecoin', meta: meta({ title: 'Token Grant', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET login page */
 router.get('/login', function(req, res, next) {
-  res.render('login', { title: 'Storecoin', meta: meta({ title: 'Login' }) });
+  res.render('login', { title: 'Storecoin', meta: meta({ title: 'Login', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 router.post('/login', function (req, res, next) {
@@ -428,7 +428,7 @@ router.get('/logout', function (req, res, next) {
 /* ------------WALLET------------ */
 router.get('/wallet', function(req, res, next) {
   var ua = req.header('user-agent');
-  var mt = meta({ title: 'Storecoin Wallet' });
+  var mt = meta({ title: 'Storecoin Wallet', url: req.protocol + '://' + req.get('host') + req.originalUrl });
 
   mt.url = 'http://storeco.in/wallet'
   if(/mobile/i.test(ua)) {
@@ -450,7 +450,7 @@ router.get('/wallet/wallet-app', function(req, res, next) {
   res.render('wallet/index', {
     title: 'Storecoin',
     name : 'Home', header : false,
-    meta: meta({ title: 'Storecoin Wallet' })
+    meta: meta({ title: 'Storecoin Wallet', url: req.protocol + '://' + req.get('host') + req.originalUrl })
   });
 });
 
