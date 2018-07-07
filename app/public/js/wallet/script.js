@@ -18,6 +18,7 @@ $(document).ready(function(){
   initRoyaltyTabs();
   initProcess();
   initSliderKeypad();
+  initPulse();
 });
 var giftItems = {
   storeVal : null,
@@ -201,6 +202,7 @@ function initProcess() {
   });
 
   $processWin.find('.proceed.next').click(function(){
+    addPulse();
     var stepName = $(this).data().step,
     $thisWindow = $(this).parents('.process-window');
     $thisWindow.find('.process-step').removeClass('show');
@@ -1214,5 +1216,16 @@ function initPaginate() {
         }, 5000);
       }
     }
+  });
+}
+
+function addPulse() {
+  $('.process-step .fields .input-field').first().addClass('pulse');
+  $('.process-step.step-4 .api-list .api-item').first().addClass('pulse');
+}
+
+function initPulse() {
+  $(document).on("click", '.pulse', function(){
+    $(this).removeClass('pulse');
   });
 }

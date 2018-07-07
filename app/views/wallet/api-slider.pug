@@ -4,7 +4,7 @@ section.api-bugget-api.api-royalty
   div.api-list
     - var n = 0
     while n < 9
-      div.api-item
+      div.api-item(class=(n == 0) ? 'pulse' : '' )
         if isPercentSlider
           div.title
         else 

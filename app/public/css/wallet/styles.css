@@ -101,6 +101,25 @@ section.tab.disabled[data-tab] {
   opacity: 1;
 }
 
+.pulse {
+  background-color: #fff;
+  animation-name: color;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes color {
+  0% {
+    background-color: #fff;
+  }
+  50% {
+    background-color: #fffded;
+  }
+  100 {
+    background-color: #fff;
+  }
+}
+
 input {
   width: 100%;
   padding: 15px 10px;
