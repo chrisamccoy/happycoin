@@ -4,7 +4,7 @@ var meta = require('../helpers/meta');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-  res.render('kyc/login', { title: 'Storecoin | KYC', meta : meta()});
+  res.render('kyc/login', { title: 'Storecoin | KYC', meta : meta({ title: 'KYC', url: req.protocol + '://' + req.get('host') + req.originalUrl })});
 });
 
 /* GET users listing. */
