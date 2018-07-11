@@ -1677,16 +1677,21 @@ and (max-width : 335px) {
 }
 
 #distribution-plan .token-dist .subtext {
-  font-size: 1.5em;
+  font-size: 1.3em;
+}
+
+#distribution-plan .token-dist .see-schedule {
+  margin-top: 0.7em;
+  display: inline-block;
 }
 
 #distribution-plan .token-dist .row {
-  margin-bottom: 1em;
+  margin-bottom: 1.8em;
   display: flex;
   align-items: center;
 }
 
-#distribution-plan .token-price > h4 {
+#distribution-plan .token-price > h5 {
   margin-top: 2em;
 }
 
@@ -5585,6 +5590,59 @@ and (max-width : 335px) {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+#about-storecoin .coin-components {
+  color: white;
+  font-size: 1.5em;
+}
+
+#about-storecoin .coin-components .comp {
+  background-color: grey;
+  text-align: center;
+  border-radius: 7px;
+  padding: 0.5em 1em;
+  margin-bottom: 0.5em;
+  transition: all 0.1s linear;
+  cursor: pointer;
+}
+
+#about-storecoin .coin-components .comp:hover {
+  opacity: 0.8;
+}
+
+#about-storecoin .coin-components .comp.orange {
+  background-color: #ed844d;
+}
+
+#about-storecoin .coin-components .comp.green {
+  background-color: #415834;
+}
+
+#about-storecoin .coin-components .comp-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#about-storecoin .coin-components .comp-row .comp {
+  flex-grow: 1;
+  flex-basis: 25%;
+}
+
+#about-storecoin .coin-components .comp-row .comp:not(:last-child) {
+  margin-right: 0.5em;
+}
+
+@media only screen and (max-width: 700px) {
+  #about-storecoin .coin-components .comp-row {
+    flex-wrap: wrap;
+  }
+
+  #about-storecoin .coin-components .comp-row .comp:not(:last-child) {
+    flex-basis: 100%;
+    margin-right: 0px;
+  }
 }
 
 /*---------------------------------------*/
