@@ -8313,3 +8313,71 @@ and (max-width : 335px) {
     font-size: 1.3em;
   }
 }
+
+/* Careers */
+.career-description .hc-chunk,
+.careers .hc-chunk {
+  max-width: 750px;
+}
+
+.careers .hc-chunk .career-list .career {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.02);
+  padding: 2em;
+}
+
+.careers .hc-chunk .career-list .career .head,
+.careers .hc-chunk .career-list .career .desc {
+  color:black;
+}
+
+.careers .hc-chunk .career-list .career .head {
+  margin: 0 0 0.2em;
+}
+
+.careers .hc-chunk .career-list .career i {
+  font-size: 1.5em;
+  /* color: black; */
+}
+
+.career-description h5 {
+  margin: 0.5em 0;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.career-description p {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  line-height: 2;
+  word-spacing: 1px;
+}
+
+.career-description .list {
+  font-size: 1.2em;
+  margin-bottom: 2em;
+  line-height: 2;
+  word-spacing: 1px;
+}
+
+.career-description .list .item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.career-description .list .item i {
+  color: #679249;
+  margin-right: 1em;
+}
+
+.career-description .list .item span {
+  flex: auto;
+}
+
+.career-description .hc-button {
+  padding: 0.5em 2em;
+}

@@ -326,6 +326,11 @@ router.get('/careers', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/careers/sr-platform-engineer', function(req, res, next) {
+  res.render('career/platform-engineer', { title: 'Storecoin', meta: meta({ title: 'Careers', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
+});
+
+/* GET home page. */
 router.get('/peltzinternational', function(req, res, next) {
   res.render('peltzinternational', { title: 'Storecoin', meta: meta({ title: 'Peltz International', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
