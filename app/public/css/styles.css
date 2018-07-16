@@ -8381,3 +8381,7 @@ and (max-width : 335px) {
 .career-description .hc-button {
   padding: 0.5em 2em;
 }
+
+.career-banner {
+  background: url('/images/intro-bg.png') center !important;
+}
