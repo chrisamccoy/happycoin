@@ -326,7 +326,7 @@ router.get('/careers', function(req, res, next) {
 });
 
 /* GET home page. */
-router.get('/careers/sr-platform-engineer', function(req, res, next) {
+router.get('/careers/sr-blockchain-engineer', function(req, res, next) {
   res.render('career/platform-engineer', { title: 'Storecoin', meta: meta({ title: 'Careers', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
