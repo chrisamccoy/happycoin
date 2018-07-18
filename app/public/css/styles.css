@@ -57,27 +57,29 @@ p {
   line-height: 1.65;
 }
 
-button.hc-button {
+.hc-button {
   font-size: 1.1em;
   padding: 0.2em;
   color: white;
+  display: inline-block;
+  border-radius: 5px;
 }
 
-button.hc-button.padding {
+.hc-button.padding {
   padding: 0 30px;
 }
 
-button.hc-button:hover,
-button.hc-button[disabled] {
+.hc-button:hover,
+.hc-button[disabled] {
   opacity: 0.7;
 }
 
-button.hc-button.orange {
+.hc-button.orange {
   background: #f47840;
   border-color: #f47840;
 }
 
-button.hc-button.orange.full-width {
+.hc-button.orange.full-width {
   width:100%;
 }
 
@@ -8380,6 +8382,7 @@ and (max-width : 335px) {
 
 .career-description .hc-button {
   padding: 0.5em 2em;
+  font-size: 1.4em;
 }
 
 .career-banner {
