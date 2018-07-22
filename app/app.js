@@ -34,6 +34,9 @@ app.use(function(req, res, next) {
         subdomains = [
           'news.storeco.in',
           'tokensale3.storeco.in',
+          'tokensale39.storeco.in',
+          'tokensale49.storeco.in',
+          'tokensale54.storeco.in',
           'tokensale69.storeco.in',
           'tokensale99.storeco.in',
           'tokensale129.storeco.in',
