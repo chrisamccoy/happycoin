@@ -14,6 +14,51 @@ var tokenSales = {
       height : 'height:700px;'
     }
   },
+  tokensale39 : {
+    basis_point_img : '/images/basis-point-v4.png',
+    network_value: '$99 MM',
+    price_per_token: '$0.0999',
+    hard_cap: '$2,997,000',
+    treasury_percent: '3%',
+    pre_sale_ends: 'Once Hard Cap is reached or July 30th, 2018',
+    min_invest: '$10,000',
+    max_invest: '$990,000 (equals 1% of Treasury)',
+    name: 'Third',
+    embed: {
+      src : 'https://docs.google.com/forms/d/e/1FAIpQLSe_Rvu9Zoufn0sp6iPAvL-YkYjC0etIh8nggxWp5StuoCfgyQ/viewform?embedded=true',
+      height : 'height:700px;'
+    }
+  },
+  tokensale49 : {
+    basis_point_img : '/images/basis-point-v4.png',
+    network_value: '$99 MM',
+    price_per_token: '$0.0999',
+    hard_cap: '$2,997,000',
+    treasury_percent: '3%',
+    pre_sale_ends: 'Once Hard Cap is reached or July 30th, 2018',
+    min_invest: '$10,000',
+    max_invest: '$990,000 (equals 1% of Treasury)',
+    name: 'Third',
+    embed: {
+      src : 'https://docs.google.com/forms/d/e/1FAIpQLSdG1eboADtk0BUzCyfdV8gtRT4zKEjFNAf9Focy7QpGoZP7Xw/viewform?embedded=true',
+      height : 'height:700px;'
+    }
+  },
+  tokensale54 : {
+    basis_point_img : '/images/basis-point-v4.png',
+    network_value: '$99 MM',
+    price_per_token: '$0.0999',
+    hard_cap: '$2,997,000',
+    treasury_percent: '3%',
+    pre_sale_ends: 'Once Hard Cap is reached or July 30th, 2018',
+    min_invest: '$10,000',
+    max_invest: '$990,000 (equals 1% of Treasury)',
+    name: 'Third',
+    embed: {
+      src : 'https://docs.google.com/forms/d/e/1FAIpQLSeu8VaytKR48EfOsSTZpawD9O3d8y-q4vDvcRNv-Imj3MVq6Q/viewform?embedded=true',
+      height : 'height:700px;'
+    }
+  },
   tokensale69 : {
     basis_point_img : '/images/basis-point-69.png',
     network_value: '$69 Million',

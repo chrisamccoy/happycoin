@@ -19,6 +19,21 @@ router.get('/tokensale3', function(req, res, next) {
   res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }), sale: getTokenSale('tokensale3') });
 });
 
+/* GET Tokensale 3 page. */
+router.get('/tokensale39', function(req, res, next) {
+  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }), sale: getTokenSale('tokensale39') });
+});
+
+/* GET Tokensale 3 page. */
+router.get('/tokensale49', function(req, res, next) {
+  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }), sale: getTokenSale('tokensale49') });
+});
+
+/* GET Tokensale 3 page. */
+router.get('/tokensale54', function(req, res, next) {
+  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }), sale: getTokenSale('tokensale54') });
+});
+
 /* GET tokensale69 page. */
 router.get('/tokensale69', function(req, res, next) {
   res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }), sale: getTokenSale('tokensale69') });
