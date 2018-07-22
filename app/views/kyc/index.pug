@@ -1,5 +1,10 @@
 extends ../layout
 
+block more-head
+    script(async, src='https://s3-eu-west-1.amazonaws.com/onfido-assets-production/web-sdk-releases/2.4.1/onfido.min.js')
+    link(rel='stylesheet', href='https://s3-eu-west-1.amazonaws.com/onfido-assets-production/web-sdk-releases/2.4.1/style.css')
+    script(type="text/javascript", src="https://www.google.com/recaptcha/api.js")
+
 block content
   div#hc-content.kyc-page
     div.row
