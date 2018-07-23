@@ -27,7 +27,8 @@ var tokenSales = {
     embed: {
       src : 'https://docs.google.com/forms/d/e/1FAIpQLSe_Rvu9Zoufn0sp6iPAvL-YkYjC0etIh8nggxWp5StuoCfgyQ/viewform?embedded=true',
       height : 'height:700px;'
-    }
+    },
+    justEmbed: true
   },
   tokensale49 : {
     basis_point_img : '/images/basis-point-v4.png',
@@ -42,7 +43,8 @@ var tokenSales = {
     embed: {
       src : 'https://docs.google.com/forms/d/e/1FAIpQLSdG1eboADtk0BUzCyfdV8gtRT4zKEjFNAf9Focy7QpGoZP7Xw/viewform?embedded=true',
       height : 'height:700px;'
-    }
+    },
+    justEmbed: true
   },
   tokensale54 : {
     basis_point_img : '/images/basis-point-v4.png',
@@ -57,7 +59,8 @@ var tokenSales = {
     embed: {
       src : 'https://docs.google.com/forms/d/e/1FAIpQLSeu8VaytKR48EfOsSTZpawD9O3d8y-q4vDvcRNv-Imj3MVq6Q/viewform?embedded=true',
       height : 'height:700px;'
-    }
+    },
+    justEmbed: true
   },
   tokensale69 : {
     basis_point_img : '/images/basis-point-69.png',
