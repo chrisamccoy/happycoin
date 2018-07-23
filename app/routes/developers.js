@@ -7,6 +7,11 @@ router.get('/guides/get-started', function(req, res, next) {
   res.render('developers/guides/get-started');
 });
 
+router.get('/', function(req, res, next) {
+  var filename = path.join(__dirname+'/../views/developers/readme.html');
+  res.sendFile(filename);
+});
+
 router.get('/:slug/:slug2?/:slug3?', function(req, res, next) {
   var params = req.params;
   var slugs = '';
@@ -19,16 +24,17 @@ router.get('/:slug/:slug2?/:slug3?', function(req, res, next) {
   }
 
   slugs = slugs.replace('/','');
+
   var pathname = json[slugs];
   var filename = '';
 
   if (pathname['is_dir']) {
     filename = path.join(__dirname+'/../views/developers/'+slugs+'/readme.html');
-    // console.log(filename, path['is_dir']);
+    // console.log(filename, pathname['is_dir']);
     res.sendFile(filename);
   } else {
     filename = path.join(__dirname+'/../views/developers/'+slugs+'.html');
-    // console.log(filename, path['is_dir']);
+    // console.log(filename, pathname['is_dir']);
     res.sendFile(filename);
   }
 });
