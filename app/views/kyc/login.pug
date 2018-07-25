@@ -5,20 +5,20 @@ block content
     div.row
       div.column.register
         h4(style="text-align: center; margin-top:1em;") KYC/AML Check for Storecoin
-        form.register(action="/kyc/register", method="POST", autocomplete="off")
+        form.register(action="/kyc/register", method="POST", autocomplete="disable")
           .loading
             .sp.sp-wave
             .text Loading...
           h5 Enter Your Information
           div.field
-            input(type="text", placeholder="First Name", name="first_name", autocomplete="off")
+            input(type="text", placeholder="First Name", name="first_name", autocomplete="disable")
           div.field
-            input(type="text", placeholder="Last Name", name="last_name", autocomplete="off")
+            input(type="text", placeholder="Last Name", name="last_name", autocomplete="disable")
           div.field
-            textarea(placeholder="Reason for KYC/AML", name="reason", maxlength="100", rows="1", cols="100", autocomplete="off")
+            textarea(placeholder="Reason for KYC/AML", name="reason", maxlength="100", rows="1", cols="100", autocomplete="disable")
           div.field
-            input(type="email", placeholder="Email used for Storecoin communication", name="email", autocomplete="off")
+            input(type="email", placeholder="Email used for Storecoin communication", name="email", autocomplete="disable")
 
           button.hc-button.orange(type="submit") Submit
-        
+
         h5.success(style="text-align:center; display: none; text-align: center; margin: 0px; background-color: #dcecdc; padding: 1em; border-radius: 7px;") Thank you! We’ve sent you an email with KYC process link.
