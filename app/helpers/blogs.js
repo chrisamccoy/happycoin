@@ -1,5 +1,14 @@
 var blogs = [
   {
+      slug: 'bitcoin.com-and-investopedia-storecoin-governance-could-be-the-solution-to-blockchain-consensus',
+      title: 'Bitcoin.com and Investopedia: Storecoin Governance Could Be the Solution to Blockchain Consensus',
+      desc: 'Cryptocurrency news sites Bitcoin.com and Investopedia have called out  Storecoin ’s unique governance model, crediting creator Chris McCoy with devising a strategy that engages members of four separate branches in achieving consensus in a democratic process.',
+      img: 'https://storeco.in/images/bitcoin-cover.jpg',
+      template: 'blog-bitcoin-investopedia',
+      readTime : '3 min read',
+      date : 'July 25, 2018'
+  },
+  {
       slug: 'what-is-storecoin',
       title: 'What is Storecoin?',
       desc: 'A zero-fee, high throughput, and decentralized cryptocurrency with a Governance inspired by the U.S. Constitution. The Storecoin blockchain is secured by DyPoS.',
