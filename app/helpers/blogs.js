@@ -1,5 +1,14 @@
 var blogs = [
   {
+      slug: 'an-exclusive-invitation-to-join-our-global-community',
+      title: 'An Exclusive Invitation to Join Our Global Community',
+      desc: 'When Storecoin creator Chris McCoy began working on his vision of a p2p programmable payments system, he promised to “do it right.” That meant linking token sales to milestones attained, publishing the results of research, and developing a network protocol that would ensure decentralization and fee-free transactions.',
+      img: 'https://storeco.in/images/teecollection.jpg',
+      template: 'blog-join-community',
+      readTime : '3 min read',
+      date : 'July 27, 2018'
+  },
+  {
       slug: 'bitcoin.com-and-investopedia-storecoin-governance-could-be-the-solution-to-blockchain-consensus',
       title: 'Bitcoin.com and Investopedia: Storecoin Governance Could Be the Solution to Blockchain Consensus',
       desc: 'Cryptocurrency news sites Bitcoin.com and Investopedia have called out  Storecoin ’s unique governance model, crediting creator Chris McCoy with devising a strategy that engages members of four separate branches in achieving consensus in a democratic process.',
