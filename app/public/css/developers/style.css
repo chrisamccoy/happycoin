@@ -1,0 +1,151 @@
+@font-face {
+ font-family: 'Aleo';
+ font-style: normal;
+ font-weight: normal;
+ font-display: auto;
+ src: url('../fonts/aleo-regular-webfont.eot'); /* IE9 Compat Modes */
+ src: url('../fonts/aleo-regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+      url('../fonts/aleo-regular-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+      url('../fonts/aleo-regular-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+      url('../fonts/aleo-regular-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+      url('../fonts/aleo-regular-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+ font-family: 'Aleo';
+ font-style: normal;
+ font-weight: bold;
+ font-display: auto;
+ src: url('../fonts/aleo-bold-webfont.eot'); /* IE9 Compat Modes */
+ src: url('../fonts/aleo-bold-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+      url('../fonts/aleo-bold-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+      url('../fonts/aleo-bold-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+      url('../fonts/aleo-bold-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+      url('../fonts/aleo-bold-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+html, body {
+  height: 100%;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #e49400;
+}
+
+body {
+  font-family: 'Aleo', sans-serif;
+  margin: 0px;
+}
+
+/* Content */
+.dev-content {
+  margin: 0 auto;
+  max-width: 850px;
+  width: 100%;
+  padding: 96px 2em 1em;
+  height: calc(100% - 86px - 2em);
+  overflow: scroll;
+}
+
+.dev-content img {
+  width: 100%;
+}
+
+.dev-content p {
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+.dev-content hr {
+  border-width: 0px;
+}
+
+/* NAv */
+
+.dev-nav {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  color: white;
+  background: #ed844c;
+  padding: 0em 1em;
+  width: calc(100% - 2em);
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.dev-nav .logo {
+  padding: 0.5em 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.dev-nav .menu {
+  display: flex;
+  align-items: center;
+  margin-left: 1em;
+  background-color: #f7945e;
+}
+
+.dev-nav .menu .item {
+  padding: 0.5em 1em;
+  color: white;
+}
+
+.dev-nav .logo .tag {
+  margin-left: 0.5em;
+  font-size: 1.5em;
+  border-left: 1px solid;
+  padding: 0.5em
+}
+
+.dev-nav .logo img {
+  height: 100%;
+}
+
+/* Side Nav */
+.dev-side-nav {
+  position: absolute;
+  top: 86px;
+  left: 0px;
+  width: 260px;
+  height: calc(100% - 86px);
+  background-color: #f7945d;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.dev-side-nav .item {
+  display: inline-block;
+  color: white;
+}
+
+/* .dev-side-nav .item:hover {
+  opacity: 0.3;
+} */
+
+.dev-side-nav .item:not(.sub) {
+  padding: 1em;
+}
+
+.dev-side-nav .item.sub {
+  opacity: 0.8;
+  padding-left: 2em;
+  padding-bottom: 1em;
+  position: relative;
+}
+
+.dev-side-nav .item.sub::before {
+  position: absolute;
+  content: ' ';
+  width: 10px;
+  height: 1px;
+  background: white;
+  top: 10px;
+  left: 1em;
+}
