@@ -6,7 +6,7 @@ var blogs = [
       img: 'https://storeco.in/images/teecollection.jpg',
       template: 'blog-join-community',
       readTime : '3 min read',
-      date : 'July 27, 2018'
+      date : 'July 30, 2018'
   },
   {
       slug: 'bitcoin.com-and-investopedia-storecoin-governance-could-be-the-solution-to-blockchain-consensus',
