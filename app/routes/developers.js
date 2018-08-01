@@ -25,7 +25,6 @@ router.get('/:slug/:slug2?/:slug3?', function(req, res, next) {
   }
 
   slugs = slugs.replace('/','');
-  console.log(slugs);
 
   var pathname = json[slugs];
   var filename = '';

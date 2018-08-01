@@ -1,0 +1,148 @@
+extends ../blog-wrapper
+
+block blog-news 
+  p A blog post on 
+    = ' '
+    a(href="https://cointelegraph.com/news/the-inevitable-failure-of-proof-of-stake-blockchains-and-why-a-new-algorithm-is-needed", target="_blank") cointelegraph.com
+    |  contends Proof of Stake blockchains create a “rich get richer” scenario for participants on the network. But 
+    = ' '
+    a(href="http://storeco.in/", target="_blank") Storecoin
+    | ’s Chief Technology Officer Rag Bhagavatha argues Proof of Stake itself is not to blame.
+
+  p Instead, it is the leader-based block production design used by Proof of Stake and Proof of Work protocols that creates a “winner take all” environment, skewing toward miners or stakers who have available resources to invest to try to “beat the system.”
+
+  p BlockFin, Storecoin’s leaderless consensus algorithm with a decentralized economic model for block rewards, offers a more democratic process in which all validators have a chance to share the rewards of block production.
+
+  p Bhagavatha shared this series of tweets recently to make his point: 
+  
+  div.tweets
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 1/ "In Proof-of-stake, the rich get gradually richer" says this blog post -- 
+          a(href='https://t.co/pA0wJc3RnW') https://t.co/pA0wJc3RnW
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1023000276704276481?ref_src=twsrc%5Etfw') July 28, 2018
+      
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 2/ This argument is partially correct and partially flawed. It is actually not a problem with Proof-of-Stake (PoS) itself, but because PoS is modeled after Proof-of-Work (PoW).
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1023000277572407296?ref_src=twsrc%5Etfw') July 28, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 3/ In PoW, one miner emerges as the winner of solving the cryptographic puzzle and the winning miner gets to add the new block to the blockchain and win the resulting block reward.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1023000278474272769?ref_src=twsrc%5Etfw') July 28, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 4/ In other words, the winning miner was the *elected leader* to produce the new block. The election was *random* because of the nature of the underlying cryptographic puzzle.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1023000279216582656?ref_src=twsrc%5Etfw') July 28, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 5/ First generation PoS algorithms mimicked this model. But instead of solving an energy-intensive cryptographic puzzle, the PoS algorithms opted for some type of *randomization* to elect the leader to produce the next block.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1023000279891890176?ref_src=twsrc%5Etfw') July 28, 2018
+       
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 6/ To secure the network against attacks such 51% attack, Sybil attack, etc., a "stake" or "deposit" is mandated, so the offender can be punished with slashing or burning the deposit for any malicious acts by the offender.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1023000280617480192?ref_src=twsrc%5Etfw') July 28, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 7/ In PoW this is not necessary because solving cryptographic puzzle itself is very energy-intensive, so a malicious actor would pay the *price* first before committing the crime.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1023000281397714944?ref_src=twsrc%5Etfw') July 28, 2018
+
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 8/ So, it is the "leader-based block production design" that makes the rich, richer. We can find evidence of this argument in PoW itself. The biggest mining pools are the ones who are getting richer, because they force themselves to be elected using their sheer hashing power.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1023000282161012736?ref_src=twsrc%5Etfw') July 28, 2018
+       
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 9/ So, what part of this argument is right? -- "A new algorithm is needed". Or better, as we believe at 
+          a(href='https://twitter.com/storecoin?ref_src=twsrc%5Etfw') @storecoin
+          | , a new "mindset" is needed.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1023000282987253760?ref_src=twsrc%5Etfw') July 28, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 10/ A mindset away from leader or delegation-based protocols because they are easier to design. A mindset away from "winner takes it all" design for block rewards. A mindset where governance is off-the-chain or not specified or thought about at all.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1023000283880742912?ref_src=twsrc%5Etfw') July 28, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 11/ 
+          a(href='https://twitter.com/storecoin?ref_src=twsrc%5Etfw') @storecoin
+          | 's BlockFin leaderless BFT consensus protocol attempts to address centralization and low throughput issues head on. We believe that if the network is not truly decentralized, it is not a blockchain at all.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1023000284627234817?ref_src=twsrc%5Etfw') July 28, 2018
+
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 12/ Decentralization is not just about algorithm design. It must include the economics as well. Because a "true decentralization" is where *everyone* participates -- in validating the blocks, earning block rewards, and securing the network.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1023000285470371840?ref_src=twsrc%5Etfw') July 28, 2018
+       
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 13/ In BlockFin, all validator nodes participate in block validation. They may go offline from time to time, but they are *mostly* "online and doing their job". They are incentivized to stay online and do their job via a decentralized block reward structure.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1023000286237884418?ref_src=twsrc%5Etfw') July 28, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 14/ So, every participating validator node earns a portion of the block reward. So, validators "work to earn" rather than waiting for the lottery to get elected and earn the rewards.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1023000287018008576?ref_src=twsrc%5Etfw') July 28, 2018
+
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 15/ So, rich get *marginally* richer only by ensuring their up-time and validating as many blocks in a day as they can. A validator node will fall back only with sloppy up-time.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1023000287802417152?ref_src=twsrc%5Etfw') July 28, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 16/ Designing such a system is not easy, because we need to maintain a lot more data to be able to pay block rewards for all the participating validator nodes. When the protocol depends on a large number of nodes, it cannot be "synchronous" or assume any timing constraints.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1023000288569872384?ref_src=twsrc%5Etfw') July 28, 2018
+
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 17/ But these challenges are exactly why 
+          a(href='https://twitter.com/storecoin?ref_src=twsrc%5Etfw') @storecoin
+          |  exists. It is important to believe in "true decentralization", because otherwise, we will not be building a blockchain, but a centralized service like millions of cloud-based services all around us.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1023000289287127040?ref_src=twsrc%5Etfw') July 28, 2018
+
+
+
+        
+            

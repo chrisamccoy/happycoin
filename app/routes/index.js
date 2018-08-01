@@ -312,7 +312,7 @@ router.get('/blog/:slug', function(req, res, next) {
     timeStamp : bg.date+' . '+bg.readTime
   });
 
-  res.render(bg.template, { title: (bg.twtitle) ? bg.twtitle : bg.title, meta: mt });
+  res.render('blogs/'+bg.template, { title: (bg.twtitle) ? bg.twtitle : bg.title, meta: mt });
 });
 
 /* GET home page. */

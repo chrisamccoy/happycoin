@@ -1,5 +1,14 @@
 var blogs = [
   {
+      slug: 'storecoin-addresses-rich-get-gradually-richer-concern-with-its-leaderless-protocol-and-decentralized-economics',
+      title: 'Storecoin Addresses “Rich Get Gradually Richer” Concern with its Leaderless Protocol and Decentralized Economics',
+      desc: 'A blog post on cointelegraph.com contends Proof of Stake blockchains create a “rich get richer” scenario for participants on the network. But Storecoin’s Chief Technology Officer Rag Bhagavatha argues Proof of Stake itself is not to blame.',
+      img: 'https://storeco.in/images/blog/logo-dev-cover.png',
+      template: 'blog-aug-1-18',
+      readTime : '5 min read',
+      date : 'August 01, 2018'
+  },
+  {
       slug: 'bitcoin.com-and-investopedia-storecoin-governance-could-be-the-solution-to-blockchain-consensus',
       title: 'Bitcoin.com and Investopedia: Storecoin Governance Could Be the Solution to Blockchain Consensus',
       desc: 'Cryptocurrency news sites Bitcoin.com and Investopedia have called out  Storecoin ’s unique governance model, crediting creator Chris McCoy with devising a strategy that engages members of four separate branches in achieving consensus in a democratic process.',
