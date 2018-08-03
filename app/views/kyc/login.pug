@@ -6,6 +6,9 @@ block content
       div.column
         h4(style="margin-top:1em;") KYC/AML Check for Storecoin
         p Please have the following information ready to complete the application (Driver's LIcense, Passport, or Government Issued Identity Card).
+        p
+          a.underline Privacy Policy
+          
       div.column.register
         form.register(action="/kyc/register", method="POST", autocomplete="new-password")
           .loading
@@ -20,8 +23,6 @@ block content
             textarea(placeholder="Reason for KYC/AML", name="reason", maxlength="100", rows="1", cols="100", autocomplete="new-password")
           div.field
             input(type="email", placeholder="Email used for Storecoin communication", name="email", autocomplete="new-password")
-          div.field(style="text-align: right;")
-            a.underline Privacy Policy
 
           button.hc-button.orange(type="submit") Submit
 
