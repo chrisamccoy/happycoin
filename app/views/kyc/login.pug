@@ -3,8 +3,10 @@ extends ../layout
 block content
   div#hc-content.kyc-register
     div.row
+      div.column
+        h4(style="margin-top:1em;") KYC/AML Check for Storecoin
+        p Please have the following information ready to complete the application (Driver's LIcense, Passport, or Government Issued Identity Card).
       div.column.register
-        h4(style="text-align: center; margin-top:1em;") KYC/AML Check for Storecoin
         form.register(action="/kyc/register", method="POST", autocomplete="new-password")
           .loading
             .sp.sp-wave
@@ -18,7 +20,12 @@ block content
             textarea(placeholder="Reason for KYC/AML", name="reason", maxlength="100", rows="1", cols="100", autocomplete="new-password")
           div.field
             input(type="email", placeholder="Email used for Storecoin communication", name="email", autocomplete="new-password")
+          div.field(style="text-align: right;")
+            a.underline Privacy Policy
 
           button.hc-button.orange(type="submit") Submit
 
-        h5.success(style="text-align:center; display: none; text-align: center; margin: 0px; background-color: #dcecdc; padding: 1em; border-radius: 7px;") Thank you! We’ve sent you an email with KYC process link.
+        div.success
+          h3 Thank you!
+          h5 We’ve sent you an email with KYC process link.
+          p Once you have clicked on the link to confirm the email on file is accurate, you will be redirected to a form to completed the identity verification process. This process only takes a few minutes.

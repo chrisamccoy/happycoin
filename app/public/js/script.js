@@ -1910,7 +1910,13 @@ function kycPage() {
               type: 'welcome',
               options: {
                 title: 'Verify your Identity',
-                descriptions: ['We will need to verify your identity. It will only take a couple of minutes.']
+                descriptions: [
+                  'Please have your Driver\'s License, Passport, or Government issued Identity Card ready to facilitate the verification process.',
+                  '\xa0',
+                  'We will need to verify your identity. It will only take a couple of minutes.',
+                  '\xa0',
+                  'Storecoin uses Onfido as the identity verification service provider. Storecoin does not collect or store any of the information provided during this portion of the verification process. Please see Storecoin\'s Privacy policy for more information regarding the data Storecoin collects, stores, and how it is managed'
+                ]
               }
             },
             'document',

@@ -8030,6 +8030,7 @@ and (max-width : 335px) {
 
 .kyc-register .row .column {
   width: 50%;
+  text-align: left;
 }
 
 .kyc-register .row .column p {
@@ -8052,6 +8053,7 @@ and (max-width : 335px) {
   font-size: 1.2em;
   position: relative;
   overflow: hidden;
+  margin-top: 2em;
 }
 
 .kyc-register .row .column.register form .loading {
@@ -8131,6 +8133,14 @@ and (max-width : 335px) {
   margin: 0 auto 1.5em;
 }
 
+.kyc-register .success {
+   display: none;
+   text-align: center;
+   background-color: #dcecdc;
+   padding: 1em; 
+   border-radius: 7px;
+}
+
 .kyc-page {
   background-color: white;
 }
@@ -8191,6 +8201,10 @@ and (max-width : 335px) {
 
   .kyc-register .row .column.register .g-recaptcha {
     width: 100%;
+  }
+
+  .kyc-register .row .column.register form {
+    margin-top: 0px;
   }
 }
 
