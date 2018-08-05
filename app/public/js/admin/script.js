@@ -616,11 +616,13 @@ function updatePoc(){
 //removeOrders
 function removeOrder(orderId) {
   // console.log(orderId);
-  $loading.fadeIn();
-  $.getJSON('/admin/order/remove/'+orderId, function(result){
-    // updateOrders();
-    updatePoc();
-  });
+  if (window.confirm("Are you sure you want to remove this order?")) {
+    $loading.fadeIn();
+    $.getJSON('/admin/order/remove/'+orderId, function(result){
+      // updateOrders();
+      updatePoc();
+    });
+  }
 }
 
 //editorder
