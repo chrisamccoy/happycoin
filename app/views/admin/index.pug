@@ -18,11 +18,16 @@ block content
               a.item(data-tab="inventory") Inventory
               
             div.tab-body.active(data-tab="poc-forms")
+              div.buttons
+                button.yellow.refresh.icon(onclick="updatePoc()")
+                  i.ion-android-refresh
               div#poc-table
 
             div.tab-body(data-tab="pending-orders")
-              div.sc-row
+              div.buttons
                 button#generate-order(disabled="true", style="margin: 0px;") Generate
+                button.yellow.refresh.icon(onclick="updateOrders()")
+                  i.ion-android-refresh
               div#orders-table
               
             div.tab-body(data-tab="create-orders")
@@ -101,6 +106,7 @@ block content
             <th>Email</th>
             <th>Item 1</th>
             <th>Item 2</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -112,6 +118,12 @@ block content
               <td><%= order.email %></td>
               <td class="product"><%= (order.item1) ? order.item1.name +' x '+ order.quantity1 : 'N/A' %></td>
               <td class="product"><%= (order.item2) ? order.item2.name +' x '+ order.quantity2 : 'N/A' %></td>
+              <td>
+                <div class="buttons">
+                  <button class="icon" onclick="editOrder('<%= order.id %>')"><i class="ion-edit"></i></button>
+                  <button class="red icon" onclick="removeOrder('<%= order.id %>')"><i class="ion-android-close"></i></button>
+                </div>
+              </td>
             </tr>
             <tr class="fold" id="<%= order.id %>">
               <td colspan="7">
@@ -254,3 +266,4 @@ block content
     <% }) %>
   
   include review-form
+  include order-edit-form

@@ -428,15 +428,6 @@ function initOrders() {
   });
 }
 
-function updateOrders(){
-  $.getJSON('/admin/get-orders', function(result){
-    orders = result;
-    var $orderProcess = $('.orders-process');
-    $orderProcess.find('.sc-tabs .tabs .item[data-tab="pending-orders"]').trigger('click');
-    initOrders();
-  });
-}
-
 function loadSubmittedOrders(){
   submitted.forEach(function(each){
     var product1 = _.find(inventory, ['id', each.item1]);
@@ -597,4 +588,133 @@ function copyToClipboard(str) {
   el.select();
   document.execCommand('copy');
   document.body.removeChild(el);
-};
+}
+
+// updating processess
+function updateOrders(){
+  $loading.fadeIn();
+  $.getJSON('/admin/get-orders', function(result){
+    orders = result;
+    var $orderProcess = $('.orders-process');
+    $orderProcess.find('.sc-tabs .tabs .item[data-tab="pending-orders"]').trigger('click');
+    initOrders();
+    $loading.fadeOut();
+  });
+}
+
+function updatePoc(){
+  $loading.fadeIn();
+  $.getJSON('/admin/poc-forms', function(result){
+    poc = result;
+    var $orderProcess = $('.orders-process');
+    $orderProcess.find('.sc-tabs .tabs .item[data-tab="poc-forms"]').trigger('click');
+    initPocForms();
+    $loading.fadeOut();
+  });
+}
+
+//removeOrders
+function removeOrder(orderId) {
+  // console.log(orderId);
+  $loading.fadeIn();
+  $.getJSON('/admin/order/remove/'+orderId, function(result){
+    // updateOrders();
+    updatePoc();
+  });
+}
+
+//editorder
+function editOrder(orderId) {
+  var order = _.find(orders, ['id', orderId]),
+  $editModal = $('#order-edit-form');
+
+  templateRender({
+    el : '#order-edit-form',
+    data : { order: order }
+  });
+
+  templateRender({
+    el : '#edit-product-select',
+    data : { rows : inventory, select : 'Product Select' },
+    tpl : '#product-select-tpl'
+  });
+
+  templateRender({
+    el : '#edit-product-select-2',
+    data : { rows : inventory, select : 'Product Select' },
+    tpl : '#product-select-tpl'
+  });
+
+  // console.log(order);
+
+  $('#edit-product-select').on('change', function() {
+    $editModal.find('input[name="item1"]').val(this.value);
+  });
+
+  $('#edit-product-select').val(order.item1.id);
+
+  $('#edit-product-select-2').on('change', function() {
+    $editModal.find('input[name="item2"]').val(this.value);
+  });
+
+  $('#edit-product-select-2').val(order.item2.id);
+
+  $editModal.modal('show');
+
+  $editModal.find('.cancel').unbind().click(function(){
+    $editModal.modal('hide');
+  });
+
+  var $form = $editModal.find('form');
+  var $loader = $editModal.find('.loading');
+
+  $form.unbind().submit(function(e){
+    $loader.fadeIn();
+    e.preventDefault();
+    var formData = $form.serializeArray(),
+        submitData = {};
+
+    formData.forEach(function(item){
+      if (item.name == 'quantity1') {
+        submitData[item.name] = (item.value) ? parseInt(item.value) : null;
+      } else if (item.name == 'quantity2') {
+        submitData[item.name] = (item.value) ? parseInt(item.value) : null;
+      } else if (item.name == 'item2') {
+        if (item.value) {
+          submitData[item.name] = item.value;
+        } else {
+          submitData[item.name] = null;
+          submitData['quantity2'] = null;
+        }
+      } else {
+        submitData[item.name] = item.value;
+      }
+    });
+
+    // console.log(submitData);
+
+    $.ajax({
+      url: '/admin/edit-order',
+      type: "POST",
+      data: JSON.stringify(submitData),
+      contentType: "application/json",
+      complete: function(response){
+        resData = response.responseJSON;
+        // console.log(resData);
+        if (resData.success == 1) {
+          // $form.find("input").val("");
+          // $form[0].reset();
+          $editModal.modal('hide');
+          updateOrders();
+        } else {
+          $loader.fadeOut('fast');
+        }
+      }
+    });
+  });
+
+  $editModal.find('.save').unbind().click(function(){
+    $loader.fadeIn();
+    $form.submit();
+  });
+}

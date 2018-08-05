@@ -12,6 +12,14 @@ a {
   color: #e6763c;
 }
 
+.buttons {
+  display: flex;
+}
+
+.buttons button:not(:first-child) {
+  margin-left: 0.5em;
+}
+
 button, button[disabled]:hover {
   background-color: #66bb6b;
   border-color: #66bb6b;
@@ -25,6 +33,20 @@ button.orange {
 button.red {
   background-color: #ec3f3f;
   border-color: #ec3f3f;
+}
+
+button.yellow {
+  background-color: #fdc11c;
+  border-color: #fdc11c;
+}
+
+button.icon {
+  font-size: 1.2em;
+  padding: 0 1em;
+}
+
+button:hover:not(:disabled) {
+  opacity: 0.7;
 }
 
 i {
@@ -123,6 +145,7 @@ select {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 15;
 }
 
 .loading .sp-wave:before,
@@ -366,7 +389,7 @@ select {
   padding: 1em;
 }
 
-#orders-table tbody i {
+#orders-table tbody i.ion-plus-circled {
   font-size: 1.5em;
   cursor: pointer;
 }
@@ -504,54 +527,54 @@ select {
 }
 
 /* review form */
-#review-form .sc-row {
+.ui.modal .sc-row {
   display: flex;
   align-items: flex-start;
   margin-top: 1em;
 }
 
-#review-form .form,
-#review-form .form-info {
+.ui.modal .form,
+.ui.modal .form-info {
   width: 49%;
 }
 
-#review-form .form .fields {
+.ui.modal .form .fields {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-#review-form .form .fields .field {
+.ui.modal .form .fields .field {
   width: 49%;
 }
 
-#review-form .form .fields .field.qty {
+.ui.modal .form .fields .field.qty {
   width: 100px;
   display: inline-flex;
   align-items: center;
   margin-top: 0.4em;
 }
 
-#review-form .form .fields .field select {
+.ui.modal .form .fields .field select {
   font-size: 0.7em;
 }
 
-#review-form .form .fields .field.qty label {
+.ui.modal .form .fields .field.qty label {
   margin-right: 0.6em;
 }
 
-#review-form .form .fields .field.qty input {
+.ui.modal .form .fields .field.qty input {
   margin: 0px;
 }
 
-#review-form .form-info table {
+.ui.modal .form-info table {
   font-size: 0.7em;
   padding: 0px 0.5em;
   background-color: #f3f3f3;
   border-radius: 5px;
 }
 
-#review-form .form-info table th {
+.ui.modal .form-info table th {
   width: 60%;
 }
 

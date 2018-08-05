@@ -1,0 +1,85 @@
+script#order-edit-form-tpl(type="text/template")
+  <div class="content">
+    <div class="loading" style="display:none;">
+      <div class="sp sp-wave"></div>
+      <div class="text">Loading...</div>
+    </div>
+    <div class="header"><b>Edit Order - <%= order.id %></b></div>
+    <div class="sc-row">
+      <form class="form" style="width: 100%;">
+        <div class="fields">
+          <div class="field">
+            <label>Name</label>
+            <input type="text" name="id" value="<%= order.id %>" hidden>
+            <input type="text" name="name" value="<%= order.name %>">
+          </div>
+          <div class="field">
+            <label>Name</label>
+            <input type="email" name="email" value="<%= order.email %>">
+          </div>
+        </div>
+        <div class="fields">
+          <div class="field">
+            <label>Address 1</label>
+            <input type="text" name="address1" value="<%= order.address1 %>">
+          </div>
+          <div class="field">
+            <label>Address 2</label>
+            <input type="text" name="address2" value="<%= order.address2 %>">
+          </div>
+        </div>
+        <div class="fields">
+          <div class="field">
+            <label>City</label>
+            <input type="text" name="city" value="<%= order.city %>">
+          </div>
+          <div class="field">
+            <label>State</label>
+            <input type="text" name="state" value="<%= order.state %>">
+          </div>
+        </div>
+        <div class="fields">
+          <div class="field">
+            <label>Zipcode</label>
+            <input type="text" name="zipcode" value="<%= order.zipcode %>">
+          </div>
+          <div class="field">
+            <label>Phone Number</label>
+            <input type="text" name="phone_number" value="<%= (order.phone_numer) ? order.phone_number : '' %>">
+          </div>
+        </div>
+        <div class="field">
+          <label>Country</label>
+          <input type="text" name="country" value="<%= order.country %>">
+        </div>
+        <div class="fields">
+          <div class="field">
+            <label>Item 1</label>
+            <select id="edit-product-select"></select>
+            <input type="text" name="item1" value="<%= order.item1.id %>" hidden>
+          </div>
+          <div class="field qty">
+            <label>QTY</label>
+            <input type="number" name="quantity1" value="<%= (order.quantity1) ? order.quantity1 : '' %>">
+          </div>
+        </div>
+        <div class="fields">
+          <div class="field">
+            <label>Item 2</label>
+            <select id="edit-product-select-2"></select>
+            <input type="text" name="item2" value="<%= (order.item1) ? order.item1.id : '' %>" hidden>
+          </div>
+          <div class="field qty">
+            <label>QTY</label>
+            <input type="number" name="quantity2" value="<%= (order.quantity2) ? order.quantity2 : '' %>">
+          </div>
+        </div>
+      </form>      
+    </div>
+    <div class="modal-buttons">
+      <button class="save">Save</button>
+      <button class="cancel">Cancel</button>
+    </div>
+  </div>
+  
+div#order-edit-form.ui.small.modal
