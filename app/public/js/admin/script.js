@@ -249,8 +249,6 @@ function initReviewForm (id) {
     var formData = $form.serializeArray(),
         submitData = {};
 
-    console.log(formData);
-
     formData.forEach(function(item){
       if (item.name == 'quantity1') {
         submitData[item.name] = (item.value) ? parseInt(item.value) : null;
@@ -258,15 +256,17 @@ function initReviewForm (id) {
         submitData[item.name] = (item.value) ? parseInt(item.value) : null;
       } else if (item.name == 'item2') {
         if (item.value) {
+          submitData[item.name] = item.value;
+        } else {
           submitData[item.name] = null;
           submitData['quantity2'] = null;
-        } else {
-          submitData[item.name] = item.value;
         }
       } else {
         submitData[item.name] = item.value;
       }
     });
+
+    // console.log(submitData);
 
     $.ajax({
       url: '/admin/create-order',
