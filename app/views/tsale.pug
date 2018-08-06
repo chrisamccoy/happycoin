@@ -1,0 +1,138 @@
+extends layout
+
+block content
+  div#hc-content
+    div(style="margin-top:5em;")
+      #third-token-sale.blog-news.hc-feature.over-rel.padding
+        .hc-chunk.hc-intro-text-wrapper
+          h1.article-title Welcome to the whitelist of the Third, Invite-Only and Milestone-based Token Sale for Storecoin ($STORE).
+            
+          p.hc-feature-lead.jump-to-buy
+            a Jump to Buy Order form
+              i.ion-chevron-down
+          
+          ul(style="margin-top: 1em;")
+            li 
+              b Hard Cap:
+              = ' '
+              span $4,975,000
+            li 
+              b Soft Cap:
+              = ' '
+              span $1,975,000  
+            li 
+              b Price Per STORE Token:
+              = ' '
+              span $0.199
+            li 
+              b Market Capitalization:
+              = ' '
+              span $54 Million
+            li
+              b Funds Accepted: 
+              |  ETH, BTC, USD Wire
+            li 
+              b Sale Starts:
+              = ' '
+              span August 27, 2018
+            li 
+              b Sale Ends:
+              = ' '
+              span Once the Hard Cap is reached or September 27, 2018
+            li 
+              b % of Treasury To Be Sold:
+              = ' '
+              span 2.5%
+            li 
+              b Minimum Investment:
+              = ' '
+              span $250
+            li 
+              b Maximum Investment:
+              = ' '
+              span $497,500
+            li 
+              b KYC and AML-checks-required:
+              |  Yes
+            li
+              b Can my country participate?
+              |  United States purchasers must be “accredited investors” for the purposes of federal securities regulation. Purchasers in other countries are not subject to this restriction, but must comply with applicable laws and regulations of their respective countries of residence (Reg D and Reg S). 
+            li
+              b Does total total cryptocurrency ownership count for being accredited (including ICO tokens still not yet released by the teams)?
+              |  Yes
+            li
+              b Definition of being an accredited investor (for U.S. buyers): 
+              a.underline(href="/accredited", target="_blank") See here
+            li 
+              b Investors will receive Tokens in their Storecoin Wallets:
+              |  Q319
+            li 
+              b If I buy now, will I be able to buy in future sales:
+              |  Yes, you'll have priority
+            li 
+              b Treasury to be sold in future milestone-based sales:
+              |  17-21%
+            li 
+              b How will the next sales be priced:
+              |  Auction-based
+            li 
+              b Amount sold in previous milestone-based sales:
+              |  $3.8 Million
+            li 
+              b of STORE Authorized:
+              |  1 Billion
+            li 
+              b How Treasury is Allocated:
+              |  34% for token sales, 20% for long-term 1,000-year Treasury, 46% to incentivize the network over the first 100 years
+                
+          p Storecoin is a pre-launch public blockchain protocol therefore, for our milestone-based Third Token Sale, we are treating STORE tokens as securities. United States purchasers must be “accredited investors” for the purposes of federal securities regulation. Purchasers in other countries are not subject to this restriction, but must comply with applicable laws and regulations of their respective countries of residence. (Reg D and Reg S).
+
+      include token-sale-buyers
+      
+      - var tokensale = true
+      include people-saying
+      
+      .blog-news.hc-feature.over-rel.padding(style="padding-bottom: 0px;")
+        .hc-chunk.hc-intro-text-wrapper
+          .hc-image.info-fullscreen(style="padding:0px;")
+            img(src='/images/empty.png', data-src='/images/cost-per-basis.png')
+          p.caption(style="margin-bottom:0px;text-align:right;") *View data at 
+            a(href="http://storeco.in/onepoint", target="_blank") http://storeco.in/onepoint 
+          p.caption(style="text-align:right;") *Storecoin may have up to six, milestone-based token sales
+    
+    #pomelo-paper.hc-feature.over-rel.padding.pink.banner
+      .hc-chunk.hc-customize-text-wrapper
+        p.hc-feature-lead(style="margin-top: 0px;") Download the latest pre-whitepaper
+
+        div.row.tokensale-3
+          div.item
+            i.ion-record
+            a.underline(href="/media/visual-whitepaper-full.pdf", target="_blank") Download the Full Visual Whitepaper
+          div.item
+            i.ion-record
+            a.underline(href="/media/storecoin-summary.pdf", target="_blank") Download the Summary
+          div.item
+            i.ion-record
+            a.underline(href="/milestones", target="_blank") See All Milestones
+    
+    div.hc-feature.over-rel.padding
+      .hc-chunk.hc-intro-text-wrapper
+        iframe(src="https://docs.google.com/forms/d/e/1FAIpQLScrnAduobtFUtXW9ikrHhQVUwTBiDcydaJJJo5xQILG8Wl8hA/viewform?embedded=true", width="100%", style="height: 1000px;", frameBorder="0")
+    
+    #accredited.intro-popup(style="display:none; text-align:left;")
+      p An accredited investor includes:
+      ol(style="list-style: lower-alpha; margin-left:1em;")
+        li 
+          b Any person that:
+          ul
+            li Earned income that exceeded $200,000 (or $300,000 together with a spouse) in each of the prior two years, and reasonably expects the same for the current year. This may include income from cryptocurrency.
+            p(style="text-align:center;")
+              b OR
+            li Has a net worth over $1 million, either alone or together with a spouse (excluding the value of the person’s primary residence). This may includes ownership of cryptocurrency, including not yet released ICOs and token projects.
+        li 
+          b Any entity such as banks, partnerships, corporations, nonprofits and trusts who:
+          ul
+            li Has total assets in excess of $5 million but were not formed to specifically for the purchase of the subject securities. This includes ownership of cryptocurrency.
+            p(style="text-align:center;")
+              b OR
+            li Any entity in which all of the equity owners are accredited investors. This includes ownership of cryptocurrency.

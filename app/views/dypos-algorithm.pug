@@ -1,24 +1,28 @@
 #dypos-algorithm.hc-feature.over-rel.padding
   .hc-chunk.hc-customize-text-wrapper
-    h3.hc-feature-title Where Storecoin and our DyPoS algorithm fit in
-    p.hc-feature-lead The market of permissioned vs. permissionless consensus algorithms and blockchains
+    div.head
+      div.image
+        img.logo(src="/images/logo-v1.png")
+      div.text-wrapper
+        h3.hc-feature-title Where Storecoin’s Dynamic Proof of Stake fits in
+        p.hc-feature-lead The market of permissioned vs. permissionless consensus algorithms and blockchains
     .hc-image(style="position:relative;")
       //- button.btn(title="I'm a tooltip!") Text
-      img.logo(src="/images/logo-no-border.png")
+      img.logo(src="/images/logo-v1.png")
       .desktop-image
         img(src="/images/consensus-mechanism-wheel-v3.png", style="width:100%;" usemap="#desktop-image-map")
         map(name='desktop-image-map')              
-          area(title='<ul><li>BigChainDB</li><li>RAFT</li><li>PAXOS (including many variances, such as Fast PAXOS, Egalitarian Paxos, etc.)</li><li>Juno (RAFT-Hardened Tangaroa; JP Project)</li><li>Tangaroa</li><li>Mencius</li><li>Viewstamped replication</li><li>ZAB</li></ul>', coords='348,550,73,632,119,740,205,833,392,619', shape='poly')
-          area(title='<ul><li>Graphene</li><li>Steem</li><li>BitShares</li><li>EOS</li></ul>', coords='213,839,314,907,432,940,473,657,401,625', shape='poly')
+          area(title='<ul><li>BigChainDB</li><li>RAFT</li><li>PAXOS (including many variances, such as</li><li>Fast PAXOS, Egalitarian Paxos, etc.)</li><li>Juno (RAFT-Hardened Tangaroa; JP Project)</li><li>Tangaroa</li><li>Mencius</li><li>Viewstamped replication</li><li>ZAB</li></ul>', coords='348,550,73,632,119,740,205,833,392,619', shape='poly')
+          area(title='<ul><li>EOS</li><li>Tezos</li><li>TRON</li><li>Cardano</li><li>NEO</li><li>Nano</li></ul>', coords='213,839,314,907,432,940,473,657,401,625', shape='poly')
           area(title='<ul><li>Chia</li></ul>', coords='444,943,564,944,679,909,563,647,483,658', shape='poly')
           area(title='<ul><li>Filecoin</li></ul>', coords='692,905,802,833,872,746,632,589,569,643', shape='poly')
           area(title='<ul><li>Storecoin</li></ul>', coords='637,582,659,507,946,507,930,626,877,737', shape='poly')
-          area(title='<ul><li>Blackcoin</li><li>Casper</li><li>Ethereum (moving to PoS)</li><li>Cosmos</li><li>Stratis</li><li>Tezos</li></ul>', coords='658,497,635,419,880,263,930,379,946,496', shape='poly')
-          area(title='<ul><li>Bitcoin</li><li>Colored Coins</li><li>Proprietary Metacoins</li><li>DAG (Directed Acylic Graphs)</li><li>Factom</li><li>Zcash</li><li>Monero</li></ul>', coords='631,412,570,358,693,94,795,161,872,254', shape='poly')
+          area(title='<ul><li>Blackcoin</li><li>Ethereum (Casper)</li><li>Cosmos</li><li>Stratis</li><li>Dfinit</li></ul>', coords='658,497,635,419,880,263,930,379,946,496', shape='poly')
+          area(title='<ul><li>Bitcoin</li><li>Bitcoin Cash</li><li>DASH</li><li>Factom</li><li>Zcash</li><li>Monero</li><li>Ethereum (today)</li></ul>', coords='631,412,570,358,693,94,795,161,872,254', shape='poly')
           area(title='<ul><li>Distributed concurrence</li><li>Corda (R3 CEV)</li></ul>', coords='562,353,484,342,444,59,561,55,681,93', shape='poly')
-          area(title='<ul><li>PBFT (Practical Byzantine Fault Tolerance)</li><li>Derived PBFT (Hyperledger project)</li><li>RBFT (Redundant Byzantine Fault Tolerance, e.g., Evernym)</li><li>SBFT (Simplified Byzantine Fault Tolerance, e.g., Chain)</li></ul>', coords='400,377,472,343,434,61,317,89,211,159', shape='poly')
-          area(title='<ul><li>Openchain</li><li>PoET (Proof of Elapsed Time) by Intel (Sawtooth Lake Project)</li></ul>', coords='393,383,353,449,74,368,120,259,207,165,311,289', shape='poly')
-          area(title='<ul><li>Ripple (evolving into the inter-ledger protocol)</li><li>Stellar (Ripple fork)</li></ul>', coords='348,538,347,462,68,376,51,505,69,620', shape='poly')
+          area(title='<ul><li>PBFT (Practical Byzantine Fault Tolerance)</li><li>Derived PBFT (Hyperledger project)</li><li>RBFT (Redundant Byzantine Fault Tolerance, e.g., Evernym)</li><li>SBFT (Simplified Byzantine Fault Tolerance, e.g., Chain)</li><li>ZILLIQA</li></ul>', coords='400,377,472,343,434,61,317,89,211,159', shape='poly')
+          area(title='<ul><li>IOTA</li><li>Avalanche (EGS)</li><li>Hashgraph</li</ul>', coords='393,383,353,449,74,368,120,259,207,165,311,289', shape='poly')
+          area(title='<ul><li>Ripple (evolving into the</li><li>inter-ledger protocol)</li><li>Stellar (Ripple fork)</li></ul>', coords='348,538,347,462,68,376,51,505,69,620', shape='poly')
             
       .mobile-image
         img(src="/images/consensus-mechanism-wheel-v3.png", style="max-width:600px; width:90%;" usemap="#mobile-image-map")
@@ -28,7 +32,8 @@
             ul
               li BigChainDB
               li RAFT
-              li PAXOS (including many variances, such as Fast PAXOS, Egalitarian Paxos, etc.)
+              li PAXOS (including many variances, such as
+              li Fast PAXOS, Egalitarian Paxos, etc.)
               li Juno (RAFT-Hardened Tangaroa; JP Project)
               li Tangaroa
               li Mencius
@@ -37,10 +42,12 @@
           area(data-featherlight="#box-2", target='', alt='', coords='213,839,314,907,432,940,473,657,401,625', shape='poly')
           div#box-2.image-map-modal(style="display:none;")
             ul
-              li Graphene
-              li Steem
-              li BitShares
               li EOS
+              li Tezos
+              li TRON
+              li Cardano
+              li NEO
+              li Nano
           area(data-featherlight="#box-3", target='', alt='', coords='444,943,564,944,679,909,563,647,483,658', shape='poly')
           div#box-3.image-map-modal(style="display:none;") 
             ul 
@@ -59,21 +66,20 @@
           div#box-6.image-map-modal(style="display:none;")
             ul
               li Blackcoin
-              li Casper
-              li Ethereum (moving to PoS)
+              li Ethereum (Casper)
               li Cosmos
               li Stratis
-              li Tezos
+              li Dfinit
           area(data-featherlight="#box-7", target='', alt='', coords='631,412,570,358,693,94,795,161,872,254', shape='poly')
           div#box-7.image-map-modal(style="display:none;") 
             ul
               li Bitcoin
-              li Colored Coins
-              li Proprietary Metacoins
-              li DAG (Directed Acylic Graphs)
+              li Bitcoin Cash
+              li DASH
               li Factom
               li Zcash
               li Monero
+              li Ethereum (today)
           area(data-featherlight="#box-8", target='', alt='', coords='562,353,484,342,444,59,561,55,681,93', shape='poly')
           div#box-8.image-map-modal(style="display:none;") 
             ul
@@ -86,14 +92,17 @@
               li Derived PBFT (Hyperledger project)
               li RBFT (Redundant Byzantine Fault Tolerance, e.g., Evernym)
               li SBFT (Simplified Byzantine Fault Tolerance, e.g., Chain)
+              li ZILLIQA
           area(data-featherlight="#box-10", target='', alt='', coords='393,383,353,449,74,368,120,259,207,165,311,289', shape='poly')
           div#box-10.image-map-modal(style="display:none;")
             ul
-              li Openchain
-              li PoET (Proof of Elapsed Time) by Intel (Sawtooth Lake Project)
+              li IOTA
+              li Avalanche (EGS)
+              li Hashgraph
           area(data-featherlight="#box-11", target='', alt='', coords='348,538,347,462,68,376,51,505,69,620', shape='poly')
           div#box-11.image-map-modal(style="display:none;")
             ul
-              li Ripple (evolving into the inter-ledger protocol)
-              li Stellar (Ripple fork)      
+              li Ripple (evolving into the
+              li inter-ledger protocol)
+              li Stellar (Ripple fork)     
     p.hc-feature-lead.hint-text(style="margin:0px;") Click to see blockchains using each algorithm

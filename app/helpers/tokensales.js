@@ -108,7 +108,7 @@ var tokenSales = {
     }
   },
   tokensale149 : {
-    basis_point_img : '/images/basis-point-149.png',
+    basis_point_img : '/images/cost-per-basis.png',
     network_value: '$149 Million',
     price_per_token: '$0.149',
     hard_cap: '$7,450,000',

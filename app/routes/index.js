@@ -55,7 +55,7 @@ router.get('/tokensale149', function(req, res, next) {
 });
 
 router.get('/tsale', function(req, res, next) {
-  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }), sale: getTokenSale('tokensale149') });
+  res.render('tsale', { title: 'Token Sale', meta: meta({ title: 'Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET tokensale199 page. */

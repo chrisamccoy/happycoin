@@ -607,6 +607,16 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 2em;
 }
 
+.hc-feature .hc-feature-title.icon img {
+  height: 27px;
+  margin-left: 0.3em;
+}
+
+.hc-feature .hc-feature-title.icon.left img {
+  height: 27px;
+  margin-right: 0.3em;
+}
+
 .hc-feature .hc-feature-title .note {
   font-size: 0.8em;
   color: #777;
@@ -822,7 +832,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .email-widget h4 {
-    font-size: 1.2em;
+    font-size: 1.15em;
     margin-bottom : 0.5em !important;
   }
 
@@ -1257,10 +1267,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #hc-intro .hc-feature-lead {
-  margin: 1.5em auto 0;
-  font-size: 2em;
-  line-height: 1.35;
-  max-width: 900px;
+  margin: 1.5em auto;
+  font-size: 1.8em;
+  line-height: 1.5;
 }
 
 #hc-intro .hc-feature-lead a {
@@ -1275,13 +1284,11 @@ input[type=number]::-webkit-outer-spin-button {
   position: relative;
   z-index: 2;
   overflow: hidden;
-  /*padding-top: 4em;*/
   padding-left: 0.5em;
   padding-right: 0.5em;
-  /*padding-bottom: 1em;*/
   text-align: center;
   color: #fff;
-  max-width: 995px;
+  max-width: 760px;
 }
 
 #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
@@ -1326,6 +1333,20 @@ input[type=number]::-webkit-outer-spin-button {
   text-decoration: none;
 }
 
+#hc-intro .hc-button {
+  padding: 0.3em 1.2em;
+  font-size: 1.3em;
+}
+
+#hc-intro .hc-button:hover {
+  color: white;
+  opacity: 0.8;
+}
+
+#hc-intro .hc-button i {
+  margin-left: 0.5em;
+  font-size: 1.2em;
+}
 
 #hc-map {
   position: relative;
@@ -1457,6 +1478,10 @@ and (max-width : 550px) {
   #hc-intro .hc-feature-lead {
     font-size: 1.7em !important;
   }
+
+  #hc-intro .hc-button {
+    font-size: 1em;
+  }
 }
 
 @media only screen and (max-width : 455px) {
@@ -1547,9 +1572,9 @@ and (max-width : 335px) {
     height : calc(100vh - 302px);
   }
 
-  #hc-intro .hc-feature-lead {
+  /* #hc-intro .hc-feature-lead {
     margin : 0px;
-  }
+  } */
 
   #hc-intro {
     padding: 0px;
@@ -5209,6 +5234,34 @@ and (max-width : 335px) {
   max-width:550px;
 }
 
+#dypos-algorithm .head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#dypos-algorithm .head .text-wrapper {
+  margin-left: 1em;
+}
+
+#dypos-algorithm .head .text-wrapper h3,
+#dypos-algorithm .head .text-wrapper p {
+  text-align: left;
+  margin: 0px;
+}
+
+#dypos-algorithm .head .text-wrapper h3 {
+  margin-bottom: 0.5em;
+}
+
+#dypos-algorithm .head .image {
+  width: 100px;
+}
+
+#dypos-algorithm .head .image img {
+  width: 100%;
+}
+
 @media only screen and (max-width: 1024px) {
   .featherlight-content {
     width: 100% !important;
@@ -5220,11 +5273,22 @@ and (max-width : 335px) {
   #dypos-algorithm .hc-image .logo {
     width: 50px;
     right: 0px;
+    top: auto;
+    bottom: 20px;
   }
 
   .featherlight-content .featherlight-close {
     right: 15px;
     top: 15px;
+  }
+
+  #dypos-algorithm .head .image  {
+    display: none;
+  }
+
+  #dypos-algorithm .head .text-wrapper h3,
+  #dypos-algorithm .head .text-wrapper p {
+    text-align: center;
   }
 }
 
@@ -5621,6 +5685,11 @@ and (max-width : 335px) {
   background-color: #415834;
 }
 
+#about-storecoin .coin-components .comp.litegreen {
+  background-color: rgb(199, 223, 184);
+  color: #415834;
+}
+
 #about-storecoin .coin-components .comp-row {
   display: flex;
   align-items: center;
@@ -5979,6 +6048,8 @@ and (max-width : 335px) {
 /*---------------------------------*/
 .table-container {
   width: 100%;
+  max-width: 1070px;
+  margin: 0 auto;
   font-size: 1.1em;
 }
 
@@ -5999,12 +6070,12 @@ and (max-width : 335px) {
 
 .table-container table .note {
   display: block;
-  font-size: .7em;
+  font-size: .65em;
   line-height: 1.5;
   font-weight: 300;
   /* font-family: Helvetica, sans-serif; */
   color: #444;
-  margin-bottom: 0.8em;
+  margin-bottom: 0.5em;
   font-style: italic;
 }
 
@@ -6031,9 +6102,14 @@ and (max-width : 335px) {
   padding: 12px 9px;
 }
 
-.table-container table thead th:nth-child(4),
-.table-container table thead th:nth-child(3) {
-  width: 300px;
+.table-container.comparison-1 table thead th:nth-child(4),
+.table-container.comparison-1 table thead th:nth-child(3) {
+  width: 310px;
+}
+
+.table-container.comparison-2 table thead th:nth-child(2),
+.table-container.comparison-2 table thead th:nth-child(3) {
+  width: 220px;
 }
 
 .table-container table td {
@@ -6080,7 +6156,7 @@ and (max-width : 335px) {
 }
 
 #comparison-table .footer-text {
-  max-width: 1100px;
+  max-width: 1070px;
   margin: 0 auto;
 }
 
@@ -6207,37 +6283,37 @@ and (max-width : 335px) {
 
 /*----------------------------------*/
 #our-vision .hc-feature-title,
-#our-mission .hc-feature-title {
+.hc-big-feature .hc-feature-title {
   font-size: 4em;
   line-height: 1;
 }
 
 #our-vision .hc-feature-lead,
-#our-mission .hc-feature-lead {
+.hc-big-feature .hc-feature-lead {
   font-size: 2.5em;
   line-height: 1.4;
 }
 
 #our-vision .hc-feature-lead.note,
-#our-mission .hc-feature-lead.note {
+.hc-big-feature .hc-feature-lead.note {
   font-size: 1.5em;
   margin: 0px;
 }
 
 @media only screen and (max-width: 700px) {
   #our-vision .hc-feature-title,
-  #our-mission .hc-feature-title {
+  .hc-big-feature .hc-feature-title {
     font-size: 3em;
     margin-bottom: 0.5em !important;
   }
 
   #our-vision .hc-feature-lead,
-  #our-mission .hc-feature-lead {
+  .hc-big-feature .hc-feature-lead {
     font-size: 1.5em;
   }
 
   #our-vision .hc-feature-lead.note,
-  #our-mission .hc-feature-lead.note {
+  .hc-big-feature .hc-feature-lead.note {
     font-size: 1em;
     margin: 0px;
   }
@@ -7251,7 +7327,7 @@ and (max-width : 335px) {
 }
 
 #storecoin-roadmap .row .roadmap-lists .list .head img {
-  width: 25px;
+  width: 23px;
   margin-left: 0.3em;
 }
 
@@ -7310,7 +7386,7 @@ and (max-width : 335px) {
 /* (1440x900) WXGA+ Display */
 @media  screen and (max-width: 1440px) {
   #storecoin-roadmap .row {
-    margin-top: 11em;
+    margin-top: 2em;
   }
 }
 
@@ -7449,6 +7525,18 @@ and (max-width : 335px) {
 }
 
 /* -------------------------- */
+#worker-types .note {
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  max-width: 850px;
+}
+
+#worker-types .note img {
+  height: 70px;
+  margin-right: 1em;
+}
+
 #worker-types-timeline {
   background-color: #e6e6e6;
   padding: 1.5em 0px;
@@ -7730,9 +7818,18 @@ and (max-width : 335px) {
   font-size: 2em;
 }
 
+#dapps-vs-capps p.hc-feature-lead.note {
+  margin-bottom: 0px;
+  font-size: 1.2em;
+}
+
 @media only screen and (max-width: 700px) {
   #dapps-vs-capps p.hc-feature-lead {
     font-size: 1.2em;
+  }
+
+  #dapps-vs-capps p.hc-feature-lead.note {
+    font-size: 0.8em;
   }
 }
 
@@ -8137,7 +8234,7 @@ and (max-width : 335px) {
    display: none;
    text-align: center;
    background-color: #dcecdc;
-   padding: 1em; 
+   padding: 1em;
    border-radius: 7px;
 }
 
@@ -8401,4 +8498,83 @@ and (max-width : 335px) {
 
 .career-banner {
   background: url('/images/intro-bg.png') center !important;
+}
+
+/* social nav */
+#social-nav {
+  z-index: 10;
+  position: fixed;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.16);
+  display: flex;
+  flex-direction: column;
+  top: calc(50% - 142px);
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+#social-nav .item {
+  font-size: 2.2em;
+  color: white;
+  padding: 0.2em 0.5em;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.7;
+  transition: all 500ms;
+}
+
+#social-nav .item:hover {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 700px) {
+  #social-nav {
+    display: none;
+  }
+}
+
+/* storecoin in the news */
+#storecoin-in-the-news .news-section {
+  max-width: 650px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#storecoin-in-the-news .news-section .head {
+  display: flex;
+  align-items: center;
+}
+
+#storecoin-in-the-news .news-section .head img {
+  width: 200px;
+  margin-right: 1em;
+}
+
+#storecoin-in-the-news .news-section .head span {
+  font-size: 1.3em;
+  color: grey;
+}
+
+#storecoin-in-the-news .news-section .detail h5 {
+  text-align: center;
+  margin: 1em 0;
+}
+
+#storecoin-in-the-news .news-section .detail p {
+  font-size: 1.3em;
+}
+
+#storecoin-in-the-news .news-section .detail .logo {
+  float: right;
+  width: 130px;
+  padding-left: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+#storecoin-in-the-news .news-section .detail a {
+  color: #f4c025;
+}
+
+#storecoin-in-the-news .news-section .detail p:not(:last-child) {
+  margin-bottom: 1em;
 }
