@@ -33,6 +33,7 @@ app.use(function(req, res, next) {
     var url = val,
         subdomains = [
           'news.storeco.in',
+          'tokensale.storeco.in',
           'tokensale3.storeco.in',
           'tokensale39.storeco.in',
           'tokensale49.storeco.in',
