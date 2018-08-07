@@ -3009,6 +3009,12 @@ and (max-width : 335px) {
   transform: scale(1);
 }
 
+.hc-feature.inverted .logo-slider .slide {
+  background-color: white;
+  border-left: 0.05px solid #5c784c;
+  border-right: 0.05px solid #5c784c;
+}
+
 .logo-slider .slide img {
   width: 80%;
   transition: all .2s ease-in;
@@ -7030,13 +7036,13 @@ and (max-width : 335px) {
   cursor: pointer;
 }
 
-#accredited ol {
+/* #accredited ol {
   font-size: 1.7em;
 }
 
 #accredited ol ul {
   font-size: 1em;
-}
+} */
 
 @media only screen and (max-width: 700px) {
   #third-token-sale .hc-button {

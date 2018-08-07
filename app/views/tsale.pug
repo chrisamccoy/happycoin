@@ -6,16 +6,14 @@ block content
       #third-token-sale.blog-news.hc-feature.over-rel.padding
         .hc-chunk.hc-intro-text-wrapper
           h1.article-title Welcome to the whitelist of the Third, Invite-Only and Milestone-based Token Sale for Storecoin ($STORE).
-            
-          p.hc-feature-lead.jump-to-buy
-            a Jump to Buy Order form
-              i.ion-chevron-down
-          
+          p.hc-feature-lead(onclick="opentoken_contribute_click('https://app.opentoken.com/contribute/storecoin/', event);")
+            a Join the Whitelist
+              
           ul(style="margin-top: 1em;")
             li 
               b Hard Cap:
               = ' '
-              span $4,975,000
+              span $5,975,000
             li 
               b Soft Cap:
               = ' '
@@ -27,7 +25,7 @@ block content
             li 
               b Market Capitalization:
               = ' '
-              span $54 Million
+              span $52 Million
             li
               b Funds Accepted: 
               |  ETH, BTC, USD Wire
@@ -42,27 +40,23 @@ block content
             li 
               b % of Treasury To Be Sold:
               = ' '
-              span 2.5%
+              span 3%
             li 
               b Minimum Investment:
               = ' '
               span $250
             li 
-              b Maximum Investment:
-              = ' '
-              span $497,500
-            li 
               b KYC and AML-checks-required:
               |  Yes
             li
               b Can my country participate?
-              |  United States purchasers must be “accredited investors” for the purposes of federal securities regulation. Purchasers in other countries are not subject to this restriction, but must comply with applicable laws and regulations of their respective countries of residence (Reg D and Reg S). 
+              |  Yes. United States purchasers must be “accredited investors” for the purposes of federal securities regulation. Purchasers in other countries are not subject to this restriction, but must comply with applicable laws and regulations of their respective countries of residence (Reg D and Reg S).
             li
               b Does total total cryptocurrency ownership count for being accredited (including ICO tokens still not yet released by the teams)?
               |  Yes
             li
               b Definition of being an accredited investor (for U.S. buyers): 
-              a.underline(href="/accredited", target="_blank") See here
+              a.underline(data-featherlight="#accredited", target="_blank") See here
             li 
               b Investors will receive Tokens in their Storecoin Wallets:
               |  Q319
@@ -71,7 +65,7 @@ block content
               |  Yes, you'll have priority
             li 
               b Treasury to be sold in future milestone-based sales:
-              |  17-21%
+              |  17% for certain. Up to 21% (using part of the Incentive Pool to kick start the STORE Ecosystem Fund)
             li 
               b How will the next sales be priced:
               |  Auction-based
@@ -85,8 +79,11 @@ block content
               b How Treasury is Allocated:
               |  34% for token sales, 20% for long-term 1,000-year Treasury, 46% to incentivize the network over the first 100 years
                 
-          p Storecoin is a pre-launch public blockchain protocol therefore, for our milestone-based Third Token Sale, we are treating STORE tokens as securities. United States purchasers must be “accredited investors” for the purposes of federal securities regulation. Purchasers in other countries are not subject to this restriction, but must comply with applicable laws and regulations of their respective countries of residence. (Reg D and Reg S).
+          p Storecoin is a pre-launch public blockchain protocol therefore, for our milestone-based Third Token Sale, we are treating STORE tokens as securities. United States purchasers must be “
+            a(data-featherlight="#accredited", target="_blank") accredited investors
+            | ” for the purposes of federal securities regulation. Purchasers in other countries are not subject to this restriction, but must comply with applicable laws and regulations of their respective countries of residence. (Reg D and Reg S).
 
+      - var dark = true
       include token-sale-buyers
       
       - var tokensale = true
@@ -100,6 +97,8 @@ block content
             a(href="http://storeco.in/onepoint", target="_blank") http://storeco.in/onepoint 
           p.caption(style="text-align:right;") *Storecoin may have up to six, milestone-based token sales
     
+    include our-team-widget
+    
     #pomelo-paper.hc-feature.over-rel.padding.pink.banner
       .hc-chunk.hc-customize-text-wrapper
         p.hc-feature-lead(style="margin-top: 0px;") Download the latest pre-whitepaper
@@ -107,18 +106,18 @@ block content
         div.row.tokensale-3
           div.item
             i.ion-record
-            a.underline(href="/media/visual-whitepaper-full.pdf", target="_blank") Download the Full Visual Whitepaper
+            a.underline(href=URL('/media/Storecoin-Visual-Whitepaper.pdf'), target="_blank") Download the Full Visual Whitepaper
           div.item
             i.ion-record
-            a.underline(href="/media/storecoin-summary.pdf", target="_blank") Download the Summary
+            a.underline(href=URL('/media/Storecoin-Summary.pdf'), target="_blank") Download the Summary
           div.item
             i.ion-record
             a.underline(href="/milestones", target="_blank") See All Milestones
-    
+            
     div.hc-feature.over-rel.padding
       .hc-chunk.hc-intro-text-wrapper
-        div.hc-feature-lead Coming Shortly
-        //-iframe(src="https://docs.google.com/forms/d/e/1FAIpQLScrnAduobtFUtXW9ikrHhQVUwTBiDcydaJJJo5xQILG8Wl8hA/viewform?embedded=true", width="100%", style="height: 1000px;", frameBorder="0")
+        p.hc-feature-lead(onclick="opentoken_contribute_click('https://app.opentoken.com/contribute/storecoin/', event);")
+          a(style="border-bottom: 1px solid") Join the Whitelist
     
     #accredited.intro-popup(style="display:none; text-align:left;")
       p An accredited investor includes:

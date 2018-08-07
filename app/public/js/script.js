@@ -1928,3 +1928,5 @@ function kycPage() {
     });
   });
 }
+
+function opentoken_contribute_click(l,e){e.preventDefault();window.open(l,'contribute_opentoken','width=500,height=700,toolbar=0,menubar=0,status=1,scrollbars=1,resizable=0,left=0,top=0');return false;}
