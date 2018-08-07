@@ -1690,6 +1690,12 @@ and (max-width : 335px) {
   font-size: 1.7em;
 }
 
+#distribution-plan .hc-feature-lead.note {
+  font-size: 1.3em;
+  text-align: center;
+  margin-top: 2em;
+}
+
 #distribution-plan .network-stats {
   margin-top: 3em;
   margin-bottom: 0.5em;
@@ -2122,6 +2128,10 @@ and (max-width : 335px) {
 
   #distribution-plan .hc-feature-lead {
     font-size: 1.2em;
+  }
+
+  #distribution-plan .hc-feature-lead.note {
+    font-size: 0.8em;
   }
 
   #distribution-plan .note.first {
@@ -4043,7 +4053,7 @@ and (max-width : 335px) {
   #distribution-plan h5 {
     font-size: 1.8em;
     font-weight: bold;
-    margin: 1em 0 0;
+    margin: 1em 0;
   }
 
   #about-token-sale .sales-terms .points h5 {
@@ -5673,6 +5683,10 @@ and (max-width : 335px) {
   cursor: pointer;
 }
 
+#about-storecoin .coin-components .comp span {
+  display: block;
+}
+
 #about-storecoin .coin-components .comp:hover {
   opacity: 0.8;
 }
@@ -5713,6 +5727,10 @@ and (max-width : 335px) {
   #about-storecoin .coin-components .comp-row .comp:not(:last-child) {
     flex-basis: 100%;
     margin-right: 0px;
+  }
+
+  #about-storecoin .coin-components .comp span {
+    display: inline-block;
   }
 }
 
@@ -6180,19 +6198,33 @@ and (max-width : 335px) {
   }
 
   .table-container table {
-    width: 500px;
+    width: 570px;
   }
 
   .table-container table thead th {
     line-height: 0.9;
   }
 
-  .table-container table thead tr th:nth-child(3) {
+  /* .table-container table thead tr th:nth-child(3) {
     width: 110px;
   }
 
   .table-container table thead tr th:last-child {
     width: 120px;
+  }
+
+  .table-container table thead th:not(:first-child) {
+    width:100px;
+  } */
+
+  .table-container.comparison-1 table thead th:nth-child(4),
+  .table-container.comparison-1 table thead th:nth-child(3) {
+    width: 130px;
+  }
+
+  .table-container.comparison-2 table thead th:nth-child(2),
+  .table-container.comparison-2 table thead th:nth-child(3) {
+    width: 150px;
   }
 
   .table-container table th,
@@ -6203,14 +6235,6 @@ and (max-width : 335px) {
   .table-container table th, .table-container table td {
     padding: 4px;
   }
-
-  .table-container table thead th:not(:first-child) {
-    width:100px;
-  }
-
-  /* .table-container table thead th:nth-child(2) {
-    width:60px;
-  } */
 
   .table-container table .hide-overflow {
     width: 100px;
@@ -6774,7 +6798,7 @@ and (max-width : 335px) {
 #email-subscribe .sub-container .social .links a {
   color: white;
   font-size: 1.5em;
-  margin-left: 0.3em;
+  padding: 0 0.5em;
 }
 
 #email-subscribe .sub-container .social .links a:hover {
@@ -6863,7 +6887,7 @@ and (max-width : 335px) {
 
   #email-subscribe .sub-container .social {
     padding: 0px;
-    margin: 0.5em;
+    margin: 1em 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6871,7 +6895,7 @@ and (max-width : 335px) {
 
   #email-subscribe .sub-container .social .links a {
     font-size: 2em;
-    margin-left: 0.5em;
+    padding: 0 0.5em;
   }
 
   #email-subscribe .sub-container .form {
@@ -8577,4 +8601,14 @@ and (max-width : 335px) {
 
 #storecoin-in-the-news .news-section .detail p:not(:last-child) {
   margin-bottom: 1em;
+}
+
+@media only screen and (max-width: 700px) {
+  #storecoin-in-the-news .news-section .head img {
+    width: 100px;
+  }
+
+  #storecoin-in-the-news .news-section .head span {
+    font-size: 1em;
+  }
 }
