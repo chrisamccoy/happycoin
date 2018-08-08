@@ -59,6 +59,7 @@ function checkForSliders($el) {
   sliderInit = true;
   initLogoSlider('#hc-partners-slider', 3);
   initLogoSlider('#wallet-slider', 4);
+  initLogoSlider('#eco-system-slider', 2);
 }
 
 function deferImages() {

@@ -2930,6 +2930,9 @@ and (max-width : 335px) {
 
 #team .team-member-desc {
   margin-top: 0.5em;
+  font-size: 1.1em;
+  line-height: 2;
+  word-spacing: 1px;
 }
 
 #team .twitter-link {
@@ -7304,6 +7307,10 @@ and (max-width : 335px) {
   margin-left: 2.5em;
 }
 
+#major-milestones.inverted .milestones .month .item .text .ion-checkmark {
+  color: #72ca37;
+}
+
 @media only screen and (max-width: 700px) {
   #major-milestones .milestones {
     font-size: 1.2em;
@@ -7770,7 +7777,7 @@ and (max-width : 335px) {
 }
 
 /* -------------------------- */
-#storecoin-ecosystem .row {
+/* #storecoin-ecosystem .row {
   display: flex;
   justify-content: center;
 }
@@ -7785,10 +7792,33 @@ and (max-width : 335px) {
   text-align: center;
   max-width: 240px;
   margin-top: 1em;
+} */
+#eco-system-slider {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+#eco-system-slider .slide {
+  height: 380px;
+  background: none;
+  border: none;
+}
+
+#eco-system-slider .slide p {
+  color: white;
+  margin-top: 1em;
+  text-align: center;
+}
+
+#eco-system-slider .slick-arrow::before {
+  color: white;
 }
 
 @media only screen and (max-width: 700px) {
-  #storecoin-ecosystem .row {
+  #eco-system-slider .slide {
+    height: 270px;
+  }
+  /* #storecoin-ecosystem .row {
     display: block;
   }
 
@@ -7798,7 +7828,7 @@ and (max-width : 335px) {
 
   #storecoin-ecosystem .hc-image {
     margin: 1.5em auto 0px;
-  }
+  } */
 }
 
 /* -------------------------- */
@@ -8617,5 +8647,20 @@ and (max-width : 335px) {
 
   #storecoin-in-the-news .news-section .head span {
     font-size: 1em;
+  }
+}
+
+/* blockfin presentation */
+#blockfin-presentation iframe {
+  max-width: 745px;
+  width: 100%;
+  height: 450px;
+  margin: 0 auto;
+  display: block;
+}
+
+@media only screen and (max-width: 700px) {
+  #blockfin-presentation iframe {
+    height: 212px;
   }
 }

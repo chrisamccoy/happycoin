@@ -8,7 +8,7 @@ block content
           b Storecoin is a zero-fee, high-throughput, and decentralized cryptocurrency with a Governance of checks and balances.
 
         p.hc-feature-lead If Ripple is taking on SWIFT, Storecoin is taking on the global $21 Trillion market of ACH, debit card, and credit card purchases by making payments zero-fee for merchants, developers, customers, and users.
-        a.hc-button.orange JOIN OUR TELEGRAM
+        a.hc-button.orange(href="http://t.me/storecoin", target="_blank") JOIN OUR TELEGRAM
           i.ion-arrow-right-c
 
     #dynamic.intro-popup(style="display:none;")
@@ -45,34 +45,30 @@ block content
         //-p.hc-feature-lead.note (a general compute zero-fee payments platform)
         
     include token-sale-buyers
-
-    include storecoin-comparison-table
     
-    include people-saying
-
-    include storecoin-in-the-news
-
     #our-mission.hc-big-feature.hc-feature.over-rel.padding.orange.inverted
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted Our Mission
         p.hc-feature-lead(style="max-width: 650px; margin-bottom: 0px;") To become a zero-fee, programmable cryptocurrency that can compete with VISA-like networks and beyond
         //- p.hc-feature-lead.note (a general compute, zero-free payments platform)
-        
-    #storecoin-vs-global-markets.hc-feature.over-rel.padding
+
+    include storecoin-statements
+    
+    #storecoin-video.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
-        .mobile-image
-          div.click-message
-            div.message-container
-              i.ion-arrow-expand
-              span Click to expand
-        .hc-image.info-fullscreen
-          img(src='/images/empty.png', data-src="/images/storecoin-vs-global-tm-v11.png", style="max-width: 750px;")
+        div.tweets
+          div.tweet
+            iframe(width='100%', height='282', data-src='https://www.youtube.com/embed/RBjWkvExQr4', frameborder='0', gesture='media', allow='encrypted-media', allowfullscreen='', style="max-width:500px;")
+    
+    include storecoin-comparison-table
+    
+    include people-saying
     
     include our-latest
+
+    include storecoin-in-the-news
     
     include our-team-widget
-    
-    include storecoin-statements
 
     include major-milestones
     
@@ -90,7 +86,7 @@ block content
         .hc-image
           img(src='/images/empty.png', data-src="/images/1000-year-supply-v1.png")
           
-    .hc-feature.over-rel.padding
+    #store-rise.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted All money is trust, and belief in $STORE is on the rise
         .hc-image
@@ -98,15 +94,25 @@ block content
     
     include storecoin-roadmap
     
-    .hc-big-feature.hc-feature.over-rel.padding.orange.inverted
+    #how-big.hc-big-feature.hc-feature.over-rel.padding.orange.inverted
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted How big can this be?
         p.hc-feature-lead(style="max-width: 670px; margin-bottom: 0px;") Storecoin can become the leading zero-fee currency in the $21 Trillion debit card, credit card, and ACH market (Medium-of-Exchange) while also competing for a slice of the $100 Trillion global wealth market (Store-of-Value).
         //- p.hc-feature-lead.note (a general compute, zero-free payments platform)
         
+    #storecoin-vs-global-markets.hc-feature.over-rel.padding
+      .hc-chunk.hc-customize-text-wrapper
+        .mobile-image
+          div.click-message
+            div.message-container
+              i.ion-arrow-expand
+              span Click to expand
+        .hc-image.info-fullscreen
+          img(src='/images/empty.png', data-src="/images/storecoin-vs-global-tm-v11.png", style="max-width: 750px;")
+        
     #pomelo-paper.hc-feature.over-rel.padding.pink.banner
       .hc-chunk.hc-customize-text-wrapper
-        h3.hc-feature-title This is Our Visual Whitepaper Paper
+        h3.hc-feature-title This is Our Visual Whitepaper
         p.tag-line (Our Whitepaper will release once we're finished with research and development)
         div.row
           a.underline(href=URL('/media/Storecoin-Visual-Whitepaper.pdf'), target="_blank") Download the Full Paper
@@ -140,7 +146,7 @@ block content
               b Governance
               |  with Checks and Balances
               
-          div.orange.comp Dynamic and Inflationary Rewards pegged to staking, capped at 2% per year
+          div.orange.comp Dynamic, Inflationary Rewards pegged to staking -- capped at 2% per year
           div.litegreen.comp Flexible block rewards enabling STORE to be distributed to the global masses
         
         p.hc-feature-lead Storecoin's native currency, STORE, uses a sustainable inflationary monetary policy to achieve zero-fee transaction fees for merchants, developers, and end users. Inflation is dynamically pegged to the number of tokens staked by dWorkers, who are in turn rewarded for contributing resources to the protocol's validation, governance, security, and scalability mechanisms. The rate of inflation grows proportionally to the growth of total value staked, reaching a hard cap at 51% of total supply staked: at this limit, annual token inflation flatlines at 2%. This 51% gives Storecoin high levels of Store-of-Value while enabling the blockchain to retain its zero-fee, programmable payments utility.
@@ -193,6 +199,10 @@ block content
                 | — Storecoin (@StorecoinTeam)
                 a(href='https://twitter.com/StorecoinTeam/status/963511294941790208?ref_src=twsrc%5Etfw') February 13, 2018
 
+      #blockfin-presentation.hc-feature.over-rel.padding.inverted
+        .hc-chunk.hc-customize-text-wrapper
+          iframe(src="https://docs.google.com/presentation/d/e/2PACX-1vRJorF_Iu7qT0FWyTORNy4Xha1FfFgSzd5HbpNx7iTRPKLShAfKQ4pRoHz1R6tm_VdtQWuJXxXcHfoN/embed?start=false&loop=true&delayms=60000", frameborder="0")
+      
       include why-fork-tolerance
 
       include blockfin-principles
@@ -733,7 +743,17 @@ block content
         .hc-chunk.hc-customize-text-wrapper
           h3.hc-feature-title The Storecoin Developer Ecosystem
           p.hc-feature-lead A coalition of organizations that have entered into long-term relationships with Storecoin as its exclusive cryptocurrency to be integrated into enterprise and consumer-facing apps.
-          .row
+          #eco-system-slider.logo-slider
+            a.slide(href="http://alphamining.com/", target="_blank")
+              img(src='/images/empty.png', data-src="/images/alphamining.png")
+              p A PoW Blockchain Mining Operation & Test Network
+            a.slide(href="http://blockview.co/", target="_blank")
+              img(src='/images/empty.png', data-src="/images/blockview.png")
+              p SQL for Blockchains
+            a.slide(href="http://cryptowire.org/", target="_blank")
+              img(src='/images/empty.png', data-src="/images/logo-crypto.png", style="width: 70%;")
+              p The best crypto tweets, articles, and Reddit threads... by the minute.
+          //-.row
             .hc-image(style="padding-bottom: 0px;")
               img(src='/images/empty.png', data-src="/images/alphamining.png")
               p A PoW Blockchain Mining Operation & Test Network
