@@ -59,7 +59,27 @@ $(document).ready(function(){
   twitterWidgets();
   iframes();
   initKyc();
+  initCountDown();
 });
+
+function initCountDown() {
+  // console.log($('#countdown').length);
+  if ($('#countdown').length > 0) {
+    var second = 1000,
+      minute = second * 60,
+      hour = minute * 60,
+      day = hour * 24;
+
+    var countDown = new Date("Aug 27, 2018 00:00:00").getTime(),
+        x = setInterval(function () {
+      var now = new Date().getTime(),
+          distance = countDown - now;
+
+      document.getElementById("days").innerText = Math.floor(distance / day), document.getElementById("hours").innerText = Math.floor(distance % day / hour), document.getElementById("minutes").innerText = Math.floor(distance % hour / minute), document.getElementById("seconds").innerText = Math.floor(distance % minute / second);
+
+    }, second);
+  }
+}
 
 function initDropdown() {
   var $menu = $('#hc-nav-wrapper .hc-branding.invite-dropdown .hc-menu-dropdown'),
@@ -120,6 +140,9 @@ function initIntroHeight (isMobile) {
   // var introHeight = $(window).height() - ((isMobile) ? 232 : 271);
   // var introHeight = $(window).height() - $('#hc-nav-wrapper').outerHeight() - $('#second-token-sale .form-subscribe').outerHeight() - $('#second-token-sale #note').outerHeight();
   var introHeight = $(window).height() - $('#hc-nav-wrapper').outerHeight() - $('#second-token-sale .form-subscribe').outerHeight();
+  if($('#countdown').length > 0) {
+    introHeight = $(window).height() - $('#hc-nav-wrapper').outerHeight();
+  }
   // console.log(introHeight);
   $('#hc-intro').height(introHeight);
 }

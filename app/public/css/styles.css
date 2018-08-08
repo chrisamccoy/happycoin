@@ -1282,7 +1282,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #hc-intro .hc-intro-text-wrapper {
-  position: relative;
+  /* position: relative; */
   z-index: 2;
   overflow: hidden;
   padding-left: 0.5em;
@@ -1290,6 +1290,7 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
   color: #fff;
   max-width: 850px;
+  /* overflow-y: visible; */
 }
 
 #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
@@ -8662,5 +8663,84 @@ and (max-width : 335px) {
 @media only screen and (max-width: 700px) {
   #blockfin-presentation iframe {
     height: 212px;
+  }
+}
+
+/* count down */
+#countdown {
+  font-size: 0.8em;
+  text-align: center;
+  color: white;
+  max-width: 400px;
+  width: 100%;
+  padding: 1em 1em 2em;
+  margin: 2em auto;
+  background: rgba(0, 0, 0, 0.4196078431372549);
+  border-radius: 15px;
+  position: relative;
+}
+
+#countdown h3 {
+  color: white;
+  margin: 0px;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+#countdown .counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+
+#countdown .counter .time {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2em;
+  padding: 0 1em;
+  text-align: center;
+  width: 80px;
+  line-height: 1;
+}
+
+#countdown .counter .time span {
+  font-size: 3.5em;
+}
+
+#countdown .hc-button {
+  position: absolute;
+  bottom: -20px;
+  left: 120px;
+  margin-top: 0.5em;
+  margin-bottom: 0px;
+  padding: 1em;
+  line-height: 1.2;
+}
+
+#countdown .hc-button:hover {
+  color: white;
+}
+
+@media only screen and (max-width: 700px) {
+  #countdown {
+    width: calc(100% - 2em);
+  }
+
+  #countdown h3 {
+    font-size: 1.4em;
+  }
+
+  #countdown .counter .time {
+    font-size: 1em;
+  }
+
+  #countdown .hc-button {
+    font-size: 1em;
+    line-height: 2.3;
+    padding: 0.2em 0.7em;
+    bottom: -15px;
+    left: calc(50% - 72px);
   }
 }

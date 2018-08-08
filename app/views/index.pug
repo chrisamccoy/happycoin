@@ -8,8 +8,27 @@ block content
           b Storecoin is a zero-fee, high-throughput, and decentralized cryptocurrency with a Governance of checks and balances.
 
         p.hc-feature-lead If Ripple is taking on SWIFT, Storecoin is taking on the global $21 Trillion market of ACH, debit card, and credit card purchases by making payments zero-fee for merchants, developers, customers, and users.
-        a.hc-button.orange(href="http://t.me/storecoin", target="_blank") JOIN OUR TELEGRAM
-          i.ion-arrow-right-c
+        if !countdown
+          a.hc-button.orange(href="http://t.me/storecoin", target="_blank") JOIN OUR TELEGRAM
+            i.ion-arrow-right-c
+          
+        if countdown
+          #countdown
+            h3.hc-feature-title Third, Milestone-Based Sale Begins In
+            div.counter
+              div.time
+                span#days
+                | Days
+              div.time
+                span#hours
+                | Hours
+              div.time
+                span#minutes
+                | Minutes
+              div.time
+                span#seconds
+                | Seconds
+            button.hc-button.orange(onclick="opentoken_contribute_click('https://app.opentoken.com/contribute/storecoin/', event);") Join Our Whitelist
 
     #dynamic.intro-popup(style="display:none;")
       b Dynamic
@@ -20,10 +39,11 @@ block content
     #auditable.intro-popup(style="display:none;")
       b Auditable
       |  because all the operations on the blocks in the blockchain, such as adding transactions to the block and voting, counting, and sealing the blocks require that the nodes sign the relevant parts of the block with their secret. Thus, every operation leaves accessor's signature in the block, so every operation is automatically audited. Auditability improves security of the blockchain and resists long range and other types of attacks.
-
-    div#second-token-sale
-      - var top = true
-      include email-widget
+    
+    if !countdown
+      div#second-token-sale
+        - var top = true
+        include email-widget
 
     //-.hc-feature.over-rel.padding.inverted
       .hc-chunk.hc-customize-text-wrapper
