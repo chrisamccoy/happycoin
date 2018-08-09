@@ -13,22 +13,7 @@ block content
             i.ion-arrow-right-c
           
         if countdown
-          #countdown
-            h3.hc-feature-title Third, Milestone-Based Sale Begins In
-            div.counter
-              div.time
-                span#days
-                | Days
-              div.time
-                span#hours
-                | Hours
-              div.time
-                span#minutes
-                | Minutes
-              div.time
-                span#seconds
-                | Seconds
-            button.hc-button.orange(onclick="opentoken_contribute_click('https://app.opentoken.com/contribute/storecoin/', event);") Join Our Whitelist
+          include countdown
 
     #dynamic.intro-popup(style="display:none;")
       b Dynamic
@@ -92,7 +77,7 @@ block content
 
     include major-milestones
     
-    .hc-feature.over-rel.padding.inverted.banner
+    .hc-feature.over-rel.padding.lite.banner
       .hc-chunk.hc-customize-text-wrapper
         p.hc-feature-lead(style=" margin:0px !important;") See many more milestones at
           = ' '
@@ -218,12 +203,13 @@ block content
                   a(href='https://t.co/TYGGg4qPQ9') pic.twitter.com/TYGGg4qPQ9
                 | — Storecoin (@StorecoinTeam)
                 a(href='https://twitter.com/StorecoinTeam/status/963511294941790208?ref_src=twsrc%5Etfw') February 13, 2018
-
-      #blockfin-presentation.hc-feature.over-rel.padding.inverted
-        .hc-chunk.hc-customize-text-wrapper
-          iframe(src="https://docs.google.com/presentation/d/e/2PACX-1vRJorF_Iu7qT0FWyTORNy4Xha1FfFgSzd5HbpNx7iTRPKLShAfKQ4pRoHz1R6tm_VdtQWuJXxXcHfoN/embed?start=false&loop=true&delayms=60000", frameborder="0")
       
       include why-fork-tolerance
+      
+      #blockfin-presentation.hc-feature.over-rel.padding.inverted
+        .hc-chunk.hc-customize-text-wrapper
+          h3.hc-feature-title How Blockfin works with DyPoS
+          iframe(src="https://docs.google.com/presentation/d/e/2PACX-1vRJorF_Iu7qT0FWyTORNy4Xha1FfFgSzd5HbpNx7iTRPKLShAfKQ4pRoHz1R6tm_VdtQWuJXxXcHfoN/embed?start=false&loop=true&delayms=60000", frameborder="0")
 
       include blockfin-principles
 
@@ -545,7 +531,7 @@ block content
         .hc-chunk.hc-customize-text-wrapper
           div.info-fullscreen
             h3.hc-feature-title How Checks and Balances Work in Storecoin
-            p.hc-feature-lead Change is possible, Change is democratic, but Change is hard. Also, fixing Security breaches takes priority of checks and balances.
+            p.hc-feature-lead Change is possible, Change is democratic, but Change is hard. Also, fixing Security breaches takes priority over checks and balances.
             .mobile-image
               div.click-message
                 div.message-container

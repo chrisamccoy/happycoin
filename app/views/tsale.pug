@@ -6,7 +6,8 @@ block content
       #third-token-sale.blog-news.hc-feature.over-rel.padding
         .hc-chunk.hc-intro-text-wrapper
           h1.article-title Welcome to the whitelist of the Third, Invite-Only and Milestone-based Token Sale for Storecoin ($STORE).
-          p.hc-feature-lead(onclick="opentoken_contribute_click('https://app.opentoken.com/contribute/storecoin/', event);")
+          include countdown
+          //-p.hc-feature-lead(onclick="opentoken_contribute_click('https://app.opentoken.com/contribute/storecoin/', event);")
             a Join the Whitelist
               
           ul(style="margin-top: 1em;")
@@ -71,7 +72,7 @@ block content
               |  Auction-based
             li 
               b Amount sold in previous milestone-based sales:
-              |  $3.8 Million
+              |  $3.3 Million
             li 
               b of STORE Authorized:
               |  1 Billion
@@ -92,7 +93,7 @@ block content
       .hc-feature.over-rel.padding
         .hc-chunk.hc-intro-text-wrapper
           .hc-image.info-fullscreen(style="padding:0px;")
-            img(src='/images/empty.png', data-src='/images/cost-per-basis.png')
+            img(src='/images/empty.png', data-src='/images/cost-per-basis-v1.png')
           p.caption(style="margin-bottom:0px;text-align:right;") *View data at 
             a(href="http://storeco.in/onepoint", target="_blank") http://storeco.in/onepoint 
           p.caption(style="text-align:right;") *Storecoin may have up to six, milestone-based token sales
@@ -112,9 +113,9 @@ block content
             a.underline(href=URL('/media/Storecoin-Summary.pdf'), target="_blank") Download the Summary
           div.item
             i.ion-record
-            a.underline(href="/milestones", target="_blank") See All Milestones
+            a.underline(href=URL('/milestones'), target="_blank") See All Milestones
             
-    div.hc-feature.over-rel.padding
+    //-div.hc-feature.over-rel.padding
       .hc-chunk.hc-intro-text-wrapper
         p.hc-feature-lead(onclick="opentoken_contribute_click('https://app.opentoken.com/contribute/storecoin/', event);")
           a(style="border-bottom: 1px solid") Join the Whitelist

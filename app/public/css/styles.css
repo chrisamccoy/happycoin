@@ -411,7 +411,7 @@ input[type=number]::-webkit-outer-spin-button {
   background: #5d794c;
 }
 
-.hc-feature.inverted.banner {
+.hc-feature.banner {
   padding: 2em;
 }
 
@@ -8675,9 +8675,14 @@ and (max-width : 335px) {
   width: 100%;
   padding: 1em 1em 2em;
   margin: 2em auto;
-  background: rgba(0, 0, 0, 0.4196078431372549);
+  background: rgba(0, 0, 0, 0.70);
   border-radius: 15px;
   position: relative;
+}
+
+#third-token-sale #countdown {
+  font-family: 'Aleo';
+  margin: 4em auto;
 }
 
 #countdown h3 {
@@ -8693,6 +8698,7 @@ and (max-width : 335px) {
   align-items: center;
   justify-content: center;
   padding: 1em;
+  height: 60px;
 }
 
 #countdown .counter .time {
@@ -8721,6 +8727,7 @@ and (max-width : 335px) {
 
 #countdown .hc-button:hover {
   color: white;
+  opacity: 0.9;
 }
 
 @media only screen and (max-width: 700px) {
