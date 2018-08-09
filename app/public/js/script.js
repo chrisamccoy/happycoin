@@ -43,7 +43,6 @@ $(document).ready(function(){
   initSlider();
   initProblemSlider();
   toggleStatusText();
-  initTimer();
   fadeInContent();
   initTippy(isMobile);
   initLightBulb();
@@ -1615,125 +1614,6 @@ function limit(element)
     if(element.value.length > max_chars) {
         element.value = element.value.substr(0, max_chars);
     }
-}
-
-function generateCountdownCircle (element, cap) {
-  elements = document.getElementsByClassName(element);
-  var bars = [];
-
-  if (elements) {
-    for(var i = 0; i < elements.length; i++) {
-      // console.log(elements[i]);
-      var bar = new ProgressBar.Circle(elements[i], {
-        color: '#5D795D',
-        // This has to be the same size as the maximum width to
-        // prevent clipping
-        strokeWidth: 4,
-        trailWidth: 1,
-        easing: 'easeInOut',
-        text: {
-          autoStyleContainer: false
-        },
-        fill: '#fff',
-        from: { color: '#e97844', width: 2 },
-        to: { color: '#e97844', width: 4 },
-        // Set default step function for all animate calls
-        step: function(state, circle) {
-          circle.path.setAttribute('stroke', state.color);
-          circle.path.setAttribute('stroke-width', state.width);
-
-          var value = Math.round(circle.value() * cap);
-          if (value === 0) {
-            circle.setText('0');
-          } else {
-            circle.setText(value);
-          }
-
-        }
-      });
-
-      bar.text.style.fontSize = '5rem';
-      bars.push(bar);
-    }
-
-    return bars;
-  } else {
-    return null;
-  }
-}
-
-function renderCountCircles () {
-  var circles = {
-        days : generateCountdownCircle('circle-days', 365),
-        hours : generateCountdownCircle('circle-hours', 24),
-        minutes : generateCountdownCircle('circle-minutes', 60),
-        seconds : generateCountdownCircle('circle-seconds', 60)
-      };
-
-  return circles;
-}
-
-function initTimer () {
-  // Set the date we're counting down to
-  var countDownDate = new Date("Sep 14, 2017 00:00:00").getTime();
-
-  // getting all circle ProgressBar
-  var circles = renderCountCircles();
-
-  if (circles) {
-    // Update the count down every 1 second
-    var x = setInterval(function() {
-
-      // Get todays date and time
-      var now = new Date().getTime();
-
-      // Find the distance between now an the count down date
-      var distance = countDownDate - now;
-
-      // Time calculations for days, hours, minutes and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      var daysCap = 365;
-      var daysDist = days/daysCap;
-
-      var hoursCap = 24;
-      var hoursDist = hours/hoursCap;
-
-      var minutesCap = 60;
-      var minutesDist = minutes/minutesCap;
-
-      var secondsCap = 60;
-      var secondsDist = seconds/secondsCap;
-
-      // console.log(daysDist, hoursDist, minutesDist, secondsDist);
-      if (circles.days) {
-        circles.days.forEach(function(circle){
-          circle.animate(daysDist);
-        });
-      }
-
-      if (circles.hours) {
-        circles.hours.forEach(function(circle){
-          circle.animate(hoursDist);
-        });
-      }
-
-      if (circles.minutes) {
-        circles.minutes.forEach(function(circle){
-          circle.animate(minutesDist);
-        });
-      }
-
-      if (circles.seconds) {
-        circles.seconds.forEach(function(circle){
-          circle.animate(secondsDist);
-        });
-      }
-    }, 1000);
-  }
 }
 
 function hasUrl () {

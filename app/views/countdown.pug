@@ -1,44 +1,16 @@
-.countdown.hc-feature.over-rel.padding.inverted
-  .hc-chunk
-    h3.hc-feature-title First	Token	Sale	ends	in
-    
-    div.row.cp-countdown            
-      div.days.circle
-        div.time-circles.circle-days
-        div.time-heads
-          h3 DAYS
-          
-      div.hours.circle
-        div.time-circles.circle-hours
-        div.time-heads
-          h3 HOURS
-          
-      div.minutes.circle
-        div.time-circles.circle-minutes
-        div.time-heads
-          h3 MINUTES 
-          
-      div.seconds.circle
-        div.time-circles.circle-seconds    
-        div.time-heads    
-          h3 SECONDS
-    p.hc-feature-lead(style="margin-bottom:0.2em;") 
-      b Price	per	token:
-      | 	$0.005
-    p.hc-feature-lead(style="margin:0px;") 
-      b To	be	sold:
-      | 	6%	of	all	storecoins	or	$300,000
-    p.hc-feature-lead(style="margin:0px;") 
-      b Minimum Token Buy:
-      | 	$2,500	
-    
-    .button-container
-      a.reveal-button Learn More
-        i.ion-chevron-down
-          
-    div.reveal-text
-      p.hc-feature-lead(style="margin-top:0.5em;")  As we achieve technology and adoption milestones, we’ll have up to six mini token sales over the next several years. This First Token Sale awards buyers 6% of all storecoins at $0.005 per storecoin. This $300,000 will be used for extensive research and development on the Storecoin consensus algorithm, security protocol, and underlying public blockchain economics.
-      p.hc-feature-lead(style="margin-bottom:0px;") 
-        a(href="https://medium.com/@team_27494/introducing-storecoin-8e15c21b4335", target="_blank") 
-          b Read
-        |  our announcement.
+#countdown
+  h3.hc-feature-title Third, Milestone-Based Sale Begins In
+  div.counter
+    div.time
+      span#days
+      | Days
+    div.time
+      span#hours
+      | Hours
+    div.time
+      span#minutes
+      | Minutes
+    div.time
+      span#seconds
+      | Seconds
+  button.hc-button.orange(onclick="opentoken_contribute_click('https://app.opentoken.com/contribute/storecoin/', event);") Join Our Whitelist

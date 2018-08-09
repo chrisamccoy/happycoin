@@ -13,22 +13,7 @@ block content
             i.ion-arrow-right-c
           
         if countdown
-          #countdown
-            h3.hc-feature-title Third, Milestone-Based Sale Begins In
-            div.counter
-              div.time
-                span#days
-                | Days
-              div.time
-                span#hours
-                | Hours
-              div.time
-                span#minutes
-                | Minutes
-              div.time
-                span#seconds
-                | Seconds
-            button.hc-button.orange(onclick="opentoken_contribute_click('https://app.opentoken.com/contribute/storecoin/', event);") Join Our Whitelist
+          include countdown
 
     #dynamic.intro-popup(style="display:none;")
       b Dynamic
