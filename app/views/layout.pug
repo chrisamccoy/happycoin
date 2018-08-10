@@ -28,8 +28,8 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1')
 
     link(rel='icon', type='image/png', href='/images/favicon.png')
-    link(rel='stylesheet', href='/assets/styles.css?v=3.07')
-    script(async, src='/assets/script.js?v=3.07')
+    link(rel='stylesheet', href='/assets/styles.css?v=3.08')
+    script(async, src='/assets/script.js?v=3.08')
 
     block more-head
 
@@ -56,7 +56,8 @@ html
           .hc-branding.logo
             a.hc-title(href=URL('/'))
           div.hc-branding.invite-dropdown
-            a.sale-invite(data-id="#tokensale") Reserve an allocation in Round 3
+            //-a.sale-invite(data-id="#tokensale") Reserve an allocation in Round 3
+            a.sale-invite(onclick="opentoken_contribute_click('https://app.opentoken.com/contribute/storecoin/', event);") Join Our Whitelist
             div.hc-menu-dropdown
               i.ion-android-more-vertical
               div.nav-menu

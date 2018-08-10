@@ -49,7 +49,7 @@ $(document).ready(function(){
   initFireGlow();
   initProblemReveal(isMobile);
   initCoinFlip();
-  initInviteSale();
+  // initInviteSale();
   initFullscreenImage(isMobile);
   initIntroHeight(isMobile);
   initBlogShare();
@@ -63,18 +63,23 @@ $(document).ready(function(){
 
 function initCountDown() {
   // console.log($('#countdown').length);
-  if ($('#countdown').length > 0) {
+  if ($('.sale-countdown').length > 0) {
     var second = 1000,
       minute = second * 60,
       hour = minute * 60,
-      day = hour * 24;
+      day = hour * 24,
+      $countdown = $('.sale-countdown');
 
     var countDown = new Date("Aug 27, 2018 00:00:00").getTime(),
         x = setInterval(function () {
       var now = new Date().getTime(),
           distance = countDown - now;
 
-      document.getElementById("days").innerText = Math.floor(distance / day), document.getElementById("hours").innerText = Math.floor(distance % day / hour), document.getElementById("minutes").innerText = Math.floor(distance % hour / minute), document.getElementById("seconds").innerText = Math.floor(distance % minute / second);
+      $countdown.find('.days').text(Math.floor(distance / day));
+      $countdown.find('.hours').text(Math.floor(distance % day / hour));
+      $countdown.find('.minutes').text(Math.floor(distance % hour / minute));
+      $countdown.find('.seconds').text(Math.floor(distance % minute / second));
+      //document.getElementById("days").innerText = Math.floor(distance / day), document.getElementById("hours").innerText = Math.floor(distance % day / hour), document.getElementById("minutes").innerText = Math.floor(distance % hour / minute), document.getElementById("seconds").innerText = Math.floor(distance % minute / second);
 
     }, second);
   }
@@ -139,7 +144,7 @@ function initIntroHeight (isMobile) {
   // var introHeight = $(window).height() - ((isMobile) ? 232 : 271);
   // var introHeight = $(window).height() - $('#hc-nav-wrapper').outerHeight() - $('#second-token-sale .form-subscribe').outerHeight() - $('#second-token-sale #note').outerHeight();
   var introHeight = $(window).height() - $('#hc-nav-wrapper').outerHeight() - $('#second-token-sale .form-subscribe').outerHeight();
-  if($('#countdown').length > 0) {
+  if($('.sale-countdown').length > 0) {
     introHeight = $(window).height() - $('#hc-nav-wrapper').outerHeight();
   }
   // console.log(introHeight);

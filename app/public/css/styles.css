@@ -7011,13 +7011,6 @@ and (max-width : 335px) {
   display: none;
 }
 
-#third-token-sale .hc-button {
-  padding: 10px 30px;
-  font-size: 1.2em;
-  margin: 0 auto;
-  display: block;
-}
-
 #third-token-sale .jump-to-buy i {
   font-size: 0.8em;
   font-weight: 300;
@@ -7048,11 +7041,11 @@ and (max-width : 335px) {
   font-size: 1em;
 } */
 
-@media only screen and (max-width: 700px) {
+/* @media only screen and (max-width: 700px) {
   #third-token-sale .hc-button {
     width: 100%;
   }
-}
+} */
 
 /* --------------------------------- */
 #hc-disclaimer {
@@ -8667,41 +8660,42 @@ and (max-width : 335px) {
 }
 
 /* count down */
-#countdown {
+.sale-countdown .wrapper {
   font-size: 0.8em;
   text-align: center;
   color: white;
   max-width: 400px;
   width: 100%;
-  padding: 1em 1em 2em;
-  margin: 2em auto;
+  padding: 1em;
+  margin: 0 auto 2em;
   background: rgba(0, 0, 0, 0.70);
   border-radius: 15px;
   position: relative;
 }
 
-#third-token-sale #countdown {
+#third-token-sale .sale-countdown {
   font-family: 'Aleo';
-  margin: 4em auto;
+  margin: 2em auto;
 }
 
-#countdown h3 {
+.hc-feature .sale-countdown h3.hc-feature-title {
   color: white;
   margin: 0px;
-  font-size: 1.5em;
+  font-size: 1.45em;
   letter-spacing: 1px;
   word-spacing: 2px;
 }
 
-#countdown .counter {
+.sale-countdown .counter {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1em;
+  /* padding: 1em; */
+  margin-top: 0.5em;
   height: 60px;
 }
 
-#countdown .counter .time {
+.sale-countdown .counter .time {
   display: flex;
   flex-direction: column;
   font-size: 1.2em;
@@ -8711,42 +8705,40 @@ and (max-width : 335px) {
   line-height: 1;
 }
 
-#countdown .counter .time span {
+.sale-countdown .counter .time span {
   font-size: 3.5em;
 }
 
-#countdown .hc-button {
-  position: absolute;
-  bottom: -20px;
-  left: 120px;
-  margin-top: 0.5em;
-  margin-bottom: 0px;
-  padding: 1em;
-  line-height: 1.2;
+.sale-countdown .hc-button {
+  padding: 1.2em 2em !important;
+  margin: 0 auto;
+  display: block;
+  line-height: 1;
 }
 
-#countdown .hc-button:hover {
+.sale-countdown .hc-button:hover {
   color: white;
   opacity: 0.9;
 }
 
 @media only screen and (max-width: 700px) {
-  #countdown {
+  .sale-countdown .wrapper {
     width: calc(100% - 2em);
+    /* margin: 2em auto 1em; */
   }
 
-  #countdown h3 {
+  .sale-countdown h3 {
     font-size: 1.4em;
   }
 
-  #countdown .counter .time {
+  .sale-countdown .counter .time {
     font-size: 1em;
   }
 
-  #countdown .hc-button {
+  .sale-countdown .hc-button {
     font-size: 1em;
     line-height: 2.3;
-    padding: 0.2em 0.7em;
+    padding: 0.5em 1.5em !important;
     bottom: -15px;
     left: calc(50% - 72px);
   }
