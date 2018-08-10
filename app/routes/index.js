@@ -6,7 +6,7 @@ var getTokenSale = require('../helpers/tokensales');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var countdown = true;
+  var countdown = false;
   var host = req.headers.host;
   if (host.search('4.storeco.in') >= 0) {
     countdown = true;

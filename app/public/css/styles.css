@@ -7007,11 +7007,11 @@ and (max-width : 335px) {
 }
 
 /*------------------------------------*/
-#third-token-sale.hide {
+.third-token-sale.hide {
   display: none;
 }
 
-#third-token-sale .jump-to-buy i {
+.third-token-sale .jump-to-buy i {
   font-size: 0.8em;
   font-weight: 300;
   margin-left: 0.5em;
@@ -7042,7 +7042,7 @@ and (max-width : 335px) {
 } */
 
 /* @media only screen and (max-width: 700px) {
-  #third-token-sale .hc-button {
+  .third-token-sale .hc-button {
     width: 100%;
   }
 } */
@@ -8673,9 +8673,13 @@ and (max-width : 335px) {
   position: relative;
 }
 
-#third-token-sale .sale-countdown {
+.third-token-sale .sale-countdown {
   font-family: 'Aleo';
   margin: 2em auto;
+}
+
+.third-token-sale .sale-countdown .hc-button {
+  font-size: 1.5em;
 }
 
 .hc-feature .sale-countdown h3.hc-feature-title {
