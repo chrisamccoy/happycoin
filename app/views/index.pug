@@ -9,8 +9,10 @@ block content
 
         p.hc-feature-lead If Ripple is taking on SWIFT, Storecoin is taking on the global $21 Trillion market of ACH, debit card, and credit card purchases by making payments zero-fee for merchants, developers, customers, and users.
         if !countdown
-          a.hc-button.orange(href="http://t.me/storecoin", target="_blank") JOIN OUR TELEGRAM
-            i.ion-arrow-right-c
+          div.buttons
+            a.hc-button.orange(href="http://t.me/storecoin", target="_blank") JOIN OUR TELEGRAM
+              i.ion-arrow-right-c
+            a.hc-button.green(href=URL('/media/Storecoin-Summary.pdf'), target="_blank") Download a Summary
           
         if countdown
           include countdown
