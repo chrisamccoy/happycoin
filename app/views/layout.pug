@@ -57,8 +57,10 @@ html
           .hc-branding.logo
             a.hc-title(href=URL('/'))
           div.hc-branding.invite-dropdown
-            //-a.sale-invite(data-id="#tokensale") Reserve an allocation in Round 3
-            a.sale-invite(onclick="opentoken_contribute_click('https://app.opentoken.com/contribute/storecoin/', event);") Join Our Whitelist
+            if countdown
+              a.sale-invite(onclick="opentoken_contribute_click('https://app.opentoken.com/contribute/storecoin/', event);") Join Our Whitelist
+            else 
+              a.sale-invite(data-id="#tokensale") Reserve an allocation in Round 3
             div.hc-menu-dropdown
               i.ion-android-more-vertical
               div.nav-menu
