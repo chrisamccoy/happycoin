@@ -12,8 +12,8 @@ block content
           div.buttons
             a.hc-button.orange(href="http://t.me/storecoin", target="_blank") JOIN OUR TELEGRAM
               i.ion-arrow-right-c
-            a.hc-button.green(href=URL('/media/Storecoin-Summary.pdf'), target="_blank") Download a Summary
-          
+            a.hc-button.green(href=URL('/media/Storecoin-Summary.pdf'), target="_blank") DOWNLOAD A SUMMARY
+
         if countdown
           include countdown
 
@@ -26,7 +26,7 @@ block content
     #auditable.intro-popup(style="display:none;")
       b Auditable
       |  because all the operations on the blocks in the blockchain, such as adding transactions to the block and voting, counting, and sealing the blocks require that the nodes sign the relevant parts of the block with their secret. Thus, every operation leaves accessor's signature in the block, so every operation is automatically audited. Auditability improves security of the blockchain and resists long range and other types of attacks.
-    
+
     if !countdown
       div#second-token-sale
         - var top = true
@@ -37,9 +37,9 @@ block content
         h3.hc-feature-title.inverted Our Vision
         p.hc-feature-lead(style="max-width: 650px; margin-bottom: 0px;") To become zero-fee, programmable payments infrastructure for the globe.
         //-p.hc-feature-lead.note (a general compute zero-fee payments platform)
-        
+
     include token-sale-buyers
-    
+
     #our-mission.hc-big-feature.hc-feature.over-rel.padding.orange.inverted
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted Our Mission
@@ -48,65 +48,65 @@ block content
 
     .hc-feature.over-rel.padding.inverted
       .hc-chunk.hc-customize-text-wrapper
-        p.hc-feature-lead(style="margin-top: 0px;") 
+        p.hc-feature-lead(style="margin-top: 0px;")
           b NOTE:
           |  Storecoin is a new public blockchain, not an ERC20 token.
-        
-        div.coin-wrapper  
+
+        div.coin-wrapper
           div.coin
             div.tails
             div.heads
-          
+
         p.hc-feature-lead(style="margin-bottom: 0px;") Storecoin is secured by Dynamic Proof of Stake (DyPoS), a new consensus protocol.
-    
+
     include storecoin-statements
-    
+
     #storecoin-video.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         div.tweets
           div.tweet
             iframe(width='100%', height='282', data-src='https://www.youtube.com/embed/RBjWkvExQr4', frameborder='0', gesture='media', allow='encrypted-media', allowfullscreen='', style="max-width:500px;")
-    
+
     include storecoin-comparison-table
-    
+
     include people-saying
-    
+
     include our-latest
 
     include storecoin-in-the-news
-    
+
     include our-team-widget
 
     include major-milestones
-    
+
     .hc-feature.over-rel.padding.lite.banner
       .hc-chunk.hc-customize-text-wrapper
         p.hc-feature-lead(style=" margin:0px !important;") See many more milestones at
           = ' '
           a.underline(href="http://storeco.in/milestones", target="_blank") http://storeco.in/milestones
-    
+
     div#treasury-plan
       include network-distribution
-      
+
     #treasury-schedule.hc-feature.over-rel.padding.lite
       .hc-chunk.hc-customize-text-wrapper
         .hc-image
           img(src='/images/empty.png', data-src="/images/1000-year-supply-v1.png")
-          
+
     #store-rise.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted All money is trust, and belief in $STORE is on the rise
         .hc-image
           img(src='/images/empty.png', data-src="/images/teecollection.jpg", style="max-width: 750px;")
-    
+
     include storecoin-roadmap
-    
+
     #how-big.hc-big-feature.hc-feature.over-rel.padding.orange.inverted
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.inverted How big can this be?
         p.hc-feature-lead(style="max-width: 670px; margin-bottom: 0px;") Storecoin can become the leading zero-fee currency in the $21 Trillion debit card, credit card, and ACH market (Medium-of-Exchange) while also competing for a slice of the $100 Trillion global wealth market (Store-of-Value).
         //- p.hc-feature-lead.note (a general compute, zero-free payments platform)
-        
+
     #storecoin-vs-global-markets.hc-feature.over-rel.padding
       .hc-chunk.hc-customize-text-wrapper
         .mobile-image
@@ -116,7 +116,7 @@ block content
               span Click to expand
         .hc-image.info-fullscreen
           img(src='/images/empty.png', data-src="/images/storecoin-vs-global-tm-v11.png", style="max-width: 750px;")
-        
+
     #pomelo-paper.hc-feature.over-rel.padding.pink.banner
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title This is Our Visual Whitepaper
@@ -125,7 +125,7 @@ block content
           a.underline(href=URL('/media/Storecoin-Visual-Whitepaper.pdf'), target="_blank") Download the Full Paper
           i.ion-record
           a.underline(href=URL('/media/Storecoin-Summary.pdf'), target="_blank") Download the Summary
-          
+
     #about-storecoin.hc-feature.over-rel.padding.left-align
       .hc-chunk.hc-customize-text-wrapper
         h3.hc-feature-title.icon(style="text-align:left;") ABOUT STORECOIN
@@ -135,35 +135,35 @@ block content
         p.hc-feature-lead If Ripple is taking on SWIFT, Storecoin is taking on the global $21 Trillion market of ACH, debit card, and credit card purchases by making payments zero-fee for merchants, developers, customers, and users.
 
         div.coin-components
-          div.orange.comp 
+          div.orange.comp
             b Zero-Fee Transactions
             |  for Developers, Merchants, Users, and Customers
-            
+
           div.comp-row
-            div.green.comp 
+            div.green.comp
               span True
               = ' '
               span Decentralization
-            div.green.comp 
+            div.green.comp
               b High-Throughput
               |  Transactions
-            div.green.comp On-Chain and Off-Chain 
+            div.green.comp On-Chain and Off-Chain
               b  Security
-            div.green.comp 
+            div.green.comp
               b Governance
               |  with Checks and Balances
-              
+
           div.orange.comp Dynamic, Inflationary Rewards pegged to staking -- capped at 2% per year
           div.litegreen.comp Flexible block rewards enabling STORE to be distributed to the global masses
-        
+
         p.hc-feature-lead Storecoin's native currency, STORE, uses a sustainable inflationary monetary policy to achieve zero-fee transaction fees for merchants, developers, and end users. Inflation is dynamically pegged to the number of tokens staked by dWorkers, who are in turn rewarded for contributing resources to the protocol's validation, governance, security, and scalability mechanisms. The rate of inflation grows proportionally to the growth of total value staked, reaching a hard cap at 51% of total supply staked: at this limit, annual token inflation flatlines at 2%. This 51% gives Storecoin high levels of Store-of-Value while enabling the blockchain to retain its zero-fee, programmable payments utility.
 
         p.hc-feature-lead The real-time state of economics and the pricing of security are determined on a block-by-block basis by its Dynamic Proof of Stake protocol (DyPoS).
 
         p.hc-feature-lead Storecoin strives to take the Web 3.0 ethos one step further, leveraging a unique on-chain governance model similar to the U.S. Constitution's checks and balances system. This additional layer of trust and enforceability provides Storecoin with the necessary security and censorship resistance required to attract Fortune 500 companies and entrepreneurs-alike to build on its zero-fee, programmable payments platform.
-        
+
         p.hc-feature-lead To get distribution into cash registers, App Stores, and banking infrastructure around the world, Storecoin will cut distribution partners into its block reward. Instead of getting paid by transaction fees, they’ll get paid with STORE tokens.
-        
+
         p.hc-feature-lead Making p2p, programmable payments zero-fee while still generating revenue for its banking and financial partners is how Storecoin competes with VISA-like networks and beyond.
 
     //-.hc-feature.over-rel.padding.inverted(style="padding:2em;")
@@ -187,7 +187,7 @@ block content
           p.hc-feature-lead(style="margin-bottom: 0px;") The economics of our Dynamic Proof of Stake (DyPoS) protocol incentivize it while the Blockfin consensus engine enables it.
 
       include dypos-algorithm
-      
+
       #blockfin.hc-feature.over-rel.padding.lite
         .hc-chunk.hc-customize-text-wrapper
           h3.hc-feature-title It starts with BlockFin, our consensus engine
@@ -205,9 +205,9 @@ block content
                   a(href='https://t.co/TYGGg4qPQ9') pic.twitter.com/TYGGg4qPQ9
                 | — Storecoin (@StorecoinTeam)
                 a(href='https://twitter.com/StorecoinTeam/status/963511294941790208?ref_src=twsrc%5Etfw') February 13, 2018
-      
+
       include why-fork-tolerance
-      
+
       #blockfin-presentation.hc-feature.over-rel.padding.inverted
         .hc-chunk.hc-customize-text-wrapper
           h3.hc-feature-title How Blockfin works with DyPoS
@@ -246,7 +246,7 @@ block content
                   span Click to expand
             .hc-image.section-image
               img(src='/images/empty.png', data-src="/images/protocol-value.png", style="max-width: 900px;")
-              
+
       #economic-rewards.hc-feature.over-rel.padding.lite
         .hc-chunk.hc-customize-text-wrapper
           h3.hc-feature-title How STORE is both a Store-of-Value and a Medium-of-Exchange
@@ -255,7 +255,7 @@ block content
             b Ideal circulating supply in Storecoin
           .hc-image
             img(src='/images/empty.png', data-src="/images/economic-reward-chart.png", style="max-width: 500px;")
-            
+
       #store-of-value.hc-feature.over-rel.padding.inverted
         .hc-chunk.hc-customize-text-wrapper
           h3.hc-feature-title How Store-of-Value is achieved
@@ -264,17 +264,17 @@ block content
           p.hc-feature-lead As inflationary rewards grow, more dWorkers will stake. This grows both protocol network effects and Store-of-Value properties. As the price of STORE grows, the total contract value of all tokens staked grows. As the total contract value grows, Storecoin will become even more of a secure Store-of-Value.
           .hc-image
             img(src='/images/empty.png', data-src="/images/store-of-value-chart.png", style="max-width: 900px;")
-    
+
       //-#inflation.hc-feature.over-rel.padding.inverted
         .hc-chunk.hc-customize-text-wrapper
           h3.hc-feature-title A maximum of 2% Inflation Keeps Transactions Zero-Fee
           p.hc-feature-lead(style="margin-bottom:0px;") (Inflationary rewards are pegged to the % of staking of the circulating supply)
-      
+
       #free-transactions.hc-feature.over-rel.padding(style="border-bottom: 2px dashed grey;")
         .hc-chunk.hc-customize-text-wrapper
           div.info-fullscreen
             h3.hc-feature-title How Zero-Fee Transactions are Financed
-            p.hc-feature-lead Transactions are free for users and developers because they’re paid for with inflationary rewards capped at 2% per year. Award amounts are dynamic, based upon the total amount of staking amongst the decentralized workforce. 
+            p.hc-feature-lead Transactions are free for users and developers because they’re paid for with inflationary rewards capped at 2% per year. Award amounts are dynamic, based upon the total amount of staking amongst the decentralized workforce.
             .mobile-image
               div.click-message
                 div.message-container
@@ -295,9 +295,9 @@ block content
                   span Click to expand
             .hc-image.section-image
               img(src='/images/empty.png', data-src="/images/blocks-allocated-v5.png", style="max-width: 900px;")
-      
+
       include business-case
-      
+
       #staking-incentives.hc-feature.over-rel.padding.lite
         .hc-chunk.hc-customize-text-wrapper
           div.info-fullscreen
@@ -309,7 +309,7 @@ block content
                   span Click to expand
             .hc-image.section-image
               img(src='/images/empty.png', data-src="/images/slope-staking-v3.png", style="max-width: 900px;")
-              
+
       #friendly-tools.hc-feature.over-rel.padding
         .hc-chunk.hc-customize-text-wrapper
           div.info-fullscreen
@@ -321,11 +321,11 @@ block content
                   span Click to expand
             .hc-image.section-image
               img(src='/images/empty.png', data-src="/images/friendly-tools.png", style="max-width: 900px;")
-              
+
       #consumer-spend.hc-feature.over-rel.padding.inverted.orange
         .hc-chunk.hc-customize-text-wrapper
           div.info-fullscreen
-            h3.hc-feature-title Why will consumers spend their STORE if it’s going up in value? Why will merchants accept STORE if it’s going down? 
+            h3.hc-feature-title Why will consumers spend their STORE if it’s going up in value? Why will merchants accept STORE if it’s going down?
             p.hc-feature-lead Removing the transaction fee will always make it cheaper for buyers to purchase using STORE and more profitable for sellers to accept STORE.
             .mobile-image
               div.click-message
@@ -334,7 +334,7 @@ block content
                   span Click to expand
             .hc-image.section-image
               img(src='/images/empty.png', data-src="/images/consumer-spend.png", style="max-width: 900px;")
-              
+
       #ongoing-research.hc-feature.over-rel.padding.lite
         .hc-chunk.hc-customize-text-wrapper
           h3.hc-feature-title Ongoing Research in Economics
@@ -391,12 +391,12 @@ block content
     section
 
       include network-effects
-      
+
       #transactions-secure.hc-feature.over-rel.padding(style="border-bottom: 2px dashed grey;")
         .hc-chunk.hc-customize-text-wrapper
           div.info-fullscreen
             h3.hc-feature-title How Zero Fee Transactions are Secured With Bonds
-            p.hc-feature-lead To prevent Storecoin from a DDoS attack or from the blockchain being flooded with spammy transactions, Storecoin adds a refundable – with interest! – security bond to each transaction. 
+            p.hc-feature-lead To prevent Storecoin from a DDoS attack or from the blockchain being flooded with spammy transactions, Storecoin adds a refundable – with interest! – security bond to each transaction.
             .mobile-image
               div.click-message
                 div.message-container
@@ -413,7 +413,7 @@ block content
             h3.hc-feature-title How Dynamic Security Works
               span.orange-color(style="font-size:0.8em; margin-left:0.5em") (with dGuards)
             p.hc-feature-lead Decentralized Security Guards, or dGuards, secure the protocol by running full nodes to monitor all transactions and dWorker activity. They're rewarded with 75% of the burnt stake or bond from the found “bad” actors. The other 25% is paid to a security fund that refunds found payment fraud on the blockchain (ETA 2021).
-            p.hc-feature-lead 
+            p.hc-feature-lead
               b dGuards run full nodes and download the latest blockchain state.
             .mobile-image
               div.click-message
@@ -450,11 +450,11 @@ block content
                   span Click to expand
             .hc-image.section-image
               img(src='/images/empty.png', data-src="/images/slope-comm-trade.png", style="max-width: 900px;")
-              
+
       #governance.hc-feature.over-rel.padding.inverted
         .hc-chunk.hc-customize-text-wrapper
           h3.hc-feature-title The problems with blockchain Governance today
-          p.hc-feature-lead For today’s public blockchains to move past prototypes and low usage dApps – to where entities trust a decentralized blockchain enough to process $10 Million+ of utility-based daily transaction volume – blockchains need an enforceable rules engine that has no centralization of power, that key network participants trust, and that is censorship resistant. 
+          p.hc-feature-lead For today’s public blockchains to move past prototypes and low usage dApps – to where entities trust a decentralized blockchain enough to process $10 Million+ of utility-based daily transaction volume – blockchains need an enforceable rules engine that has no centralization of power, that key network participants trust, and that is censorship resistant.
           .hc-image
             img(src='/images/empty.png', data-src="/images/li-law-v2.png", style="max-width: 100px;")
           hr
@@ -464,7 +464,7 @@ block content
             img(src='/images/empty.png', data-src="/images/li-court-v3.png", style="max-width: 200px;")
           hr
           h3.hc-feature-title Storecoin’s Solution to Governance
-          p.hc-feature-lead Storecoin’s solution is a decentralized Governance where there is no centralization of power and all Changes are enforceable, consensus on Change is reached by four separate branches that check and balance each other on features, leadership, and Monetary Policy decisions. 
+          p.hc-feature-lead Storecoin’s solution is a decentralized Governance where there is no centralization of power and all Changes are enforceable, consensus on Change is reached by four separate branches that check and balance each other on features, leadership, and Monetary Policy decisions.
 
       //-#trusted-governance.hc-feature.over-rel.padding.inverted
         .hc-chunk.hc-customize-text-wrapper
@@ -475,7 +475,7 @@ block content
           p.hc-feature-lead To shape the future of trade and commerce, blockchains need an enterprise-grade Governance that is trusted, enforceable, and reaches finality in a democratic process.
           .hc-image
             img(src='/images/empty.png', data-src="/images/li-court-v3.png", style="max-width: 200px;")
-          p.hc-feature-lead Storecoin’s solution is a decentralized Governance where there is no centralization of power and all Changes are enforceable. Consensus on Change is reached by four separate branches that check and balance each other on protocol-level, key people, and monetary policy decisions. 
+          p.hc-feature-lead Storecoin’s solution is a decentralized Governance where there is no centralization of power and all Changes are enforceable. Consensus on Change is reached by four separate branches that check and balance each other on protocol-level, key people, and monetary policy decisions.
 
       #governance-compares.hc-feature.over-rel.padding
         .hc-chunk.hc-customize-text-wrapper
@@ -500,7 +500,7 @@ block content
       #separation-of-powers.hc-feature.over-rel.padding
         .hc-chunk.hc-customize-text-wrapper
           div.info-fullscreen
-            h3.hc-feature-title.icon.left 
+            h3.hc-feature-title.icon.left
               img(src="/images/dynamic-governance-v2.png")
               | Separation of Powers in Storecoin’s Governance
             p.hc-feature-lead Governance is inspired by the checks and balances of the United States Constitution. Storecoin’s Governance ensures that a) there is no centralization of power for protocol-level changes, b) security matters most, and c) Monetary Policy requires Governance approval (there is no Fed).
@@ -511,13 +511,13 @@ block content
                   span Click to expand
             .hc-image.section-image
               img(src='/images/empty.png', data-src="/images/sep-of-power.png", style="max-width: 900px;")
-              
+
       include governance-principles
-            
+
       #governance-branches.hc-feature.over-rel.padding(style="border-bottom: 2px dashed grey;")
         .hc-chunk.hc-customize-text-wrapper
           div.info-fullscreen
-            h3.hc-feature-title.icon.left 
+            h3.hc-feature-title.icon.left
               img(src="/images/dynamic-governance-v2.png")
               | Organizational Chart of Storecoin’s Governance
             p.hc-feature-lead For the first four years – until 5/21/2021 – the Storecoin organization has executive power over the blockchain. After, Governance will decide all changes to features, leadership, and Monetary Policy.
@@ -528,7 +528,7 @@ block content
                   span Click to expand
             .hc-image.section-image
               img(src='/images/empty.png', data-src="/images/4branches-gov-v3.png", style="max-width: 900px;")
-              
+
       #check-balances.hc-feature.over-rel.padding(style="border-bottom: 2px dashed grey;")
         .hc-chunk.hc-customize-text-wrapper
           div.info-fullscreen
@@ -541,7 +541,7 @@ block content
                   span Click to expand
             .hc-image.section-image
               img(src='/images/empty.png', data-src="/images/checks-balances.png", style="max-width: 900px;")
-              
+
       #governance-hired.hc-feature.over-rel.padding
         .hc-chunk.hc-customize-text-wrapper
           div.info-fullscreen
@@ -575,7 +575,7 @@ block content
                   span Click to expand
             .hc-image.section-image
               img(src='/images/empty.png', data-src="/images/dbranch-overrule.png", style="max-width: 900px;")
-              
+
       #change-governance.hc-feature.over-rel.padding.lite
         .hc-chunk.hc-customize-text-wrapper
           div.info-fullscreen
@@ -631,7 +631,7 @@ block content
             .hc-image.section-image
               img(src='/images/empty.png', data-src="/images/how-cenres-gov-work-v1.png", style="max-width: 900px;")
             //-p.footer-text *Inspired by Angelo Milan’s work
-            
+
       #friendly-dapp.hc-feature.over-rel.padding.lite
         .hc-chunk.hc-customize-text-wrapper
           div.info-fullscreen
@@ -651,7 +651,7 @@ block content
         div.icon
           i.ion-chevron-down
           i.ion-chevron-up
-    
+
     section
       #our-vision-zero-fee.hc-feature.over-rel.padding
         .hc-chunk.hc-customize-text-wrapper
@@ -666,7 +666,7 @@ block content
           p.hc-feature-lead Zero-fee, crypto-powered payments will open up a new platform for digital innovation – and beyond.
           p.footer-text NOTE: Storecoin tokens are divisible by eight decimal points
           p.footer-text(style="margin-bottom:0px;") 0.00000001 STORE equals 1 Edison
-          
+
       div#zero-fee-market-case
         #storecoin-fits-in.hc-feature.over-rel.padding.lite
           .hc-chunk.hc-customize-text-wrapper
@@ -677,7 +677,7 @@ block content
                 img(src='/images/empty.png', data-src='/images/crypto-quadrants-v2.png', style="max-width:630px; width:100%;")
               .mobile-image
                 img(src='/images/empty.png', data-src='/images/crypto-quadrants-v2.png')
-      
+
       #dapps-vs-capps.hc-feature.over-rel.padding.inverted
         .hc-chunk.hc-customize-text-wrapper
           h3.hc-feature-title Why Apps not dApps?
@@ -691,7 +691,7 @@ block content
 
       div#apps-benefit
         include app-types
-        
+
       #trust-in-stores.hc-feature.over-rel.padding.inverted
         .hc-chunk.hc-customize-text-wrapper
           div.info-fullscreen
