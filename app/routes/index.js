@@ -14,6 +14,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Storecoin', countdown: countdown, meta: meta({ title: 'Storecoin', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
+router.get('/new', function(req, res, next) {
+  res.render('index-new', { title: 'Storecoin', meta: meta({ title: 'Storecoin', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
+});
+
 /* GET home page. */
 router.get('/engineering', function(req, res, next) {
   res.render('engineering', { title: 'Engineering', meta: meta({ title: 'Engineering', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });

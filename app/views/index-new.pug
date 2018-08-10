@@ -1,0 +1,15 @@
+extends layout
+
+block more-head
+  link(rel='stylesheet', href='/assets/styles-new.css?v=1.00')
+
+block content
+  div#hc-content.home-page
+    #hc-intro.hc-feature.over-rel.padding
+      .hc-chunk.hc-intro-text-wrapper
+        h2.hc-intro-large-lead
+          b Storecoin is a zero-fee, high-throughput, and decentralized cryptocurrency with a Governance of checks and balances.
+
+        p.hc-feature-lead If Ripple is taking on SWIFT, Storecoin is taking on the global $21 Trillion market of ACH, debit card, and credit card purchases by making payments zero-fee for merchants, developers, customers, and users.
+          
+        include countdown

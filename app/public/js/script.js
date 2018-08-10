@@ -223,29 +223,26 @@ function initInviteSale() {
 }
 
 function initCoinFlip () {
-  var $coins = $('.coin');
+  var $coin = $('.coin'),
+  $coinCont = $coin.parents('.coin-wrapper'),
+  flipping = false;
 
-  $coins.each(function(i){
-    var $coin = $(this),
-    $coinCont = $coin.parents('.coin-wrapper'),
-    offset = $coinCont.offset().top - (500 * ( i + 1)),
-    flipping = false;
-    $(window).scroll(function(){
-      var scrollVal  = $(window).scrollTop();
-      console.log(i, flipping, scrollVal, offset);
-      if (scrollVal > offset) {
-        if(!flipping) {
-          $coin.addClass('flip');
-          setTimeout(function(){
-            $coin.removeClass('flip');
-          }, 2000);
-          flipping = true;
-        }
-      } else {
-        $coin.removeClass('flip');
-        flipping = false;
+  $(window).scroll(function(){
+    var scrollVal  = $(window).scrollTop(),
+    offset = $coinCont.offset().top - 700;
+    // console.log(flipping, scrollVal, offset, $coinCont);
+    if (scrollVal > offset) {
+      if(!flipping) {
+        $coin.addClass('flip');
+        setTimeout(function(){
+          $coin.removeClass('flip');
+        }, 2000);
+        flipping = true;
       }
-    });
+    } else {
+      $coin.removeClass('flip');
+      flipping = false;
+    }
   });
 }
 
@@ -411,7 +408,7 @@ function scrollCheck(isMobile){
       $navSection.removeClass('scrolling');
     }
 
-    if (scrollVal > 60) {
+    if (isMobile && scrollVal > 60) {
       $emailSubscribe.fadeIn();
     } else {
       $emailSubscribe.fadeOut(100);

@@ -28,8 +28,8 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1')
 
     link(rel='icon', type='image/png', href='/images/favicon.png')
-    link(rel='stylesheet', href='/assets/styles.css?v=3.08')
-    script(async, src='/assets/script.js?v=3.08')
+    link(rel='stylesheet', href='/assets/styles.css?v=3.09')
+    script(async, src='/assets/script.js?v=3.09')
 
     block more-head
 
@@ -37,19 +37,20 @@ html
     - var className = ''
     if v2
       - className = 'v2'
+      
+    #100-year-supply.intro-popup(style="display:none;")
+      .hc-image
+        img(src='/images/empty.png', data-src="/images/1000-year-supply-v1.png", style="width: 100%;")
 
     #hc-nav-wrapper.add-background(class=className)
       p.hc-intro-post
-        //- a(href="https://medium.com/@team_27494/introducing-storecoin-8e15c21b4335", target="_blank") Read our introductory post
-        //- span(style="padding:0 0.5em;") ·
-        //- a(href="http://t.me/storecoin", target="_blank")  Join our Telegram Super Group
         a(href=URL('/tee'), target="_blank")  Earn a Storecoin Tee-Shirt
         span
           i.ion-record
         a(href=URL('/milestones'), target="_blank")  ✔️  See our latest Milestones
       .container
         .row
-          a.hc-branding.store-auth
+          a.hc-branding.store-auth(data-featherlight="#100-year-supply")
             span.hc-number-dist
               span 1 Billion
               span.away STORE tokens authorized
