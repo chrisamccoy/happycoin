@@ -408,7 +408,7 @@ function scrollCheck(isMobile){
       $navSection.removeClass('scrolling');
     }
 
-    if (isMobile && scrollVal > 60) {
+    if (scrollVal > 60) {
       $emailSubscribe.fadeIn();
     } else {
       $emailSubscribe.fadeOut(100);

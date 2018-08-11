@@ -1,25 +1,30 @@
 #email-subscribe.form-subscribe
-  div.sub-container
-    //- div.message Get the latest news on Storecoin delivered to your inbox
-    div.message Stay updated on Storecoin 
-    div.mobile-reveal
-      form.form(action='https://storeco.us16.list-manage.com/subscribe/post?u=49990f91819fec5293c84bbe8&id=2aca88b02e', method='POST', target='_blank', novalidate='')
-        input(type="email", placeholder="Your Email", name="EMAIL")
-        button(type="submit") Submit
-      div.social
-        div.links
-          a(href="http://t.me/storecoin", target="_blank")
-            i.ion-paper-airplane
-          a(href="http://twitter.com/storecoin", target="_blank")
-            i.ion-social-twitter
-          a(href="http://facebook.com/storecointeam", target="_blank")
-            i.ion-social-facebook
-          a(href="http://instagram.com/storecointeam", target="_blank")
-            i.ion-social-instagram
-          a(href="http://github.com/storecoinproject", target="_blank")
-            i.ion-social-github
+  if pageTitle == 'Token Sale - Storecoin'
+    div.desktop-image
+      div.sub-container
+        a(onclick="opentoken_contribute_click('https://app.opentoken.com/contribute/storecoin/', event);", style="color: white; font-size: 1.2em; border-bottom: 1px solid;") Join Our Whitelist
+  div.mobile-image
+    div.sub-container
+      //- div.message Get the latest news on Storecoin delivered to your inbox
+      div.message Stay updated on Storecoin 
+      div.mobile-reveal
+        form.form(action='https://storeco.us16.list-manage.com/subscribe/post?u=49990f91819fec5293c84bbe8&id=2aca88b02e', method='POST', target='_blank', novalidate='')
+          input(type="email", placeholder="Your Email", name="EMAIL")
+          button(type="submit") Submit
+        div.social
+          div.links
+            a(href="http://t.me/storecoin", target="_blank")
+              i.ion-paper-airplane
+            a(href="http://twitter.com/storecoin", target="_blank")
+              i.ion-social-twitter
+            a(href="http://facebook.com/storecointeam", target="_blank")
+              i.ion-social-facebook
+            a(href="http://instagram.com/storecointeam", target="_blank")
+              i.ion-social-instagram
+            a(href="http://github.com/storecoinproject", target="_blank")
+              i.ion-social-github
 
-      div.close.icon-btn
-        i.ion-android-close
-    div.reveal.icon-btn
-      i.ion-chevron-down
+        div.close.icon-btn
+          i.ion-android-close
+      div.reveal.icon-btn
+        i.ion-chevron-down
