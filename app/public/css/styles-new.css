@@ -1,0 +1,68 @@
+/* buttons */
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.buttons .hc-button:not(:first-child) {
+  margin-left: 1em !important;
+}
+
+/* ---------- */
+.hc-feature .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hc-feature p {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+@media only screen and (max-width: 700px) {
+  .hc-feature .row {
+    display: block;
+  }
+}
+
+/* hc-intro */
+#hc-intro .hc-intro-text-wrapper {
+  width: 100%;
+  max-width: 1140px;
+}
+
+#hc-intro .hc-intro-text-wrapper .row {
+  text-align: left;
+}
+
+#hc-intro .hc-intro-text-wrapper .list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 1.4em;
+  margin-top: 2em;
+}
+
+#hc-intro .hc-intro-text-wrapper .list .item {
+  width: 49%;
+  margin-bottom: 1em;
+  display: flex;
+}
+
+#hc-intro .hc-intro-text-wrapper .list .item i {
+  font-size: 0.2em;
+  color: #e97845;
+  margin-right: 0.7em;
+  margin-top: 0.7em;
+}
+
+#hc-intro .hc-intro-text-wrapper .list .item .title {
+  font-weight: bold;
+}
+
+#hc-intro .hc-intro-text-wrapper .list .item .date {
+  font-size: 0.8em;
+}
