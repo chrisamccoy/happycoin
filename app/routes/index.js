@@ -3,6 +3,7 @@ var router = express.Router();
 var meta = require('../helpers/meta');
 var getblog = require('../helpers/blogs');
 var getTokenSale = require('../helpers/tokensales');
+var getSection = require('../helpers/sections');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -16,6 +17,18 @@ router.get('/', function(req, res, next) {
 
 router.get('/new', function(req, res, next) {
   res.render('index-new', { title: 'Storecoin', meta: meta({ title: 'Storecoin', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
+});
+
+router.get('/sec/:key', function(req, res, next) {
+  var sec = getSection(req.params.key),
+      title = sec.title,
+      url = req.protocol + '://' + req.get('host');
+
+  res.render('sec-redirect', {
+    title: title,
+    redirectUrl: url + sec.hash,
+    meta: meta({ title: title, url: url + req.originalUrl })
+  });
 });
 
 /* GET home page. */
