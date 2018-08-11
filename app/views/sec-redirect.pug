@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  div#hc-content
+
+    div.redirect-url(style="margin-top:10em;", data-url=redirectUrl)
+      .hc-feature.over-rel.padding
+        .hc-chunk.hc-intro-text-wrapper
+          h2.hc-feature-title Redirecting...
+
+    script.
+      window.location = document.querySelector('.redirect-url').attributes['data-url'].value;
