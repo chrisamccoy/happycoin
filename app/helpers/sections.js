@@ -1,10 +1,10 @@
 var sections = {
   'tokensale': {
-    'url': '#tokensale',
+    'hash': '#tokensale',
     'title': 'Token Sale'
   },
   'our-vision': {
-    'url': '#our-vision',
+    'hash': '#our-vision',
     'title': 'Our Vision'
   },
   'token-sale-buyers': {
@@ -321,7 +321,7 @@ function getSection(key) {
   if (key) {
     return sections[key] || null;
   }
-  
+
   return sections;
 }
 
