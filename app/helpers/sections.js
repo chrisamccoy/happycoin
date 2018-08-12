@@ -318,7 +318,11 @@ var sections = {
 }
 
 function getSection(key) {
-  return sections[key] || null;
+  if (key) {
+    return sections[key] || null;
+  }
+  
+  return sections;
 }
 
 module.exports = getSection;

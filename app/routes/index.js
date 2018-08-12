@@ -15,8 +15,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Storecoin', countdown: countdown, meta: meta({ title: 'Storecoin', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
-router.get('/new', function(req, res, next) {
+router.get('/tokensale3', function(req, res, next) {
   res.render('index-new', { title: 'Storecoin', meta: meta({ title: 'Storecoin', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
+});
+
+router.get('/pioneer', function(req, res, next) {
+  res.render('pioneer', { title: 'Host a Storecoin meet-up in your town or city', meta: meta({ title: 'Host a Storecoin meet-up in your town or city', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 router.get('/sec/:key', function(req, res, next) {
@@ -37,9 +41,9 @@ router.get('/engineering', function(req, res, next) {
 });
 
 /* GET Tokensale 3 page. */
-router.get('/tokensale3', function(req, res, next) {
-  res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }), sale: getTokenSale('tokensale3') });
-});
+// router.get('/tokensale3', function(req, res, next) {
+//   res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }), sale: getTokenSale('tokensale3') });
+// });
 
 /* GET Tokensale 3 page. */
 router.get('/tokensale39', function(req, res, next) {
@@ -309,7 +313,7 @@ router.get('/firsttokensalefaq', function(req, res, next) {
 
 /* GET home page. */
 router.get('/url', function(req, res, next) {
-  res.render('url', { title: 'Storecoin', meta: meta({ title: 'URL', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
+  res.render('url', { title: 'Storecoin', sections: getSection(), meta: meta({ title: 'URL', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
 /* GET home page. */

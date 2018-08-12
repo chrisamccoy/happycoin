@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  div#hc-content
+    //- #hc-intro.hc-feature.over-rel.padding
+    //-   .hc-chunk.hc-intro-text-wrapper
+    //-     h2.hc-intro-large-lead(style='font-weight: bold; font-size: 2.7em; margin: 2em auto;') Token Sale FAQ
+
+    .hc-feature.over-rel.padding
+      .hc-chunk.hc-intro-text-wrapper
+        h3.hc-feature-title Host a Storecoin meet-up in your city
+        p.hc-feature-lead Become a Storecoin Pioneer 
+        iframe(src='https://docs.google.com/forms/d/e/1FAIpQLSd9tTyS2wldzvz4btHOl7P_oagc9WP09xvirfqkbAY4Ue_duA/viewform?embedded=true' width="100%" style="height:2800px;", frameBorder="0")
+      
+    include email-widget
