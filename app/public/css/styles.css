@@ -4595,6 +4595,42 @@ and (max-width : 335px) {
   text-align: right;
 }
 
+#hc-milestones .achievement {
+  text-align: center;
+  margin-top: 2em;
+}
+
+#hc-milestones .achievement .ach-wrapper {
+  padding: 0.5em 1em 0.5em 0.5em;
+  color: white;
+  border-radius: 3em;
+  font-size: 1.5em;
+  font-weight: bold;
+  background: #565656;
+  display: inline-flex;
+  align-items: center;
+}
+
+#hc-milestones .achievement .ach-wrapper .icon {
+  background: #47af4d;
+  line-height: 1;
+  padding: 0.7em;
+  font-size: 1.3em;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5em;
+  flex-basis: 30px;
+  flex-shrink: 0;
+}
+
+#hc-milestones .achievement .ach-wrapper .title {
+  text-align: left;
+}
+
 .pulse {
   position: absolute;
   /* margin: 100px; */
@@ -4698,6 +4734,14 @@ and (max-width : 335px) {
 
   .pulse {
     display: none;
+  }
+
+  #hc-milestones .achievement .ach-wrapper {
+    font-size: 1.2em;
+  }
+
+  #hc-milestones .achievement .ach-wrapper .icon {
+    padding: 0.5em;
   }
 }
 
