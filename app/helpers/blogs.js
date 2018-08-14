@@ -1,5 +1,14 @@
 var blogs = [
   {
+      slug: 'yes-we-counted-40-ways-our-community-learned-about-storecoin',
+      title: 'Yes, We Counted! 40 Ways Our Community Learned about Storecoin',
+      desc: '',
+      img: 'https://storeco.in/images/logo-fb.png',
+      template: 'blog-aug-14-18-2',
+      readTime : '5 min read',
+      date : 'August 14, 2018'
+  },
+  {
       slug: 'storecoin-pioneers-lining-up-to-host-meet-ups-in-cities-around-the-world',
       title: 'Storecoin Pioneers Lining Up to Host Meet-Ups in Cities Around the World',
       desc: '',
