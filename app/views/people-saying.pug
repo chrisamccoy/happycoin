@@ -21,12 +21,12 @@
 
       div.tweet.snippet
         div.title
-          img(src="/images/tony-perkins.jpg")
+          img(src='/images/empty.png', data-src="/images/tony-perkins.jpg")
           p By: Tony Perkins (
             = ' '
             a(href="https://twitter.com/tonyperkins", target="_blank") @TonyPerkins
             | ), founder of Red Herring and more
-        img(src="/images/people-snippet.png", style="width: 100%;")
+        img(src='/images/empty.png', data-src="/images/people-snippet.png", style="width: 100%;")
         a(href="https://medium.com/@tonyperkins/michael-arrington-tim-draper-and-the-dawn-of-the-age-of-the-crypto-7382b75c5e05", target="_blank") Source
 
       - if(!tokensale)
