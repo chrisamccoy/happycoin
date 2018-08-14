@@ -39,7 +39,7 @@ $(document).ready(function(){
   renderCircles();
   renderCards();
   toggleCardTasks();
-  emailSubscribe(isMobile);
+  // emailSubscribe(isMobile);
   initSlider();
   initProblemSlider();
   toggleStatusText();
