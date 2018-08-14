@@ -1,5 +1,14 @@
 var blogs = [
   {
+      slug: 'storecoin-pioneers-lining-up-to-host-meet-ups-in-cities-around-the-world',
+      title: 'Storecoin Pioneers Lining Up to Host Meet-Ups in Cities Around the World',
+      desc: '',
+      img: 'https://storeco.in/images/logo-fb.png',
+      template: 'blog-aug-14-18',
+      readTime : '5 min read',
+      date : 'August 14, 2018'
+  },
+  {
       slug: 'storecoin-addresses-rich-get-gradually-richer-concern-with-its-leaderless-protocol-and-decentralized-economics',
       title: 'Storecoin Addresses “Rich Get Gradually Richer” Concern with its Leaderless Protocol and Decentralized Economics',
       desc: 'A blog post on cointelegraph.com contends Proof of Stake blockchains create a “rich get richer” scenario for participants on the network. But Storecoin’s Chief Technology Officer Rag Bhagavatha argues Proof of Stake itself is not to blame.',
