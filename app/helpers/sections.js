@@ -7,8 +7,8 @@ var sections = {
     'hash': '#our-vision',
     'title': 'Our Vision'
   },
-  'token-sale-buyers': {
-    'hash': '#token-sale-buyers',
+  'our-token-partners': {
+    'hash': '#our-token-partners',
     'title': 'Our Token Partners'
   },
   'our-mission': {

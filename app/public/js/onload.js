@@ -8,9 +8,10 @@ function deferLoad() {
   setTimeout(function() {
     initLogoSlider('#hc-buyers-slider', 3);
     deferSections();
+    deferAnalytics();
+    deferTwitter();
+    deferIframes();
   }, 1000);
-
-  deferAnalytics();
 }
 
 function deferSections() {
@@ -81,4 +82,17 @@ function deferAnalytics() {
 
       gtag('config', 'UA-112685273-1');
   });
+}
+
+function deferTwitter() {
+  $.getScript('https://platform.twitter.com/widgets.js');
+}
+
+function deferIframes() {
+  var iframes = document.getElementsByTagName('iframe');
+  for (var i=0; i<iframes.length; i++) {
+    if(iframes[i].getAttribute('data-src')) {
+      iframes[i].setAttribute('src',iframes[i].getAttribute('data-src'));
+    }
+  }
 }
