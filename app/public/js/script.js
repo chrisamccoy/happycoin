@@ -55,8 +55,6 @@ $(document).ready(function(){
   initBlogShare();
   initFormSubscribe();
   initThirdTokenSale();
-  twitterWidgets();
-  iframes();
   initKyc();
   initCountDown();
 });
@@ -1700,19 +1698,6 @@ function getCookie(cname) {
 function deleteCookie (name) {
     document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 };
-
-function twitterWidgets() {
-  $.getScript('https://platform.twitter.com/widgets.js');
-}
-
-function iframes() {
-  var iframes = document.getElementsByTagName('iframe');
-  for (var i=0; i<iframes.length; i++) {
-    if(iframes[i].getAttribute('data-src')) {
-      iframes[i].setAttribute('src',iframes[i].getAttribute('data-src'));
-    }
-  }
-}
 
 function initTabs(el) {
   var $el = $(el),

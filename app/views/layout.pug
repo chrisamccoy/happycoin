@@ -37,7 +37,7 @@ html
     - var className = ''
     if v2
       - className = 'v2'
-      
+
     #100-year-supply.intro-popup(style="display:none;")
       .hc-image
         img(src='/images/empty.png', data-src="/images/1000-year-supply-v1.png", style="width: 100%;")
@@ -59,7 +59,7 @@ html
           div.hc-branding.invite-dropdown
             if countdown
               a.sale-invite(onclick="opentoken_contribute_click('https://app.opentoken.com/contribute/storecoin/', event);") Join Our Whitelist
-            else 
+            else
               a.sale-invite(data-id="#tokensale") Reserve an allocation in Round 3
             div.hc-menu-dropdown
               i.ion-android-more-vertical
@@ -69,7 +69,7 @@ html
       include email-subscribe
 
     include social-nav
-    
+
     block content
 
     include footer

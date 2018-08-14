@@ -8716,3 +8716,18 @@ and (max-width : 335px) {
     left: calc(50% - 72px);
   }
 }
+
+#our-token-partners {
+  max-height: 350px;
+  overflow: hidden;
+}
+
+#people-saying {
+  min-height: 2100px;
+}
+
+@media only screen and (max-width: 700px) {
+  #people-saying {
+    min-height: 1100px;
+  }
+}
