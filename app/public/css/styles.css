@@ -5844,6 +5844,7 @@ and (max-width : 335px) {
 
 #zero-fee-case .companies-table .row .logos .logos-row .logo {
   margin-left: 7px;
+  width: 104px;
 }
 
 #zero-fee-case .companies-table .row .logos .logos-row .logo img {
@@ -7564,7 +7565,6 @@ and (max-width : 335px) {
 #worker-types-timeline .row .item {
   width: 25%;
   text-align: center;
-  font-style: italic;
 }
 
 #worker-types-timeline .row .item:nth-child(2) {
