@@ -50,7 +50,7 @@
     }
 
     var $el = $('#' + id),
-        url = window.location.origin + '/sec/' + id;
+        url = window.location.origin + '/link/' + id;
 
     $el.append(content.replace('{$}', url));
   }

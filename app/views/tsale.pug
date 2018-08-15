@@ -1,110 +1,149 @@
 extends layout
 
+block more-head
+  link(rel='stylesheet', href='/css/styles-new.css')
+
 block content
   div#hc-content
-    div(style="margin-top:5em;")
-      .third-token-sale.blog-news.hc-feature.over-rel.padding
-        .hc-chunk.hc-intro-text-wrapper
-          h1.article-title Welcome to the whitelist of the Third, Invite-Only and Milestone-based Token Sale for Storecoin ($STORE).
-          include countdown
-          //-p.hc-feature-lead(onclick="opentoken_contribute_click('https://app.opentoken.com/contribute/storecoin/', event);")
-            a Join the Whitelist
+    #hc-intro.hc-feature.over-rel.padding
+      .hc-chunk.hc-intro-text-wrapper
+        h1 TOKEN SALE WHITELIST
+        p(style="max-width: 500px; width: 100%;") Welcome to the whitelist of the Third, Invite-Only and Milestone-based Token Sale for Storecoin ($STORE).
+        div.row
+          div.column
+            div.list
+              div.item
+                i.ion-record
+                div.text
+                  div.title Hard Cap
+                  div.date $9,950,000
+              div.item
+                i.ion-record
+                div.text
+                  div.title Soft Cap
+                  div.date $1,975,000
+              div.item
+                i.ion-record
+                div.text
+                  div.title Price Per STORE Token
+                  div.date $0.199
+              div.item
+                i.ion-record
+                div.text
+                  div.title Market Capitalization
+                  div.date $52 Million
+              div.item
+                i.ion-record
+                div.text
+                  div.title Funds Accepted
+                  div.date ETH, BTC, USD Wire
+              div.item
+                i.ion-record
+                div.text
+                  div.title Sale Starts
+                  div.date August 27, 2018
+            
+          div.column
+            include countdown
+            
+            
+    .third-token-sale.blog-news.hc-feature.over-rel.padding
+      .hc-chunk.hc-intro-text-wrapper
+        ul(style="margin-top: 1em;")
+          li 
+            b Hard Cap:
+            = ' '
+            span $9,950,000
+          li 
+            b Soft Cap:
+            = ' '
+            span $1,975,000  
+          li 
+            b Price Per STORE Token:
+            = ' '
+            span $0.199
+          li 
+            b Market Capitalization:
+            = ' '
+            span $52 Million
+          li
+            b Funds Accepted: 
+            |  ETH, BTC, USD Wire
+          li 
+            b Sale Starts:
+            = ' '
+            span August 27, 2018
+          li 
+            b Sale Ends:
+            = ' '
+            span Once the Hard Cap is reached or September 27, 2018
+          li 
+            b % of Treasury To Be Sold:
+            = ' '
+            span 5% (50 Million $STORE)
+          li 
+            b Minimum Investment:
+            = ' '
+            span $250
+          li 
+            b Wallet Goal:
+            = ' '
+            span +1,000
+          li 
+            b Across # of Countries:
+            = ' '
+            span 21
+          li 
+            b KYC and AML-checks-required:
+            |  Yes
+          li
+            b Can my country participate?
+            |  Yes. United States purchasers must be “accredited investors” for the purposes of federal securities regulation. Purchasers in other countries are not subject to this restriction, but must comply with applicable laws and regulations of their respective countries of residence (Reg D and Reg S).
+          li
+            b Does total total cryptocurrency ownership count for being accredited (including ICO tokens still not yet released by the teams)?
+            |  Yes
+          li
+            b Definition of being an accredited investor (for U.S. buyers): 
+            a.underline(data-featherlight="#accredited", target="_blank") See here
+          li 
+            b Investors will receive Tokens in their Storecoin Wallets:
+            |  Q3 2019 or Q4 2019
+          li 
+            b If I buy now, will I be able to buy in future sales:
+            |  Yes, you'll have priority
+          li 
+            b Treasury to be sold in future milestone-based sales:
+            |  17% for certain. Up to 21% (using part of the Incentive Pool to kick start the STORE Ecosystem Fund)
+          li 
+            b How will the next sales be priced:
+            |  Auction-based
+          li 
+            b Amount sold in previous milestone-based sales:
+            |  $3.1 Million
+          li 
+            b of STORE Authorized:
+            |  1 Billion
+          li 
+            b How Treasury is Allocated:
+            |  34% for token sales, 20% for long-term 1,000-year Treasury, 46% to incentivize the network over the first 100 years
               
-          ul(style="margin-top: 1em;")
-            li 
-              b Hard Cap:
-              = ' '
-              span $9,950,000
-            li 
-              b Soft Cap:
-              = ' '
-              span $1,975,000  
-            li 
-              b Price Per STORE Token:
-              = ' '
-              span $0.199
-            li 
-              b Market Capitalization:
-              = ' '
-              span $52 Million
-            li
-              b Funds Accepted: 
-              |  ETH, BTC, USD Wire
-            li 
-              b Sale Starts:
-              = ' '
-              span August 27, 2018
-            li 
-              b Sale Ends:
-              = ' '
-              span Once the Hard Cap is reached or September 27, 2018
-            li 
-              b % of Treasury To Be Sold:
-              = ' '
-              span 5% (50 Million $STORE)
-            li 
-              b Minimum Investment:
-              = ' '
-              span $250
-            li 
-              b Wallet Goal:
-              = ' '
-              span +1,000
-            li 
-              b Across # of Countries:
-              = ' '
-              span 21
-            li 
-              b KYC and AML-checks-required:
-              |  Yes
-            li
-              b Can my country participate?
-              |  Yes. United States purchasers must be “accredited investors” for the purposes of federal securities regulation. Purchasers in other countries are not subject to this restriction, but must comply with applicable laws and regulations of their respective countries of residence (Reg D and Reg S).
-            li
-              b Does total total cryptocurrency ownership count for being accredited (including ICO tokens still not yet released by the teams)?
-              |  Yes
-            li
-              b Definition of being an accredited investor (for U.S. buyers): 
-              a.underline(data-featherlight="#accredited", target="_blank") See here
-            li 
-              b Investors will receive Tokens in their Storecoin Wallets:
-              |  Q3 2019 or Q4 2019
-            li 
-              b If I buy now, will I be able to buy in future sales:
-              |  Yes, you'll have priority
-            li 
-              b Treasury to be sold in future milestone-based sales:
-              |  17% for certain. Up to 21% (using part of the Incentive Pool to kick start the STORE Ecosystem Fund)
-            li 
-              b How will the next sales be priced:
-              |  Auction-based
-            li 
-              b Amount sold in previous milestone-based sales:
-              |  $3.1 Million
-            li 
-              b of STORE Authorized:
-              |  1 Billion
-            li 
-              b How Treasury is Allocated:
-              |  34% for token sales, 20% for long-term 1,000-year Treasury, 46% to incentivize the network over the first 100 years
-                
-          p Storecoin is a pre-launch public blockchain protocol therefore, for our milestone-based Third Token Sale, we are treating STORE tokens as securities. United States purchasers must be “
-            a(data-featherlight="#accredited", target="_blank") accredited investors
-            | ” for the purposes of federal securities regulation. Purchasers in other countries are not subject to this restriction, but must comply with applicable laws and regulations of their respective countries of residence. (Reg D and Reg S).
+        p Storecoin is a pre-launch public blockchain protocol therefore, for our milestone-based Third Token Sale, we are treating STORE tokens as securities. United States purchasers must be “
+          a(data-featherlight="#accredited", target="_blank") accredited investors
+          | ” for the purposes of federal securities regulation. Purchasers in other countries are not subject to this restriction, but must comply with applicable laws and regulations of their respective countries of residence. (Reg D and Reg S).
 
-      - var dark = true
-      include token-sale-buyers
-      
-      .hc-feature.over-rel.padding
-        .hc-chunk.hc-intro-text-wrapper
-          .hc-image.info-fullscreen(style="padding:0px;")
-            img(src='/images/empty.png', data-src='/images/cost-per-basis-v3.png')
-          p.caption(style="margin-bottom:0px;text-align:right;") *View data at 
-            a(href="http://storeco.in/onepoint", target="_blank") http://storeco.in/onepoint 
-          p.caption(style="text-align:right;") *Storecoin may have up to six, milestone-based token sales
-      
-      - var tokensale = true
-      include people-saying
+    - var dark = true
+    include our-token-partners
+    
+    .hc-feature.over-rel.padding
+      .hc-chunk.hc-intro-text-wrapper
+        .hc-image.info-fullscreen(style="padding:0px;")
+          img(src='/images/empty.png', data-src='/images/cost-per-basis-v3.png')
+        p.caption(style="margin-bottom:0px;text-align:right;") *View data at 
+          a(href="http://storeco.in/onepoint", target="_blank") http://storeco.in/onepoint 
+        p.caption(style="text-align:right;") *Storecoin may have up to six, milestone-based token sales
+    
+    - var tokensale = true
+    include people-saying
     
     include our-team-widget
     

@@ -23,7 +23,11 @@ router.get('/pioneer', function(req, res, next) {
   res.render('pioneer', { title: 'Host a Storecoin meet-up in your town or city', meta: meta({ title: 'Host a Storecoin meet-up in your town or city', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
-router.get('/sec/:key', function(req, res, next) {
+router.get('/knowledge', function(req, res, next) {
+  res.render('knowledge', { title: 'Storecoin Proof-of-Knowlege', meta: meta({ title: 'Storecoin Proof-of-Knowlege', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
+});
+
+router.get('/link/:key', function(req, res, next) {
   var sec = getSection(req.params.key),
       title = sec.title,
       url = req.protocol + '://' + req.get('host');
