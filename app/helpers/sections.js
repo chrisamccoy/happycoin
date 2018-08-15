@@ -59,6 +59,10 @@ var sections = {
     'hash': '#store-rise',
     'title': 'All money is trust, and belief in $STORE is on the rise'
   },
+  'store-summary': {
+    'hash': '#store-summary',
+    'title': 'Storecoin Summary'
+  },
   'storecoin-roadmap': {
     'hash': '#storecoin-roadmap',
     'title': 'Storecoin +8-year Roadmap'
