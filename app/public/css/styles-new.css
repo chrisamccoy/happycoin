@@ -66,3 +66,41 @@
 #hc-intro .hc-intro-text-wrapper .list .item .date {
   font-size: 0.8em;
 }
+
+@media only screen and (max-width: 700px) {
+  #hc-intro {
+    min-height: 470px;
+  }
+
+  #hc-intro .hc-intro-text-wrapper h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+  }
+
+  #hc-intro .hc-intro-text-wrapper p {
+    font-size: 1.3em;
+    margin-bottom: 0.5em;
+  }
+
+  #hc-intro .hc-intro-text-wrapper .list {
+    margin-top: 0.5em;
+    font-size: 1.2em;
+  }
+
+  .hc-feature .sale-countdown h3.hc-feature-title {
+    font-size: 1.3em;
+  }
+
+  #hc-intro .hc-intro-text-wrapper .list .item {
+    margin-bottom: 0.5em;
+  }
+
+  .sale-countdown .wrapper {
+    font-size: 0.7em;
+    margin: 0 auto 1em;
+  }
+
+  .sale-countdown .counter {
+    height: 40px;
+  }
+}

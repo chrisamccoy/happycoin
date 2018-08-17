@@ -1506,7 +1506,7 @@ and (max-width : 550px) {
   #hc-intro {
     min-height: 390px;
   }
-  
+
   #hc-intro .hc-intro-text-wrapper .hc-intro-large-lead {
     font-size: 2.8em !important;
   }
@@ -2981,12 +2981,16 @@ and (max-width : 335px) {
   margin-right: 10px;
 }
 
-/*#team .founder-member-profile {
-  margin-top: 20px;
-  margin-right: 0;
-  height: 25px;
-  width: 25px;
-}*/
+#team .social-links {
+  display: flex;
+  align-items: center;
+}
+
+#team .social-links .github-link {
+  font-size: 1.7em;
+  margin: 0.3em 0.5em 0;
+  line-height: 1;
+}
 
 #team.inverted .ion-social-linkedin-outline {
   color: white;

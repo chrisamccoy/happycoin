@@ -1,5 +1,14 @@
 var blogs = [
   {
+      slug: 'venture-capitalist-matthew-ocko-joins-storecoin-team-as-investor-advisor',
+      title: 'Venture Capitalist Matthew Ocko joins Storecoin Team as investor, advisor',
+      desc: 'Matthew Ocko, one of the Silicon Valley’s most successful venture capitalists, is committing time and resources to Storecoin, a zero-fee, high-throughput and decentralized cryptocurrency.',
+      img: 'https://storeco.in/images/dcvc-matt-ocko.jpg',
+      template: 'blog-aug-17-18',
+      readTime : '5 min read',
+      date : 'August 17, 2018'
+  },
+  {
       slug: 'yes-we-counted-40-ways-our-community-learned-about-storecoin',
       title: 'Yes, We Counted! 40 Ways Our Community Learned about Storecoin',
       desc: '',
