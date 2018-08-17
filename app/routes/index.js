@@ -117,6 +117,12 @@ router.get('/airdrop', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/whitelist', function(req, res, next) {
+  // res.render('poc-form', { title: 'Storecoin', meta: meta() });
+  res.redirect('http://app.opentoken.com/contribute/storecoin/');
+});
+
+/* GET home page. */
 router.get('/tee', function(req, res, next) {
   // res.render('poc-form', { title: 'Storecoin', meta: meta() });
   res.redirect('https://docs.google.com/forms/d/e/1FAIpQLSf5O8BRHTXUq0HMDm8b6jukERRAOsUCG5_seeePqdSaki897A/viewform');
