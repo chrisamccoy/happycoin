@@ -67,6 +67,10 @@
   font-size: 0.8em;
 }
 
+#people-saying {
+  min-height: 1200px;
+}
+
 @media only screen and (max-width: 700px) {
   #hc-intro {
     min-height: 470px;
@@ -102,5 +106,9 @@
 
   .sale-countdown .counter {
     height: 40px;
+  }
+
+  #people-saying {
+    min-height: 1100px;
   }
 }

@@ -15,6 +15,10 @@ var sections = {
     'hash': '#our-mission',
     'title': 'Our Mission'
   },
+  'coin-note': {
+    'hash': '#coin-note',
+    'title': 'NOTE: Storecoin is a new public blockchain, not an ERC20 token.'
+  },
   'storecoin-statements': {
     'hash': '#storecoin-statements',
     'title': 'Storecoin Statements'
@@ -23,9 +27,13 @@ var sections = {
     'hash': '#storecoin-video',
     'title': 'Storecoin Intro Video'
   },
-  'comparison-table': {
-    'hash': '#comparison-table',
+  'coin-compare': {
+    'hash': '#coin-compare',
     'title': 'Storecoin aims to become the preferred cryptocurrency for permanently free, fast and scalable payments'
+  },
+  'payment-compare': {
+    'hash': '#payment-compare',
+    'title': 'How Storecoin compares to traditional, fiat-powered payment infastructure'
   },
   'people-saying': {
     'hash': '#people-saying',
