@@ -2906,6 +2906,14 @@ and (max-width : 335px) {
   border-top:2px solid rgb(68, 97, 52); margin:2em 0;
 }
 
+#team.inverted hr {
+  border-top: 2px solid rgba(202, 202, 202, 0.55);
+}
+
+#team.inverted hr.dark {
+  border-top: 2px solid rgb(145, 208, 107);
+}
+
 #team .others {
   display: inline-block;
   padding: 0.2em 0.5em;
@@ -2961,6 +2969,10 @@ and (max-width : 335px) {
   font-size: 1.3em;
   margin-bottom: 0;
   color: #6c6c6c;
+}
+
+#team.inverted .team-member-title {
+  color: rgba(255, 255, 255, 0.72);
 }
 
 #team .team-member-desc {
@@ -6376,10 +6388,16 @@ and (max-width : 335px) {
   max-width: calc(500px - 2em);
 }
 
+.tweets .tweet.snippet .text {
+  padding: 0.5em;
+  margin: 0px;
+  line-height: 1.5;
+  font-size: 1.3em;
+}
+
 .tweets .tweet.snippet .title {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: center;
   width: calc(100% - 1em);
   padding: 0px 0.5em;
 }
