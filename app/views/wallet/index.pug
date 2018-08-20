@@ -21,7 +21,7 @@ block content
         button.button.next-2 Next
       .content.end
         div.text 
-          p There will never be fees when sending or receiving storecoin tokens. 
+          p There will never be fees when sending or receiving $STORE tokens. 
         button.button.get-started Get Started
         
   div#home-tab
@@ -67,7 +67,6 @@ block content
             | $15.25 (74.03%)
         div.graph-container  
           div.graph
-            //- svg(width="900", height="200")
           div.loading
             div.sp.sp-wave
             div.text Loading...
@@ -588,7 +587,7 @@ block content
             
       include process-window-summary 
             
-      div.proceed.publish.wallet-button(data-message="Beaming your APIs up to the Storecoin public blockchain...", data-success="<p>Your app can now reward users STORE tokens for every incentivized action taken (paid API calls).</p>", data-loaddelay="5000", data-successdelay="5000", data-key="api-publish")
+      div.proceed.publish.wallet-button(data-message="Beaming your APIs up to the Storecoin public blockchain...", data-success="<p>You can now automatically reward users $STORE tokens for taking key actions in your app.</p>", data-loaddelay="5000", data-successdelay="5000", data-key="api-publish")
         button Publish API Calls
       div.proceed.open-process.wallet-button
         button Save
@@ -657,9 +656,7 @@ block content
            
       section.api-royalty
         //- div.header Set budget for API calls
-        div.header Set a custom Royalty for individual  
-          img.logo(src="/images/wallet/storecoin-logo.png", alt="#💰")
-          span  payments (%)
+        div.header Customize your Royalty for $STORE payments
         div.api-list
       
       - var disabled = true;    

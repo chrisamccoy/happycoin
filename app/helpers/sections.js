@@ -51,6 +51,10 @@ var sections = {
     'hash': '#major-milestones',
     'title': 'Major Milestones'
   },
+  'distribution-plan': {
+    'hash': '#distribution-plan',
+    'title': 'Long-Term Treasury Plan'
+  },
   'team': {
     'hash': '#team',
     'title': 'Our Team'

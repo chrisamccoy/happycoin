@@ -591,6 +591,11 @@ button.small,
   margin-right: 5px;
 }
 
+#wallet-graph .graph {
+  width: calc(100vw - 34px);
+  min-height: 100px;
+}
+
 /*
 
 #wallet-graph .graph .line {

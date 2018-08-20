@@ -49,7 +49,7 @@ $(document).ready(function(){
   initFireGlow();
   initProblemReveal(isMobile);
   initCoinFlip();
-  // initInviteSale();
+  initInviteSale();
   initFullscreenImage(isMobile);
   initIntroHeight(isMobile);
   initBlogShare();
@@ -201,6 +201,7 @@ function initInviteSale() {
 
   $inviteSale.click(function(){
     if (window.location.host === 'storeco.in' && window.location.pathname === '/') {
+    // if (window.location.pathname === '/') {
       var id = $(this).data().id;
       var $tokenSale = ($(id).length) ? $(id) : $('#tokensale-bottom');
       if($tokenSale.length) {
