@@ -68,7 +68,7 @@ function initCountDown() {
       day = hour * 24,
       $countdown = $('.sale-countdown');
 
-    var countDown = new Date("Aug 27, 2018 00:00:00").getTime(),
+    var countDown = new Date("Sep 4, 2018 12:00:00").getTime(),
         x = setInterval(function () {
       var now = new Date().getTime(),
           distance = countDown - now;
