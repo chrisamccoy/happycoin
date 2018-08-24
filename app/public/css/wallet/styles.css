@@ -2031,9 +2031,15 @@ button.small,
 
 
 .process-window .header {
-  font-size: 0.9em;
+  font-size: 0.8em;
   /*color: #565656;*/
   color: black;
+  font-weight: 300;
+}
+
+.process-window .header .slide-value {
+  font-size: 1.4em;
+  font-weight: 700;
 }
 
 .process-window .header img {

@@ -962,6 +962,8 @@ function changeOnSlide ($this, value, $parent, handlePos, params, eventName) {
     value = numeral(logslider(value, max)).format('0.00000000');
   }
 
+  $parent.find('.slide-value').text(value);
+
   if ($storeVal) { $storeVal.text(value); }
   if ($modalStoreVal) { $modalStoreVal.text(value); }
 
