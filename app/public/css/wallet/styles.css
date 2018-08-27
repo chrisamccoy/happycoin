@@ -2205,7 +2205,7 @@ button.small,
 }
 
 .process-window .process-summary {
-  background: rgba(224, 224, 224, 0.45);
+  background: rgba(224, 224, 224, 0.2);
   display: none;
 }
 

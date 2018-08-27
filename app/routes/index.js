@@ -115,6 +115,11 @@ router.get('/tenyears', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/shop', function(req, res, next) {
+  // res.render('poc-form', { title: 'Storecoin', meta: meta() });
+  res.redirect('https://alwayshodl.com/collections/shop-storecoin-tshirt-hats-tanks-crypto-merch-by-hodl');
+});
+
 router.get('/airdrop', function(req, res, next) {
   // res.render('poc-form', { title: 'Storecoin', meta: meta() });
   res.redirect('https://docs.google.com/forms/d/e/1FAIpQLSf5O8BRHTXUq0HMDm8b6jukERRAOsUCG5_seeePqdSaki897A/viewform');
