@@ -917,6 +917,10 @@ button.small,
   justify-content: flex-end;
 }
 
+.amount-slider span.value {
+  margin-right: 0.3em;
+}
+
 .amount-slider .amounts p:last-child img {
   width : 20px;
   margin-right: 3px;

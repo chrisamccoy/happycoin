@@ -2,14 +2,18 @@ div.amount-slider
   div.amounts
     p.start 0.0000
     p.end 
-      img(src="/images/wallet/black-storecoin.png")
-      span 139.47001
+      //-img(src="/images/wallet/black-storecoin.png")
+      span.value 139.47001
+      = ' '
+      | $STORE
   div.slider
   div.conversion
     div.values
       p.storecoin-val.orange
-        img(src="/images/wallet/orange-storecoin.png")
+        //-img(src="/images/wallet/orange-storecoin.png")
         span.value 33.83535
+        = ' '
+        | $STORE
       img.exchange(src="/images/wallet/exchange-icon.png")
       p.dollar-val.green
         span $
