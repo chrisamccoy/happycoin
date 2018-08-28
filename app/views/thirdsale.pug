@@ -1,0 +1,121 @@
+extends layout
+
+//-block more-head
+  link(rel='stylesheet', href='/css/styles-new.css?v=1.01')
+
+block content
+  div#hc-content        
+    .third-token-sale.blog-news.hc-feature.over-rel.padding
+      .hc-chunk.hc-intro-text-wrapper
+        h3.hc-feature-title About the Third Sale
+        ul(style="margin-top: 1em;")
+          li 
+            b Price per $STORE:
+            = ' '
+            span $0.169
+          li 
+            b Market Capitalization:
+            = ' '
+            span $43.7 Million
+          li 
+            b Maximum treasury to be sold:
+            = ' '
+            span Up to 3.5% (35 Million)
+          li 
+            b Hard Cap:
+            = ' '
+            span $6.76 Million
+          li 
+            b Soft Cap:
+            = ' '
+            span 	$1 Million
+          li 
+            b $STORE tokens released on:
+            = ' '
+            span 	Q3 or Q4 2019
+          li 
+            b Minimum purchase:
+            = ' '
+            span 	$250
+          li 
+            b Wallet goal in this sale:
+            = ' '
+            span 	+1,000 wallets
+          li 
+            b # of countries to reach:
+            = ' '
+            span 	+21
+          li 
+            b Will I be able to buy in future sales?
+            = ' '
+            span 	Yes
+          li 
+            b Treasury to be sold in future sales
+            = ' '
+            span 19%-21%
+          li 
+            b Sold in previous milestone-based sales
+            = ' '
+            span $2.68 Million (12.84%)
+          li 
+            b Pricing for next sale
+            = ' '
+            span Auction-based
+          li 
+            b % to be sold in the next sale
+            = ' '
+            span 3% - 5%
+            
+
+    - var dark = true
+    include our-token-partners
+    
+    .hc-feature.over-rel.padding
+      .hc-chunk.hc-intro-text-wrapper
+        .hc-image.info-fullscreen(style="padding:0px;")
+          img(src='/images/empty.png', data-src='/images/cost-per-basis-v4.png')
+        p.caption(style="margin-bottom:0px;text-align:right;") *View data at 
+          a(href="http://storeco.in/onepoint", target="_blank") http://storeco.in/onepoint 
+        p.caption(style="text-align:right;") *Storecoin may have up to six, milestone-based token sales
+    
+    - var tokensale = true
+    include people-saying
+    
+    include our-team-widget
+    
+    #pomelo-paper.hc-feature.over-rel.padding.pink.banner
+      .hc-chunk.hc-customize-text-wrapper
+        p.hc-feature-lead(style="margin-top: 0px;") Download the latest pre-whitepaper
+
+        div.row.tokensale-3
+          div.item
+            i.ion-record
+            a.underline(href=URL('/media/Storecoin-Visual-Whitepaper.pdf'), target="_blank") Download the Full Visual Whitepaper
+          div.item
+            i.ion-record
+            a.underline(href=URL('/media/Storecoin-Summary.pdf'), target="_blank") Download the Summary
+          div.item
+            i.ion-record
+            a.underline(href=URL('/milestones'), target="_blank") See All Milestones
+            
+    div.third-token-sale.hc-feature.over-rel.padding
+      .hc-chunk.hc-intro-text-wrapper
+        include countdown
+    
+    #accredited.intro-popup(style="display:none; text-align:left;")
+      p An accredited investor includes:
+      ol(style="list-style: lower-alpha; margin-left:1em;")
+        li 
+          b Any person that:
+          ul
+            li Earned income that exceeded $200,000 (or $300,000 together with a spouse) in each of the prior two years, and reasonably expects the same for the current year. This may include income from cryptocurrency.
+            p(style="text-align:center;")
+              b OR
+            li Has a net worth over $1 million, either alone or together with a spouse (excluding the value of the person’s primary residence). This may includes ownership of cryptocurrency, including not yet released ICOs and token projects.
+        li 
+          b Any entity such as banks, partnerships, corporations, nonprofits and trusts who:
+          ul
+            li Has total assets in excess of $5 million but were not formed to specifically for the purchase of the subject securities. This includes ownership of cryptocurrency.
+            p(style="text-align:center;")
+              b OR
+            li Any entity in which all of the equity owners are accredited investors. This includes ownership of cryptocurrency.

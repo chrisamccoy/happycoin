@@ -307,6 +307,21 @@ router.get('/onepoint', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/thirdsale', function(req, res, next) {
+  res.render('thirdsale', { title: 'Third Sale', meta: meta({ title: 'Third Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
+});
+
+/* GET home page. */
+router.get('/onebasispoint', function(req, res, next) {
+  res.render('onebasispoint', { title: 'One Basis Point', meta: meta({ title: 'One Basis Point', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
+});
+
+/* GET home page. */
+router.get('/treasuryuse', function(req, res, next) {
+  res.render('treasuryuse', { title: 'Treasury Use', meta: meta({ title: 'Treasury Use', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
+});
+
+/* GET home page. */
 router.get('/communityfund', function(req, res, next) {
   var email = req.query.email ? req.query.email : '',
       source = "https://docs.google.com/forms/d/e/1FAIpQLSfBH4E1zWjYW6Jud9KNv2P8B0SqPLiu6FXtGcVGFHeT8r6T0A/viewform?usp=pp_url&entry.83776163=" + email;
