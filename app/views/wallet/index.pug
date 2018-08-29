@@ -16,12 +16,13 @@ block content
         button.button.next(style="display:none;") Next
       .content.start
         div.text 
-          p As the Developer, you can even earn a royalty for each API call taken. 
+          p As the Developer, you can even earn a royalty for each $STORE payment in your app. 
           p This is a new revenue stream.
         button.button.next-2 Next
       .content.end
         div.text 
-          p There will never be fees when sending or receiving $STORE tokens. 
+          p There will never be fees when sending or receiving $STORE tokens.
+          p This is revolutionary. 
         button.button.get-started Get Started
         
   div#home-tab
@@ -36,9 +37,9 @@ block content
           div.storecoin-val 
             p.number 139
               span .47001
-            p.unit
-              img(src="/images/wallet/white-storecoin.png")
-              | storecoin
+            p.unit $STORE
+              //-img(src="/images/wallet/white-storecoin.png")
+              //-| storecoin
           div.est-val Estimated Value:  
             span.green $183.68
       
@@ -379,14 +380,14 @@ block content
             div.amount-slider
               div.amounts
                 p 0.00001
-                p 
-                  img(src="/images/wallet/black-storecoin.png")
-                  span 139.47001
+                p.end 
+                  span.value 139.47001
+                  span $STORE
               div.slider
-              div.conversion
+              div.conversion(style="display: inline-block;")
                 p.storecoin-val.orange
-                  img(src="/images/wallet/orange-storecoin.png")
-                  span 33.83535
+                  span.value 33.83535
+                  span $STORE
                 img.exchange(src="/images/wallet/exchange-icon.png")
                 p.dollar-val.green
                   span ETH 
@@ -523,7 +524,7 @@ block content
         i.ion-chevron-left 
       
       section.pulse
-        div.head Choose the API Calls to be Incentivized
+        div.head Choose the API Calls to be Incentivized with $STORE
         div.check-list
           div.item
             div.name User / invite
@@ -574,7 +575,7 @@ block content
         i.ion-chevron-left        
       
       section
-        div.head Name your API Calls
+        div.head Optional: Name your API Calls
         form.api-form
           div.fields
             //- div.input-field
@@ -587,7 +588,7 @@ block content
             
       include process-window-summary 
             
-      div.proceed.publish.wallet-button(data-message="Beaming your APIs up to the Storecoin public blockchain...", data-success="<p>You can now automatically reward users $STORE tokens for taking key actions in your app.</p>", data-loaddelay="5000", data-successdelay="5000", data-key="api-publish")
+      div.proceed.publish.wallet-button(data-message="Beaming your APIs up to the Storecoin public blockchain...", data-success="<p>You can now automatically reward users $STORE tokens for taking key actions inside of your app.</p>", data-loaddelay="5000", data-successdelay="5000", data-key="api-publish")
         button Publish API Calls
       div.proceed.open-process.wallet-button
         button Save
@@ -664,7 +665,7 @@ block content
       
       include process-window-summary
       
-      div.proceed.publish.wallet-button(data-message="Publishing your incentivized API calls and your Developer royalties to the Storecoin public blockchain...", data-loaddelay="7000")
+      div.proceed.publish.wallet-button(data-message="Publishing your $STORE incentivized API calls and your Developer royalties to the Storecoin blockchain...", data-loaddelay="7000")
         button Finish 
       div.proceed.open-process.wallet-button
         button Save 

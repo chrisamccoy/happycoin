@@ -6,9 +6,16 @@ block content
     //-   .hc-chunk.hc-intro-text-wrapper
     //-     h2.hc-intro-large-lead(style='font-weight: bold; font-size: 2.7em; margin: 2em auto;') Token Sale FAQ
 
-    .blog-news.hc-feature.over-rel.padding
+    #one-basis-point.blog-news.hc-feature.over-rel.padding
       .hc-chunk(style="max-width:1140px;")
-        .hc-image
-          img(src="/images/onebasispoint.png")
+        .hc-image.info-fullscreen(style="padding:0px; margin: 0px;")
+          img(src='/images/empty.png', data-src='/images/onebasispoint.png')
+        div.row
+          div.col
+            a.hc-button.orange(href="/images/onebasispoint.png", download) Download
+          div.col
+            p.caption(style="margin-bottom:0px;text-align:right;") *View data at 
+              a(href="http://storeco.in/onepoint", target="_blank") http://storeco.in/onepoint 
+            p.caption(style="margin-bottom:0px;text-align:right;") *Storecoin may have up to six, milestone-based token sales
       
     include email-widget

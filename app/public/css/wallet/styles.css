@@ -829,6 +829,7 @@ button.small,
 
 #wallet-sub-nav .links .link {
   padding : 12px 18px;
+  color: #adadad;
 }
 
 #wallet-sub-nav .links .link.active {
@@ -839,7 +840,7 @@ button.small,
 
 @media only screen and (max-width: 700px) {
   #wallet-sub-nav .links .link {
-    padding : 12px 14px;
+    padding : 12px 8px;
   }
 }
 
@@ -2195,9 +2196,10 @@ button.small,
 }
 
 .process-window .summary-item .stats .value .sc-unit {
-  width: 40px;
+  /* width: 40px; */
   line-height: 1;
   margin-right: 0.5em;
+  font-size: 0.5em;
 }
 
 .process-window .summary-item .stats .value .sc-val {
@@ -2234,10 +2236,6 @@ button.small,
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.process-window .summary-item .stats .value .sc-unit {
-  width: 25px;
 }
 
 .process-window .process-summary .summary-item .stats .head,

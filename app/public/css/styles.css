@@ -8764,3 +8764,27 @@ and (max-width : 335px) {
     min-height: 1100px;
   }
 }
+
+/*-------------------------------------*/
+#one-basis-point .row {
+  display: flex;
+  align-items: center;
+}
+
+#one-basis-point .row .col {
+  flex: 1;
+}
+
+#one-basis-point .row .col .hc-button {
+  font-size: 1.5em;
+  padding: 0.3em 1em;
+}
+@media only screen and (max-width: 700px) {
+  #one-basis-point .row {
+    flex-direction: column;
+  }
+
+  #one-basis-point .row .col {
+    padding: 1em 0px;
+  }
+}

@@ -317,6 +317,11 @@ router.get('/onebasispoint', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/disqus', function(req, res, next) {
+  res.render('disqus', { title: 'disqus', meta: meta({ title: 'disqus', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
+});
+
+/* GET home page. */
 router.get('/treasuryuse', function(req, res, next) {
   res.render('treasuryuse', { title: 'Treasury Use', meta: meta({ title: 'Treasury Use', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
