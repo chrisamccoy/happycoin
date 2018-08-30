@@ -1,4 +1,22 @@
 var blogs = [
+  {
+      slug: 'presentation-by-storecoin-creator-chris-mccoy-on-the-zero-fee-payments-protocol',
+      title: 'Presentation by Storecoin Creator Chris McCoy on the zero-fee payments protocol',
+      desc: '',
+      img: 'https://storeco.in/images/logo-fb.png',
+      template: 'blog-aug-30-18-1',
+      readTime : '5 min read',
+      date : 'August 30, 2018'
+  },
+  {
+      slug: 'the-history-of-storecoin',
+      title: 'The History of Storecoin',
+      desc: 'I started out with a plan to create a chat network for franchise and chain stores. It has grown into an ambitious project to create a fee-free, decentralized, high-throughput p2p payments infrastructure for the internet.',
+      img: 'https://storeco.in/images/logo-fb.png',
+      template: 'blog-aug-30-18',
+      readTime : '5 min read',
+      date : 'August 30, 2018'
+  },
   // {
   //     slug: 'venture-capitalist-matthew-ocko-joins-storecoin-team-as-investor-advisor',
   //     title: 'Venture Capitalist Matthew Ocko joins Storecoin Team as investor, advisor',

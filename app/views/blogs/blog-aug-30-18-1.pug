@@ -1,0 +1,151 @@
+extends ../blog-wrapper
+
+block blog-news 
+
+  div.tweets
+    div.tweet
+      iframe(width='100%', height='282', data-src='https://www.youtube.com/embed/IXYTkyyLX9Q', frameborder='0', gesture='media', allow='encrypted-media', allowfullscreen='', style="max-width:500px;")
+
+  p
+    b Chris McCoy:
+    |  Thanks, Mike. Thanks to everyone for being here. Thanks for getting out here to San Mateo. Our general counsel, Antone Johnson, is in the room. It's the first time I've been back here in three years. I used to live and work here, I rode a scooter on 3rd Avenue. it was quite a life. I live in San Francisco now. As Mike alluded, I have kids on the way, so I'm kind of grounded, but I travel a lot. 
+
+  p We're building a protocol infrastructure: zero-fee cryptocurrency. The closest comparison is like Dash and Bitcoin Cash. We're not a Bitcoin competitor - we think the use case for Bitcoin is not payments. That might be contrary to everyone in this room, but we think that there's a real opportunity to go after Visa and these debit and credit card networks with the original vision that Satoshi sort of laid out, which is censorship-resistant, programmable payments. That's what we're working on. 
+
+  p The big problem is this: every time someone swipes a credit or debit card, it costs the merchant 2.5% to 3.5% per transaction. Every time you take an Uber, it costs Uber 2.5%. That money gets paid not just to the processors, the Visas and Mastercards, but it gets paid to the acquiring bank and merchant bank. The opportunity here is the 2.5% to 3.5%. We think that this is the big gorilla in the cryptocurrency space in terms of use cases - to really be able to deliver zero-fee payment infrastructure. 
+
+  p If you were to sort of boil down our vision, it is to say that Storecoin is zero-fee, programmable payments infrastructure for the globe - almost like AWS for general compute. We think this is a $21 trillion market if you look at the size of transaction volume across credit and debit card networks. 
+
+  p A good way to think about Storecoin is this: Ripple's going after Swift transfers; we're going after debit and credit card network transfers. Going back to the use case for Bitcoin being a P2P, censorship-resistant payments protocol, Bitcoin was never designed to be zero-fee. So we think a peer-to-peer, censorship-resistant, very decentralized, very high-throughput cryptocurrency, as Mike alluded to, is a real Top Five use case for this technology. 
+
+  p We do this by using a small amount of inflation to pay for transactions. Instead of the miners taking a fee from the users - the customers and developers - a small amount of inflation is used to pay the miners, a number of other decentralized workers, and a number of other funds to incentivize distribution of the currency. 
+
+  p Our economic model is very decentralized. Instead of one block at a time, where there's one winner, every participant in consensus is rewarded. We think this incentivizes more participation in the network. There's sort of been a fascination with smart contracts and kind of what's called Web 3. We believe in that world, we think that world is going to happen, we think it's probably a little premature. Infrastructure - real programmable infrastructure is the most critical problem in this space.
+
+  p We call our focus not Web 3. Not smart contracts, where you have tokens sitting on top of tokens, but taking a token and making it as sound as possible, as high an amount a store of value as possible, and as programmable as possible not in a smart contract way, but as a web application layer. If you're a mobile or web application developer, you can build on top of Storecoin and bring zero-fee payments into your application. You don't have to use Visa. You don't have to use banking-based fiat systems. Our focus there is getting what's called minimum viable protocol, minimum viable trust, high degrees of stored value, and sound currency, then we'll have the potential to get into the smart contract layer. But our real vision, as you'll see, is to get into the cash register. 
+
+  p There's this meme in the space that says you can't have decentralization scalability. We think that's baloney. We think you can, and it comes down to your technical designs and economic incentive systems. For us, we sort of say that technology, economics, and governance deliver decentralization, but they all have to work together as a holistic consensus protocol. We call it Dynamic Proof of Stake. From a technology perspective, our consensus algorithm is leaderless - every participant is rewarded. From an economics perspective, a slice of the block reward is used. 
+
+  p If you're Square or Stripe, you have no economic incentive to carry Bitcoin, Ether, or other currencies because you don't get paid when a transaction happens. No one talks about this. They're in the business of making money processing secure transactions. Our design enables this optionality to let us cut into these networks of processors. Think about the Apple Store or the Google Wallet. Every time they process a Storecoin transaction, we'll have the ability to cut them into the block reward. Instead of getting paid by the transaction fee, which the user pays, the merchant pays, the developer pays, they get paid by the actual block reward. I hate to use buzzwords, but it's a fairly revolutionary economic incentive model for this space.
+
+  p Then governance. We're big believers in what we call enterprise-grade governance. You can kind of think of governance as a professional changelog. So, if you're the CEO at Pepsi and you want to put $10 million of transaction volume a day through a cryptocurrency, you need to understand how it changes. You need to more or less assign risk price to the potential of change. When you look at governance in cryptocurrencies, it's really three things: features - in smart contracts it's just a feature, it's leadership - nonprofit, the core dev team - and it's monetary policy - which we argue is most important. 
+
+  p We have this sort of checks and balances based system that takes a little bit of inspiration from the Constitution, but it's very binary and logical. You can study it and understand how change happens. Our approach to scalability is quite radical, actually. Most protocols kind of do one thing, one block at a time - the miner, the validator node does all the work and posts the data. We separate that. Instead of doing one block at a time, we do multiple blocks at a time. As a current block is being finalized, we take what used to be chain forks, or what Ethereum kind of rolls these up as uncles, and actually start writing the next set of transactions to those empty blocks. So as the current block is being finalized, we start publishing the next block. We're doing what's called parallel pipeline processing. We're on an engineering path to be able to do hundreds of thousands of transactions per second, with potentially hundreds of thousands of computers, with this approach. 
+
+  p So we're building this right now. We don't have a test net out, it's still early, we're very execution and milestone-based as a team, but we're excited about what we're doing. I think you'll hear more about this approach to consensus as Q4 rolls around.
+
+  p A little bit about governance: we have what is called a separation of powers. You have an executive branch, which is more or less the core dev team, a nonprofit. They're almost like public servants. You have a judicial branch, which looks a little like the Board of Directors. Their responsibility is to kind of hire and fire the executive branch, because if there is a change voted on in the executive branch, and the core dev team actually decides not to ship that software, that's a fireable offense. The judicial branch's primary role is not just to hire and fire the executive team, but to also make suggestions for monetary policy. 
+
+  p Our system is fused with different economic incentives to create decentralization and security. You can make a case that any change to monetary policy has the greatest impact on the protocol and the overall ecosystem, so instead of a Fed-like system, where one branch can say, "This is what we're doing and that's the rule," their job is to study monetary policy and make suggestions to the decentralized branch - the workers who actually run nodes to process, secure, scale, govern, and run the protocol. So the judicial branch can make suggestions with really elegant cases on what should change and the decentralized branch votes on them. If they vote on them, then the nonprofit can actually overrule and say, "No, we're not going to do this," but then the decentralized branch can take another vote, with a higher threshold, and overrule the nonprofit. At that point, it's the responsibility of the nonprofit to ship, and the operators of the software will recognize that. 
+
+  p This creates the path for a hardfork. It enables participation of potentially thousands and thousands of major companies and developers, you name it, to have a seat at the table, so it's a major breakthrough. We're talking about having an eight year roadmap and a 1,000 year vision. It's really about thinking long-term; our job is to build internet infrastructure for the globe that lasts, really, forever. One percent of the block reward will get paid to Storecoin, the foundation, to endow it forever. We take 20% of treasury and spread it out over a thousand years, so in the year 2400, project leaders will have access to genesis block treasury to do deals with banks and countries to get distribution. We start with just getting consensus off the ground and high degrees of stored value - sound money - and then we start introducing smart contracting infrastructure, because that gives us the ability to get into the cash register. 
+
+  p The reason why crypto's not in cash registers today is not just because the banks aren't getting paid. You have to solve chargebacks and payment fraud, and we've designed for that. We're very focused on execution and engineering-driven. You can see this on http://storeco.in/engineering. 
+
+  p I've been building software for the last 16 years. I suppose I can call myself a serial entrepreneur, though I always said I didn't want to do that. I like to invent systems. I've been trying to solve payments since I was 19. I tried to do it with a previous company. I tried to bring Bitcoin in and use it as a sort of programmable payments layer where you can sort of send money to a thousand different networks with a single API call. I couldn't do it. I had to sort of abandon the space for a while because I lost a little hope, but it was right around the same time that Bitalic recognized the limitations of Bitcoin as well and spun up smart contracts. We sort of came out of the same era. I've always been focused on using the actual protocol token as a payments token inside the application layer - we call that WebC by the way, not Web 3.
+
+  p We have a great team: Ari Paul, CIO at BlockTower Capital, was one of our early investors, very strategic, he's going to write a post on our governance system in a couple of weeks which is super cool. Stephen McKeon, Antone, Matt Ocko from DCVC just joined. We're collecting really great people to be a part of this intellectual experiment. A big part of my job now is that.
+
+  p So, a summary: Fast ledger. 5,000 transactions per second with potentially thousands of nodes participating. zero-fee payments. Pay with yearly inflation, capped at 2% but pegged to staking, so we want 51% of the circulating supply to be staked and 49% to be available for payments. Governance, checks and balances, economic optionality to solve for chargebacks and payment fraud. Same thing to be able to actually pay distributors and banks from the STORE token. We'll support the development of these crypto-powered apps, called CApps, for WebC, not Web 3. 
+
+  p We think zero-fee, programmable payments is an infrastructure layer for the internet that just doesn't exist yet. We have an ecosystem fund that will make investments to help the project - we're already starting to do this. We have a growing community who believe in Storecoin. We have people in 56 countries around the world wearing Storecoin T-shirts like Antone has, taking photos. It's really starting to become a movement. 
+
+  p All money is trust, it's our focus in the long run. If we get this right, we can actually take a slice of the $21 trillion credit and debit card space with zero-fees, but we can also take a slice out of the $100 trillion wealth market. If you own Storecoins, you stake them to participate in consensus, and you earn tokens. You stake your wealth, so we think this has the ability to become global infrastructure for payments, for wealth, and for innovation.
+  
+  p 
+    b [Unknown]:
+    |  Okay, questions for Chris? 
+
+  p 
+    b [Unknown]:
+    |  How does it work? Would I still use my debit card, or would I need Storecoins? 
+    
+  p
+    b CM:
+    |  That's a good question. We haven't hit that challenge yet, but we think of it like this: if you're Square or Stripe, whatever layer the consumer uses to interface with your system, Storecoin becomes part of that layer. We don't really intend to issue credit cards to you. The design could evolve so that decentralized miners or workers potentially issue the credit cards. We're not initially focused on the cash register layer because we need to build more infrastructure. We're focused on the low-hanging fruit of mobile and web app payments so there's not a credit card needed for the early use case.
+    
+  p
+    b [Unknown]:
+    |  I still use my credit card in the app store.
+    
+  p
+    b CM:
+    |  You'd have an option to pay with your Store tokens.
+
+  p
+    b [Unknown]:
+    |  And I'd go buy those on an exchange, or from your site? 
+    
+  p
+    b CM:
+    |  Yeah. You'd buy them from OTCDesk or another provider. Maybe you've earned them because you're part of consensus, maybe you bought into a token sale. 
+
+  p If the currency's going up in value, why would you spend it? If the currency's going down in value, why would a merchant accept it? Those are the two issues in the space, and the answer is this: when you cut out the transaction fee, what you do is create a designed space for the merchant to actually reduce the price of its product if you pay using tokens. So, if the merchant reduces its price, you're incentivized to pay with your tokens, since you get a better price than if you'd paid with traditional fiat. 
+
+  p Maybe a Storecoin is worth $1 one day and 50 cents the next, but for you, as the buyer, it's always pegged to a dollar. It could take more Storecoins to buy something. So we're working on these tools to make it possible for developers to create these payment experiences.
+
+  p
+    b [Unknown]:
+    |  Something I didn't see in your slides was distribution. What's the distribution plan?
+
+  p
+    b CM:
+    |  In what context? 
+
+  p
+    b [Unknown]:
+    |  An ICO?
+    
+  p
+    b CM:
+    |  Oh, yeah. We don't talk a lot about token sales. We're pretty quiet. We've raised a tiny amount of treasury on purpose to be very milestone-driven. Michael is an investor in the project. We're going to do a third token sale likely coming up. We have 4,000-5,000 people lined up to get into that sale right now, and it's probably going to be just a $5 million sale, around a $50-60 million market capitalization. We intend to do two or three more milestone-based sales before we launch the protocol, and they'll all be quite small. For comparison, where we're at valuation-wise, it's similar to where Ethereum was at when they did their ICO, and it's about 20x less than Dfinity, 50x less than Hashgraph. We're being conservative and trying to get distribution for as many people as we can.
+    
+  p
+    b [Unknown]:
+    |  Has it disclosed to credit investors?
+    
+  p
+    b CM:
+    |  It's US-only. We're pretty aggressive on Reg-S compliance by country. In this next sale, our goal is to actually go to 21 countries where we have wallet distribution with 1,000+ wallets, so we're going to let people participate with as little as $250. We've sort of countercultured the whole space. Everybody wants $5,000 to $10,000 buy-ins, and we want people who are going to run our software and believe in this as a mission. We fought tooth and nail to create that environment. We'll likely move into an auction-based sale after, so instead of us pricing Storecoin, we'll let the market do it.
+    
+  p
+    b [Unknown]:
+    |  I'm curious. First of all, I think hiding the costs of inflation is a really elegant approach, and I really like that. How do you think about positioning yourself a viable, stable, scalable coin in the future that also has a no or low-fee function? Obviously, there will be some element of friction just from exchanges between Storecoin and fiat currencies?
+    
+  p
+    b CM:
+    |  I don't believe in stable coins. I don't think they have utility. I think it's Silicon Valley kind of going crazy. We're working in our economic designs on ways to stabilize the currency. One design we're looking at right now is taking maybe 5% of the treasury and having that be algorithmically traded over OTC. It spikes and decreases to move in and out of USD and Bitcoin, and that would be run by our judicial branch. There's a group called Blockscience out of Oakland, they're going to join our team shortly and help us really hard in our economic models when we release our economics paper. We're looking at that carefully, we just don't have a formal design for it. I guess the answer is that I don't think there's going to be a stable coin that matters in five years outside of traders, who need it for obvious reasons. 
+    
+  p
+    b [Unknown]:
+    |  How do you get merchants excited about accepting transactions if there's high volatility? 
+    
+  p
+    b CM:
+    |  That's the fundamental question for the entire industry. Our gut says this: you're an investor. You're going to look at Storecoin and say, "We know how much the supply is staked, what the network looks like, how many developers there are, how much transaction volume there is, so we can understand valuation more fundamentally about these crypto networks." They'll be more stable once you really unpack what a protocol is, so we're really focused on those things. That said, if you're a developer, you can create really elegant experiences for you to let buyers know that they're saving money on a transaction if they use Store. There's other elements to zero-fee. It's fascinating when you really achieve that. 
+
+  p Micropayments has been a dream for internet developers forever, but what you enable is you as a developer to actually, instead of banks getting the cut - the fee - enabling you to take a small cut. So you can tax your network if you want to use it that way. 
+
+  p I'll say one thing about the other zero-fee protocol that's well known, EoS. It's not free. If you're a developer, you have to buy and stake tokens in order to power free transactions. It would cost about $1.5 billion a month ago to power CryptoKitties. It's SaaS. It's not free.
+  
+  p
+    b [Unknown]:
+    |  How can you achieve such high throughput without sacrificing decentralization? 
+    
+  p
+    b CM:
+    |  I skipped that to talk about the protocol a little bit, but we separate the data from consensus in a two-tier architecture. What this enables is you as a client to be a lot lighter, rather than having a full node, and multiple blocks being processed at once. 
+
+  p The analogy is this: If you go back to the early 1800s, the use case for oil was kerosene, and the rest of the oil was basically waste. It was thrown into the lakes and the rivers. As the automobile industry came along, Rockefeller and Standard Oil figured out how to refine that even further and turn that waste into gas. What we're doing is taking chainforked orphan blocks and instead of discarding them as wasted compute, we're actually using them to start building a block as the current block is being finalized. We've created our own version of gas within consensus. When you move into a master node model for scalability, you produce what's called an encrypted agent, so it'll have access to the validator and will reach consensus on behalf of the validator without having any data whatsoever. So consensus will be near-instant across hundreds of thousands of computers. 
+
+  p Thanks, everyone! 
+
+
+
+
+
+
+
+
+        
+            

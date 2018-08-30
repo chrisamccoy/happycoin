@@ -317,6 +317,11 @@ router.get('/onebasispoint', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/basispoint0199', function(req, res, next) {
+  res.render('onebasispoint', { title: 'One Basis Point', meta: meta({ title: 'One Basis Point', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
+});
+
+/* GET home page. */
 router.get('/disqus', function(req, res, next) {
   res.render('disqus', { title: 'disqus', meta: meta({ title: 'disqus', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
