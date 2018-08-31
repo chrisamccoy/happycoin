@@ -15,9 +15,21 @@ var sections = {
     'hash': '#our-mission',
     'title': 'Our Mission'
   },
+  'zero-fee-storecoin': {
+    'hash': '#zero-fee-storecoin',
+    'title': 'Storecoin: A zero-fee, programmable cryptocurrency with a Governance of checks and balances.'
+  },
+  'core-team': {
+    'hash': '#core-team',
+    'title': 'Our Core Team is spreading $STORE globally.'
+  },
   'coin-note': {
     'hash': '#coin-note',
     'title': 'NOTE: Storecoin is a new public blockchain, not an ERC20 token.'
+  },
+  'how-different': {
+    'hash': '#how-different',
+    'title': 'How We\'re Different'
   },
   'storecoin-statements': {
     'hash': '#storecoin-statements',
@@ -79,9 +91,9 @@ var sections = {
     'hash': '#storecoin-roadmap',
     'title': 'Storecoin +8-year Roadmap'
   },
-  'how-big': {
-    'hash': '#how-big',
-    'title': 'How big can this be?'
+  'market-opportunity': {
+    'hash': '#market-opportunity',
+    'title': 'Market Opportunity'
   },
   'storecoin-vs-global-markets': {
     'hash': '#storecoin-vs-global-markets',
@@ -94,6 +106,14 @@ var sections = {
   'about-storecoin': {
     'hash': '#about-storecoin',
     'title': 'ABOUT STORECOIN'
+  },
+  'zero-fee-workes': {
+    'hash': '#zero-fee-workes',
+    'title': 'How a Zero-Fee Transaction Works on Storecoin'
+  },
+  'debit-credit-works': {
+    'hash': '#debit-credit-works',
+    'title': 'How a Debit or Credit Card Transaction Works'
   },
   'dypos-overview': {
     'hash': '#dypos-overview',
