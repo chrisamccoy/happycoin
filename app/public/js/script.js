@@ -66,9 +66,14 @@ function initCountDown() {
       minute = second * 60,
       hour = minute * 60,
       day = hour * 24,
-      $countdown = $('.sale-countdown');
+      $countdown = $('.sale-countdown'),
+      time = "Sep 4, 2018 12:00:00";
 
-    var countDown = new Date("Sep 4, 2018 12:00:00").getTime(),
+    if (window.location.hostname === 'tokensale3.storeco.in' || window.location.pathname === '/tsale3') {
+      time = "Oct 8, 2018 12:00:00";
+    }
+
+    var countDown = new Date(time).getTime(),
         x = setInterval(function () {
       var now = new Date().getTime(),
           distance = countDown - now;

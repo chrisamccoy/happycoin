@@ -98,6 +98,16 @@ router.get('/tsale', function(req, res, next) {
   });
 });
 
+router.get('/tsale3', function(req, res, next) {
+  res.render('tsale3', {
+    title: 'Token Sale',
+    meta: meta({
+      title: 'Token Sale',
+      url: req.protocol + '://' + req.get('host')
+    })
+  });
+});
+
 /* GET tokensale199 page. */
 router.get('/tokensale199', function(req, res, next) {
   res.render('tokensale3', { title: 'Token Sale', meta: meta({ title: 'Token Sale', url: req.protocol + '://' + req.get('host') + req.originalUrl }), sale: getTokenSale('tokensale199') });
