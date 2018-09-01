@@ -15,10 +15,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Storecoin', countdown: countdown, meta: meta({ title: 'Storecoin', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
-router.get('/tokensale3', function(req, res, next) {
-  res.render('index-new', { title: 'Storecoin', meta: meta({ title: 'Storecoin', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
-});
-
 router.get('/pioneer', function(req, res, next) {
   res.render('pioneer', { title: 'Host a Storecoin meet-up in your town or city', meta: meta({ title: 'Host a Storecoin meet-up in your town or city', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
@@ -98,7 +94,7 @@ router.get('/tsale', function(req, res, next) {
   });
 });
 
-router.get('/tsale3', function(req, res, next) {
+router.get('/tokensale3', function(req, res, next) {
   res.render('tsale3', {
     title: 'Token Sale',
     meta: meta({
