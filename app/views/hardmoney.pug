@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  div#hc-content
+    //- #hc-intro.hc-feature.over-rel.padding
+    //-   .hc-chunk.hc-intro-text-wrapper
+    //-     h2.hc-intro-large-lead(style='font-weight: bold; font-size: 2.7em; margin: 2em auto;') Token Sale FAQ
+
+    .hc-feature.over-rel.padding
+      .hc-chunk.hc-intro-text-wrapper
+        iframe(src='https://docs.google.com/spreadsheets/d/e/2PACX-1vS6rJF2Itkz9bqKLd-G_oEqAhZoEWprRr6vkzDa23G9OddyOZtoT4FmEa0OQQbIR_4D5hp4Fjs9iqGQ/pubhtml?widget=true&headers=false' width="100%" style="height:600px;", frameBorder="0")
+      
+    include email-widget

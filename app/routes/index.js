@@ -19,6 +19,10 @@ router.get('/pioneer', function(req, res, next) {
   res.render('pioneer', { title: 'Host a Storecoin meet-up in your town or city', meta: meta({ title: 'Host a Storecoin meet-up in your town or city', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
+router.get('/hardmoney', function(req, res, next) {
+  res.render('hardmoney', { title: 'Hard Money', meta: meta({ title: 'Hard Money', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
+});
+
 router.get('/governance', function(req, res, next) {
   res.render('governance', { title: 'Governance', meta: meta({ title: 'Governance', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
