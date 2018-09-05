@@ -1,0 +1,128 @@
+extends ../blog-wrapper
+
+block blog-news 
+  p
+    b In Storecoin
+    | , BlockFin’s finality is a combination of absolute and probabilistic finalities. Once more than 2/3 of validators validate and sign the block containing the transactions, the block has absolute finality, hence the transactions included the blocks also have absolute finality. There is no need to wait for a predefined number of block confirmations as in Nakamoto consensus. However, BlockFin uses an asynchronous consensus algorithm and by definition, it doesn’t make any timing assumptions. So, as the number of signatures reaches the threshhold of > 2/3 of the total number of validators, the probability of finality reaches 1.
+    
+  div.tweets
+    div.tweet
+      blockquote.twitter-tweet(data-lang='en')
+        p(lang='en', dir='ltr')
+          | 1/ "Finality in Blockchain Consensus" -- 
+          a(href='https://t.co/KGbiCmqqpD') https://t.co/KGbiCmqqpD
+          |  --  discusses 3 finality types. 1) Probabilistic Finality, 2) Absolute Finality, and 3) Economic Finality.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1036699189453905920?ref_src=twsrc%5Etfw') September 3, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 2/ Depending on the underlying consensus algorithm, blockchain fall into one or more of these types. For example, Bitcoin has "probabilistic finality" because the recipient must for certain number of block confirmations before accepting the payment.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1036699190401761280?ref_src=twsrc%5Etfw') September 3, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 3/ "Finality" implies irreversibility of the transactions. In real world cases the transactions are always reversible. For example, a fraudulent charge on a credit card is always reversible.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1036699191450296320?ref_src=twsrc%5Etfw') September 3, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 4/ So, "absolute finality" in blockchains is its ability to resist illegal reversal of transactions. This is because any legal reversal would work just like in real world cases -- a *new* transaction that reverses the effect of *old* transaction.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1036699192146636801?ref_src=twsrc%5Etfw') September 3, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 5/ Transaction finality with BlockFin, 
+          a(href='https://twitter.com/storecoin?ref_src=twsrc%5Etfw') @storecoin
+          | 's BFT consensus algorithm is a bit of all the 3 types of finalities. The transactions have "absolute finality" because once more than 2/3 of the validators validate and commit the block, the block and
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1036699192972914688?ref_src=twsrc%5Etfw') September 3, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 5.a/ hence the transactions included in the committed block are irreversible. There is no need to wait for certain number of block confirmations or any such thing.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1036699193748860928?ref_src=twsrc%5Etfw') September 3, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 6/ BlockFin consensus algorithm is asynchronous in nature. By definition, it doesn't make any timing assumptions. This means, there is no fixed window of time in which all the validators sign and commit the blocks.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1036699194491252736?ref_src=twsrc%5Etfw') September 3, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 7/ This makes the finality "probabilistic" (although not by the definition used in the above article). As the validators commit the block with their signatures, the finality reaches the probability of 1.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1036699195309142016?ref_src=twsrc%5Etfw') September 3, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 8/ While the incentive model encourages validator up-time and in practice, the probability of 1 is reached in a predictable window of time, in theory, the algorithm results in "probabilistic finality".
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1036699196047253504?ref_src=twsrc%5Etfw') September 3, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 9/ Finally, BlockFin institutes punishment for misbehaving nodes, like in most PoS-based systems. So, the cost of reversing the block (and hence transactions) is economically expensive.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1036699196764565504?ref_src=twsrc%5Etfw') September 3, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 10/ Such reversals require more than 2/3 of *current* validators to collude. This makes BlockFin's finality also an "economic finality".
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1036699197569810432?ref_src=twsrc%5Etfw') September 3, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 11/ These qualifications should be examined in their own contexts. Absolute finality is critical for merchants because once they learn that a block is committed, they don't need to wait any longer to accept the payments.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1036699198232481792?ref_src=twsrc%5Etfw') September 3, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 12/ Probabilistic finality is the side effect of asynchronous nature of block finalization process. A synchronous network is impractical because of strict timing assumptions. So, while such algorithms "terminate" on paper, they rarely do so in practice.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1036699198991740929?ref_src=twsrc%5Etfw') September 3, 2018
+        
+    div.tweet
+      blockquote.twitter-tweet(data-conversation='none', data-lang='en')
+        p(lang='en', dir='ltr')
+          | 13/ Economic finality should be viewed in the context of the security of the network. It demonstrates the cost to mount any malicious acts to reverse a block.
+        | — StorecoinDev (@StorecoinDev) 
+        a(href='https://twitter.com/StorecoinDev/status/1036699199755104256?ref_src=twsrc%5Etfw') September 3, 2018
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            

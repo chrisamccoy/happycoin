@@ -1,5 +1,14 @@
 var blogs = [
   {
+      slug: 'a-closer-look-at-blockFin-and-finality',
+      title: 'A Closer Look at BlockFin and Finality',
+      desc: '',
+      img: 'https://storeco.in/images/blog/logo-dev-cover.png',
+      template: 'blog-sep-5-18',
+      readTime : '5 min read',
+      date : 'September 5, 2018'
+  },
+  {
       slug: 'presentation-by-storecoin-creator-chris-mccoy-on-the-zero-fee-payments-protocol',
       title: 'Presentation by Storecoin Creator Chris McCoy on the zero-fee payments protocol',
       desc: '',
