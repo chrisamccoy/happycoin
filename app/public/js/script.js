@@ -1,23 +1,66 @@
 $(document).ready(function(){
-  // console.log(getCookie('ref_email'));
   var isMobile = false;
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
     .test(navigator.userAgent) ) {
    isMobile = true;
   }
-  // alert($(window).width());
-  $('img[usemap]').rwdImageMaps();
-  initDropdown();
-  whyTextToggle();
-  renderRadio();
-  cardFlip();
-  stratDist(isMobile);
-  scrollCheck(isMobile);
 
+  onPageLoad(isMobile);
+
+  if (window.location.pathname === '/index2') {
+    loadContent(isMobile);
+  } else {
+    addPage(isMobile);
+  }
+});
+
+function onPageLoad(isMobile) {
+  scrollCheck(isMobile);
+  initDropdown();
   // on scroll
   $(window).scroll(function(){
     scrollCheck(isMobile);
   });
+
+  initIntroHeight(isMobile);
+}
+
+function loadContent(isMobile) {
+  var load = false;
+  $(window).scroll(function(e){
+    var offset = $('#load-content').offset().top - 50,
+    scrollTop = $(window).scrollTop();
+
+    // console.log(load);
+
+    if (scrollTop > offset && !load) {
+      // console.log('load', load);
+      // $('body').css('overflow', 'hidden');
+      load = true;
+      $.ajax({
+        type: "GET",
+        url: "/index-content",
+        data: { },
+        success: function(data){
+          $('#load-content .loading').fadeOut(function(){
+            $('#load-content').append(data);
+            addPage(isMobile);
+            window.runCopyLinks();
+            window.deferLoad();
+            // $('body').css('overflow', 'scroll');
+          });
+        }
+      });
+    }
+  });
+}
+
+function addPage(isMobile) {
+  $('img[usemap]').rwdImageMaps();
+  whyTextToggle();
+  renderRadio();
+  cardFlip();
+  stratDist(isMobile);
 
   $('#hc-nav-wrapper .menu-toggle').click(function (){
     $('#hc-nav-wrapper .hc-navigation .hc-menu-container').toggle('slow');
@@ -51,13 +94,12 @@ $(document).ready(function(){
   initCoinFlip();
   initInviteSale();
   initFullscreenImage(isMobile);
-  initIntroHeight(isMobile);
   initBlogShare();
   initFormSubscribe();
   initThirdTokenSale();
   initKyc();
   initCountDown();
-});
+}
 
 function initCountDown() {
   // console.log($('#countdown').length);

@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  div#hc-content.home-page
+    #hc-intro.hc-feature.over-rel.padding
+      .hc-chunk.hc-intro-text-wrapper
+        h2.hc-intro-large-lead
+          b A zero-fee, programmable, cryptocurrency with a Governance of checks and balances.
+
+        p.hc-feature-lead If Ripple is taking on SWIFT, $STORE is taking on the global $21 Trillion credit and debit card markets.
+        if !countdown
+          div.buttons
+            a.hc-button.orange(href="http://t.me/storecoin", target="_blank") JOIN OUR TELEGRAM
+              i.ion-arrow-right-c
+            a.hc-button.green(href=URL('/media/Storecoin-Summary.pdf'), target="_blank") DOWNLOAD A SUMMARY
+
+        if countdown
+          include countdown
+
+    if !countdown
+      div#second-token-sale
+        - var top = true
+        include email-widget
+        
+    div#load-content(style="position: relative; min-height: 80vh;")
+      .loading      
+        div.sp.sp-wave
+        div.text Loading...

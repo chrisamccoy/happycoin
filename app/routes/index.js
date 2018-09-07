@@ -15,6 +15,20 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Storecoin', countdown: countdown, meta: meta({ title: 'Storecoin', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
+/* GET home page. */
+router.get('/index2', function(req, res, next) {
+  var countdown = false;
+  var host = req.headers.host;
+  if (host.search('4.storeco.in') >= 0) {
+    countdown = true;
+  }
+  res.render('index2', { title: 'Storecoin', countdown: countdown, index2: true, meta: meta({ title: 'Storecoin', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
+});
+
+router.get('/index-content', function(req, res, next) {
+  res.render('index-content');
+});
+
 router.get('/pioneer', function(req, res, next) {
   res.render('pioneer', { title: 'Host a Storecoin meet-up in your town or city', meta: meta({ title: 'Host a Storecoin meet-up in your town or city', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });

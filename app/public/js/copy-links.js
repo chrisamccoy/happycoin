@@ -66,12 +66,16 @@
     bindEvents();
   }
 
-  $(document).ready(function() {
+  window.runCopyLinks = function() {
     if ($('.home-page').length == 0 && $('.blog-news').length == 0) {
       return;
     }
 
     append();
+  };
+
+  $(document).ready(function() {
+    window.runCopyLinks();
   });
 
 }(window, document));
