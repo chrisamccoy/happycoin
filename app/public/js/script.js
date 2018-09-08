@@ -28,7 +28,7 @@ function onPageLoad(isMobile) {
 function loadContent(isMobile) {
   var load = false;
   $(window).scroll(function(e){
-    var offset = $('#load-content').offset().top - 50,
+    var offset = ($('#load-content').offset().top/2) - 50,
     scrollTop = $(window).scrollTop();
 
     // console.log(load);
