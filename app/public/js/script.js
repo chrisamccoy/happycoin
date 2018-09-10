@@ -33,9 +33,8 @@ function loadContent(isMobile) {
 
     // console.log(load);
 
-    if (scrollTop > offset && !load) {
-      // console.log('load', load);
-      // $('body').css('overflow', 'hidden');
+    if (!load) {
+      initLogoSlider('#hc-buyers-slider', 3);
       load = true;
       $.ajax({
         type: "GET",
@@ -46,8 +45,7 @@ function loadContent(isMobile) {
             $('#load-content').append(data);
             addPage(isMobile);
             window.runCopyLinks();
-            window.deferLoad();
-            // $('body').css('overflow', 'scroll');
+            window.onload();
           });
         }
       });
@@ -91,7 +89,7 @@ function addPage(isMobile) {
   initLightBulb();
   initFireGlow();
   initProblemReveal(isMobile);
-  initCoinFlip();
+  // initCoinFlip();
   initInviteSale();
   initFullscreenImage(isMobile);
   initBlogShare();

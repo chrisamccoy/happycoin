@@ -6,7 +6,9 @@ function deferLoad() {
   deferImages();
 
   setTimeout(function() {
-    initLogoSlider('#hc-buyers-slider', 3);
+    if (window.location.pathname === '/') {
+      initLogoSlider('#hc-buyers-slider', 3);
+    }
     deferSections();
     deferAnalytics();
     deferTwitter();
