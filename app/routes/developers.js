@@ -3,14 +3,14 @@ var router = express.Router();
 var fs = require('fs');
 var path = require('path');
 
-router.get('/guides/get-started', function(req, res, next) {
-  res.render('developers/guides/get-started');
-});
+// router.get('/guides/get-started', function(req, res, next) {
+//   res.render('developers/guides/get-started');
+// });
 
 router.get('/', function(req, res, next) {
   // var filename = path.join(__dirname+'/../views/developers/readme.html');
   // res.sendFile(filename);
-  res.render('developers/index');
+  res.render('developers/index', { path : '/developers/readme/none'});
 });
 
 router.get('/:slug/:slug2?/:slug3?', function(req, res, next) {
@@ -28,6 +28,7 @@ router.get('/:slug/:slug2?/:slug3?', function(req, res, next) {
 
   var pathname = json[slugs];
   var filename = '';
+  var path = '';
 
   // if (pathname['is_dir']) {
   //   filename = path.join(__dirname+'/../views/developers/'+slugs+'/readme.html');
@@ -39,10 +40,25 @@ router.get('/:slug/:slug2?/:slug3?', function(req, res, next) {
   //   res.sendFile(filename);
   // }
   if (pathname['is_dir']) {
-    res.render('developers/'+slugs+'/readme');
+    path = '/developers/'+slugs+'/readme';
   } else {
-    res.render('developers/'+slugs);
+    path = '/developers/'+slugs;
   }
+
+  res.render('developers/index', { path : path });
+});
+
+router.get('/load/:slug/:slug2?/:slug3?', function(req, res, next) {
+  var params = req.params;
+  var pathname = '';
+  for (var slug in params) {
+    if (params[slug] != 'none') {
+      pathname += '/'+params[slug];
+    }
+  }
+  // console.log(pathname);
+  var filename = path.join(__dirname+'/../views'+pathname+'.html');
+  res.sendFile(filename);
 });
 
 module.exports = router;
