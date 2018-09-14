@@ -30,9 +30,11 @@ module.exports = function(grunt) {
           '<%= paths.js %>featherlight.js',
           '<%= paths.js %>numeral.js',
           '<%= paths.js %>tippy.min.js',
+          '<%= paths.js %>lodash.js',
           '<%= paths.js %>jquery.rwdImageMaps.min.js',
           '<%= paths.js %>onload.js',
           '<%= paths.js %>copy-links.js',
+          '<%= paths.js %>orders-form.js',
           '<%= paths.js %>script.js'
         ],
         dest: '<%= paths.assets %>script.js'

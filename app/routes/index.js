@@ -4,6 +4,7 @@ var meta = require('../helpers/meta');
 var getblog = require('../helpers/blogs');
 var getTokenSale = require('../helpers/tokensales');
 var getSection = require('../helpers/sections');
+var request = require('request');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -45,16 +46,24 @@ router.get('/knowledge', function(req, res, next) {
   res.render('knowledge', { title: 'Storecoin Proof-of-Knowlege', meta: meta({ title: 'Storecoin Proof-of-Knowlege', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
 });
 
-router.get('/link/:key', function(req, res, next) {
-  var sec = getSection(req.params.key),
-      title = sec.title,
-      url = req.protocol + '://' + req.get('host');
+router.get('/order', function(req, res, next) {
+  res.render('order', { title: 'Order', meta: meta({ title: 'Order', url: req.protocol + '://' + req.get('host') + req.originalUrl }) });
+});
 
-  res.render('sec-redirect', {
-    title: title,
-    redirectUrl: url + sec.hash,
-    meta: meta({ title: title, url: url + req.originalUrl })
-  });
+router.get('/link/:key', function(req, res, next) {
+  var sec = getSection(req.params.key);
+  if (sec) {
+    var title = sec.title,
+        url = req.protocol + '://' + req.get('host');
+
+    res.render('sec-redirect', {
+      title: title,
+      redirectUrl: url + sec.hash,
+      meta: meta({ title: title, url: url + req.originalUrl })
+    });
+  } else {
+    res.redirect('/');
+  }
 });
 
 /* GET home page. */
@@ -611,5 +620,45 @@ router.get('/dev', function(req, res, next) {
 router.get('/royalty', function(req, res, next) {
   res.render('developer-royalty', { title: 'Storecoin', meta: meta() });
 });
+
+
+router.post('/submit-orders', function(req, res, next) {
+  var options = {
+    method: 'post',
+    body: req.body, // Javascript object
+    json: true, // Use,If you are sending JSON data
+    url: 'http://teamapi.storeco.in/company/create-order',
+  };
+  request(options, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.send(response.body); // Print the google web page.
+    }
+  });
+});
+
+router.post('/recaptcha-verify', function(req, res, next) {
+  var options = {
+    method: 'post',
+    form: {
+      response : req.body.response,
+      // secret: '6Le_VF4UAAAAALgZxelV6i9MpuORq73Ckt51NC9G'
+    },
+    url: 'https://www.google.com/recaptcha/api/siteverify',
+  };
+  request(options, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.send(response.body); // Print the google web page.
+    }
+  });
+});
+
+router.get('/get-inventory', function(req, res, next) {
+  request('http://teamapi.storeco.in/fetch/inventory', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.send(response.body); // Print the google web page.
+    }
+  });
+});
+
 
 module.exports = router;

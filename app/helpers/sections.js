@@ -19,14 +19,6 @@ var sections = {
     'hash': '#zero-fee-storecoin',
     'title': 'Storecoin: A zero-fee, programmable cryptocurrency with a Governance of checks and balances.'
   },
-  'core-team': {
-    'hash': '#core-team',
-    'title': 'Our Core Team is spreading $STORE globally.'
-  },
-  'coin-note': {
-    'hash': '#coin-note',
-    'title': 'NOTE: Storecoin is a new public blockchain, not an ERC20 token.'
-  },
   'how-different': {
     'hash': '#how-different',
     'title': 'How We\'re Different'
@@ -107,10 +99,6 @@ var sections = {
     'hash': '#about-storecoin',
     'title': 'ABOUT STORECOIN'
   },
-  'zero-fee-workes': {
-    'hash': '#zero-fee-workes',
-    'title': 'How a Zero-Fee Transaction Works on Storecoin'
-  },
   'debit-credit-works': {
     'hash': '#debit-credit-works',
     'title': 'How a Debit or Credit Card Transaction Works'
@@ -139,8 +127,8 @@ var sections = {
     'hash': '#blockfin-principles',
     'title': 'The 5 Principles of BlockFin'
   },
-  'woker-types': {
-    'hash': '#woker-types',
+  'worker-types': {
+    'hash': '#worker-types',
     'title': 'The Four Decentralized Workers of DyPoS'
   },
   'six-engines': {
@@ -314,10 +302,6 @@ var sections = {
   'engage-with-us': {
     'hash': '#engage-with-us',
     'title': 'Engage with us on Social'
-  },
-  'dev-notes': {
-    'hash': '#dev-notes',
-    'title': 'Subcribe to Engineering Notes'
   },
   'build-app': {
     'hash': '#build-app',

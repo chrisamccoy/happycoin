@@ -1,0 +1,95 @@
+extends layout
+
+block more-head
+  script(src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit', async='', defer='')
+
+block content
+  div#hc-content
+    #order.hc-feature.over-rel.padding
+      .hc-chunk(style="max-width: 600px; margin: 0 auto; padding-top: 1em;")
+        h2.hc-feature-title Order a T-Shirt
+        form(autocomplete="off")
+          div.column
+            div.fields
+              div.field
+                div Name
+                input.u-full-width(type="text", name="name")
+              div.field
+                div Organization (Optional)
+                input.u-full-width(type="text", name="organization")
+              
+            div.fields
+              div.field
+                div Address
+                input.u-full-width(type="text", name="address")
+              div.field
+                div Address Line 2
+                input.u-full-width(type="text", name="address2")
+            
+            div.fields
+              div.field
+                div City
+                input.u-full-width(type="text", name="city")
+              div.field  
+                div State/Region
+                input.u-full-width(type="text", name="state")
+              
+            div.fields
+              div.field 
+                div Zip/Postal Code
+                input.u-full-width(type="text", name="zip")
+              div.field  
+                div Country
+                input.u-full-width(type="text", name="country")
+
+            h5(style="border-bottom: 1px solid #e2e2e2;") Add Product
+            div#product-list
+            div.add-product
+              i.ion-plus
+            div#recaptcha
+            button.hc-button.orange.full-width(type="submit", disabled) Submit
+      
+    include email-widget
+    
+    script.
+      function verifyCallback(token) {
+        $.ajax({
+          url: '/recaptcha-verify',
+          type: "POST",
+          data: JSON.stringify({
+            response: token
+          }),
+          contentType: "application/json",
+          complete: function(response){
+            $('#order button[type="submit"]').removeAttr('disabled');
+          }
+        });
+      }
+      var onloadCallback = function() {
+        grecaptcha.render('recaptcha', {
+          'sitekey' : '6Le_VF4UAAAAAOm3c4Q0qXqkiHIJvezSI9ivGFQd',
+          'callback': verifyCallback
+        });
+        
+      };
+    
+    script#form-product(type="text/template")    
+      <div class="product">
+        <div class="item">
+          <div>Item</div>
+          <select>
+            <option value="0">Select Item</option>
+            <% _.each(inventory, function(item){ %>
+              <option value="<%= item.id %>"><%= item.name %></option>
+            <% }) %>
+          </select>
+        </div>
+        <div class="quantity">
+          <div>QTY</div>
+          <input type="number">
+        </div>
+        <div class="close">
+          <i class="ion-android-close"></i>
+        </div>
+      </div>
+    
