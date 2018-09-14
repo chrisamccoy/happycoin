@@ -49,7 +49,6 @@ function submitOrder() {
       contentType: "application/json",
       complete: function(response){
         resData = response.responseJSON;
-        console.log(resData);
       }
     });
   });
@@ -57,11 +56,13 @@ function submitOrder() {
 
 function addProduct() {
   templateRender({
-    el : '#product-list',
+    el : '#product-list .list',
     tpl: '#form-product',
     data : { inventory : inventory },
     append: true
   });
+
+  $('#product-list .loading').fadeOut();
 
   submitOrder();
 }

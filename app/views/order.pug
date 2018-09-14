@@ -42,10 +42,15 @@ block content
                 div Country
                 input.u-full-width(type="text", name="country")
 
-            h5(style="border-bottom: 1px solid #e2e2e2;") Add Product
             div#product-list
-            div.add-product
-              i.ion-plus
+              h5(style="border-bottom: 1px solid #e2e2e2;") Add Product
+              .loading      
+                div.sp.sp-wave
+                div.text Loading...
+              div.list
+              div.add-product
+                i.ion-plus
+                
             div#recaptcha
             button.hc-button.orange.full-width(type="submit", disabled) Submit
       

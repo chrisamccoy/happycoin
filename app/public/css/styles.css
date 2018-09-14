@@ -8419,6 +8419,7 @@ and (max-width : 335px) {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
 .loading .sp-wave:before,
@@ -8884,12 +8885,21 @@ and (max-width : 335px) {
   opacity: 0.7;
 }
 
-#order form .column .product:last-child:not(:only-of-type) .close {
+#product-list .list .product:last-child:not(:only-of-type) .close {
   display: flex;
+}
+
+#order button[type="submit"]:hover {
+  color: white;
 }
 
 #order form .column .product input[type="number"] {
   width: 50px;
+}
+
+#product-list {
+  position: relative;
+  min-height: 180px;
 }
 
 #recaptcha {
